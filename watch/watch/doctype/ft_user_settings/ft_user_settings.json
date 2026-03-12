@@ -1,0 +1,103 @@
+{
+ "actions": [],
+ "autoname": "field:user",
+ "creation": "2026-03-11 00:00:00.000000",
+ "doctype": "DocType",
+ "engine": "InnoDB",
+ "field_order": [
+  "user",
+  "weekly_hour_target",
+  "enable_keyboard_shortcuts",
+  "pomodoro_section",
+  "focus_work_minutes",
+  "focus_break_minutes",
+  "focus_sessions",
+  "extension_section",
+  "extension_token_active"
+ ],
+ "fields": [
+  {
+   "fieldname": "user",
+   "fieldtype": "Link",
+   "label": "User",
+   "options": "User",
+   "reqd": 1,
+   "unique": 1
+  },
+  {
+   "default": "0",
+   "fieldname": "weekly_hour_target",
+   "fieldtype": "Float",
+   "label": "Weekly Hour Target",
+   "description": "0 = no target (progress bar hidden)."
+  },
+  {
+   "default": "1",
+   "fieldname": "enable_keyboard_shortcuts",
+   "fieldtype": "Check",
+   "label": "Enable Keyboard Shortcuts",
+   "description": "WCAG 2.1.4: you can disable single-key shortcuts here."
+  },
+  {
+   "fieldname": "pomodoro_section",
+   "fieldtype": "Section Break",
+   "label": "Pomodoro Defaults"
+  },
+  {
+   "default": "25",
+   "fieldname": "focus_work_minutes",
+   "fieldtype": "Int",
+   "label": "Work Session (minutes)"
+  },
+  {
+   "default": "5",
+   "fieldname": "focus_break_minutes",
+   "fieldtype": "Int",
+   "label": "Break Duration (minutes)"
+  },
+  {
+   "default": "4",
+   "fieldname": "focus_sessions",
+   "fieldtype": "Int",
+   "label": "Sessions per Set"
+  },
+  {
+   "fieldname": "extension_section",
+   "fieldtype": "Section Break",
+   "label": "Browser Extension"
+  },
+  {
+   "default": "0",
+   "fieldname": "extension_token_active",
+   "fieldtype": "Check",
+   "label": "Extension Token Active",
+   "read_only": 1
+  }
+ ],
+ "index_web_pages_for_search": 0,
+ "links": [],
+ "modified": "2026-03-11 00:00:00.000000",
+ "modified_by": "Administrator",
+ "module": "Watch",
+ "name": "FT User Settings",
+ "naming_rule": "By fieldname",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 0,
+   "export": 0,
+   "if_owner": 1,
+   "print": 0,
+   "read": 1,
+   "report": 0,
+   "role": "All",
+   "share": 0,
+   "write": 1
+  }
+ ],
+ "sort_field": "user",
+ "sort_order": "ASC",
+ "track_changes": 0
+}

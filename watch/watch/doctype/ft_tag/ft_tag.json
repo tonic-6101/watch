@@ -1,0 +1,136 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "autoname": "field:tag_name",
+ "creation": "2026-03-11 00:00:00.000000",
+ "doctype": "DocType",
+ "engine": "InnoDB",
+ "field_order": [
+  "tag_name",
+  "category",
+  "color",
+  "is_archived",
+  "entry_section",
+  "default_entry_type",
+  "default_entry_rate",
+  "rounding_section",
+  "rounding_rule",
+  "budget_section",
+  "monthly_hour_budget",
+  "budget_warning_threshold"
+ ],
+ "fields": [
+  {
+   "fieldname": "tag_name",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Tag Name",
+   "reqd": 1,
+   "unique": 1
+  },
+  {
+   "fieldname": "category",
+   "fieldtype": "Select",
+   "in_list_view": 1,
+   "label": "Category",
+   "options": "\nClient\nProject\nTask\nCategory\nOther"
+  },
+  {
+   "fieldname": "color",
+   "fieldtype": "Color",
+   "label": "Color"
+  },
+  {
+   "default": "0",
+   "fieldname": "is_archived",
+   "fieldtype": "Check",
+   "label": "Archived",
+   "description": "Archived tags are hidden from autocomplete but preserved on existing entries."
+  },
+  {
+   "fieldname": "entry_section",
+   "fieldtype": "Section Break",
+   "label": "Entry Defaults"
+  },
+  {
+   "fieldname": "default_entry_type",
+   "fieldtype": "Select",
+   "label": "Default Entry Type",
+   "options": "\nbillable\nnon-billable\ninternal"
+  },
+  {
+   "default": "0",
+   "fieldname": "default_entry_rate",
+   "fieldtype": "Currency",
+   "label": "Default Entry Rate (per hour)"
+  },
+  {
+   "fieldname": "rounding_section",
+   "fieldtype": "Section Break",
+   "label": "Time Rounding"
+  },
+  {
+   "default": "none",
+   "fieldname": "rounding_rule",
+   "fieldtype": "Select",
+   "label": "Rounding Rule",
+   "options": "none\n6min\n10min\n15min\n30min\n60min"
+  },
+  {
+   "fieldname": "budget_section",
+   "fieldtype": "Section Break",
+   "label": "Hour Budget"
+  },
+  {
+   "default": "0",
+   "fieldname": "monthly_hour_budget",
+   "fieldtype": "Float",
+   "label": "Monthly Hour Budget",
+   "description": "Hours per month. 0 = no budget."
+  },
+  {
+   "default": "0",
+   "fieldname": "budget_warning_threshold",
+   "fieldtype": "Int",
+   "label": "Warning Threshold (%)",
+   "description": "Warn at this % of budget. 0 = use site default."
+  }
+ ],
+ "index_web_pages_for_search": 0,
+ "links": [],
+ "modified": "2026-03-11 00:00:00.000000",
+ "modified_by": "Administrator",
+ "module": "Watch",
+ "name": "FT Tag",
+ "naming_rule": "By fieldname",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 0,
+   "export": 1,
+   "print": 0,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 0,
+   "write": 1
+  },
+  {
+   "create": 1,
+   "delete": 0,
+   "email": 0,
+   "export": 0,
+   "print": 0,
+   "read": 1,
+   "report": 0,
+   "role": "All",
+   "share": 0,
+   "write": 1
+  }
+ ],
+ "sort_field": "tag_name",
+ "sort_order": "ASC",
+ "track_changes": 0
+}

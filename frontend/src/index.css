@@ -1,0 +1,197 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* ============================================
+   Watch Design System — CSS Variables
+   ============================================ */
+
+:root {
+  /* Brand */
+  --watch-primary: #6366f1;
+  --watch-primary-light: #eef2ff;
+  --watch-primary-dark: #4338ca;
+
+  /* Timer state colours */
+  --watch-running: #10b981;
+  --watch-paused: #f59e0b;
+  --watch-stopped: #6b7280;
+
+  /* Entry type colours */
+  --watch-billable: #6366f1;
+  --watch-nonbillable: #6b7280;
+  --watch-internal: #f59e0b;
+
+  /* Neutrals (light mode) */
+  --watch-bg: #ffffff;
+  --watch-bg-secondary: #f9fafb;
+  --watch-bg-tertiary: #f3f4f6;
+  --watch-surface: #ffffff;
+  --watch-surface-hover: #f9fafb;
+  --watch-text: #111827;
+  --watch-text-secondary: #4b5563;
+  --watch-text-muted: #6b7280;
+  --watch-border: #e5e7eb;
+  --watch-border-light: #f3f4f6;
+}
+
+/* ============================================
+   Dock Token Contract — copied verbatim from ecosystem spec
+   Same variable names used by DockNavbar and all fallback navbars.
+   ============================================ */
+
+:root {
+  --dock-bg:     #ffffff;
+  --dock-border: #e5e7eb;
+  --dock-text:   #111827;
+  --dock-icon:   #6b7280;
+  --dock-accent: #6366f1; /* Watch brand — overridden per active app when Dock is present */
+}
+
+:root.dark {
+  --dock-bg:     #111827;
+  --dock-border: #374151;
+  --dock-text:   #f3f4f6;
+  --dock-icon:   #9ca3af;
+  --dock-accent: #818cf8;
+}
+
+:root.dark {
+  --watch-bg: #0f172a;
+  --watch-bg-secondary: #1e293b;
+  --watch-bg-tertiary: #334155;
+  --watch-surface: #1e293b;
+  --watch-surface-hover: #334155;
+  --watch-text: #f1f5f9;
+  --watch-text-secondary: #94a3b8;
+  --watch-text-muted: #64748b;
+  --watch-border: #334155;
+  --watch-border-light: #1e293b;
+
+  --watch-primary-light: #312e81;
+}
+
+/* ============================================
+   Base
+   ============================================ */
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, sans-serif;
+  font-size: 0.875rem;
+  line-height: 1.5;
+  margin: 0;
+  padding: 0;
+  background: var(--watch-bg-secondary);
+  color: var(--watch-text);
+}
+
+/* ============================================
+   Timer display — monospace for live ticking
+   ============================================ */
+
+.timer-display {
+  font-family: 'SF Mono', Monaco, 'Cascadia Code', 'Roboto Mono', Consolas, monospace;
+  font-variant-numeric: tabular-nums;
+  letter-spacing: 0.02em;
+}
+
+/* ============================================
+   Entry type badge colours
+   ============================================ */
+
+.badge-billable {
+  background-color: var(--watch-primary-light);
+  color: var(--watch-primary);
+}
+
+.badge-non-billable {
+  background-color: #f3f4f6;
+  color: #4b5563;
+}
+
+.dark .badge-non-billable {
+  background-color: #374151;
+  color: #9ca3af;
+}
+
+.badge-internal {
+  background-color: #fffbeb;
+  color: #92400e;
+}
+
+.dark .badge-internal {
+  background-color: #451a03;
+  color: #fcd34d;
+}
+
+/* ============================================
+   Entry row
+   ============================================ */
+
+.entry-row {
+  transition: background-color 0.1s ease;
+  cursor: pointer;
+}
+
+.entry-row:hover {
+  background-color: var(--watch-surface-hover);
+}
+
+/* ============================================
+   Transitions
+   ============================================ */
+
+.fade-enter-active,
+.fade-leave-active {
+  transition: opacity 0.15s ease;
+}
+
+.fade-enter-from,
+.fade-leave-to {
+  opacity: 0;
+}
+
+/* ============================================
+   Scrollbar
+   ============================================ */
+
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--watch-bg-secondary);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--watch-border);
+  border-radius: 3px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--watch-text-muted);
+}
+
+/* ============================================
+   Accessibility
+   ============================================ */
+
+:focus-visible {
+  outline: 2px solid var(--watch-primary);
+  outline-offset: 2px;
+  border-radius: 4px;
+}
+
+:focus:not(:focus-visible) {
+  outline: none;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation-duration: 0.01ms !important;
+    transition-duration: 0.01ms !important;
+  }
+}

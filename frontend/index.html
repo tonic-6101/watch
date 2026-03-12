@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no" />
+    <title>Watch — Time Tracking</title>
+    <meta name="description" content="Watch — Standalone time tracking for Frappe" />
+    <link rel="icon" type="image/svg+xml" href="/assets/watch/images/logo.svg" />
+  </head>
+  <body>
+    <script>
+      (function() {
+        var stored = localStorage.getItem('dock-theme');
+        var isDark = stored === 'dark' ||
+          (!stored || stored === 'auto') && window.matchMedia('(prefers-color-scheme: dark)').matches;
+        if (isDark) document.documentElement.classList.add('dark');
+      })();
+    </script>
+    <div id="app" class="h-screen"></div>
+    <div id="modals"></div>
+    <div id="popovers"></div>
+    <script>
+      window.csrf_token = "{{ csrf_token }}"
+    </script>
+    <script type="module" src="/src/main.ts"></script>
+  </body>
+</html>

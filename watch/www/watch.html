@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Watch</title>
+    <meta name="description" content="Watch — Time tracking for Frappe" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no" />
+    <link rel="icon" type="image/svg+xml" href="/assets/watch/images/logo.svg" />
+    <script type="module" crossorigin src="/assets/watch/frontend/assets/main-C0unxrYi.js"></script>
+    <link rel="stylesheet" crossorigin href="/assets/watch/frontend/assets/main-BpDZrgpe.css">
+  </head>
+  <body>
+    <script>
+      (function() {
+        var stored = localStorage.getItem('dock-theme');
+        var isDark = stored === 'dark' ||
+          (!stored || stored === 'auto') && window.matchMedia('(prefers-color-scheme: dark)').matches;
+        if (isDark) document.documentElement.classList.add('dark');
+      })();
+    </script>
+    <div id="app" class="h-screen"></div>
+    <div id="modals"></div>
+    <div id="popovers"></div>
+    <script>
+      window.csrf_token = "{{ csrf_token }}"
+    </script>
+    {% for key in boot %}
+    <script>
+      window["{{ key }}"] = {{ boot[key] | tojson }};
+    </script>
+    {% endfor %}
+  </body>
+</html>

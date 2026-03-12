@@ -1,0 +1,326 @@
+{
+ "actions": [],
+ "creation": "2026-03-11 00:00:00.000000",
+ "doctype": "DocType",
+ "engine": "InnoDB",
+ "field_order": [
+  "default_entry_type",
+  "default_entry_rate",
+  "col_break_general",
+  "lock_entries_older_than",
+  "auto_stop_timer_after",
+  "work_days_section",
+  "work_mon",
+  "work_tue",
+  "work_wed",
+  "work_thu",
+  "work_fri",
+  "work_sat",
+  "work_sun",
+  "nudge_section",
+  "idle_threshold_minutes",
+  "daily_nudge_after",
+  "rounding_section",
+  "rounding_rule",
+  "budget_section",
+  "budget_warning_threshold",
+  "erpnext_section",
+  "enable_erpnext_bridge",
+  "sync_mode",
+  "sync_interval",
+  "col_break_erpnext",
+  "erpnext_site_url",
+  "default_activity_type",
+  "sync_billable_only",
+  "map_project_tags",
+  "last_bulk_sync",
+  "last_sync_error",
+  "integrations_section",
+  "slack_webhook_url",
+  "slack_notify_on_stop",
+  "slack_message_template",
+  "linear_section",
+  "linear_api_key",
+  "linear_post_comment",
+  "github_section",
+  "github_token",
+  "github_default_repo",
+  "github_post_comment"
+ ],
+ "fields": [
+  {
+   "default": "billable",
+   "fieldname": "default_entry_type",
+   "fieldtype": "Select",
+   "label": "Default Entry Type",
+   "options": "billable\nnon-billable\ninternal"
+  },
+  {
+   "default": "0",
+   "fieldname": "default_entry_rate",
+   "fieldtype": "Currency",
+   "label": "Default Entry Rate (per hour)",
+   "description": "Site-wide fallback. 0 = no fallback."
+  },
+  {
+   "fieldname": "col_break_general",
+   "fieldtype": "Column Break"
+  },
+  {
+   "default": "0",
+   "fieldname": "lock_entries_older_than",
+   "fieldtype": "Int",
+   "label": "Lock Entries Older Than (days)",
+   "description": "0 = disabled."
+  },
+  {
+   "default": "8",
+   "fieldname": "auto_stop_timer_after",
+   "fieldtype": "Int",
+   "label": "Auto-Stop Timer After (hours)",
+   "description": "0 = disabled."
+  },
+  {
+   "fieldname": "work_days_section",
+   "fieldtype": "Section Break",
+   "label": "Work Days",
+   "description": "Controls the empty-yesterday nudge and weekend collapse in the weekly view."
+  },
+  {
+   "default": "1",
+   "fieldname": "work_mon",
+   "fieldtype": "Check",
+   "label": "Mon"
+  },
+  {
+   "default": "1",
+   "fieldname": "work_tue",
+   "fieldtype": "Check",
+   "label": "Tue"
+  },
+  {
+   "default": "1",
+   "fieldname": "work_wed",
+   "fieldtype": "Check",
+   "label": "Wed"
+  },
+  {
+   "default": "1",
+   "fieldname": "work_thu",
+   "fieldtype": "Check",
+   "label": "Thu"
+  },
+  {
+   "default": "1",
+   "fieldname": "work_fri",
+   "fieldtype": "Check",
+   "label": "Fri"
+  },
+  {
+   "default": "0",
+   "fieldname": "work_sat",
+   "fieldtype": "Check",
+   "label": "Sat"
+  },
+  {
+   "default": "0",
+   "fieldname": "work_sun",
+   "fieldtype": "Check",
+   "label": "Sun"
+  },
+  {
+   "fieldname": "nudge_section",
+   "fieldtype": "Section Break",
+   "label": "Nudges"
+  },
+  {
+   "default": "10",
+   "fieldname": "idle_threshold_minutes",
+   "fieldtype": "Int",
+   "label": "Idle Threshold (minutes)",
+   "description": "0 = disabled."
+  },
+  {
+   "fieldname": "daily_nudge_after",
+   "fieldtype": "Time",
+   "label": "Daily Nudge After",
+   "description": "Show 'no entries yet' nudge after this time. Empty = disabled."
+  },
+  {
+   "fieldname": "rounding_section",
+   "fieldtype": "Section Break",
+   "label": "Time Rounding"
+  },
+  {
+   "default": "none",
+   "fieldname": "rounding_rule",
+   "fieldtype": "Select",
+   "label": "Site-Wide Rounding Rule",
+   "options": "none\n6min\n10min\n15min\n30min\n60min"
+  },
+  {
+   "fieldname": "budget_section",
+   "fieldtype": "Section Break",
+   "label": "Hour Budgets"
+  },
+  {
+   "default": "80",
+   "fieldname": "budget_warning_threshold",
+   "fieldtype": "Int",
+   "label": "Default Budget Warning Threshold (%)"
+  },
+  {
+   "fieldname": "erpnext_section",
+   "fieldtype": "Section Break",
+   "label": "ERPNext Bridge"
+  },
+  {
+   "default": "0",
+   "fieldname": "enable_erpnext_bridge",
+   "fieldtype": "Check",
+   "label": "Enable ERPNext Bridge"
+  },
+  {
+   "default": "on_save",
+   "depends_on": "eval:doc.enable_erpnext_bridge",
+   "fieldname": "sync_mode",
+   "fieldtype": "Select",
+   "label": "Sync Mode",
+   "options": "on_save\nmanual\nscheduled"
+  },
+  {
+   "depends_on": "eval:doc.enable_erpnext_bridge && doc.sync_mode === 'scheduled'",
+   "fieldname": "sync_interval",
+   "fieldtype": "Select",
+   "label": "Sync Interval",
+   "options": "\nhourly\nevery_6_hours\ndaily"
+  },
+  {
+   "fieldname": "col_break_erpnext",
+   "fieldtype": "Column Break"
+  },
+  {
+   "depends_on": "eval:doc.enable_erpnext_bridge",
+   "fieldname": "erpnext_site_url",
+   "fieldtype": "Data",
+   "label": "ERPNext Site URL"
+  },
+  {
+   "depends_on": "eval:doc.enable_erpnext_bridge",
+   "fieldname": "default_activity_type",
+   "fieldtype": "Data",
+   "label": "Default Activity Type"
+  },
+  {
+   "default": "0",
+   "depends_on": "eval:doc.enable_erpnext_bridge",
+   "fieldname": "sync_billable_only",
+   "fieldtype": "Check",
+   "label": "Sync Billable Entries Only"
+  },
+  {
+   "default": "0",
+   "depends_on": "eval:doc.enable_erpnext_bridge",
+   "fieldname": "map_project_tags",
+   "fieldtype": "Check",
+   "label": "Map Project Tags to ERPNext Projects"
+  },
+  {
+   "fieldname": "last_bulk_sync",
+   "fieldtype": "Datetime",
+   "label": "Last Bulk Sync",
+   "read_only": 1
+  },
+  {
+   "fieldname": "last_sync_error",
+   "fieldtype": "Small Text",
+   "label": "Last Sync Error",
+   "read_only": 1
+  },
+  {
+   "fieldname": "integrations_section",
+   "fieldtype": "Section Break",
+   "label": "Slack"
+  },
+  {
+   "fieldname": "slack_webhook_url",
+   "fieldtype": "Password",
+   "label": "Slack Webhook URL"
+  },
+  {
+   "default": "0",
+   "fieldname": "slack_notify_on_stop",
+   "fieldtype": "Check",
+   "label": "Notify on Timer Stop"
+  },
+  {
+   "fieldname": "slack_message_template",
+   "fieldtype": "Small Text",
+   "label": "Message Template",
+   "description": "Optional. Leave blank for default."
+  },
+  {
+   "fieldname": "linear_section",
+   "fieldtype": "Section Break",
+   "label": "Linear"
+  },
+  {
+   "fieldname": "linear_api_key",
+   "fieldtype": "Password",
+   "label": "Linear API Key"
+  },
+  {
+   "default": "0",
+   "fieldname": "linear_post_comment",
+   "fieldtype": "Check",
+   "label": "Post Comment on Issue"
+  },
+  {
+   "fieldname": "github_section",
+   "fieldtype": "Section Break",
+   "label": "GitHub"
+  },
+  {
+   "fieldname": "github_token",
+   "fieldtype": "Password",
+   "label": "GitHub Token"
+  },
+  {
+   "fieldname": "github_default_repo",
+   "fieldtype": "Data",
+   "label": "Default Repo",
+   "description": "e.g. acmecorp/website"
+  },
+  {
+   "default": "0",
+   "fieldname": "github_post_comment",
+   "fieldtype": "Check",
+   "label": "Post Comment on Issue/PR"
+  }
+ ],
+ "index_web_pages_for_search": 0,
+ "issingle": 1,
+ "links": [],
+ "modified": "2026-03-11 00:00:00.000000",
+ "modified_by": "Administrator",
+ "module": "Watch",
+ "name": "FT Settings",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 0,
+   "email": 0,
+   "export": 0,
+   "print": 0,
+   "read": 1,
+   "report": 0,
+   "role": "System Manager",
+   "share": 0,
+   "write": 1
+  }
+ ],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "track_changes": 1
+}

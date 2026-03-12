@@ -1,0 +1,233 @@
+source,translation
+"Billed as {0}","Abgerechnet als {0}"
+"exact — rounding skipped","exakt — Rundung übersprungen"
+"Use exact","Genau abrechnen"
+"Apply rounding","Rundung anwenden"
+Exact,Exakt
+Billed,Abgerechnet
+"* Rounded up to nearest increment","* Aufgerundet auf nächstes Intervall"
+billable,Abrechenbar
+non-billable,Nicht abrechenbar
+internal,Intern
+on_save,Beim Speichern
+manual,Manuell
+scheduled,Geplant
+hourly,Stündlich
+every_6_hours,Alle 6 Stunden
+daily,Täglich
+stopped,Gestoppt
+running,Läuft
+paused,Pausiert
+Add a note...,Notiz hinzufügen...
+Add entry for yesterday,Eintrag für gestern hinzufügen
+Add your first entry,Ersten Eintrag hinzufügen
+Archive,Archivieren
+Auto-stop Timer After,Timer automatisch stoppen nach
+Billable,Abrechenbar
+"Billable {0}","Abrechenbar {0}"
+Cancel,Abbrechen
+"Cannot delete tag — {0} entries use it.","Etikett kann nicht gelöscht werden – {0} Einträge verwenden es."
+Category,Kategorie
+Client,Kunde
+Color,Farbe
+"Connection Failed",Verbindung fehlgeschlagen
+"Connection OK",Verbindung OK
+"Custom…","Benutzerdefiniert…"
+Daily,Täglich
+"Daily view",Tagesansicht
+"Date range",Zeitraum
+days,Tage
+Default Entry Type,Standard-Eintragstyp
+Default Rate,Standard-Stundensatz
+"Default activity type",Standard-Aktivitätstyp
+Delete,Löschen
+Description,Beschreibung
+Dismiss,Schließen
+Do you want to sync all unsynced time entries to ERPNext now?,Alle nicht synchronisierten Zeiteinträge jetzt mit ERPNext synchronisieren?
+Duplicate,Duplizieren
+Duration,Dauer
+Edit,Bearbeiten
+Enable ERPNext bridge,ERPNext-Brücke aktivieren
+End time,Endzeit
+"Entries forwarded",Einträge übermittelt
+"Entries older than {0} days are locked. Contact your administrator.","Einträge älter als {0} Tage sind gesperrt. Bitte wende dich an den Administrator."
+ERPNext Bridge,ERPNext-Brücke
+"ERPNext is not installed on this site.",ERPNext ist auf dieser Website nicht installiert.
+"ERPNext is reachable and Timesheet access is confirmed.",ERPNext ist erreichbar und der Stundenzettelzugriff wurde bestätigt.
+"ERPNext site URL",ERPNext-Site-URL
+"ERPNext Timesheet {0} for {1} is submitted — re-sync blocked.","ERPNext-Stundenzettel {0} für {1} ist eingereicht – erneute Synchronisierung nicht möglich."
+"ERPNext Timesheet is submitted — re-sync blocked","ERPNext-Stundenzettel ist eingereicht – erneute Synchronisierung nicht möglich"
+"Est. {0}","Gesch. {0}"
+"Est. amount",Betrag
+"Every 6 hours","Alle 6 Stunden"
+"All time","Gesamter Zeitraum"
+"This year","Dieses Jahr"
+"Last year","Letztes Jahr"
+"Download CSV","CSV herunterladen"
+"Export my data","Meine Daten exportieren"
+"Download all your time entries as CSV.","Lade alle deine Zeiteinträge als CSV herunter."
+"Export CSV","CSV exportieren"
+"Export successful","Export erfolgreich"
+"Failed to forward entries: {0}","Übermittlung fehlgeschlagen: {0}"
+"FT Settings","FT-Einstellungen"
+"FT Tag","FT-Etikett"
+"FT Time Entry","FT-Zeiteintrag"
+"FT Time Entry Tag","FT-Zeiteintrag-Etikett"
+"FT Timer","FT-Timer"
+"Forwarded {0} to {1}","{0} an {1} übermittelt"
+From,Von
+General,Allgemein
+Hourly,Stündlich
+hours,Stunden
+"Hide weekends","Wochenenden ausblenden"
+Internal,Intern
+"Internal / overhead","Intern / Overhead"
+"Last bulk sync","Letzte Massensynchronisierung"
+"Last month","Letzter Monat"
+"Last sync error","Letzter Synchronisierungsfehler"
+"Last week","Letzte Woche"
+Less,Weniger
+"Lock Entries Older Than","Einträge sperren älter als"
+Manual,Manuell
+"Map project tags","Projekt-Etiketten zuordnen"
+Merge,Zusammenführen
+"Merge {0} into:","{0} zusammenführen mit:"
+Mon,Mo
+More,Mehr
+Navigate,Navigation
+"New Tag","Neues Etikett"
+"No entries for {0}","Keine Einträge für {0}"
+"No entries yet","Noch keine Einträge"
+"No tags yet","Noch keine Etiketten"
+"No timer is running","Kein Timer aktiv"
+"Non-billable","Nicht abrechenbar"
+"(no description)","(keine Beschreibung)"
+"(not billed)","(nicht abgerechnet)"
+"Nothing logged yesterday ({0})","Gestern ({0}) nichts eingetragen"
+"Open prepare summary","Vorbereitung öffnen"
+"Open settings","Einstellungen öffnen"
+"Open tag management","Etikettenverwaltung öffnen"
+"Open today's view","Heutige Ansicht öffnen"
+"Open weekly view","Wochenansicht öffnen"
+Other,Sonstige
+Pause,Pausieren
+Prepare,Vorbereitung
+"Prepare Summary",Vorbereitung
+Project,Projekt
+Rate,Stundensatz
+Rename,Umbenennen
+Resume,Fortsetzen
+"Saved — {0}","Gespeichert — {0}"
+Save,Speichern
+Sat,Sa
+Scheduled,Geplant
+Send,Senden
+Settings,Einstellungen
+"Show weekends","Wochenenden anzeigen"
+"Start time",Startzeit
+"Start Timer","Timer starten"
+"Start timer: ""{0}""","Timer starten: „{0}""
+Stop,Stoppen
+"Stop & Save","Stoppen & Speichern"
+"Stop current & start: ""{0}""","Aktuellen stoppen & starten: „{0}""
+"Stop it & start new","Stoppen & neu starten"
+"Started yesterday","Gestern gestartet"
+Sun,So
+"Sync all unsynced entries","Alle nicht synchronisierten Einträge synchronisieren"
+"Sync billable entries only","Nur abrechenbare Einträge synchronisieren"
+"Sync completed with errors","Synchronisierung mit Fehlern abgeschlossen"
+"Sync complete","Synchronisierung abgeschlossen"
+"Sync interval","Synchronisierungsintervall"
+"Sync mode","Synchronisierungsmodus"
+"Synced to ERPNext","Mit ERPNext synchronisiert"
+"Syncing entries to ERPNext…","Einträge werden mit ERPNext synchronisiert…"
+"{0} day(s) synced.","{0} Tag(e) synchronisiert."
+Tag,Etikett
+"Tag management","Etikettenverwaltung"
+"Tag Name",Bezeichnung
+"Tag renamed. {0} entries updated.","Etikett umbenannt. {0} Einträge aktualisiert."
+Tags,Etiketten
+"Tags merged. {0} entries re-tagged.","Etiketten zusammengeführt. {0} Einträge neu zugewiesen."
+Task,Aufgabe
+"Test connection","Verbindung testen"
+"Test Connection","Verbindung testen"
+"This entry is locked","Dieser Eintrag ist gesperrt"
+"This month","Dieser Monat"
+"This week","Diese Woche"
+Thu,Do
+"Time Bridge","Zeit-Brücke"
+"Time Entries","Zeiteinträge"
+"Timer already running","Timer läuft bereits"
+"Timer is already running","Der Timer läuft bereits"
+"Timer is not paused","Timer ist nicht pausiert"
+"Timer is not running","Timer läuft nicht"
+To,Bis
+Today,Heute
+Total,Gesamt
+"Total billable","Gesamt abrechenbar"
+Tue,Di
+"Unknown error","Unbekannter Fehler"
+"Unassigned","Nicht zugewiesen"
+"(untagged project)","(kein Projekt)"
+"View entry →","Eintrag ansehen →"
+"Warning: This entry is more than 7 days old.","Hinweis: Dieser Eintrag ist älter als 7 Tage."
+Wed,Mi
+"Week {0}","Woche {0}"
+"What are you working on?","Woran arbeitest du?"
+"What did you work on?","Woran hast du gearbeitet?"
+"Work Days",Arbeitstage
+Yesterday,Gestern
+draft,Entwurf
+"entries this month","Einträge diesen Monat"
+"no entries","keine Einträge"
+"no entries yet","noch keine Einträge"
+sent,Übermittelt
+"+{0} more","+{0} weitere"
+"← from {0}","← von {0}"
+"[Auto-stopped after {0}h]","[Automatisch gestoppt nach {0} Std.]"
+"Entry Type",Eintragstyp
+Fri,Fr
+"Keyboard Shortcuts",Tastaturkürzel
+"Start / Pause / Resume timer","Timer starten / pausieren / fortsetzen"
+"Stop timer","Timer stoppen"
+"New entry (focus quick-add bar)","Neuer Eintrag (Schnellerfassung fokussieren)"
+"Previous / next day or week","Vorheriger / nächster Tag oder Woche"
+"Show / hide this overlay","Diese Übersicht anzeigen / ausblenden"
+"Press H or Esc to close","H oder Esc drücken zum Schließen"
+Close,Schließen
+Timer,Timer
+Entries,Einträge
+"This week at a glance","Diese Woche im Überblick"
+"Time by tag","Zeit nach Etikett"
+"Hours per day","Stunden pro Tag"
+"No entries this week","Keine Einträge diese Woche"
+"No entries","Keine Einträge"
+Untagged,Ohne Etikett
+"Monthly Budget (h)","Monatsbudget (Std.)"
+"Warn at (%)","Warnen ab (%)"
+"0 = no limit","0 = kein Limit"
+"0 = site default","0 = Website-Standard"
+"Approaching limit","Limit in Sichtweite"
+"Budget exceeded","Budget überschritten"
+"budget used this month","diesen Monat verbraucht"
+"used this month","diesen Monat verbraucht"
+"of","von"
+Focus,Fokus
+"Start Focus","Fokus starten"
+"End focus","Fokus beenden"
+"Skip break","Pause überspringen"
+"Break over","Pause vorbei"
+"Time to focus!","Zeit zum Fokussieren!"
+"Session complete","Sitzung abgeschlossen"
+"Focus complete!","Fokus abgeschlossen!"
+"All sessions done. Great work!","Alle Sitzungen erledigt. Gute Arbeit!"
+"sessions done. Great work!","Sitzungen erledigt. Gute Arbeit!"
+"Start new","Neu starten"
+"Work in focused sessions with timed breaks.","Arbeite in fokussierten Sitzungen mit Zeittakten."
+Session,Sitzung
+Break,Pause
+"Work (min)","Arbeit (Min)"
+"Break (min)","Pause (Min)"
+Sessions,Sitzungen
+"No break is active","Keine Pause aktiv"
+"No focus session is running","Keine Fokus-Sitzung aktiv"

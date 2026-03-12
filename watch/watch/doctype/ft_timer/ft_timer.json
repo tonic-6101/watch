@@ -1,0 +1,162 @@
+{
+ "actions": [],
+ "autoname": "field:user",
+ "creation": "2026-03-11 00:00:00.000000",
+ "doctype": "DocType",
+ "engine": "InnoDB",
+ "field_order": [
+  "user",
+  "state",
+  "active_entry",
+  "started_at",
+  "paused_at",
+  "accumulated_seconds",
+  "description",
+  "pomodoro_section",
+  "focus_mode",
+  "focus_phase",
+  "focus_session_number",
+  "focus_total_sessions",
+  "col_break_focus",
+  "focus_work_minutes",
+  "focus_break_minutes",
+  "focus_description"
+ ],
+ "fields": [
+  {
+   "fieldname": "user",
+   "fieldtype": "Link",
+   "label": "User",
+   "options": "User",
+   "reqd": 1,
+   "unique": 1
+  },
+  {
+   "default": "stopped",
+   "fieldname": "state",
+   "fieldtype": "Select",
+   "in_list_view": 1,
+   "label": "State",
+   "options": "stopped\nrunning\npaused",
+   "reqd": 1
+  },
+  {
+   "fieldname": "active_entry",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "Active Entry",
+   "options": "FT Time Entry"
+  },
+  {
+   "fieldname": "started_at",
+   "fieldtype": "Datetime",
+   "label": "Started At"
+  },
+  {
+   "fieldname": "paused_at",
+   "fieldtype": "Datetime",
+   "label": "Paused At"
+  },
+  {
+   "default": "0",
+   "fieldname": "accumulated_seconds",
+   "fieldtype": "Int",
+   "label": "Accumulated Seconds"
+  },
+  {
+   "fieldname": "description",
+   "fieldtype": "Small Text",
+   "label": "Description"
+  },
+  {
+   "collapsible": 1,
+   "fieldname": "pomodoro_section",
+   "fieldtype": "Section Break",
+   "label": "Pomodoro"
+  },
+  {
+   "default": "0",
+   "fieldname": "focus_mode",
+   "fieldtype": "Check",
+   "label": "Focus Mode"
+  },
+  {
+   "default": "work",
+   "fieldname": "focus_phase",
+   "fieldtype": "Select",
+   "label": "Focus Phase",
+   "options": "work\nbreak"
+  },
+  {
+   "default": "1",
+   "fieldname": "focus_session_number",
+   "fieldtype": "Int",
+   "label": "Session Number"
+  },
+  {
+   "default": "4",
+   "fieldname": "focus_total_sessions",
+   "fieldtype": "Int",
+   "label": "Total Sessions"
+  },
+  {
+   "fieldname": "col_break_focus",
+   "fieldtype": "Column Break"
+  },
+  {
+   "default": "25",
+   "fieldname": "focus_work_minutes",
+   "fieldtype": "Int",
+   "label": "Work Minutes"
+  },
+  {
+   "default": "5",
+   "fieldname": "focus_break_minutes",
+   "fieldtype": "Int",
+   "label": "Break Minutes"
+  },
+  {
+   "fieldname": "focus_description",
+   "fieldtype": "Small Text",
+   "label": "Focus Description"
+  }
+ ],
+ "index_web_pages_for_search": 0,
+ "links": [],
+ "modified": "2026-03-11 00:00:00.000000",
+ "modified_by": "Administrator",
+ "module": "Watch",
+ "name": "FT Timer",
+ "naming_rule": "By fieldname",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 0,
+   "export": 0,
+   "print": 0,
+   "read": 1,
+   "report": 0,
+   "role": "System Manager",
+   "share": 0,
+   "write": 1
+  },
+  {
+   "create": 1,
+   "delete": 0,
+   "email": 0,
+   "export": 0,
+   "if_owner": 1,
+   "print": 0,
+   "read": 1,
+   "report": 0,
+   "role": "All",
+   "share": 0,
+   "write": 1
+  }
+ ],
+ "sort_field": "user",
+ "sort_order": "ASC",
+ "track_changes": 0
+}

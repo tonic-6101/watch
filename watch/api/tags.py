@@ -1,0 +1,360 @@
+# SPDX-License-Identifier: AGPL-3.0-or-later
+# Copyright (C) 2024-2026 Tonic
+
+import frappe
+from frappe import _
+
+
+@frappe.whitelist()
+def get_tags(
+	search: str = None,
+	category: str = None,
+	include_archived: bool = False,
+	include_stats: bool = False,
+) -> list:
+	"""Return tags, optionally filtered. Excludes archived by default."""
+	filters = {}
+	if category:
+		filters["category"] = category
+	if not include_archived:
+		filters["is_archived"] = 0
+
+	tags = frappe.get_all(
+		"FT Tag",
+		filters=filters,
+		fields=[
+			"name", "tag_name", "category", "color",
+			"default_entry_type", "default_entry_rate", "is_archived",
+			"monthly_hour_budget", "budget_warning_threshold",
+		],
+		order_by="tag_name asc",
+	)
+
+	if search:
+		search_lower = search.lower()
+		tags = [t for t in tags if search_lower in t.tag_name.lower()]
+
+	if include_stats and tags:
+		tag_names = [t.name for t in tags]
+		placeholders = ", ".join(["%s"] * len(tag_names))
+
+		counts = frappe.db.sql(
+			f"""
+			SELECT tag, COUNT(*) AS entry_count
+			FROM `tabFT Time Entry Tag`
+			WHERE tag IN ({placeholders})
+			GROUP BY tag
+			""",
+			tag_names,
+			as_dict=True,
+		)
+		count_map = {r.tag: r.entry_count for r in counts}
+
+		last_used_rows = frappe.db.sql(
+			f"""
+			SELECT tet.tag, MAX(te.date) AS last_used
+			FROM `tabFT Time Entry Tag` tet
+			JOIN `tabFT Time Entry` te ON te.name = tet.parent
+			WHERE tet.tag IN ({placeholders})
+			GROUP BY tet.tag
+			""",
+			tag_names,
+			as_dict=True,
+		)
+		last_used_map = {r.tag: str(r.last_used) if r.last_used else None for r in last_used_rows}
+
+		for t in tags:
+			t["entry_count"] = count_map.get(t.name, 0)
+			t["last_used"] = last_used_map.get(t.name)
+
+	return tags
+
+
+@frappe.whitelist()
+def create_tag(
+	tag_name: str,
+	category: str = None,
+	color: str = None,
+	default_entry_type: str = None,
+	default_entry_rate: float = None,
+) -> dict:
+	if frappe.db.exists("FT Tag", tag_name):
+		frappe.throw(_("Tag '{0}' already exists").format(tag_name))
+
+	tag = frappe.new_doc("FT Tag")
+	tag.tag_name = tag_name
+	if category:
+		tag.category = category
+	if color:
+		tag.color = color
+	if default_entry_type:
+		tag.default_entry_type = default_entry_type
+	if default_entry_rate is not None:
+		tag.default_entry_rate = default_entry_rate
+	tag.insert(ignore_permissions=True)
+	return tag.as_dict()
+
+
+@frappe.whitelist()
+def update_tag(
+	tag_name: str,
+	category: str = None,
+	color: str = None,
+	default_entry_type: str = None,
+	default_entry_rate: float = None,
+	rounding_rule: str = None,
+	monthly_hour_budget: float = None,
+	budget_warning_threshold: int = None,
+) -> dict:
+	tag = frappe.get_doc("FT Tag", tag_name)
+	if category is not None:
+		tag.category = category
+	if color is not None:
+		tag.color = color
+	if default_entry_type is not None:
+		tag.default_entry_type = default_entry_type
+	if default_entry_rate is not None:
+		tag.default_entry_rate = default_entry_rate
+	if rounding_rule is not None:
+		tag.rounding_rule = rounding_rule
+	if monthly_hour_budget is not None:
+		tag.monthly_hour_budget = monthly_hour_budget
+	if budget_warning_threshold is not None:
+		tag.budget_warning_threshold = budget_warning_threshold
+	tag.save(ignore_permissions=True)
+	return tag.as_dict()
+
+
+@frappe.whitelist()
+def rename_tag(tag_name: str, new_name: str) -> dict:
+	"""Rename a tag and re-fetch denormalised fields on all child rows."""
+	if not new_name or not new_name.strip():
+		frappe.throw(_("New name cannot be empty"))
+	new_name = new_name.strip()
+	if new_name == tag_name:
+		return frappe.get_doc("FT Tag", tag_name).as_dict()
+	if frappe.db.exists("FT Tag", new_name):
+		frappe.throw(_("Tag '{0}' already exists").format(new_name))
+
+	# frappe.rename_doc handles the DB rename and updates Link fields
+	frappe.rename_doc("FT Tag", tag_name, new_name, ignore_permissions=True)
+
+	# Re-fetch denormalised fields on child rows
+	frappe.db.sql(
+		"""
+		UPDATE `tabFT Time Entry Tag`
+		SET tag_name = %s
+		WHERE tag = %s
+		""",
+		(new_name, new_name),
+	)
+
+	return frappe.get_doc("FT Tag", new_name).as_dict()
+
+
+@frappe.whitelist()
+def merge_tag(source: str, target: str) -> dict:
+	"""
+	Re-tag all entries: add target tag to entries that have source but not target,
+	then archive source. Irreversible.
+	"""
+	if source == target:
+		frappe.throw(_("Source and target must be different"))
+	if not frappe.db.exists("FT Tag", source):
+		frappe.throw(_("Source tag '{0}' not found").format(source))
+	if not frappe.db.exists("FT Tag", target):
+		frappe.throw(_("Target tag '{0}' not found").format(target))
+
+	# Find entries that have source but not target
+	source_entries = frappe.db.sql(
+		"""
+		SELECT DISTINCT parent FROM `tabFT Time Entry Tag`
+		WHERE tag = %s
+		""",
+		source,
+		as_dict=True,
+	)
+	target_entries = set(
+		frappe.db.sql(
+			"""
+			SELECT DISTINCT parent FROM `tabFT Time Entry Tag`
+			WHERE tag = %s
+			""",
+			target,
+			as_list=True,
+		) or []
+	)
+	target_entries = {r[0] for r in target_entries}
+
+	target_tag = frappe.get_doc("FT Tag", target)
+	affected = 0
+
+	for row in source_entries:
+		entry_name = row.parent
+		if entry_name not in target_entries:
+			# Add target tag to this entry
+			entry = frappe.get_doc("FT Time Entry", entry_name)
+			entry.append("tags", {
+				"tag": target,
+				"tag_name": target_tag.tag_name,
+				"tag_color": target_tag.color,
+				"tag_category": target_tag.category,
+			})
+			entry.save(ignore_permissions=True)
+			affected += 1
+
+	# Archive source
+	frappe.db.set_value("FT Tag", source, "is_archived", 1)
+
+	return {"merged": source, "into": target, "entries_updated": affected}
+
+
+@frappe.whitelist()
+def archive_tag(tag_name: str, archive: bool = True) -> dict:
+	"""Archive or unarchive a tag."""
+	frappe.db.set_value("FT Tag", tag_name, "is_archived", 1 if archive else 0)
+	return frappe.get_doc("FT Tag", tag_name).as_dict()
+
+
+@frappe.whitelist()
+def delete_tag(tag_name: str) -> dict:
+	in_use = frappe.db.count("FT Time Entry Tag", {"tag": tag_name})
+	if in_use:
+		frappe.throw(
+			_("Tag '{0}' is used in {1} entries. Archive it instead of deleting.").format(
+				tag_name, in_use
+			)
+		)
+	frappe.delete_doc("FT Tag", tag_name, ignore_permissions=True)
+	return {"deleted": tag_name}
+
+
+@frappe.whitelist()
+def get_tag_stats(tag_name: str) -> dict:
+	"""Return entry count and last-used date for a single tag."""
+	entry_count = frappe.db.count("FT Time Entry Tag", {"tag": tag_name})
+	last_used = frappe.db.sql(
+		"""
+		SELECT MAX(te.date)
+		FROM `tabFT Time Entry Tag` tet
+		JOIN `tabFT Time Entry` te ON te.name = tet.parent
+		WHERE tet.tag = %s
+		""",
+		tag_name,
+	)
+	return {
+		"tag_name": tag_name,
+		"entry_count": entry_count,
+		"last_used": str(last_used[0][0]) if last_used and last_used[0][0] else None,
+	}
+
+
+@frappe.whitelist()
+def search_tags(query: str = None) -> list:
+	"""Autocomplete search — returns tag_name + metadata for chip input."""
+	return get_tags(search=query)
+
+
+# ── Budget ────────────────────────────────────────────────────────────────────
+
+
+def _budget_status(used: float, budget: float, threshold_pct: int) -> dict:
+	status = "none"
+	if budget > 0:
+		pct = (used / budget) * 100
+		if pct >= 100:
+			status = "exceeded"
+		elif pct >= threshold_pct:
+			status = "approaching"
+	return {
+		"used":          round(used, 4),
+		"budget":        budget,
+		"pct":           round(used / budget * 100, 1) if budget > 0 else None,
+		"status":        status,
+		"threshold_pct": threshold_pct,
+	}
+
+
+@frappe.whitelist()
+def get_budget_usage(tag_name: str, month: str = None) -> dict:
+	"""
+	Return budget usage for a tag in a given month (YYYY-MM, default: current).
+	Budget is site-wide — all users' hours count.
+	"""
+	if not month:
+		month = frappe.utils.today()[:7]
+
+	month_start = f"{month}-01"
+	month_end   = str(frappe.utils.get_last_day(month_start))
+
+	result = frappe.db.sql(
+		"""
+		SELECT COALESCE(SUM(e.duration_hours), 0) AS total_hours
+		FROM `tabFT Time Entry` e
+		JOIN `tabFT Time Entry Tag` et ON et.parent = e.name
+		WHERE et.tag = %(tag)s
+		  AND e.date BETWEEN %(start)s AND %(end)s
+		  AND e.is_running = 0
+		""",
+		{"tag": tag_name, "start": month_start, "end": month_end},
+		as_dict=True,
+	)
+
+	used     = float(result[0].total_hours) if result else 0.0
+	tag      = frappe.get_cached_doc("FT Tag", tag_name)
+	budget   = float(tag.monthly_hour_budget or 0)
+	settings = frappe.get_single("FT Settings")
+	threshold_pct = int(tag.budget_warning_threshold or settings.budget_warning_threshold or 80)
+
+	return _budget_status(used, budget, threshold_pct)
+
+
+@frappe.whitelist()
+def get_all_budgets(month: str = None) -> dict:
+	"""
+	Return budget status for all tags that have monthly_hour_budget > 0.
+	Keyed by tag name (FT Tag.name). Used by the tag management page.
+	"""
+	if not month:
+		month = frappe.utils.today()[:7]
+
+	month_start = f"{month}-01"
+	month_end   = str(frappe.utils.get_last_day(month_start))
+
+	budget_tags = frappe.get_all(
+		"FT Tag",
+		filters={"monthly_hour_budget": [">", 0]},
+		fields=["name", "monthly_hour_budget", "budget_warning_threshold"],
+	)
+	if not budget_tags:
+		return {}
+
+	tag_names    = [t.name for t in budget_tags]
+	placeholders = ", ".join(["%s"] * len(tag_names))
+
+	usage_rows = frappe.db.sql(
+		f"""
+		SELECT et.tag, COALESCE(SUM(e.duration_hours), 0) AS total_hours
+		FROM `tabFT Time Entry` e
+		JOIN `tabFT Time Entry Tag` et ON et.parent = e.name
+		WHERE et.tag IN ({placeholders})
+		  AND e.date BETWEEN %s AND %s
+		  AND e.is_running = 0
+		GROUP BY et.tag
+		""",
+		tag_names + [month_start, month_end],
+		as_dict=True,
+	)
+	usage_map = {r.tag: float(r.total_hours) for r in usage_rows}
+
+	settings      = frappe.get_single("FT Settings")
+	site_threshold = int(settings.budget_warning_threshold or 80)
+
+	result = {}
+	for t in budget_tags:
+		used          = usage_map.get(t.name, 0.0)
+		budget        = float(t.monthly_hour_budget or 0)
+		threshold_pct = int(t.budget_warning_threshold or site_threshold)
+		result[t.name] = _budget_status(used, budget, threshold_pct)
+
+	return result

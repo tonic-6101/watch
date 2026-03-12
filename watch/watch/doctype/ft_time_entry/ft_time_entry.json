@@ -1,0 +1,230 @@
+{
+ "actions": [],
+ "autoname": "format:TE-{YYYY}-{######}",
+ "creation": "2026-03-11 00:00:00.000000",
+ "doctype": "DocType",
+ "engine": "InnoDB",
+ "field_order": [
+  "date",
+  "user",
+  "is_running",
+  "time_section",
+  "start_time",
+  "end_time",
+  "col_break_time",
+  "duration_hours",
+  "timer_started_at",
+  "description_section",
+  "description",
+  "tags",
+  "entry_section",
+  "entry_type",
+  "entry_status",
+  "col_break_entry",
+  "entry_rate",
+  "entry_amount",
+  "entry_rounding_override",
+  "erpnext_section",
+  "erpnext_synced",
+  "erpnext_timesheet",
+  "integrations_section",
+  "linear_issue",
+  "github_ref"
+ ],
+ "fields": [
+  {
+   "fieldname": "date",
+   "fieldtype": "Date",
+   "in_list_view": 1,
+   "label": "Date",
+   "reqd": 1
+  },
+  {
+   "fieldname": "user",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "User",
+   "options": "User",
+   "reqd": 1
+  },
+  {
+   "default": "0",
+   "fieldname": "is_running",
+   "fieldtype": "Check",
+   "label": "Timer Running",
+   "read_only": 1
+  },
+  {
+   "fieldname": "time_section",
+   "fieldtype": "Section Break",
+   "label": "Time"
+  },
+  {
+   "fieldname": "start_time",
+   "fieldtype": "Time",
+   "in_list_view": 1,
+   "label": "Start Time"
+  },
+  {
+   "fieldname": "end_time",
+   "fieldtype": "Time",
+   "label": "End Time"
+  },
+  {
+   "fieldname": "col_break_time",
+   "fieldtype": "Column Break"
+  },
+  {
+   "default": "0",
+   "fieldname": "duration_hours",
+   "fieldtype": "Float",
+   "in_list_view": 1,
+   "label": "Duration (hours)",
+   "precision": "4"
+  },
+  {
+   "fieldname": "timer_started_at",
+   "fieldtype": "Datetime",
+   "hidden": 1,
+   "label": "Timer Started At",
+   "read_only": 1
+  },
+  {
+   "fieldname": "description_section",
+   "fieldtype": "Section Break",
+   "label": "Details"
+  },
+  {
+   "fieldname": "description",
+   "fieldtype": "Small Text",
+   "in_list_view": 1,
+   "label": "Description"
+  },
+  {
+   "fieldname": "tags",
+   "fieldtype": "Table",
+   "label": "Tags",
+   "options": "FT Time Entry Tag"
+  },
+  {
+   "fieldname": "entry_section",
+   "fieldtype": "Section Break",
+   "label": "Entry"
+  },
+  {
+   "default": "billable",
+   "fieldname": "entry_type",
+   "fieldtype": "Select",
+   "in_list_view": 1,
+   "label": "Entry Type",
+   "options": "billable\nnon-billable\ninternal"
+  },
+  {
+   "default": "draft",
+   "fieldname": "entry_status",
+   "fieldtype": "Select",
+   "label": "Entry Status",
+   "options": "draft\nsent",
+   "read_only_depends_on": "eval:doc.entry_status === 'sent'"
+  },
+  {
+   "fieldname": "col_break_entry",
+   "fieldtype": "Column Break"
+  },
+  {
+   "default": "0",
+   "fieldname": "entry_rate",
+   "fieldtype": "Currency",
+   "label": "Entry Rate (per hour)"
+  },
+  {
+   "default": "0",
+   "fieldname": "entry_amount",
+   "fieldtype": "Currency",
+   "label": "Entry Amount",
+   "read_only": 1
+  },
+  {
+   "default": "0",
+   "fieldname": "entry_rounding_override",
+   "fieldtype": "Check",
+   "label": "Skip Rounding",
+   "description": "Bill exact duration, ignoring rounding rules."
+  },
+  {
+   "collapsible": 1,
+   "fieldname": "erpnext_section",
+   "fieldtype": "Section Break",
+   "label": "ERPNext"
+  },
+  {
+   "default": "0",
+   "fieldname": "erpnext_synced",
+   "fieldtype": "Check",
+   "label": "Synced to ERPNext",
+   "read_only": 1
+  },
+  {
+   "fieldname": "erpnext_timesheet",
+   "fieldtype": "Data",
+   "label": "ERPNext Timesheet",
+   "read_only": 1
+  },
+  {
+   "collapsible": 1,
+   "fieldname": "integrations_section",
+   "fieldtype": "Section Break",
+   "label": "Integrations",
+   "hidden": 1
+  },
+  {
+   "fieldname": "linear_issue",
+   "fieldtype": "Data",
+   "label": "Linear Issue",
+   "description": "e.g. ENG-123"
+  },
+  {
+   "fieldname": "github_ref",
+   "fieldtype": "Data",
+   "label": "GitHub Reference",
+   "description": "e.g. #42 or owner/repo#42"
+  }
+ ],
+ "index_web_pages_for_search": 0,
+ "links": [],
+ "modified": "2026-03-11 00:00:00.000000",
+ "modified_by": "Administrator",
+ "module": "Watch",
+ "name": "FT Time Entry",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 0,
+   "export": 1,
+   "print": 0,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 0,
+   "write": 1
+  },
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 0,
+   "export": 1,
+   "if_owner": 1,
+   "print": 0,
+   "read": 1,
+   "report": 1,
+   "role": "All",
+   "share": 0,
+   "write": 1
+  }
+ ],
+ "sort_field": "date",
+ "sort_order": "DESC",
+ "track_changes": 1
+}
