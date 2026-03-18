@@ -16,7 +16,7 @@ class FTEntryTemplate(Document):
 		"""Auto-set user on insert; prevent changing owner after creation."""
 		if self.is_new():
 			self.user = frappe.session.user
-		elif self.user != frappe.session.user and not frappe.has_role("System Manager"):
+		elif self.user != frappe.session.user and "System Manager" not in frappe.get_roles():
 			frappe.throw(_("Not permitted"), frappe.PermissionError)
 
 	def _validate_sort_order(self):

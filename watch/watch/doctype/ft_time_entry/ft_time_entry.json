@@ -20,10 +20,6 @@
   "entry_section",
   "entry_type",
   "entry_status",
-  "col_break_entry",
-  "entry_rate",
-  "entry_amount",
-  "entry_rounding_override",
   "erpnext_section",
   "erpnext_synced",
   "erpnext_timesheet",
@@ -128,30 +124,6 @@
    "read_only_depends_on": "eval:doc.entry_status === 'sent'"
   },
   {
-   "fieldname": "col_break_entry",
-   "fieldtype": "Column Break"
-  },
-  {
-   "default": "0",
-   "fieldname": "entry_rate",
-   "fieldtype": "Currency",
-   "label": "Entry Rate (per hour)"
-  },
-  {
-   "default": "0",
-   "fieldname": "entry_amount",
-   "fieldtype": "Currency",
-   "label": "Entry Amount",
-   "read_only": 1
-  },
-  {
-   "default": "0",
-   "fieldname": "entry_rounding_override",
-   "fieldtype": "Check",
-   "label": "Skip Rounding",
-   "description": "Bill exact duration, ignoring rounding rules."
-  },
-  {
    "collapsible": 1,
    "fieldname": "erpnext_section",
    "fieldtype": "Section Break",
@@ -219,7 +191,7 @@
    "print": 0,
    "read": 1,
    "report": 1,
-   "role": "All",
+   "role": "Time Tracker",
    "share": 0,
    "write": 1
   }

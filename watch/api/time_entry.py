@@ -55,6 +55,20 @@ def _entry_to_dict(entry) -> dict:
 	return d
 
 
+def _serialize_entry(e: dict) -> dict:
+	"""Convert non-JSON-serializable values (date, timedelta) to strings."""
+	for key in ("date", "start_time", "end_time"):
+		val = e.get(key)
+		if isinstance(val, timedelta):
+			total = int(val.total_seconds())
+			h, remainder = divmod(total, 3600)
+			m, s = divmod(remainder, 60)
+			e[key] = f"{h:02d}:{m:02d}:{s:02d}"
+		elif isinstance(val, date):
+			e[key] = val.isoformat()
+	return e
+
+
 def _attach_tags(entries: list) -> list:
 	"""Attach tag_names and tag_meta to each entry dict from a get_all result."""
 	if not entries:
@@ -91,8 +105,7 @@ def create_entry(
 	end_time: str = None,
 	description: str = None,
 	entry_type: str = "billable",
-	entry_rate: float = None,
-	tags: list = None,
+	tags: str | list = None,
 	linear_issue: str = None,
 	github_ref: str = None,
 ) -> dict:
@@ -115,8 +128,8 @@ def create_entry(
 		entry.end_time = end_time
 	if duration_hours is not None:
 		entry.duration_hours = duration_hours
-	if entry_rate is not None:
-		entry.entry_rate = entry_rate
+		if not start_time and not end_time:
+			entry.flags.keep_duration = True
 
 	if linear_issue is not None:
 		entry.linear_issue = linear_issue
@@ -140,14 +153,13 @@ def update_entry(
 	duration_hours: float = None,
 	description: str = None,
 	entry_type: str = None,
-	entry_rate: float = None,
-	tags: list = None,
+	tags: str | list = None,
 	linear_issue: str = None,
 	github_ref: str = None,
 ) -> dict:
 	entry = frappe.get_doc("FT Time Entry", entry_name)
 
-	if entry.user != frappe.session.user and not frappe.has_role("System Manager"):
+	if entry.user != frappe.session.user and not "System Manager" in frappe.get_roles():
 		frappe.throw(_("Not permitted"), frappe.PermissionError)
 
 	if entry.entry_status == "sent":
@@ -164,12 +176,12 @@ def update_entry(
 		entry.end_time = end_time
 	if duration_hours is not None:
 		entry.duration_hours = duration_hours
+		if start_time is None and end_time is None:
+			entry.flags.keep_duration = True
 	if description is not None:
 		entry.description = description
 	if entry_type is not None:
 		entry.entry_type = entry_type
-	if entry_rate is not None:
-		entry.entry_rate = entry_rate
 	if linear_issue is not None:
 		entry.linear_issue = linear_issue
 	if github_ref is not None:
@@ -191,7 +203,7 @@ def update_entry(
 def delete_entry(entry_name: str) -> dict:
 	entry = frappe.get_doc("FT Time Entry", entry_name)
 
-	if entry.user != frappe.session.user and not frappe.has_role("System Manager"):
+	if entry.user != frappe.session.user and not "System Manager" in frappe.get_roles():
 		frappe.throw(_("Not permitted"), frappe.PermissionError)
 
 	if entry.is_running:
@@ -212,26 +224,16 @@ def get_daily_summary(date: str) -> dict:
 		filters={"user": user, "date": date},
 		fields=[
 			"name", "date", "start_time", "end_time", "duration_hours",
-			"description", "entry_type", "entry_status",
-			"entry_rate", "entry_amount", "entry_rounding_override", "is_running",
+			"description", "entry_type", "entry_status", "is_running",
 		],
 		order_by="start_time asc, creation asc",
 	)
 	entries = _attach_tags(entries)
-
-	from watch.utils.rounding import get_billing_duration
-	_settings = frappe.get_single("FT Settings")
-	for e in entries:
-		e["billing_duration_hours"] = get_billing_duration(e, _settings)
+	entries = [_serialize_entry(e) for e in entries]
 
 	total_hours = sum(e.get("duration_hours") or 0 for e in entries)
 	billable_hours = sum(
 		(e.get("duration_hours") or 0)
-		for e in entries
-		if e.get("entry_type") == "billable"
-	)
-	est_amount = sum(
-		(e.get("entry_amount") or 0)
 		for e in entries
 		if e.get("entry_type") == "billable"
 	)
@@ -241,7 +243,6 @@ def get_daily_summary(date: str) -> dict:
 		"entries": entries,
 		"total_hours": round(total_hours, 4),
 		"billable_hours": round(billable_hours, 4),
-		"est_amount": round(est_amount, 2),
 	}
 
 
@@ -284,8 +285,7 @@ def get_weekly_summary(week_start: str) -> dict:
 		},
 		fields=[
 			"name", "date", "start_time", "end_time", "duration_hours",
-			"description", "entry_type", "entry_status",
-			"entry_rate", "entry_amount", "is_running",
+			"description", "entry_type", "entry_status", "is_running",
 		],
 		order_by="date asc, start_time asc",
 	)
@@ -307,17 +307,11 @@ def get_weekly_summary(week_start: str) -> dict:
 			for e in day_entries
 			if e.get("entry_type") == "billable"
 		)
-		day_est = sum(
-			(e.get("entry_amount") or 0)
-			for e in day_entries
-			if e.get("entry_type") == "billable"
-		)
 		top, overflow = _top_tags(day_entries)
 		days.append({
 			"date": day_str,
 			"total_hours": round(day_total, 4),
 			"billable_hours": round(day_billable, 4),
-			"entry_amount": round(day_est, 2),
 			"entry_count": len(day_entries),
 			"top_tags": top,
 			"overflow_count": overflow,
@@ -325,7 +319,6 @@ def get_weekly_summary(week_start: str) -> dict:
 
 	total_hours = sum(d["total_hours"] for d in days)
 	billable_hours = sum(d["billable_hours"] for d in days)
-	est_amount = sum(d["entry_amount"] for d in days)
 
 	# Previous week total for the comparison bar
 	prev_monday = monday - timedelta(days=7)
@@ -352,7 +345,6 @@ def get_weekly_summary(week_start: str) -> dict:
 		"days": days,
 		"total_hours": round(total_hours, 4),
 		"billable_hours": round(billable_hours, 4),
-		"est_amount": round(est_amount, 2),
 		"prev_week_total_hours": prev_week_total,
 		"work_days": work_days,
 	}
@@ -398,7 +390,7 @@ def duplicate_entry(entry_name: str, target_date: str = None) -> dict:
 	"""
 	src = frappe.get_doc("FT Time Entry", entry_name)
 
-	if src.user != frappe.session.user and not frappe.has_role("System Manager"):
+	if src.user != frappe.session.user and not "System Manager" in frappe.get_roles():
 		frappe.throw(_("Not permitted"), frappe.PermissionError)
 
 	effective_date = target_date or frappe.utils.today()
@@ -410,14 +402,14 @@ def duplicate_entry(entry_name: str, target_date: str = None) -> dict:
 	new_entry.description = src.description
 	new_entry.duration_hours = src.duration_hours
 	new_entry.entry_type = src.entry_type
-	new_entry.entry_rate = src.entry_rate
-	new_entry.entry_rounding_override = src.entry_rounding_override
 	new_entry.is_running = 0
 
 	# Only copy time slots for same-day duplicates
 	if same_day:
 		new_entry.start_time = src.start_time
 		new_entry.end_time = src.end_time
+	else:
+		new_entry.flags.keep_duration = True
 
 	for tag_row in src.tags:
 		new_entry.append("tags", {"tag": tag_row.tag})
@@ -438,7 +430,7 @@ def bulk_duplicate(entry_names: list, target_date: str = None) -> dict:
 
 	for ename in entry_names:
 		src = frappe.get_doc("FT Time Entry", ename)
-		if src.user != user and not frappe.has_role("System Manager"):
+		if src.user != user and not "System Manager" in frappe.get_roles():
 			skipped += 1
 			continue
 		if src.is_running:
@@ -453,13 +445,13 @@ def bulk_duplicate(entry_names: list, target_date: str = None) -> dict:
 		new_entry.description = src.description
 		new_entry.duration_hours = src.duration_hours
 		new_entry.entry_type = src.entry_type
-		new_entry.entry_rate = src.entry_rate
-		new_entry.entry_rounding_override = src.entry_rounding_override
 		new_entry.is_running = 0
 
 		if same_day:
 			new_entry.start_time = src.start_time
 			new_entry.end_time = src.end_time
+		else:
+			new_entry.flags.keep_duration = True
 
 		for tag_row in src.tags:
 			new_entry.append("tags", {"tag": tag_row.tag})
@@ -589,17 +581,6 @@ def get_weekly_chart_data(week_start: str) -> dict:
 
 
 @frappe.whitelist()
-def set_rounding_override(entry_name: str, override: bool) -> dict:
-	"""Set entry_rounding_override on an entry and return the updated entry dict."""
-	entry = frappe.get_doc("FT Time Entry", entry_name)
-	if entry.user != frappe.session.user and not frappe.has_role("System Manager"):
-		frappe.throw(_("Not permitted"), frappe.PermissionError)
-	entry.entry_rounding_override = 1 if override else 0
-	entry.save(ignore_permissions=True)
-	return _entry_to_dict(entry)
-
-
-@frappe.whitelist()
 def export_csv(
 	from_date: str,
 	to_date: str,
@@ -627,15 +608,11 @@ def export_csv(
 		filters=filters,
 		fields=[
 			"name", "date", "start_time", "end_time",
-			"duration_hours", "entry_rounding_override",
-			"description", "entry_type", "entry_rate",
-			"entry_amount", "entry_status",
+			"duration_hours", "description", "entry_type",
+			"entry_status",
 		],
 		order_by="date asc, start_time asc",
 	)
-
-	from watch.utils.rounding import get_billing_duration
-	_settings = frappe.get_single("FT Settings")
 
 	rows = []
 	for entry in entries:
@@ -651,14 +628,6 @@ def export_csv(
 			continue
 
 		entry["tags"] = ";".join(tag_names)
-		entry["tag_names"] = tag_names  # needed by get_billing_duration
-		entry["entry_duration_hours"] = get_billing_duration(entry, _settings)
-
-		# Clear rate/amount for non-billable entries
-		if entry.get("entry_type") != "billable":
-			entry["entry_rate"] = ""
-			entry["entry_amount"] = ""
-
 		rows.append(entry)
 
 	output = io.StringIO()
@@ -666,9 +635,8 @@ def export_csv(
 		output,
 		fieldnames=[
 			"date", "start_time", "end_time",
-			"duration_hours", "entry_duration_hours",
-			"description", "tags", "entry_type",
-			"entry_rate", "entry_amount", "entry_status",
+			"duration_hours", "description", "tags",
+			"entry_type", "entry_status",
 		],
 		extrasaction="ignore",
 	)
@@ -697,7 +665,7 @@ def bulk_add_tag(entry_names: list, tag: str) -> dict:
 
 	for ename in entry_names:
 		entry = frappe.get_doc("FT Time Entry", ename)
-		if entry.user != user and not frappe.has_role("System Manager"):
+		if entry.user != user and not "System Manager" in frappe.get_roles():
 			skipped += 1
 			continue
 		if entry.entry_status == "sent" or _is_soft_locked(str(entry.date)):
@@ -727,7 +695,7 @@ def bulk_set_entry_type(entry_names: list, entry_type: str) -> dict:
 
 	for ename in entry_names:
 		entry = frappe.get_doc("FT Time Entry", ename)
-		if entry.user != user and not frappe.has_role("System Manager"):
+		if entry.user != user and not "System Manager" in frappe.get_roles():
 			skipped += 1
 			continue
 		if entry.entry_status == "sent" or _is_soft_locked(str(entry.date)):
@@ -735,31 +703,6 @@ def bulk_set_entry_type(entry_names: list, entry_type: str) -> dict:
 			continue
 
 		entry.entry_type = entry_type
-		entry.save(ignore_permissions=True)
-		updated += 1
-
-	return {"updated": updated, "skipped": skipped}
-
-
-@frappe.whitelist()
-def bulk_set_entry_rate(entry_names: list, entry_rate: float) -> dict:
-	"""Set entry_rate on multiple entries. Skips locked/sent entries."""
-	entry_names = _parse_json_list(entry_names)
-	entry_rate = float(entry_rate)
-	user = frappe.session.user
-	updated = 0
-	skipped = 0
-
-	for ename in entry_names:
-		entry = frappe.get_doc("FT Time Entry", ename)
-		if entry.user != user and not frappe.has_role("System Manager"):
-			skipped += 1
-			continue
-		if entry.entry_status == "sent" or _is_soft_locked(str(entry.date)):
-			skipped += 1
-			continue
-
-		entry.entry_rate = entry_rate
 		entry.save(ignore_permissions=True)
 		updated += 1
 
@@ -777,7 +720,7 @@ def bulk_delete(entry_names: list) -> dict:
 
 	for ename in entry_names:
 		entry = frappe.get_doc("FT Time Entry", ename)
-		if entry.user != user and not frappe.has_role("System Manager"):
+		if entry.user != user and not "System Manager" in frappe.get_roles():
 			skipped += 1
 			continue
 		if entry.is_running:

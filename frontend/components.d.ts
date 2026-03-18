@@ -8,15 +8,25 @@ export {}
 /* prettier-ignore */
 declare module 'vue' {
   export interface GlobalComponents {
+    ActiveTimerBanner: typeof import('./src/components/timer/ActiveTimerBanner.vue')['default']
+    DailyNudgeBanner: typeof import('./src/components/nudges/DailyNudgeBanner.vue')['default']
     EntryForm: typeof import('./src/components/entries/EntryForm.vue')['default']
     EntryRow: typeof import('./src/components/entries/EntryRow.vue')['default']
+    FocusWidget: typeof import('./src/components/timer/FocusWidget.vue')['default']
+    IdleBanner: typeof import('./src/components/nudges/IdleBanner.vue')['default']
     ManualEntryBar: typeof import('./src/components/entries/ManualEntryBar.vue')['default']
+    PreferencesPanel: typeof import('./src/components/PreferencesPanel.vue')['default']
     RouterLink: typeof import('vue-router')['RouterLink']
     RouterView: typeof import('vue-router')['RouterView']
+    ShortcutsOverlay: typeof import('./src/components/ShortcutsOverlay.vue')['default']
     TagInput: typeof import('./src/components/timer/TagInput.vue')['default']
+    TagRow: typeof import('./src/components/tags/TagRow.vue')['default']
     TimerWidget: typeof import('./src/components/timer/TimerWidget.vue')['default']
+    ToastContainer: typeof import('./src/components/ToastContainer.vue')['default']
     WatchAccountMenu: typeof import('./src/components/WatchAccountMenu.vue')['default']
     WatchNavbar: typeof import('./src/components/WatchNavbar.vue')['default']
     WatchSidebar: typeof import('./src/components/WatchSidebar.vue')['default']
+    WeeklyBarChart: typeof import('./src/components/WeeklyBarChart.vue')['default']
+    WeeklyDonut: typeof import('./src/components/WeeklyDonut.vue')['default']
   }
 }

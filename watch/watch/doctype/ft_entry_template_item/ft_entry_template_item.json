@@ -7,7 +7,6 @@
   "description",
   "billing_type",
   "col_break_item",
-  "billing_rate",
   "duration_hours"
  ],
  "fields": [
@@ -28,14 +27,6 @@
   {
    "fieldname": "col_break_item",
    "fieldtype": "Column Break"
-  },
-  {
-   "default": "0",
-   "fieldname": "billing_rate",
-   "fieldtype": "Currency",
-   "in_list_view": 1,
-   "label": "Billing Rate",
-   "description": "0 = inherit from tag or site default."
   },
   {
    "default": "0",

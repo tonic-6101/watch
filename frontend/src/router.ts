@@ -11,11 +11,11 @@ import Settings from './pages/Settings.vue'
 
 const routes: RouteRecordRaw[] = [
   // Daily view — default landing and specific date
-  { path: '/watch', component: DailyView },
+  { path: '/watch', component: DailyView, props: true },
   { path: '/watch/:date(\\d{4}-\\d{2}-\\d{2})', component: DailyView, props: true },
 
   // Weekly view
-  { path: '/watch/week', component: WeeklyView },
+  { path: '/watch/week', component: WeeklyView, props: true },
   { path: '/watch/week/:week', component: WeeklyView, props: true },
 
   // Prepare summary (keyboard shortcut B)

@@ -34,7 +34,6 @@ def _get_day_entries(user: str, date: str) -> list:
 		fields=[
 			"name", "date", "start_time", "end_time",
 			"duration_hours", "description", "entry_type",
-			"entry_rate", "entry_amount",
 		],
 		order_by="start_time asc",
 	)
@@ -109,8 +108,6 @@ def sync_day(date: str, user: str = None) -> dict:
 			"hours": entry.duration_hours or 0,
 			"description": entry.description or "",
 			"is_billable": 1 if entry.entry_type == "billable" else 0,
-			"billing_rate": entry.entry_rate or 0,
-			"billing_amount": entry.entry_amount or 0,
 		}
 		if settings.map_project_tags:
 			project, task = _resolve_project_tag(entry.name)

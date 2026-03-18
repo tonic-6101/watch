@@ -12,9 +12,6 @@
   "is_archived",
   "entry_section",
   "default_entry_type",
-  "default_entry_rate",
-  "rounding_section",
-  "rounding_rule",
   "budget_section",
   "monthly_hour_budget",
   "budget_warning_threshold"
@@ -57,24 +54,6 @@
    "fieldtype": "Select",
    "label": "Default Entry Type",
    "options": "\nbillable\nnon-billable\ninternal"
-  },
-  {
-   "default": "0",
-   "fieldname": "default_entry_rate",
-   "fieldtype": "Currency",
-   "label": "Default Entry Rate (per hour)"
-  },
-  {
-   "fieldname": "rounding_section",
-   "fieldtype": "Section Break",
-   "label": "Time Rounding"
-  },
-  {
-   "default": "none",
-   "fieldname": "rounding_rule",
-   "fieldtype": "Select",
-   "label": "Rounding Rule",
-   "options": "none\n6min\n10min\n15min\n30min\n60min"
   },
   {
    "fieldname": "budget_section",
@@ -125,7 +104,7 @@
    "print": 0,
    "read": 1,
    "report": 0,
-   "role": "All",
+   "role": "Time Tracker",
    "share": 0,
    "write": 1
   }

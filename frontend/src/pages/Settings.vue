@@ -12,7 +12,6 @@ import { useUserSettings } from '@/composables/useUserSettings'
 
 interface FTSettings {
   default_entry_type:       string
-  default_entry_rate:       number
   lock_entries_older_than:  number
   auto_stop_timer_after:    number
   work_mon: 0 | 1
@@ -22,7 +21,6 @@ interface FTSettings {
   work_fri: 0 | 1
   work_sat: 0 | 1
   work_sun: 0 | 1
-  rounding_rule:            string
   enable_erpnext_bridge:    0 | 1
   sync_mode:                string
   sync_interval:            string
@@ -132,12 +130,10 @@ async function handleSavePrefs() {
 
 const form = ref<FTSettings>({
   default_entry_type:      'billable',
-  default_entry_rate:      0,
   lock_entries_older_than: 0,
   auto_stop_timer_after:   8,
   work_mon: 1, work_tue: 1, work_wed: 1, work_thu: 1, work_fri: 1,
   work_sat: 0, work_sun: 0,
-  rounding_rule:           'none',
   enable_erpnext_bridge:   0,
   sync_mode:               'on_save',
   sync_interval:           '',
@@ -260,15 +256,6 @@ const ENTRY_TYPE_OPTIONS = [
   { value: 'billable',     label: 'Billable' },
   { value: 'non-billable', label: 'Non-billable' },
   { value: 'internal',     label: 'Internal' },
-]
-
-const ROUNDING_OPTIONS = [
-  { value: 'none',  label: 'None' },
-  { value: '6min',  label: '6 min' },
-  { value: '10min', label: '10 min' },
-  { value: '15min', label: '15 min' },
-  { value: '30min', label: '30 min' },
-  { value: '60min', label: '60 min' },
 ]
 
 const SYNC_MODE_OPTIONS = [
@@ -534,23 +521,6 @@ function downloadMyData() {
             </select>
           </div>
 
-          <!-- Default rate -->
-          <div class="px-4 py-3 flex items-center gap-4">
-            <div class="flex-1">
-              <div class="text-sm text-[var(--watch-text)]">{{ __('Default entry rate (per hour)') }}</div>
-              <div class="text-xs text-[var(--watch-text-muted)]">{{ __('Site-wide fallback — 0 = no fallback.') }}</div>
-            </div>
-            <input
-              v-model.number="form.default_entry_rate"
-              type="number"
-              min="0"
-              step="0.01"
-              class="w-28 px-2 py-1.5 rounded-lg border border-[var(--watch-border)] bg-[var(--watch-bg)]
-                     text-sm text-[var(--watch-text)] outline-none
-                     focus:ring-2 focus:ring-[var(--watch-primary)]/30 focus:border-[var(--watch-primary)]"
-            />
-          </div>
-
           <!-- Lock entries -->
           <div class="px-4 py-3 flex items-center gap-4">
             <div class="flex-1">
@@ -603,20 +573,6 @@ function downloadMyData() {
             </div>
           </div>
 
-          <!-- Rounding rule -->
-          <div class="px-4 py-3 flex items-center gap-4">
-            <label class="text-sm text-[var(--watch-text)] flex-1">{{ __('Site-wide rounding rule') }}</label>
-            <select
-              v-model="form.rounding_rule"
-              class="px-2 py-1.5 rounded-lg border border-[var(--watch-border)] bg-[var(--watch-bg)]
-                     text-sm text-[var(--watch-text)] outline-none
-                     focus:ring-2 focus:ring-[var(--watch-primary)]/30 focus:border-[var(--watch-primary)]"
-            >
-              <option v-for="opt in ROUNDING_OPTIONS" :key="opt.value" :value="opt.value">
-                {{ __(opt.label) }}
-              </option>
-            </select>
-          </div>
         </div>
 
         <!-- ── ERPNext Bridge ─────────────────────────────────────── -->

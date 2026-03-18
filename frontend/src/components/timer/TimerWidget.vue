@@ -3,18 +3,24 @@
   Copyright (C) 2024-2026 Tonic
 -->
 <script setup lang="ts">
-import { ref, computed, watch } from 'vue'
-import { Play, Pause, Square, Pencil, Check } from 'lucide-vue-next'
+import { ref, watch } from 'vue'
+import { Play, Pause, Square, Pencil } from 'lucide-vue-next'
 import { __ } from '@/composables/useTranslate'
 import { useTimer, formatElapsed, formatDuration, type EntryType } from '@/composables/useTimer'
+import { useToast } from '@/composables/useToast'
 import { formatHours } from '@/composables/useEntries'
 import TagInput from './TagInput.vue'
 import FocusWidget from './FocusWidget.vue'
 
-type View = 'start' | 'active' | 'stop' | 'edit' | 'conflict' | 'saved'
+type View = 'start' | 'active' | 'stop' | 'edit' | 'conflict'
 type Tab  = 'timer' | 'focus'
 
 const timer = useTimer()
+const toast = useToast()
+
+const emit = defineEmits<{
+  stopped: []
+}>()
 
 // ── Tab ──────────────────────────────────────────────────────────────────
 
@@ -48,8 +54,6 @@ const formDesc    = ref('')
 const formTags    = ref<string[]>([])
 const formType    = ref<EntryType>('billable')
 const stopNote    = ref('')
-const savedEntry  = ref<any>(null)
-const savedElapsed = ref(0)
 
 function openStart() {
   if (timer.isActive.value) {
@@ -91,13 +95,32 @@ async function handleOpenStop() {
 
 async function handleStop() {
   const result = await timer.stop(stopNote.value)
-  savedEntry.value   = result.entry
-  savedElapsed.value = result.entry._saved_elapsed ?? 0
-  view.value         = 'saved'
+  const entry = result.entry
+  const elapsed = entry._saved_elapsed ?? 0
+  const entryDate = entry.date ?? ''
+
+  // Reset to start form immediately
+  view.value = 'start'
+  emit('stopped')
+
+  // Show toast with duration and link to view entry
+  toast.show(
+    `${__('Timer saved')} — ${formatDuration(elapsed)}`,
+    {
+      action: {
+        label: __('View entry'),
+        handler: () => { window.location.href = `/watch/daily/${entryDate}` },
+      },
+      duration: 5000,
+    },
+  )
 }
 
 async function handleStopAndStartNew() {
-  await timer.stop('')
+  const result = await timer.stop('')
+  const elapsed = result.entry._saved_elapsed ?? 0
+  emit('stopped')
+  toast.show(`${__('Timer saved')} — ${formatDuration(elapsed)}`, { duration: 3000 })
   formDesc.value = ''
   formTags.value = []
   formType.value = 'billable'
@@ -153,9 +176,6 @@ const ENTRY_OPTIONS: { value: EntryType; label: string }[] = [
   { value: 'internal',     label: 'Internal' },
 ]
 
-const entryLink = computed(() =>
-  savedEntry.value ? `/watch/daily/${savedEntry.value.date ?? ''}` : '/watch'
-)
 </script>
 
 <template>
@@ -522,40 +542,6 @@ const entryLink = computed(() =>
           @click="handleStopAndStartNew"
         >
           {{ __('Stop it & start new') }}
-        </button>
-      </div>
-    </div>
-
-    <!-- ══════════════════════════════════════════════════════════════
-         SAVED — post-stop confirmation
-         ══════════════════════════════════════════════════════════════ -->
-    <div v-else-if="view === 'saved'">
-      <div class="flex items-center gap-2 mb-3">
-        <span class="flex items-center justify-center w-6 h-6 rounded-full bg-[var(--timer-running)]">
-          <Check class="w-3.5 h-3.5 text-white" aria-hidden="true" />
-        </span>
-        <span class="text-sm font-medium text-[var(--watch-text)]">
-          {{ __('Saved') }} — {{ formatDuration(savedElapsed) }}
-        </span>
-      </div>
-
-      <div class="flex gap-2">
-        <a
-          :href="entryLink"
-          class="flex-1 py-2 text-center rounded-lg border border-[var(--watch-border)]
-                 text-sm text-[var(--watch-text-secondary)] hover:bg-[var(--watch-bg-secondary)]
-                 no-underline transition-colors"
-        >
-          {{ __('View entry →') }}
-        </a>
-        <button
-          class="flex-1 flex items-center justify-center gap-2 py-2 rounded-lg
-                 bg-[var(--watch-primary)] hover:bg-[var(--watch-primary-dark)]
-                 text-white text-sm font-medium transition-colors"
-          @click="() => { view = 'start' }"
-        >
-          <Play class="w-4 h-4" aria-hidden="true" />
-          {{ __('New timer') }}
         </button>
       </div>
     </div>

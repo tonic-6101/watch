@@ -5,4 +5,11 @@ import frappe
 
 
 def after_uninstall():
-	pass
+	_remove_roles()
+
+
+def _remove_roles():
+	"""Remove the Time Tracker role created during install."""
+	if frappe.db.exists("Role", "Time Tracker"):
+		frappe.delete_doc("Role", "Time Tracker", force=True)
+		frappe.db.commit()

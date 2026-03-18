@@ -5,7 +5,6 @@
  "engine": "InnoDB",
  "field_order": [
   "default_entry_type",
-  "default_entry_rate",
   "col_break_general",
   "lock_entries_older_than",
   "auto_stop_timer_after",
@@ -20,8 +19,6 @@
   "nudge_section",
   "idle_threshold_minutes",
   "daily_nudge_after",
-  "rounding_section",
-  "rounding_rule",
   "budget_section",
   "budget_warning_threshold",
   "erpnext_section",
@@ -54,13 +51,6 @@
    "fieldtype": "Select",
    "label": "Default Entry Type",
    "options": "billable\nnon-billable\ninternal"
-  },
-  {
-   "default": "0",
-   "fieldname": "default_entry_rate",
-   "fieldtype": "Currency",
-   "label": "Default Entry Rate (per hour)",
-   "description": "Site-wide fallback. 0 = no fallback."
   },
   {
    "fieldname": "col_break_general",
@@ -145,18 +135,6 @@
    "fieldtype": "Time",
    "label": "Daily Nudge After",
    "description": "Show 'no entries yet' nudge after this time. Empty = disabled."
-  },
-  {
-   "fieldname": "rounding_section",
-   "fieldtype": "Section Break",
-   "label": "Time Rounding"
-  },
-  {
-   "default": "none",
-   "fieldname": "rounding_rule",
-   "fieldtype": "Select",
-   "label": "Site-Wide Rounding Rule",
-   "options": "none\n6min\n10min\n15min\n30min\n60min"
   },
   {
    "fieldname": "budget_section",

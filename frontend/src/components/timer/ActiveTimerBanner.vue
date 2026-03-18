@@ -1,0 +1,112 @@
+<!--
+  SPDX-License-Identifier: AGPL-3.0-or-later
+  Copyright (C) 2024-2026 Tonic
+-->
+<script setup lang="ts">
+import { Pause, Play, Square } from 'lucide-vue-next'
+import { __ } from '@/composables/useTranslate'
+import { useTimer, formatElapsed, formatDuration } from '@/composables/useTimer'
+import { useToast } from '@/composables/useToast'
+
+const emit = defineEmits<{
+  stopped: []
+}>()
+
+const timer = useTimer()
+const toast = useToast()
+
+async function handlePauseResume() {
+  if (timer.isRunning.value) {
+    await timer.pause()
+  } else {
+    await timer.resume()
+  }
+}
+
+async function handleStop() {
+  const result = await timer.stop('')
+  const elapsed = result.entry._saved_elapsed ?? 0
+  const entryDate = result.entry.date ?? ''
+  emit('stopped')
+  toast.show(
+    `${__('Timer saved')} — ${formatDuration(elapsed)}`,
+    {
+      action: {
+        label: __('View entry'),
+        handler: () => { window.location.href = `/watch/daily/${entryDate}` },
+      },
+      duration: 5000,
+    },
+  )
+}
+</script>
+
+<template>
+  <div
+    v-if="timer.isActive.value"
+    class="bg-[var(--watch-bg)] rounded-xl border border-[var(--watch-border)]
+           px-4 py-3 space-y-2"
+  >
+    <!-- Row 1: status dot + elapsed + description + tags -->
+    <div class="flex items-center gap-3 min-w-0">
+      <span
+        :class="[
+          'inline-block w-2.5 h-2.5 rounded-full shrink-0',
+          timer.isRunning.value
+            ? 'bg-green-500 animate-pulse'
+            : 'bg-[var(--watch-text-muted)]',
+        ]"
+        aria-hidden="true"
+      />
+
+      <span class="text-lg font-semibold text-[var(--watch-text)] tabular-nums font-mono shrink-0">
+        {{ formatElapsed(timer.elapsed.value) }}
+      </span>
+
+      <span
+        v-if="timer.description.value"
+        class="text-sm text-[var(--watch-text)] truncate min-w-0"
+      >
+        &ldquo;{{ timer.description.value }}&rdquo;
+      </span>
+
+      <div v-if="timer.tags.value.length" class="flex flex-wrap gap-1 shrink-0 ml-auto">
+        <span
+          v-for="tag in timer.tags.value"
+          :key="tag"
+          class="px-2 py-0.5 rounded-md text-xs font-medium
+                 bg-[var(--watch-primary)]/10 text-[var(--watch-primary)]"
+        >
+          {{ tag }}
+        </span>
+      </div>
+    </div>
+
+    <!-- Row 2: controls -->
+    <div class="flex items-center gap-2 pl-[22px]">
+      <button
+        type="button"
+        class="flex items-center gap-1.5 text-xs px-3 py-1.5 rounded-lg
+               border border-[var(--watch-border)]
+               text-[var(--watch-text)] hover:bg-[var(--watch-bg-secondary)]
+               transition-colors"
+        @click="handlePauseResume"
+      >
+        <Pause v-if="timer.isRunning.value" class="w-3.5 h-3.5" aria-hidden="true" />
+        <Play v-else class="w-3.5 h-3.5" aria-hidden="true" />
+        {{ timer.isRunning.value ? __('Pause') : __('Resume') }}
+      </button>
+
+      <button
+        type="button"
+        class="flex items-center gap-1.5 text-xs px-3 py-1.5 rounded-lg
+               bg-[var(--watch-primary)] text-white
+               hover:opacity-90 transition-opacity"
+        @click="handleStop"
+      >
+        <Square class="w-3.5 h-3.5" aria-hidden="true" />
+        {{ __('Stop') }}
+      </button>
+    </div>
+  </div>
+</template>

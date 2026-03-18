@@ -17,7 +17,6 @@ export interface TagData {
   category: string
   color: string | null
   default_entry_type: EntryType | null
-  default_entry_rate: number | null
   is_archived: number
   monthly_hour_budget?: number | null
   budget_warning_threshold?: number | null
@@ -38,7 +37,6 @@ export interface TagSaveParams {
   category: string
   color: string
   default_entry_type: string
-  default_entry_rate: number | ''
   monthly_hour_budget: number | ''
   budget_warning_threshold: number | ''
 }
@@ -68,7 +66,6 @@ const editName      = ref(props.tag.tag_name)
 const editCategory  = ref(props.tag.category ?? '')
 const editColor     = ref(props.tag.color ?? '')
 const editType      = ref(props.tag.default_entry_type ?? '')
-const editRate      = ref<number | ''>(props.tag.default_entry_rate || '')
 const editBudget    = ref<number | ''>(props.tag.monthly_hour_budget || '')
 const editThreshold = ref<number | ''>(props.tag.budget_warning_threshold || '')
 
@@ -77,7 +74,6 @@ function openEdit() {
   editCategory.value  = props.tag.category ?? ''
   editColor.value     = props.tag.color ?? ''
   editType.value      = props.tag.default_entry_type ?? ''
-  editRate.value      = props.tag.default_entry_rate || ''
   editBudget.value    = props.tag.monthly_hour_budget || ''
   editThreshold.value = props.tag.budget_warning_threshold || ''
   editing.value       = true
@@ -90,7 +86,6 @@ function handleSave() {
     category:               editCategory.value,
     color:                  editColor.value,
     default_entry_type:     editType.value,
-    default_entry_rate:     editRate.value,
     monthly_hour_budget:    editBudget.value,
     budget_warning_threshold: editThreshold.value,
   })
@@ -217,21 +212,6 @@ const budgetMonthLabel = computed(() => {
         </select>
       </div>
 
-      <!-- Default rate -->
-      <div class="flex flex-col gap-1 col-span-2">
-        <label class="text-xs text-[var(--watch-text-muted)]">{{ __('Default Rate / h') }}</label>
-        <input
-          v-model="editRate"
-          type="number"
-          min="0"
-          step="0.01"
-          placeholder="0.00"
-          class="px-2 py-1.5 rounded-lg border border-[var(--watch-border)]
-                 bg-[var(--watch-bg)] text-sm text-[var(--watch-text)] outline-none
-                 focus:ring-2 focus:ring-[var(--watch-primary)]/30 focus:border-[var(--watch-primary)]"
-        />
-      </div>
-
       <!-- Monthly budget -->
       <div class="flex flex-col gap-1">
         <label class="text-xs text-[var(--watch-text-muted)]">{{ __('Monthly Budget (h)') }}</label>
@@ -289,7 +269,7 @@ const budgetMonthLabel = computed(() => {
   <div
     v-else
     class="bg-[var(--watch-bg)] rounded-xl border border-[var(--watch-border)]
-           overflow-hidden transition-colors"
+           transition-colors"
     :class="{ 'opacity-60': tag.is_archived }"
   >
   <div class="px-4 py-3 flex items-center gap-3">
@@ -324,11 +304,6 @@ const budgetMonthLabel = computed(() => {
     <!-- Category -->
     <span class="text-xs text-[var(--watch-text-muted)] w-20 shrink-0">
       {{ tag.category || '—' }}
-    </span>
-
-    <!-- Rate -->
-    <span class="text-xs text-[var(--watch-text-muted)] w-20 shrink-0 text-right">
-      {{ tag.default_entry_rate ? `€${tag.default_entry_rate}/h` : '—' }}
     </span>
 
     <!-- Default billing type -->

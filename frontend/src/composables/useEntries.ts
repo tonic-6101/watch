@@ -19,13 +19,9 @@ export interface TimeEntry {
   start_time: string | null
   end_time: string | null
   duration_hours: number
-  billing_duration_hours: number
   description: string | null
   entry_type: EntryType
   entry_status: 'draft' | 'sent'
-  entry_rate: number
-  entry_amount: number
-  entry_rounding_override: number  // 0 | 1
   is_running: number
   tag_names: string[]
   tag_meta: TagMeta[]
@@ -40,7 +36,6 @@ export interface CreateParams {
   end_time?: string | null
   description?: string | null
   entry_type?: EntryType
-  entry_rate?: number | null
   tags?: string[]
   linear_issue?: string | null
   github_ref?: string | null
@@ -53,7 +48,6 @@ export interface UpdateParams {
   end_time?: string | null
   description?: string | null
   entry_type?: EntryType
-  entry_rate?: number | null
   tags?: string[]
   linear_issue?: string | null
   github_ref?: string | null
@@ -66,7 +60,15 @@ async function call<T = any>(
   params: Record<string, unknown> = {},
   httpMethod: 'GET' | 'POST' = 'POST',
 ): Promise<T> {
-  const url = `/api/method/${method}`
+  let url = `/api/method/${method}`
+  if (httpMethod === 'GET' && Object.keys(params).length) {
+    const qs = new URLSearchParams(
+      Object.entries(params)
+        .filter(([, v]) => v !== undefined && v !== null)
+        .map(([k, v]) => [k, String(v)]),
+    )
+    url += `?${qs.toString()}`
+  }
   const res = await fetch(url, {
     method: httpMethod,
     headers: {
@@ -143,11 +145,11 @@ export function useEntries() {
   const entries       = ref<TimeEntry[]>([])
   const totalHours    = ref(0)
   const billableHours = ref(0)
-  const estAmount     = ref(0)
   const loading       = ref(false)
   const error         = ref<string | null>(null)
 
   async function load(date: string) {
+    if (!date) return
     loading.value = true
     error.value   = null
     try {
@@ -155,7 +157,6 @@ export function useEntries() {
       entries.value       = res.entries ?? []
       totalHours.value    = res.total_hours ?? 0
       billableHours.value = res.billable_hours ?? 0
-      estAmount.value     = res.est_amount ?? 0
     } catch (e: any) {
       error.value = e.message
     } finally {
@@ -188,7 +189,6 @@ export function useEntries() {
     const billable = entries.value.filter(e => e.entry_type === 'billable')
     totalHours.value    = +entries.value.reduce((s, e) => s + (e.duration_hours ?? 0), 0).toFixed(4)
     billableHours.value = +billable.reduce((s, e) => s + (e.duration_hours ?? 0), 0).toFixed(4)
-    estAmount.value     = +billable.reduce((s, e) => s + (e.entry_amount ?? 0), 0).toFixed(2)
     return res
   }
 
@@ -208,7 +208,6 @@ export function useEntries() {
     entries,
     totalHours,
     billableHours,
-    estAmount,
     loading,
     error,
     load,

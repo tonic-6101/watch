@@ -8,7 +8,6 @@ import { Clock, Lock, MoreHorizontal, Pencil, Copy, Calendar, CalendarDays, Tras
 import { __ } from '@/composables/useTranslate'
 import { formatHours } from '@/composables/useEntries'
 import type { TimeEntry, TagMeta, UpdateParams } from '@/composables/useEntries'
-import { useCurrency } from '@/composables/useCurrency'
 import EntryForm from './EntryForm.vue'
 
 // ── Props / emits ────────────────────────────────────────────────────────
@@ -142,8 +141,6 @@ const BADGE_CLASS: Record<string, string> = {
   internal:       'badge-internal',
 }
 
-const { formatAmount } = useCurrency()
-
 const isSent    = computed(() => props.entry.entry_status === 'sent')
 const isRunning = computed(() => !!props.entry.is_running)
 const isLocked  = computed(() => isSent.value || isRunning.value)
@@ -254,13 +251,6 @@ const isLocked  = computed(() => isSent.value || isRunning.value)
             : entry.entry_type === 'non-billable'
             ? 'Non-billable'
             : 'Internal') }}
-        </span>
-
-        <span
-          v-if="entry.entry_type === 'billable' && entry.entry_amount"
-          class="text-xs text-[var(--watch-text-muted)]"
-        >
-          {{ __('Est.') }} {{ formatAmount(entry.entry_amount) }}
         </span>
 
         <!-- Lock icon for sent entries -->

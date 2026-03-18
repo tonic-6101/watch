@@ -88,7 +88,7 @@ def save_from_entry(
 	keep_duration = bool(int(keep_duration)) if isinstance(keep_duration, str) else bool(keep_duration)
 
 	entry = frappe.get_doc("FT Time Entry", entry_name)
-	if entry.user != frappe.session.user and not frappe.has_role("System Manager"):
+	if entry.user != frappe.session.user and not "System Manager" in frappe.get_roles():
 		frappe.throw(_("Not permitted"), frappe.PermissionError)
 
 	tpl = frappe.new_doc("FT Entry Template")
@@ -100,7 +100,6 @@ def save_from_entry(
 	tpl.append("items", {
 		"description": entry.description,
 		"billing_type": entry.entry_type or "billable",
-		"billing_rate": entry.entry_rate or 0,
 		"duration_hours": entry.duration_hours if keep_duration else 0,
 	})
 
@@ -135,13 +134,12 @@ def save_day_template(
 
 	for idx, ename in enumerate(entry_names, start=1):
 		entry = frappe.get_doc("FT Time Entry", ename)
-		if entry.user != frappe.session.user and not frappe.has_role("System Manager"):
+		if entry.user != frappe.session.user and not "System Manager" in frappe.get_roles():
 			frappe.throw(_("Not permitted"), frappe.PermissionError)
 
 		tpl.append("items", {
 			"description": entry.description,
 			"billing_type": entry.entry_type or "billable",
-			"billing_rate": entry.entry_rate or 0,
 			"duration_hours": entry.duration_hours or 0,
 		})
 
@@ -162,7 +160,7 @@ def apply_day_template(template_name: str, date: str) -> dict:
 	Returns the list of created entry dicts.
 	"""
 	tpl = frappe.get_doc("FT Entry Template", template_name)
-	if tpl.user != frappe.session.user and not frappe.has_role("System Manager"):
+	if tpl.user != frappe.session.user and not "System Manager" in frappe.get_roles():
 		frappe.throw(_("Not permitted"), frappe.PermissionError)
 	if tpl.template_type != "day":
 		frappe.throw(_("Only day templates can be applied."))
@@ -179,7 +177,6 @@ def apply_day_template(template_name: str, date: str) -> dict:
 		entry.user = frappe.session.user
 		entry.description = item.description
 		entry.entry_type = item.billing_type or "billable"
-		entry.entry_rate = item.billing_rate or 0
 		entry.duration_hours = item.duration_hours or 0
 		entry.entry_status = "draft"
 		entry.is_running = 0
@@ -197,7 +194,7 @@ def apply_day_template(template_name: str, date: str) -> dict:
 def delete_template(template_name: str) -> dict:
 	"""Delete a favorite or day template."""
 	tpl = frappe.get_doc("FT Entry Template", template_name)
-	if tpl.user != frappe.session.user and not frappe.has_role("System Manager"):
+	if tpl.user != frappe.session.user and not "System Manager" in frappe.get_roles():
 		frappe.throw(_("Not permitted"), frappe.PermissionError)
 
 	frappe.delete_doc("FT Entry Template", template_name, ignore_permissions=True)
@@ -213,7 +210,7 @@ def update_template(
 ) -> dict:
 	"""Update a template's name, slot, or items."""
 	tpl = frappe.get_doc("FT Entry Template", template_name)
-	if tpl.user != frappe.session.user and not frappe.has_role("System Manager"):
+	if tpl.user != frappe.session.user and not "System Manager" in frappe.get_roles():
 		frappe.throw(_("Not permitted"), frappe.PermissionError)
 
 	if new_name is not None:
@@ -229,7 +226,6 @@ def update_template(
 			tpl.append("items", {
 				"description": item_data.get("description"),
 				"billing_type": item_data.get("billing_type", "billable"),
-				"billing_rate": item_data.get("billing_rate", 0),
 				"duration_hours": item_data.get("duration_hours", 0),
 			})
 			for tag in (item_data.get("tags") or []):
@@ -253,12 +249,23 @@ def reorder_favorites(order: list) -> dict:
 	order = _parse_json(order)
 	user = frappe.session.user
 
-	for slot, tpl_name in enumerate(order, start=1):
+	# Validate all templates before reassigning
+	templates = []
+	for tpl_name in order:
 		tpl = frappe.get_doc("FT Entry Template", tpl_name)
 		if tpl.user != user:
 			frappe.throw(_("Not permitted"), frappe.PermissionError)
 		if tpl.template_type != "favorite":
 			frappe.throw(_("Can only reorder favorites."))
+		templates.append(tpl)
+
+	# Clear all slots first (use DB directly to bypass validation)
+	for tpl in templates:
+		frappe.db.set_value("FT Entry Template", tpl.name, "sort_order", 0)
+
+	# Reassign in order
+	for slot, tpl in enumerate(templates, start=1):
+		tpl.reload()
 		tpl.sort_order = slot
 		tpl.save(ignore_permissions=True)
 

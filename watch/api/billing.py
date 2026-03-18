@@ -63,17 +63,11 @@ def _collect_draft_billable(
 		},
 		fields=[
 			"name", "date", "description",
-			"duration_hours", "entry_rounding_override",
-			"entry_rate", "entry_amount", "entry_type",
+			"duration_hours", "entry_type",
 		],
 		order_by="date asc",
 	)
 	_attach_tag_meta(entries)
-
-	from watch.utils.rounding import get_billing_duration
-	settings = frappe.get_single("FT Settings")
-	for e in entries:
-		e["billing_duration_hours"] = get_billing_duration(e, settings)
 
 	if client_tag is None:
 		return entries                                              # all
@@ -102,18 +96,12 @@ def get_summary(from_date: str, to_date: str) -> dict:
 		"FT Time Entry",
 		filters={"user": user, "date": ["between", [from_date, to_date]], "is_running": 0},
 		fields=[
-			"name", "date", "duration_hours", "entry_rounding_override",
+			"name", "date", "duration_hours",
 			"description", "entry_type", "entry_status",
-			"entry_rate", "entry_amount",
 		],
 		order_by="date asc",
 	)
 	_attach_tag_meta(all_entries)
-
-	from watch.utils.rounding import get_billing_duration
-	settings = frappe.get_single("FT Settings")
-	for e in all_entries:
-		e["billing_duration_hours"] = get_billing_duration(e, settings)
 
 	# Split by entry_type
 	billable  = [e for e in all_entries if e.entry_type == "billable"]
@@ -129,15 +117,11 @@ def get_summary(from_date: str, to_date: str) -> dict:
 				"client_tag":       e["client_tag"],
 				"client_tag_color": e["client_tag_color"],
 				"total_hours":      0.0,
-				"billing_hours":    0.0,
-				"entry_amount":     0.0,
 				"entry_status":     "draft",
 				"projects":         {},
 			}
 		g = groups_map[key]
-		g["total_hours"]   = round(g["total_hours"]   + (e.duration_hours or 0), 4)
-		g["billing_hours"] = round(g["billing_hours"] + e["billing_duration_hours"], 4)
-		g["entry_amount"]  = round(g["entry_amount"]  + (e.entry_amount   or 0), 2)
+		g["total_hours"] = round(g["total_hours"] + (e.duration_hours or 0), 4)
 		if e.entry_status == "sent":
 			g["entry_status"] = "sent"
 
@@ -147,28 +131,16 @@ def get_summary(from_date: str, to_date: str) -> dict:
 			g["projects"][proj_key] = {
 				"project_tag":   proj_key,
 				"hours":         0.0,
-				"billing_hours": 0.0,
-				"amount":        0.0,
 				"entries":       [],
 			}
 		p = g["projects"][proj_key]
-		p["hours"]         = round(p["hours"]         + (e.duration_hours or 0), 4)
-		p["billing_hours"] = round(p["billing_hours"] + e["billing_duration_hours"], 4)
-		p["amount"]        = round(p["amount"]         + (e.entry_amount   or 0), 2)
+		p["hours"] = round(p["hours"] + (e.duration_hours or 0), 4)
 		p["entries"].append({
-			"name":                    e.name,
-			"date":                    str(e.date),
-			"description":             e.description or "",
-			"duration_hours":          e.duration_hours or 0,
-			"billing_duration_hours":  e["billing_duration_hours"],
-			"entry_rate":              e.entry_rate  or 0,
-			"entry_amount":            e.entry_amount or 0,
-			"entry_status":            e.entry_status,
-			"entry_rounding_override": bool(e.entry_rounding_override),
-			"is_rounded": (
-				e["billing_duration_hours"] != (e.duration_hours or 0)
-				and not e.entry_rounding_override
-			),
+			"name":           e.name,
+			"date":           str(e.date),
+			"description":    e.description or "",
+			"duration_hours": e.duration_hours or 0,
+			"entry_status":   e.entry_status,
 		})
 
 	# Flatten and sort: named clients first (alphabetical), then Unassigned
@@ -183,8 +155,6 @@ def get_summary(from_date: str, to_date: str) -> dict:
 
 	totals = {
 		"billable_hours":     round(sum(e.duration_hours or 0 for e in billable), 4),
-		"billing_hours":      round(sum(e["billing_duration_hours"] for e in billable), 4),
-		"entry_amount":       round(sum(e.entry_amount   or 0 for e in billable), 2),
 		"non_billable_hours": round(sum(e.duration_hours or 0 for e in non_bill), 4),
 		"internal_hours":     round(sum(e.duration_hours or 0 for e in internal), 4),
 	}
@@ -289,28 +259,21 @@ def forward_to_app(
 	if not entries:
 		frappe.throw(_("No billable draft entries found for this client and date range"))
 
-	total_hours  = round(sum(e["billing_duration_hours"] for e in entries), 4)
-	total_amount = round(sum(e.entry_amount or 0 for e in entries), 2)
-	currency     = frappe.db.get_default("currency") or "USD"
+	total_hours = round(sum(e.duration_hours or 0 for e in entries), 4)
 
 	payload = {
 		"client_tag":   client_tag,
 		"from_date":    from_date,
 		"to_date":      to_date,
-		"currency":     currency,
 		"total_hours":  total_hours,
-		"total_amount": total_amount,
 		"entries": [
 			{
-				"name":                   e.name,
-				"date":                   str(e.date),
-				"description":            e.description or "",
-				"duration_hours":         e.duration_hours or 0,
-				"billing_duration_hours": e["billing_duration_hours"],
-				"entry_rate":             e.entry_rate   or 0,
-				"entry_amount":           e.entry_amount or 0,
-				"entry_type":             e.entry_type,
-				"tags":                   e["tag_names"],
+				"name":           e.name,
+				"date":           str(e.date),
+				"description":    e.description or "",
+				"duration_hours": e.duration_hours or 0,
+				"entry_type":     e.entry_type,
+				"tags":           e["tag_names"],
 			}
 			for e in entries
 		],
@@ -327,10 +290,9 @@ def forward_to_app(
 	_mark_entries_sent([e.name for e in entries])
 
 	return {
-		"forwarded_hours":  total_hours,
-		"forwarded_count":  len(entries),
-		"forwarded_amount": total_amount,
-		"draft_url":        result.get("draft_url") if isinstance(result, dict) else None,
+		"forwarded_hours": total_hours,
+		"forwarded_count": len(entries),
+		"draft_url":       result.get("draft_url") if isinstance(result, dict) else None,
 	}
 
 
@@ -353,15 +315,12 @@ def export_csv(
 
 	buf = io.StringIO()
 	writer = csv.writer(buf)
-	writer.writerow(["date", "description", "duration_hours", "billing_duration_hours", "entry_rate", "entry_amount", "tags", "entry_type"])
+	writer.writerow(["date", "description", "duration_hours", "tags", "entry_type"])
 	for e in entries:
 		writer.writerow([
 			str(e.date),
 			e.description or "",
 			e.duration_hours or 0,
-			e["billing_duration_hours"],
-			e.entry_rate    or 0,
-			e.entry_amount  or 0,
 			"; ".join(e["tag_names"]),
 			e.entry_type or "",
 		])

@@ -35,9 +35,13 @@ def _elapsed_seconds(timer) -> int:
 		started = timer.started_at
 		if isinstance(started, str):
 			started = datetime.fromisoformat(started)
-		delta = datetime.now() - started
-		return int(timer.accumulated_seconds + delta.total_seconds())
-	return int(timer.accumulated_seconds)
+		# Use frappe.utils.now_datetime() to match the timezone of started_at
+		now = frappe.utils.now_datetime()
+		if now.tzinfo is not None and (not hasattr(started, 'tzinfo') or started.tzinfo is None):
+			now = now.replace(tzinfo=None)
+		delta = (now - started).total_seconds()
+		return max(0, int(timer.accumulated_seconds + delta))
+	return max(0, int(timer.accumulated_seconds))
 
 
 def _publish(user: str, payload: dict):
@@ -47,7 +51,7 @@ def _publish(user: str, payload: dict):
 @frappe.whitelist()
 def start_timer(
 	description: str = None,
-	tags: list = None,
+	tags: str | list = None,
 	entry_type: str = "billable",
 ) -> dict:
 	user = frappe.session.user
@@ -262,7 +266,7 @@ def stop_timer_at(stop_at: str, notes: str = None) -> dict:
 @frappe.whitelist()
 def update_timer(
 	description: str = None,
-	tags: list = None,
+	tags: str | list = None,
 	entry_type: str = None,
 ) -> dict:
 	"""Update the running/paused timer's entry context without stopping."""
@@ -338,7 +342,7 @@ def _create_focus_entry(user: str, timer, entry_type: str, tags: list):
 @frappe.whitelist()
 def start_focus(
 	description: str = None,
-	tags: list = None,
+	tags: str | list = None,
 	entry_type: str = "billable",
 	sessions: int = 4,
 	work_minutes: int = 25,
@@ -453,7 +457,7 @@ def end_focus_session() -> dict:
 
 
 @frappe.whitelist()
-def skip_break(entry_type: str = "billable", tags: list = None) -> dict:
+def skip_break(entry_type: str = "billable", tags: str | list = None) -> dict:
 	"""Skip the current break and immediately start the next work session."""
 	user = frappe.session.user
 	timer = _get_or_create_timer(user)

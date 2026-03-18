@@ -9,13 +9,12 @@ import { ChevronLeft, ChevronRight, CornerDownLeft, X } from 'lucide-vue-next'
 import { __ } from '@/composables/useTranslate'
 import { useEntries, formatHours } from '@/composables/useEntries'
 import { useTimer } from '@/composables/useTimer'
-import { useCurrency } from '@/composables/useCurrency'
 import { useUserSettings } from '@/composables/useUserSettings'
 import { useIdleDetection } from '@/composables/useIdleDetection'
 import { useDailyNudge } from '@/composables/useDailyNudge'
 import { useToast } from '@/composables/useToast'
 import type { CreateParams, UpdateParams } from '@/composables/useEntries'
-import TimerWidget from '@/components/timer/TimerWidget.vue'
+import ActiveTimerBanner from '@/components/timer/ActiveTimerBanner.vue'
 import ManualEntryBar from '@/components/entries/ManualEntryBar.vue'
 import EntryRow from '@/components/entries/EntryRow.vue'
 import IdleBanner from '@/components/nudges/IdleBanner.vue'
@@ -30,17 +29,24 @@ const props = defineProps<{
 const router = useRouter()
 const route  = useRoute()
 
-function todayStr(): string {
-  return new Date().toISOString().slice(0, 10)
+function localDateStr(d: Date): string {
+  const year = d.getFullYear()
+  const month = String(d.getMonth() + 1).padStart(2, '0')
+  const day = String(d.getDate()).padStart(2, '0')
+  return `${year}-${month}-${day}`
 }
 
-const activeDate = computed(() => props.date ?? todayStr())
+function todayStr(): string {
+  return localDateStr(new Date())
+}
+
+const activeDate = computed(() => (route.params.date as string) || todayStr())
 const isToday    = computed(() => activeDate.value === todayStr())
 
 function navDate(delta: number): string {
   const d = new Date(activeDate.value + 'T00:00:00')
   d.setDate(d.getDate() + delta)
-  return d.toISOString().slice(0, 10)
+  return localDateStr(d)
 }
 
 function goDate(d: string) {
@@ -230,10 +236,6 @@ async function handleBarSave(params: CreateParams) {
   }
 }
 
-async function handleTimerStarted() {
-  await loadDay()
-}
-
 async function handleRowSave(name: string, params: UpdateParams) {
   apiError.value = null
   try {
@@ -327,16 +329,6 @@ async function handleRowDelete(name: string) {
     apiError.value = e.message
   }
 }
-
-// ── Totals ────────────────────────────────────────────────────────────────
-
-const { formatAmount } = useCurrency()
-
-const estAmountFormatted = computed(() => {
-  const amt = entries.estAmount.value
-  if (!amt) return null
-  return formatAmount(amt)
-})
 
 // ── Weekly target "on track" hint ────────────────────────────────────────
 
@@ -486,8 +478,8 @@ const onTrackHint = computed(() => {
         </div>
       </Transition>
 
-      <!-- Timer widget -->
-      <TimerWidget />
+      <!-- Active timer banner (only visible when timer is running/paused) -->
+      <ActiveTimerBanner @stopped="loadDay" />
 
       <!-- "Started on a different day" note -->
       <p
@@ -563,7 +555,6 @@ const onTrackHint = computed(() => {
         ref="entryBarRef"
         :date="activeDate"
         @save="handleBarSave"
-        @timer-started="handleTimerStarted"
       />
 
       <!-- API error -->
@@ -637,10 +628,6 @@ const onTrackHint = computed(() => {
           </strong>
         </span>
 
-        <span v-if="estAmountFormatted" class="text-[var(--watch-text-muted)]">
-          {{ __('Est.') }}
-          <strong class="text-[var(--watch-text)] ml-1">{{ estAmountFormatted }} €</strong>
-        </span>
       </div>
 
       <!-- Weekly target "on track" hint -->

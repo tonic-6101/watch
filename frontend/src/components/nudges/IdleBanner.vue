@@ -26,10 +26,10 @@ const awayLabel = computed(() => {
 })
 
 const sinceLabel = computed(() => {
-  return props.prompt.hiddenAt.toLocaleTimeString(undefined, {
-    hour: '2-digit',
-    minute: '2-digit',
-  })
+  const d = props.prompt.hiddenAt
+  const h = String(d.getHours()).padStart(2, '0')
+  const m = String(d.getMinutes()).padStart(2, '0')
+  return `${h}:${m}`
 })
 
 const stopAtLabel = computed(() => {

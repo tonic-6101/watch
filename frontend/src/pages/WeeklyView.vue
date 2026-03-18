@@ -4,15 +4,17 @@
 -->
 <script setup lang="ts">
 import { ref, computed, watch, onMounted, onUnmounted } from 'vue'
-import { useRouter } from 'vue-router'
+import { useRouter, useRoute } from 'vue-router'
 import { ChevronLeft, ChevronRight, ChevronDown, ChevronUp, Plus } from 'lucide-vue-next'
 import { __ } from '@/composables/useTranslate'
-import { formatHours } from '@/composables/useEntries'
-import { useCurrency } from '@/composables/useCurrency'
+import { useEntries, formatHours } from '@/composables/useEntries'
+import type { CreateParams, UpdateParams } from '@/composables/useEntries'
 import { useUserSettings } from '@/composables/useUserSettings'
 import { useTimer } from '@/composables/useTimer'
 import WeeklyDonut from '@/components/WeeklyDonut.vue'
 import WeeklyBarChart from '@/components/WeeklyBarChart.vue'
+import EntryRow from '@/components/entries/EntryRow.vue'
+import ManualEntryBar from '@/components/entries/ManualEntryBar.vue'
 import type { TagSegment } from '@/components/WeeklyDonut.vue'
 import type { DailyBar } from '@/components/WeeklyBarChart.vue'
 
@@ -23,14 +25,21 @@ const props = defineProps<{
 }>()
 
 const router = useRouter()
-const { formatAmount } = useCurrency()
+const route  = useRoute()
 const { prefs, loaded: prefsLoaded, load: loadPrefs } = useUserSettings()
 const timer = useTimer()
 
 // ── Week helpers ─────────────────────────────────────────────────────────
 
+function localDateStr(d: Date): string {
+  const year = d.getFullYear()
+  const month = String(d.getMonth() + 1).padStart(2, '0')
+  const day = String(d.getDate()).padStart(2, '0')
+  return `${year}-${month}-${day}`
+}
+
 function todayStr(): string {
-  return new Date().toISOString().slice(0, 10)
+  return localDateStr(new Date())
 }
 
 /** ISO week string → Monday date string */
@@ -44,7 +53,7 @@ function weekToMonday(w: string): string {
   const dayOfWeek = jan4.getDay() || 7   // 1=Mon…7=Sun
   const monday = new Date(jan4)
   monday.setDate(jan4.getDate() - (dayOfWeek - 1) + (week - 1) * 7)
-  return monday.toISOString().slice(0, 10)
+  return localDateStr(monday)
 }
 
 /** Date string → ISO week string "YYYY-WWW" */
@@ -65,14 +74,14 @@ function todayMonday(): string {
   const d = new Date(todayStr() + 'T00:00:00')
   const offset = (d.getDay() + 6) % 7   // 0=Mon
   d.setDate(d.getDate() - offset)
-  return d.toISOString().slice(0, 10)
+  return localDateStr(d)
 }
 
 function currentWeek(): string {
   return dateToWeek(todayStr())
 }
 
-const activeWeek   = computed(() => props.week ?? currentWeek())
+const activeWeek   = computed(() => (route.params.week as string) || currentWeek())
 const activeMonday = computed(() => weekToMonday(activeWeek.value))
 const isThisWeek   = computed(() => activeWeek.value === currentWeek())
 
@@ -90,7 +99,7 @@ function weekLabel(monday: string): string {
 function addWeeks(w: string, delta: number): string {
   const monday = new Date(weekToMonday(w) + 'T00:00:00')
   monday.setDate(monday.getDate() + delta * 7)
-  return dateToWeek(monday.toISOString().slice(0, 10))
+  return dateToWeek(localDateStr(monday))
 }
 
 function goWeek(w: string) {
@@ -126,7 +135,6 @@ interface DayData {
   date: string
   total_hours: number
   billable_hours: number
-  entry_amount: number
   entry_count: number
   top_tags: Array<{ name: string; tag_name: string; color: string | null; category: string | null }>
   overflow_count: number
@@ -138,7 +146,6 @@ interface WeekData {
   days: DayData[]
   total_hours: number
   billable_hours: number
-  est_amount: number
   prev_week_total_hours: number
   work_days: number[]
 }
@@ -166,6 +173,8 @@ async function loadWeek() {
 }
 
 watch(() => activeWeek.value, () => {
+  expandedDays.value = new Set()
+  dayEntries.clear()
   loadWeek()
   loadChartData()
 })
@@ -361,20 +370,6 @@ function chipStyle(color: string | null) {
   return { backgroundColor: `${c}22`, color: c, borderColor: `${c}44` }
 }
 
-function goDay(dateStr: string) {
-  router.push(`/watch/${dateStr}`)
-}
-
-function goDayFocused(dateStr: string) {
-  router.push({ path: `/watch/${dateStr}`, query: { focus: '1' } })
-}
-
-const estFormatted = computed(() => {
-  const amt = weekData.value?.est_amount ?? 0
-  if (!amt) return null
-  return formatAmount(amt)
-})
-
 function weekendLabel(): string {
   const sat = weekendDays.value.find(d => new Date(d.date + 'T00:00:00').getDay() === 6)
   const sun = weekendDays.value.find(d => new Date(d.date + 'T00:00:00').getDay() === 0)
@@ -384,6 +379,109 @@ function weekendLabel(): string {
     return `${s} – ${e}`
   }
   return __('Weekend')
+}
+
+// ── Day expansion ──────────────────────────────────────────────────────
+
+const expandedDays = ref<Set<string>>(new Set())
+const dayEntries = new Map<string, ReturnType<typeof useEntries>>()
+
+function getOrCreateDayEntries(date: string) {
+  if (!dayEntries.has(date)) {
+    dayEntries.set(date, useEntries())
+  }
+  return dayEntries.get(date)!
+}
+
+function isDayExpanded(date: string): boolean {
+  return expandedDays.value.has(date)
+}
+
+async function toggleDay(date: string) {
+  if (expandedDays.value.has(date)) {
+    const next = new Set(expandedDays.value)
+    next.delete(date)
+    expandedDays.value = next
+  } else {
+    const next = new Set(expandedDays.value)
+    next.add(date)
+    expandedDays.value = next
+    const de = getOrCreateDayEntries(date)
+    if (!de.entries.value.length && !de.loading.value) {
+      await de.load(date)
+      syncDayToWeekData(date)
+    }
+  }
+}
+
+function syncDayToWeekData(date: string) {
+  const de = dayEntries.get(date)
+  if (!de || !weekData.value) return
+  const day = weekData.value.days.find(d => d.date === date)
+  if (!day) return
+  day.total_hours = de.totalHours.value
+  day.billable_hours = de.billableHours.value
+  day.entry_count = de.entries.value.length
+  weekData.value.total_hours = weekData.value.days.reduce((s, d) => s + d.total_hours, 0)
+  weekData.value.billable_hours = weekData.value.days.reduce((s, d) => s + d.billable_hours, 0)
+}
+
+async function handleDayBarSave(date: string, params: CreateParams) {
+  const de = getOrCreateDayEntries(date)
+  await de.create(params)
+  syncDayToWeekData(date)
+  loadChartData()
+}
+
+async function handleDayRowSave(date: string, name: string, params: UpdateParams) {
+  const de = getOrCreateDayEntries(date)
+  await de.update(name, params)
+  syncDayToWeekData(date)
+  loadChartData()
+}
+
+async function handleDayRowDelete(date: string, name: string) {
+  const de = getOrCreateDayEntries(date)
+  await de.remove(name)
+  syncDayToWeekData(date)
+  loadChartData()
+}
+
+async function handleDayRowDuplicate(date: string, name: string) {
+  const res = await fetch('/api/method/watch.api.time_entry.duplicate_entry', {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json',
+      'X-Frappe-CSRF-Token': (window as any).csrf_token ?? '',
+    },
+    body: JSON.stringify({ entry_name: name, target_date: date }),
+  })
+  const data = await res.json()
+  if (!res.ok || data.exc) return
+  const de = getOrCreateDayEntries(date)
+  de.entries.value = [data.message, ...de.entries.value]
+  syncDayToWeekData(date)
+  loadChartData()
+}
+
+async function handleDayCopyToDate(sourceDate: string, name: string, targetDate: string) {
+  const res = await fetch('/api/method/watch.api.time_entry.duplicate_entry', {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json',
+      'X-Frappe-CSRF-Token': (window as any).csrf_token ?? '',
+    },
+    body: JSON.stringify({ entry_name: name, target_date: targetDate }),
+  })
+  const data = await res.json()
+  if (!res.ok || data.exc) return
+  // If target day is expanded in this week, add the entry
+  if (dayEntries.has(targetDate) && expandedDays.value.has(targetDate)) {
+    const de = getOrCreateDayEntries(targetDate)
+    de.entries.value = [data.message, ...de.entries.value]
+    syncDayToWeekData(targetDate)
+  }
+  loadChartData()
 }
 </script>
 
@@ -464,10 +562,10 @@ function weekendLabel(): string {
 
       <template v-else-if="weekData">
 
-        <!-- Day rows card (without week total — total is now below) -->
+        <!-- Day rows card -->
         <div
           class="bg-[var(--watch-bg)] rounded-xl border border-[var(--watch-border)] divide-y
-                 divide-[var(--watch-border)] overflow-hidden"
+                 divide-[var(--watch-border)]"
         >
           <template v-for="row in visibleDays" :key="typeof row === 'string' ? 'collapse' : row.date">
 
@@ -482,87 +580,138 @@ function weekendLabel(): string {
               <div class="flex-1 h-1.5 rounded-full bg-[var(--watch-border)]" />
             </div>
 
-            <!-- Day row -->
-            <div
-              v-else
-              class="px-4 py-3 flex items-center gap-3 cursor-pointer transition-colors"
-              :class="[
-                isToday(row.date)
-                  ? 'bg-[var(--watch-primary)]/5'
-                  : 'hover:bg-[var(--watch-bg-secondary)]',
-              ]"
-              @click="row.entry_count > 0 && goDay(row.date)"
-            >
-              <!-- Day label -->
-              <span
-                class="text-xs font-medium shrink-0 w-16"
-                :class="isToday(row.date) ? 'text-[var(--watch-primary)]' : 'text-[var(--watch-text-muted)]'"
+            <!-- Day wrapper (summary + expansion) -->
+            <div v-else>
+              <!-- Summary row -->
+              <div
+                class="px-4 py-3 flex items-center gap-3 cursor-pointer transition-colors"
+                :class="[
+                  isToday(row.date)
+                    ? 'bg-[var(--watch-primary)]/5'
+                    : 'hover:bg-[var(--watch-bg-secondary)]',
+                ]"
+                @click="toggleDay(row.date)"
               >
-                {{ formatDayLabel(row.date) }}
-              </span>
+                <!-- Day label -->
+                <span
+                  class="text-xs font-medium shrink-0 w-16"
+                  :class="isToday(row.date) ? 'text-[var(--watch-primary)]' : 'text-[var(--watch-text-muted)]'"
+                >
+                  {{ formatDayLabel(row.date) }}
+                </span>
 
-              <!-- Progress bar -->
-              <div class="relative flex-1 h-2 rounded-full bg-[var(--watch-border)] overflow-hidden">
-                <template v-if="row.entry_count > 0">
-                  <div
-                    class="absolute inset-y-0 left-0 rounded-full bg-[var(--watch-primary)]/70 transition-all"
-                    :style="{ width: dayBarPercent(row.total_hours) + '%' }"
-                  />
-                </template>
-                <template v-else>
-                  <div
-                    class="absolute inset-0 rounded-full"
-                    style="background: repeating-linear-gradient(
-                      90deg,
-                      var(--watch-border) 0,
-                      var(--watch-border) 4px,
-                      transparent 4px,
-                      transparent 8px
-                    )"
-                  />
-                </template>
+                <!-- Progress bar -->
+                <div class="relative flex-1 h-2 rounded-full bg-[var(--watch-border)] overflow-hidden">
+                  <template v-if="row.entry_count > 0">
+                    <div
+                      class="absolute inset-y-0 left-0 rounded-full bg-[var(--watch-primary)]/70 transition-all"
+                      :style="{ width: dayBarPercent(row.total_hours) + '%' }"
+                    />
+                  </template>
+                  <template v-else>
+                    <div
+                      class="absolute inset-0 rounded-full"
+                      style="background: repeating-linear-gradient(
+                        90deg,
+                        var(--watch-border) 0,
+                        var(--watch-border) 4px,
+                        transparent 4px,
+                        transparent 8px
+                      )"
+                    />
+                  </template>
+                </div>
+
+                <!-- Hours or dash -->
+                <span class="text-xs tabular-nums shrink-0 w-12 text-right"
+                      :class="row.entry_count > 0 ? 'text-[var(--watch-text)]' : 'text-[var(--watch-text-muted)]'"
+                >
+                  {{ row.entry_count > 0 ? formatHours(row.total_hours) : '—' }}
+                </span>
+
+                <!-- Tag chips / no-entries label -->
+                <div class="flex items-center gap-1 flex-1 min-w-0 justify-end">
+                  <template v-if="row.entry_count > 0 && !isDayExpanded(row.date)">
+                    <span
+                      v-for="tag in row.top_tags"
+                      :key="tag.name || tag.tag_name"
+                      class="px-1.5 py-0.5 rounded border text-xs font-medium shrink-0"
+                      :style="chipStyle(tag.color)"
+                    >
+                      {{ tag.tag_name }}
+                    </span>
+                    <span
+                      v-if="row.overflow_count > 0"
+                      class="px-1.5 py-0.5 rounded text-xs text-[var(--watch-text-muted)]
+                             bg-[var(--watch-bg-secondary)] shrink-0"
+                    >
+                      +{{ row.overflow_count }}
+                    </span>
+                  </template>
+                  <template v-else-if="row.entry_count === 0 && !isDayExpanded(row.date)">
+                    <span class="text-xs text-[var(--watch-text-muted)] italic mr-1">
+                      {{ isToday(row.date) ? __('no entries yet') : __('no entries') }}
+                    </span>
+                  </template>
+                </div>
+
+                <!-- Expand/collapse chevron -->
+                <ChevronUp
+                  v-if="isDayExpanded(row.date)"
+                  class="w-4 h-4 text-[var(--watch-text-muted)] shrink-0"
+                  aria-hidden="true"
+                />
+                <ChevronDown
+                  v-else
+                  class="w-4 h-4 text-[var(--watch-text-muted)] shrink-0"
+                  aria-hidden="true"
+                />
               </div>
 
-              <!-- Hours or dash -->
-              <span class="text-xs tabular-nums shrink-0 w-12 text-right"
-                    :class="row.entry_count > 0 ? 'text-[var(--watch-text)]' : 'text-[var(--watch-text-muted)]'"
+              <!-- Expansion panel -->
+              <div
+                v-if="isDayExpanded(row.date)"
+                class="border-t border-[var(--watch-border)] bg-[var(--watch-bg-secondary)]/50 px-3 py-3 space-y-2"
               >
-                {{ row.entry_count > 0 ? formatHours(row.total_hours) : '—' }}
-              </span>
+                <!-- Loading skeleton -->
+                <template v-if="getOrCreateDayEntries(row.date).loading.value && !getOrCreateDayEntries(row.date).entries.value.length">
+                  <div
+                    v-for="i in 2"
+                    :key="i"
+                    class="bg-[var(--watch-bg)] rounded-xl border border-[var(--watch-border)] p-4 animate-pulse"
+                  >
+                    <div class="h-3 bg-[var(--watch-border)] rounded w-1/4 mb-2" />
+                    <div class="h-4 bg-[var(--watch-border)] rounded w-3/4" />
+                  </div>
+                </template>
 
-              <!-- Tag chips / no-entries row -->
-              <div class="flex items-center gap-1 flex-1 min-w-0 justify-end">
-                <template v-if="row.entry_count > 0">
-                  <span
-                    v-for="tag in row.top_tags"
-                    :key="tag.name || tag.tag_name"
-                    class="px-1.5 py-0.5 rounded border text-xs font-medium shrink-0"
-                    :style="chipStyle(tag.color)"
-                  >
-                    {{ tag.tag_name }}
-                  </span>
-                  <span
-                    v-if="row.overflow_count > 0"
-                    class="px-1.5 py-0.5 rounded text-xs text-[var(--watch-text-muted)]
-                           bg-[var(--watch-bg-secondary)] shrink-0"
-                  >
-                    +{{ row.overflow_count }}
-                  </span>
-                </template>
+                <!-- Entry rows -->
                 <template v-else>
-                  <span class="text-xs text-[var(--watch-text-muted)] italic mr-1">
-                    {{ isToday(row.date) ? __('no entries yet') : __('no entries') }}
-                  </span>
-                  <button
-                    type="button"
-                    class="p-1 rounded hover:bg-[var(--watch-primary)]/10 text-[var(--watch-primary)]
-                           transition-colors shrink-0"
-                    :title="__('Add entry')"
-                    @click.stop="goDayFocused(row.date)"
+                  <p
+                    v-if="!getOrCreateDayEntries(row.date).entries.value.length"
+                    class="text-xs text-[var(--watch-text-muted)] italic text-center py-2"
                   >
-                    <Plus class="w-3.5 h-3.5" aria-hidden="true" />
-                  </button>
+                    {{ __('No entries yet — add one below.') }}
+                  </p>
+                  <EntryRow
+                    v-for="entry in getOrCreateDayEntries(row.date).entries.value"
+                    :key="entry.name"
+                    :entry="entry"
+                    :is-today="isToday(row.date)"
+                    @save="(name: string, params: UpdateParams) => handleDayRowSave(row.date, name, params)"
+                    @duplicate="(name: string) => handleDayRowDuplicate(row.date, name)"
+                    @copy-to-today="(name: string) => handleDayCopyToDate(row.date, name, todayStr())"
+                    @copy-to-date="(name: string, date: string) => handleDayCopyToDate(row.date, name, date)"
+                    @delete="(name: string) => handleDayRowDelete(row.date, name)"
+                    @refresh="() => getOrCreateDayEntries(row.date).load(row.date)"
+                  />
                 </template>
+
+                <!-- Add entry bar -->
+                <ManualEntryBar
+                  :date="row.date"
+                  @save="(params: CreateParams) => handleDayBarSave(row.date, params)"
+                />
               </div>
             </div>
           </template>
@@ -647,10 +796,6 @@ function weekendLabel(): string {
           <span v-if="weekData.billable_hours" class="text-xs text-[var(--watch-text-muted)] shrink-0">
             {{ __('Billable') }}
             <strong class="text-[var(--watch-text)] ml-1">{{ formatHours(weekData.billable_hours) }}</strong>
-          </span>
-          <span v-if="estFormatted" class="text-xs text-[var(--watch-text-muted)] shrink-0">
-            {{ __('Est.') }}
-            <strong class="text-[var(--watch-text)] ml-1">{{ estFormatted }}</strong>
           </span>
         </div>
 

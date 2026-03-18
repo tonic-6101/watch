@@ -17,13 +17,11 @@ _WORK_DAY_MAP = {
 
 _EDITABLE_FIELDS = [
 	"default_entry_type",
-	"default_entry_rate",
 	"lock_entries_older_than",
 	"auto_stop_timer_after",
 	"work_mon", "work_tue", "work_wed", "work_thu", "work_fri", "work_sat", "work_sun",
 	"idle_threshold_minutes",
 	"daily_nudge_after",
-	"rounding_rule",
 	"budget_warning_threshold",
 	"enable_erpnext_bridge",
 	"sync_mode",
@@ -70,7 +68,7 @@ def save_settings(**kwargs) -> dict:
 	Persist FT Settings.  Only System Manager may call this.
 	Ignores any keys that are not in the allowed editable field list.
 	"""
-	if not frappe.has_role("System Manager"):
+	if "System Manager" not in frappe.get_roles():
 		frappe.throw(_("Only System Manager can change FT Settings"), frappe.PermissionError)
 
 	settings = frappe.get_single("FT Settings")

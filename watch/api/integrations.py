@@ -113,7 +113,7 @@ def notify_slack(entry: dict):
 @frappe.whitelist()
 def test_slack() -> dict:
 	"""Send a test message to the configured Slack webhook."""
-	if not frappe.has_role("System Manager"):
+	if not "System Manager" in frappe.get_roles():
 		frappe.throw(_("Only System Manager can test integrations"), frappe.PermissionError)
 
 	url = frappe.db.get_single_value("FT Settings", "slack_webhook_url")
@@ -146,7 +146,7 @@ def _linear_request(api_key: str, query: str, variables: dict = None) -> dict:
 @frappe.whitelist()
 def test_linear() -> dict:
 	"""Validate the Linear API key; returns workspace name."""
-	if not frappe.has_role("System Manager"):
+	if not "System Manager" in frappe.get_roles():
 		frappe.throw(_("Only System Manager can test integrations"), frappe.PermissionError)
 
 	api_key = frappe.db.get_single_value("FT Settings", "linear_api_key")
@@ -251,7 +251,7 @@ def post_linear_comment(entry_name: str):
 @frappe.whitelist()
 def test_github() -> dict:
 	"""Validate the GitHub token; returns username."""
-	if not frappe.has_role("System Manager"):
+	if not "System Manager" in frappe.get_roles():
 		frappe.throw(_("Only System Manager can test integrations"), frappe.PermissionError)
 
 	token = frappe.db.get_single_value("FT Settings", "github_token")

@@ -10,7 +10,6 @@ class FTTimeEntry(Document):
 	def validate(self):
 		self._check_lock()
 		self._calculate_duration()
-		self._calculate_entry_amount()
 
 	def after_insert(self):
 		self._fire_integration_event("entry_created")
@@ -53,14 +52,24 @@ class FTTimeEntry(Document):
 			)
 
 	def _calculate_duration(self):
-		if self.start_time and self.end_time and not self.is_running:
-			from datetime import datetime, date
-			fmt = "%H:%M:%S"
-			start = datetime.strptime(str(self.start_time), fmt)
-			end = datetime.strptime(str(self.end_time), fmt)
-			delta = end - start
-			if delta.total_seconds() > 0:
-				self.duration_hours = round(delta.total_seconds() / 3600, 4)
+		if not self.start_time or not self.end_time or self.is_running:
+			return
+		# If duration_hours was explicitly set and the user did not provide
+		# meaningful start/end times (i.e. they are auto-filled by Frappe to
+		# the current time and are essentially equal), keep the explicit value.
+		if self.flags.get("keep_duration"):
+			return
+		from datetime import datetime
+		raw_start = str(self.start_time)
+		raw_end = str(self.end_time)
+		# Frappe may store timedelta values with microseconds (e.g. "12:34:56.705881")
+		fmt = "%H:%M:%S.%f" if "." in raw_start else "%H:%M:%S"
+		fmt_end = "%H:%M:%S.%f" if "." in raw_end else "%H:%M:%S"
+		start = datetime.strptime(raw_start, fmt)
+		end = datetime.strptime(raw_end, fmt_end)
+		delta = end - start
+		if delta.total_seconds() > 0:
+			self.duration_hours = round(delta.total_seconds() / 3600, 4)
 
 	def _fire_integration_event(self, event: str):
 		"""Fire watch_event_hooks and post comments to Linear/GitHub.  Never raises."""
@@ -79,10 +88,3 @@ class FTTimeEntry(Document):
 		except Exception:
 			frappe.log_error(frappe.get_traceback(), f"Watch integration event: {event}")
 
-	def _calculate_entry_amount(self):
-		if self.entry_type == "billable" and self.entry_rate and self.duration_hours:
-			from watch.utils.rounding import get_billing_duration
-			billed_hours = get_billing_duration(self)
-			self.entry_amount = round(billed_hours * self.entry_rate, 2)
-		else:
-			self.entry_amount = 0

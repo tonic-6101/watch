@@ -8,7 +8,6 @@ import { useRoute, useRouter } from 'vue-router'
 import { ChevronDown, ChevronRight, Play, Download } from 'lucide-vue-next'
 import { __ } from '@/composables/useTranslate'
 import { formatHours, formatDurationInput } from '@/composables/useEntries'
-import { useCurrency } from '@/composables/useCurrency'
 
 // ── Types ─────────────────────────────────────────────────────────────────────
 
@@ -17,19 +16,12 @@ interface SummaryEntry {
   date:                    string
   description:             string
   duration_hours:          number
-  billing_duration_hours:  number
-  entry_rate:              number
-  entry_amount:            number
   entry_status:            'draft' | 'sent'
-  entry_rounding_override: boolean
-  is_rounded:              boolean
 }
 
 interface ProjectRow {
   project_tag:    string | null
   hours:          number
-  billing_hours:  number
-  amount:         number
   entries:        SummaryEntry[]
 }
 
@@ -37,16 +29,12 @@ interface ClientGroup {
   client_tag:       string | null
   client_tag_color: string | null
   total_hours:      number
-  billing_hours:    number
-  entry_amount:     number
   entry_status:     'draft' | 'sent'
   projects:         ProjectRow[]
 }
 
 interface Totals {
   billable_hours:     number
-  billing_hours:      number
-  entry_amount:       number
   non_billable_hours: number
   internal_hours:     number
 }
@@ -152,8 +140,6 @@ function presetRange(p: Preset): [string, string] {
 }
 
 // ── State ─────────────────────────────────────────────────────────────────────
-
-const { formatAmount } = useCurrency()
 
 // Initialise from URL or default to this week
 const initFrom = (route.query.from as string) || isoWeekMonday()
@@ -643,12 +629,6 @@ function fmtDate(d: string): string {
               {{ formatHours(group.total_hours) }}
             </span>
 
-            <!-- Est. amount -->
-            <span class="text-sm text-[var(--watch-text-muted)]">
-              {{ __('Est.') }}
-              <strong class="text-[var(--watch-text)]">{{ formatAmount(group.entry_amount) }}</strong>
-            </span>
-
             <!-- Sent badge -->
             <span
               v-if="group.entry_status === 'sent'"
@@ -778,18 +758,7 @@ function fmtDate(d: string): string {
                 <span class="flex-1 text-[var(--watch-text)]">
                   {{ project.project_tag ?? __('(untagged project)') }}
                 </span>
-                <!-- Exact / Billed hours when they differ -->
-                <template v-if="project.billing_hours !== project.hours">
-                  <span class="text-[var(--watch-text-muted)]">{{ formatHours(project.hours) }}</span>
-                  <span class="font-medium text-[var(--watch-text)]">{{ formatHours(project.billing_hours) }}</span>
-                </template>
-                <template v-else>
-                  <span>{{ formatHours(project.hours) }}</span>
-                </template>
-                <span>
-                  {{ __('Est.') }}
-                  <strong class="text-[var(--watch-text)]">{{ formatAmount(project.amount) }}</strong>
-                </span>
+                <span>{{ formatHours(project.hours) }}</span>
               </div>
 
               <!-- Entry detail table (expanded) -->
@@ -800,10 +769,7 @@ function fmtDate(d: string): string {
                 <!-- Header row -->
                 <div class="flex items-center gap-2 px-4 py-1.5 pl-14 text-xs text-[var(--watch-text-muted)] font-medium">
                   <span class="flex-1">{{ __('Description') }}</span>
-                  <span class="w-12 text-right">{{ __('Exact') }}</span>
-                  <span class="w-12 text-right">{{ __('Billed') }}</span>
-                  <span class="w-16 text-right">{{ __('Rate') }}</span>
-                  <span class="w-20 text-right">{{ __('Est.') }}</span>
+                  <span class="w-12 text-right">{{ __('Duration') }}</span>
                 </div>
                 <!-- Entry rows -->
                 <div
@@ -817,23 +783,7 @@ function fmtDate(d: string): string {
                   <span class="w-12 text-right text-[var(--watch-text-muted)]">
                     {{ formatDurationInput(e.duration_hours) }}
                   </span>
-                  <span class="w-12 text-right font-medium" :class="e.is_rounded ? 'text-[var(--watch-primary)]' : 'text-[var(--watch-text-muted)]'">
-                    {{ formatDurationInput(e.billing_duration_hours) }}{{ e.is_rounded ? ' *' : '' }}
-                  </span>
-                  <span class="w-16 text-right text-[var(--watch-text-muted)]">
-                    {{ e.entry_rate ? formatAmount(e.entry_rate) : '—' }}
-                  </span>
-                  <span class="w-20 text-right text-[var(--watch-text)]">
-                    {{ e.entry_amount ? formatAmount(e.entry_amount) : '—' }}
-                  </span>
                 </div>
-                <!-- Rounded footnote -->
-                <p
-                  v-if="project.entries.some(e => e.is_rounded)"
-                  class="px-4 py-1 pl-14 text-xs text-[var(--watch-text-muted)] italic"
-                >
-                  {{ __('* Rounded up to nearest increment') }}
-                </p>
               </div>
             </template>
           </div>
@@ -916,10 +866,6 @@ function fmtDate(d: string): string {
             <span class="text-[var(--watch-text-muted)] flex-1">{{ __('Total billable') }}</span>
             <span class="font-semibold text-[var(--watch-text)]">
               {{ formatHours(summaryData.totals.billable_hours) }}
-            </span>
-            <span class="text-[var(--watch-text-muted)]">
-              {{ __('Est.') }}
-              <strong class="text-[var(--watch-text)]">{{ formatAmount(summaryData.totals.entry_amount) }}</strong>
             </span>
           </div>
 

@@ -5,7 +5,6 @@
 <script setup lang="ts">
 import { ref, computed, watch, onMounted } from 'vue'
 import { __ } from '@/composables/useTranslate'
-import { useCurrency } from '@/composables/useCurrency'
 import {
   formatHours,
   parseDurationInput,
@@ -24,7 +23,6 @@ interface TagMeta {
   name: string
   category: string
   default_entry_type: EntryType | null
-  default_entry_rate: number | null
 }
 
 const tagMetaCache = new Map<string, TagMeta>()
@@ -33,7 +31,7 @@ async function fetchTagMeta(tagName: string): Promise<TagMeta | null> {
   if (tagMetaCache.has(tagName)) return tagMetaCache.get(tagName)!
   try {
     const res = await fetch(
-      `/api/method/watch.api.tag.get_tags?search=${encodeURIComponent(tagName)}&include_archived=true`,
+      `/api/method/watch.api.tags.get_tags?search=${encodeURIComponent(tagName)}&include_archived=true`,
       { headers: { 'X-Frappe-CSRF-Token': (window as any).csrf_token ?? '' } },
     )
     const data = await res.json()
@@ -44,7 +42,6 @@ async function fetchTagMeta(tagName: string): Promise<TagMeta | null> {
       name: match.name,
       category: match.category ?? 'Other',
       default_entry_type: match.default_entry_type || null,
-      default_entry_rate: match.default_entry_rate || null,
     }
     tagMetaCache.set(tagName, meta)
     return meta
@@ -79,7 +76,6 @@ const formDate       = ref(props.entry?.date ?? props.defaultDate)
 const formDesc       = ref(props.entry?.description ?? '')
 const formTags       = ref<string[]>(props.entry?.tag_names ? [...props.entry.tag_names] : [])
 const formType       = ref<EntryType>((props.entry?.entry_type ?? 'billable') as EntryType)
-const formRate       = ref<number | ''>(props.entry?.entry_rate ?? '')
 const formDuration   = ref(props.entry?.duration_hours ? formatDurationInput(props.entry.duration_hours) : '')
 const formStart      = ref(props.entry?.start_time ? props.entry.start_time.slice(0, 5) : '')
 const formEnd        = ref(props.entry?.end_time   ? props.entry.end_time.slice(0, 5)   : '')
@@ -150,39 +146,6 @@ function dismissGithubSuggestions() {
   window.setTimeout(() => { githubSuggestions.value = [] }, 200)
 }
 
-// ── Rounding indicator (edit mode only) ──────────────────────────────────
-
-const roundingOverride   = ref(props.entry?.entry_rounding_override ?? 0)
-const billingDuration    = ref(props.entry?.billing_duration_hours ?? props.entry?.duration_hours ?? null)
-
-// Show indicator when in edit mode and rounding has any effect
-const showRoundingHint = computed(() =>
-  props.entry != null && billingDuration.value != null && (
-    roundingOverride.value ||
-    billingDuration.value !== (props.entry?.duration_hours ?? billingDuration.value)
-  ),
-)
-
-async function toggleRoundingOverride() {
-  if (!props.entry) return
-  const newOverride = !roundingOverride.value
-  try {
-    const res = await fetch('/api/method/watch.api.time_entry.set_rounding_override', {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json',
-        'X-Frappe-CSRF-Token': (window as any).csrf_token ?? '',
-      },
-      body: JSON.stringify({ entry_name: props.entry.name, override: newOverride }),
-    })
-    const data = await res.json()
-    if (!res.ok || data.exc) throw new Error(data.exc ?? 'Failed')
-    emit('refresh')
-  } catch (e: any) {
-    saveError.value = e.message
-  }
-}
-
 // ── Budget warning ───────────────────────────────────────────────────────
 
 interface BudgetStatus {
@@ -222,8 +185,6 @@ async function checkTagBudgets(tags: string[]) {
 
 type InheritSource = 'default' | 'inherited' | 'manual'
 const typeSource     = ref<InheritSource>(props.entry ? 'manual' : 'default')
-const rateSource     = ref<InheritSource>(props.entry?.entry_rate ? 'manual' : 'default')
-const rateFromTag    = ref<string | null>(null)
 
 // ── Site defaults from FT Settings ──────────────────────────────────────
 // Applied once on mount for new entries, before any tag interaction.
@@ -249,9 +210,6 @@ onMounted(async () => {
     if (typeSource.value === 'default' && settings.default_entry_type) {
       formType.value  = settings.default_entry_type as EntryType
     }
-    if (rateSource.value === 'default' && settings.default_entry_rate) {
-      formRate.value = settings.default_entry_rate
-    }
   } catch { /* silently ignore — site defaults are optional */ }
 })
 
@@ -269,15 +227,6 @@ watch(formTags, async (newTags, oldTags) => {
     if (meta.category === 'Client' || typeSource.value === 'default') {
       formType.value  = meta.default_entry_type
       typeSource.value = 'inherited'
-    }
-  }
-
-  // entry_rate: inherit Client > first-with-rate, if not manually set
-  if (rateSource.value !== 'manual' && meta.default_entry_rate) {
-    if (meta.category === 'Client' || rateSource.value === 'default') {
-      formRate.value  = meta.default_entry_rate
-      rateSource.value = 'inherited'
-      rateFromTag.value = meta.name
     }
   }
 }, { deep: true })
@@ -327,21 +276,6 @@ const showPastWarning = computed(() =>
   !props.hideDate && pastDaysCount.value > 7,
 )
 
-// ── Billing amount preview ───────────────────────────────────────────────
-
-const { formatAmount } = useCurrency()
-
-const estAmount = computed<string | null>(() => {
-  if (formType.value !== 'billable') return null
-  const rate = typeof formRate.value === 'number' ? formRate.value : parseFloat(String(formRate.value))
-  if (!rate || !durationHours.value) return null
-  // In edit mode use billing_duration_hours (rounding applied); in create mode use raw duration
-  const billable = (props.entry && billingDuration.value != null)
-    ? billingDuration.value
-    : durationHours.value
-  return formatAmount(rate * billable)
-})
-
 // ── Submit ───────────────────────────────────────────────────────────────
 
 async function handleSave() {
@@ -356,7 +290,6 @@ async function handleSave() {
       end_time:       formEnd.value   || null,
       description:    formDesc.value  || null,
       entry_type:   formType.value,
-      entry_rate:   formRate.value !== '' ? Number(formRate.value) : null,
       tags:           formTags.value,
       linear_issue:   formLinearIssue.value || null,
       github_ref:     formGithubRef.value || null,
@@ -374,6 +307,37 @@ const ENTRY_OPTIONS: { value: EntryType; label: string }[] = [
   { value: 'non-billable', label: 'Non-billable' },
   { value: 'internal',     label: 'Internal' },
 ]
+
+// ── Time input helpers (24h format) ─────────────────────────────────────
+
+/** Returns true for valid HH:MM (24h). */
+function isValidTime(v: string): boolean {
+  const m = v.match(/^(\d{1,2}):(\d{2})$/)
+  if (!m) return false
+  const h = parseInt(m[1]), min = parseInt(m[2])
+  return h >= 0 && h <= 23 && min >= 0 && min <= 59
+}
+
+/** Normalize loose input like "9:5" → "09:05", or "930" → "09:30". */
+function normalizeTimeInput(v: string): string {
+  if (!v) return ''
+  // Already valid HH:MM
+  if (isValidTime(v)) {
+    const [h, m] = v.split(':')
+    return `${h.padStart(2, '0')}:${m}`
+  }
+  // Try digits-only: "930" → "09:30", "1430" → "14:30"
+  const digits = v.replace(/\D/g, '')
+  if (digits.length === 3 || digits.length === 4) {
+    const hStr = digits.slice(0, digits.length - 2)
+    const mStr = digits.slice(-2)
+    const h = parseInt(hStr), m = parseInt(mStr)
+    if (h >= 0 && h <= 23 && m >= 0 && m <= 59) {
+      return `${String(h).padStart(2, '0')}:${String(m).padStart(2, '0')}`
+    }
+  }
+  return v
+}
 </script>
 
 <template>
@@ -427,11 +391,15 @@ const ENTRY_OPTIONS: { value: EntryType; label: string }[] = [
         <label class="text-xs text-[var(--watch-text-muted)]">{{ __('Start') }}</label>
         <input
           v-model="formStart"
-          type="time"
+          type="text"
+          placeholder="HH:MM"
+          maxlength="5"
           class="px-2 py-1.5 rounded-lg border border-[var(--watch-border)]
-                 bg-[var(--watch-bg)] text-sm text-[var(--watch-text)] outline-none
+                 bg-[var(--watch-bg)] text-sm text-[var(--watch-text)] tabular-nums outline-none
                  focus:ring-2 focus:ring-[var(--watch-primary)]/30
                  focus:border-[var(--watch-primary)]"
+          :class="{ 'border-red-400': formStart && !isValidTime(formStart) }"
+          @blur="formStart = normalizeTimeInput(formStart)"
         />
       </div>
 
@@ -440,34 +408,17 @@ const ENTRY_OPTIONS: { value: EntryType; label: string }[] = [
         <label class="text-xs text-[var(--watch-text-muted)]">{{ __('End') }}</label>
         <input
           v-model="formEnd"
-          type="time"
+          type="text"
+          placeholder="HH:MM"
+          maxlength="5"
           class="px-2 py-1.5 rounded-lg border border-[var(--watch-border)]
-                 bg-[var(--watch-bg)] text-sm text-[var(--watch-text)] outline-none
+                 bg-[var(--watch-bg)] text-sm text-[var(--watch-text)] tabular-nums outline-none
                  focus:ring-2 focus:ring-[var(--watch-primary)]/30
                  focus:border-[var(--watch-primary)]"
+          :class="{ 'border-red-400': formEnd && !isValidTime(formEnd) }"
+          @blur="formEnd = normalizeTimeInput(formEnd)"
         />
       </div>
-    </div>
-
-    <!-- Rounding indicator (edit mode only) -->
-    <div
-      v-if="showRoundingHint"
-      class="flex items-center gap-2 text-xs text-[var(--watch-text-muted)] -mt-1 pl-1"
-    >
-      <span v-if="roundingOverride">
-        ↳ {{ __('Billed as {0}', [formatDurationInput(props.entry!.duration_hours)]) }}
-        <span class="italic">({{ __('exact — rounding skipped') }})</span>
-      </span>
-      <span v-else>
-        ↳ {{ __('Billed as {0}', [formatDurationInput(billingDuration!)]) }}
-      </span>
-      <button
-        type="button"
-        class="ml-1 underline hover:text-[var(--watch-primary)] transition-colors"
-        @click="toggleRoundingOverride"
-      >
-        {{ roundingOverride ? __('Apply rounding') : __('Use exact') }}
-      </button>
     </div>
 
     <!-- Tags -->
@@ -489,9 +440,8 @@ const ENTRY_OPTIONS: { value: EntryType; label: string }[] = [
       </template>
     </div>
 
-    <!-- Billing type + Rate -->
+    <!-- Entry type -->
     <div class="flex items-center gap-2 flex-wrap">
-      <!-- Type segmented -->
       <div class="flex gap-1 flex-shrink-0">
         <button
           v-for="opt in ENTRY_OPTIONS"
@@ -508,28 +458,6 @@ const ENTRY_OPTIONS: { value: EntryType; label: string }[] = [
           {{ __(opt.label) }}
         </button>
       </div>
-
-      <!-- Rate (billable only) -->
-      <template v-if="formType === 'billable'">
-        <input
-          v-model="formRate"
-          type="number"
-          min="0"
-          step="0.01"
-          :placeholder="__('Rate / h')"
-          class="w-28 px-2 py-1 rounded-lg border border-[var(--watch-border)]
-                 bg-[var(--watch-bg)] text-sm text-[var(--watch-text)] outline-none
-                 focus:ring-2 focus:ring-[var(--watch-primary)]/30
-                 focus:border-[var(--watch-primary)]"
-          @input="rateSource = 'manual'; rateFromTag = null"
-        />
-        <span v-if="rateSource === 'inherited' && rateFromTag" class="text-xs text-[var(--watch-text-muted)]">
-          {{ __('← from {0}', [rateFromTag]) }}
-        </span>
-        <span v-else-if="estAmount" class="text-xs text-[var(--watch-text-muted)]">
-          {{ __('Est.') }} {{ estAmount }}
-        </span>
-      </template>
     </div>
 
     <!-- Integrations (collapsible, only when configured) -->

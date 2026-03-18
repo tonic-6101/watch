@@ -37,7 +37,15 @@ async function call<T = any>(
   params: Record<string, unknown> = {},
   httpMethod: 'GET' | 'POST' = 'POST',
 ): Promise<T> {
-  const url = `/api/method/${method}`
+  let url = `/api/method/${method}`
+  if (httpMethod === 'GET' && Object.keys(params).length) {
+    const qs = new URLSearchParams(
+      Object.entries(params)
+        .filter(([, v]) => v !== undefined && v !== null)
+        .map(([k, v]) => [k, String(v)]),
+    )
+    url += `?${qs.toString()}`
+  }
   const res = await fetch(url, {
     method: httpMethod,
     headers: {
@@ -60,19 +68,21 @@ async function call<T = any>(
 // ── Elapsed display helpers ─────────────────────────────────────────────
 
 export function formatElapsed(seconds: number): string {
-  const h = Math.floor(seconds / 3600)
-  const m = Math.floor((seconds % 3600) / 60)
-  const s = seconds % 60
+  const t = Math.max(0, Math.floor(seconds))
+  const h = Math.floor(t / 3600)
+  const m = Math.floor((t % 3600) / 60)
+  const s = t % 60
   return `${String(h).padStart(2, '0')}:${String(m).padStart(2, '0')}:${String(s).padStart(2, '0')}`
 }
 
 export function formatDuration(seconds: number): string {
-  const h = Math.floor(seconds / 3600)
-  const m = Math.floor((seconds % 3600) / 60)
+  const t = Math.max(0, Math.floor(seconds))
+  const h = Math.floor(t / 3600)
+  const m = Math.floor((t % 3600) / 60)
   if (h > 0 && m > 0) return `${h}h ${m}m`
   if (h > 0) return `${h}h`
   if (m > 0) return `${m}m`
-  return `${seconds}s`
+  return `${t}s`
 }
 
 // ── Singleton timer state ───────────────────────────────────────────────
@@ -102,6 +112,8 @@ const focusDescription   = ref<string | null>(null)
 
 let tickInterval: ReturnType<typeof setInterval> | null = null
 let pollInterval:  ReturnType<typeof setInterval> | null = null
+let initialized = false
+let mountCount = 0
 
 function startTicking() {
   stopTicking()
@@ -149,6 +161,7 @@ export function useTimer() {
         {},
         'GET',
       )
+      const prevState = state.value
       state.value              = data.state
       accumulatedSeconds.value = data.accumulated_seconds
       description.value        = data.description ?? ''
@@ -164,7 +177,16 @@ export function useTimer() {
       focusDescription.value   = data.focus_description ?? null
 
       if (data.state !== 'stopped') {
-        elapsed.value = data.elapsed_seconds
+        // Only hard-set elapsed on first load or state change.
+        // During normal polling while already ticking, only correct
+        // if server and client have drifted by more than 2 seconds.
+        const alreadyTicking = prevState === data.state && tickInterval !== null
+        if (alreadyTicking) {
+          const drift = Math.abs(elapsed.value - data.elapsed_seconds)
+          if (drift > 2) elapsed.value = data.elapsed_seconds
+        } else {
+          elapsed.value = data.elapsed_seconds
+        }
         // Fetch tags + entry type from the active entry
         if (data.active_entry) {
           const [entryTags, fetchedEntryType] = await Promise.all([
@@ -411,15 +433,24 @@ export function useTimer() {
   // ── Lifecycle ───────────────────────────────────────────────────────
 
   onMounted(async () => {
-    await load()
-    listenRealtime()
-    // Sync every 30s in case realtime is unavailable
-    pollInterval = setInterval(load, 30_000)
+    mountCount++
+    if (!initialized) {
+      initialized = true
+      await load()
+      listenRealtime()
+      pollInterval = setInterval(load, 30_000)
+    }
   })
 
   onUnmounted(() => {
-    stopTicking()
-    if (pollInterval) { clearInterval(pollInterval); pollInterval = null }
+    mountCount--
+    // Only tear down when no component instances remain
+    if (mountCount <= 0) {
+      mountCount = 0
+      stopTicking()
+      if (pollInterval) { clearInterval(pollInterval); pollInterval = null }
+      initialized = false
+    }
   })
 
   return {

@@ -24,7 +24,7 @@ def get_tags(
 		filters=filters,
 		fields=[
 			"name", "tag_name", "category", "color",
-			"default_entry_type", "default_entry_rate", "is_archived",
+			"default_entry_type", "is_archived",
 			"monthly_hour_budget", "budget_warning_threshold",
 		],
 		order_by="tag_name asc",
@@ -76,7 +76,6 @@ def create_tag(
 	category: str = None,
 	color: str = None,
 	default_entry_type: str = None,
-	default_entry_rate: float = None,
 ) -> dict:
 	if frappe.db.exists("FT Tag", tag_name):
 		frappe.throw(_("Tag '{0}' already exists").format(tag_name))
@@ -89,8 +88,6 @@ def create_tag(
 		tag.color = color
 	if default_entry_type:
 		tag.default_entry_type = default_entry_type
-	if default_entry_rate is not None:
-		tag.default_entry_rate = default_entry_rate
 	tag.insert(ignore_permissions=True)
 	return tag.as_dict()
 
@@ -101,8 +98,6 @@ def update_tag(
 	category: str = None,
 	color: str = None,
 	default_entry_type: str = None,
-	default_entry_rate: float = None,
-	rounding_rule: str = None,
 	monthly_hour_budget: float = None,
 	budget_warning_threshold: int = None,
 ) -> dict:
@@ -113,10 +108,6 @@ def update_tag(
 		tag.color = color
 	if default_entry_type is not None:
 		tag.default_entry_type = default_entry_type
-	if default_entry_rate is not None:
-		tag.default_entry_rate = default_entry_rate
-	if rounding_rule is not None:
-		tag.rounding_rule = rounding_rule
 	if monthly_hour_budget is not None:
 		tag.monthly_hour_budget = monthly_hour_budget
 	if budget_warning_threshold is not None:
@@ -137,7 +128,7 @@ def rename_tag(tag_name: str, new_name: str) -> dict:
 		frappe.throw(_("Tag '{0}' already exists").format(new_name))
 
 	# frappe.rename_doc handles the DB rename and updates Link fields
-	frappe.rename_doc("FT Tag", tag_name, new_name, ignore_permissions=True)
+	frappe.rename_doc("FT Tag", tag_name, new_name)
 
 	# Re-fetch denormalised fields on child rows
 	frappe.db.sql(
@@ -174,17 +165,19 @@ def merge_tag(source: str, target: str) -> dict:
 		source,
 		as_dict=True,
 	)
-	target_entries = set(
-		frappe.db.sql(
-			"""
-			SELECT DISTINCT parent FROM `tabFT Time Entry Tag`
-			WHERE tag = %s
-			""",
-			target,
-			as_list=True,
-		) or []
-	)
-	target_entries = {r[0] for r in target_entries}
+	target_entries = {
+		r[0]
+		for r in (
+			frappe.db.sql(
+				"""
+				SELECT DISTINCT parent FROM `tabFT Time Entry Tag`
+				WHERE tag = %s
+				""",
+				target,
+				as_list=True,
+			) or []
+		)
+	}
 
 	target_tag = frappe.get_doc("FT Tag", target)
 	affected = 0
@@ -300,7 +293,11 @@ def get_budget_usage(tag_name: str, month: str = None) -> dict:
 		as_dict=True,
 	)
 
-	used     = float(result[0].total_hours) if result else 0.0
+	used = float(result[0].total_hours) if result else 0.0
+
+	if not frappe.db.exists("FT Tag", tag_name):
+		return {"status": "none", "used": round(used, 2), "budget": 0, "pct": 0}
+
 	tag      = frappe.get_cached_doc("FT Tag", tag_name)
 	budget   = float(tag.monthly_hour_budget or 0)
 	settings = frappe.get_single("FT Settings")

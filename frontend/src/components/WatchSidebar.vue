@@ -20,9 +20,12 @@ const route = useRoute()
 
 // ── Admin detection ──────────────────────────────────────────────────────
 
-const isAdmin = computed(() =>
-  !!(window as any).frappe?.user?.has_role?.('System Manager')
-)
+const isAdmin = computed(() => {
+  const frappe = (window as any).frappe
+  // Boot injects roles at window.frappe.boot.user_roles (see www/watch.py get_boot)
+  const roles: string[] = frappe?.boot?.user_roles ?? []
+  return roles.includes('System Manager')
+})
 
 // ── Nav items ────────────────────────────────────────────────────────────
 

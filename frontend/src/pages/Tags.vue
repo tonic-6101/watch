@@ -44,7 +44,6 @@ const newName        = ref('')
 const newCategory    = ref('')
 const newColor       = ref('')
 const newType        = ref('')
-const newRate        = ref<number | ''>('')
 const newFormSaving  = ref(false)
 
 // Merge dialog
@@ -69,7 +68,7 @@ async function loadTags() {
   loading.value  = true
   apiError.value = null
   try {
-    tags.value = await call<TagData[]>('watch.api.tag.get_tags', {
+    tags.value = await call<TagData[]>('watch.api.tags.get_tags', {
       include_archived: true,
       include_stats: true,
     })
@@ -117,17 +116,16 @@ async function handleCreate() {
   newFormSaving.value = true
   apiError.value = null
   try {
-    const tag = await call<TagData>('watch.api.tag.create_tag', {
+    const tag = await call<TagData>('watch.api.tags.create_tag', {
       tag_name:             newName.value.trim(),
       category:             newCategory.value || null,
       color:                newColor.value || null,
       default_entry_type: newType.value || null,
-      default_entry_rate: newRate.value !== '' ? Number(newRate.value) : null,
     })
     tags.value = [tag, ...tags.value]
     showNewForm.value = false
     newName.value = ''; newCategory.value = ''; newColor.value = ''
-    newType.value = ''; newRate.value = ''
+    newType.value = ''
   } catch (e: any) {
     apiError.value = e.message
   } finally {
@@ -141,7 +139,7 @@ async function handleSave(tagName: string, params: TagSaveParams) {
     let result: TagData
     if (params.tag_name !== tagName) {
       // Name changed → rename first
-      result = await call<TagData>('watch.api.tag.rename_tag', {
+      result = await call<TagData>('watch.api.tags.rename_tag', {
         tag_name: tagName,
         new_name: params.tag_name,
       })
@@ -150,12 +148,11 @@ async function handleSave(tagName: string, params: TagSaveParams) {
     }
 
     // Update other fields
-    result = await call<TagData>('watch.api.tag.update_tag', {
+    result = await call<TagData>('watch.api.tags.update_tag', {
       tag_name:                 params.tag_name,
       category:                 params.category || null,
       color:                    params.color || null,
       default_entry_type:       params.default_entry_type || null,
-      default_entry_rate:       params.default_entry_rate !== '' ? Number(params.default_entry_rate) : null,
       monthly_hour_budget:      params.monthly_hour_budget !== '' ? Number(params.monthly_hour_budget) : 0,
       budget_warning_threshold: params.budget_warning_threshold !== '' ? Number(params.budget_warning_threshold) : 0,
     })
@@ -171,7 +168,7 @@ async function handleSave(tagName: string, params: TagSaveParams) {
 async function handleArchive(tagName: string, archive: boolean) {
   apiError.value = null
   try {
-    const result = await call<TagData>('watch.api.tag.archive_tag', { tag_name: tagName, archive })
+    const result = await call<TagData>('watch.api.tags.archive_tag', { tag_name: tagName, archive })
     const idx = tags.value.findIndex(t => t.name === tagName)
     if (idx !== -1) tags.value[idx] = { ...tags.value[idx], ...result }
   } catch (e: any) {
@@ -182,7 +179,7 @@ async function handleArchive(tagName: string, archive: boolean) {
 async function handleDelete(tagName: string) {
   apiError.value = null
   try {
-    await call('watch.api.tag.delete_tag', { tag_name: tagName })
+    await call('watch.api.tags.delete_tag', { tag_name: tagName })
     tags.value = tags.value.filter(t => t.name !== tagName)
     selected.value.delete(tagName)
   } catch (e: any) {
@@ -203,7 +200,7 @@ async function handleMerge() {
   mergeLoading.value = true
   mergeError.value   = null
   try {
-    await call('watch.api.tag.merge_tag', {
+    await call('watch.api.tags.merge_tag', {
       source: mergeSource.value,
       target: mergeTarget.value,
     })
@@ -239,7 +236,7 @@ async function bulkChangeCategory() {
   apiError.value = null
   for (const tagName of selected.value) {
     try {
-      const result = await call<TagData>('watch.api.tag.update_tag', {
+      const result = await call<TagData>('watch.api.tags.update_tag', {
         tag_name: tagName,
         category: bulkNewCat.value,
       })
@@ -343,13 +340,6 @@ const mergeTargetOptions = computed(() =>
               <option v-for="bt in BILLING_TYPES" :key="bt.value" :value="bt.value">{{ __(bt.label) }}</option>
             </select>
           </div>
-          <div class="flex flex-col gap-1 col-span-2">
-            <label class="text-xs text-[var(--watch-text-muted)]">{{ __('Default Rate / h') }}</label>
-            <input v-model="newRate" type="number" min="0" step="0.01" placeholder="0.00"
-              class="px-2 py-1.5 rounded-lg border border-[var(--watch-border)]
-                     bg-[var(--watch-bg)] text-sm text-[var(--watch-text)] outline-none
-                     focus:ring-2 focus:ring-[var(--watch-primary)]/30 focus:border-[var(--watch-primary)]" />
-          </div>
         </div>
         <div class="flex gap-2">
           <button
@@ -445,7 +435,6 @@ const mergeTargetOptions = computed(() =>
         <span class="w-2.5 shrink-0" />
         <span class="flex-1">{{ __('Name') }}</span>
         <span class="w-20 shrink-0">{{ __('Category') }}</span>
-        <span class="w-20 shrink-0 text-right">{{ __('Rate') }}</span>
         <span class="w-24 shrink-0 text-right">{{ __('Type') }}</span>
         <span class="w-16 shrink-0 text-right">{{ __('Entries') }}</span>
         <span class="w-8 shrink-0" />
