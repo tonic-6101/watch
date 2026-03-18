@@ -3,9 +3,10 @@ name = "watch"
 authors = [
     { name = "Tonic", email = "hello@tonic.to"}
 ]
-description = "Standalone time tracking for Frappe"
+description = "Standalone time tracking for the Frappe ecosystem"
 requires-python = ">=3.10"
 readme = "README.md"
+license = { text = "AGPL-3.0-or-later" }
 dynamic = ["version"]
 dependencies = [
     # "frappe~=15.0.0" # Installed and managed by bench.
