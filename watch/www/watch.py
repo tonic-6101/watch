@@ -36,18 +36,25 @@ def get_boot():
 	user = frappe.session.user
 	user_info = frappe.get_doc("User", user)
 
+	boot = {
+		"user": {
+			"name": user,
+			"email": user_info.email or "",
+			"full_name": user_info.full_name or user,
+			"user_image": user_info.user_image or "",
+		},
+		"user_roles": frappe.get_roles(user),
+	}
+
+	# Inject Dock boot data so the SPA can detect Dock and use DockNavbar
+	dock_boot = _get_dock_boot()
+	if dock_boot:
+		boot["dock"] = dock_boot
+
 	return frappe._dict(
 		{
 			"frappe": {
-				"boot": {
-					"user": {
-						"name": user,
-						"email": user_info.email or "",
-						"full_name": user_info.full_name or user,
-						"user_image": user_info.user_image or "",
-					},
-					"user_roles": frappe.get_roles(user),
-				},
+				"boot": boot,
 				"csrf_token": frappe.sessions.get_csrf_token(),
 			},
 			"frappe_version": frappe.__version__,
@@ -58,3 +65,14 @@ def get_boot():
 			"__messages": get_messages_for_boot(),
 		}
 	)
+
+
+def _get_dock_boot():
+	"""Return Dock boot data if Dock is installed, else None."""
+	if "dock" not in frappe.get_installed_apps():
+		return None
+	try:
+		from dock.boot import get_boot as dock_get_boot
+		return dock_get_boot()
+	except Exception:
+		return None

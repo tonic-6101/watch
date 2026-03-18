@@ -3,25 +3,23 @@
   Copyright (C) 2024-2026 Tonic
 -->
 <script setup lang="ts">
-import { ref, computed, watch, defineAsyncComponent } from 'vue'
+import { ref, watch, onMounted, onUnmounted } from 'vue'
 import { RouterView, useRouter, useRoute } from 'vue-router'
+import { DockLayout } from '/assets/dock/js/dock-navbar.esm.js'
 import WatchSidebar from './components/WatchSidebar.vue'
 import PreferencesPanel from './components/PreferencesPanel.vue'
 import ShortcutsOverlay from './components/ShortcutsOverlay.vue'
 import ToastContainer from './components/ToastContainer.vue'
 import { useTimer } from './composables/useTimer'
+import { useSidebar } from './composables/useSidebar'
 import { useKeyboardShortcuts } from './composables/useKeyboardShortcuts'
 
-const dockInstalled = computed(() =>
-  !!(window as any).frappe?.boot?.dock?.installed
-)
+// Bridge: DockNavbar dispatches this event when sidebar toggle is clicked
+const { toggle: sidebarToggle } = useSidebar()
+function onDockToggle() { sidebarToggle() }
 
-const NavbarComponent = dockInstalled.value
-  ? defineAsyncComponent(() =>
-      // @ts-ignore — runtime URL, only resolves when Dock is installed
-      import('/assets/dock/js/dock-navbar.esm.js').then((m: any) => m.DockNavbar)
-    )
-  : defineAsyncComponent(() => import('./components/WatchNavbar.vue'))
+onMounted(() => window.addEventListener('dock:toggleSidebar', onDockToggle))
+onUnmounted(() => window.removeEventListener('dock:toggleSidebar', onDockToggle))
 
 // ── Timer (singleton state — safe to call here) ──────────────────────────
 
@@ -52,7 +50,7 @@ watch(() => route.query.panel, (val) => {
   if (val === 'preferences') showPreferences.value = true
 }, { immediate: true })
 
-// Expose openPreferences globally so WatchAccountMenu can call it
+// Expose openPreferences globally so external components can trigger it
 ;(window as any).__watchOpenPreferences = openPreferences
 
 // ── Help overlay ─────────────────────────────────────────────────────────
@@ -128,25 +126,18 @@ useKeyboardShortcuts({
 </script>
 
 <template>
-  <div class="flex flex-col h-screen overflow-hidden">
-    <!-- Top bar -->
-    <component :is="NavbarComponent" />
+  <ToastContainer />
 
-    <!-- Body: sidebar + page content -->
-    <div class="flex flex-1 overflow-hidden">
-      <WatchSidebar />
-      <main class="flex-1 overflow-y-auto">
-        <RouterView />
-      </main>
-    </div>
+  <DockLayout>
+    <WatchSidebar />
+    <main class="flex-1 overflow-y-auto">
+      <RouterView />
+    </main>
+  </DockLayout>
 
-    <!-- My Preferences slide-over -->
-    <PreferencesPanel v-if="showPreferences" @close="closePreferences" />
+  <!-- My Preferences slide-over -->
+  <PreferencesPanel v-if="showPreferences" @close="closePreferences" />
 
-    <!-- Keyboard shortcuts overlay (H key) -->
-    <ShortcutsOverlay v-if="showHelp" @close="showHelp = false" />
-
-    <!-- Toast notifications -->
-    <ToastContainer />
-  </div>
+  <!-- Keyboard shortcuts overlay (H key) -->
+  <ShortcutsOverlay v-if="showHelp" @close="showHelp = false" />
 </template>

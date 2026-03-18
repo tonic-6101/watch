@@ -22,6 +22,23 @@ try {
   console.warn('frappe-ui vite plugin not found, continuing without it')
 }
 
+// ── Shared Vue runtime ──────────────────────────────────────────────
+// Dock ships a single Vue ESM browser build. All ecosystem apps MUST use it
+// so that cross-bundle components (DockNavbar) share one Vue instance.
+const SHARED_VUE_URL = '/assets/dock/js/vendor/vue.esm.js'
+
+function vueSharedPlugin(): Plugin {
+  return {
+    name: 'vue-shared',
+    enforce: 'pre',
+    resolveId(id) {
+      if (id === 'vue' || id === '@vue/runtime-dom' || id === '@vue/runtime-core' || id === '@vue/reactivity') {
+        return { id: SHARED_VUE_URL, external: true }
+      }
+    },
+  }
+}
+
 interface BundleChunk {
   type: 'asset' | 'chunk'
   fileName: string
@@ -102,6 +119,7 @@ function frappeManifestPlugin(): Plugin {
 export default defineConfig({
   base: '/assets/watch/frontend/',
   plugins: [
+    vueSharedPlugin(),
     vue(),
     frappeui && frappeui({
       frappeProxy: true,
@@ -144,6 +162,6 @@ export default defineConfig({
     },
   },
   optimizeDeps: {
-    include: ['frappe-ui', 'feather-icons', 'lucide-vue-next', 'vue', 'vue-router'],
+    include: ['frappe-ui', 'feather-icons', 'lucide-vue-next', 'vue-router'],
   },
 })
