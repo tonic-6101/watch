@@ -40,6 +40,22 @@ def bump(version: str) -> None:
     pkg.write_text(json.dumps(data, indent=2) + "\n")
     print(f"  frontend/package.json -> {version}")
 
+    # README.md version badge
+    readme = ROOT / "README.md"
+    text = readme.read_text()
+    text = re.sub(
+        r"version-[^-]+-green\.svg",
+        f"version-{version}-green.svg",
+        text,
+    )
+    text = re.sub(
+        r'alt="Version: [^"]*"',
+        f'alt="Version: {version}"',
+        text,
+    )
+    readme.write_text(text)
+    print(f"  README.md -> {version}")
+
     print(f"\nDone. All files updated to {version}.")
 
 
