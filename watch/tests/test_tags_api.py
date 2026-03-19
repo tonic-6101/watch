@@ -18,14 +18,14 @@ from watch.api.tags import (
 	rename_tag,
 	update_tag,
 )
-from watch.tests.test_helpers import ensure_ft_settings, make_entry, make_tag
+from watch.tests.test_helpers import ensure_watch_settings, make_entry, make_tag
 
 
 class TestTagsAPI(FrappeTestCase):
 	@classmethod
 	def setUpClass(cls):
 		super().setUpClass()
-		ensure_ft_settings()
+		ensure_watch_settings()
 
 	def setUp(self):
 		super().setUp()
@@ -43,7 +43,7 @@ class TestTagsAPI(FrappeTestCase):
 		self.assertEqual(result["tag_name"], "Test Create")
 		self.assertEqual(result["category"], "Client")
 		self.assertEqual(result["color"], "#ff0000")
-		self.assertTrue(frappe.db.exists("FT Tag", "Test Create"))
+		self.assertTrue(frappe.db.exists("Watch Tag", "Test Create"))
 
 	def test_create_tag_duplicate_throws(self):
 		"""create_tag raises on duplicate tag_name."""
@@ -66,7 +66,7 @@ class TestTagsAPI(FrappeTestCase):
 	def test_get_tags_excludes_archived_by_default(self):
 		"""Archived tags are excluded unless include_archived is True."""
 		tag = make_tag("Archived Tag")
-		frappe.db.set_value("FT Tag", tag.name, "is_archived", 1)
+		frappe.db.set_value("Watch Tag", tag.name, "is_archived", 1)
 
 		results = get_tags()
 		tag_names = [t["tag_name"] for t in results]
@@ -102,7 +102,7 @@ class TestTagsAPI(FrappeTestCase):
 	# ── rename_tag ────────────────────────────────────────────────────────
 
 	def test_rename_tag_updates_child_rows(self):
-		"""rename_tag updates denormalized tag_name on FT Time Entry Tag rows."""
+		"""rename_tag updates denormalized tag_name on Watch Entry Tag rows."""
 		tag = make_tag("Old Name")
 		entry = make_entry(tags=[tag.name])
 
@@ -163,7 +163,7 @@ class TestTagsAPI(FrappeTestCase):
 		tag = make_tag("Delete OK")
 		result = delete_tag(tag_name=tag.name)
 		self.assertEqual(result["deleted"], "Delete OK")
-		self.assertFalse(frappe.db.exists("FT Tag", "Delete OK"))
+		self.assertFalse(frappe.db.exists("Watch Tag", "Delete OK"))
 
 	# ── archive_tag ───────────────────────────────────────────────────────
 

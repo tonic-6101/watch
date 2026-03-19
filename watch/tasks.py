@@ -6,8 +6,8 @@ from frappe import _
 
 
 def auto_stop_forgotten_timers():
-	"""Stop timers running past FT Settings.auto_stop_timer_after hours (0 = disabled)."""
-	settings = frappe.get_single("FT Settings")
+	"""Stop timers running past Watch Settings.auto_stop_timer_after hours (0 = disabled)."""
+	settings = frappe.get_single("Watch Settings")
 	threshold_hours = settings.auto_stop_timer_after or 0
 	if not threshold_hours:
 		return
@@ -17,7 +17,7 @@ def auto_stop_forgotten_timers():
 	cutoff = datetime.now() - timedelta(hours=threshold_hours)
 
 	running_timers = frappe.get_all(
-		"FT Timer",
+		"Watch Timer",
 		filters={"state": "running", "started_at": ["<", cutoff]},
 		fields=["name", "user"],
 	)
@@ -33,7 +33,7 @@ def auto_stop_forgotten_timers():
 			# Append auto-stop flag note to the entry description
 			entry_name = (result or {}).get("entry", {}).get("name")
 			if entry_name:
-				entry = frappe.get_doc("FT Time Entry", entry_name)
+				entry = frappe.get_doc("Watch Entry", entry_name)
 				flag = _("[Auto-stopped after {0}h]").format(threshold_hours)
 				entry.description = ((entry.description or "") + "\n" + flag).strip()
 				entry.save(ignore_permissions=True)
@@ -46,14 +46,14 @@ def auto_stop_forgotten_timers():
 
 
 def sync_to_erpnext_scheduled():
-	"""Run ERPNext sync when FT Settings.sync_mode = 'scheduled'.
+	"""Run ERPNext sync when Watch Settings.sync_mode = 'scheduled'.
 
 	Runs every hour but respects sync_interval:
 	  - hourly        → always runs
 	  - every_6_hours → skips if last_bulk_sync < 6h ago
 	  - daily         → skips if last_bulk_sync < 24h ago
 	"""
-	settings = frappe.get_single("FT Settings")
+	settings = frappe.get_single("Watch Settings")
 	if not settings.enable_erpnext_bridge or settings.sync_mode != "scheduled":
 		return
 

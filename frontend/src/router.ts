@@ -2,6 +2,7 @@
 // Copyright (C) 2024-2026 Tonic
 
 import { createRouter, createWebHistory, type RouteRecordRaw } from 'vue-router'
+import { dockSharedRoutes } from '/assets/dock/js/dock-navbar.esm.js'
 
 import DailyView from './pages/DailyView.vue'
 import WeeklyView from './pages/WeeklyView.vue'
@@ -26,6 +27,9 @@ const routes: RouteRecordRaw[] = [
 
   // Settings / preferences
   { path: '/watch/settings', component: Settings },
+
+  // Dock shared pages (People, Calendar, Notifications, Bookmarks)
+  ...dockSharedRoutes('/watch'),
 
   // Fallback
   { path: '/:pathMatch(.*)*', redirect: '/watch' },

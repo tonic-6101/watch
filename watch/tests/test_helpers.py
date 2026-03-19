@@ -6,17 +6,17 @@
 import frappe
 
 
-def ensure_ft_settings():
-	"""Ensure FT Settings singleton exists with sane defaults."""
-	if not frappe.db.exists("FT Settings", "FT Settings"):
-		frappe.get_doc({"doctype": "FT Settings"}).insert(ignore_permissions=True)
+def ensure_watch_settings():
+	"""Ensure Watch Settings singleton exists with sane defaults."""
+	if not frappe.db.exists("Watch Settings", "Watch Settings"):
+		frappe.get_doc({"doctype": "Watch Settings"}).insert(ignore_permissions=True)
 
 
 def make_tag(tag_name: str, category: str = None, color: str = None, **kwargs) -> "frappe.Document":
-	"""Create an FT Tag and return the document."""
-	if frappe.db.exists("FT Tag", tag_name):
-		return frappe.get_doc("FT Tag", tag_name)
-	tag = frappe.new_doc("FT Tag")
+	"""Create an Watch Tag and return the document."""
+	if frappe.db.exists("Watch Tag", tag_name):
+		return frappe.get_doc("Watch Tag", tag_name)
+	tag = frappe.new_doc("Watch Tag")
 	tag.tag_name = tag_name
 	if category:
 		tag.category = category
@@ -40,8 +40,8 @@ def make_entry(
 	end_time: str = None,
 	is_running: int = 0,
 ) -> "frappe.Document":
-	"""Create an FT Time Entry and return the document."""
-	entry = frappe.new_doc("FT Time Entry")
+	"""Create an Watch Entry and return the document."""
+	entry = frappe.new_doc("Watch Entry")
 	entry.date = date or frappe.utils.today()
 	entry.user = user or frappe.session.user
 	entry.description = description
@@ -63,10 +63,10 @@ def make_entry(
 
 
 def cleanup_timer(user: str = None):
-	"""Reset the FT Timer for a user to stopped state."""
+	"""Reset the Watch Timer for a user to stopped state."""
 	user = user or frappe.session.user
-	if frappe.db.exists("FT Timer", user):
-		timer = frappe.get_doc("FT Timer", user)
+	if frappe.db.exists("Watch Timer", user):
+		timer = frappe.get_doc("Watch Timer", user)
 		timer.state = "stopped"
 		timer.accumulated_seconds = 0
 		timer.active_entry = None

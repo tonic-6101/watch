@@ -17,14 +17,14 @@ from watch.api.integrations import (
 	fire_watch_event,
 	notify_slack,
 )
-from watch.tests.test_helpers import ensure_ft_settings
+from watch.tests.test_helpers import ensure_watch_settings
 
 
 class TestIntegrationsHelpers(FrappeTestCase):
 	@classmethod
 	def setUpClass(cls):
 		super().setUpClass()
-		ensure_ft_settings()
+		ensure_watch_settings()
 
 	def setUp(self):
 		frappe.set_user("Administrator")
@@ -100,7 +100,7 @@ class TestIntegrationsHelpers(FrappeTestCase):
 
 	@patch("watch.api.integrations.requests.post")
 	def test_notify_slack_posts_when_configured(self, mock_post):
-		settings = frappe.get_single("FT Settings")
+		settings = frappe.get_single("Watch Settings")
 		settings.slack_webhook_url = "https://hooks.slack.com/test"
 		settings.slack_notify_on_stop = 1
 		settings.save(ignore_permissions=True)
@@ -133,7 +133,7 @@ class TestIntegrationsHelpers(FrappeTestCase):
 	def test_test_slack_requires_webhook_url(self):
 		from watch.api.integrations import test_slack
 
-		settings = frappe.get_single("FT Settings")
+		settings = frappe.get_single("Watch Settings")
 		settings.slack_webhook_url = ""
 		settings.save(ignore_permissions=True)
 
@@ -154,7 +154,7 @@ class TestIntegrationsHelpers(FrappeTestCase):
 		from watch.api.integrations import test_linear
 
 		frappe.set_user("Administrator")
-		settings = frappe.get_single("FT Settings")
+		settings = frappe.get_single("Watch Settings")
 		settings.linear_api_key = ""
 		settings.save(ignore_permissions=True)
 
@@ -175,7 +175,7 @@ class TestIntegrationsHelpers(FrappeTestCase):
 		from watch.api.integrations import test_github
 
 		frappe.set_user("Administrator")
-		settings = frappe.get_single("FT Settings")
+		settings = frappe.get_single("Watch Settings")
 		settings.github_token = ""
 		settings.save(ignore_permissions=True)
 
@@ -187,7 +187,7 @@ class TestIntegrationsHelpers(FrappeTestCase):
 	def test_search_linear_issues_returns_empty_without_key(self):
 		from watch.api.integrations import search_linear_issues
 
-		settings = frappe.get_single("FT Settings")
+		settings = frappe.get_single("Watch Settings")
 		settings.linear_api_key = ""
 		settings.save(ignore_permissions=True)
 
@@ -203,7 +203,7 @@ class TestIntegrationsHelpers(FrappeTestCase):
 	def test_search_github_issues_returns_empty_without_config(self):
 		from watch.api.integrations import search_github_issues
 
-		settings = frappe.get_single("FT Settings")
+		settings = frappe.get_single("Watch Settings")
 		settings.github_token = ""
 		settings.save(ignore_permissions=True)
 

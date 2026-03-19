@@ -6,7 +6,7 @@ from frappe import _
 from frappe.model.document import Document
 
 
-class FTEntryTemplate(Document):
+class WatchEntryTemplate(Document):
 	def validate(self):
 		self._enforce_user()
 		self._validate_sort_order()
@@ -25,7 +25,7 @@ class FTEntryTemplate(Document):
 				frappe.throw(_("Favorite slot must be between 1 and 9."))
 			# Check for duplicate slot for this user
 			existing = frappe.db.get_value(
-				"FT Entry Template",
+				"Watch Entry Template",
 				{
 					"user": self.user,
 					"template_type": "favorite",
@@ -42,7 +42,7 @@ class FTEntryTemplate(Document):
 	def _validate_favorite_limit(self):
 		if self.template_type == "favorite" and self.is_new():
 			count = frappe.db.count(
-				"FT Entry Template",
+				"Watch Entry Template",
 				{"user": self.user, "template_type": "favorite"},
 			)
 			if count >= 9:

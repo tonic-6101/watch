@@ -19,9 +19,9 @@ def _fire_timer_stopped(entry):
 
 
 def _get_or_create_timer(user: str):
-	if frappe.db.exists("FT Timer", user):
-		return frappe.get_doc("FT Timer", user)
-	timer = frappe.new_doc("FT Timer")
+	if frappe.db.exists("Watch Timer", user):
+		return frappe.get_doc("Watch Timer", user)
+	timer = frappe.new_doc("Watch Timer")
 	timer.user = user
 	timer.state = "stopped"
 	timer.accumulated_seconds = 0
@@ -65,7 +65,7 @@ def start_timer(
 		tags = json.loads(tags)
 
 	# Create the time entry
-	entry = frappe.new_doc("FT Time Entry")
+	entry = frappe.new_doc("Watch Entry")
 	entry.date = frappe.utils.today()
 	entry.user = user
 	entry.description = description
@@ -111,7 +111,7 @@ def stop_timer(notes: str = None) -> dict:
 	else:
 		elapsed = timer.accumulated_seconds
 
-	entry = frappe.get_doc("FT Time Entry", timer.active_entry)
+	entry = frappe.get_doc("Watch Entry", timer.active_entry)
 	entry.end_time = now.strftime("%H:%M:%S")
 	entry.duration_hours = round(elapsed / 3600, 4)
 	entry.is_running = 0
@@ -192,7 +192,7 @@ def get_timer_state() -> dict:
 
 	active_entry_date = None
 	if timer.active_entry:
-		active_entry_date = frappe.db.get_value("FT Time Entry", timer.active_entry, "date")
+		active_entry_date = frappe.db.get_value("Watch Entry", timer.active_entry, "date")
 		if active_entry_date:
 			active_entry_date = str(active_entry_date)
 
@@ -229,7 +229,7 @@ def stop_timer_at(stop_at: str, notes: str = None) -> dict:
 		frappe.throw(_("No timer is running"))
 
 	stop_dt = frappe.utils.get_datetime(stop_at)
-	entry = frappe.get_doc("FT Time Entry", timer.active_entry)
+	entry = frappe.get_doc("Watch Entry", timer.active_entry)
 
 	started = entry.timer_started_at
 	if isinstance(started, str):
@@ -280,7 +280,7 @@ def update_timer(
 		import json
 		tags = json.loads(tags)
 
-	entry = frappe.get_doc("FT Time Entry", timer.active_entry)
+	entry = frappe.get_doc("Watch Entry", timer.active_entry)
 
 	if description is not None:
 		entry.description = description
@@ -325,7 +325,7 @@ def _reset_focus_timer(timer) -> None:
 
 def _create_focus_entry(user: str, timer, entry_type: str, tags: list):
 	now = frappe.utils.now_datetime()
-	entry = frappe.new_doc("FT Time Entry")
+	entry = frappe.new_doc("Watch Entry")
 	entry.date = frappe.utils.today()
 	entry.user = user
 	entry.description = timer.focus_description
@@ -414,7 +414,7 @@ def end_focus_session() -> dict:
 	# Finalise the active entry
 	entry = None
 	if timer.active_entry:
-		entry = frappe.get_doc("FT Time Entry", timer.active_entry)
+		entry = frappe.get_doc("Watch Entry", timer.active_entry)
 		entry.end_time = now.strftime("%H:%M:%S")
 		entry.duration_hours = round(elapsed / 3600, 4)
 		entry.is_running = 0
@@ -511,16 +511,16 @@ def end_focus() -> dict:
 	if timer.active_entry and timer.state == "running" and started:
 		elapsed = timer.accumulated_seconds + (now - started).total_seconds()
 		if elapsed > 30:
-			entry = frappe.get_doc("FT Time Entry", timer.active_entry)
+			entry = frappe.get_doc("Watch Entry", timer.active_entry)
 			entry.end_time = now.strftime("%H:%M:%S")
 			entry.duration_hours = round(elapsed / 3600, 4)
 			entry.is_running = 0
 			entry.save(ignore_permissions=True)
 			_fire_timer_stopped(entry)
 		else:
-			frappe.delete_doc("FT Time Entry", timer.active_entry, ignore_permissions=True)
+			frappe.delete_doc("Watch Entry", timer.active_entry, ignore_permissions=True)
 	elif timer.active_entry:
-		frappe.delete_doc("FT Time Entry", timer.active_entry, ignore_permissions=True)
+		frappe.delete_doc("Watch Entry", timer.active_entry, ignore_permissions=True)
 
 	_reset_focus_timer(timer)
 	_publish(user, {"state": "stopped", "focus_mode": False})

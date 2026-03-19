@@ -33,9 +33,9 @@ def search_entries(query: str) -> list:
 			e.date,
 			e.duration_hours,
 			GROUP_CONCAT(t.tag_name ORDER BY et.idx SEPARATOR ', ') AS tags
-		FROM `tabFT Time Entry` e
-		LEFT JOIN `tabFT Time Entry Tag` et ON et.parent = e.name
-		LEFT JOIN `tabFT Tag` t ON t.name = et.tag
+		FROM `tabWatch Entry` e
+		LEFT JOIN `tabWatch Entry Tag` et ON et.parent = e.name
+		LEFT JOIN `tabWatch Tag` t ON t.name = et.tag
 		WHERE e.user = %(user)s
 		  AND e.date >= %(cutoff)s
 		  AND e.description LIKE %(q)s
@@ -74,7 +74,7 @@ def search_tags(query: str) -> list:
 		return []
 
 	tags = frappe.get_all(
-		"FT Tag",
+		"Watch Tag",
 		filters={"tag_name": ["like", f"%{query}%"]},
 		fields=["name", "tag_name", "category"],
 		limit=6,
@@ -92,8 +92,8 @@ def search_tags(query: str) -> list:
 	placeholders = ", ".join(["%s"] * len(tag_names))
 	counts_raw = frappe.db.sql(f"""
 		SELECT et.tag, COUNT(DISTINCT e.name) AS cnt
-		FROM `tabFT Time Entry Tag` et
-		JOIN `tabFT Time Entry` e ON e.name = et.parent
+		FROM `tabWatch Entry Tag` et
+		JOIN `tabWatch Entry` e ON e.name = et.parent
 		WHERE et.tag IN ({placeholders})
 		  AND e.date >= %s
 		GROUP BY et.tag
@@ -131,15 +131,15 @@ def timer_action(query: str) -> list:
 
 	user = frappe.session.user
 	timer = None
-	if frappe.db.exists("FT Timer", user):
-		timer = frappe.get_doc("FT Timer", user)
+	if frappe.db.exists("Watch Timer", user):
+		timer = frappe.get_doc("Watch Timer", user)
 
 	is_running = timer and timer.state in ("running", "paused")
 
 	# Hint line: last used tag + entry type
 	hint_parts = []
 	last_entry = frappe.get_all(
-		"FT Time Entry",
+		"Watch Entry",
 		filters={"user": user, "is_running": 0},
 		fields=["name", "entry_type"],
 		order_by="creation desc",
@@ -148,7 +148,7 @@ def timer_action(query: str) -> list:
 	if last_entry:
 		hint_parts.append(last_entry[0].entry_type or "billable")
 		tag_row = frappe.get_all(
-			"FT Time Entry Tag",
+			"Watch Entry Tag",
 			filters={"parent": last_entry[0].name},
 			fields=["tag_name"],
 			limit=1,
@@ -212,7 +212,7 @@ def navigation_shortcuts(query: str) -> list:
 		(
 			["settings"],
 			_("Settings"),
-			_("FT Settings"),
+			_("Watch Settings"),
 			"/watch/settings",
 			"settings",
 		),

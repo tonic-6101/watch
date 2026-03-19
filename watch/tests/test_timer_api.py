@@ -18,14 +18,14 @@ from watch.api.timer import (
 	stop_timer_at,
 	update_timer,
 )
-from watch.tests.test_helpers import cleanup_timer, ensure_ft_settings
+from watch.tests.test_helpers import cleanup_timer, ensure_watch_settings
 
 
 class TestTimerAPI(FrappeTestCase):
 	@classmethod
 	def setUpClass(cls):
 		super().setUpClass()
-		ensure_ft_settings()
+		ensure_watch_settings()
 
 	def setUp(self):
 		frappe.set_user("Administrator")
@@ -43,7 +43,7 @@ class TestTimerAPI(FrappeTestCase):
 		self.assertEqual(timer["state"], "running")
 		self.assertIsNotNone(timer["active_entry"])
 
-		entry = frappe.get_doc("FT Time Entry", result["entry"])
+		entry = frappe.get_doc("Watch Entry", result["entry"])
 		self.assertEqual(entry.is_running, 1)
 		self.assertEqual(entry.description, "Working on tests")
 		self.assertEqual(entry.entry_type, "billable")
@@ -51,14 +51,14 @@ class TestTimerAPI(FrappeTestCase):
 
 	def test_start_with_tags(self):
 		result = start_timer(description="Tagged work", tags=["client-a", "dev"])
-		entry = frappe.get_doc("FT Time Entry", result["entry"])
+		entry = frappe.get_doc("Watch Entry", result["entry"])
 		tag_names = [row.tag for row in entry.tags]
 		self.assertIn("client-a", tag_names)
 		self.assertIn("dev", tag_names)
 
 	def test_start_with_entry_type(self):
 		result = start_timer(entry_type="non-billable")
-		entry = frappe.get_doc("FT Time Entry", result["entry"])
+		entry = frappe.get_doc("Watch Entry", result["entry"])
 		self.assertEqual(entry.entry_type, "non-billable")
 
 	def test_start_throws_if_already_running(self):
@@ -93,7 +93,7 @@ class TestTimerAPI(FrappeTestCase):
 	def test_stop_resets_timer_state(self):
 		start_timer()
 		stop_timer()
-		timer = frappe.get_doc("FT Timer", "Administrator")
+		timer = frappe.get_doc("Watch Timer", "Administrator")
 		self.assertEqual(timer.state, "stopped")
 		self.assertIsNone(timer.active_entry)
 		self.assertEqual(timer.accumulated_seconds, 0)
@@ -116,7 +116,7 @@ class TestTimerAPI(FrappeTestCase):
 			result = pause_timer()
 
 		self.assertEqual(result["accumulated_seconds"], 600)  # 10 minutes
-		timer = frappe.get_doc("FT Timer", "Administrator")
+		timer = frappe.get_doc("Watch Timer", "Administrator")
 		self.assertEqual(timer.state, "paused")
 		self.assertIsNone(timer.started_at)
 
@@ -137,7 +137,7 @@ class TestTimerAPI(FrappeTestCase):
 		pause_timer()
 		result = resume_timer()
 		self.assertEqual(result["state"], "running")
-		timer = frappe.get_doc("FT Timer", "Administrator")
+		timer = frappe.get_doc("Watch Timer", "Administrator")
 		self.assertEqual(timer.state, "running")
 		self.assertIsNotNone(timer.started_at)
 
@@ -210,22 +210,22 @@ class TestTimerAPI(FrappeTestCase):
 	def test_update_description(self):
 		result = start_timer(description="original")
 		update_timer(description="updated")
-		entry = frappe.get_doc("FT Time Entry", result["entry"])
+		entry = frappe.get_doc("Watch Entry", result["entry"])
 		self.assertEqual(entry.description, "updated")
-		timer = frappe.get_doc("FT Timer", "Administrator")
+		timer = frappe.get_doc("Watch Timer", "Administrator")
 		self.assertEqual(timer.description, "updated")
 
 	def test_update_tags(self):
 		result = start_timer()
 		update_timer(tags=["new-tag"])
-		entry = frappe.get_doc("FT Time Entry", result["entry"])
+		entry = frappe.get_doc("Watch Entry", result["entry"])
 		tag_names = [row.tag for row in entry.tags]
 		self.assertEqual(tag_names, ["new-tag"])
 
 	def test_update_entry_type(self):
 		result = start_timer(entry_type="billable")
 		update_timer(entry_type="non-billable")
-		entry = frappe.get_doc("FT Time Entry", result["entry"])
+		entry = frappe.get_doc("Watch Entry", result["entry"])
 		self.assertEqual(entry.entry_type, "non-billable")
 
 	def test_update_throws_if_stopped(self):
@@ -236,7 +236,7 @@ class TestTimerAPI(FrappeTestCase):
 		result = start_timer(description="before pause")
 		pause_timer()
 		update_timer(description="while paused")
-		entry = frappe.get_doc("FT Time Entry", result["entry"])
+		entry = frappe.get_doc("Watch Entry", result["entry"])
 		self.assertEqual(entry.description, "while paused")
 
 	# ── stop_timer_at ────────────────────────────────────────────────────

@@ -45,7 +45,7 @@
    "fieldtype": "Link",
    "in_list_view": 1,
    "label": "Active Entry",
-   "options": "FT Time Entry"
+   "options": "Watch Entry"
   },
   {
    "fieldname": "started_at",
@@ -126,7 +126,7 @@
  "modified": "2026-03-11 00:00:00.000000",
  "modified_by": "Administrator",
  "module": "Watch",
- "name": "FT Timer",
+ "name": "Watch Timer",
  "naming_rule": "By fieldname",
  "owner": "Administrator",
  "permissions": [

@@ -5,7 +5,7 @@
 Integrations: Slack, Linear, GitHub.
 
 All outbound integration logic lives here.  Built-in integrations are driven
-by FT Settings fields; the ``watch_event_hooks`` contract is for third-party
+by Watch Settings fields; the ``watch_event_hooks`` contract is for third-party
 extensibility.
 """
 
@@ -81,7 +81,7 @@ def build_slack_message(entry: dict) -> str:
 	tag_str = " \u00b7 " + " ".join(tag_parts) if tag_parts else ""
 
 	template = (
-		frappe.db.get_single_value("FT Settings", "slack_message_template")
+		frappe.db.get_single_value("Watch Settings", "slack_message_template")
 		or "\u23f1 {description} \u2014 {duration} logged{tag_part}"
 	)
 
@@ -96,7 +96,7 @@ def build_slack_message(entry: dict) -> str:
 def notify_slack(entry: dict):
 	"""Post a message to the configured Slack webhook.  Failures are silent."""
 	try:
-		settings = frappe.get_single("FT Settings")
+		settings = frappe.get_single("Watch Settings")
 		if not settings.slack_webhook_url or not settings.slack_notify_on_stop:
 			return
 
@@ -116,7 +116,7 @@ def test_slack() -> dict:
 	if not "System Manager" in frappe.get_roles():
 		frappe.throw(_("Only System Manager can test integrations"), frappe.PermissionError)
 
-	url = frappe.db.get_single_value("FT Settings", "slack_webhook_url")
+	url = frappe.db.get_single_value("Watch Settings", "slack_webhook_url")
 	if not url:
 		frappe.throw(_("No Slack webhook URL configured"))
 
@@ -149,7 +149,7 @@ def test_linear() -> dict:
 	if not "System Manager" in frappe.get_roles():
 		frappe.throw(_("Only System Manager can test integrations"), frappe.PermissionError)
 
-	api_key = frappe.db.get_single_value("FT Settings", "linear_api_key")
+	api_key = frappe.db.get_single_value("Watch Settings", "linear_api_key")
 	if not api_key:
 		frappe.throw(_("No Linear API key configured"))
 
@@ -161,7 +161,7 @@ def test_linear() -> dict:
 @frappe.whitelist()
 def search_linear_issues(query: str) -> list:
 	"""Search Linear issues by identifier or title."""
-	api_key = frappe.db.get_single_value("FT Settings", "linear_api_key")
+	api_key = frappe.db.get_single_value("Watch Settings", "linear_api_key")
 	if not api_key or len(query) < 2:
 		return []
 
@@ -219,11 +219,11 @@ def _resolve_linear_issue_id(identifier: str, api_key: str) -> str | None:
 def post_linear_comment(entry_name: str):
 	"""Post a comment on the linked Linear issue.  Silent on failure."""
 	try:
-		entry = frappe.get_doc("FT Time Entry", entry_name)
-		api_key = frappe.db.get_single_value("FT Settings", "linear_api_key")
+		entry = frappe.get_doc("Watch Entry", entry_name)
+		api_key = frappe.db.get_single_value("Watch Settings", "linear_api_key")
 		if not api_key or not entry.linear_issue:
 			return
-		if not frappe.db.get_single_value("FT Settings", "linear_post_comment"):
+		if not frappe.db.get_single_value("Watch Settings", "linear_post_comment"):
 			return
 
 		issue_id = _resolve_linear_issue_id(entry.linear_issue, api_key)
@@ -254,7 +254,7 @@ def test_github() -> dict:
 	if not "System Manager" in frappe.get_roles():
 		frappe.throw(_("Only System Manager can test integrations"), frappe.PermissionError)
 
-	token = frappe.db.get_single_value("FT Settings", "github_token")
+	token = frappe.db.get_single_value("Watch Settings", "github_token")
 	if not token:
 		frappe.throw(_("No GitHub token configured"))
 
@@ -271,8 +271,8 @@ def test_github() -> dict:
 @frappe.whitelist()
 def search_github_issues(query: str) -> list:
 	"""Search GitHub issues and PRs by number or title."""
-	token = frappe.db.get_single_value("FT Settings", "github_token")
-	default_repo = frappe.db.get_single_value("FT Settings", "github_default_repo")
+	token = frappe.db.get_single_value("Watch Settings", "github_token")
+	default_repo = frappe.db.get_single_value("Watch Settings", "github_default_repo")
 	if not token or not default_repo or len(query) < 1:
 		return []
 
@@ -304,12 +304,12 @@ def search_github_issues(query: str) -> list:
 def post_github_comment(entry_name: str):
 	"""Post a comment on the linked GitHub issue or PR.  Silent on failure."""
 	try:
-		entry = frappe.get_doc("FT Time Entry", entry_name)
-		token = frappe.db.get_single_value("FT Settings", "github_token")
-		default_repo = frappe.db.get_single_value("FT Settings", "github_default_repo")
+		entry = frappe.get_doc("Watch Entry", entry_name)
+		token = frappe.db.get_single_value("Watch Settings", "github_token")
+		default_repo = frappe.db.get_single_value("Watch Settings", "github_default_repo")
 		if not token or not entry.github_ref:
 			return
-		if not frappe.db.get_single_value("FT Settings", "github_post_comment"):
+		if not frappe.db.get_single_value("Watch Settings", "github_post_comment"):
 			return
 
 		ref = entry.github_ref

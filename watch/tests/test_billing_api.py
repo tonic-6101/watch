@@ -13,14 +13,14 @@ from watch.api.billing import (
 	get_summary,
 	mark_sent,
 )
-from watch.tests.test_helpers import ensure_ft_settings, make_entry, make_tag
+from watch.tests.test_helpers import ensure_watch_settings, make_entry, make_tag
 
 
 class TestBillingAPI(FrappeTestCase):
 	@classmethod
 	def setUpClass(cls):
 		super().setUpClass()
-		ensure_ft_settings()
+		ensure_watch_settings()
 
 		# Create shared tags
 		cls.client_a = make_tag("Client A", category="Client", color="#ff0000")

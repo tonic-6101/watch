@@ -129,7 +129,7 @@ function stopTicking() {
 async function fetchEntryTags(entryName: string): Promise<string[]> {
   try {
     const res = await call<any>('frappe.client.get', {
-      doctype: 'FT Time Entry',
+      doctype: 'Watch Entry',
       name: entryName,
     })
     return (res?.tags ?? []).map((t: any) => t.tag_name ?? t.tag)
@@ -141,7 +141,7 @@ async function fetchEntryTags(entryName: string): Promise<string[]> {
 async function fetchEntryType(entryName: string): Promise<EntryType> {
   try {
     const res = await call<any>('frappe.client.get_value', {
-      doctype: 'FT Time Entry',
+      doctype: 'Watch Entry',
       filters: { name: entryName },
       fieldname: 'entry_type',
     })

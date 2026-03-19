@@ -1,20 +1,20 @@
 # SPDX-License-Identifier: AGPL-3.0-or-later
 # Copyright (C) 2024-2026 Tonic
 
-"""Tests for watch.api.settings — FT Settings get/save and work days."""
+"""Tests for watch.api.settings — Watch Settings get/save and work days."""
 
 import frappe
 from frappe.tests.utils import FrappeTestCase
 
 from watch.api.settings import get_settings, get_work_days, save_settings
-from watch.tests.test_helpers import ensure_ft_settings
+from watch.tests.test_helpers import ensure_watch_settings
 
 
 class TestSettingsAPI(FrappeTestCase):
 	@classmethod
 	def setUpClass(cls):
 		super().setUpClass()
-		ensure_ft_settings()
+		ensure_watch_settings()
 
 	def setUp(self):
 		frappe.set_user("Administrator")
@@ -24,7 +24,7 @@ class TestSettingsAPI(FrappeTestCase):
 	def test_get_settings_returns_dict(self):
 		result = get_settings()
 		self.assertIsInstance(result, dict)
-		self.assertEqual(result.get("doctype"), "FT Settings")
+		self.assertEqual(result.get("doctype"), "Watch Settings")
 
 	def test_get_settings_cached_per_request(self):
 		"""Calling get_settings twice returns the same cached dict."""
@@ -48,7 +48,7 @@ class TestSettingsAPI(FrappeTestCase):
 
 	def test_save_settings_updates_field(self):
 		save_settings(default_entry_type="non-billable")
-		settings = frappe.get_single("FT Settings")
+		settings = frappe.get_single("Watch Settings")
 		self.assertEqual(settings.default_entry_type, "non-billable")
 		# Reset
 		save_settings(default_entry_type="billable")
@@ -62,8 +62,8 @@ class TestSettingsAPI(FrappeTestCase):
 		"""After save, get_settings should reflect new values."""
 		save_settings(idle_threshold_minutes=15)
 		# Clear the per-request cache
-		if hasattr(frappe.local, "_ft_settings_cache"):
-			del frappe.local._ft_settings_cache
+		if hasattr(frappe.local, "_watch_settings_cache"):
+			del frappe.local._watch_settings_cache
 		result = get_settings()
 		self.assertEqual(result.get("idle_threshold_minutes"), 15)
 		# Reset

@@ -12,14 +12,14 @@ from watch.api.user_settings import (
 	revoke_extension_token,
 	save_preferences,
 )
-from watch.tests.test_helpers import ensure_ft_settings
+from watch.tests.test_helpers import ensure_watch_settings
 
 
 class TestUserSettingsAPI(FrappeTestCase):
 	@classmethod
 	def setUpClass(cls):
 		super().setUpClass()
-		ensure_ft_settings()
+		ensure_watch_settings()
 
 	def setUp(self):
 		frappe.set_user("Administrator")
@@ -27,10 +27,10 @@ class TestUserSettingsAPI(FrappeTestCase):
 	# ── get_preferences ─────────────────────────────────────────────────
 
 	def test_get_preferences_creates_if_missing(self):
-		"""Should auto-create FT User Settings if none exists."""
+		"""Should auto-create Watch User Settings if none exists."""
 		result = get_preferences()
 		self.assertIsInstance(result, dict)
-		self.assertEqual(result.get("doctype"), "FT User Settings")
+		self.assertEqual(result.get("doctype"), "Watch User Settings")
 		self.assertEqual(result.get("user"), "Administrator")
 
 	def test_get_preferences_returns_existing(self):
@@ -44,7 +44,7 @@ class TestUserSettingsAPI(FrappeTestCase):
 		result = save_preferences(weekly_hour_target=40)
 		self.assertEqual(result["weekly_hour_target"], 40)
 
-		doc = frappe.get_doc("FT User Settings", "Administrator")
+		doc = frappe.get_doc("Watch User Settings", "Administrator")
 		self.assertEqual(doc.weekly_hour_target, 40)
 
 	def test_save_focus_settings(self):
@@ -75,7 +75,7 @@ class TestUserSettingsAPI(FrappeTestCase):
 
 	def test_generate_token_marks_active(self):
 		generate_extension_token()
-		doc = frappe.get_doc("FT User Settings", "Administrator")
+		doc = frappe.get_doc("Watch User Settings", "Administrator")
 		self.assertEqual(doc.extension_token_active, 1)
 
 	def test_revoke_token(self):
@@ -83,7 +83,7 @@ class TestUserSettingsAPI(FrappeTestCase):
 		result = revoke_extension_token()
 		self.assertEqual(result["extension_token_active"], 0)
 
-		doc = frappe.get_doc("FT User Settings", "Administrator")
+		doc = frappe.get_doc("Watch User Settings", "Administrator")
 		self.assertEqual(doc.extension_token_active, 0)
 
 	def test_revoke_clears_api_key(self):

@@ -84,7 +84,7 @@ const formGithubRef   = ref(props.entry?.github_ref ?? '')
 const saving         = ref(false)
 const saveError      = ref<string | null>(null)
 
-// ── Integration visibility (driven by FT Settings) ──────────────────────
+// ── Integration visibility (driven by Watch Settings) ───────────────────
 
 const hasLinear = ref(false)
 const hasGitHub = ref(false)
@@ -186,7 +186,7 @@ async function checkTagBudgets(tags: string[]) {
 type InheritSource = 'default' | 'inherited' | 'manual'
 const typeSource     = ref<InheritSource>(props.entry ? 'manual' : 'default')
 
-// ── Site defaults from FT Settings ──────────────────────────────────────
+// ── Site defaults from Watch Settings ───────────────────────────────────
 // Applied once on mount for new entries, before any tag interaction.
 
 onMounted(async () => {
@@ -195,7 +195,7 @@ onMounted(async () => {
 
   try {
     const res = await fetch(
-      '/api/method/frappe.client.get?doctype=FT+Settings&name=FT+Settings',
+      '/api/method/frappe.client.get?doctype=Watch+Settings&name=Watch+Settings',
       { headers: { 'X-Frappe-CSRF-Token': (window as any).csrf_token ?? '' } },
     )
     const data = await res.json()

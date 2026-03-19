@@ -69,11 +69,11 @@ ERPNext Bridge,ERPNext-Brücke
 "Export CSV","CSV exportieren"
 "Export successful","Export erfolgreich"
 "Failed to forward entries: {0}","Übermittlung fehlgeschlagen: {0}"
-"FT Settings","FT-Einstellungen"
-"FT Tag","FT-Etikett"
-"FT Time Entry","FT-Zeiteintrag"
-"FT Time Entry Tag","FT-Zeiteintrag-Etikett"
-"FT Timer","FT-Timer"
+"Watch Settings","Watch-Einstellungen"
+"Watch Tag","Watch-Etikett"
+"Watch Entry","Watch-Eintrag"
+"Watch Entry Tag","Watch-Eintrag-Etikett"
+"Watch Timer","Watch-Timer"
 "Forwarded {0} to {1}","{0} an {1} übermittelt"
 From,Von
 General,Allgemein

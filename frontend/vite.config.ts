@@ -83,6 +83,8 @@ function frappeManifestPlugin(): Plugin {
     <meta name="description" content="Watch — Time tracking for Frappe" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no" />
     <link rel="icon" type="image/svg+xml" href="/assets/watch/images/logo.svg" />
+    <link rel="stylesheet" href="/assets/dock/css/dock-tokens.css">
+    <link rel="stylesheet" href="/assets/dock/css/dock-navbar.css">
     <script type="module" crossorigin src="/assets/watch/frontend/assets/${jsFile}"></script>
     <link rel="stylesheet" crossorigin href="/assets/watch/frontend/assets/${cssFile}">
   </head>
@@ -116,6 +118,58 @@ function frappeManifestPlugin(): Plugin {
   }
 }
 
+// ── Settings ESM build ──────────────────────────────────────────────
+// Builds watch-settings.esm.js — a standalone ESM bundle that exports
+// WatchSettings component for Dock's unified settings hub.
+// This runs as a secondary build after the main SPA build.
+function settingsEsmPlugin(): Plugin {
+  return {
+    name: 'watch-settings-esm',
+    async closeBundle() {
+      const { build } = await import('vite')
+      await build({
+        configFile: false,
+        base: '/assets/watch/js/',
+        plugins: [
+          vueSharedPlugin(),
+          vue(),
+          // Include frappe-ui plugin so ~icons and frappe-ui components resolve
+          ...(frappeui ? [frappeui({ frappeProxy: false, lucideIcons: true, jinjaBootData: false })] : []),
+        ],
+        resolve: {
+          alias: {
+            '@': path.resolve(__dirname, 'src'),
+          },
+        },
+        build: {
+          outDir: path.resolve(__dirname, '../watch/public/js'),
+          emptyOutDir: false,
+          lib: {
+            entry: path.resolve(__dirname, 'src/dock-settings.ts'),
+            formats: ['es'],
+            fileName: () => 'watch-settings.esm.js',
+          },
+          rollupOptions: {
+            external: [
+              'vue',
+              '@vue/runtime-dom',
+              '@vue/runtime-core',
+              '@vue/reactivity',
+              /^\/assets\/dock\//,
+            ],
+            output: {
+              paths: {
+                vue: '/assets/dock/js/vendor/vue.esm.js',
+              },
+            },
+          },
+        },
+      })
+      console.log('Built watch-settings.esm.js')
+    },
+  }
+}
+
 export default defineConfig({
   base: '/assets/watch/frontend/',
   plugins: [
@@ -127,6 +181,7 @@ export default defineConfig({
       jinjaBootData: true,
     }),
     frappeManifestPlugin(),
+    settingsEsmPlugin(),
   ].filter(Boolean) as Plugin[],
   resolve: {
     alias: {

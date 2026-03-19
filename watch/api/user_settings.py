@@ -15,11 +15,11 @@ _EDITABLE_FIELDS = [
 
 
 def _get_or_create(user: str) -> "frappe.Document":
-	"""Return the FT User Settings for *user*, creating it lazily if needed."""
-	if frappe.db.exists("FT User Settings", user):
-		return frappe.get_doc("FT User Settings", user)
+	"""Return the Watch User Settings for *user*, creating it lazily if needed."""
+	if frappe.db.exists("Watch User Settings", user):
+		return frappe.get_doc("Watch User Settings", user)
 
-	doc = frappe.new_doc("FT User Settings")
+	doc = frappe.new_doc("Watch User Settings")
 	doc.user = user
 	doc.insert(ignore_permissions=True)
 	return doc
@@ -27,14 +27,14 @@ def _get_or_create(user: str) -> "frappe.Document":
 
 @frappe.whitelist()
 def get_preferences() -> dict:
-	"""Return the current user's FT User Settings (creates record if missing)."""
+	"""Return the current user's Watch User Settings (creates record if missing)."""
 	doc = _get_or_create(frappe.session.user)
 	return doc.as_dict()
 
 
 @frappe.whitelist()
 def save_preferences(**kwargs) -> dict:
-	"""Upsert FT User Settings for the current user.
+	"""Upsert Watch User Settings for the current user.
 
 	Only fields in ``_EDITABLE_FIELDS`` are accepted; everything else is
 	silently ignored.
@@ -56,7 +56,7 @@ def generate_extension_token() -> dict:
 	Uses Frappe's built-in ``generate_keys`` on the User record.
 	The secret is returned **once only** — it is stored hashed and cannot
 	be retrieved later.  Sets ``extension_token_active = 1`` on
-	FT User Settings.
+	Watch User Settings.
 
 	If a token already exists, regenerating will invalidate the old one.
 	"""
@@ -72,7 +72,7 @@ def generate_extension_token() -> dict:
 	user_doc.api_secret = api_secret
 	user_doc.save(ignore_permissions=True)
 
-	# Mark token as active in FT User Settings
+	# Mark token as active in Watch User Settings
 	doc = _get_or_create(user)
 	doc.extension_token_active = 1
 	doc.save(ignore_permissions=True)

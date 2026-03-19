@@ -44,34 +44,34 @@ _EDITABLE_FIELDS = [
 @frappe.whitelist()
 def get_settings() -> dict:
 	"""
-	Return FT Settings as a dict.  Cached on frappe.local for the lifetime of
+	Return Watch Settings as a dict.  Cached on frappe.local for the lifetime of
 	the request so multiple components can call this without repeated DB hits.
 	"""
-	if not hasattr(frappe.local, "_ft_settings_cache"):
-		frappe.local._ft_settings_cache = frappe.get_single("FT Settings").as_dict()
-	return frappe.local._ft_settings_cache
+	if not hasattr(frappe.local, "_watch_settings_cache"):
+		frappe.local._watch_settings_cache = frappe.get_single("Watch Settings").as_dict()
+	return frappe.local._watch_settings_cache
 
 
 @frappe.whitelist()
 def get_work_days() -> list:
 	"""
 	Return a sorted list of weekday integers (0 = Mon … 6 = Sun) that are
-	marked as work days in FT Settings.
+	marked as work days in Watch Settings.
 	"""
-	s = frappe.get_single("FT Settings")
+	s = frappe.get_single("Watch Settings")
 	return sorted(v for k, v in _WORK_DAY_MAP.items() if s.get(k))
 
 
 @frappe.whitelist()
 def save_settings(**kwargs) -> dict:
 	"""
-	Persist FT Settings.  Only System Manager may call this.
+	Persist Watch Settings.  Only System Manager may call this.
 	Ignores any keys that are not in the allowed editable field list.
 	"""
 	if "System Manager" not in frappe.get_roles():
-		frappe.throw(_("Only System Manager can change FT Settings"), frappe.PermissionError)
+		frappe.throw(_("Only System Manager can change Watch Settings"), frappe.PermissionError)
 
-	settings = frappe.get_single("FT Settings")
+	settings = frappe.get_single("Watch Settings")
 
 	for field in _EDITABLE_FIELDS:
 		if field in kwargs:
@@ -80,7 +80,7 @@ def save_settings(**kwargs) -> dict:
 	settings.save()
 
 	# Bust the per-request cache so subsequent get_settings() calls see new values
-	if hasattr(frappe.local, "_ft_settings_cache"):
-		del frappe.local._ft_settings_cache
+	if hasattr(frappe.local, "_watch_settings_cache"):
+		del frappe.local._watch_settings_cache
 
 	return settings.as_dict()

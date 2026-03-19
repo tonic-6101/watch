@@ -62,6 +62,26 @@ dock_search_sections = [
 	},
 ]
 
+# Dock Unified Settings Hub — registers Watch's settings page in the Dock sidebar.
+# Dock lazy-loads the ESM component at /dock/settings/app/watch.
+dock_settings_sections = [
+	{
+		"label": "Watch",
+		"icon": "/assets/watch/images/logo.svg",
+		"icon_url": "/assets/watch/images/logo.svg",
+		"route": "watch",
+		"component": "WatchSettings",
+		"bundle": "/assets/watch/js/watch-settings.esm.js",
+		"sections": [
+			{"label": "My Preferences", "key": "preferences"},
+			{"label": "General", "key": "general"},
+			{"label": "ERPNext Bridge", "key": "erpnext"},
+			{"label": "Integrations", "key": "integrations"},
+			{"label": "Export", "key": "export"},
+		],
+	}
+]
+
 # --------------------------------------------------
 # Extensibility hooks (other apps implement these)
 # --------------------------------------------------
@@ -124,18 +144,18 @@ website_route_rules = [
 
 user_data_fields = [
 	{
-		"doctype": "FT Time Entry",
+		"doctype": "Watch Entry",
 		"filter_by": "user",
 		"redact_fields": ["description"],
 		"partial": 1,
 	},
 	{
-		"doctype": "FT Timer",
+		"doctype": "Watch Timer",
 		"filter_by": "user",
 		"partial": 1,
 	},
 	{
-		"doctype": "FT User Settings",
+		"doctype": "Watch User Settings",
 		"filter_by": "user",
 		"partial": 1,
 	},

@@ -1,7 +1,7 @@
 // SPDX-License-Identifier: AGPL-3.0-or-later
 // Copyright (C) 2024-2026 Tonic
 
-frappe.ui.form.on("FT Settings", {
+frappe.ui.form.on("Watch Settings", {
 	refresh(frm) {
 		if (!frm.doc.enable_erpnext_bridge) return;
 

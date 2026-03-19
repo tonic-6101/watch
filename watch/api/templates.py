@@ -42,14 +42,14 @@ def get_favorites() -> list:
 	"""Return sorted favorites for the current user's quick-add bar."""
 	user = frappe.session.user
 	templates = frappe.get_all(
-		"FT Entry Template",
+		"Watch Entry Template",
 		filters={"user": user, "template_type": "favorite"},
 		fields=["name"],
 		order_by="sort_order asc",
 	)
 	result = []
 	for row in templates:
-		tpl = frappe.get_doc("FT Entry Template", row.name)
+		tpl = frappe.get_doc("Watch Entry Template", row.name)
 		result.append(_template_to_dict(tpl))
 	return result
 
@@ -59,14 +59,14 @@ def get_day_templates() -> list:
 	"""Return all day templates for the current user."""
 	user = frappe.session.user
 	templates = frappe.get_all(
-		"FT Entry Template",
+		"Watch Entry Template",
 		filters={"user": user, "template_type": "day"},
 		fields=["name"],
 		order_by="template_name asc",
 	)
 	result = []
 	for row in templates:
-		tpl = frappe.get_doc("FT Entry Template", row.name)
+		tpl = frappe.get_doc("Watch Entry Template", row.name)
 		d = _template_to_dict(tpl)
 		# Add summary stats for the picker UI
 		total_hours = sum((i.get("duration_hours") or 0) for i in d["items"])
@@ -83,15 +83,15 @@ def save_from_entry(
 	slot: int,
 	keep_duration: bool = False,
 ) -> dict:
-	"""Create a favorite from an existing FT Time Entry."""
+	"""Create a favorite from an existing Watch Entry."""
 	slot = int(slot)
 	keep_duration = bool(int(keep_duration)) if isinstance(keep_duration, str) else bool(keep_duration)
 
-	entry = frappe.get_doc("FT Time Entry", entry_name)
+	entry = frappe.get_doc("Watch Entry", entry_name)
 	if entry.user != frappe.session.user and not "System Manager" in frappe.get_roles():
 		frappe.throw(_("Not permitted"), frappe.PermissionError)
 
-	tpl = frappe.new_doc("FT Entry Template")
+	tpl = frappe.new_doc("Watch Entry Template")
 	tpl.template_name = template_name
 	tpl.template_type = "favorite"
 	tpl.user = frappe.session.user
@@ -126,14 +126,14 @@ def save_day_template(
 	if not entry_names:
 		frappe.throw(_("Select at least one entry to include in the template."))
 
-	tpl = frappe.new_doc("FT Entry Template")
+	tpl = frappe.new_doc("Watch Entry Template")
 	tpl.template_name = template_name
 	tpl.template_type = "day"
 	tpl.user = frappe.session.user
 	tpl.sort_order = 0
 
 	for idx, ename in enumerate(entry_names, start=1):
-		entry = frappe.get_doc("FT Time Entry", ename)
+		entry = frappe.get_doc("Watch Entry", ename)
 		if entry.user != frappe.session.user and not "System Manager" in frappe.get_roles():
 			frappe.throw(_("Not permitted"), frappe.PermissionError)
 
@@ -159,7 +159,7 @@ def apply_day_template(template_name: str, date: str) -> dict:
 
 	Returns the list of created entry dicts.
 	"""
-	tpl = frappe.get_doc("FT Entry Template", template_name)
+	tpl = frappe.get_doc("Watch Entry Template", template_name)
 	if tpl.user != frappe.session.user and not "System Manager" in frappe.get_roles():
 		frappe.throw(_("Not permitted"), frappe.PermissionError)
 	if tpl.template_type != "day":
@@ -172,7 +172,7 @@ def apply_day_template(template_name: str, date: str) -> dict:
 
 	created = []
 	for item in tpl.items:
-		entry = frappe.new_doc("FT Time Entry")
+		entry = frappe.new_doc("Watch Entry")
 		entry.date = date
 		entry.user = frappe.session.user
 		entry.description = item.description
@@ -193,11 +193,11 @@ def apply_day_template(template_name: str, date: str) -> dict:
 @frappe.whitelist()
 def delete_template(template_name: str) -> dict:
 	"""Delete a favorite or day template."""
-	tpl = frappe.get_doc("FT Entry Template", template_name)
+	tpl = frappe.get_doc("Watch Entry Template", template_name)
 	if tpl.user != frappe.session.user and not "System Manager" in frappe.get_roles():
 		frappe.throw(_("Not permitted"), frappe.PermissionError)
 
-	frappe.delete_doc("FT Entry Template", template_name, ignore_permissions=True)
+	frappe.delete_doc("Watch Entry Template", template_name, ignore_permissions=True)
 	return {"deleted": template_name}
 
 
@@ -209,7 +209,7 @@ def update_template(
 	items: list = None,
 ) -> dict:
 	"""Update a template's name, slot, or items."""
-	tpl = frappe.get_doc("FT Entry Template", template_name)
+	tpl = frappe.get_doc("Watch Entry Template", template_name)
 	if tpl.user != frappe.session.user and not "System Manager" in frappe.get_roles():
 		frappe.throw(_("Not permitted"), frappe.PermissionError)
 
@@ -252,7 +252,7 @@ def reorder_favorites(order: list) -> dict:
 	# Validate all templates before reassigning
 	templates = []
 	for tpl_name in order:
-		tpl = frappe.get_doc("FT Entry Template", tpl_name)
+		tpl = frappe.get_doc("Watch Entry Template", tpl_name)
 		if tpl.user != user:
 			frappe.throw(_("Not permitted"), frappe.PermissionError)
 		if tpl.template_type != "favorite":
@@ -261,7 +261,7 @@ def reorder_favorites(order: list) -> dict:
 
 	# Clear all slots first (use DB directly to bypass validation)
 	for tpl in templates:
-		frappe.db.set_value("FT Entry Template", tpl.name, "sort_order", 0)
+		frappe.db.set_value("Watch Entry Template", tpl.name, "sort_order", 0)
 
 	# Reassign in order
 	for slot, tpl in enumerate(templates, start=1):

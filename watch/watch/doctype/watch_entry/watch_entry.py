@@ -6,7 +6,7 @@ from frappe import _
 from frappe.model.document import Document
 
 
-class FTTimeEntry(Document):
+class WatchEntry(Document):
 	def validate(self):
 		self._check_lock()
 		self._calculate_duration()
@@ -23,7 +23,7 @@ class FTTimeEntry(Document):
 		if self.is_running:
 			return
 		try:
-			settings = frappe.get_single("FT Settings")
+			settings = frappe.get_single("Watch Settings")
 			if settings.enable_erpnext_bridge and settings.sync_mode == "on_save":
 				frappe.enqueue(
 					"watch.api.erpnext_bridge.sync_entry",
@@ -39,7 +39,7 @@ class FTTimeEntry(Document):
 		if self.is_new() or self.is_running:
 			return
 		try:
-			settings = frappe.get_single("FT Settings")
+			settings = frappe.get_single("Watch Settings")
 		except Exception:
 			return
 		days = settings.lock_entries_older_than or 0

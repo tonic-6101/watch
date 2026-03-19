@@ -8,7 +8,7 @@ from frappe import _
 def is_bridge_active() -> bool:
 	if "erpnext" not in frappe.get_installed_apps():
 		return False
-	settings = frappe.get_single("FT Settings")
+	settings = frappe.get_single("Watch Settings")
 	return bool(settings.enable_erpnext_bridge)
 
 
@@ -23,13 +23,13 @@ def _get_employee(user: str) -> str | None:
 
 
 def _get_day_entries(user: str, date: str) -> list:
-	"""Return all non-running FT Time Entry records for user+date."""
-	settings = frappe.get_single("FT Settings")
+	"""Return all non-running Watch Entry records for user+date."""
+	settings = frappe.get_single("Watch Settings")
 	filters = {"user": user, "date": date, "is_running": 0}
 	if settings.sync_billable_only:
 		filters["entry_type"] = "billable"
 	return frappe.get_all(
-		"FT Time Entry",
+		"Watch Entry",
 		filters=filters,
 		fields=[
 			"name", "date", "start_time", "end_time",
@@ -40,9 +40,9 @@ def _get_day_entries(user: str, date: str) -> list:
 
 
 def _resolve_project_tag(entry_name: str) -> tuple:
-	"""Return (project_name, task_name) by matching FT Tag category to ERPNext docs."""
+	"""Return (project_name, task_name) by matching Watch Tag category to ERPNext docs."""
 	tag_rows = frappe.get_all(
-		"FT Time Entry Tag",
+		"Watch Entry Tag",
 		filters={"parent": entry_name},
 		fields=["tag_name", "tag_category"],
 	)
@@ -71,7 +71,7 @@ def sync_day(date: str, user: str = None) -> dict:
 	if not user:
 		user = frappe.session.user
 
-	settings = frappe.get_single("FT Settings")
+	settings = frappe.get_single("Watch Settings")
 	employee = _get_employee(user)
 	if not employee:
 		return {"skipped": True, "reason": f"no Employee record for {user}"}
@@ -93,7 +93,7 @@ def sync_day(date: str, user: str = None) -> dict:
 			error_msg = _(
 				"ERPNext Timesheet {0} for {1} is submitted — re-sync blocked."
 			).format(existing.name, date)
-			frappe.db.set_single_value("FT Settings", "last_sync_error", error_msg)
+			frappe.db.set_single_value("Watch Settings", "last_sync_error", error_msg)
 			frappe.log_error(error_msg, "Watch ERPNext Bridge")
 			return {"error": error_msg}
 		frappe.delete_doc("Timesheet", existing.name, ignore_permissions=True)
@@ -128,13 +128,13 @@ def sync_day(date: str, user: str = None) -> dict:
 	# Mark entries synced
 	for entry in entries:
 		frappe.db.set_value(
-			"FT Time Entry",
+			"Watch Entry",
 			entry.name,
 			{"erpnext_synced": 1, "erpnext_timesheet": ts.name},
 			update_modified=False,
 		)
 
-	frappe.db.set_single_value("FT Settings", "last_sync_error", "")
+	frappe.db.set_single_value("Watch Settings", "last_sync_error", "")
 	return {"timesheet": ts.name, "entries_synced": len(entries)}
 
 
@@ -144,7 +144,7 @@ def sync_entry(entry_name: str) -> dict:
 	if not is_bridge_active():
 		return {"skipped": True, "reason": "bridge inactive"}
 
-	entry = frappe.get_doc("FT Time Entry", entry_name)
+	entry = frappe.get_doc("Watch Entry", entry_name)
 	if entry.is_running:
 		return {"skipped": True, "reason": "entry is still running"}
 
@@ -159,7 +159,7 @@ def bulk_sync() -> dict:
 
 	# Collect distinct user+date pairs that have unsynced entries
 	unsynced = frappe.get_all(
-		"FT Time Entry",
+		"Watch Entry",
 		filters={"erpnext_synced": 0, "is_running": 0},
 		fields=["user", "date"],
 		distinct=True,
@@ -174,11 +174,11 @@ def bulk_sync() -> dict:
 		elif not result.get("skipped"):
 			synced_days += 1
 
-	frappe.db.set_single_value("FT Settings", "last_bulk_sync", frappe.utils.now_datetime())
+	frappe.db.set_single_value("Watch Settings", "last_bulk_sync", frappe.utils.now_datetime())
 	if errors:
-		frappe.db.set_single_value("FT Settings", "last_sync_error", "; ".join(errors[:5]))
+		frappe.db.set_single_value("Watch Settings", "last_sync_error", "; ".join(errors[:5]))
 	else:
-		frappe.db.set_single_value("FT Settings", "last_sync_error", "")
+		frappe.db.set_single_value("Watch Settings", "last_sync_error", "")
 
 	return {"days_synced": synced_days, "errors": errors}
 

@@ -20,7 +20,7 @@ from watch.api.time_entry import (
 	get_weekly_summary,
 	update_entry,
 )
-from watch.tests.test_helpers import ensure_ft_settings, make_entry, make_tag
+from watch.tests.test_helpers import ensure_watch_settings, make_entry, make_tag
 
 
 class TestTimeEntryAPI(FrappeTestCase):
@@ -28,14 +28,14 @@ class TestTimeEntryAPI(FrappeTestCase):
 	@classmethod
 	def setUpClass(cls):
 		super().setUpClass()
-		ensure_ft_settings()
+		ensure_watch_settings()
 
 	def setUp(self):
 		frappe.set_user("Administrator")
 
 	def tearDown(self):
 		# Reset soft lock so it doesn't leak into other tests.
-		settings = frappe.get_single("FT Settings")
+		settings = frappe.get_single("Watch Settings")
 		settings.lock_entries_older_than = 0
 		settings.save(ignore_permissions=True)
 
@@ -77,7 +77,7 @@ class TestTimeEntryAPI(FrappeTestCase):
 		self.assertEqual(result["github_ref"], "org/repo#42")
 
 	def test_create_entry_soft_lock_blocks_old_date(self):
-		settings = frappe.get_single("FT Settings")
+		settings = frappe.get_single("Watch Settings")
 		settings.lock_entries_older_than = 7
 		settings.save(ignore_permissions=True)
 
@@ -86,7 +86,7 @@ class TestTimeEntryAPI(FrappeTestCase):
 			create_entry(date=old_date, duration_hours=1.0)
 
 	def test_create_entry_soft_lock_allows_recent_date(self):
-		settings = frappe.get_single("FT Settings")
+		settings = frappe.get_single("Watch Settings")
 		settings.lock_entries_older_than = 7
 		settings.save(ignore_permissions=True)
 
@@ -130,7 +130,7 @@ class TestTimeEntryAPI(FrappeTestCase):
 		entry = make_entry(description="To be deleted")
 		result = delete_entry(entry_name=entry.name)
 		self.assertEqual(result["deleted"], entry.name)
-		self.assertFalse(frappe.db.exists("FT Time Entry", entry.name))
+		self.assertFalse(frappe.db.exists("Watch Entry", entry.name))
 
 	def test_delete_entry_blocks_running(self):
 		entry = make_entry(is_running=1)
@@ -247,9 +247,9 @@ class TestTimeEntryAPI(FrappeTestCase):
 		result = bulk_delete(entry_names=[e_draft.name, e_running.name, e_sent.name])
 		self.assertEqual(result["deleted"], 1)
 		self.assertEqual(result["skipped"], 2)
-		self.assertFalse(frappe.db.exists("FT Time Entry", e_draft.name))
-		self.assertTrue(frappe.db.exists("FT Time Entry", e_running.name))
-		self.assertTrue(frappe.db.exists("FT Time Entry", e_sent.name))
+		self.assertFalse(frappe.db.exists("Watch Entry", e_draft.name))
+		self.assertTrue(frappe.db.exists("Watch Entry", e_running.name))
+		self.assertTrue(frappe.db.exists("Watch Entry", e_sent.name))
 
 	# ── get_weekly_chart_data ─────────────────────────────────────────────
 

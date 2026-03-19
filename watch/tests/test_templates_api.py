@@ -16,14 +16,14 @@ from watch.api.templates import (
 	save_from_entry,
 	update_template,
 )
-from watch.tests.test_helpers import ensure_ft_settings, make_entry, make_tag
+from watch.tests.test_helpers import ensure_watch_settings, make_entry, make_tag
 
 
 class TestTemplatesAPI(FrappeTestCase):
 	@classmethod
 	def setUpClass(cls):
 		super().setUpClass()
-		ensure_ft_settings()
+		ensure_watch_settings()
 
 	def setUp(self):
 		frappe.set_user("Administrator")
@@ -31,11 +31,11 @@ class TestTemplatesAPI(FrappeTestCase):
 	def _cleanup_templates(self):
 		"""Remove all templates for current user."""
 		for name in frappe.get_all(
-			"FT Entry Template",
+			"Watch Entry Template",
 			filters={"user": frappe.session.user},
 			pluck="name",
 		):
-			frappe.delete_doc("FT Entry Template", name, ignore_permissions=True)
+			frappe.delete_doc("Watch Entry Template", name, ignore_permissions=True)
 
 	# ── get_favorites ───────────────────────────────────────────────────
 
@@ -189,7 +189,7 @@ class TestTemplatesAPI(FrappeTestCase):
 
 		result = delete_template(tpl["name"])
 		self.assertEqual(result["deleted"], tpl["name"])
-		self.assertFalse(frappe.db.exists("FT Entry Template", tpl["name"]))
+		self.assertFalse(frappe.db.exists("Watch Entry Template", tpl["name"]))
 
 	# ── reorder_favorites ───────────────────────────────────────────────
 
@@ -204,7 +204,7 @@ class TestTemplatesAPI(FrappeTestCase):
 		result = reorder_favorites(order=[t2["name"], t1["name"]])
 		self.assertEqual(result["reordered"], 2)
 
-		doc1 = frappe.get_doc("FT Entry Template", t1["name"])
-		doc2 = frappe.get_doc("FT Entry Template", t2["name"])
+		doc1 = frappe.get_doc("Watch Entry Template", t1["name"])
+		doc2 = frappe.get_doc("Watch Entry Template", t2["name"])
 		self.assertEqual(doc2.sort_order, 1)
 		self.assertEqual(doc1.sort_order, 2)

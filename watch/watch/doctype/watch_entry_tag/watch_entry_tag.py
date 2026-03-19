@@ -5,5 +5,5 @@ import frappe
 from frappe.model.document import Document
 
 
-class FTSettings(Document):
+class WatchEntryTag(Document):
 	pass

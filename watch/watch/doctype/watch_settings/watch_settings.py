@@ -5,5 +5,5 @@ import frappe
 from frappe.model.document import Document
 
 
-class FTTimer(Document):
+class WatchSettings(Document):
 	pass

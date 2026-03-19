@@ -37,26 +37,6 @@
   --watch-border-light: #f3f4f6;
 }
 
-/* ============================================
-   Dock Token Contract — copied verbatim from ecosystem spec
-   Same variable names used by DockNavbar and all fallback navbars.
-   ============================================ */
-
-:root {
-  --dock-bg:     #ffffff;
-  --dock-border: #e5e7eb;
-  --dock-text:   #111827;
-  --dock-icon:   #6b7280;
-  --dock-accent: #6366f1; /* Watch brand — overridden per active app when Dock is present */
-}
-
-:root.dark {
-  --dock-bg:     #111827;
-  --dock-border: #374151;
-  --dock-text:   #f3f4f6;
-  --dock-icon:   #9ca3af;
-  --dock-accent: #818cf8;
-}
 
 :root.dark {
   --watch-bg: #0f172a;

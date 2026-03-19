@@ -8,8 +8,8 @@ from frappe import _
 
 
 def _check_soft_lock(entry_date: str):
-	"""Throw if the date is older than FT Settings.lock_entries_older_than days (0 = disabled)."""
-	lock_days = int(frappe.db.get_single_value("FT Settings", "lock_entries_older_than") or 0)
+	"""Throw if the date is older than Watch Settings.lock_entries_older_than days (0 = disabled)."""
+	lock_days = int(frappe.db.get_single_value("Watch Settings", "lock_entries_older_than") or 0)
 	if lock_days <= 0:
 		return
 	d = date.fromisoformat(str(entry_date))
@@ -20,7 +20,7 @@ def _check_soft_lock(entry_date: str):
 
 def _is_soft_locked(entry_date: str) -> bool:
 	"""Return True if the date is older than the lock threshold (no throw)."""
-	lock_days = int(frappe.db.get_single_value("FT Settings", "lock_entries_older_than") or 0)
+	lock_days = int(frappe.db.get_single_value("Watch Settings", "lock_entries_older_than") or 0)
 	if lock_days <= 0:
 		return False
 	d = date.fromisoformat(str(entry_date))
@@ -75,7 +75,7 @@ def _attach_tags(entries: list) -> list:
 		return entries
 	names = [e.name for e in entries]
 	tag_rows = frappe.get_all(
-		"FT Time Entry Tag",
+		"Watch Entry Tag",
 		filters={"parent": ["in", names]},
 		fields=["parent", "tag", "tag_name", "tag_color", "tag_category"],
 		order_by="idx asc",
@@ -115,7 +115,7 @@ def create_entry(
 
 	_check_soft_lock(date)
 
-	entry = frappe.new_doc("FT Time Entry")
+	entry = frappe.new_doc("Watch Entry")
 	entry.date = date
 	entry.user = frappe.session.user
 	entry.description = description
@@ -157,7 +157,7 @@ def update_entry(
 	linear_issue: str = None,
 	github_ref: str = None,
 ) -> dict:
-	entry = frappe.get_doc("FT Time Entry", entry_name)
+	entry = frappe.get_doc("Watch Entry", entry_name)
 
 	if entry.user != frappe.session.user and not "System Manager" in frappe.get_roles():
 		frappe.throw(_("Not permitted"), frappe.PermissionError)
@@ -201,7 +201,7 @@ def update_entry(
 
 @frappe.whitelist()
 def delete_entry(entry_name: str) -> dict:
-	entry = frappe.get_doc("FT Time Entry", entry_name)
+	entry = frappe.get_doc("Watch Entry", entry_name)
 
 	if entry.user != frappe.session.user and not "System Manager" in frappe.get_roles():
 		frappe.throw(_("Not permitted"), frappe.PermissionError)
@@ -212,7 +212,7 @@ def delete_entry(entry_name: str) -> dict:
 	if entry.entry_status == "sent":
 		frappe.throw(_("Cannot delete a sent entry"))
 
-	frappe.delete_doc("FT Time Entry", entry_name, ignore_permissions=True)
+	frappe.delete_doc("Watch Entry", entry_name, ignore_permissions=True)
 	return {"deleted": entry_name}
 
 
@@ -220,7 +220,7 @@ def delete_entry(entry_name: str) -> dict:
 def get_daily_summary(date: str) -> dict:
 	user = frappe.session.user
 	entries = frappe.get_all(
-		"FT Time Entry",
+		"Watch Entry",
 		filters={"user": user, "date": date},
 		fields=[
 			"name", "date", "start_time", "end_time", "duration_hours",
@@ -278,7 +278,7 @@ def get_weekly_summary(week_start: str) -> dict:
 	sunday = monday + timedelta(days=6)
 
 	entries = frappe.get_all(
-		"FT Time Entry",
+		"Watch Entry",
 		filters={
 			"user": user,
 			"date": ["between", [str(monday), str(sunday)]],
@@ -324,7 +324,7 @@ def get_weekly_summary(week_start: str) -> dict:
 	prev_monday = monday - timedelta(days=7)
 	prev_sunday = prev_monday + timedelta(days=6)
 	prev_entries = frappe.get_all(
-		"FT Time Entry",
+		"Watch Entry",
 		filters={
 			"user": user,
 			"date": ["between", [str(prev_monday), str(prev_sunday)]],
@@ -364,7 +364,7 @@ def get_week_total(target_date: str) -> dict:
 	sunday = monday + timedelta(days=6)
 
 	rows = frappe.get_all(
-		"FT Time Entry",
+		"Watch Entry",
 		filters={
 			"user": user,
 			"date": ["between", [str(monday), str(sunday)]],
@@ -388,7 +388,7 @@ def duplicate_entry(entry_name: str, target_date: str = None) -> dict:
 	When copying to a different date, start_time and end_time are NOT copied
 	(a time slot on a different day is meaningless). Same-day copies keep them.
 	"""
-	src = frappe.get_doc("FT Time Entry", entry_name)
+	src = frappe.get_doc("Watch Entry", entry_name)
 
 	if src.user != frappe.session.user and not "System Manager" in frappe.get_roles():
 		frappe.throw(_("Not permitted"), frappe.PermissionError)
@@ -396,7 +396,7 @@ def duplicate_entry(entry_name: str, target_date: str = None) -> dict:
 	effective_date = target_date or frappe.utils.today()
 	same_day = str(effective_date) == str(src.date)
 
-	new_entry = frappe.new_doc("FT Time Entry")
+	new_entry = frappe.new_doc("Watch Entry")
 	new_entry.date = effective_date
 	new_entry.user = frappe.session.user
 	new_entry.description = src.description
@@ -429,7 +429,7 @@ def bulk_duplicate(entry_names: list, target_date: str = None) -> dict:
 	warnings: list[str] = []
 
 	for ename in entry_names:
-		src = frappe.get_doc("FT Time Entry", ename)
+		src = frappe.get_doc("Watch Entry", ename)
 		if src.user != user and not "System Manager" in frappe.get_roles():
 			skipped += 1
 			continue
@@ -439,7 +439,7 @@ def bulk_duplicate(entry_names: list, target_date: str = None) -> dict:
 			continue
 
 		same_day = str(effective_date) == str(src.date)
-		new_entry = frappe.new_doc("FT Time Entry")
+		new_entry = frappe.new_doc("Watch Entry")
 		new_entry.date = effective_date
 		new_entry.user = user
 		new_entry.description = src.description
@@ -487,7 +487,7 @@ def check_yesterday_empty() -> dict:
 		return {"empty": False, "yesterday": None}
 
 	count = frappe.db.count(
-		"FT Time Entry",
+		"Watch Entry",
 		{"user": frappe.session.user, "date": str(candidate), "is_running": 0},
 	)
 	return {"empty": count == 0, "yesterday": str(candidate)}
@@ -509,7 +509,7 @@ def get_weekly_chart_data(week_start: str) -> dict:
 	work_days = set(get_work_days())  # set of ints 0=Mon…6=Sun
 
 	entries = frappe.get_all(
-		"FT Time Entry",
+		"Watch Entry",
 		filters={
 			"user": user,
 			"date": ["between", [str(monday), str(sunday)]],
@@ -604,7 +604,7 @@ def export_csv(
 		filters["entry_status"] = entry_status
 
 	entries = frappe.get_all(
-		"FT Time Entry",
+		"Watch Entry",
 		filters=filters,
 		fields=[
 			"name", "date", "start_time", "end_time",
@@ -617,7 +617,7 @@ def export_csv(
 	rows = []
 	for entry in entries:
 		tag_rows = frappe.get_all(
-			"FT Time Entry Tag",
+			"Watch Entry Tag",
 			filters={"parent": entry.name},
 			fields=["tag_name"],
 			order_by="idx asc",
@@ -664,7 +664,7 @@ def bulk_add_tag(entry_names: list, tag: str) -> dict:
 	skipped = 0
 
 	for ename in entry_names:
-		entry = frappe.get_doc("FT Time Entry", ename)
+		entry = frappe.get_doc("Watch Entry", ename)
 		if entry.user != user and not "System Manager" in frappe.get_roles():
 			skipped += 1
 			continue
@@ -694,7 +694,7 @@ def bulk_set_entry_type(entry_names: list, entry_type: str) -> dict:
 	skipped = 0
 
 	for ename in entry_names:
-		entry = frappe.get_doc("FT Time Entry", ename)
+		entry = frappe.get_doc("Watch Entry", ename)
 		if entry.user != user and not "System Manager" in frappe.get_roles():
 			skipped += 1
 			continue
@@ -719,7 +719,7 @@ def bulk_delete(entry_names: list) -> dict:
 	warnings: list[str] = []
 
 	for ename in entry_names:
-		entry = frappe.get_doc("FT Time Entry", ename)
+		entry = frappe.get_doc("Watch Entry", ename)
 		if entry.user != user and not "System Manager" in frappe.get_roles():
 			skipped += 1
 			continue
@@ -732,7 +732,7 @@ def bulk_delete(entry_names: list) -> dict:
 			warnings.append(_("{0} skipped — already sent.").format(ename))
 			continue
 
-		frappe.delete_doc("FT Time Entry", ename, ignore_permissions=True)
+		frappe.delete_doc("Watch Entry", ename, ignore_permissions=True)
 		deleted += 1
 
 	return {"deleted": deleted, "skipped": skipped, "warnings": warnings}

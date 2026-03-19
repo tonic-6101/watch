@@ -18,14 +18,14 @@ from watch.api.erpnext_bridge import (
 	sync_entry,
 	test_connection,
 )
-from watch.tests.test_helpers import ensure_ft_settings, make_entry
+from watch.tests.test_helpers import ensure_watch_settings, make_entry
 
 
 class TestERPNextBridge(FrappeTestCase):
 	@classmethod
 	def setUpClass(cls):
 		super().setUpClass()
-		ensure_ft_settings()
+		ensure_watch_settings()
 
 	def setUp(self):
 		frappe.set_user("Administrator")

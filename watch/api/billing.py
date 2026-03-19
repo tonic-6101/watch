@@ -13,7 +13,7 @@ def _attach_tag_meta(entries: list) -> None:
 		return
 	entry_names = [e.name for e in entries]
 	tag_rows = frappe.get_all(
-		"FT Time Entry Tag",
+		"Watch Entry Tag",
 		filters={"parent": ["in", entry_names]},
 		fields=["parent", "tag", "tag_name", "tag_color", "tag_category"],
 		order_by="idx asc",
@@ -53,7 +53,7 @@ def _collect_draft_billable(
 	  "Acme Corp" — return only entries whose Client tag matches
 	"""
 	entries = frappe.get_all(
-		"FT Time Entry",
+		"Watch Entry",
 		filters={
 			"user":         user,
 			"date":         ["between", [from_date, to_date]],
@@ -78,7 +78,7 @@ def _collect_draft_billable(
 
 def _mark_entries_sent(entry_names: list[str]) -> None:
 	for name in entry_names:
-		frappe.db.set_value("FT Time Entry", name, "entry_status", "sent")
+		frappe.db.set_value("Watch Entry", name, "entry_status", "sent")
 	frappe.db.commit()
 
 
@@ -93,7 +93,7 @@ def get_summary(from_date: str, to_date: str) -> dict:
 	user = frappe.session.user
 
 	all_entries = frappe.get_all(
-		"FT Time Entry",
+		"Watch Entry",
 		filters={"user": user, "date": ["between", [from_date, to_date]], "is_running": 0},
 		fields=[
 			"name", "date", "duration_hours",
@@ -181,14 +181,14 @@ def mark_sent(from_date: str, to_date: str, client_tag: str = None) -> dict:
 		"entry_status": "draft",
 		"is_running":   0,
 	}
-	entries = frappe.get_all("FT Time Entry", filters=filters, fields=["name"])
+	entries = frappe.get_all("Watch Entry", filters=filters, fields=["name"])
 
 	if client_tag is not None:
 		# Filter to entries whose client tag matches
 		if entries:
 			entry_names = [e.name for e in entries]
 			tag_rows = frappe.get_all(
-				"FT Time Entry Tag",
+				"Watch Entry Tag",
 				filters={"parent": ["in", entry_names], "tag_category": "Client"},
 				fields=["parent", "tag_name"],
 				order_by="idx asc",
@@ -207,7 +207,7 @@ def mark_sent(from_date: str, to_date: str, client_tag: str = None) -> dict:
 
 	count = 0
 	for e in entries:
-		frappe.db.set_value("FT Time Entry", e.name, "entry_status", "sent")
+		frappe.db.set_value("Watch Entry", e.name, "entry_status", "sent")
 		count += 1
 
 	frappe.db.commit()

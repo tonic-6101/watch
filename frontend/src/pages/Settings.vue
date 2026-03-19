@@ -10,7 +10,7 @@ import { useUserSettings } from '@/composables/useUserSettings'
 
 // ── Types ─────────────────────────────────────────────────────────────────────
 
-interface FTSettings {
+interface WatchSettings {
   default_entry_type:       string
   lock_entries_older_than:  number
   auto_stop_timer_after:    number
@@ -45,7 +45,7 @@ const saving  = ref(false)
 const apiError = ref<string | null>(null)
 const saved   = ref(false)
 
-// ── My Preferences (per-user FT User Settings) ──────────────────────────────
+// ── My Preferences (per-user Watch User Settings) ───────────────────────────
 
 const {
   prefs, load: loadPrefs, save: savePrefs,
@@ -128,7 +128,7 @@ async function handleSavePrefs() {
   }
 }
 
-const form = ref<FTSettings>({
+const form = ref<WatchSettings>({
   default_entry_type:      'billable',
   lock_entries_older_than: 0,
   auto_stop_timer_after:   8,
@@ -270,7 +270,7 @@ const SYNC_INTERVAL_OPTIONS = [
   { value: 'daily',         label: 'Daily' },
 ]
 
-const WORK_DAYS: { key: keyof FTSettings; label: string }[] = [
+const WORK_DAYS: { key: keyof WatchSettings; label: string }[] = [
   { key: 'work_mon', label: 'Mon' },
   { key: 'work_tue', label: 'Tue' },
   { key: 'work_wed', label: 'Wed' },
@@ -280,11 +280,11 @@ const WORK_DAYS: { key: keyof FTSettings; label: string }[] = [
   { key: 'work_sun', label: 'Sun' },
 ]
 
-function toggleWorkDay(key: keyof FTSettings, checked: boolean) {
+function toggleWorkDay(key: keyof WatchSettings, checked: boolean) {
   (form.value[key] as 0 | 1) = checked ? 1 : 0
 }
 
-function toggleCheck(key: keyof FTSettings, checked: boolean) {
+function toggleCheck(key: keyof WatchSettings, checked: boolean) {
   (form.value[key] as 0 | 1) = checked ? 1 : 0
 }
 
