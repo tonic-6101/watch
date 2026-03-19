@@ -3,29 +3,18 @@
   Copyright (C) 2024-2026 Tonic
 -->
 <script setup lang="ts">
-import { computed } from 'vue'
 import { RouterLink, useRoute } from 'vue-router'
 import {
   CalendarDays,
   CalendarRange,
   FileText,
   Tag,
-  Settings,
 } from 'lucide-vue-next'
 import { __ } from '@/composables/useTranslate'
 import { useSidebar } from '@/composables/useSidebar'
 
 const { collapsed, mobileOpen, closeMobile } = useSidebar()
 const route = useRoute()
-
-// ── Admin detection ──────────────────────────────────────────────────────
-
-const isAdmin = computed(() => {
-  const frappe = (window as any).frappe
-  // Boot injects roles at window.frappe.boot.user_roles (see www/watch.py get_boot)
-  const roles: string[] = frappe?.boot?.user_roles ?? []
-  return roles.includes('System Manager')
-})
 
 // ── Nav items ────────────────────────────────────────────────────────────
 
@@ -39,15 +28,12 @@ interface NavItem {
   datePrefix?: boolean
 }
 
-const navItems = computed<NavItem[]>(() => [
+const navItems: NavItem[] = [
   { path: '/watch',          name: __('Today'),   icon: CalendarDays,  exact: true, datePrefix: true },
   { path: '/watch/week',     name: __('Week'),    icon: CalendarRange },
   { path: '/watch/prepare',  name: __('Prepare'), icon: FileText },
   { path: '/watch/tags',     name: __('Tags'),    icon: Tag },
-  ...(isAdmin.value
-    ? [{ path: '/watch/settings', name: __('Settings'), icon: Settings }]
-    : []),
-])
+]
 
 // ── Active route detection ────────────────────────────────────────────────
 // Today: exact /watch OR prefix /watch/YYYY-MM-DD (date routes)

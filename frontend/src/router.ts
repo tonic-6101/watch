@@ -8,7 +8,6 @@ import DailyView from './pages/DailyView.vue'
 import WeeklyView from './pages/WeeklyView.vue'
 import PrepareSummary from './pages/PrepareSummary.vue'
 import Tags from './pages/Tags.vue'
-import Settings from './pages/Settings.vue'
 
 const routes: RouteRecordRaw[] = [
   // Daily view — default landing and specific date
@@ -24,9 +23,6 @@ const routes: RouteRecordRaw[] = [
 
   // Tag management
   { path: '/watch/tags', component: Tags },
-
-  // Settings / preferences
-  { path: '/watch/settings', component: Settings },
 
   // Dock shared pages (People, Calendar, Notifications, Bookmarks)
   ...dockSharedRoutes('/watch'),

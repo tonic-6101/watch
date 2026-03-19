@@ -9,6 +9,8 @@ app_email = "hello@tonic.to"
 app_license = "agpl-3.0"
 app_logo_url = "/assets/watch/images/logo.svg"
 
+required_apps = ["frappe", "dock"]
+
 # --------------------------------------------------
 # Dock ecosystem integration
 # --------------------------------------------------
