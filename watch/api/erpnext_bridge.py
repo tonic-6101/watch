@@ -184,6 +184,22 @@ def bulk_sync() -> dict:
 
 
 @frappe.whitelist()
+def get_sync_status() -> dict:
+	"""Bridge status for Dock's Integrations dashboard."""
+	if not is_bridge_active():
+		return {"active": False, "reason": _("Bridge disabled or ERPNext not installed")}
+
+	settings = frappe.get_single("Watch Settings")
+	unsynced = frappe.db.count("Watch Entry", {"erpnext_synced": 0, "is_running": 0})
+	return {
+		"active": True,
+		"unsynced_count": unsynced,
+		"last_bulk_sync": str(settings.get("last_bulk_sync") or ""),
+		"last_error": settings.get("last_sync_error") or None,
+	}
+
+
+@frappe.whitelist()
 def test_connection() -> dict:
 	"""Verify ERPNext is reachable and Timesheet/Employee DocTypes are accessible."""
 	if "erpnext" not in frappe.get_installed_apps():

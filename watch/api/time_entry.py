@@ -141,6 +141,13 @@ def create_entry(
 			entry.append("tags", {"tag": tag_name})
 
 	entry.insert(ignore_permissions=True)
+
+	try:
+		from watch.api.tags import _check_budget_alerts
+		_check_budget_alerts(entry)
+	except Exception:
+		frappe.log_error(frappe.get_traceback(), "Watch budget alert after create")
+
 	return _entry_to_dict(entry)
 
 
@@ -196,6 +203,13 @@ def update_entry(
 			entry.append("tags", {"tag": tag_name})
 
 	entry.save(ignore_permissions=True)
+
+	try:
+		from watch.api.tags import _check_budget_alerts
+		_check_budget_alerts(entry)
+	except Exception:
+		frappe.log_error(frappe.get_traceback(), "Watch budget alert after update")
+
 	return _entry_to_dict(entry)
 
 

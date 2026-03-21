@@ -8,7 +8,7 @@ from frappe import _
 
 
 def _fire_timer_stopped(entry):
-	"""Notify Slack and fire watch_event_hooks after a timer stop.  Never raises."""
+	"""Notify Slack, fire watch_event_hooks, and check budgets after a timer stop.  Never raises."""
 	try:
 		from watch.api.integrations import fire_watch_event, notify_slack
 		entry_data = entry.as_dict()
@@ -16,6 +16,11 @@ def _fire_timer_stopped(entry):
 		fire_watch_event("timer_stopped", {"entry": entry_data})
 	except Exception:
 		frappe.log_error(frappe.get_traceback(), "Watch timer_stopped integrations")
+	try:
+		from watch.api.tags import _check_budget_alerts
+		_check_budget_alerts(entry)
+	except Exception:
+		frappe.log_error(frappe.get_traceback(), "Watch budget alert after timer stop")
 
 
 def _get_or_create_timer(user: str):

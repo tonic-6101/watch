@@ -84,6 +84,26 @@ dock_settings_sections = [
 	}
 ]
 
+# Bridge registry — registers Watch's ERPNext bridge in Dock's Integrations dashboard
+dock_bridges = [
+	{
+		"label": "ERPNext Timesheet Sync",
+		"target_app": "erpnext",
+		"target_doctype": "Timesheet",
+		"source_doctype": "Watch Entry",
+		"direction": "one_way",
+		"status_endpoint": "watch.api.erpnext_bridge.get_sync_status",
+		"sync_endpoint": "watch.api.erpnext_bridge.bulk_sync",
+		"settings_route": "/dock/settings/app/watch",
+	},
+]
+
+# Notification types for Dock's notification system (budget alerts)
+dock_notification_types = [
+	{"type": "budget_warning", "label": "Budget Warning", "icon": "alert-triangle"},
+	{"type": "budget_exceeded", "label": "Budget Exceeded", "icon": "alert-circle"},
+]
+
 # --------------------------------------------------
 # Extensibility hooks (other apps implement these)
 # --------------------------------------------------

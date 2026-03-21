@@ -355,3 +355,99 @@ def get_all_budgets(month: str = None) -> dict:
 		result[t.name] = _budget_status(used, budget, threshold_pct)
 
 	return result
+
+
+# ── Proactive budget alerts ────────────────────────────────────────────────
+
+
+def _check_budget_alerts(entry):
+	"""Check if any tag on this entry crossed its budget threshold.
+
+	Creates a Dock Notification when a threshold is crossed.
+	Deduplicates: one notification per tag+type+user+month.
+	Soft dependency on Dock — silently skips if Dock is not installed.
+	"""
+	if "dock" not in frappe.get_installed_apps():
+		return
+
+	tag_rows = entry.tags if hasattr(entry, "tags") else []
+	if not tag_rows:
+		return
+
+	entry_date = str(entry.date)
+	month = entry_date[:7]
+	month_start = f"{month}-01"
+	month_end = str(frappe.utils.get_last_day(month_start))
+
+	settings = frappe.get_single("Watch Settings")
+	site_threshold = int(settings.budget_warning_threshold or 80)
+
+	for tag_row in tag_rows:
+		tag_name = tag_row.tag
+		if not frappe.db.exists("Watch Tag", tag_name):
+			continue
+
+		tag = frappe.get_cached_doc("Watch Tag", tag_name)
+		budget = float(tag.monthly_hour_budget or 0)
+		if budget <= 0:
+			continue
+
+		threshold_pct = int(tag.budget_warning_threshold or site_threshold)
+
+		result = frappe.db.sql(
+			"""
+			SELECT COALESCE(SUM(e.duration_hours), 0) AS total_hours
+			FROM `tabWatch Entry` e
+			JOIN `tabWatch Entry Tag` et ON et.parent = e.name
+			WHERE et.tag = %(tag)s
+			  AND e.date BETWEEN %(start)s AND %(end)s
+			  AND e.is_running = 0
+			""",
+			{"tag": tag_name, "start": month_start, "end": month_end},
+			as_dict=True,
+		)
+
+		used = float(result[0].total_hours) if result else 0.0
+		pct = (used / budget) * 100
+
+		if pct >= 100:
+			notif_type = "budget_exceeded"
+			title = _("{0}: budget exceeded ({1}%)").format(tag_name, int(pct))
+		elif pct >= threshold_pct:
+			notif_type = "budget_warning"
+			title = _("{0}: {1}% of budget used").format(tag_name, int(pct))
+		else:
+			continue
+
+		# Deduplicate: skip if same-type notification exists for this tag+user this month
+		existing = frappe.db.get_all(
+			"Dock Notification",
+			filters={
+				"for_user": entry.user,
+				"from_app": "watch",
+				"notification_type": notif_type,
+				"reference_doctype": "Watch Tag",
+				"reference_name": tag_name,
+				"creation": [">=", month_start],
+			},
+			limit=1,
+		)
+		if existing:
+			continue
+
+		try:
+			frappe.call(
+				"dock.api.notifications.publish",
+				for_user=entry.user,
+				from_app="watch",
+				notification_type=notif_type,
+				title=title,
+				message=_("{0}: {1}h of {2}h budget used this month").format(
+					tag_name, round(used, 1), round(budget, 1)
+				),
+				reference_doctype="Watch Tag",
+				reference_name=tag_name,
+				action_url="/watch/tags",
+			)
+		except Exception:
+			frappe.log_error(frappe.get_traceback(), "Watch budget alert")
