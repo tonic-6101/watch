@@ -20,6 +20,11 @@
   "entry_section",
   "entry_type",
   "entry_status",
+  "context_section",
+  "contact",
+  "context_col_break",
+  "context_type",
+  "context_name",
   "erpnext_section",
   "erpnext_synced",
   "erpnext_timesheet",
@@ -122,6 +127,34 @@
    "label": "Entry Status",
    "options": "draft\nsent",
    "read_only_depends_on": "eval:doc.entry_status === 'sent'"
+  },
+  {
+   "collapsible": 1,
+   "fieldname": "context_section",
+   "fieldtype": "Section Break",
+   "label": "Context"
+  },
+  {
+   "fieldname": "contact",
+   "fieldtype": "Link",
+   "label": "Contact",
+   "options": "Contact"
+  },
+  {
+   "fieldname": "context_col_break",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "context_type",
+   "fieldtype": "Select",
+   "label": "Context Type",
+   "options": ""
+  },
+  {
+   "fieldname": "context_name",
+   "fieldtype": "Dynamic Link",
+   "label": "Context",
+   "options": "context_type"
   },
   {
    "collapsible": 1,

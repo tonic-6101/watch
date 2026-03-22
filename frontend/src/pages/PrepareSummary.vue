@@ -17,20 +17,43 @@ interface SummaryEntry {
   description:             string
   duration_hours:          number
   entry_status:            'draft' | 'sent'
+  contact?:                string | null
+  context_type?:           string | null
+  context_name?:           string | null
+  event_context_name?:     string | null
+  event_display?:          string | null
 }
 
-interface ProjectRow {
-  project_tag:    string | null
+interface TaskRow {
+  context_name:   string | null
+  task_display:   string | null
   hours:          number
   entries:        SummaryEntry[]
 }
 
-interface ClientGroup {
+interface ProjectRow {
+  context_name:    string | null
+  project_display: string | null
+  project_tag:     string | null
+  is_tag_based:    boolean
+  hours:           number
+  tasks:           TaskRow[]
+}
+
+interface ContactGroup {
+  contact:          string | null
+  contact_name:     string | null
   client_tag:       string | null
   client_tag_color: string | null
+  is_tag_based:     boolean
   total_hours:      number
   entry_status:     'draft' | 'sent'
   projects:         ProjectRow[]
+}
+
+interface FilterOption {
+  name:    string
+  display: string
 }
 
 interface Totals {
@@ -40,10 +63,12 @@ interface Totals {
 }
 
 interface SummaryData {
-  from_date: string
-  to_date:   string
-  groups:    ClientGroup[]
-  totals:    Totals
+  from_date:           string
+  to_date:             string
+  groups:              ContactGroup[]
+  totals:              Totals
+  available_contacts:  FilterOption[]
+  available_projects:  FilterOption[]
 }
 
 interface BillingAction {
@@ -163,9 +188,13 @@ const groupBudgets  = ref<Record<string, BudgetStatus>>({})
 const loading       = ref(false)
 const apiError      = ref<string | null>(null)
 
+// Context filters
+const filterContact = ref<string>('')
+const filterProject = ref<string>('')
+
 const billingActions = ref<BillingAction[]>([])
-const sendMenuOpen   = ref<string | null>(null)  // client_tag key of open send menu
-const sending        = ref<string | null>(null)  // client_tag key currently sending
+const sendMenuOpen   = ref<string | null>(null)  // group key of open send menu
+const sending        = ref<string | null>(null)  // group key currently sending
 const sendingAll     = ref(false)
 const sendAllOpen    = ref(false)
 
@@ -181,6 +210,9 @@ const collapsed = ref<Record<string, boolean>>({})
 
 // Project-level expand: false = collapsed (default)
 const projectExpanded = ref<Record<string, boolean>>({})
+
+// Task-level expand: false = collapsed (default)
+const taskExpanded = ref<Record<string, boolean>>({})
 
 // Custom date picker visibility
 const showCustomPickers = ref(false)
@@ -208,6 +240,8 @@ async function load() {
   apiError.value = null
   try {
     const params = new URLSearchParams({ from_date: fromDate.value, to_date: toDate.value })
+    if (filterContact.value) params.set('contact', filterContact.value)
+    if (filterProject.value) params.set('context_name', filterProject.value)
     const res  = await fetch(`/api/method/watch.api.billing.get_summary?${params}`, {
       headers: { 'X-Frappe-CSRF-Token': (window as any).csrf_token ?? '' },
     })
@@ -220,6 +254,8 @@ async function load() {
       col[groupKey(g)] = true
     }
     collapsed.value = col
+    projectExpanded.value = {}
+    taskExpanded.value = {}
     loadGroupBudgets()
   } catch (e: any) {
     apiError.value = e.message
@@ -278,8 +314,13 @@ watch([() => route.query.from, () => route.query.to], ([f, t]) => {
 
 // ── Group helpers ─────────────────────────────────────────────────────────────
 
-function groupKey(g: ClientGroup): string {
+function groupKey(g: ContactGroup): string {
+  if (g.contact) return `contact:${g.contact}`
   return g.client_tag ?? '__unassigned__'
+}
+
+function groupLabel(g: ContactGroup): string {
+  return g.contact_name ?? g.client_tag ?? __('(no contact)')
 }
 
 function chipStyle(color: string | null) {
@@ -287,23 +328,40 @@ function chipStyle(color: string | null) {
   return { backgroundColor: `${c}22`, color: c, borderColor: `${c}44` }
 }
 
-function toggleCollapse(g: ClientGroup) {
+function toggleCollapse(g: ContactGroup) {
   const key = groupKey(g)
   collapsed.value[key] = !collapsed.value[key]
 }
 
-function projectKey(g: ClientGroup, p: ProjectRow): string {
-  return `${groupKey(g)}::${p.project_tag ?? '__none__'}`
+function projectKey(g: ContactGroup, p: ProjectRow): string {
+  return `${groupKey(g)}::${p.context_name ?? p.project_tag ?? '__none__'}`
 }
 
-function toggleProject(g: ClientGroup, p: ProjectRow) {
+function toggleProject(g: ContactGroup, p: ProjectRow) {
   const key = projectKey(g, p)
   projectExpanded.value[key] = !projectExpanded.value[key]
 }
 
+function taskKey(g: ContactGroup, p: ProjectRow, t: TaskRow): string {
+  return `${projectKey(g, p)}::${t.context_name ?? '__none__'}`
+}
+
+function toggleTask(g: ContactGroup, p: ProjectRow, t: TaskRow) {
+  const key = taskKey(g, p, t)
+  taskExpanded.value[key] = !taskExpanded.value[key]
+}
+
+function projectLabel(p: ProjectRow): string {
+  return p.project_display ?? p.project_tag ?? __('(no project)')
+}
+
+function onFilterChange() {
+  load()
+}
+
 // ── Send actions ──────────────────────────────────────────────────────────────
 
-function openSendMenu(g: ClientGroup, e: MouseEvent) {
+function openSendMenu(g: ContactGroup, e: MouseEvent) {
   e.stopPropagation()
   const key = groupKey(g)
   if (sendMenuOpen.value === key) {
@@ -323,10 +381,10 @@ function openSendAllMenu(e: MouseEvent) {
 }
 
 // Shared: call forward_to_app.
-// clientTag: null = all clients, '' = unassigned, non-empty = specific client.
 async function callForwardToApp(
   action: BillingAction,
   clientTag: string | null,
+  contact: string | null = null,
 ): Promise<{ forwarded_hours: number; draft_url: string | null }> {
   const body: Record<string, unknown> = {
     action_endpoint: action.endpoint,
@@ -334,6 +392,7 @@ async function callForwardToApp(
     to_date:         toDate.value,
   }
   if (clientTag !== null) body.client_tag = clientTag
+  if (contact) body.contact = contact
   const res  = await fetch('/api/method/watch.api.billing.forward_to_app', {
     method:  'POST',
     headers: { 'Content-Type': 'application/json', 'X-Frappe-CSRF-Token': (window as any).csrf_token ?? '' },
@@ -345,13 +404,13 @@ async function callForwardToApp(
 }
 
 // Shared: call export_csv.
-// clientTag: null = all clients, '' = unassigned, non-empty = specific client.
-async function callExportCsv(clientTag: string | null): Promise<void> {
+async function callExportCsv(clientTag: string | null, contact: string | null = null): Promise<void> {
   const body: Record<string, unknown> = {
     from_date: fromDate.value,
     to_date:   toDate.value,
   }
   if (clientTag !== null) body.client_tag = clientTag
+  if (contact) body.contact = contact
   const res  = await fetch('/api/method/watch.api.billing.export_csv', {
     method:  'POST',
     headers: { 'Content-Type': 'application/json', 'X-Frappe-CSRF-Token': (window as any).csrf_token ?? '' },
@@ -369,14 +428,14 @@ async function callExportCsv(clientTag: string | null): Promise<void> {
   URL.revokeObjectURL(url)
 }
 
-async function doSend(g: ClientGroup, action: BillingAction) {
+async function doSend(g: ContactGroup, action: BillingAction) {
   const key = groupKey(g)
   sendMenuOpen.value = null
   sending.value      = key
   apiError.value     = null
   lastConfirm.value  = null
   try {
-    const result = await callForwardToApp(action, g.client_tag ?? '')
+    const result = await callForwardToApp(action, g.client_tag ?? '', g.contact)
     lastConfirm.value = { hours: result.forwarded_hours, label: action.label, draft_url: result.draft_url }
     await load()
   } catch (e: any) {
@@ -386,13 +445,13 @@ async function doSend(g: ClientGroup, action: BillingAction) {
   }
 }
 
-async function doExportCsv(g: ClientGroup) {
+async function doExportCsv(g: ContactGroup) {
   sendMenuOpen.value = null
   sending.value      = groupKey(g)
   apiError.value     = null
   lastConfirm.value  = null
   try {
-    await callExportCsv(g.client_tag ?? '')
+    await callExportCsv(g.client_tag ?? '', g.contact)
     await load()
   } catch (e: any) {
     apiError.value = e.message
@@ -544,6 +603,38 @@ function fmtDate(d: string): string {
             {{ __('Export CSV') }}
           </button>
         </div>
+
+        <!-- Context filters -->
+        <div
+          v-if="summaryData && (summaryData.available_contacts.length > 0 || summaryData.available_projects.length > 0)"
+          class="flex flex-wrap items-center gap-2 pt-1"
+        >
+          <span class="text-xs text-[var(--watch-text-muted)]">{{ __('Filter by:') }}</span>
+          <select
+            v-if="summaryData.available_contacts.length > 0"
+            v-model="filterContact"
+            class="px-2 py-1 text-sm rounded-lg border border-[var(--watch-border)]
+                   bg-[var(--watch-bg)] text-[var(--watch-text)] outline-none"
+            @change="onFilterChange"
+          >
+            <option value="">{{ __('All contacts') }}</option>
+            <option v-for="c in summaryData.available_contacts" :key="c.name" :value="c.name">
+              {{ c.display }}
+            </option>
+          </select>
+          <select
+            v-if="summaryData.available_projects.length > 0"
+            v-model="filterProject"
+            class="px-2 py-1 text-sm rounded-lg border border-[var(--watch-border)]
+                   bg-[var(--watch-bg)] text-[var(--watch-text)] outline-none"
+            @change="onFilterChange"
+          >
+            <option value="">{{ __('All projects') }}</option>
+            <option v-for="p in summaryData.available_projects" :key="p.name" :value="p.name">
+              {{ p.display }}
+            </option>
+          </select>
+        </div>
       </div>
 
       <!-- API error -->
@@ -598,14 +689,14 @@ function fmtDate(d: string): string {
         {{ __('No billable entries for this period.') }}
       </div>
 
-      <!-- Client groups -->
+      <!-- Contact/Client groups (3-level hierarchy) -->
       <template v-else-if="summaryData">
         <div
           v-for="group in summaryData.groups"
           :key="groupKey(group)"
           class="bg-[var(--watch-bg)] rounded-xl border border-[var(--watch-border)] overflow-hidden"
         >
-          <!-- Client header row -->
+          <!-- Level 1: Contact/Client header row -->
           <div
             class="flex items-center gap-3 px-4 py-3 cursor-pointer hover:bg-[var(--watch-bg-secondary)] transition-colors"
             @click="toggleCollapse(group)"
@@ -616,12 +707,19 @@ function fmtDate(d: string): string {
               aria-hidden="true"
             />
 
-            <!-- Client chip -->
+            <!-- Contact name or Client tag chip -->
             <span
+              v-if="group.is_tag_based && group.client_tag"
               class="text-xs font-medium px-2 py-0.5 rounded border shrink-0"
               :style="chipStyle(group.client_tag_color)"
             >
-              {{ group.client_tag ?? __('Unassigned') }}
+              {{ group.client_tag }}
+            </span>
+            <span
+              v-else
+              class="text-sm font-medium text-[var(--watch-text)] shrink-0"
+            >
+              {{ groupLabel(group) }}
             </span>
 
             <!-- Hours -->
@@ -717,14 +815,14 @@ function fmtDate(d: string): string {
               :class="groupBudgets[group.client_tag].status === 'exceeded' ? 'text-red-600 dark:text-red-400' : 'text-amber-600 dark:text-amber-400'"
             >
               <template v-if="groupBudgets[group.client_tag].status === 'exceeded'">
-                🔴 {{ __('Budget exceeded') }} —
+                {{ __('Budget exceeded') }} —
                 {{ formatHours(groupBudgets[group.client_tag].used) }}
                 {{ __('of') }}
                 {{ formatHours(groupBudgets[group.client_tag].budget) }}
                 {{ __('used this month') }}
               </template>
               <template v-else>
-                ⚠ {{ formatHours(groupBudgets[group.client_tag].used) }}
+                {{ formatHours(groupBudgets[group.client_tag].used) }}
                 {{ __('of') }}
                 {{ formatHours(groupBudgets[group.client_tag].budget) }}
                 {{ __('budget used this month') }}
@@ -733,16 +831,16 @@ function fmtDate(d: string): string {
             </span>
           </div>
 
-          <!-- Project sub-rows -->
+          <!-- Level 2: Project sub-rows -->
           <div
             v-if="!collapsed[groupKey(group)]"
             class="border-t border-[var(--watch-border)]"
           >
             <template
               v-for="project in group.projects"
-              :key="project.project_tag ?? '__none__'"
+              :key="projectKey(group, project)"
             >
-              <!-- Project row — clickable to expand entries -->
+              <!-- Project row — clickable to expand tasks/entries -->
               <div
                 class="flex items-center gap-3 px-4 py-2.5 pl-8
                        border-b border-[var(--watch-border)]
@@ -755,35 +853,76 @@ function fmtDate(d: string): string {
                   class="w-3.5 h-3.5 shrink-0"
                   aria-hidden="true"
                 />
-                <span class="flex-1 text-[var(--watch-text)]">
-                  {{ project.project_tag ?? __('(untagged project)') }}
+                <span
+                  v-if="project.is_tag_based && project.project_tag"
+                  class="flex-1 text-[var(--watch-text)] italic"
+                >
+                  {{ project.project_tag }}
+                </span>
+                <span v-else class="flex-1 text-[var(--watch-text)]">
+                  {{ projectLabel(project) }}
                 </span>
                 <span>{{ formatHours(project.hours) }}</span>
               </div>
 
-              <!-- Entry detail table (expanded) -->
+              <!-- Level 3: Tasks + entries (expanded) -->
               <div
                 v-if="projectExpanded[projectKey(group, project)]"
-                class="border-b border-[var(--watch-border)] bg-[var(--watch-bg-secondary)]"
+                class="border-b border-[var(--watch-border)]"
               >
-                <!-- Header row -->
-                <div class="flex items-center gap-2 px-4 py-1.5 pl-14 text-xs text-[var(--watch-text-muted)] font-medium">
-                  <span class="flex-1">{{ __('Description') }}</span>
-                  <span class="w-12 text-right">{{ __('Duration') }}</span>
-                </div>
-                <!-- Entry rows -->
-                <div
-                  v-for="e in project.entries"
-                  :key="e.name"
-                  class="flex items-center gap-2 px-4 py-1.5 pl-14 text-xs border-t border-[var(--watch-border)]"
+                <template
+                  v-for="task in project.tasks"
+                  :key="taskKey(group, project, task)"
                 >
-                  <span class="flex-1 text-[var(--watch-text)] truncate">
-                    {{ e.description || __('(no description)') }}
-                  </span>
-                  <span class="w-12 text-right text-[var(--watch-text-muted)]">
-                    {{ formatDurationInput(e.duration_hours) }}
-                  </span>
-                </div>
+                  <!-- Task row (only if task has a name, otherwise entries are directly under project) -->
+                  <div
+                    v-if="task.context_name"
+                    class="flex items-center gap-3 px-4 py-2 pl-12
+                           text-sm text-[var(--watch-text-muted)] cursor-pointer
+                           hover:bg-[var(--watch-bg-secondary)] transition-colors
+                           border-b border-[var(--watch-border)]"
+                    @click="toggleTask(group, project, task)"
+                  >
+                    <component
+                      :is="taskExpanded[taskKey(group, project, task)] ? ChevronDown : ChevronRight"
+                      class="w-3 h-3 shrink-0"
+                      aria-hidden="true"
+                    />
+                    <span class="flex-1 text-[var(--watch-text)]">
+                      {{ task.task_display ?? __('(no task)') }}
+                    </span>
+                    <span class="text-xs">{{ formatHours(task.hours) }}</span>
+                  </div>
+
+                  <!-- Entry rows (shown directly when no task, or when task is expanded) -->
+                  <div
+                    v-if="!task.context_name || taskExpanded[taskKey(group, project, task)]"
+                    class="bg-[var(--watch-bg-secondary)]"
+                  >
+                    <div
+                      v-for="entry in task.entries"
+                      :key="entry.name"
+                      class="px-4 py-1.5 text-xs border-t border-[var(--watch-border)]"
+                      :class="task.context_name ? 'pl-[4.5rem]' : 'pl-14'"
+                    >
+                      <div class="flex items-center gap-2">
+                        <span class="flex-1 text-[var(--watch-text)] truncate">
+                          {{ entry.description || __('(no description)') }}
+                        </span>
+                        <span class="w-12 text-right text-[var(--watch-text-muted)] shrink-0">
+                          {{ formatDurationInput(entry.duration_hours) }}
+                        </span>
+                      </div>
+                      <!-- Event context detail -->
+                      <div
+                        v-if="entry.event_display"
+                        class="text-[0.625rem] text-[var(--watch-text-muted)] mt-0.5"
+                      >
+                        {{ entry.event_display }} ({{ __('Event') }})
+                      </div>
+                    </div>
+                  </div>
+                </template>
               </div>
             </template>
           </div>

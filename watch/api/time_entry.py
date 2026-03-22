@@ -108,6 +108,9 @@ def create_entry(
 	tags: str | list = None,
 	linear_issue: str = None,
 	github_ref: str = None,
+	contact: str = None,
+	context_type: str = None,
+	context_name: str = None,
 ) -> dict:
 	if tags and isinstance(tags, str):
 		import json
@@ -135,6 +138,12 @@ def create_entry(
 		entry.linear_issue = linear_issue
 	if github_ref is not None:
 		entry.github_ref = github_ref
+	if contact:
+		entry.contact = contact
+	if context_type:
+		entry.context_type = context_type
+	if context_name:
+		entry.context_name = context_name
 
 	if tags:
 		for tag_name in tags:
@@ -163,6 +172,9 @@ def update_entry(
 	tags: str | list = None,
 	linear_issue: str = None,
 	github_ref: str = None,
+	contact: str = None,
+	context_type: str = None,
+	context_name: str = None,
 ) -> dict:
 	entry = frappe.get_doc("Watch Entry", entry_name)
 
@@ -193,6 +205,12 @@ def update_entry(
 		entry.linear_issue = linear_issue
 	if github_ref is not None:
 		entry.github_ref = github_ref
+	if contact is not None:
+		entry.contact = contact
+	if context_type is not None:
+		entry.context_type = context_type
+	if context_name is not None:
+		entry.context_name = context_name
 
 	if tags is not None:
 		if isinstance(tags, str):
@@ -235,15 +253,24 @@ def get_daily_summary(date: str) -> dict:
 	user = frappe.session.user
 	entries = frappe.get_all(
 		"Watch Entry",
-		filters={"user": user, "date": date},
+		filters={"user": user, "date": date, "is_running": 0},
 		fields=[
 			"name", "date", "start_time", "end_time", "duration_hours",
 			"description", "entry_type", "entry_status", "is_running",
+			"contact", "context_type", "context_name",
 		],
 		order_by="start_time asc, creation asc",
 	)
 	entries = _attach_tags(entries)
 	entries = [_serialize_entry(e) for e in entries]
+
+	# Resolve display names for context fields
+	from watch.utils.contexts import get_context_display_value
+	for e in entries:
+		if e.get("contact"):
+			e["contact_name"] = frappe.db.get_value("Contact", e["contact"], "full_name") or e["contact"]
+		if e.get("context_type") and e.get("context_name"):
+			e["context_display"] = get_context_display_value(e["context_type"], e["context_name"]) or e["context_name"]
 
 	total_hours = sum(e.get("duration_hours") or 0 for e in entries)
 	billable_hours = sum(
@@ -417,6 +444,9 @@ def duplicate_entry(entry_name: str, target_date: str = None) -> dict:
 	new_entry.duration_hours = src.duration_hours
 	new_entry.entry_type = src.entry_type
 	new_entry.is_running = 0
+	new_entry.contact = src.contact
+	new_entry.context_type = src.context_type
+	new_entry.context_name = src.context_name
 
 	# Only copy time slots for same-day duplicates
 	if same_day:
@@ -460,6 +490,9 @@ def bulk_duplicate(entry_names: list, target_date: str = None) -> dict:
 		new_entry.duration_hours = src.duration_hours
 		new_entry.entry_type = src.entry_type
 		new_entry.is_running = 0
+		new_entry.contact = src.contact
+		new_entry.context_type = src.context_type
+		new_entry.context_name = src.context_name
 
 		if same_day:
 			new_entry.start_time = src.start_time
@@ -623,7 +656,7 @@ def export_csv(
 		fields=[
 			"name", "date", "start_time", "end_time",
 			"duration_hours", "description", "entry_type",
-			"entry_status",
+			"entry_status", "contact", "context_type", "context_name",
 		],
 		order_by="date asc, start_time asc",
 	)
@@ -651,6 +684,7 @@ def export_csv(
 			"date", "start_time", "end_time",
 			"duration_hours", "description", "tags",
 			"entry_type", "entry_status",
+			"contact", "context_type", "context_name",
 		],
 		extrasaction="ignore",
 	)

@@ -21,7 +21,6 @@ declare module 'vue' {
     ShortcutsOverlay: typeof import('./src/components/ShortcutsOverlay.vue')['default']
     TagInput: typeof import('./src/components/timer/TagInput.vue')['default']
     TagRow: typeof import('./src/components/tags/TagRow.vue')['default']
-    TimerWidget: typeof import('./src/components/timer/TimerWidget.vue')['default']
     ToastContainer: typeof import('./src/components/ToastContainer.vue')['default']
     WatchSidebar: typeof import('./src/components/WatchSidebar.vue')['default']
     WeeklyBarChart: typeof import('./src/components/WeeklyBarChart.vue')['default']

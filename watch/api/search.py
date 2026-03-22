@@ -32,6 +32,9 @@ def search_entries(query: str) -> list:
 			e.description,
 			e.date,
 			e.duration_hours,
+			e.contact,
+			e.context_type,
+			e.context_name,
 			GROUP_CONCAT(t.tag_name ORDER BY et.idx SEPARATOR ', ') AS tags
 		FROM `tabWatch Entry` e
 		LEFT JOIN `tabWatch Entry Tag` et ON et.parent = e.name
@@ -56,6 +59,19 @@ def search_entries(query: str) -> list:
 		if row.tags:
 			first_tag = row.tags.split(", ")[0]
 			description_line += f" · {first_tag}"
+		# Add context info when available
+		context_parts = []
+		if row.contact:
+			contact_name = frappe.db.get_value("Contact", row.contact, "full_name")
+			if contact_name:
+				context_parts.append(contact_name)
+		if row.context_name and row.context_type:
+			from watch.utils.contexts import get_context_display_value
+			display = get_context_display_value(row.context_type, row.context_name)
+			if display:
+				context_parts.append(display)
+		if context_parts:
+			description_line += f" · {' · '.join(context_parts)}"
 		results.append({
 			"label": row.description or _("(no description)"),
 			"description": description_line,

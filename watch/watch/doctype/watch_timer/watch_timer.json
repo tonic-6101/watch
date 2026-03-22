@@ -12,6 +12,11 @@
   "paused_at",
   "accumulated_seconds",
   "description",
+  "context_section",
+  "contact",
+  "context_col_break",
+  "context_type",
+  "context_name",
   "pomodoro_section",
   "focus_mode",
   "focus_phase",
@@ -67,6 +72,34 @@
    "fieldname": "description",
    "fieldtype": "Small Text",
    "label": "Description"
+  },
+  {
+   "collapsible": 1,
+   "fieldname": "context_section",
+   "fieldtype": "Section Break",
+   "label": "Context"
+  },
+  {
+   "fieldname": "contact",
+   "fieldtype": "Link",
+   "label": "Contact",
+   "options": "Contact"
+  },
+  {
+   "fieldname": "context_col_break",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "context_type",
+   "fieldtype": "Select",
+   "label": "Context Type",
+   "options": ""
+  },
+  {
+   "fieldname": "context_name",
+   "fieldtype": "Dynamic Link",
+   "label": "Context",
+   "options": "context_type"
   },
   {
    "collapsible": 1,

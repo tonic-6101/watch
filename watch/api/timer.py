@@ -6,6 +6,8 @@ from datetime import datetime
 import frappe
 from frappe import _
 
+from watch.utils.contexts import get_context_display_value
+
 
 def _fire_timer_stopped(entry):
 	"""Notify Slack, fire watch_event_hooks, and check budgets after a timer stop.  Never raises."""
@@ -58,6 +60,9 @@ def start_timer(
 	description: str = None,
 	tags: str | list = None,
 	entry_type: str = "billable",
+	contact: str = None,
+	context_type: str = None,
+	context_name: str = None,
 ) -> dict:
 	user = frappe.session.user
 	timer = _get_or_create_timer(user)
@@ -70,13 +75,18 @@ def start_timer(
 		tags = json.loads(tags)
 
 	# Create the time entry
+	now = frappe.utils.now_datetime()
 	entry = frappe.new_doc("Watch Entry")
 	entry.date = frappe.utils.today()
 	entry.user = user
 	entry.description = description
 	entry.entry_type = entry_type or "billable"
 	entry.is_running = 1
-	entry.timer_started_at = frappe.utils.now_datetime()
+	entry.start_time = now.strftime("%H:%M:%S")
+	entry.timer_started_at = now
+	entry.contact = contact
+	entry.context_type = context_type
+	entry.context_name = context_name
 
 	if tags:
 		for tag_name in tags:
@@ -84,12 +94,14 @@ def start_timer(
 
 	entry.insert(ignore_permissions=True)
 
-	now = frappe.utils.now_datetime()
 	timer.state = "running"
 	timer.started_at = now
 	timer.accumulated_seconds = 0
 	timer.active_entry = entry.name
 	timer.description = description
+	timer.contact = contact
+	timer.context_type = context_type
+	timer.context_name = context_name
 	timer.save(ignore_permissions=True)
 
 	payload = {"state": "running", "entry": entry.name, "description": description}
@@ -120,6 +132,7 @@ def stop_timer(notes: str = None) -> dict:
 	entry.end_time = now.strftime("%H:%M:%S")
 	entry.duration_hours = round(elapsed / 3600, 4)
 	entry.is_running = 0
+	entry.flags.keep_duration = True
 
 	if notes:
 		entry.description = (
@@ -132,6 +145,9 @@ def stop_timer(notes: str = None) -> dict:
 	timer.accumulated_seconds = 0
 	timer.active_entry = None
 	timer.description = None
+	timer.contact = None
+	timer.context_type = None
+	timer.context_name = None
 	timer.started_at = None
 	timer.paused_at = None
 	timer.save(ignore_permissions=True)
@@ -201,6 +217,14 @@ def get_timer_state() -> dict:
 		if active_entry_date:
 			active_entry_date = str(active_entry_date)
 
+	# Resolve display names for context fields
+	contact_name = None
+	if timer.contact:
+		contact_name = frappe.db.get_value("Contact", timer.contact, "full_name")
+	context_display = None
+	if timer.context_type and timer.context_name:
+		context_display = get_context_display_value(timer.context_type, timer.context_name)
+
 	return {
 		"state": timer.state,
 		"elapsed_seconds": elapsed,
@@ -209,6 +233,12 @@ def get_timer_state() -> dict:
 		"active_entry": timer.active_entry,
 		"active_entry_date": active_entry_date,
 		"started_at": str(timer.started_at) if timer.started_at else None,
+		# Context fields
+		"contact": timer.contact or None,
+		"contact_name": contact_name,
+		"context_type": timer.context_type or None,
+		"context_name": timer.context_name or None,
+		"context_display": context_display,
 		# Focus mode fields
 		"focus_mode": bool(timer.focus_mode),
 		"focus_phase": timer.focus_phase or "work",
@@ -245,6 +275,7 @@ def stop_timer_at(stop_at: str, notes: str = None) -> dict:
 	entry.end_time = stop_dt.strftime("%H:%M:%S")
 	entry.duration_hours = round(elapsed / 3600, 4)
 	entry.is_running = 0
+	entry.flags.keep_duration = True
 
 	if notes:
 		entry.description = (
@@ -257,6 +288,9 @@ def stop_timer_at(stop_at: str, notes: str = None) -> dict:
 	timer.accumulated_seconds = 0
 	timer.active_entry = None
 	timer.description = None
+	timer.contact = None
+	timer.context_type = None
+	timer.context_name = None
 	timer.started_at = None
 	timer.paused_at = None
 	timer.save(ignore_permissions=True)
@@ -273,6 +307,9 @@ def update_timer(
 	description: str = None,
 	tags: str | list = None,
 	entry_type: str = None,
+	contact: str = None,
+	context_type: str = None,
+	context_name: str = None,
 ) -> dict:
 	"""Update the running/paused timer's entry context without stopping."""
 	user = frappe.session.user
@@ -293,6 +330,18 @@ def update_timer(
 
 	if entry_type:
 		entry.entry_type = entry_type
+
+	if contact is not None:
+		entry.contact = contact
+		timer.contact = contact
+
+	if context_type is not None:
+		entry.context_type = context_type
+		timer.context_type = context_type
+
+	if context_name is not None:
+		entry.context_name = context_name
+		timer.context_name = context_name
 
 	if tags is not None:
 		entry.set("tags", [])
@@ -319,6 +368,9 @@ def _reset_focus_timer(timer) -> None:
 	timer.accumulated_seconds = 0
 	timer.active_entry = None
 	timer.description = None
+	timer.contact = None
+	timer.context_type = None
+	timer.context_name = None
 	timer.started_at = None
 	timer.paused_at = None
 	timer.focus_mode = 0
@@ -336,7 +388,12 @@ def _create_focus_entry(user: str, timer, entry_type: str, tags: list):
 	entry.description = timer.focus_description
 	entry.entry_type = entry_type or "billable"
 	entry.is_running = 1
+	entry.start_time = now.strftime("%H:%M:%S")
 	entry.timer_started_at = now
+	# Carry context from timer to each focus session entry
+	entry.contact = timer.contact
+	entry.context_type = timer.context_type
+	entry.context_name = timer.context_name
 	if tags:
 		for tag_name in tags:
 			entry.append("tags", {"tag": tag_name})
@@ -352,6 +409,9 @@ def start_focus(
 	sessions: int = 4,
 	work_minutes: int = 25,
 	break_minutes: int = 5,
+	contact: str = None,
+	context_type: str = None,
+	context_name: str = None,
 ) -> dict:
 	"""Initialise a focus (Pomodoro) run and start the first work session."""
 	user = frappe.session.user
@@ -373,6 +433,9 @@ def start_focus(
 	timer.focus_break_minutes = int(break_minutes)
 	timer.focus_description = description
 	timer.description = description
+	timer.contact = contact
+	timer.context_type = context_type
+	timer.context_name = context_name
 
 	# Create entry for session 1
 	entry, now = _create_focus_entry(user, timer, entry_type, tags or [])
@@ -423,6 +486,7 @@ def end_focus_session() -> dict:
 		entry.end_time = now.strftime("%H:%M:%S")
 		entry.duration_hours = round(elapsed / 3600, 4)
 		entry.is_running = 0
+		entry.flags.keep_duration = True
 		entry.save(ignore_permissions=True)
 		_fire_timer_stopped(entry)
 
@@ -520,6 +584,7 @@ def end_focus() -> dict:
 			entry.end_time = now.strftime("%H:%M:%S")
 			entry.duration_hours = round(elapsed / 3600, 4)
 			entry.is_running = 0
+			entry.flags.keep_duration = True
 			entry.save(ignore_permissions=True)
 			_fire_timer_stopped(entry)
 		else:
@@ -531,3 +596,10 @@ def end_focus() -> dict:
 	_publish(user, {"state": "stopped", "focus_mode": False})
 
 	return {"stopped": True}
+
+
+@frappe.whitelist()
+def get_context_options() -> list[dict]:
+	"""Returns available context types from all installed apps."""
+	from watch.utils.contexts import get_timer_context_options
+	return get_timer_context_options()

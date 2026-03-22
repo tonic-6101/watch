@@ -4,8 +4,30 @@
 import frappe
 from frappe import _
 
+from watch.utils.contexts import get_context_display_value, get_timer_context_options
 
-# ── Helpers ───────────────────────────────────────────────────────────────────
+
+# ── Context helpers ──────────────────────────────────────────────────────────
+
+def _build_context_label_map() -> dict[str, str]:
+	"""Return {doctype: label} for all registered timer context types."""
+	return {ctx["doctype"]: ctx["label"] for ctx in get_timer_context_options()}
+
+
+def _resolve_contact_display(contact: str | None) -> str | None:
+	"""Return full_name (or contact_name) for a Contact link, or None."""
+	if not contact:
+		return None
+	try:
+		# Frappe Contact stores the display name in 'full_name' (computed) or
+		# fallback to 'first_name'.
+		val = frappe.db.get_value("Contact", contact, "full_name")
+		return val or contact
+	except Exception:
+		return contact
+
+
+# ── Tag helpers ──────────────────────────────────────────────────────────────
 
 def _attach_tag_meta(entries: list) -> None:
 	"""Attach tag_names, client_tag, client_tag_color, and project_tag to each entry in-place."""
@@ -36,34 +58,46 @@ def _attach_tag_meta(entries: list) -> None:
 		e["project_tag"] = project_row.tag_name if project_row else None
 
 
-# ── Helpers ───────────────────────────────────────────────────────────────────
+# ── Collection helper ────────────────────────────────────────────────────────
 
 def _collect_draft_billable(
 	user: str,
 	client_tag: str | None,
 	from_date: str,
 	to_date: str,
+	contact: str | None = None,
+	context_name: str | None = None,
 ) -> list:
 	"""
-	Return all draft billable entries for the date range, filtered by client.
+	Return all draft billable entries for the date range, with optional filters.
 
 	client_tag semantics:
 	  None  — no filter: return all draft billable entries
 	  ""    — return only entries with no Client-category tag (unassigned)
 	  "Acme Corp" — return only entries whose Client tag matches
+
+	contact — if provided, filter to entries linked to this Contact record.
+	context_name — if provided, filter to entries whose context_name matches.
 	"""
+	filters = {
+		"user":         user,
+		"date":         ["between", [from_date, to_date]],
+		"entry_type":   "billable",
+		"entry_status": "draft",
+		"is_running":   0,
+	}
+	if contact is not None and contact != "":
+		filters["contact"] = contact
+	if context_name is not None and context_name != "":
+		filters["context_name"] = context_name
+
 	entries = frappe.get_all(
 		"Watch Entry",
-		filters={
-			"user":         user,
-			"date":         ["between", [from_date, to_date]],
-			"entry_type":   "billable",
-			"entry_status": "draft",
-			"is_running":   0,
-		},
+		filters=filters,
 		fields=[
 			"name", "date", "description",
 			"duration_hours", "entry_type",
+			"contact", "context_type", "context_name",
 		],
 		order_by="date asc",
 	)
@@ -82,22 +116,47 @@ def _mark_entries_sent(entry_names: list[str]) -> None:
 	frappe.db.commit()
 
 
-# ── API ───────────────────────────────────────────────────────────────────────
+# ── API ──────────────────────────────────────────────────────────────────────
 
 @frappe.whitelist()
-def get_summary(from_date: str, to_date: str) -> dict:
+def get_summary(
+	from_date: str,
+	to_date: str,
+	contact: str | None = None,
+	context_name: str | None = None,
+) -> dict:
 	"""
-	Return billable entries grouped by Client tag, sub-grouped by Project tag,
+	Return billable entries grouped by Contact/Client (level 1),
+	Project context or tag (level 2), Task context (level 3),
 	plus non-billable and internal totals.
+
+	Level 1: contact field → fall back to Client tag when empty
+	Level 2: context_name where registered label = "Project" → fall back to Project tag
+	Level 3: context_name where registered label = "Task"
+	Event context (label = "Event") or other labels → entry detail, not grouped
 	"""
 	user = frappe.session.user
 
+	# Build context label map: {doctype: label}
+	ctx_label_map = _build_context_label_map()
+
+	base_filters: dict = {
+		"user": user,
+		"date": ["between", [from_date, to_date]],
+		"is_running": 0,
+	}
+	if contact is not None and contact != "":
+		base_filters["contact"] = contact
+	if context_name is not None and context_name != "":
+		base_filters["context_name"] = context_name
+
 	all_entries = frappe.get_all(
 		"Watch Entry",
-		filters={"user": user, "date": ["between", [from_date, to_date]], "is_running": 0},
+		filters=base_filters,
 		fields=[
 			"name", "date", "duration_hours",
 			"description", "entry_type", "entry_status",
+			"contact", "context_type", "context_name",
 		],
 		order_by="date asc",
 	)
@@ -108,50 +167,194 @@ def get_summary(from_date: str, to_date: str) -> dict:
 	internal  = [e for e in all_entries if e.entry_type == "internal"]
 	non_bill  = [e for e in all_entries if e.entry_type == "non-billable"]
 
-	# Group billable entries by client tag
-	groups_map: dict[str, dict] = {}   # client_tag → group
+	# ── Collect available filter values (distinct, from ALL entries in range) ──
+	contacts_set: dict[str, str] = {}   # name → display
+	projects_set: dict[str, str] = {}   # context_name → display
+
+	for e in all_entries:
+		# Contacts
+		if e.get("contact"):
+			if e.contact not in contacts_set:
+				contacts_set[e.contact] = _resolve_contact_display(e.contact) or e.contact
+
+		# Projects (context with label = "Project")
+		if e.get("context_type") and e.get("context_name"):
+			label = ctx_label_map.get(e.context_type)
+			if label == "Project" and e.context_name not in projects_set:
+				display = get_context_display_value(e.context_type, e.context_name)
+				projects_set[e.context_name] = display or e.context_name
+
+	available_contacts = [
+		{"name": k, "display": v}
+		for k, v in sorted(contacts_set.items(), key=lambda x: x[1])
+	]
+	available_projects = [
+		{"name": k, "display": v}
+		for k, v in sorted(projects_set.items(), key=lambda x: x[1])
+	]
+
+	# ── Classify each entry's contexts by label ──
+	def _classify_entry_contexts(entry):
+		"""Return (project_ctx_name, project_display, task_ctx_name, task_display,
+		           event_ctx_name, event_display) based on context_type label."""
+		project_ctx = None
+		project_display = None
+		task_ctx = None
+		task_display = None
+		event_ctx = None
+		event_display = None
+
+		ct = entry.get("context_type")
+		cn = entry.get("context_name")
+		if ct and cn:
+			label = ctx_label_map.get(ct)
+			display = get_context_display_value(ct, cn) or cn
+			if label == "Project":
+				project_ctx = cn
+				project_display = display
+			elif label == "Task":
+				task_ctx = cn
+				task_display = display
+			elif label == "Event":
+				event_ctx = cn
+				event_display = display
+			# Other labels are treated like events (detail, not grouped)
+			elif label:
+				event_ctx = cn
+				event_display = display
+
+		return project_ctx, project_display, task_ctx, task_display, event_ctx, event_display
+
+	# ── Group billable entries: Level 1 → Level 2 → Level 3 ──
+	groups_map: dict[str, dict] = {}   # group_key → group
+
 	for e in billable:
-		key = e["client_tag"] or "__unassigned__"
-		if key not in groups_map:
-			groups_map[key] = {
-				"client_tag":       e["client_tag"],
-				"client_tag_color": e["client_tag_color"],
+		(
+			proj_ctx, proj_display,
+			task_ctx, task_display,
+			event_ctx, event_display,
+		) = _classify_entry_contexts(e)
+
+		# Level 1 key: contact or client_tag
+		entry_contact = e.get("contact")
+		if entry_contact:
+			l1_key = f"contact:{entry_contact}"
+			is_tag_based_l1 = False
+			contact_val = entry_contact
+			contact_name_val = _resolve_contact_display(entry_contact) or entry_contact
+			client_tag_val = e["client_tag"]
+			client_tag_color_val = e["client_tag_color"]
+		else:
+			tag = e["client_tag"] or "__unassigned__"
+			l1_key = f"tag:{tag}"
+			is_tag_based_l1 = True
+			contact_val = None
+			contact_name_val = e["client_tag"]  # None for unassigned
+			client_tag_val = e["client_tag"]
+			client_tag_color_val = e["client_tag_color"]
+
+		if l1_key not in groups_map:
+			groups_map[l1_key] = {
+				"contact":          contact_val,
+				"contact_name":     contact_name_val,
+				"client_tag":       client_tag_val,
+				"client_tag_color": client_tag_color_val,
+				"is_tag_based":     is_tag_based_l1,
 				"total_hours":      0.0,
 				"entry_status":     "draft",
-				"projects":         {},
+				"_projects_map":    {},
 			}
-		g = groups_map[key]
+		g = groups_map[l1_key]
 		g["total_hours"] = round(g["total_hours"] + (e.duration_hours or 0), 4)
 		if e.entry_status == "sent":
 			g["entry_status"] = "sent"
 
-		# Sub-group by project tag
-		proj_key = e["project_tag"]  # None → untagged project
-		if proj_key not in g["projects"]:
-			g["projects"][proj_key] = {
-				"project_tag":   proj_key,
+		# Level 2 key: project context or project tag
+		if proj_ctx:
+			l2_key = f"ctx:{proj_ctx}"
+			is_tag_based_l2 = False
+			l2_ctx_name = proj_ctx
+			l2_display = proj_display
+			l2_tag = e["project_tag"]
+		else:
+			ptag = e["project_tag"]
+			l2_key = f"tag:{ptag}" if ptag else "__no_project__"
+			is_tag_based_l2 = True if ptag else True
+			l2_ctx_name = None
+			l2_display = ptag  # None for untagged
+			l2_tag = ptag
+
+		if l2_key not in g["_projects_map"]:
+			g["_projects_map"][l2_key] = {
+				"context_name":    l2_ctx_name,
+				"project_display": l2_display,
+				"project_tag":     l2_tag,
+				"is_tag_based":    is_tag_based_l2,
+				"hours":           0.0,
+				"_tasks_map":      {},
+			}
+		p = g["_projects_map"][l2_key]
+		p["hours"] = round(p["hours"] + (e.duration_hours or 0), 4)
+
+		# Level 3 key: task context (no tag fallback for tasks)
+		if task_ctx:
+			l3_key = f"ctx:{task_ctx}"
+		else:
+			l3_key = "__no_task__"
+
+		if l3_key not in p["_tasks_map"]:
+			p["_tasks_map"][l3_key] = {
+				"context_name":  task_ctx,
+				"task_display":  task_display,
 				"hours":         0.0,
 				"entries":       [],
 			}
-		p = g["projects"][proj_key]
-		p["hours"] = round(p["hours"] + (e.duration_hours or 0), 4)
-		p["entries"].append({
+		t = p["_tasks_map"][l3_key]
+		t["hours"] = round(t["hours"] + (e.duration_hours or 0), 4)
+
+		entry_dict = {
 			"name":           e.name,
 			"date":           str(e.date),
 			"description":    e.description or "",
 			"duration_hours": e.duration_hours or 0,
 			"entry_status":   e.entry_status,
-		})
+			"contact":        e.get("contact"),
+			"context_type":   e.get("context_type"),
+			"context_name":   e.get("context_name"),
+		}
+		# Attach event context as detail info if present
+		if event_ctx:
+			entry_dict["event_context_name"] = event_ctx
+			entry_dict["event_display"] = event_display
 
-	# Flatten and sort: named clients first (alphabetical), then Unassigned
+		t["entries"].append(entry_dict)
+
+	# ── Flatten nested maps into sorted lists ──
 	groups = []
-	for key in sorted(groups_map):
-		g = groups_map[key]
-		g["projects"] = list(g["projects"].values())
+	for g in groups_map.values():
+		projects = []
+		for p in g["_projects_map"].values():
+			tasks = list(p["_tasks_map"].values())
+			# Sort tasks: named tasks first, then no-task
+			tasks.sort(key=lambda t: (t["context_name"] is None, t["task_display"] or ""))
+			p["tasks"] = tasks
+			del p["_tasks_map"]
+			projects.append(p)
+		# Sort projects: named first, then untagged/no-project
+		projects.sort(key=lambda p: (
+			p["project_display"] is None,
+			p["project_display"] or "",
+		))
+		g["projects"] = projects
+		del g["_projects_map"]
 		groups.append(g)
 
-	# Move __unassigned__ to the end
-	groups.sort(key=lambda g: (g["client_tag"] is None, g["client_tag"] or ""))
+	# Sort groups: contact-based first (alphabetical), then tag-based, then unassigned
+	groups.sort(key=lambda g: (
+		g["is_tag_based"],
+		g["contact_name"] is None,
+		(g["contact_name"] or "").lower(),
+	))
 
 	totals = {
 		"billable_hours":     round(sum(e.duration_hours or 0 for e in billable), 4),
@@ -160,10 +363,12 @@ def get_summary(from_date: str, to_date: str) -> dict:
 	}
 
 	return {
-		"from_date": from_date,
-		"to_date":   to_date,
-		"groups":    groups,
-		"totals":    totals,
+		"from_date":           from_date,
+		"to_date":             to_date,
+		"groups":              groups,
+		"totals":              totals,
+		"available_contacts":  available_contacts,
+		"available_projects":  available_projects,
 	}
 
 
@@ -235,6 +440,8 @@ def forward_to_app(
 	client_tag: str = None,
 	from_date: str = None,
 	to_date: str = None,
+	contact: str | None = None,
+	context_name: str | None = None,
 ) -> dict:
 	"""
 	Call a registered invoicing app's endpoint with the billable entry payload,
@@ -254,7 +461,10 @@ def forward_to_app(
 
 	user = frappe.session.user
 	# client_tag: None = all clients, "" = unassigned, non-empty = specific client
-	entries = _collect_draft_billable(user, client_tag, from_date, to_date)
+	entries = _collect_draft_billable(
+		user, client_tag, from_date, to_date,
+		contact=contact, context_name=context_name,
+	)
 
 	if not entries:
 		frappe.throw(_("No billable draft entries found for this client and date range"))
@@ -274,6 +484,9 @@ def forward_to_app(
 				"duration_hours": e.duration_hours or 0,
 				"entry_type":     e.entry_type,
 				"tags":           e["tag_names"],
+				"contact":        e.get("contact"),
+				"context_type":   e.get("context_type"),
+				"context_name":   e.get("context_name"),
 			}
 			for e in entries
 		],
@@ -301,6 +514,8 @@ def export_csv(
 	client_tag: str = None,
 	from_date: str = None,
 	to_date: str = None,
+	contact: str | None = None,
+	context_name: str | None = None,
 ) -> dict:
 	"""
 	Generate a CSV of draft billable entries for a client/date range,
@@ -311,11 +526,17 @@ def export_csv(
 
 	user = frappe.session.user
 	# client_tag: None = all clients, "" = unassigned, non-empty = specific client
-	entries = _collect_draft_billable(user, client_tag, from_date, to_date)
+	entries = _collect_draft_billable(
+		user, client_tag, from_date, to_date,
+		contact=contact, context_name=context_name,
+	)
 
 	buf = io.StringIO()
 	writer = csv.writer(buf)
-	writer.writerow(["date", "description", "duration_hours", "tags", "entry_type"])
+	writer.writerow([
+		"date", "description", "duration_hours", "tags", "entry_type",
+		"contact", "context_type", "context_name",
+	])
 	for e in entries:
 		writer.writerow([
 			str(e.date),
@@ -323,6 +544,9 @@ def export_csv(
 			e.duration_hours or 0,
 			"; ".join(e["tag_names"]),
 			e.entry_type or "",
+			e.get("contact") or "",
+			e.get("context_type") or "",
+			e.get("context_name") or "",
 		])
 
 	_mark_entries_sent([e.name for e in entries])

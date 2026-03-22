@@ -4,6 +4,10 @@
 import frappe
 from frappe.model.document import Document
 
+from watch.utils.contexts import get_context_type_options
+
 
 class WatchTimer(Document):
-	pass
+	def onload(self):
+		"""Populate context_type Select options from installed apps."""
+		self.set_onload("context_type_options", get_context_type_options())

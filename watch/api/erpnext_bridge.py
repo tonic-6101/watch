@@ -34,9 +34,46 @@ def _get_day_entries(user: str, date: str) -> list:
 		fields=[
 			"name", "date", "start_time", "end_time",
 			"duration_hours", "description", "entry_type",
+			"contact", "context_type", "context_name",
 		],
 		order_by="start_time asc",
 	)
+
+
+def _resolve_customer_from_contact(contact_name: str) -> str | None:
+	"""Look up Contact.links for a Customer dynamic link."""
+	if not contact_name:
+		return None
+	links = frappe.get_all(
+		"Dynamic Link",
+		filters={
+			"parenttype": "Contact",
+			"parent": contact_name,
+			"link_doctype": "Customer",
+		},
+		fields=["link_name"],
+		limit=1,
+	)
+	return links[0].link_name if links else None
+
+
+def _resolve_project_from_context(entries: list) -> str | None:
+	"""Resolve an ERPNext Project from entries' context fields."""
+	for entry in entries:
+		ct = entry.get("context_type") or ""
+		cn = entry.get("context_name") or ""
+		if not cn:
+			continue
+		if ct == "Project":
+			# Direct ERPNext Project link
+			if frappe.db.exists("Project", cn):
+				return cn
+		elif ct == "Orga Project":
+			# Orga Project may have an ERPNext project link
+			frappe_link = frappe.db.get_value("Orga Project", cn, "frappe_project_link")
+			if frappe_link and frappe.db.exists("Project", frappe_link):
+				return frappe_link
+	return None
 
 
 def _resolve_project_tag(entry_name: str) -> tuple:
@@ -121,6 +158,19 @@ def sync_day(date: str, user: str = None) -> dict:
 	ts.employee = employee
 	ts.start_date = date
 	ts.end_date = date
+
+	# Map contact → customer (first match wins)
+	for entry in entries:
+		customer = _resolve_customer_from_contact(entry.get("contact"))
+		if customer:
+			ts.customer = customer
+			break
+
+	# Map context → project (first match wins)
+	project = _resolve_project_from_context(entries)
+	if project:
+		ts.project = project
+
 	for d in details:
 		ts.append("time_logs", d)
 	ts.insert(ignore_permissions=True)

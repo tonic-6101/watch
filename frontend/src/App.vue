@@ -72,14 +72,14 @@ async function onTimerToggle() {
     } else {
       await timer.resume()
     }
-  } catch { /* errors shown in TimerWidget */ }
+  } catch { /* silent — Dock timer panel shows errors */ }
 }
 
 async function onTimerStop() {
   if (timer.state.value === 'stopped') return
   try {
     await timer.stop('')
-  } catch { /* errors shown in TimerWidget */ }
+  } catch { /* silent — Dock timer panel shows errors */ }
 }
 
 function onNewEntry() {
