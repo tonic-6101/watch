@@ -1,0 +1,247 @@
+source,translation
+Billed as {0},Geboekt als {0}
+exact — rounding skipped,exact — afronding overgeslagen
+Use exact,Exact gebruiken
+Apply rounding,Afronding toepassen
+Exact,Exact
+Billed,Geboekt
+* Rounded up to nearest increment,* Afgerond naar dichtstbijzijnde eenheid
+billable,declarabel
+non-billable,niet-declarabel
+internal,intern
+on_save,on_save
+manual,manual
+scheduled,scheduled
+hourly,hourly
+every_6_hours,every_6_hours
+daily,daily
+stopped,gestopt
+running,actief
+paused,gepauzeerd
+Add a note...,Notitie toevoegen…
+Add entry for yesterday,Invoer toevoegen voor gisteren
+Add your first entry,Voeg je eerste invoer toe
+Archive,Archiveren
+Auto-stop Timer After,Timer automatisch stoppen na
+Billable,Declarabel
+Billable {0},Declarabel {0}
+Cancel,Annuleren
+Cannot delete tag — {0} entries use it.,Kan tag niet verwijderen — {0} invoeren gebruiken het.
+Category,Categorie
+Client,Klant
+Color,Kleur
+Connection Failed,Verbinding mislukt
+Connection OK,Verbinding OK
+Custom…,Aangepast…
+Daily,Dagelijks
+Daily view,Dagweergave
+Date range,Periode
+days,dagen
+Default Entry Type,Standaard invoertype
+Default Rate,Standaardtarief
+Default activity type,Standaard activiteittype
+Delete,Verwijderen
+Description,Beschrijving
+Dismiss,Sluiten
+Do you want to sync all unsynced time entries to ERPNext now?,Wil je nu alle niet-gesynchroniseerde tijdinvoeren synchroniseren met ERPNext?
+Duplicate,Dupliceren
+Duration,Duur
+Edit,Bewerken
+Enable ERPNext bridge,ERPNext-brug activeren
+End time,Eindtijd
+Entries forwarded,Invoeren doorgestuurd
+Entries older than {0} days are locked. Contact your administrator.,Invoeren ouder dan {0} dagen zijn vergrendeld. Neem contact op met je beheerder.
+ERPNext Bridge,ERPNext-brug
+ERPNext is not installed on this site.,ERPNext is niet geïnstalleerd op deze site.
+ERPNext is reachable and Timesheet access is confirmed.,ERPNext is bereikbaar en urenstaat-toegang is bevestigd.
+ERPNext site URL,ERPNext site-URL
+ERPNext Timesheet {0} for {1} is submitted — re-sync blocked.,ERPNext-urenstaat {0} voor {1} is ingediend — opnieuw synchroniseren geblokkeerd.
+ERPNext Timesheet is submitted — re-sync blocked,ERPNext-urenstaat is ingediend — opnieuw synchroniseren geblokkeerd
+Est. {0},Gesch. {0}
+Est. amount,Gesch. bedrag
+Every 6 hours,Elke 6 uur
+All time,Alle periodes
+This year,Dit jaar
+Last year,Vorig jaar
+Download CSV,CSV downloaden
+Export my data,Mijn gegevens exporteren
+Download all your time entries as CSV.,Download al je tijdinvoeren als CSV.
+Export CSV,CSV exporteren
+Export successful,Export geslaagd
+Failed to forward entries: {0},Doorsturen van invoeren mislukt: {0}
+Watch Settings,Watch-instellingen
+Watch Tag,Watch-tag
+Watch Entry,Watch-invoer
+Watch Entry Tag,Watch-invoertag
+Watch Timer,Watch-timer
+Forwarded {0} to {1},{0} doorgestuurd naar {1}
+From,Van
+General,Algemeen
+Hourly,Elk uur
+hours,uur
+Hide weekends,Weekenden verbergen
+Internal,Intern
+Internal / overhead,Intern / overhead
+Last bulk sync,Laatste bulksynchronisatie
+Last month,Vorige maand
+Last sync error,Laatste synchronisatiefout
+Last week,Vorige week
+Less,Minder
+Lock Entries Older Than,Invoeren vergrendelen ouder dan
+Manual,Handmatig
+Map project tags,Projecttags toewijzen
+Merge,Samenvoegen
+Merge {0} into:,{0} samenvoegen in:
+Mon,Ma
+More,Meer
+Navigate,Navigeren
+New Tag,Nieuwe tag
+No entries for {0},Geen invoeren voor {0}
+No entries yet,Nog geen invoeren
+No tags yet,Nog geen tags
+No timer is running,Geen timer actief
+Non-billable,Niet-declarabel
+(no description),(geen beschrijving)
+(not billed),(niet geboekt)
+Nothing logged yesterday ({0}),Niets geregistreerd gisteren ({0})
+Open prepare summary,Overzicht openen
+Open settings,Instellingen openen
+Open tag management,Tagbeheer openen
+Open today's view,Dagweergave openen
+Open weekly view,Weekweergave openen
+Other,Overig
+Pause,Pauzeren
+Prepare,Voorbereiden
+Prepare Summary,Overzicht
+Project,Project
+Rate,Tarief
+Rename,Hernoemen
+Resume,Hervatten
+Saved — {0},Opgeslagen — {0}
+Save,Opslaan
+Sat,Za
+Scheduled,Gepland
+Send,Verzenden
+Settings,Instellingen
+Show weekends,Weekenden tonen
+Start time,Starttijd
+Start Timer,Timer starten
+"Start timer: ""{0}""","Timer starten: ""{0}"""
+"Stop current & start: ""{0}""","Huidige stoppen & starten: ""{0}"""
+Started yesterday,Gisteren gestart
+Sun,Zo
+Sync all unsynced entries,Alle niet-gesynchroniseerde invoeren synchroniseren
+Sync billable entries only,Alleen declarabele invoeren synchroniseren
+Sync completed with errors,Synchronisatie voltooid met fouten
+Sync complete,Synchronisatie voltooid
+Sync interval,Synchronisatie-interval
+Sync mode,Synchronisatiemodus
+Synced to ERPNext,Gesynchroniseerd met ERPNext
+Syncing entries to ERPNext…,Invoeren synchroniseren met ERPNext…
+{0} day(s) synced.,{0} dag(en) gesynchroniseerd.
+Tag,Tag
+Tag management,Tagbeheer
+Tag Name,Tagnaam
+Tag renamed. {0} entries updated.,Tag hernoemd. {0} invoeren bijgewerkt.
+Tags,Tags
+Tags merged. {0} entries re-tagged.,Tags samengevoegd. {0} invoeren opnieuw getagd.
+Task,Taak
+Test connection,Verbinding testen
+Test Connection,Verbinding testen
+This entry is locked,Deze invoer is vergrendeld
+This month,Deze maand
+This week,Deze week
+Thu,Do
+Time Bridge,Tijdbrug
+Time Entries,Tijdinvoeren
+Timer already running,Timer is al actief
+Timer is already running,De timer is al actief
+Timer is not paused,De timer is niet gepauzeerd
+Timer is not running,De timer is niet actief
+To,Tot
+Today,Vandaag
+Total,Totaal
+Total billable,Totaal declarabel
+Tue,Di
+Unknown error,Onbekende fout
+Unassigned,Niet toegewezen
+(untagged project),(project zonder tag)
+View entry →,Invoer bekijken →
+Warning: This entry is more than 7 days old.,Waarschuwing: deze invoer is ouder dan 7 dagen.
+Wed,Wo
+Week {0},Week {0}
+What are you working on?,Waar werk je aan?
+What did you work on?,Waar heb je aan gewerkt?
+Work Days,Werkdagen
+Yesterday,Gisteren
+draft,concept
+entries this month,invoeren deze maand
+no entries,geen invoeren
+no entries yet,nog geen invoeren
+sent,doorgestuurd
++{0} more,+{0} meer
+← from {0},← van {0}
+[Auto-stopped after {0}h],[Automatisch gestopt na {0}u]
+Entry Type,Invoertype
+Fri,Vr
+Keyboard Shortcuts,Sneltoetsen
+Start / Pause / Resume timer,Timer starten / pauzeren / hervatten
+Stop timer,Timer stoppen
+New entry (focus quick-add bar),Nieuwe invoer (snelle invoerbalk)
+Previous / next day or week,Vorige / volgende dag of week
+Show / hide this overlay,Dit paneel tonen / verbergen
+Press H or Esc to close,Druk op H of Esc om te sluiten
+Close,Sluiten
+Timer,Timer
+Entries,Invoeren
+This week at a glance,Deze week in een oogopslag
+Time by tag,Tijd per tag
+Hours per day,Uren per dag
+No entries this week,Geen invoeren deze week
+No entries,Geen invoeren
+Untagged,Zonder tag
+Monthly Budget (h),Maandbudget (u)
+Warn at (%),Waarschuwing bij (%)
+0 = no limit,0 = geen limiet
+0 = site default,0 = standaardwaarde site
+Approaching limit,Limiet nadert
+Budget exceeded,Budget overschreden
+budget used this month,budget gebruikt deze maand
+used this month,gebruikt deze maand
+of,van
+Focus,Concentratie
+Start Focus,Concentratie starten
+End focus,Concentratie beëindigen
+Skip break,Pauze overslaan
+Break over,Pauze voorbij
+Time to focus!,Tijd om te concentreren!
+Session complete,Sessie voltooid
+Focus complete!,Concentratie voltooid!
+All sessions done. Great work!,Alle sessies voltooid. Goed gedaan!
+sessions done. Great work!,sessies voltooid. Goed gedaan!
+Start new,Nieuwe starten
+Work in focused sessions with timed breaks.,Werk in concentratiesessies met getimede pauzes.
+Session,Sessie
+Break,Pauze
+Work (min),Werk (min)
+Break (min),Pauze (min)
+Sessions,Sessies
+No break is active,Geen pauze actief
+No focus session is running,Geen concentratiesessie actief
+Context,Context
+Contact,Contact
+Context Type,Contexttype
+For whom?,Voor wie?
+Working on?,Waar werk je aan?
+Search contacts...,Contacten zoeken…
+Select type...,Type selecteren…
+All contacts,Alle contacten
+All projects,Alle projecten
+(no contact),(geen contact)
+(no project),(geen project)
+(no task),(geen taak)
+Filter by:,Filteren op:
+Time by contact,Tijd per contact
+Time by context,Tijd per context
+Time by task,Tijd per taak
+Contact hours summary,Urenoverzicht per contact

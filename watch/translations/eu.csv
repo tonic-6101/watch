@@ -1,0 +1,247 @@
+source,translation
+Billed as {0},Kontatua {0} gisa
+exact — rounding skipped,zehatza — biribilketa saltatua
+Use exact,Erabili zehatza
+Apply rounding,Aplikatu biribilketa
+Exact,Zehatza
+Billed,Kontatua
+* Rounded up to nearest increment,* Hurbileko gehikuntzara biribildu da
+billable,ordaingarria
+non-billable,ordaingaitza
+internal,barnekoa
+on_save,on_save
+manual,eskuzkoa
+scheduled,programatua
+hourly,orduro
+every_6_hours,every_6_hours
+daily,egunero
+stopped,gelditua
+running,martxan
+paused,pausatua
+Add a note...,Gehitu ohar bat...
+Add entry for yesterday,Gehitu atzoko sarrera
+Add your first entry,Gehitu zure lehen sarrera
+Archive,Artxibatu
+Auto-stop Timer After,Kronometroa automatikoki gelditu ondoren
+Billable,Ordaingarria
+Billable {0},Ordaingarria {0}
+Cancel,Utzi
+Cannot delete tag — {0} entries use it.,Ezin da etiketa ezabatu — {0} sarrerak erabiltzen dute.
+Category,Kategoria
+Client,Bezeroa
+Color,Kolorea
+Connection Failed,Konexioak huts egin du
+Connection OK,Konexioa ondo
+Custom…,Pertsonalizatua…
+Daily,Egunero
+Daily view,Eguneko ikuspegia
+Date range,Data-tartea
+days,egun
+Default Entry Type,Sarrera mota lehenetsia
+Default Rate,Tarifa lehenetsia
+Default activity type,Jarduera mota lehenetsia
+Delete,Ezabatu
+Description,Deskribapena
+Dismiss,Baztertu
+Do you want to sync all unsynced time entries to ERPNext now?,Sinkronizatu gabeko denbora-sarrera guztiak ERPNext-era sinkronizatu nahi dituzu orain?
+Duplicate,Bikoiztu
+Duration,Iraupena
+Edit,Editatu
+Enable ERPNext bridge,Gaitu ERPNext zubia
+End time,Amaiera ordua
+Entries forwarded,Sarrerak bidaliak
+Entries older than {0} days are locked. Contact your administrator.,{0} egun baino zaharragoak diren sarrerak blokeatuta daude. Jarri harremanetan administratzailearekin.
+ERPNext Bridge,ERPNext zubia
+ERPNext is not installed on this site.,ERPNext ez dago gune honetan instalatuta.
+ERPNext is reachable and Timesheet access is confirmed.,ERPNext eskuragarri dago eta ordu-orrirako sarbidea berretsita dago.
+ERPNext site URL,ERPNext gunearen URLa
+ERPNext Timesheet {0} for {1} is submitted — re-sync blocked.,ERPNext ordu-orria {0} {1}-(e)rako bidalita dago — birsinkronizazioa blokeatua.
+ERPNext Timesheet is submitted — re-sync blocked,ERPNext ordu-orria bidalita dago — birsinkronizazioa blokeatua
+Est. {0},Aurreik. {0}
+Est. amount,Aurreik. zenbatekoa
+Every 6 hours,6 orduro
+All time,Denbora guztian
+This year,Aurten
+Last year,Iaz
+Download CSV,Deskargatu CSV
+Export my data,Esportatu nire datuak
+Download all your time entries as CSV.,Deskargatu zure denbora-sarrera guztiak CSV gisa.
+Export CSV,Esportatu CSV
+Export successful,Esportazioa ongi burutu da
+Failed to forward entries: {0},Sarrerak bidaltzeak huts egin du: {0}
+Watch Settings,Watch ezarpenak
+Watch Tag,Watch etiketa
+Watch Entry,Watch sarrera
+Watch Entry Tag,Watch sarrera-etiketa
+Watch Timer,Watch kronometroa
+Forwarded {0} to {1},{0} {1}-(e)ra bidalia
+From,Noiztik
+General,Orokorra
+Hourly,Orduro
+hours,ordu
+Hide weekends,Ezkutatu asteburuak
+Internal,Barnekoa
+Internal / overhead,Barnekoa / gastu orokorrak
+Last bulk sync,Azken sinkronizazio masiboa
+Last month,Aurreko hilabetea
+Last sync error,Azken sinkronizazio-errorea
+Last week,Aurreko astea
+Less,Gutxiago
+Lock Entries Older Than,Blokeatu zaharragoak diren sarrerak
+Manual,Eskuzkoa
+Map project tags,Esleitu proiektu-etiketak
+Merge,Batu
+Merge {0} into:,Batu {0} hemen:
+Mon,Al
+More,Gehiago
+Navigate,Nabigatu
+New Tag,Etiketa berria
+No entries for {0},Ez dago sarrerarik {0}-(e)rako
+No entries yet,Oraindik ez dago sarrerarik
+No tags yet,Oraindik ez dago etiketarik
+No timer is running,Ez dago kronometrorik martxan
+Non-billable,Ordaingaitza
+(no description),(deskribapenik gabe)
+(not billed),(kontatu gabe)
+Nothing logged yesterday ({0}),Atzo ez da ezer erregistratu ({0})
+Open prepare summary,Ireki prestaketa-laburpena
+Open settings,Ireki ezarpenak
+Open tag management,Ireki etiketen kudeaketa
+Open today's view,Ireki gaurko ikuspegia
+Open weekly view,Ireki asteko ikuspegia
+Other,Bestelakoa
+Pause,Pausatu
+Prepare,Prestatu
+Prepare Summary,Prestaketa-laburpena
+Project,Proiektua
+Rate,Tarifa
+Rename,Berrizendatu
+Resume,Berrekin
+Saved — {0},Gordeta — {0}
+Save,Gorde
+Sat,Lr
+Scheduled,Programatua
+Send,Bidali
+Settings,Ezarpenak
+Show weekends,Erakutsi asteburuak
+Start time,Hasiera ordua
+Start Timer,Hasi kronometroa
+"Start timer: ""{0}""","Hasi kronometroa: ""{0}"""
+"Stop current & start: ""{0}""","Gelditu unekoa eta hasi: ""{0}"""
+Started yesterday,Atzo hasita
+Sun,Ig
+Sync all unsynced entries,Sinkronizatu sinkronizatu gabeko sarrera guztiak
+Sync billable entries only,Sinkronizatu ordaingarri diren sarrerak soilik
+Sync completed with errors,Sinkronizazioa errorearekin burutu da
+Sync complete,Sinkronizazioa osatua
+Sync interval,Sinkronizazio-tartea
+Sync mode,Sinkronizazio modua
+Synced to ERPNext,ERPNext-era sinkronizatua
+Syncing entries to ERPNext…,Sarrerak ERPNext-era sinkronizatzen…
+{0} day(s) synced.,{0} egun sinkronizatu d(ir)a.
+Tag,Etiketa
+Tag management,Etiketen kudeaketa
+Tag Name,Etiketa-izena
+Tag renamed. {0} entries updated.,Etiketa berrizendatua. {0} sarrera eguneratu d(ir)a.
+Tags,Etiketak
+Tags merged. {0} entries re-tagged.,Etiketak batuta. {0} sarrera biretiketa d(ir)a.
+Task,Zeregina
+Test connection,Probatu konexioa
+Test Connection,Probatu konexioa
+This entry is locked,Sarrera hau blokeatuta dago
+This month,Hilabete honetan
+This week,Aste honetan
+Thu,Og
+Time Bridge,Denbora-zubia
+Time Entries,Denbora-sarrerak
+Timer already running,Kronometroa dagoeneko martxan
+Timer is already running,Kronometroa dagoeneko martxan dago
+Timer is not paused,Kronometroa ez dago pausatua
+Timer is not running,Kronometroa ez dago martxan
+To,Noiz arte
+Today,Gaur
+Total,Guztira
+Total billable,Ordaingarria guztira
+Tue,As
+Unknown error,Errore ezezaguna
+Unassigned,Esleitu gabe
+(untagged project),(etiketatu gabeko proiektua)
+View entry →,Ikusi sarrera →
+Warning: This entry is more than 7 days old.,Kontuz: Sarrera hau 7 egun baino zaharragoa da.
+Wed,Az
+Week {0},{0}. astea
+What are you working on?,Zertan ari zara lanean?
+What did you work on?,Zertan lan egin duzu?
+Work Days,Lan-egunak
+Yesterday,Atzo
+draft,zirriborroa
+entries this month,sarrerak hilabete honetan
+no entries,sarrerarik ez
+no entries yet,oraindik sarrerarik ez
+sent,bidalia
++{0} more,+{0} gehiago
+← from {0},← {0}-(e)tik
+[Auto-stopped after {0}h],[Automatikoki gelditua {0}h ondoren]
+Entry Type,Sarrera mota
+Fri,Ol
+Keyboard Shortcuts,Teklatuko lasterbideak
+Start / Pause / Resume timer,Hasi / Pausatu / Berrekin kronometroa
+Stop timer,Gelditu kronometroa
+New entry (focus quick-add bar),Sarrera berria (fokua gehitze azkarreko barran)
+Previous / next day or week,Aurreko / hurrengo eguna edo astea
+Show / hide this overlay,Erakutsi / ezkutatu gainjartzea
+Press H or Esc to close,Sakatu H edo Esc ixteko
+Close,Itxi
+Timer,Kronometroa
+Entries,Sarrerak
+This week at a glance,Aste honi begirada bat
+Time by tag,Denbora etiketaren arabera
+Hours per day,Orduak eguneko
+No entries this week,Ez dago sarrerarik aste honetan
+No entries,Sarrerarik ez
+Untagged,Etiketatu gabe
+Monthly Budget (h),Hileko aurrekontua (h)
+Warn at (%),Ohartarazi (%) honetan
+0 = no limit,0 = mugarik gabe
+0 = site default,0 = gunearen lehenetsia
+Approaching limit,Mugara hurbiltzen
+Budget exceeded,Aurrekontua gainditua
+budget used this month,hilabete honetan erabilitako aurrekontua
+used this month,hilabete honetan erabilia
+of,-(e)tik
+Focus,Fokua
+Start Focus,Hasi fokua
+End focus,Amaitu fokua
+Skip break,Saltatu atsedena
+Break over,Atsedena amaitua
+Time to focus!,Fokatzeko ordua!
+Session complete,Saioa osatua
+Focus complete!,Fokua osatua!
+All sessions done. Great work!,Saio guztiak burutu dira. Lan bikaina!
+sessions done. Great work!,saio burutuak. Lan bikaina!
+Start new,Hasi berria
+Work in focused sessions with timed breaks.,Lan egin saio fokuatuetan tenporizatutako atsedenarekin.
+Session,Saioa
+Break,Atsedena
+Work (min),Lana (min)
+Break (min),Atsedena (min)
+Sessions,Saioak
+No break is active,Ez dago atsedenaldirik aktibo
+No focus session is running,Ez dago foku-saiorik martxan
+Context,Testuingurua
+Contact,Kontaktua
+Context Type,Testuinguru mota
+For whom?,Norentzat?
+Working on?,Zertan ari zara?
+Search contacts...,Bilatu kontaktuak...
+Select type...,Hautatu mota...
+All contacts,Kontaktu guztiak
+All projects,Proiektu guztiak
+(no contact),(kontakturik gabe)
+(no project),(proiekturik gabe)
+(no task),(zereginik gabe)
+Filter by:,Iragazi honen arabera:
+Time by contact,Denbora kontaktuen arabera
+Time by context,Denbora testuinguruaren arabera
+Time by task,Denbora zereginaren arabera
+Contact hours summary,Kontaktu-orduen laburpena

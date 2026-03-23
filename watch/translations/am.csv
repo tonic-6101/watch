@@ -1,0 +1,247 @@
+source,translation
+"Billed as {0}","እንደ {0} ተከፍሏል"
+"exact — rounding skipped","ትክክለኛ — ማጠጋት ተዘለለ"
+"Use exact","ትክክለኛ ተጠቀም"
+"Apply rounding","ማጠጋት ተግብር"
+Exact,ትክክለኛ
+Billed,ተከፍሏል
+"* Rounded up to nearest increment","* ወደ ቅርቡ ክፍል ተጠጋ"
+billable,ሊከፈል የሚችል
+non-billable,ሊከፈል የማይችል
+internal,ውስጣዊ
+on_save,on_save
+manual,manual
+scheduled,scheduled
+hourly,hourly
+every_6_hours,every_6_hours
+daily,daily
+stopped,ቆሟል
+running,እየሰራ ነው
+paused,ታግዷል
+"Add a note...","ማስታወሻ ጨምር..."
+"Add entry for yesterday","ለትላንት ግቤት ጨምር"
+"Add your first entry","የመጀመሪያ ግቤትህን ጨምር"
+Archive,ማህደር
+"Auto-stop Timer After","ሰዓት ቆጣሪ በራስ-ሰር ማቆም ከ"
+Billable,ሊከፈል የሚችል
+"Billable {0}","ሊከፈል የሚችል {0}"
+Cancel,ሰርዝ
+"Cannot delete tag — {0} entries use it.","መለያ መሰረዝ አይቻልም — {0} ግቤቶች ይጠቀሙበታል።"
+Category,ምድብ
+Client,ደንበኛ
+Color,ቀለም
+"Connection Failed","ግንኙነት አልተሳካም"
+"Connection OK","ግንኙነት ተሳክቷል"
+"Custom…","ብጁ…"
+Daily,ዕለታዊ
+"Daily view","ዕለታዊ እይታ"
+"Date range","የቀን ክልል"
+days,ቀናት
+"Default Entry Type","ነባሪ የግቤት ዓይነት"
+"Default Rate","ነባሪ ተመን"
+"Default activity type","ነባሪ የእንቅስቃሴ ዓይነት"
+Delete,ሰርዝ
+Description,መግለጫ
+Dismiss,ዝጋ
+"Do you want to sync all unsynced time entries to ERPNext now?","ያልተመሳሰሉ ሁሉንም የሰዓት ግቤቶች ወደ ERPNext አሁን ማመሳሰል ይፈልጋሉ?"
+Duplicate,ቅዳ
+Duration,ቆይታ
+Edit,አርትዕ
+"Enable ERPNext bridge","የERPNext ድልድይ አንቃ"
+"End time","የማብቂያ ሰዓት"
+"Entries forwarded","ግቤቶች ተላልፈዋል"
+"Entries older than {0} days are locked. Contact your administrator.","ከ{0} ቀናት የቆዩ ግቤቶች ተቆልፈዋል። አስተዳዳሪዎን ያነጋግሩ።"
+"ERPNext Bridge","የERPNext ድልድይ"
+"ERPNext is not installed on this site.","ERPNext በዚህ ጣቢያ ላይ አልተጫነም።"
+"ERPNext is reachable and Timesheet access is confirmed.","ERPNext ይደርሳል እና የTimesheetመዳረሻ ተረጋግጧል።"
+"ERPNext site URL","የERPNext ጣቢያ URL"
+"ERPNext Timesheet {0} for {1} is submitted — re-sync blocked.","የERPNext Timesheet {0} ለ{1} ቀርቧል — ድጋሚ ማመሳሰል ታግዷል።"
+"ERPNext Timesheet is submitted — re-sync blocked","የERPNext Timesheet ቀርቧል — ድጋሚ ማመሳሰል ታግዷል"
+"Est. {0}","ግምት {0}"
+"Est. amount","ግምት መጠን"
+"Every 6 hours","በየ6 ሰዓቱ"
+"All time","ሁሉም ጊዜ"
+"This year","ዘንድሮ"
+"Last year","ባለፈው ዓመት"
+"Download CSV","CSV አውርድ"
+"Export my data","ውሂቤን ላክ"
+"Download all your time entries as CSV.","ሁሉንም የሰዓት ግቤቶችህን እንደ CSV አውርድ።"
+"Export CSV","CSV ላክ"
+"Export successful","መላክ ተሳክቷል"
+"Failed to forward entries: {0}","ግቤቶችን ማስተላለፍ አልተሳካም: {0}"
+"Watch Settings","የWatch ቅንብሮች"
+"Watch Tag","የWatch መለያ"
+"Watch Entry","የWatch ግቤት"
+"Watch Entry Tag","የWatch ግቤት መለያ"
+"Watch Timer","የWatch ሰዓት ቆጣሪ"
+"Forwarded {0} to {1}","{0} ወደ {1} ተላልፏል"
+From,ከ
+General,አጠቃላይ
+Hourly,በየሰዓቱ
+hours,ሰዓታት
+"Hide weekends","ቅዳሜ/እሁድ ደብቅ"
+Internal,ውስጣዊ
+"Internal / overhead","ውስጣዊ / ተጨማሪ ወጪ"
+"Last bulk sync","የመጨረሻ የጅምላ ማመሳሰል"
+"Last month","ባለፈው ወር"
+"Last sync error","የመጨረሻ ማመሳሰል ስህተት"
+"Last week","ባለፈው ሳምንት"
+Less,ያነሰ
+"Lock Entries Older Than","ግቤቶችን ቁልፍ ከ"
+Manual,በእጅ
+"Map project tags","የፕሮጀክት መለያዎችን አዛምድ"
+Merge,አዋህድ
+"Merge {0} into:","{0}ን ወደ አዋህድ:"
+Mon,ሰኞ
+More,ተጨማሪ
+Navigate,ዳስስ
+"New Tag","አዲስ መለያ"
+"No entries for {0}","ለ{0} ግቤት የለም"
+"No entries yet","እስካሁን ግቤት የለም"
+"No tags yet","እስካሁን መለያ የለም"
+"No timer is running","ምንም ሰዓት ቆጣሪ እየሰራ አይደለም"
+Non-billable,ሊከፈል የማይችል
+"(no description)","(መግለጫ የለም)"
+"(not billed)","(አልተከፈለም)"
+"Nothing logged yesterday ({0})","ትላንት ({0}) ምንም አልተመዘገበም"
+"Open prepare summary","ማዘጋጃ ማጠቃለያ ክፈት"
+"Open settings","ቅንብሮች ክፈት"
+"Open tag management","መለያ አስተዳደር ክፈት"
+"Open today's view","የዛሬ እይታ ክፈት"
+"Open weekly view","የሳምንታዊ እይታ ክፈት"
+Other,ሌላ
+Pause,አቁም
+Prepare,ዝግጅት
+"Prepare Summary","ማዘጋጃ ማጠቃለያ"
+Project,ፕሮጀክት
+Rate,ተመን
+Rename,ስም ቀይር
+Resume,ቀጥል
+"Saved — {0}","ተቀምጧል — {0}"
+Save,አስቀምጥ
+Sat,ቅዳሜ
+Scheduled,የተቀጠረ
+Send,ላክ
+Settings,ቅንብሮች
+"Show weekends","ቅዳሜ/እሁድ አሳይ"
+"Start time","የመጀመሪያ ሰዓት"
+"Start Timer","ሰዓት ቆጣሪ ጀምር"
+"Start timer: ""{0}""","ሰዓት ቆጣሪ ጀምር: ""{0}"""
+"Stop current & start: ""{0}""","አሁኑን አቁምና ጀምር: ""{0}"""
+"Started yesterday","ትላንት ተጀምሯል"
+Sun,እሁድ
+"Sync all unsynced entries","ያልተመሳሰሉ ሁሉንም ግቤቶች አመሳስል"
+"Sync billable entries only","ሊከፈሉ የሚችሉ ግቤቶችን ብቻ አመሳስል"
+"Sync completed with errors","ማመሳሰል በስህተቶች ተጠናቋል"
+"Sync complete","ማመሳሰል ተጠናቋል"
+"Sync interval","የማመሳሰል ክፍተት"
+"Sync mode","የማመሳሰል ሁነታ"
+"Synced to ERPNext","ወደ ERPNext ተመሳስሏል"
+"Syncing entries to ERPNext…","ግቤቶችን ወደ ERPNext በማመሳሰል ላይ…"
+"{0} day(s) synced.","{0} ቀን(ቶች) ተመሳስለዋል።"
+Tag,መለያ
+"Tag management","መለያ አስተዳደር"
+"Tag Name","የመለያ ስም"
+"Tag renamed. {0} entries updated.","መለያ ስሙ ተቀይሯል። {0} ግቤቶች ተዘምነዋል።"
+Tags,መለያዎች
+"Tags merged. {0} entries re-tagged.","መለያዎች ተዋህደዋል። {0} ግቤቶች ድጋሚ ተሰይመዋል።"
+Task,ተግባር
+"Test connection","ግንኙነት ሞክር"
+"Test Connection","ግንኙነት ሞክር"
+"This entry is locked","ይህ ግቤት ተቆልፏል"
+"This month","በዚህ ወር"
+"This week","በዚህ ሳምንት"
+Thu,ሐሙስ
+"Time Bridge","የሰዓት ድልድይ"
+"Time Entries","የሰዓት ግቤቶች"
+"Timer already running","ሰዓት ቆጣሪ አስቀድሞ እየሰራ ነው"
+"Timer is already running","ሰዓት ቆጣሪ አስቀድሞ እየሰራ ነው"
+"Timer is not paused","ሰዓት ቆጣሪ አላቆመም"
+"Timer is not running","ሰዓት ቆጣሪ እየሰራ አይደለም"
+To,እስከ
+Today,ዛሬ
+Total,ጠቅላላ
+"Total billable","ጠቅላላ ሊከፈል የሚችል"
+Tue,ማክሰኞ
+"Unknown error","ያልታወቀ ስህተት"
+Unassigned,ያልተመደበ
+"(untagged project)","(ያልተሰየመ ፕሮጀክት)"
+"View entry →","ግቤት ተመልከት →"
+"Warning: This entry is more than 7 days old.","ማስጠንቀቂያ: ይህ ግቤት ከ7 ቀናት በላይ ያስቆጠረ ነው።"
+Wed,ረቡዕ
+"Week {0}","ሳምንት {0}"
+"What are you working on?","ምን እየሰሩ ነው?"
+"What did you work on?","ምን ሰሩ?"
+"Work Days","የስራ ቀናት"
+Yesterday,ትላንት
+draft,ረቂቅ
+"entries this month","የዚህ ወር ግቤቶች"
+"no entries","ግቤት የለም"
+"no entries yet","እስካሁን ግቤት የለም"
+sent,ተልኳል
+"+{0} more","+{0} ተጨማሪ"
+"← from {0}","← ከ{0}"
+"[Auto-stopped after {0}h]","[ከ{0} ሰዓት በኋላ በራስ-ሰር ቆሟል]"
+"Entry Type","የግቤት ዓይነት"
+Fri,ዓርብ
+"Keyboard Shortcuts","የቁልፍ ሰሌዳ አቋራጮች"
+"Start / Pause / Resume timer","ሰዓት ቆጣሪ ጀምር / አቁም / ቀጥል"
+"Stop timer","ሰዓት ቆጣሪ አቁም"
+"New entry (focus quick-add bar)","አዲስ ግቤት (ፈጣን-ማከያ አሞሌ ላይ አተኩር)"
+"Previous / next day or week","ቀዳሚ / ቀጣይ ቀን ወይም ሳምንት"
+"Show / hide this overlay","ይህን ሽፋን አሳይ / ደብቅ"
+"Press H or Esc to close","ለመዝጋት H ወይም Esc ተጫን"
+Close,ዝጋ
+Timer,ሰዓት ቆጣሪ
+Entries,ግቤቶች
+"This week at a glance","የዚህ ሳምንት አጭር ዕይታ"
+"Time by tag","በመለያ ሰዓት"
+"Hours per day","በቀን ሰዓታት"
+"No entries this week","በዚህ ሳምንት ግቤት የለም"
+"No entries","ግቤት የለም"
+Untagged,ያልተሰየመ
+"Monthly Budget (h)","ወርሃዊ በጀት (ሰ)"
+"Warn at (%)","ማስጠንቀቂያ (%)"
+"0 = no limit","0 = ገደብ የለም"
+"0 = site default","0 = ነባሪ የጣቢያ ቅንብር"
+"Approaching limit","ገደብ እየቀረበ ነው"
+"Budget exceeded","በጀት ተሻግሯል"
+"budget used this month","በዚህ ወር የተጠቀመ በጀት"
+"used this month","በዚህ ወር ጥቅም ላይ የዋለ"
+of,ከ
+Focus,ትኩረት
+"Start Focus","ትኩረት ጀምር"
+"End focus","ትኩረት ጨርስ"
+"Skip break","ዕረፍት ዝለል"
+"Break over","ዕረፍት አልቋል"
+"Time to focus!","ለትኩረት ጊዜ ሆኗል!"
+"Session complete","ክፍለ ጊዜ ተጠናቋል"
+"Focus complete!","ትኩረት ተጠናቋል!"
+"All sessions done. Great work!","ሁሉም ክፍለ ጊዜዎች ተጠናቅቀዋል። ጥሩ ስራ!"
+"sessions done. Great work!","ክፍለ ጊዜዎች ተጠናቅቀዋል። ጥሩ ስራ!"
+"Start new","አዲስ ጀምር"
+"Work in focused sessions with timed breaks.","በጊዜ የተገደበ ዕረፍቶች ያሉት ትኩረት ክፍለ ጊዜዎች ውስጥ ስሩ።"
+Session,ክፍለ ጊዜ
+Break,ዕረፍት
+"Work (min)","ስራ (ደቂቃ)"
+"Break (min)","ዕረፍት (ደቂቃ)"
+Sessions,ክፍለ ጊዜዎች
+"No break is active","ምንም ዕረፍት ንቁ አይደለም"
+"No focus session is running","ምንም ትኩረት ክፍለ ጊዜ እየሰራ አይደለም"
+Context,አውድ
+Contact,ግንኙነት
+"Context Type","የአውድ ዓይነት"
+"For whom?","ለማን?"
+"Working on?","ምን እየሰሩ ነው?"
+"Search contacts...","ግንኙነቶችን ፈልግ..."
+"Select type...","ዓይነት ምረጥ..."
+"All contacts","ሁሉም ግንኙነቶች"
+"All projects","ሁሉም ፕሮጀክቶች"
+"(no contact)","(ግንኙነት የለም)"
+"(no project)","(ፕሮጀክት የለም)"
+"(no task)","(ተግባር የለም)"
+"Filter by:","አጣራ በ:"
+"Time by contact","በግንኙነት ሰዓት"
+"Time by context","በአውድ ሰዓት"
+"Time by task","በተግባር ሰዓት"
+"Contact hours summary","የግንኙነት ሰዓታት ማጠቃለያ"

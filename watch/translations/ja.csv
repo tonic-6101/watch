@@ -1,0 +1,247 @@
+source,translation
+"Billed as {0}","{0}として計上済み"
+"exact — rounding skipped","正確 — 丸め処理をスキップしました"
+"Use exact","正確な値を使用"
+"Apply rounding","丸め処理を適用"
+Exact,正確
+Billed,計上済み
+"* Rounded up to nearest increment","* 最も近い単位に切り上げ"
+billable,計上対象
+non-billable,計上対象外
+internal,社内
+on_save,on_save
+manual,manual
+scheduled,scheduled
+hourly,hourly
+every_6_hours,every_6_hours
+daily,daily
+stopped,停止中
+running,実行中
+paused,一時停止中
+"Add a note...","メモを追加..."
+"Add entry for yesterday","昨日の記録を追加"
+"Add your first entry","最初の記録を追加"
+Archive,アーカイブ
+"Auto-stop Timer After","タイマー自動停止"
+Billable,計上対象
+"Billable {0}","計上対象 {0}"
+Cancel,キャンセル
+"Cannot delete tag — {0} entries use it.","タグを削除できません — {0}件の記録で使用中です。"
+Category,カテゴリ
+Client,クライアント
+Color,色
+"Connection Failed","接続失敗"
+"Connection OK","接続OK"
+"Custom…","カスタム…"
+Daily,日次
+"Daily view","日次ビュー"
+"Date range","期間"
+days,日
+"Default Entry Type","デフォルトの記録タイプ"
+"Default Rate","デフォルト単価"
+"Default activity type","デフォルトの活動タイプ"
+Delete,削除
+Description,説明
+Dismiss,閉じる
+"Do you want to sync all unsynced time entries to ERPNext now?","未同期のすべての時間記録を今すぐERPNextに同期しますか？"
+Duplicate,複製
+Duration,時間
+Edit,編集
+"Enable ERPNext bridge","ERPNextブリッジを有効化"
+"End time","終了時刻"
+"Entries forwarded","記録を転送しました"
+"Entries older than {0} days are locked. Contact your administrator.","{0}日より前の記録はロックされています。管理者にお問い合わせください。"
+"ERPNext Bridge","ERPNextブリッジ"
+"ERPNext is not installed on this site.","ERPNextはこのサイトにインストールされていません。"
+"ERPNext is reachable and Timesheet access is confirmed.","ERPNextに接続でき、タイムシートへのアクセスが確認されました。"
+"ERPNext site URL","ERPNextサイトURL"
+"ERPNext Timesheet {0} for {1} is submitted — re-sync blocked.","ERPNextタイムシート {0}（{1}）は提出済みです — 再同期はブロックされています。"
+"ERPNext Timesheet is submitted — re-sync blocked","ERPNextタイムシートは提出済みです — 再同期はブロックされています"
+"Est. {0}","見積 {0}"
+"Est. amount","見積金額"
+"Every 6 hours","6時間ごと"
+"All time","全期間"
+"This year","今年"
+"Last year","昨年"
+"Download CSV","CSVダウンロード"
+"Export my data","データをエクスポート"
+"Download all your time entries as CSV.","すべての時間記録をCSVとしてダウンロードします。"
+"Export CSV","CSVエクスポート"
+"Export successful","エクスポート成功"
+"Failed to forward entries: {0}","記録の転送に失敗しました: {0}"
+"Watch Settings","Watch 設定"
+"Watch Tag","Watch タグ"
+"Watch Entry","Watch 記録"
+"Watch Entry Tag","Watch 記録タグ"
+"Watch Timer","Watch タイマー"
+"Forwarded {0} to {1}","{0}を{1}に転送しました"
+From,開始
+General,一般
+Hourly,毎時
+hours,時間
+"Hide weekends","週末を非表示"
+Internal,社内
+"Internal / overhead","社内 / 間接業務"
+"Last bulk sync","最終一括同期"
+"Last month","先月"
+"Last sync error","最終同期エラー"
+"Last week","先週"
+Less,少なく
+"Lock Entries Older Than","記録のロック期間"
+Manual,手動
+"Map project tags","プロジェクトタグを関連付け"
+Merge,統合
+"Merge {0} into:","{0}を統合先:"
+Mon,月
+More,もっと
+Navigate,移動
+"New Tag","新しいタグ"
+"No entries for {0}","{0}の記録はありません"
+"No entries yet","記録はまだありません"
+"No tags yet","タグはまだありません"
+"No timer is running","タイマーは実行中ではありません"
+Non-billable,計上対象外
+"(no description)","（説明なし）"
+"(not billed)","（未計上）"
+"Nothing logged yesterday ({0})","昨日（{0}）の記録はありません"
+"Open prepare summary","準備サマリーを開く"
+"Open settings","設定を開く"
+"Open tag management","タグ管理を開く"
+"Open today's view","今日のビューを開く"
+"Open weekly view","週次ビューを開く"
+Other,その他
+Pause,一時停止
+Prepare,準備
+"Prepare Summary","準備サマリー"
+Project,プロジェクト
+Rate,単価
+Rename,名前変更
+Resume,再開
+"Saved — {0}","保存しました — {0}"
+Save,保存
+Sat,土
+Scheduled,スケジュール
+Send,送信
+Settings,設定
+"Show weekends","週末を表示"
+"Start time","開始時刻"
+"Start Timer","タイマー開始"
+"Start timer: ""{0}""","タイマー開始: 「{0}」"
+"Stop current & start: ""{0}""","現在を停止して開始: 「{0}」"
+"Started yesterday","昨日開始"
+Sun,日
+"Sync all unsynced entries","未同期の記録をすべて同期"
+"Sync billable entries only","計上対象の記録のみ同期"
+"Sync completed with errors","同期がエラーで完了"
+"Sync complete","同期完了"
+"Sync interval","同期間隔"
+"Sync mode","同期モード"
+"Synced to ERPNext","ERPNextに同期済み"
+"Syncing entries to ERPNext…","ERPNextに記録を同期中…"
+"{0} day(s) synced.","{0}日分を同期しました。"
+Tag,タグ
+"Tag management","タグ管理"
+"Tag Name","タグ名"
+"Tag renamed. {0} entries updated.","タグ名を変更しました。{0}件の記録を更新しました。"
+Tags,タグ
+"Tags merged. {0} entries re-tagged.","タグを統合しました。{0}件の記録を再タグ付けしました。"
+Task,タスク
+"Test connection","接続テスト"
+"Test Connection","接続テスト"
+"This entry is locked","この記録はロックされています"
+"This month","今月"
+"This week","今週"
+Thu,木
+"Time Bridge","タイムブリッジ"
+"Time Entries","時間記録"
+"Timer already running","タイマーは既に実行中です"
+"Timer is already running","タイマーは既に実行中です"
+"Timer is not paused","タイマーは一時停止中ではありません"
+"Timer is not running","タイマーは実行中ではありません"
+To,終了
+Today,今日
+Total,合計
+"Total billable","計上対象合計"
+Tue,火
+"Unknown error","不明なエラー"
+Unassigned,未割当
+"(untagged project)","（タグなしプロジェクト）"
+"View entry →","記録を表示 →"
+"Warning: This entry is more than 7 days old.","警告: この記録は7日以上前のものです。"
+Wed,水
+"Week {0}","第{0}週"
+"What are you working on?","何に取り組んでいますか？"
+"What did you work on?","何に取り組みましたか？"
+"Work Days","稼働日"
+Yesterday,昨日
+draft,下書き
+"entries this month","今月の記録"
+"no entries","記録なし"
+"no entries yet","記録はまだありません"
+sent,送信済み
+"+{0} more","他{0}件"
+"← from {0}","← {0}から"
+"[Auto-stopped after {0}h]","[{0}時間後に自動停止]"
+"Entry Type","記録タイプ"
+Fri,金
+"Keyboard Shortcuts","キーボードショートカット"
+"Start / Pause / Resume timer","タイマー 開始 / 一時停止 / 再開"
+"Stop timer","タイマー停止"
+"New entry (focus quick-add bar)","新しい記録（クイック追加バーにフォーカス）"
+"Previous / next day or week","前 / 次の日または週"
+"Show / hide this overlay","このオーバーレイを表示 / 非表示"
+"Press H or Esc to close","Hまたは Escで閉じる"
+Close,閉じる
+Timer,タイマー
+Entries,記録
+"This week at a glance","今週の概要"
+"Time by tag","タグ別時間"
+"Hours per day","1日あたりの時間"
+"No entries this week","今週の記録はありません"
+"No entries","記録なし"
+Untagged,タグなし
+"Monthly Budget (h)","月間予算（時間）"
+"Warn at (%)","警告（%）"
+"0 = no limit","0 = 制限なし"
+"0 = site default","0 = サイト既定値"
+"Approaching limit","上限に近づいています"
+"Budget exceeded","予算超過"
+"budget used this month","今月の予算使用量"
+"used this month","今月の使用量"
+of,/
+Focus,フォーカス
+"Start Focus","フォーカス開始"
+"End focus","フォーカス終了"
+"Skip break","休憩をスキップ"
+"Break over","休憩終了"
+"Time to focus!","フォーカスの時間です！"
+"Session complete","セッション完了"
+"Focus complete!","フォーカス完了！"
+"All sessions done. Great work!","全セッション完了。お疲れさまでした！"
+"sessions done. Great work!","セッション完了。お疲れさまでした！"
+"Start new","新規開始"
+"Work in focused sessions with timed breaks.","タイマー付き休憩を挟みながら集中して作業します。"
+Session,セッション
+Break,休憩
+"Work (min)","作業（分）"
+"Break (min)","休憩（分）"
+Sessions,セッション
+"No break is active","休憩中ではありません"
+"No focus session is running","フォーカスセッションは実行中ではありません"
+Context,コンテキスト
+Contact,連絡先
+"Context Type","コンテキストタイプ"
+"For whom?","誰のため？"
+"Working on?","作業内容は？"
+"Search contacts...","連絡先を検索..."
+"Select type...","タイプを選択..."
+"All contacts","すべての連絡先"
+"All projects","すべてのプロジェクト"
+"(no contact)","（連絡先なし）"
+"(no project)","（プロジェクトなし）"
+"(no task)","（タスクなし）"
+"Filter by:","フィルター:"
+"Time by contact","連絡先別時間"
+"Time by context","コンテキスト別時間"
+"Time by task","タスク別時間"
+"Contact hours summary","連絡先別時間サマリー"

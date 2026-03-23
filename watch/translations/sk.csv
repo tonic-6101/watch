@@ -1,0 +1,247 @@
+source,translation
+"Billed as {0}","Vyúčtované ako {0}"
+"exact — rounding skipped","presné — zaokrúhlenie preskočené"
+"Use exact","Použiť presné"
+"Apply rounding","Použiť zaokrúhlenie"
+Exact,Presné
+Billed,Vyúčtované
+"* Rounded up to nearest increment","* Zaokrúhlené nahor na najbližší interval"
+billable,účtovateľné
+non-billable,neúčtovateľné
+internal,interné
+on_save,on_save
+manual,manual
+scheduled,scheduled
+hourly,hourly
+every_6_hours,every_6_hours
+daily,daily
+stopped,zastavené
+running,beží
+paused,pozastavené
+"Add a note...","Pridať poznámku..."
+"Add entry for yesterday","Pridať záznam za včerajšok"
+"Add your first entry","Pridajte svoj prvý záznam"
+Archive,Archivovať
+"Auto-stop Timer After","Automaticky zastaviť časovač po"
+Billable,Účtovateľné
+"Billable {0}","Účtovateľné {0}"
+Cancel,Zrušiť
+"Cannot delete tag — {0} entries use it.","Nemožno zmazať štítok — {0} záznamov ho používa."
+Category,Kategória
+Client,Klient
+Color,Farba
+"Connection Failed","Pripojenie zlyhalo"
+"Connection OK","Pripojenie OK"
+"Custom…","Vlastné…"
+Daily,Denne
+"Daily view","Denné zobrazenie"
+"Date range","Obdobie"
+days,dní
+"Default Entry Type","Predvolený typ záznamu"
+"Default Rate","Predvolená hodinová sadzba"
+"Default activity type","Predvolený typ aktivity"
+Delete,Zmazať
+Description,Popis
+Dismiss,Zavrieť
+"Do you want to sync all unsynced time entries to ERPNext now?","Chcete teraz synchronizovať všetky nesynchronizované časové záznamy do ERPNext?"
+Duplicate,Duplikovať
+Duration,Trvanie
+Edit,Upraviť
+"Enable ERPNext bridge","Povoliť ERPNext most"
+"End time","Čas konca"
+"Entries forwarded","Záznamy preposlané"
+"Entries older than {0} days are locked. Contact your administrator.","Záznamy staršie ako {0} dní sú uzamknuté. Kontaktujte administrátora."
+"ERPNext Bridge","ERPNext most"
+"ERPNext is not installed on this site.","ERPNext nie je nainštalovaný na tejto stránke."
+"ERPNext is reachable and Timesheet access is confirmed.","ERPNext je dostupný a prístup k výkazom je potvrdený."
+"ERPNext site URL","URL stránky ERPNext"
+"ERPNext Timesheet {0} for {1} is submitted — re-sync blocked.","ERPNext výkaz {0} pre {1} je odoslaný — opätovná synchronizácia blokovaná."
+"ERPNext Timesheet is submitted — re-sync blocked","ERPNext výkaz je odoslaný — opätovná synchronizácia blokovaná"
+"Est. {0}","Odh. {0}"
+"Est. amount","Odh. suma"
+"Every 6 hours","Každých 6 hodín"
+"All time","Celé obdobie"
+"This year","Tento rok"
+"Last year","Minulý rok"
+"Download CSV","Stiahnuť CSV"
+"Export my data","Exportovať moje dáta"
+"Download all your time entries as CSV.","Stiahnite všetky svoje časové záznamy ako CSV."
+"Export CSV","Exportovať CSV"
+"Export successful","Export úspešný"
+"Failed to forward entries: {0}","Nepodarilo sa preposlať záznamy: {0}"
+"Watch Settings","Nastavenia Watch"
+"Watch Tag","Watch štítok"
+"Watch Entry","Watch záznam"
+"Watch Entry Tag","Watch štítok záznamu"
+"Watch Timer","Watch časovač"
+"Forwarded {0} to {1}","Preposlané {0} do {1}"
+From,Od
+General,Všeobecné
+Hourly,Každú hodinu
+hours,hodín
+"Hide weekends","Skryť víkendy"
+Internal,Interné
+"Internal / overhead","Interné / réžia"
+"Last bulk sync","Posledná hromadná synchronizácia"
+"Last month","Minulý mesiac"
+"Last sync error","Posledná chyba synchronizácie"
+"Last week","Minulý týždeň"
+Less,Menej
+"Lock Entries Older Than","Uzamknúť záznamy staršie ako"
+Manual,Manuálne
+"Map project tags","Mapovať projektové štítky"
+Merge,Zlúčiť
+"Merge {0} into:","Zlúčiť {0} do:"
+Mon,Po
+More,Viac
+Navigate,Navigovať
+"New Tag","Nový štítok"
+"No entries for {0}","Žiadne záznamy pre {0}"
+"No entries yet","Zatiaľ žiadne záznamy"
+"No tags yet","Zatiaľ žiadne štítky"
+"No timer is running","Žiadny časovač nebeží"
+Non-billable,Neúčtovateľné
+"(no description)","(bez popisu)"
+"(not billed)","(nevyúčtované)"
+"Nothing logged yesterday ({0})","Včera nebolo nič zaznamenané ({0})"
+"Open prepare summary","Otvoriť prehľad na prípravu"
+"Open settings","Otvoriť nastavenia"
+"Open tag management","Otvoriť správu štítkov"
+"Open today's view","Otvoriť dnešné zobrazenie"
+"Open weekly view","Otvoriť týždenné zobrazenie"
+Other,Ostatné
+Pause,Pozastaviť
+Prepare,Pripraviť
+"Prepare Summary","Prehľad na prípravu"
+Project,Projekt
+Rate,Hodinová sadzba
+Rename,Premenovať
+Resume,Pokračovať
+"Saved — {0}","Uložené — {0}"
+Save,Uložiť
+Sat,So
+Scheduled,Naplánované
+Send,Odoslať
+Settings,Nastavenia
+"Show weekends","Zobraziť víkendy"
+"Start time","Čas začiatku"
+"Start Timer","Spustiť časovač"
+"Start timer: ""{0}""","Spustiť časovač: ""{0}"""
+"Stop current & start: ""{0}""","Zastaviť aktuálny a spustiť: ""{0}"""
+"Started yesterday","Začaté včera"
+Sun,Ne
+"Sync all unsynced entries","Synchronizovať všetky nesynchronizované záznamy"
+"Sync billable entries only","Synchronizovať iba účtovateľné záznamy"
+"Sync completed with errors","Synchronizácia dokončená s chybami"
+"Sync complete","Synchronizácia dokončená"
+"Sync interval","Interval synchronizácie"
+"Sync mode","Režim synchronizácie"
+"Synced to ERPNext","Synchronizované do ERPNext"
+"Syncing entries to ERPNext…","Synchronizujem záznamy do ERPNext…"
+"{0} day(s) synced.","{0} deň/dní synchronizovaných."
+Tag,Štítok
+"Tag management","Správa štítkov"
+"Tag Name","Názov štítku"
+"Tag renamed. {0} entries updated.","Štítok premenovaný. {0} záznamov aktualizovaných."
+Tags,Štítky
+"Tags merged. {0} entries re-tagged.","Štítky zlúčené. {0} záznamov preznačených."
+Task,Úloha
+"Test connection","Otestovať pripojenie"
+"Test Connection","Otestovať pripojenie"
+"This entry is locked","Tento záznam je uzamknutý"
+"This month","Tento mesiac"
+"This week","Tento týždeň"
+Thu,Št
+"Time Bridge","Časový most"
+"Time Entries","Časové záznamy"
+"Timer already running","Časovač už beží"
+"Timer is already running","Časovač už beží"
+"Timer is not paused","Časovač nie je pozastavený"
+"Timer is not running","Časovač nebeží"
+To,Do
+Today,Dnes
+Total,Celkom
+"Total billable","Celkom účtovateľné"
+Tue,Ut
+"Unknown error","Neznáma chyba"
+Unassigned,Nepriradené
+"(untagged project)","(neoznačený projekt)"
+"View entry →","Zobraziť záznam →"
+"Warning: This entry is more than 7 days old.","Upozornenie: Tento záznam je starší ako 7 dní."
+Wed,St
+"Week {0}","Týždeň {0}"
+"What are you working on?","Na čom pracujete?"
+"What did you work on?","Na čom ste pracovali?"
+"Work Days","Pracovné dni"
+Yesterday,Včera
+draft,koncept
+"entries this month","záznamov tento mesiac"
+"no entries","žiadne záznamy"
+"no entries yet","zatiaľ žiadne záznamy"
+sent,odoslané
+"+{0} more","+{0} ďalších"
+"← from {0}","← z {0}"
+"[Auto-stopped after {0}h]","[Automaticky zastavené po {0}h]"
+"Entry Type","Typ záznamu"
+Fri,Pi
+"Keyboard Shortcuts","Klávesové skratky"
+"Start / Pause / Resume timer","Spustiť / Pozastaviť / Pokračovať časovač"
+"Stop timer","Zastaviť časovač"
+"New entry (focus quick-add bar)","Nový záznam (prejsť na rýchle pridanie)"
+"Previous / next day or week","Predchádzajúci / ďalší deň alebo týždeň"
+"Show / hide this overlay","Zobraziť / skryť tento panel"
+"Press H or Esc to close","Stlačte H alebo Esc pre zatvorenie"
+Close,Zavrieť
+Timer,Časovač
+Entries,Záznamy
+"This week at a glance","Prehľad tohto týždňa"
+"Time by tag","Čas podľa štítku"
+"Hours per day","Hodín za deň"
+"No entries this week","Tento týždeň žiadne záznamy"
+"No entries","Žiadne záznamy"
+Untagged,Bez štítku
+"Monthly Budget (h)","Mesačný rozpočet (h)"
+"Warn at (%)","Varovať pri (%)"
+"0 = no limit","0 = bez limitu"
+"0 = site default","0 = predvolené stránky"
+"Approaching limit","Blížite sa k limitu"
+"Budget exceeded","Rozpočet prekročený"
+"budget used this month","rozpočtu použitého tento mesiac"
+"used this month","použité tento mesiac"
+of,z
+Focus,Sústredenie
+"Start Focus","Začať sústredenie"
+"End focus","Ukončiť sústredenie"
+"Skip break","Preskočiť prestávku"
+"Break over","Prestávka skončila"
+"Time to focus!","Čas sa sústrediť!"
+"Session complete","Relácia dokončená"
+"Focus complete!","Sústredenie dokončené!"
+"All sessions done. Great work!","Všetky relácie dokončené. Skvelá práca!"
+"sessions done. Great work!","relácií dokončených. Skvelá práca!"
+"Start new","Začať novú"
+"Work in focused sessions with timed breaks.","Pracujte v sústredených reláciách s časovanými prestávkami."
+Session,Relácia
+Break,Prestávka
+"Work (min)","Práca (min)"
+"Break (min)","Prestávka (min)"
+Sessions,Relácie
+"No break is active","Žiadna prestávka nie je aktívna"
+"No focus session is running","Žiadna relácia sústredenia nebeží"
+Context,Kontext
+Contact,Kontakt
+"Context Type","Typ kontextu"
+"For whom?","Pre koho?"
+"Working on?","Na čom pracujete?"
+"Search contacts...","Hľadať kontakty..."
+"Select type...","Vyberte typ..."
+"All contacts","Všetky kontakty"
+"All projects","Všetky projekty"
+"(no contact)","(bez kontaktu)"
+"(no project)","(bez projektu)"
+"(no task)","(bez úlohy)"
+"Filter by:","Filtrovať podľa:"
+"Time by contact","Čas podľa kontaktu"
+"Time by context","Čas podľa kontextu"
+"Time by task","Čas podľa úlohy"
+"Contact hours summary","Prehľad hodín kontaktov"

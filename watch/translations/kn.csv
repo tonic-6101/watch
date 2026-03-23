@@ -1,0 +1,247 @@
+source,translation
+Billed as {0},{0} ಎಂದು ಬಿಲ್ ಮಾಡಲಾಗಿದೆ
+exact — rounding skipped,ನಿಖರ — ರೌಂಡಿಂಗ್ ಬಿಡಲಾಗಿದೆ
+Use exact,ನಿಖರ ಬಳಸಿ
+Apply rounding,ರೌಂಡಿಂಗ್ ಅನ್ವಯಿಸಿ
+Exact,ನಿಖರ
+Billed,ಬಿಲ್ ಮಾಡಲಾಗಿದೆ
+* Rounded up to nearest increment,* ಹತ್ತಿರದ ಹೆಚ್ಚಳಕ್ಕೆ ರೌಂಡ್ ಅಪ್
+billable,ಬಿಲ್ ಮಾಡಬಹುದಾದ
+non-billable,ಬಿಲ್ ಮಾಡಲಾಗದ
+internal,ಆಂತರಿಕ
+on_save,on_save
+manual,manual
+scheduled,scheduled
+hourly,hourly
+every_6_hours,every_6_hours
+daily,daily
+stopped,ನಿಲ್ಲಿಸಲಾಗಿದೆ
+running,ಚಾಲನೆಯಲ್ಲಿದೆ
+paused,ವಿರಾಮ
+Add a note...,ಟಿಪ್ಪಣಿ ಸೇರಿಸಿ...
+Add entry for yesterday,ನಿನ್ನೆಗಾಗಿ ಎಂಟ್ರಿ ಸೇರಿಸಿ
+Add your first entry,ನಿಮ್ಮ ಮೊದಲ ಎಂಟ್ರಿ ಸೇರಿಸಿ
+Archive,ಆರ್ಕೈವ್
+Auto-stop Timer After,ಈ ಸಮಯದ ನಂತರ ಟೈಮರ್ ಸ್ವಯಂ-ನಿಲುಗಡೆ
+Billable,ಬಿಲ್ ಮಾಡಬಹುದಾದ
+Billable {0},ಬಿಲ್ ಮಾಡಬಹುದಾದ {0}
+Cancel,ರದ್ದುಮಾಡಿ
+Cannot delete tag — {0} entries use it.,ಟ್ಯಾಗ್ ಅಳಿಸಲು ಸಾಧ್ಯವಿಲ್ಲ — {0} ಎಂಟ್ರಿಗಳು ಇದನ್ನು ಬಳಸುತ್ತವೆ.
+Category,ವರ್ಗ
+Client,ಕ್ಲೈಂಟ್
+Color,ಬಣ್ಣ
+Connection Failed,ಸಂಪರ್ಕ ವಿಫಲ
+Connection OK,ಸಂಪರ್ಕ ಸರಿ
+Custom…,ಕಸ್ಟಮ್…
+Daily,ದೈನಿಕ
+Daily view,ದೈನಿಕ ನೋಟ
+Date range,ದಿನಾಂಕ ವ್ಯಾಪ್ತಿ
+days,ದಿನಗಳು
+Default Entry Type,ಡೀಫಾಲ್ಟ್ ಎಂಟ್ರಿ ಪ್ರಕಾರ
+Default Rate,ಡೀಫಾಲ್ಟ್ ರೇಟ್
+Default activity type,ಡೀಫಾಲ್ಟ್ ಚಟುವಟಿಕೆ ಪ್ರಕಾರ
+Delete,ಅಳಿಸಿ
+Description,ವಿವರಣೆ
+Dismiss,ತಳ್ಳಿಹಾಕಿ
+Do you want to sync all unsynced time entries to ERPNext now?,ಈಗ ಎಲ್ಲಾ ಸಿಂಕ್ ಆಗದ ಟೈಮ್ ಎಂಟ್ರಿಗಳನ್ನು ERPNext ಗೆ ಸಿಂಕ್ ಮಾಡಬೇಕೇ?
+Duplicate,ನಕಲು
+Duration,ಅವಧಿ
+Edit,ಸಂಪಾದಿಸಿ
+Enable ERPNext bridge,ERPNext ಬ್ರಿಡ್ಜ್ ಸಕ್ರಿಯಗೊಳಿಸಿ
+End time,ಅಂತಿಮ ಸಮಯ
+Entries forwarded,ಎಂಟ್ರಿಗಳು ಫಾರ್ವರ್ಡ್ ಆಗಿವೆ
+Entries older than {0} days are locked. Contact your administrator.,{0} ದಿನಗಳಿಗಿಂತ ಹಳೆಯ ಎಂಟ್ರಿಗಳು ಲಾಕ್ ಆಗಿವೆ. ನಿಮ್ಮ ನಿರ್ವಾಹಕರನ್ನು ಸಂಪರ್ಕಿಸಿ.
+ERPNext Bridge,ERPNext ಬ್ರಿಡ್ಜ್
+ERPNext is not installed on this site.,ಈ ಸೈಟ್‌ನಲ್ಲಿ ERPNext ಸ್ಥಾಪಿಸಲಾಗಿಲ್ಲ.
+ERPNext is reachable and Timesheet access is confirmed.,ERPNext ತಲುಪಬಹುದಾಗಿದೆ ಮತ್ತು ಟೈಮ್‌ಶೀಟ್ ಪ್ರವೇಶ ಖಚಿತವಾಗಿದೆ.
+ERPNext site URL,ERPNext ಸೈಟ್ URL
+ERPNext Timesheet {0} for {1} is submitted — re-sync blocked.,ERPNext ಟೈಮ್‌ಶೀಟ್ {0} ({1} ಗಾಗಿ) ಸಲ್ಲಿಸಲಾಗಿದೆ — ಮರು-ಸಿಂಕ್ ನಿರ್ಬಂಧಿಸಲಾಗಿದೆ.
+ERPNext Timesheet is submitted — re-sync blocked,ERPNext ಟೈಮ್‌ಶೀಟ್ ಸಲ್ಲಿಸಲಾಗಿದೆ — ಮರು-ಸಿಂಕ್ ನಿರ್ಬಂಧಿಸಲಾಗಿದೆ
+Est. {0},ಅಂದಾ. {0}
+Est. amount,ಅಂದಾ. ಮೊತ್ತ
+Every 6 hours,ಪ್ರತಿ ೬ ಗಂಟೆಗೊಮ್ಮೆ
+All time,ಎಲ್ಲಾ ಸಮಯ
+This year,ಈ ವರ್ಷ
+Last year,ಕಳೆದ ವರ್ಷ
+Download CSV,CSV ಡೌನ್‌ಲೋಡ್ ಮಾಡಿ
+Export my data,ನನ್ನ ಡೇಟಾ ರಫ್ತು ಮಾಡಿ
+Download all your time entries as CSV.,ನಿಮ್ಮ ಎಲ್ಲಾ ಟೈಮ್ ಎಂಟ್ರಿಗಳನ್ನು CSV ಆಗಿ ಡೌನ್‌ಲೋಡ್ ಮಾಡಿ.
+Export CSV,CSV ರಫ್ತು
+Export successful,ರಫ್ತು ಯಶಸ್ವಿ
+Failed to forward entries: {0},ಎಂಟ್ರಿಗಳನ್ನು ಫಾರ್ವರ್ಡ್ ಮಾಡಲು ವಿಫಲ: {0}
+Watch Settings,Watch ಸೆಟ್ಟಿಂಗ್‌ಗಳು
+Watch Tag,Watch ಟ್ಯಾಗ್
+Watch Entry,Watch ಎಂಟ್ರಿ
+Watch Entry Tag,Watch ಎಂಟ್ರಿ ಟ್ಯಾಗ್
+Watch Timer,Watch ಟೈಮರ್
+Forwarded {0} to {1},{0} ಅನ್ನು {1} ಗೆ ಫಾರ್ವರ್ಡ್ ಮಾಡಲಾಗಿದೆ
+From,ಇಂದ
+General,ಸಾಮಾನ್ಯ
+Hourly,ಗಂಟೆಗೊಮ್ಮೆ
+hours,ಗಂಟೆಗಳು
+Hide weekends,ವಾರಾಂತ್ಯ ಮರೆಮಾಡಿ
+Internal,ಆಂತರಿಕ
+Internal / overhead,ಆಂತರಿಕ / ಓವರ್‌ಹೆಡ್
+Last bulk sync,ಕೊನೆಯ ಬಲ್ಕ್ ಸಿಂಕ್
+Last month,ಕಳೆದ ತಿಂಗಳು
+Last sync error,ಕೊನೆಯ ಸಿಂಕ್ ದೋಷ
+Last week,ಕಳೆದ ವಾರ
+Less,ಕಡಿಮೆ
+Lock Entries Older Than,ಇದಕ್ಕಿಂತ ಹಳೆಯ ಎಂಟ್ರಿಗಳನ್ನು ಲಾಕ್ ಮಾಡಿ
+Manual,ಕೈಪಿಡಿ
+Map project tags,ಯೋಜನೆ ಟ್ಯಾಗ್‌ಗಳನ್ನು ಮ್ಯಾಪ್ ಮಾಡಿ
+Merge,ವಿಲೀನ
+Merge {0} into:,{0} ಅನ್ನು ವಿಲೀನಗೊಳಿಸಿ:
+Mon,ಸೋಮ
+More,ಇನ್ನಷ್ಟು
+Navigate,ನ್ಯಾವಿಗೇಟ್
+New Tag,ಹೊಸ ಟ್ಯಾಗ್
+No entries for {0},{0} ಗಾಗಿ ಯಾವುದೇ ಎಂಟ್ರಿ ಇಲ್ಲ
+No entries yet,ಇನ್ನೂ ಯಾವುದೇ ಎಂಟ್ರಿ ಇಲ್ಲ
+No tags yet,ಇನ್ನೂ ಯಾವುದೇ ಟ್ಯಾಗ್ ಇಲ್ಲ
+No timer is running,ಯಾವುದೇ ಟೈಮರ್ ಚಾಲನೆಯಲ್ಲಿಲ್ಲ
+Non-billable,ಬಿಲ್ ಮಾಡಲಾಗದ
+(no description),(ವಿವರಣೆ ಇಲ್ಲ)
+(not billed),(ಬಿಲ್ ಮಾಡಲಾಗಿಲ್ಲ)
+Nothing logged yesterday ({0}),ನಿನ್ನೆ ಏನೂ ಲಾಗ್ ಆಗಿಲ್ಲ ({0})
+Open prepare summary,ತಯಾರಿ ಸಾರಾಂಶ ತೆರೆಯಿರಿ
+Open settings,ಸೆಟ್ಟಿಂಗ್‌ಗಳನ್ನು ತೆರೆಯಿರಿ
+Open tag management,ಟ್ಯಾಗ್ ನಿರ್ವಹಣೆ ತೆರೆಯಿರಿ
+Open today's view,ಇಂದಿನ ನೋಟ ತೆರೆಯಿರಿ
+Open weekly view,ಸಾಪ್ತಾಹಿಕ ನೋಟ ತೆರೆಯಿರಿ
+Other,ಇತರೆ
+Pause,ವಿರಾಮ
+Prepare,ತಯಾರಿ
+Prepare Summary,ತಯಾರಿ ಸಾರಾಂಶ
+Project,ಯೋಜನೆ
+Rate,ರೇಟ್
+Rename,ಮರುಹೆಸರಿಸಿ
+Resume,ಪುನರಾರಂಭಿಸಿ
+Saved — {0},ಉಳಿಸಲಾಗಿದೆ — {0}
+Save,ಉಳಿಸಿ
+Sat,ಶನಿ
+Scheduled,ನಿಗದಿತ
+Send,ಕಳುಹಿಸಿ
+Settings,ಸೆಟ್ಟಿಂಗ್‌ಗಳು
+Show weekends,ವಾರಾಂತ್ಯ ತೋರಿಸಿ
+Start time,ಪ್ರಾರಂಭ ಸಮಯ
+Start Timer,ಟೈಮರ್ ಪ್ರಾರಂಭಿಸಿ
+"Start timer: ""{0}""","ಟೈಮರ್ ಪ್ರಾರಂಭಿಸಿ: ""{0}"""
+"Stop current & start: ""{0}""","ಪ್ರಸ್ತುತ ನಿಲ್ಲಿಸಿ ಮತ್ತು ಪ್ರಾರಂಭಿಸಿ: ""{0}"""
+Started yesterday,ನಿನ್ನೆ ಪ್ರಾರಂಭವಾಯಿತು
+Sun,ಭಾನು
+Sync all unsynced entries,ಎಲ್ಲಾ ಸಿಂಕ್ ಆಗದ ಎಂಟ್ರಿಗಳನ್ನು ಸಿಂಕ್ ಮಾಡಿ
+Sync billable entries only,ಬಿಲ್ ಮಾಡಬಹುದಾದ ಎಂಟ್ರಿಗಳನ್ನು ಮಾತ್ರ ಸಿಂಕ್ ಮಾಡಿ
+Sync completed with errors,ದೋಷಗಳೊಂದಿಗೆ ಸಿಂಕ್ ಪೂರ್ಣ
+Sync complete,ಸಿಂಕ್ ಪೂರ್ಣ
+Sync interval,ಸಿಂಕ್ ಮಧ್ಯಂತರ
+Sync mode,ಸಿಂಕ್ ಮೋಡ್
+Synced to ERPNext,ERPNext ಗೆ ಸಿಂಕ್ ಆಗಿದೆ
+Syncing entries to ERPNext…,ERPNext ಗೆ ಎಂಟ್ರಿಗಳನ್ನು ಸಿಂಕ್ ಮಾಡಲಾಗುತ್ತಿದೆ…
+{0} day(s) synced.,{0} ದಿನ(ಗಳು) ಸಿಂಕ್ ಆಯಿತು.
+Tag,ಟ್ಯಾಗ್
+Tag management,ಟ್ಯಾಗ್ ನಿರ್ವಹಣೆ
+Tag Name,ಟ್ಯಾಗ್ ಹೆಸರು
+Tag renamed. {0} entries updated.,ಟ್ಯಾಗ್ ಮರುಹೆಸರಿಸಲಾಗಿದೆ. {0} ಎಂಟ್ರಿಗಳು ಅಪ್ಡೇಟ್ ಆಗಿವೆ.
+Tags,ಟ್ಯಾಗ್‌ಗಳು
+Tags merged. {0} entries re-tagged.,ಟ್ಯಾಗ್‌ಗಳನ್ನು ವಿಲೀನಗೊಳಿಸಲಾಗಿದೆ. {0} ಎಂಟ್ರಿಗಳನ್ನು ಮರು-ಟ್ಯಾಗ್ ಮಾಡಲಾಗಿದೆ.
+Task,ಕಾರ್ಯ
+Test connection,ಸಂಪರ್ಕ ಪರೀಕ್ಷಿಸಿ
+Test Connection,ಸಂಪರ್ಕ ಪರೀಕ್ಷಿಸಿ
+This entry is locked,ಈ ಎಂಟ್ರಿ ಲಾಕ್ ಆಗಿದೆ
+This month,ಈ ತಿಂಗಳು
+This week,ಈ ವಾರ
+Thu,ಗುರು
+Time Bridge,ಟೈಮ್ ಬ್ರಿಡ್ಜ್
+Time Entries,ಟೈಮ್ ಎಂಟ್ರಿಗಳು
+Timer already running,ಟೈಮರ್ ಈಗಾಗಲೇ ಚಾಲನೆಯಲ್ಲಿದೆ
+Timer is already running,ಟೈಮರ್ ಈಗಾಗಲೇ ಚಾಲನೆಯಲ್ಲಿದೆ
+Timer is not paused,ಟೈಮರ್ ವಿರಾಮದಲ್ಲಿಲ್ಲ
+Timer is not running,ಟೈಮರ್ ಚಾಲನೆಯಲ್ಲಿಲ್ಲ
+To,ವರೆಗೆ
+Today,ಇಂದು
+Total,ಒಟ್ಟು
+Total billable,ಒಟ್ಟು ಬಿಲ್ ಮಾಡಬಹುದಾದ
+Tue,ಮಂಗಳ
+Unknown error,ಅಜ್ಞಾತ ದೋಷ
+Unassigned,ನಿಯೋಜಿಸಲಾಗಿಲ್ಲ
+(untagged project),(ಟ್ಯಾಗ್ ಇಲ್ಲದ ಯೋಜನೆ)
+View entry →,ಎಂಟ್ರಿ ನೋಡಿ →
+Warning: This entry is more than 7 days old.,ಎಚ್ಚರಿಕೆ: ಈ ಎಂಟ್ರಿ ೭ ದಿನಗಳಿಗಿಂತ ಹಳೆಯದು.
+Wed,ಬುಧ
+Week {0},ವಾರ {0}
+What are you working on?,ನೀವು ಏನು ಕೆಲಸ ಮಾಡುತ್ತಿದ್ದೀರಿ?
+What did you work on?,ನೀವು ಏನು ಕೆಲಸ ಮಾಡಿದಿರಿ?
+Work Days,ಕೆಲಸದ ದಿನಗಳು
+Yesterday,ನಿನ್ನೆ
+draft,ಕರಡು
+entries this month,ಈ ತಿಂಗಳ ಎಂಟ್ರಿಗಳು
+no entries,ಯಾವುದೇ ಎಂಟ್ರಿ ಇಲ್ಲ
+no entries yet,ಇನ್ನೂ ಯಾವುದೇ ಎಂಟ್ರಿ ಇಲ್ಲ
+sent,ಕಳುಹಿಸಲಾಗಿದೆ
++{0} more,+{0} ಇನ್ನಷ್ಟು
+← from {0},← {0} ಇಂದ
+[Auto-stopped after {0}h],[{0} ಗಂಟೆ ನಂತರ ಸ್ವಯಂ-ನಿಲುಗಡೆ]
+Entry Type,ಎಂಟ್ರಿ ಪ್ರಕಾರ
+Fri,ಶುಕ್ರ
+Keyboard Shortcuts,ಕೀಬೋರ್ಡ್ ಶಾರ್ಟ್‌ಕಟ್‌ಗಳು
+Start / Pause / Resume timer,ಟೈಮರ್ ಪ್ರಾರಂಭ / ವಿರಾಮ / ಪುನರಾರಂಭ
+Stop timer,ಟೈಮರ್ ನಿಲ್ಲಿಸಿ
+New entry (focus quick-add bar),ಹೊಸ ಎಂಟ್ರಿ (ಕ್ವಿಕ್-ಆಡ್ ಬಾರ್ ಫೋಕಸ್)
+Previous / next day or week,ಹಿಂದಿನ / ಮುಂದಿನ ದಿನ ಅಥವಾ ವಾರ
+Show / hide this overlay,ಈ ಓವರ್‌ಲೇ ತೋರಿಸಿ / ಮರೆಮಾಡಿ
+Press H or Esc to close,ಮುಚ್ಚಲು H ಅಥವಾ Esc ಒತ್ತಿ
+Close,ಮುಚ್ಚಿ
+Timer,ಟೈಮರ್
+Entries,ಎಂಟ್ರಿಗಳು
+This week at a glance,ಈ ವಾರದ ಸಂಕ್ಷಿಪ್ತ ನೋಟ
+Time by tag,ಟ್ಯಾಗ್ ಪ್ರಕಾರ ಸಮಯ
+Hours per day,ದಿನಕ್ಕೆ ಗಂಟೆಗಳು
+No entries this week,ಈ ವಾರ ಯಾವುದೇ ಎಂಟ್ರಿ ಇಲ್ಲ
+No entries,ಯಾವುದೇ ಎಂಟ್ರಿ ಇಲ್ಲ
+Untagged,ಟ್ಯಾಗ್ ಇಲ್ಲದ
+Monthly Budget (h),ಮಾಸಿಕ ಬಜೆಟ್ (ಗಂ)
+Warn at (%),ಎಚ್ಚರಿಕೆ (%)
+0 = no limit,೦ = ಯಾವುದೇ ಮಿತಿ ಇಲ್ಲ
+0 = site default,೦ = ಸೈಟ್ ಡೀಫಾಲ್ಟ್
+Approaching limit,ಮಿತಿ ಸಮೀಪಿಸುತ್ತಿದೆ
+Budget exceeded,ಬಜೆಟ್ ಮೀರಿದೆ
+budget used this month,ಈ ತಿಂಗಳು ಬಳಸಿದ ಬಜೆಟ್
+used this month,ಈ ತಿಂಗಳು ಬಳಸಲಾಗಿದೆ
+of,ರ
+Focus,ಫೋಕಸ್
+Start Focus,ಫೋಕಸ್ ಪ್ರಾರಂಭಿಸಿ
+End focus,ಫೋಕಸ್ ಅಂತ್ಯ
+Skip break,ವಿರಾಮ ಬಿಡಿ
+Break over,ವಿರಾಮ ಮುಗಿಯಿತು
+Time to focus!,ಫೋಕಸ್ ಮಾಡುವ ಸಮಯ!
+Session complete,ಸೆಶನ್ ಪೂರ್ಣ
+Focus complete!,ಫೋಕಸ್ ಪೂರ್ಣ!
+All sessions done. Great work!,ಎಲ್ಲಾ ಸೆಶನ್‌ಗಳು ಪೂರ್ಣ. ಅದ್ಭುತ ಕೆಲಸ!
+sessions done. Great work!,ಸೆಶನ್‌ಗಳು ಪೂರ್ಣ. ಅದ್ಭುತ ಕೆಲಸ!
+Start new,ಹೊಸದು ಪ್ರಾರಂಭಿಸಿ
+Work in focused sessions with timed breaks.,ಸಮಯಬದ್ಧ ವಿರಾಮಗಳೊಂದಿಗೆ ಫೋಕಸ್ ಸೆಶನ್‌ಗಳಲ್ಲಿ ಕೆಲಸ ಮಾಡಿ.
+Session,ಸೆಶನ್
+Break,ವಿರಾಮ
+Work (min),ಕೆಲಸ (ನಿಮಿಷ)
+Break (min),ವಿರಾಮ (ನಿಮಿಷ)
+Sessions,ಸೆಶನ್‌ಗಳು
+No break is active,ಯಾವುದೇ ವಿರಾಮ ಸಕ್ರಿಯವಾಗಿಲ್ಲ
+No focus session is running,ಯಾವುದೇ ಫೋಕಸ್ ಸೆಶನ್ ಚಾಲನೆಯಲ್ಲಿಲ್ಲ
+Context,ಸಂದರ್ಭ
+Contact,ಸಂಪರ್ಕ
+Context Type,ಸಂದರ್ಭ ಪ್ರಕಾರ
+For whom?,ಯಾರಿಗಾಗಿ?
+Working on?,ಏನು ಕೆಲಸ ಮಾಡುತ್ತಿದ್ದೀರಿ?
+Search contacts...,ಸಂಪರ್ಕಗಳನ್ನು ಹುಡುಕಿ...
+Select type...,ಪ್ರಕಾರ ಆಯ್ಕೆಮಾಡಿ...
+All contacts,ಎಲ್ಲಾ ಸಂಪರ್ಕಗಳು
+All projects,ಎಲ್ಲಾ ಯೋಜನೆಗಳು
+(no contact),(ಸಂಪರ್ಕ ಇಲ್ಲ)
+(no project),(ಯೋಜನೆ ಇಲ್ಲ)
+(no task),(ಕಾರ್ಯ ಇಲ್ಲ)
+Filter by:,ಫಿಲ್ಟರ್:
+Time by contact,ಸಂಪರ್ಕ ಪ್ರಕಾರ ಸಮಯ
+Time by context,ಸಂದರ್ಭ ಪ್ರಕಾರ ಸಮಯ
+Time by task,ಕಾರ್ಯ ಪ್ರಕಾರ ಸಮಯ
+Contact hours summary,ಸಂಪರ್ಕ ಗಂಟೆಗಳ ಸಾರಾಂಶ

@@ -1,0 +1,247 @@
+source,translation
+"Billed as {0}","Registrerad som {0}"
+"exact — rounding skipped","exakt — avrundning överhoppad"
+"Use exact","Använd exakt"
+"Apply rounding","Använd avrundning"
+Exact,Exakt
+Billed,Registrerad
+"* Rounded up to nearest increment","* Avrundat uppåt till närmaste intervall"
+billable,debiterbar
+non-billable,ej debiterbar
+internal,intern
+on_save,on_save
+manual,manual
+scheduled,scheduled
+hourly,hourly
+every_6_hours,every_6_hours
+daily,daily
+stopped,stoppad
+running,igång
+paused,pausad
+"Add a note...","Lägg till en anteckning..."
+"Add entry for yesterday","Lägg till post för igår"
+"Add your first entry","Lägg till din första post"
+Archive,Arkivera
+"Auto-stop Timer After","Stoppa timer automatiskt efter"
+Billable,Debiterbar
+"Billable {0}","Debiterbar {0}"
+Cancel,Avbryt
+"Cannot delete tag — {0} entries use it.","Kan inte ta bort tagg — {0} poster använder den."
+Category,Kategori
+Client,Klient
+Color,Färg
+"Connection Failed","Anslutningen misslyckades"
+"Connection OK","Anslutning OK"
+"Custom…","Anpassad…"
+Daily,Daglig
+"Daily view","Dagsvy"
+"Date range","Datumintervall"
+days,dagar
+"Default Entry Type","Standardposttyp"
+"Default Rate","Standardtimpris"
+"Default activity type","Standardaktivitetstyp"
+Delete,Radera
+Description,Beskrivning
+Dismiss,Avfärda
+"Do you want to sync all unsynced time entries to ERPNext now?","Vill du synkronisera alla osynkade tidsposter till ERPNext nu?"
+Duplicate,Duplicera
+Duration,Varaktighet
+Edit,Redigera
+"Enable ERPNext bridge","Aktivera ERPNext-brygga"
+"End time","Sluttid"
+"Entries forwarded","Poster vidarebefordrade"
+"Entries older than {0} days are locked. Contact your administrator.","Poster äldre än {0} dagar är låsta. Kontakta din administratör."
+"ERPNext Bridge","ERPNext-brygga"
+"ERPNext is not installed on this site.","ERPNext är inte installerat på denna webbplats."
+"ERPNext is reachable and Timesheet access is confirmed.","ERPNext är nåbart och tidrapportåtkomst är bekräftad."
+"ERPNext site URL","ERPNext webbplats-URL"
+"ERPNext Timesheet {0} for {1} is submitted — re-sync blocked.","ERPNext-tidrapport {0} för {1} är inskickad — omsynkronisering blockerad."
+"ERPNext Timesheet is submitted — re-sync blocked","ERPNext-tidrapport är inskickad — omsynkronisering blockerad"
+"Est. {0}","Ber. {0}"
+"Est. amount","Ber. belopp"
+"Every 6 hours","Var 6:e timme"
+"All time","All tid"
+"This year","I år"
+"Last year","Förra året"
+"Download CSV","Ladda ner CSV"
+"Export my data","Exportera mina data"
+"Download all your time entries as CSV.","Ladda ner alla dina tidsposter som CSV."
+"Export CSV","Exportera CSV"
+"Export successful","Export lyckades"
+"Failed to forward entries: {0}","Kunde inte vidarebefordra poster: {0}"
+"Watch Settings","Watch-inställningar"
+"Watch Tag","Watch-tagg"
+"Watch Entry","Watch-post"
+"Watch Entry Tag","Watch-posttagg"
+"Watch Timer","Watch-timer"
+"Forwarded {0} to {1}","Vidarebefordrade {0} till {1}"
+From,Från
+General,Allmänt
+Hourly,Varje timme
+hours,timmar
+"Hide weekends","Dölj helger"
+Internal,Intern
+"Internal / overhead","Intern / overhead"
+"Last bulk sync","Senaste masssynkronisering"
+"Last month","Förra månaden"
+"Last sync error","Senaste synkfel"
+"Last week","Förra veckan"
+Less,Mindre
+"Lock Entries Older Than","Lås poster äldre än"
+Manual,Manuell
+"Map project tags","Koppla projekttaggar"
+Merge,Slå ihop
+"Merge {0} into:","Slå ihop {0} till:"
+Mon,Mån
+More,Mer
+Navigate,Navigera
+"New Tag","Ny tagg"
+"No entries for {0}","Inga poster för {0}"
+"No entries yet","Inga poster ännu"
+"No tags yet","Inga taggar ännu"
+"No timer is running","Ingen timer är igång"
+Non-billable,Ej debiterbar
+"(no description)","(ingen beskrivning)"
+"(not billed)","(ej registrerad)"
+"Nothing logged yesterday ({0})","Inget loggat igår ({0})"
+"Open prepare summary","Öppna förbered sammanfattning"
+"Open settings","Öppna inställningar"
+"Open tag management","Öppna tagghantering"
+"Open today's view","Öppna dagens vy"
+"Open weekly view","Öppna veckovy"
+Other,Övrigt
+Pause,Pausa
+Prepare,Förbered
+"Prepare Summary","Förbered sammanfattning"
+Project,Projekt
+Rate,Timpris
+Rename,Byt namn
+Resume,Återuppta
+"Saved — {0}","Sparat — {0}"
+Save,Spara
+Sat,Lör
+Scheduled,Schemalagd
+Send,Skicka
+Settings,Inställningar
+"Show weekends","Visa helger"
+"Start time","Starttid"
+"Start Timer","Starta timer"
+"Start timer: ""{0}""","Starta timer: ""{0}"""
+"Stop current & start: ""{0}""","Stoppa pågående och starta: ""{0}"""
+"Started yesterday","Startade igår"
+Sun,Sön
+"Sync all unsynced entries","Synkronisera alla osynkade poster"
+"Sync billable entries only","Synkronisera enbart debiterbara poster"
+"Sync completed with errors","Synkronisering slutförd med fel"
+"Sync complete","Synkronisering klar"
+"Sync interval","Synkintervall"
+"Sync mode","Synkläge"
+"Synced to ERPNext","Synkroniserad till ERPNext"
+"Syncing entries to ERPNext…","Synkroniserar poster till ERPNext…"
+"{0} day(s) synced.","{0} dag(ar) synkroniserade."
+Tag,Tagg
+"Tag management","Tagghantering"
+"Tag Name","Taggnamn"
+"Tag renamed. {0} entries updated.","Tagg omdöpt. {0} poster uppdaterade."
+Tags,Taggar
+"Tags merged. {0} entries re-tagged.","Taggar sammanslagna. {0} poster omtaggade."
+Task,Uppgift
+"Test connection","Testa anslutning"
+"Test Connection","Testa anslutning"
+"This entry is locked","Denna post är låst"
+"This month","Denna månad"
+"This week","Denna vecka"
+Thu,Tor
+"Time Bridge","Tidsbrygga"
+"Time Entries","Tidsposter"
+"Timer already running","Timer är redan igång"
+"Timer is already running","Timer är redan igång"
+"Timer is not paused","Timer är inte pausad"
+"Timer is not running","Timer är inte igång"
+To,Till
+Today,Idag
+Total,Totalt
+"Total billable","Totalt debiterbart"
+Tue,Tis
+"Unknown error","Okänt fel"
+Unassigned,Otilldelad
+"(untagged project)","(otaggat projekt)"
+"View entry →","Visa post →"
+"Warning: This entry is more than 7 days old.","Varning: Denna post är mer än 7 dagar gammal."
+Wed,Ons
+"Week {0}","Vecka {0}"
+"What are you working on?","Vad jobbar du med?"
+"What did you work on?","Vad jobbade du med?"
+"Work Days","Arbetsdagar"
+Yesterday,Igår
+draft,utkast
+"entries this month","poster denna månad"
+"no entries","inga poster"
+"no entries yet","inga poster ännu"
+sent,skickad
+"+{0} more","+{0} fler"
+"← from {0}","← från {0}"
+"[Auto-stopped after {0}h]","[Autostoppad efter {0}h]"
+"Entry Type","Posttyp"
+Fri,Fre
+"Keyboard Shortcuts","Tangentbordsgenvägar"
+"Start / Pause / Resume timer","Starta / Pausa / Återuppta timer"
+"Stop timer","Stoppa timer"
+"New entry (focus quick-add bar)","Ny post (fokusera snabbinmatning)"
+"Previous / next day or week","Föregående / nästa dag eller vecka"
+"Show / hide this overlay","Visa / dölj denna överlagring"
+"Press H or Esc to close","Tryck H eller Esc för att stänga"
+Close,Stäng
+Timer,Timer
+Entries,Poster
+"This week at a glance","Veckans överblick"
+"Time by tag","Tid per tagg"
+"Hours per day","Timmar per dag"
+"No entries this week","Inga poster denna vecka"
+"No entries","Inga poster"
+Untagged,Otaggad
+"Monthly Budget (h)","Månadsbudget (h)"
+"Warn at (%)","Varna vid (%)"
+"0 = no limit","0 = ingen gräns"
+"0 = site default","0 = webbplatsens standard"
+"Approaching limit","Närmar sig gränsen"
+"Budget exceeded","Budget överskriden"
+"budget used this month","budget använd denna månad"
+"used this month","använd denna månad"
+of,av
+Focus,Fokus
+"Start Focus","Starta fokus"
+"End focus","Avsluta fokus"
+"Skip break","Hoppa över paus"
+"Break over","Paus slut"
+"Time to focus!","Dags att fokusera!"
+"Session complete","Session klar"
+"Focus complete!","Fokus klar!"
+"All sessions done. Great work!","Alla sessioner klara. Bra jobbat!"
+"sessions done. Great work!","sessioner klara. Bra jobbat!"
+"Start new","Starta ny"
+"Work in focused sessions with timed breaks.","Arbeta i fokuserade sessioner med tidsinställda pauser."
+Session,Session
+Break,Paus
+"Work (min)","Arbete (min)"
+"Break (min)","Paus (min)"
+Sessions,Sessioner
+"No break is active","Ingen paus är aktiv"
+"No focus session is running","Ingen fokussession pågår"
+Context,Kontext
+Contact,Kontakt
+"Context Type","Kontexttyp"
+"For whom?","För vem?"
+"Working on?","Jobbar med?"
+"Search contacts...","Sök kontakter..."
+"Select type...","Välj typ..."
+"All contacts","Alla kontakter"
+"All projects","Alla projekt"
+"(no contact)","(ingen kontakt)"
+"(no project)","(inget projekt)"
+"(no task)","(ingen uppgift)"
+"Filter by:","Filtrera efter:"
+"Time by contact","Tid per kontakt"
+"Time by context","Tid per kontext"
+"Time by task","Tid per uppgift"
+"Contact hours summary","Sammanfattning kontakttimmar"

@@ -1,0 +1,247 @@
+source,translation
+"Billed as {0}","Elszámolva mint {0}"
+"exact — rounding skipped","pontos — kerekítés kihagyva"
+"Use exact","Pontos használata"
+"Apply rounding","Kerekítés alkalmazása"
+Exact,Pontos
+Billed,Elszámolva
+"* Rounded up to nearest increment","* Felkerekítve a legközelebbi intervallumra"
+billable,elszámolható
+non-billable,nem elszámolható
+internal,belső
+on_save,on_save
+manual,manual
+scheduled,scheduled
+hourly,hourly
+every_6_hours,every_6_hours
+daily,daily
+stopped,leállítva
+running,fut
+paused,szüneteltetve
+"Add a note...","Jegyzet hozzáadása..."
+"Add entry for yesterday","Bejegyzés hozzáadása tegnapra"
+"Add your first entry","Első bejegyzés hozzáadása"
+Archive,Archiválás
+"Auto-stop Timer After","Időzítő automatikus leállítása"
+Billable,Elszámolható
+"Billable {0}","Elszámolható {0}"
+Cancel,Mégse
+"Cannot delete tag — {0} entries use it.","A címke nem törölhető — {0} bejegyzés használja."
+Category,Kategória
+Client,Ügyfél
+Color,Szín
+"Connection Failed","Kapcsolódás sikertelen"
+"Connection OK","Kapcsolat OK"
+"Custom…","Egyéni…"
+Daily,Napi
+"Daily view","Napi nézet"
+"Date range","Időszak"
+days,nap
+"Default Entry Type","Alapértelmezett bejegyzéstípus"
+"Default Rate","Alapértelmezett óradíj"
+"Default activity type","Alapértelmezett tevékenységtípus"
+Delete,Törlés
+Description,Leírás
+Dismiss,Elvetés
+"Do you want to sync all unsynced time entries to ERPNext now?","Szeretné most szinkronizálni az összes szinkronizálatlan időbejegyzést az ERPNext-be?"
+Duplicate,Másolat
+Duration,Időtartam
+Edit,Szerkesztés
+"Enable ERPNext bridge","ERPNext híd engedélyezése"
+"End time","Befejezés ideje"
+"Entries forwarded","Bejegyzések továbbítva"
+"Entries older than {0} days are locked. Contact your administrator.","A {0} napnál régebbi bejegyzések zárolva vannak. Forduljon a rendszergazdához."
+"ERPNext Bridge","ERPNext híd"
+"ERPNext is not installed on this site.","Az ERPNext nincs telepítve ezen a webhelyen."
+"ERPNext is reachable and Timesheet access is confirmed.","Az ERPNext elérhető és a munkaidő-nyilvántartás hozzáférés megerősítve."
+"ERPNext site URL","ERPNext webhely URL"
+"ERPNext Timesheet {0} for {1} is submitted — re-sync blocked.","ERPNext munkaidő-nyilvántartás {0} ({1}) elküldve — újraszinkronizálás blokkolva."
+"ERPNext Timesheet is submitted — re-sync blocked","ERPNext munkaidő-nyilvántartás elküldve — újraszinkronizálás blokkolva"
+"Est. {0}","Becs. {0}"
+"Est. amount","Becs. összeg"
+"Every 6 hours","6 óránként"
+"All time","Teljes időszak"
+"This year","Idei év"
+"Last year","Tavaly"
+"Download CSV","CSV letöltése"
+"Export my data","Adataim exportálása"
+"Download all your time entries as CSV.","Töltse le az összes időbejegyzését CSV-ként."
+"Export CSV","CSV exportálása"
+"Export successful","Exportálás sikeres"
+"Failed to forward entries: {0}","Bejegyzések továbbítása sikertelen: {0}"
+"Watch Settings","Watch beállítások"
+"Watch Tag","Watch címke"
+"Watch Entry","Watch bejegyzés"
+"Watch Entry Tag","Watch bejegyzéscímke"
+"Watch Timer","Watch időzítő"
+"Forwarded {0} to {1}","Továbbítva {0} ide: {1}"
+From,Ettől
+General,Általános
+Hourly,Óránként
+hours,óra
+"Hide weekends","Hétvégék elrejtése"
+Internal,Belső
+"Internal / overhead","Belső / általános költség"
+"Last bulk sync","Utolsó tömeges szinkronizálás"
+"Last month","Előző hónap"
+"Last sync error","Utolsó szinkronizálási hiba"
+"Last week","Előző hét"
+Less,Kevesebb
+"Lock Entries Older Than","Bejegyzések zárolása régebben mint"
+Manual,Kézi
+"Map project tags","Projektcímkék hozzárendelése"
+Merge,Összevonás
+"Merge {0} into:","Összevonás {0} ide:"
+Mon,Hé
+More,Több
+Navigate,Navigálás
+"New Tag","Új címke"
+"No entries for {0}","Nincs bejegyzés erre: {0}"
+"No entries yet","Még nincsenek bejegyzések"
+"No tags yet","Még nincsenek címkék"
+"No timer is running","Nincs futó időzítő"
+Non-billable,Nem elszámolható
+"(no description)","(nincs leírás)"
+"(not billed)","(nem elszámolt)"
+"Nothing logged yesterday ({0})","Tegnap nem lett semmi rögzítve ({0})"
+"Open prepare summary","Előkészítési összesítő megnyitása"
+"Open settings","Beállítások megnyitása"
+"Open tag management","Címkekezelés megnyitása"
+"Open today's view","Mai nézet megnyitása"
+"Open weekly view","Heti nézet megnyitása"
+Other,Egyéb
+Pause,Szünet
+Prepare,Előkészítés
+"Prepare Summary","Előkészítési összesítő"
+Project,Projekt
+Rate,Óradíj
+Rename,Átnevezés
+Resume,Folytatás
+"Saved — {0}","Mentve — {0}"
+Save,Mentés
+Sat,Szo
+Scheduled,Ütemezett
+Send,Küldés
+Settings,Beállítások
+"Show weekends","Hétvégék megjelenítése"
+"Start time","Kezdés ideje"
+"Start Timer","Időzítő indítása"
+"Start timer: ""{0}""","Időzítő indítása: ""{0}"""
+"Stop current & start: ""{0}""","Aktuális leállítása és indítás: ""{0}"""
+"Started yesterday","Tegnap elindítva"
+Sun,Vas
+"Sync all unsynced entries","Összes szinkronizálatlan bejegyzés szinkronizálása"
+"Sync billable entries only","Csak elszámolható bejegyzések szinkronizálása"
+"Sync completed with errors","Szinkronizálás hibákkal befejezve"
+"Sync complete","Szinkronizálás kész"
+"Sync interval","Szinkronizálási intervallum"
+"Sync mode","Szinkronizálási mód"
+"Synced to ERPNext","Szinkronizálva az ERPNext-be"
+"Syncing entries to ERPNext…","Bejegyzések szinkronizálása az ERPNext-be…"
+"{0} day(s) synced.","{0} nap szinkronizálva."
+Tag,Címke
+"Tag management","Címkekezelés"
+"Tag Name","Címke neve"
+"Tag renamed. {0} entries updated.","Címke átnevezve. {0} bejegyzés frissítve."
+Tags,Címkék
+"Tags merged. {0} entries re-tagged.","Címkék összevonva. {0} bejegyzés újracímkézve."
+Task,Feladat
+"Test connection","Kapcsolat tesztelése"
+"Test Connection","Kapcsolat tesztelése"
+"This entry is locked","Ez a bejegyzés zárolva van"
+"This month","Ez a hónap"
+"This week","Ez a hét"
+Thu,Csü
+"Time Bridge","Időhíd"
+"Time Entries","Időbejegyzések"
+"Timer already running","Az időzítő már fut"
+"Timer is already running","Az időzítő már fut"
+"Timer is not paused","Az időzítő nincs szüneteltetve"
+"Timer is not running","Az időzítő nem fut"
+To,Eddig
+Today,Ma
+Total,Összesen
+"Total billable","Összesen elszámolható"
+Tue,Ke
+"Unknown error","Ismeretlen hiba"
+Unassigned,Nem hozzárendelt
+"(untagged project)","(címkézetlen projekt)"
+"View entry →","Bejegyzés megtekintése →"
+"Warning: This entry is more than 7 days old.","Figyelmeztetés: Ez a bejegyzés több mint 7 napos."
+Wed,Sze
+"Week {0}","{0}. hét"
+"What are you working on?","Min dolgozik?"
+"What did you work on?","Min dolgozott?"
+"Work Days","Munkanapok"
+Yesterday,Tegnap
+draft,piszkozat
+"entries this month","bejegyzés ebben a hónapban"
+"no entries","nincs bejegyzés"
+"no entries yet","még nincs bejegyzés"
+sent,elküldve
+"+{0} more","+{0} további"
+"← from {0}","← innen: {0}"
+"[Auto-stopped after {0}h]","[Automatikusan leállítva {0} óra után]"
+"Entry Type","Bejegyzéstípus"
+Fri,Pé
+"Keyboard Shortcuts","Billentyűparancsok"
+"Start / Pause / Resume timer","Időzítő indítása / szüneteltetése / folytatása"
+"Stop timer","Időzítő leállítása"
+"New entry (focus quick-add bar)","Új bejegyzés (gyors hozzáadás)"
+"Previous / next day or week","Előző / következő nap vagy hét"
+"Show / hide this overlay","Réteg megjelenítése / elrejtése"
+"Press H or Esc to close","Nyomja meg a H vagy Esc gombot a bezáráshoz"
+Close,Bezárás
+Timer,Időzítő
+Entries,Bejegyzések
+"This week at a glance","Heti áttekintés"
+"Time by tag","Idő címkénként"
+"Hours per day","Óra naponta"
+"No entries this week","Ezen a héten nincsenek bejegyzések"
+"No entries","Nincs bejegyzés"
+Untagged,Címkézetlen
+"Monthly Budget (h)","Havi keret (ó)"
+"Warn at (%)","Figyelmeztetés ennél (%)"
+"0 = no limit","0 = nincs korlát"
+"0 = site default","0 = webhely alapértelmezés"
+"Approaching limit","Közelíti a korlátot"
+"Budget exceeded","Keret túllépve"
+"budget used this month","keretből felhasználva ebben a hónapban"
+"used this month","felhasználva ebben a hónapban"
+of,-ból/-ből
+Focus,Fókusz
+"Start Focus","Fókusz indítása"
+"End focus","Fókusz befejezése"
+"Skip break","Szünet kihagyása"
+"Break over","Szünet vége"
+"Time to focus!","Ideje koncentrálni!"
+"Session complete","Munkamenet kész"
+"Focus complete!","Fókusz kész!"
+"All sessions done. Great work!","Minden munkamenet kész. Szép munka!"
+"sessions done. Great work!","munkamenet kész. Szép munka!"
+"Start new","Új indítása"
+"Work in focused sessions with timed breaks.","Dolgozzon koncentrált munkamenetekben időzített szünetekkel."
+Session,Munkamenet
+Break,Szünet
+"Work (min)","Munka (perc)"
+"Break (min)","Szünet (perc)"
+Sessions,Munkamenetek
+"No break is active","Nincs aktív szünet"
+"No focus session is running","Nincs futó fókusz munkamenet"
+Context,Kontextus
+Contact,Kapcsolat
+"Context Type","Kontextus típusa"
+"For whom?","Kinek?"
+"Working on?","Min dolgozik?"
+"Search contacts...","Kapcsolatok keresése..."
+"Select type...","Típus kiválasztása..."
+"All contacts","Összes kapcsolat"
+"All projects","Összes projekt"
+"(no contact)","(nincs kapcsolat)"
+"(no project)","(nincs projekt)"
+"(no task)","(nincs feladat)"
+"Filter by:","Szűrés:"
+"Time by contact","Idő kapcsolatonként"
+"Time by context","Idő kontextusonként"
+"Time by task","Idő feladatonként"
+"Contact hours summary","Kapcsolati órák összesítése"

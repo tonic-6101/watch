@@ -1,0 +1,247 @@
+source,translation
+Billed as {0},វិក្កយបត្រជា {0}
+exact — rounding skipped,ច្បាស់លាស់ — រំលងការបង្គត់
+Use exact,ប្រើច្បាស់លាស់
+Apply rounding,អនុវត្តការបង្គត់
+Exact,ច្បាស់លាស់
+Billed,បានវិក្កយបត្រ
+* Rounded up to nearest increment,* បង្គត់ឡើងទៅការកើនឡើងជិតបំផុត
+billable,អាចវិក្កយបត្រ
+non-billable,មិនអាចវិក្កយបត្រ
+internal,ផ្ទៃក្នុង
+on_save,on_save
+manual,manual
+scheduled,scheduled
+hourly,hourly
+every_6_hours,every_6_hours
+daily,daily
+stopped,បានបញ្ឈប់
+running,កំពុងដំណើរការ
+paused,ផ្អាក
+Add a note...,បន្ថែមកំណត់សម្គាល់...
+Add entry for yesterday,បន្ថែមការបញ្ចូលសម្រាប់ម្សិលមិញ
+Add your first entry,បន្ថែមការបញ្ចូលដំបូងរបស់អ្នក
+Archive,បណ្ណសារ
+Auto-stop Timer After,បញ្ឈប់កម្មវិធីកំណត់ពេលដោយស្វ័យប្រវត្តិបន្ទាប់ពី
+Billable,អាចវិក្កយបត្រ
+Billable {0},អាចវិក្កយបត្រ {0}
+Cancel,បោះបង់
+Cannot delete tag — {0} entries use it.,មិនអាចលុបស្លាកបាន — ការបញ្ចូល {0} កំពុងប្រើវា។
+Category,ប្រភេទ
+Client,អតិថិជន
+Color,ពណ៌
+Connection Failed,ការតភ្ជាប់បរាជ័យ
+Connection OK,ការតភ្ជាប់ល្អ
+Custom…,ផ្ទាល់ខ្លួន…
+Daily,ប្រចាំថ្ងៃ
+Daily view,ទិដ្ឋភាពប្រចាំថ្ងៃ
+Date range,ជួរកាលបរិច្ឆេទ
+days,ថ្ងៃ
+Default Entry Type,ប្រភេទការបញ្ចូលលំនាំដើម
+Default Rate,អត្រាលំនាំដើម
+Default activity type,ប្រភេទសកម្មភាពលំនាំដើម
+Delete,លុប
+Description,ការពិពណ៌នា
+Dismiss,បដិសេធ
+Do you want to sync all unsynced time entries to ERPNext now?,តើអ្នកចង់ធ្វើសមកាលកម្មការបញ្ចូលពេលវេលាដែលមិនទាន់ធ្វើសមកាលកម្មទាំងអស់ទៅ ERPNext ឥឡូវនេះទេ?
+Duplicate,ស្ទួន
+Duration,រយៈពេល
+Edit,កែសម្រួល
+Enable ERPNext bridge,បើកស្ពាន ERPNext
+End time,ពេលវេលាបញ្ចប់
+Entries forwarded,ការបញ្ចូលត្រូវបានបញ្ជូន
+Entries older than {0} days are locked. Contact your administrator.,ការបញ្ចូលចាស់ជាង {0} ថ្ងៃត្រូវបានចាក់សោ។ ទាក់ទងអ្នកគ្រប់គ្រងរបស់អ្នក។
+ERPNext Bridge,ស្ពាន ERPNext
+ERPNext is not installed on this site.,ERPNext មិនត្រូវបានដំឡើងនៅលើគេហទំព័រនេះទេ។
+ERPNext is reachable and Timesheet access is confirmed.,ERPNext អាចទាក់ទងបាន ហើយការចូលប្រើតារាងពេលវេលាត្រូវបានបញ្ជាក់។
+ERPNext site URL,URL គេហទំព័រ ERPNext
+ERPNext Timesheet {0} for {1} is submitted — re-sync blocked.,តារាងពេលវេលា ERPNext {0} (សម្រាប់ {1}) ត្រូវបានដាក់ស្នើ — ការធ្វើសមកាលកម្មឡើងវិញត្រូវបានរារាំង។
+ERPNext Timesheet is submitted — re-sync blocked,តារាងពេលវេលា ERPNext ត្រូវបានដាក់ស្នើ — ការធ្វើសមកាលកម្មឡើងវិញត្រូវបានរារាំង
+Est. {0},ប៉ា. {0}
+Est. amount,ប៉ា. ចំនួន
+Every 6 hours,រៀងរាល់ ៦ ម៉ោង
+All time,គ្រប់ពេល
+This year,ឆ្នាំនេះ
+Last year,ឆ្នាំមុន
+Download CSV,ទាញយក CSV
+Export my data,នាំចេញទិន្នន័យរបស់ខ្ញុំ
+Download all your time entries as CSV.,ទាញយកការបញ្ចូលពេលវេលាទាំងអស់របស់អ្នកជា CSV។
+Export CSV,នាំចេញ CSV
+Export successful,ការនាំចេញជោគជ័យ
+Failed to forward entries: {0},បរាជ័យក្នុងការបញ្ជូនការបញ្ចូល: {0}
+Watch Settings,ការកំណត់ Watch
+Watch Tag,ស្លាក Watch
+Watch Entry,ការបញ្ចូល Watch
+Watch Entry Tag,ស្លាកការបញ្ចូល Watch
+Watch Timer,កម្មវិធីកំណត់ពេល Watch
+Forwarded {0} to {1},{0} ត្រូវបានបញ្ជូនទៅ {1}
+From,ពី
+General,ទូទៅ
+Hourly,ប្រចាំម៉ោង
+hours,ម៉ោង
+Hide weekends,លាក់ចុងសប្តាហ៍
+Internal,ផ្ទៃក្នុង
+Internal / overhead,ផ្ទៃក្នុង / ថ្លៃលើស
+Last bulk sync,ការធ្វើសមកាលកម្មជាក្រុមចុងក្រោយ
+Last month,ខែមុន
+Last sync error,កំហុសធ្វើសមកាលកម្មចុងក្រោយ
+Last week,សប្តាហ៍មុន
+Less,តិច
+Lock Entries Older Than,ចាក់សោការបញ្ចូលចាស់ជាង
+Manual,ដោយដៃ
+Map project tags,ផែនទីស្លាកគម្រោង
+Merge,បញ្ចូលគ្នា
+Merge {0} into:,បញ្ចូល {0} គ្នា:
+Mon,ច័ន្ទ
+More,ច្រើនទៀត
+Navigate,រុករក
+New Tag,ស្លាកថ្មី
+No entries for {0},គ្មានការបញ្ចូលសម្រាប់ {0}
+No entries yet,មិនទាន់មានការបញ្ចូល
+No tags yet,មិនទាន់មានស្លាក
+No timer is running,គ្មានកម្មវិធីកំណត់ពេលកំពុងដំណើរការ
+Non-billable,មិនអាចវិក្កយបត្រ
+(no description),(គ្មានការពិពណ៌នា)
+(not billed),(មិនបានវិក្កយបត្រ)
+Nothing logged yesterday ({0}),ម្សិលមិញគ្មានអ្វីត្រូវបានកត់ត្រា ({0})
+Open prepare summary,បើកសង្ខេបការរៀបចំ
+Open settings,បើកការកំណត់
+Open tag management,បើកការគ្រប់គ្រងស្លាក
+Open today's view,បើកទិដ្ឋភាពថ្ងៃនេះ
+Open weekly view,បើកទិដ្ឋភាពប្រចាំសប្តាហ៍
+Other,ផ្សេងទៀត
+Pause,ផ្អាក
+Prepare,រៀបចំ
+Prepare Summary,សង្ខេបការរៀបចំ
+Project,គម្រោង
+Rate,អត្រា
+Rename,ប្ដូរឈ្មោះ
+Resume,បន្តដំណើរការ
+Saved — {0},បានរក្សាទុក — {0}
+Save,រក្សាទុក
+Sat,សៅរ៍
+Scheduled,គ្រោងទុក
+Send,ផ្ញើ
+Settings,ការកំណត់
+Show weekends,បង្ហាញចុងសប្តាហ៍
+Start time,ពេលវេលាចាប់ផ្ដើម
+Start Timer,ចាប់ផ្ដើមកម្មវិធីកំណត់ពេល
+"Start timer: ""{0}""","ចាប់ផ្ដើមកម្មវិធីកំណត់ពេល: ""{0}"""
+"Stop current & start: ""{0}""","បញ្ឈប់បច្ចុប្បន្ន និងចាប់ផ្ដើម: ""{0}"""
+Started yesterday,បានចាប់ផ្ដើមម្សិលមិញ
+Sun,អាទិត្យ
+Sync all unsynced entries,ធ្វើសមកាលកម្មការបញ្ចូលដែលមិនទាន់ធ្វើសមកាលកម្មទាំងអស់
+Sync billable entries only,ធ្វើសមកាលកម្មតែការបញ្ចូលអាចវិក្កយបត្រ
+Sync completed with errors,ការធ្វើសមកាលកម្មបានបញ្ចប់ជាមួយកំហុស
+Sync complete,ការធ្វើសមកាលកម្មបានបញ្ចប់
+Sync interval,ចន្លោះពេលធ្វើសមកាលកម្ម
+Sync mode,របៀបធ្វើសមកាលកម្ម
+Synced to ERPNext,បានធ្វើសមកាលកម្មទៅ ERPNext
+Syncing entries to ERPNext…,កំពុងធ្វើសមកាលកម្មការបញ្ចូលទៅ ERPNext…
+{0} day(s) synced.,{0} ថ្ងៃបានធ្វើសមកាលកម្ម។
+Tag,ស្លាក
+Tag management,ការគ្រប់គ្រងស្លាក
+Tag Name,ឈ្មោះស្លាក
+Tag renamed. {0} entries updated.,ស្លាកត្រូវបានប្ដូរឈ្មោះ។ ការបញ្ចូល {0} ត្រូវបានធ្វើបច្ចុប្បន្នភាព។
+Tags,ស្លាក
+Tags merged. {0} entries re-tagged.,ស្លាកត្រូវបានបញ្ចូលគ្នា។ ការបញ្ចូល {0} ត្រូវបានដាក់ស្លាកឡើងវិញ។
+Task,កិច្ចការ
+Test connection,សាកល្បងការតភ្ជាប់
+Test Connection,សាកល្បងការតភ្ជាប់
+This entry is locked,ការបញ្ចូលនេះត្រូវបានចាក់សោ
+This month,ខែនេះ
+This week,សប្តាហ៍នេះ
+Thu,ព្រហស្បតិ៍
+Time Bridge,ស្ពានពេលវេលា
+Time Entries,ការបញ្ចូលពេលវេលា
+Timer already running,កម្មវិធីកំណត់ពេលកំពុងដំណើរការរួចហើយ
+Timer is already running,កម្មវិធីកំណត់ពេលកំពុងដំណើរការរួចហើយ
+Timer is not paused,កម្មវិធីកំណត់ពេលមិនត្រូវបានផ្អាក
+Timer is not running,កម្មវិធីកំណត់ពេលមិនកំពុងដំណើរការ
+To,ដល់
+Today,ថ្ងៃនេះ
+Total,សរុប
+Total billable,សរុបអាចវិក្កយបត្រ
+Tue,អង្គារ
+Unknown error,កំហុសមិនស្គាល់
+Unassigned,មិនបានកំណត់
+(untagged project),(គម្រោងគ្មានស្លាក)
+View entry →,មើលការបញ្ចូល →
+Warning: This entry is more than 7 days old.,ការព្រមាន: ការបញ្ចូលនេះចាស់ជាង ៧ ថ្ងៃ។
+Wed,ពុធ
+Week {0},សប្តាហ៍ {0}
+What are you working on?,អ្នកកំពុងធ្វើការលើអ្វី?
+What did you work on?,អ្នកបានធ្វើការលើអ្វី?
+Work Days,ថ្ងៃធ្វើការ
+Yesterday,ម្សិលមិញ
+draft,ព្រាង
+entries this month,ការបញ្ចូលខែនេះ
+no entries,គ្មានការបញ្ចូល
+no entries yet,មិនទាន់មានការបញ្ចូល
+sent,បានផ្ញើ
++{0} more,+{0} ទៀត
+← from {0},← ពី {0}
+[Auto-stopped after {0}h],[បានបញ្ឈប់ដោយស្វ័យប្រវត្តិបន្ទាប់ពី {0} ម៉ោង]
+Entry Type,ប្រភេទការបញ្ចូល
+Fri,សុក្រ
+Keyboard Shortcuts,ផ្លូវកាត់ក្ដារចុច
+Start / Pause / Resume timer,ចាប់ផ្ដើម / ផ្អាក / បន្តកម្មវិធីកំណត់ពេល
+Stop timer,បញ្ឈប់កម្មវិធីកំណត់ពេល
+New entry (focus quick-add bar),ការបញ្ចូលថ្មី (ផ្ដោតលើរបារបន្ថែមរហ័ស)
+Previous / next day or week,ថ្ងៃ ឬសប្តាហ៍មុន / បន្ទាប់
+Show / hide this overlay,បង្ហាញ / លាក់ការត្រួតគ្នានេះ
+Press H or Esc to close,ចុច H ឬ Esc ដើម្បីបិទ
+Close,បិទ
+Timer,កម្មវិធីកំណត់ពេល
+Entries,ការបញ្ចូល
+This week at a glance,សប្តាហ៍នេះក្នុងមួយភ្លែត
+Time by tag,ពេលវេលាតាមស្លាក
+Hours per day,ម៉ោងក្នុងមួយថ្ងៃ
+No entries this week,គ្មានការបញ្ចូលសប្តាហ៍នេះ
+No entries,គ្មានការបញ្ចូល
+Untagged,គ្មានស្លាក
+Monthly Budget (h),ថវិកាប្រចាំខែ (ម៉)
+Warn at (%),ព្រមាន (%)
+0 = no limit,០ = គ្មានដែនកំណត់
+0 = site default,០ = លំនាំដើមគេហទំព័រ
+Approaching limit,ជិតដល់ដែនកំណត់
+Budget exceeded,ថវិកាលើស
+budget used this month,ថវិកាប្រើប្រាស់ខែនេះ
+used this month,បានប្រើប្រាស់ខែនេះ
+of,នៃ
+Focus,ផ្ដោត
+Start Focus,ចាប់ផ្ដើមផ្ដោត
+End focus,បញ្ចប់ការផ្ដោត
+Skip break,រំលងពេលសម្រាក
+Break over,ពេលសម្រាកបានបញ្ចប់
+Time to focus!,ពេលវេលាផ្ដោត!
+Session complete,វគ្គបានបញ្ចប់
+Focus complete!,ការផ្ដោតបានបញ្ចប់!
+All sessions done. Great work!,វគ្គទាំងអស់បានបញ្ចប់។ ការងារអស្ចារ្យ!
+sessions done. Great work!,វគ្គបានបញ្ចប់។ ការងារអស្ចារ្យ!
+Start new,ចាប់ផ្ដើមថ្មី
+Work in focused sessions with timed breaks.,ធ្វើការក្នុងវគ្គផ្ដោតជាមួយពេលសម្រាកមានកំណត់។
+Session,វគ្គ
+Break,ពេលសម្រាក
+Work (min),ការងារ (នាទី)
+Break (min),ពេលសម្រាក (នាទី)
+Sessions,វគ្គ
+No break is active,គ្មានពេលសម្រាកកំពុងដំណើរការ
+No focus session is running,គ្មានវគ្គផ្ដោតកំពុងដំណើរការ
+Context,បរិបទ
+Contact,ទំនាក់ទំនង
+Context Type,ប្រភេទបរិបទ
+For whom?,សម្រាប់នរណា?
+Working on?,កំពុងធ្វើការលើអ្វី?
+Search contacts...,ស្វែងរកទំនាក់ទំនង...
+Select type...,ជ្រើសរើសប្រភេទ...
+All contacts,ទំនាក់ទំនងទាំងអស់
+All projects,គម្រោងទាំងអស់
+(no contact),(គ្មានទំនាក់ទំនង)
+(no project),(គ្មានគម្រោង)
+(no task),(គ្មានកិច្ចការ)
+Filter by:,ត្រង:
+Time by contact,ពេលវេលាតាមទំនាក់ទំនង
+Time by context,ពេលវេលាតាមបរិបទ
+Time by task,ពេលវេលាតាមកិច្ចការ
+Contact hours summary,សង្ខេបម៉ោងទំនាក់ទំនង

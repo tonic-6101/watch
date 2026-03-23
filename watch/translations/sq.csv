@@ -1,0 +1,247 @@
+source,translation
+Billed as {0},Regjistruar si {0}
+exact — rounding skipped,saktë — rrumbullakimi u kapërcye
+Use exact,Përdor saktë
+Apply rounding,Apliko rrumbullakimin
+Exact,Saktë
+Billed,Regjistruar
+* Rounded up to nearest increment,* Rrumbullakuar lart në inkrementin më të afërt
+billable,e tarifueshme
+non-billable,e patarifueshme
+internal,e brendshme
+on_save,on_save
+manual,manual
+scheduled,scheduled
+hourly,hourly
+every_6_hours,every_6_hours
+daily,daily
+stopped,ndalur
+running,në punë
+paused,në pauzë
+Add a note...,Shto një shënim...
+Add entry for yesterday,Shto regjistrim për dje
+Add your first entry,Shto regjistrimin tënd të parë
+Archive,Arkivo
+Auto-stop Timer After,Ndalo automatikisht matësin pas
+Billable,E tarifueshme
+Billable {0},E tarifueshme {0}
+Cancel,Anulo
+Cannot delete tag — {0} entries use it.,Etiketa nuk mund të fshihet — {0} regjistrime e përdorin.
+Category,Kategoria
+Client,Klienti
+Color,Ngjyra
+Connection Failed,Lidhja dështoi
+Connection OK,Lidhja në rregull
+Custom…,E personalizuar…
+Daily,Ditore
+Daily view,Pamje ditore
+Date range,Periudha e datës
+days,ditë
+Default Entry Type,Lloji i parazgjedhur i regjistrimit
+Default Rate,Tarifa e parazgjedhur
+Default activity type,Lloji i parazgjedhur i aktivitetit
+Delete,Fshi
+Description,Përshkrimi
+Dismiss,Hiq
+Do you want to sync all unsynced time entries to ERPNext now?,Dëshironi t'i sinkronizoni tani të gjitha regjistrimet kohore të pasinkronizuara në ERPNext?
+Duplicate,Dupliko
+Duration,Kohëzgjatja
+Edit,Ndrysho
+Enable ERPNext bridge,Aktivizo urën ERPNext
+End time,Koha e përfundimit
+Entries forwarded,Regjistrimet u përcollën
+Entries older than {0} days are locked. Contact your administrator.,Regjistrimet më të vjetra se {0} ditë janë të kyçura. Kontaktoni administratorin tuaj.
+ERPNext Bridge,Ura ERPNext
+ERPNext is not installed on this site.,ERPNext nuk është i instaluar në këtë faqe.
+ERPNext is reachable and Timesheet access is confirmed.,ERPNext është i arritshëm dhe qasja te fletët kohore është konfirmuar.
+ERPNext site URL,URL-ja e faqes ERPNext
+ERPNext Timesheet {0} for {1} is submitted — re-sync blocked.,Fleta kohore ERPNext {0} për {1} është dorëzuar — ri-sinkronizimi i bllokuar.
+ERPNext Timesheet is submitted — re-sync blocked,Fleta kohore ERPNext është dorëzuar — ri-sinkronizimi i bllokuar
+Est. {0},Vler. {0}
+Est. amount,Vler. shuma
+Every 6 hours,Çdo 6 orë
+All time,Gjithë kohës
+This year,Këtë vit
+Last year,Vitin e kaluar
+Download CSV,Shkarko CSV
+Export my data,Eksporto të dhënat e mia
+Download all your time entries as CSV.,Shkarkoni të gjitha regjistrimet tuaja kohore si CSV.
+Export CSV,Eksporto CSV
+Export successful,Eksportimi i suksesshëm
+Failed to forward entries: {0},Përcjellja e regjistrimeve dështoi: {0}
+Watch Settings,Watch cilësimet
+Watch Tag,Watch etiketë
+Watch Entry,Watch regjistrim
+Watch Entry Tag,Watch etiketë regjistrimi
+Watch Timer,Watch matës
+Forwarded {0} to {1},Përcjellë {0} te {1}
+From,Nga
+General,Të përgjithshme
+Hourly,Çdo orë
+hours,orë
+Hide weekends,Fshih fundjavët
+Internal,E brendshme
+Internal / overhead,E brendshme / shpenzime të përgjithshme
+Last bulk sync,Sinkronizimi i fundit masiv
+Last month,Muajin e kaluar
+Last sync error,Gabimi i fundit i sinkronizimit
+Last week,Javën e kaluar
+Less,Më pak
+Lock Entries Older Than,Kyç regjistrimet më të vjetra se
+Manual,Manualisht
+Map project tags,Harto etiketat e projektit
+Merge,Bashko
+Merge {0} into:,Bashko {0} në:
+Mon,Hën
+More,Më shumë
+Navigate,Navigo
+New Tag,Etiketë e re
+No entries for {0},Asnjë regjistrim për {0}
+No entries yet,Ende asnjë regjistrim
+No tags yet,Ende asnjë etiketë
+No timer is running,Asnjë matës nuk është aktiv
+Non-billable,E patarifueshme
+(no description),(pa përshkrim)
+(not billed),(e paregjistruar)
+Nothing logged yesterday ({0}),Asgjë nuk u regjistrua dje ({0})
+Open prepare summary,Hap përmbledhjen e përgatitjes
+Open settings,Hap cilësimet
+Open tag management,Hap menaxhimin e etiketave
+Open today's view,Hap pamjen e sotme
+Open weekly view,Hap pamjen javore
+Other,Tjetër
+Pause,Pauzë
+Prepare,Përgatit
+Prepare Summary,Përmbledhja e përgatitjes
+Project,Projekti
+Rate,Tarifa
+Rename,Riemërto
+Resume,Vazhdo
+Saved — {0},Ruajtur — {0}
+Save,Ruaj
+Sat,Sht
+Scheduled,I planifikuar
+Send,Dërgo
+Settings,Cilësimet
+Show weekends,Shfaq fundjavët
+Start time,Koha e fillimit
+Start Timer,Fillo matësin
+"Start timer: ""{0}""","Fillo matësin: ""{0}"""
+"Stop current & start: ""{0}""","Ndalo aktualin dhe fillo: ""{0}"""
+Started yesterday,Filluar dje
+Sun,Die
+Sync all unsynced entries,Sinkronizo të gjitha regjistrimet e pasinkronizuara
+Sync billable entries only,Sinkronizo vetëm regjistrimet e tarifueshme
+Sync completed with errors,Sinkronizimi përfundoi me gabime
+Sync complete,Sinkronizimi i plotë
+Sync interval,Intervali i sinkronizimit
+Sync mode,Mënyra e sinkronizimit
+Synced to ERPNext,Sinkronizuar në ERPNext
+Syncing entries to ERPNext…,Sinkronizimi i regjistrimeve në ERPNext…
+{0} day(s) synced.,{0} ditë të sinkronizuara.
+Tag,Etiketë
+Tag management,Menaxhimi i etiketave
+Tag Name,Emri i etiketës
+Tag renamed. {0} entries updated.,Etiketa u riemërtua. {0} regjistrime u përditësuan.
+Tags,Etiketat
+Tags merged. {0} entries re-tagged.,Etiketat u bashkuan. {0} regjistrime u ri-etiketuan.
+Task,Detyrë
+Test connection,Testo lidhjen
+Test Connection,Testo lidhjen
+This entry is locked,Ky regjistrim është i kyçur
+This month,Këtë muaj
+This week,Këtë javë
+Thu,Enj
+Time Bridge,Ura kohore
+Time Entries,Regjistrimet kohore
+Timer already running,Matësi është tashmë aktiv
+Timer is already running,Matësi është tashmë aktiv
+Timer is not paused,Matësi nuk është në pauzë
+Timer is not running,Matësi nuk është aktiv
+To,Deri
+Today,Sot
+Total,Totali
+Total billable,Totali i tarifueshëm
+Tue,Mar
+Unknown error,Gabim i panjohur
+Unassigned,E pacaktuar
+(untagged project),(projekt i paetiketuar)
+View entry →,Shiko regjistrimin →
+Warning: This entry is more than 7 days old.,Paralajmërim: Ky regjistrim është më i vjetër se 7 ditë.
+Wed,Mër
+Week {0},Java {0}
+What are you working on?,Në çfarë po punoni?
+What did you work on?,Në çfarë punuat?
+Work Days,Ditët e punës
+Yesterday,Dje
+draft,draft
+entries this month,regjistrime këtë muaj
+no entries,asnjë regjistrim
+no entries yet,ende asnjë regjistrim
+sent,dërguar
++{0} more,+{0} më shumë
+← from {0},← nga {0}
+[Auto-stopped after {0}h],[Ndalur automatikisht pas {0}h]
+Entry Type,Lloji i regjistrimit
+Fri,Pre
+Keyboard Shortcuts,Shkurtoret e tastierës
+Start / Pause / Resume timer,Fillo / Pauzë / Vazhdo matësin
+Stop timer,Ndalo matësin
+New entry (focus quick-add bar),Regjistrim i ri (fokus te shiriti i shtimit të shpejtë)
+Previous / next day or week,Dita / java e mëparshme ose e ardhshme
+Show / hide this overlay,Shfaq / fshih këtë mbishtresë
+Press H or Esc to close,Shtypni H ose Esc për të mbyllur
+Close,Mbyll
+Timer,Matësi
+Entries,Regjistrimet
+This week at a glance,Kjo javë me një shikim
+Time by tag,Koha sipas etiketës
+Hours per day,Orë për ditë
+No entries this week,Asnjë regjistrim këtë javë
+No entries,Asnjë regjistrim
+Untagged,E paetiketuar
+Monthly Budget (h),Buxheti mujor (h)
+Warn at (%),Paralajmëro në (%)
+0 = no limit,0 = pa limit
+0 = site default,0 = parazgjedhja e faqes
+Approaching limit,Duke iu afruar limitit
+Budget exceeded,Buxheti u tejkalua
+budget used this month,buxheti i përdorur këtë muaj
+used this month,e përdorur këtë muaj
+of,nga
+Focus,Fokus
+Start Focus,Fillo fokusin
+End focus,Përfundo fokusin
+Skip break,Kapërce pushimin
+Break over,Pushimi përfundoi
+Time to focus!,Koha për fokus!
+Session complete,Sesioni përfundoi
+Focus complete!,Fokusi përfundoi!
+All sessions done. Great work!,Të gjitha sesionet përfunduan. Punë e shkëlqyer!
+sessions done. Great work!,sesione përfunduan. Punë e shkëlqyer!
+Start new,Fillo të re
+Work in focused sessions with timed breaks.,Punoni në sesione të fokusuara me pushime të kohëzuara.
+Session,Sesioni
+Break,Pushim
+Work (min),Punë (min)
+Break (min),Pushim (min)
+Sessions,Sesionet
+No break is active,Asnjë pushim nuk është aktiv
+No focus session is running,Asnjë sesion fokusi nuk është aktiv
+Context,Konteksti
+Contact,Kontakti
+Context Type,Lloji i kontekstit
+For whom?,Për kë?
+Working on?,Në çfarë po punoni?
+Search contacts...,Kërko kontakte...
+Select type...,Zgjidh llojin...
+All contacts,Të gjitha kontaktet
+All projects,Të gjitha projektet
+(no contact),(pa kontakt)
+(no project),(pa projekt)
+(no task),(pa detyrë)
+Filter by:,Filtro sipas:
+Time by contact,Koha sipas kontaktit
+Time by context,Koha sipas kontekstit
+Time by task,Koha sipas detyrës
+Contact hours summary,Përmbledhja e orëve sipas kontaktit

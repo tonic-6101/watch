@@ -1,0 +1,247 @@
+source,translation
+Billed as {0},{0} olarak kaydedildi
+exact — rounding skipped,tam — yuvarlama atlandı
+Use exact,Tam kullan
+Apply rounding,Yuvarlama uygula
+Exact,Tam
+Billed,Kaydedildi
+* Rounded up to nearest increment,* En yakın artışa yuvarlandı
+billable,kaydedilebilir
+non-billable,kaydedilemez
+internal,dahili
+on_save,on_save
+manual,manual
+scheduled,scheduled
+hourly,hourly
+every_6_hours,every_6_hours
+daily,daily
+stopped,durduruldu
+running,çalışıyor
+paused,duraklatıldı
+Add a note...,Not ekle...
+Add entry for yesterday,Dün için kayıt ekle
+Add your first entry,İlk kaydınızı ekleyin
+Archive,Arşivle
+Auto-stop Timer After,Sayacı otomatik durdur (sonra)
+Billable,Kaydedilebilir
+Billable {0},Kaydedilebilir {0}
+Cancel,İptal
+Cannot delete tag — {0} entries use it.,Etiket silinemez — {0} kayıt kullanıyor.
+Category,Kategori
+Client,Müşteri
+Color,Renk
+Connection Failed,Bağlantı başarısız
+Connection OK,Bağlantı başarılı
+Custom…,Özel…
+Daily,Günlük
+Daily view,Günlük görünüm
+Date range,Tarih aralığı
+days,gün
+Default Entry Type,Varsayılan kayıt türü
+Default Rate,Varsayılan saat ücreti
+Default activity type,Varsayılan etkinlik türü
+Delete,Sil
+Description,Açıklama
+Dismiss,Kapat
+Do you want to sync all unsynced time entries to ERPNext now?,Tüm senkronize edilmemiş zaman kayıtlarını şimdi ERPNext'e senkronize etmek istiyor musunuz?
+Duplicate,Kopyala
+Duration,Süre
+Edit,Düzenle
+Enable ERPNext bridge,ERPNext köprüsünü etkinleştir
+End time,Bitiş zamanı
+Entries forwarded,Kayıtlar iletildi
+Entries older than {0} days are locked. Contact your administrator.,{0} günden eski kayıtlar kilitlidir. Yöneticinizle iletişime geçin.
+ERPNext Bridge,ERPNext köprüsü
+ERPNext is not installed on this site.,ERPNext bu sitede kurulu değil.
+ERPNext is reachable and Timesheet access is confirmed.,ERPNext erişilebilir ve zaman çizelgesi erişimi onaylandı.
+ERPNext site URL,ERPNext site URL'si
+ERPNext Timesheet {0} for {1} is submitted — re-sync blocked.,ERPNext zaman çizelgesi {0} ({1}) gönderildi — yeniden senkronizasyon engellendi.
+ERPNext Timesheet is submitted — re-sync blocked,ERPNext zaman çizelgesi gönderildi — yeniden senkronizasyon engellendi
+Est. {0},Tah. {0}
+Est. amount,Tah. tutar
+Every 6 hours,Her 6 saatte
+All time,Tüm zamanlar
+This year,Bu yıl
+Last year,Geçen yıl
+Download CSV,CSV indir
+Export my data,Verilerimi dışa aktar
+Download all your time entries as CSV.,Tüm zaman kayıtlarınızı CSV olarak indirin.
+Export CSV,CSV dışa aktar
+Export successful,Dışa aktarma başarılı
+Failed to forward entries: {0},Kayıtlar iletilemedi: {0}
+Watch Settings,Watch ayarları
+Watch Tag,Watch etiket
+Watch Entry,Watch kayıt
+Watch Entry Tag,Watch kayıt etiketi
+Watch Timer,Watch sayaç
+Forwarded {0} to {1},{0} şuraya iletildi: {1}
+From,Başlangıç
+General,Genel
+Hourly,Saatlik
+hours,saat
+Hide weekends,Hafta sonlarını gizle
+Internal,Dahili
+Internal / overhead,Dahili / genel gider
+Last bulk sync,Son toplu senkronizasyon
+Last month,Geçen ay
+Last sync error,Son senkronizasyon hatası
+Last week,Geçen hafta
+Less,Daha az
+Lock Entries Older Than,Şundan eski kayıtları kilitle
+Manual,Manuel
+Map project tags,Proje etiketlerini eşle
+Merge,Birleştir
+Merge {0} into:,{0} şuna birleştir:
+Mon,Pzt
+More,Daha fazla
+Navigate,Gezin
+New Tag,Yeni etiket
+No entries for {0},{0} için kayıt yok
+No entries yet,Henüz kayıt yok
+No tags yet,Henüz etiket yok
+No timer is running,Çalışan sayaç yok
+Non-billable,Kaydedilemez
+(no description),(açıklama yok)
+(not billed),(kaydedilmedi)
+Nothing logged yesterday ({0}),Dün hiçbir şey kaydedilmedi ({0})
+Open prepare summary,Hazırlık özetini aç
+Open settings,Ayarları aç
+Open tag management,Etiket yönetimini aç
+Open today's view,Bugünün görünümünü aç
+Open weekly view,Haftalık görünümü aç
+Other,Diğer
+Pause,Duraklat
+Prepare,Hazırla
+Prepare Summary,Hazırlık özeti
+Project,Proje
+Rate,Saat ücreti
+Rename,Yeniden adlandır
+Resume,Devam et
+Saved — {0},Kaydedildi — {0}
+Save,Kaydet
+Sat,Cmt
+Scheduled,Planlandı
+Send,Gönder
+Settings,Ayarlar
+Show weekends,Hafta sonlarını göster
+Start time,Başlangıç zamanı
+Start Timer,Sayacı başlat
+"Start timer: ""{0}""","Sayacı başlat: ""{0}"""
+"Stop current & start: ""{0}""","Mevcut durdur ve başlat: ""{0}"""
+Started yesterday,Dün başlatıldı
+Sun,Paz
+Sync all unsynced entries,Tüm senkronize edilmemiş kayıtları senkronize et
+Sync billable entries only,Yalnızca kaydedilebilir kayıtları senkronize et
+Sync completed with errors,Senkronizasyon hatalarla tamamlandı
+Sync complete,Senkronizasyon tamamlandı
+Sync interval,Senkronizasyon aralığı
+Sync mode,Senkronizasyon modu
+Synced to ERPNext,ERPNext'e senkronize edildi
+Syncing entries to ERPNext…,Kayıtlar ERPNext'e senkronize ediliyor…
+{0} day(s) synced.,{0} gün senkronize edildi.
+Tag,Etiket
+Tag management,Etiket yönetimi
+Tag Name,Etiket adı
+Tag renamed. {0} entries updated.,Etiket yeniden adlandırıldı. {0} kayıt güncellendi.
+Tags,Etiketler
+Tags merged. {0} entries re-tagged.,Etiketler birleştirildi. {0} kayıt yeniden etiketlendi.
+Task,Görev
+Test connection,Bağlantıyı test et
+Test Connection,Bağlantıyı test et
+This entry is locked,Bu kayıt kilitli
+This month,Bu ay
+This week,Bu hafta
+Thu,Per
+Time Bridge,Zaman köprüsü
+Time Entries,Zaman kayıtları
+Timer already running,Sayaç zaten çalışıyor
+Timer is already running,Sayaç zaten çalışıyor
+Timer is not paused,Sayaç duraklatılmamış
+Timer is not running,Sayaç çalışmıyor
+To,Bitiş
+Today,Bugün
+Total,Toplam
+Total billable,Toplam kaydedilebilir
+Tue,Sal
+Unknown error,Bilinmeyen hata
+Unassigned,Atanmamış
+(untagged project),(etiketsiz proje)
+View entry →,Kaydı görüntüle →
+Warning: This entry is more than 7 days old.,Uyarı: Bu kayıt 7 günden eski.
+Wed,Çar
+Week {0},Hafta {0}
+What are you working on?,Ne üzerinde çalışıyorsunuz?
+What did you work on?,Ne üzerinde çalıştınız?
+Work Days,İş günleri
+Yesterday,Dün
+draft,taslak
+entries this month,bu ayki kayıtlar
+no entries,kayıt yok
+no entries yet,henüz kayıt yok
+sent,gönderildi
++{0} more,+{0} daha
+← from {0},← {0} tarihinden
+[Auto-stopped after {0}h],[{0}s sonra otomatik durduruldu]
+Entry Type,Kayıt türü
+Fri,Cum
+Keyboard Shortcuts,Klavye kısayolları
+Start / Pause / Resume timer,Sayacı başlat / Duraklat / Devam et
+Stop timer,Sayacı durdur
+New entry (focus quick-add bar),Yeni kayıt (hızlı ekleme çubuğuna odaklan)
+Previous / next day or week,Önceki / sonraki gün veya hafta
+Show / hide this overlay,Bu katmanı göster / gizle
+Press H or Esc to close,Kapatmak için H veya Esc tuşuna basın
+Close,Kapat
+Timer,Sayaç
+Entries,Kayıtlar
+This week at a glance,Bu hafta bir bakışta
+Time by tag,Etikete göre süre
+Hours per day,Günlük saat
+No entries this week,Bu hafta kayıt yok
+No entries,Kayıt yok
+Untagged,Etiketsiz
+Monthly Budget (h),Aylık bütçe (s)
+Warn at (%),Uyar (%)
+0 = no limit,0 = sınırsız
+0 = site default,0 = site varsayılanı
+Approaching limit,Sınıra yaklaşılıyor
+Budget exceeded,Bütçe aşıldı
+budget used this month,bu ay kullanılan bütçe
+used this month,bu ay kullanılan
+of,/
+Focus,Odaklanma
+Start Focus,Odaklanmayı başlat
+End focus,Odaklanmayı bitir
+Skip break,Molayı atla
+Break over,Mola bitti
+Time to focus!,Odaklanma zamanı!
+Session complete,Oturum tamamlandı
+Focus complete!,Odaklanma tamamlandı!
+All sessions done. Great work!,Tüm oturumlar tamamlandı. Harika iş!
+sessions done. Great work!,oturum tamamlandı. Harika iş!
+Start new,Yeni başlat
+Work in focused sessions with timed breaks.,Zamanlı molalarla odaklı oturumlarda çalışın.
+Session,Oturum
+Break,Mola
+Work (min),Çalışma (dk)
+Break (min),Mola (dk)
+Sessions,Oturumlar
+No break is active,Aktif mola yok
+No focus session is running,Çalışan odaklanma oturumu yok
+Context,Bağlam
+Contact,Kişi
+Context Type,Bağlam türü
+For whom?,Kimin için?
+Working on?,Ne üzerinde çalışıyorsunuz?
+Search contacts...,Kişi ara...
+Select type...,Tür seçin...
+All contacts,Tüm kişiler
+All projects,Tüm projeler
+(no contact),(kişi yok)
+(no project),(proje yok)
+(no task),(görev yok)
+Filter by:,Filtrele:
+Time by contact,Kişiye göre süre
+Time by context,Bağlama göre süre
+Time by task,Göreve göre süre
+Contact hours summary,Kişi saat özeti

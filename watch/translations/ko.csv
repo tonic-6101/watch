@@ -1,0 +1,247 @@
+source,translation
+"Billed as {0}","{0}(으)로 기록됨"
+"exact — rounding skipped","정확 — 반올림 건너뜀"
+"Use exact","정확한 값 사용"
+"Apply rounding","반올림 적용"
+Exact,정확
+Billed,기록됨
+"* Rounded up to nearest increment","* 가장 가까운 단위로 올림"
+billable,기록 가능
+non-billable,기록 불가
+internal,내부
+on_save,on_save
+manual,manual
+scheduled,scheduled
+hourly,hourly
+every_6_hours,every_6_hours
+daily,daily
+stopped,중지됨
+running,실행 중
+paused,일시 정지
+"Add a note...","메모 추가..."
+"Add entry for yesterday","어제 항목 추가"
+"Add your first entry","첫 번째 항목 추가"
+Archive,보관
+"Auto-stop Timer After","타이머 자동 중지 시간"
+Billable,기록 가능
+"Billable {0}","기록 가능 {0}"
+Cancel,취소
+"Cannot delete tag — {0} entries use it.","태그를 삭제할 수 없습니다 — {0}개 항목에서 사용 중입니다."
+Category,카테고리
+Client,고객
+Color,색상
+"Connection Failed","연결 실패"
+"Connection OK","연결 성공"
+"Custom…","사용자 정의…"
+Daily,일간
+"Daily view","일간 보기"
+"Date range","기간"
+days,일
+"Default Entry Type","기본 항목 유형"
+"Default Rate","기본 단가"
+"Default activity type","기본 활동 유형"
+Delete,삭제
+Description,설명
+Dismiss,닫기
+"Do you want to sync all unsynced time entries to ERPNext now?","동기화되지 않은 모든 시간 항목을 지금 ERPNext에 동기화하시겠습니까?"
+Duplicate,복제
+Duration,시간
+Edit,편집
+"Enable ERPNext bridge","ERPNext 브리지 활성화"
+"End time","종료 시간"
+"Entries forwarded","항목 전달됨"
+"Entries older than {0} days are locked. Contact your administrator.","{0}일 이전의 항목은 잠겨 있습니다. 관리자에게 문의하세요."
+"ERPNext Bridge","ERPNext 브리지"
+"ERPNext is not installed on this site.","이 사이트에 ERPNext가 설치되어 있지 않습니다."
+"ERPNext is reachable and Timesheet access is confirmed.","ERPNext에 연결되었으며 타임시트 접근이 확인되었습니다."
+"ERPNext site URL","ERPNext 사이트 URL"
+"ERPNext Timesheet {0} for {1} is submitted — re-sync blocked.","ERPNext 타임시트 {0} ({1})이 제출됨 — 재동기화가 차단되었습니다."
+"ERPNext Timesheet is submitted — re-sync blocked","ERPNext 타임시트가 제출됨 — 재동기화가 차단되었습니다"
+"Est. {0}","예상 {0}"
+"Est. amount","예상 금액"
+"Every 6 hours","6시간마다"
+"All time","전체 기간"
+"This year","올해"
+"Last year","작년"
+"Download CSV","CSV 다운로드"
+"Export my data","내 데이터 내보내기"
+"Download all your time entries as CSV.","모든 시간 항목을 CSV로 다운로드합니다."
+"Export CSV","CSV 내보내기"
+"Export successful","내보내기 완료"
+"Failed to forward entries: {0}","항목 전달 실패: {0}"
+"Watch Settings","Watch 설정"
+"Watch Tag","Watch 태그"
+"Watch Entry","Watch 항목"
+"Watch Entry Tag","Watch 항목 태그"
+"Watch Timer","Watch 타이머"
+"Forwarded {0} to {1}","{0}을(를) {1}(으)로 전달함"
+From,시작
+General,일반
+Hourly,매시간
+hours,시간
+"Hide weekends","주말 숨기기"
+Internal,내부
+"Internal / overhead","내부 / 간접 업무"
+"Last bulk sync","마지막 일괄 동기화"
+"Last month","지난달"
+"Last sync error","마지막 동기화 오류"
+"Last week","지난주"
+Less,줄이기
+"Lock Entries Older Than","항목 잠금 기간"
+Manual,수동
+"Map project tags","프로젝트 태그 매핑"
+Merge,병합
+"Merge {0} into:","{0}을(를) 다음으로 병합:"
+Mon,월
+More,더 보기
+Navigate,이동
+"New Tag","새 태그"
+"No entries for {0}","{0}에 대한 항목 없음"
+"No entries yet","항목이 아직 없습니다"
+"No tags yet","태그가 아직 없습니다"
+"No timer is running","실행 중인 타이머 없음"
+Non-billable,기록 불가
+"(no description)","(설명 없음)"
+"(not billed)","(미기록)"
+"Nothing logged yesterday ({0})","어제({0}) 기록 없음"
+"Open prepare summary","준비 요약 열기"
+"Open settings","설정 열기"
+"Open tag management","태그 관리 열기"
+"Open today's view","오늘 보기 열기"
+"Open weekly view","주간 보기 열기"
+Other,기타
+Pause,일시 정지
+Prepare,준비
+"Prepare Summary","준비 요약"
+Project,프로젝트
+Rate,단가
+Rename,이름 변경
+Resume,재개
+"Saved — {0}","저장됨 — {0}"
+Save,저장
+Sat,토
+Scheduled,예약됨
+Send,보내기
+Settings,설정
+"Show weekends","주말 표시"
+"Start time","시작 시간"
+"Start Timer","타이머 시작"
+"Start timer: ""{0}""","타이머 시작: ""{0}"""
+"Stop current & start: ""{0}""","현재 중지 후 시작: ""{0}"""
+"Started yesterday","어제 시작됨"
+Sun,일
+"Sync all unsynced entries","동기화되지 않은 모든 항목 동기화"
+"Sync billable entries only","기록 가능 항목만 동기화"
+"Sync completed with errors","동기화가 오류와 함께 완료됨"
+"Sync complete","동기화 완료"
+"Sync interval","동기화 간격"
+"Sync mode","동기화 모드"
+"Synced to ERPNext","ERPNext에 동기화됨"
+"Syncing entries to ERPNext…","ERPNext에 항목 동기화 중…"
+"{0} day(s) synced.","{0}일 동기화 완료."
+Tag,태그
+"Tag management","태그 관리"
+"Tag Name","태그 이름"
+"Tag renamed. {0} entries updated.","태그 이름이 변경되었습니다. {0}개 항목이 업데이트되었습니다."
+Tags,태그
+"Tags merged. {0} entries re-tagged.","태그가 병합되었습니다. {0}개 항목이 재태그되었습니다."
+Task,작업
+"Test connection","연결 테스트"
+"Test Connection","연결 테스트"
+"This entry is locked","이 항목은 잠겨 있습니다"
+"This month","이번 달"
+"This week","이번 주"
+Thu,목
+"Time Bridge","타임 브리지"
+"Time Entries","시간 항목"
+"Timer already running","타이머가 이미 실행 중입니다"
+"Timer is already running","타이머가 이미 실행 중입니다"
+"Timer is not paused","타이머가 일시 정지 상태가 아닙니다"
+"Timer is not running","타이머가 실행 중이 아닙니다"
+To,종료
+Today,오늘
+Total,합계
+"Total billable","기록 가능 합계"
+Tue,화
+"Unknown error","알 수 없는 오류"
+Unassigned,미할당
+"(untagged project)","(태그 없는 프로젝트)"
+"View entry →","항목 보기 →"
+"Warning: This entry is more than 7 days old.","경고: 이 항목은 7일 이상 된 항목입니다."
+Wed,수
+"Week {0}","{0}주차"
+"What are you working on?","무엇을 작업 중인가요?"
+"What did you work on?","무엇을 작업했나요?"
+"Work Days","근무일"
+Yesterday,어제
+draft,초안
+"entries this month","이번 달 항목"
+"no entries","항목 없음"
+"no entries yet","항목이 아직 없습니다"
+sent,전송됨
+"+{0} more","외 {0}건"
+"← from {0}","← {0}에서"
+"[Auto-stopped after {0}h]","[{0}시간 후 자동 중지]"
+"Entry Type","항목 유형"
+Fri,금
+"Keyboard Shortcuts","키보드 단축키"
+"Start / Pause / Resume timer","타이머 시작 / 일시 정지 / 재개"
+"Stop timer","타이머 중지"
+"New entry (focus quick-add bar)","새 항목 (빠른 추가 바 포커스)"
+"Previous / next day or week","이전 / 다음 일 또는 주"
+"Show / hide this overlay","이 오버레이 표시 / 숨기기"
+"Press H or Esc to close","H 또는 Esc를 눌러 닫기"
+Close,닫기
+Timer,타이머
+Entries,항목
+"This week at a glance","이번 주 한눈에 보기"
+"Time by tag","태그별 시간"
+"Hours per day","일일 시간"
+"No entries this week","이번 주 항목 없음"
+"No entries","항목 없음"
+Untagged,태그 없음
+"Monthly Budget (h)","월간 예산 (시간)"
+"Warn at (%)","경고 기준 (%)"
+"0 = no limit","0 = 제한 없음"
+"0 = site default","0 = 사이트 기본값"
+"Approaching limit","한도에 근접"
+"Budget exceeded","예산 초과"
+"budget used this month","이번 달 예산 사용량"
+"used this month","이번 달 사용량"
+of,/
+Focus,집중
+"Start Focus","집중 시작"
+"End focus","집중 종료"
+"Skip break","휴식 건너뛰기"
+"Break over","휴식 종료"
+"Time to focus!","집중할 시간입니다!"
+"Session complete","세션 완료"
+"Focus complete!","집중 완료!"
+"All sessions done. Great work!","모든 세션 완료. 수고하셨습니다!"
+"sessions done. Great work!","세션 완료. 수고하셨습니다!"
+"Start new","새로 시작"
+"Work in focused sessions with timed breaks.","시간 제한 휴식과 함께 집중 세션으로 작업합니다."
+Session,세션
+Break,휴식
+"Work (min)","작업 (분)"
+"Break (min)","휴식 (분)"
+Sessions,세션
+"No break is active","활성화된 휴식 없음"
+"No focus session is running","실행 중인 집중 세션 없음"
+Context,컨텍스트
+Contact,연락처
+"Context Type","컨텍스트 유형"
+"For whom?","누구를 위해?"
+"Working on?","무엇을 작업 중?"
+"Search contacts...","연락처 검색..."
+"Select type...","유형 선택..."
+"All contacts","모든 연락처"
+"All projects","모든 프로젝트"
+"(no contact)","(연락처 없음)"
+"(no project)","(프로젝트 없음)"
+"(no task)","(작업 없음)"
+"Filter by:","필터:"
+"Time by contact","연락처별 시간"
+"Time by context","컨텍스트별 시간"
+"Time by task","작업별 시간"
+"Contact hours summary","연락처별 시간 요약"

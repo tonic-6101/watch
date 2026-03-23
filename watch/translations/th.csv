@@ -1,0 +1,247 @@
+source,translation
+"Billed as {0}","เรียกเก็บเป็น {0}"
+"exact — rounding skipped","แม่นยำ — ข้ามการปัดเศษ"
+"Use exact","ใช้ค่าแม่นยำ"
+"Apply rounding","ปัดเศษ"
+Exact,แม่นยำ
+Billed,เรียกเก็บแล้ว
+"* Rounded up to nearest increment","* ปัดขึ้นเป็นหน่วยที่ใกล้ที่สุด"
+billable,เรียกเก็บได้
+non-billable,ไม่เรียกเก็บ
+internal,ภายใน
+on_save,on_save
+manual,manual
+scheduled,scheduled
+hourly,hourly
+every_6_hours,every_6_hours
+daily,daily
+stopped,หยุดแล้ว
+running,กำลังทำงาน
+paused,หยุดชั่วคราว
+"Add a note...","เพิ่มบันทึก..."
+"Add entry for yesterday","เพิ่มรายการสำหรับเมื่อวาน"
+"Add your first entry","เพิ่มรายการแรกของคุณ"
+Archive,เก็บถาวร
+"Auto-stop Timer After","หยุดตัวจับเวลาอัตโนมัติหลัง"
+Billable,เรียกเก็บได้
+"Billable {0}","เรียกเก็บได้ {0}"
+Cancel,ยกเลิก
+"Cannot delete tag — {0} entries use it.","ลบแท็กไม่ได้ — มี {0} รายการใช้อยู่"
+Category,หมวดหมู่
+Client,ลูกค้า
+Color,สี
+"Connection Failed","เชื่อมต่อล้มเหลว"
+"Connection OK","เชื่อมต่อสำเร็จ"
+"Custom…","กำหนดเอง…"
+Daily,รายวัน
+"Daily view","มุมมองรายวัน"
+"Date range","ช่วงวันที่"
+days,วัน
+"Default Entry Type","ประเภทรายการเริ่มต้น"
+"Default Rate","อัตราเริ่มต้น"
+"Default activity type","ประเภทกิจกรรมเริ่มต้น"
+Delete,ลบ
+Description,คำอธิบาย
+Dismiss,ปิด
+"Do you want to sync all unsynced time entries to ERPNext now?","คุณต้องการซิงค์รายการเวลาที่ยังไม่ได้ซิงค์ทั้งหมดไปยัง ERPNext ตอนนี้หรือไม่?"
+Duplicate,ทำซ้ำ
+Duration,ระยะเวลา
+Edit,แก้ไข
+"Enable ERPNext bridge","เปิดใช้สะพาน ERPNext"
+"End time","เวลาสิ้นสุด"
+"Entries forwarded","ส่งต่อรายการแล้ว"
+"Entries older than {0} days are locked. Contact your administrator.","รายการที่เก่ากว่า {0} วันถูกล็อก กรุณาติดต่อผู้ดูแลระบบ"
+"ERPNext Bridge","สะพาน ERPNext"
+"ERPNext is not installed on this site.","ไม่ได้ติดตั้ง ERPNext บนเว็บไซต์นี้"
+"ERPNext is reachable and Timesheet access is confirmed.","เชื่อมต่อ ERPNext ได้แล้วและยืนยันการเข้าถึง Timesheet แล้ว"
+"ERPNext site URL","URL เว็บไซต์ ERPNext"
+"ERPNext Timesheet {0} for {1} is submitted — re-sync blocked.","Timesheet ERPNext {0} สำหรับ {1} ถูกส่งแล้ว — การซิงค์ซ้ำถูกบล็อก"
+"ERPNext Timesheet is submitted — re-sync blocked","Timesheet ERPNext ถูกส่งแล้ว — การซิงค์ซ้ำถูกบล็อก"
+"Est. {0}","ประมาณ {0}"
+"Est. amount","ประมาณจำนวนเงิน"
+"Every 6 hours","ทุก 6 ชั่วโมง"
+"All time","ทั้งหมด"
+"This year","ปีนี้"
+"Last year","ปีที่แล้ว"
+"Download CSV","ดาวน์โหลด CSV"
+"Export my data","ส่งออกข้อมูลของฉัน"
+"Download all your time entries as CSV.","ดาวน์โหลดรายการเวลาทั้งหมดเป็น CSV"
+"Export CSV","ส่งออก CSV"
+"Export successful","ส่งออกสำเร็จ"
+"Failed to forward entries: {0}","ส่งต่อรายการล้มเหลว: {0}"
+"Watch Settings","ตั้งค่า Watch"
+"Watch Tag","แท็ก Watch"
+"Watch Entry","รายการ Watch"
+"Watch Entry Tag","แท็กรายการ Watch"
+"Watch Timer","ตัวจับเวลา Watch"
+"Forwarded {0} to {1}","ส่งต่อ {0} ไปยัง {1}"
+From,จาก
+General,ทั่วไป
+Hourly,รายชั่วโมง
+hours,ชั่วโมง
+"Hide weekends","ซ่อนวันหยุดสุดสัปดาห์"
+Internal,ภายใน
+"Internal / overhead","ภายใน / ค่าใช้จ่ายทางอ้อม"
+"Last bulk sync","ซิงค์จำนวนมากล่าสุด"
+"Last month","เดือนที่แล้ว"
+"Last sync error","ข้อผิดพลาดการซิงค์ล่าสุด"
+"Last week","สัปดาห์ที่แล้ว"
+Less,น้อยลง
+"Lock Entries Older Than","ล็อกรายการที่เก่ากว่า"
+Manual,ด้วยตนเอง
+"Map project tags","แมปแท็กโครงการ"
+Merge,รวม
+"Merge {0} into:","รวม {0} เข้ากับ:"
+Mon,จ.
+More,เพิ่มเติม
+Navigate,นำทาง
+"New Tag","แท็กใหม่"
+"No entries for {0}","ไม่มีรายการสำหรับ {0}"
+"No entries yet","ยังไม่มีรายการ"
+"No tags yet","ยังไม่มีแท็ก"
+"No timer is running","ไม่มีตัวจับเวลาที่กำลังทำงาน"
+Non-billable,ไม่เรียกเก็บ
+"(no description)","(ไม่มีคำอธิบาย)"
+"(not billed)","(ยังไม่เรียกเก็บ)"
+"Nothing logged yesterday ({0})","ไม่มีบันทึกเมื่อวาน ({0})"
+"Open prepare summary","เปิดสรุปการเตรียม"
+"Open settings","เปิดตั้งค่า"
+"Open tag management","เปิดจัดการแท็ก"
+"Open today's view","เปิดมุมมองวันนี้"
+"Open weekly view","เปิดมุมมองรายสัปดาห์"
+Other,อื่นๆ
+Pause,หยุดชั่วคราว
+Prepare,เตรียม
+"Prepare Summary","สรุปการเตรียม"
+Project,โครงการ
+Rate,อัตรา
+Rename,เปลี่ยนชื่อ
+Resume,ทำต่อ
+"Saved — {0}","บันทึกแล้ว — {0}"
+Save,บันทึก
+Sat,ส.
+Scheduled,ตามกำหนด
+Send,ส่ง
+Settings,ตั้งค่า
+"Show weekends","แสดงวันหยุดสุดสัปดาห์"
+"Start time","เวลาเริ่ม"
+"Start Timer","เริ่มจับเวลา"
+"Start timer: ""{0}""","เริ่มจับเวลา: ""{0}"""
+"Stop current & start: ""{0}""","หยุดปัจจุบันและเริ่ม: ""{0}"""
+"Started yesterday","เริ่มเมื่อวาน"
+Sun,อา.
+"Sync all unsynced entries","ซิงค์รายการที่ยังไม่ได้ซิงค์ทั้งหมด"
+"Sync billable entries only","ซิงค์เฉพาะรายการเรียกเก็บได้"
+"Sync completed with errors","ซิงค์เสร็จสิ้นพร้อมข้อผิดพลาด"
+"Sync complete","ซิงค์เสร็จสิ้น"
+"Sync interval","ช่วงเวลาซิงค์"
+"Sync mode","โหมดซิงค์"
+"Synced to ERPNext","ซิงค์ไปยัง ERPNext แล้ว"
+"Syncing entries to ERPNext…","กำลังซิงค์รายการไปยัง ERPNext…"
+"{0} day(s) synced.","ซิงค์แล้ว {0} วัน"
+Tag,แท็ก
+"Tag management","จัดการแท็ก"
+"Tag Name","ชื่อแท็ก"
+"Tag renamed. {0} entries updated.","เปลี่ยนชื่อแท็กแล้ว อัปเดต {0} รายการ"
+Tags,แท็ก
+"Tags merged. {0} entries re-tagged.","รวมแท็กแล้ว ติดแท็กใหม่ {0} รายการ"
+Task,งาน
+"Test connection","ทดสอบการเชื่อมต่อ"
+"Test Connection","ทดสอบการเชื่อมต่อ"
+"This entry is locked","รายการนี้ถูกล็อก"
+"This month","เดือนนี้"
+"This week","สัปดาห์นี้"
+Thu,พฤ.
+"Time Bridge","สะพานเวลา"
+"Time Entries","รายการเวลา"
+"Timer already running","ตัวจับเวลากำลังทำงานอยู่แล้ว"
+"Timer is already running","ตัวจับเวลากำลังทำงานอยู่แล้ว"
+"Timer is not paused","ตัวจับเวลาไม่ได้หยุดชั่วคราว"
+"Timer is not running","ตัวจับเวลาไม่ได้ทำงาน"
+To,ถึง
+Today,วันนี้
+Total,รวม
+"Total billable","รวมเรียกเก็บได้"
+Tue,อ.
+"Unknown error","ข้อผิดพลาดไม่ทราบสาเหตุ"
+Unassigned,ยังไม่มอบหมาย
+"(untagged project)","(โครงการไม่มีแท็ก)"
+"View entry →","ดูรายการ →"
+"Warning: This entry is more than 7 days old.","คำเตือน: รายการนี้เก่ากว่า 7 วัน"
+Wed,พ.
+"Week {0}","สัปดาห์ {0}"
+"What are you working on?","คุณกำลังทำอะไร?"
+"What did you work on?","คุณทำอะไรไปบ้าง?"
+"Work Days","วันทำงาน"
+Yesterday,เมื่อวาน
+draft,ร่าง
+"entries this month","รายการเดือนนี้"
+"no entries","ไม่มีรายการ"
+"no entries yet","ยังไม่มีรายการ"
+sent,ส่งแล้ว
+"+{0} more","+{0} เพิ่มเติม"
+"← from {0}","← จาก {0}"
+"[Auto-stopped after {0}h]","[หยุดอัตโนมัติหลัง {0} ชม.]"
+"Entry Type","ประเภทรายการ"
+Fri,ศ.
+"Keyboard Shortcuts","ปุ่มลัด"
+"Start / Pause / Resume timer","เริ่ม / หยุดชั่วคราว / ทำต่อ ตัวจับเวลา"
+"Stop timer","หยุดตัวจับเวลา"
+"New entry (focus quick-add bar)","รายการใหม่ (โฟกัสแถบเพิ่มด่วน)"
+"Previous / next day or week","วันหรือสัปดาห์ก่อนหน้า / ถัดไป"
+"Show / hide this overlay","แสดง / ซ่อนหน้าต่างซ้อน"
+"Press H or Esc to close","กด H หรือ Esc เพื่อปิด"
+Close,ปิด
+Timer,ตัวจับเวลา
+Entries,รายการ
+"This week at a glance","ภาพรวมสัปดาห์นี้"
+"Time by tag","เวลาตามแท็ก"
+"Hours per day","ชั่วโมงต่อวัน"
+"No entries this week","ไม่มีรายการสัปดาห์นี้"
+"No entries","ไม่มีรายการ"
+Untagged,ไม่มีแท็ก
+"Monthly Budget (h)","งบประมาณรายเดือน (ชม.)"
+"Warn at (%)","เตือนที่ (%)"
+"0 = no limit","0 = ไม่จำกัด"
+"0 = site default","0 = ค่าเริ่มต้นเว็บไซต์"
+"Approaching limit","ใกล้ถึงขีดจำกัด"
+"Budget exceeded","เกินงบประมาณ"
+"budget used this month","งบประมาณที่ใช้เดือนนี้"
+"used this month","ใช้แล้วเดือนนี้"
+of,จาก
+Focus,โฟกัส
+"Start Focus","เริ่มโฟกัส"
+"End focus","จบโฟกัส"
+"Skip break","ข้ามพัก"
+"Break over","หมดเวลาพัก"
+"Time to focus!","ถึงเวลาโฟกัส!"
+"Session complete","เซสชันเสร็จสิ้น"
+"Focus complete!","โฟกัสเสร็จสิ้น!"
+"All sessions done. Great work!","ครบทุกเซสชัน ทำได้ดีมาก!"
+"sessions done. Great work!","เซสชันเสร็จสิ้น ทำได้ดีมาก!"
+"Start new","เริ่มใหม่"
+"Work in focused sessions with timed breaks.","ทำงานในเซสชันโฟกัสพร้อมพักตามเวลา"
+Session,เซสชัน
+Break,พัก
+"Work (min)","ทำงาน (นาที)"
+"Break (min)","พัก (นาที)"
+Sessions,เซสชัน
+"No break is active","ไม่มีช่วงพักที่ใช้งานอยู่"
+"No focus session is running","ไม่มีเซสชันโฟกัสที่กำลังทำงาน"
+Context,บริบท
+Contact,ผู้ติดต่อ
+"Context Type","ประเภทบริบท"
+"For whom?","สำหรับใคร?"
+"Working on?","กำลังทำอะไร?"
+"Search contacts...","ค้นหาผู้ติดต่อ..."
+"Select type...","เลือกประเภท..."
+"All contacts","ผู้ติดต่อทั้งหมด"
+"All projects","โครงการทั้งหมด"
+"(no contact)","(ไม่มีผู้ติดต่อ)"
+"(no project)","(ไม่มีโครงการ)"
+"(no task)","(ไม่มีงาน)"
+"Filter by:","กรองตาม:"
+"Time by contact","เวลาตามผู้ติดต่อ"
+"Time by context","เวลาตามบริบท"
+"Time by task","เวลาตามงาน"
+"Contact hours summary","สรุปชั่วโมงผู้ติดต่อ"

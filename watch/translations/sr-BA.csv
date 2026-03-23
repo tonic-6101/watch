@@ -1,0 +1,247 @@
+source,translation
+Billed as {0},Обрачунато као {0}
+exact — rounding skipped,тачно — заокруживање прескочено
+Use exact,Користи тачно
+Apply rounding,Примени заокруживање
+Exact,Тачно
+Billed,Обрачунато
+* Rounded up to nearest increment,* Заокружено на најближи инкремент
+billable,наплативо
+non-billable,ненаплативо
+internal,интерно
+on_save,on_save
+manual,manual
+scheduled,scheduled
+hourly,hourly
+every_6_hours,every_6_hours
+daily,daily
+stopped,заустављено
+running,у току
+paused,паузирано
+Add a note...,Додај белешку...
+Add entry for yesterday,Додај унос за јуче
+Add your first entry,Додај свој први унос
+Archive,Архивирај
+Auto-stop Timer After,Аутоматско заустављање мерача после
+Billable,Наплативо
+Billable {0},Наплативо {0}
+Cancel,Откажи
+Cannot delete tag — {0} entries use it.,Ознака се не може обрисати — {0} уноса је користи.
+Category,Категорија
+Client,Клијент
+Color,Боја
+Connection Failed,Повезивање неуспешно
+Connection OK,Повезивање успешно
+Custom…,Прилагођено…
+Daily,Дневно
+Daily view,Дневни приказ
+Date range,Распон датума
+days,дана
+Default Entry Type,Подразумевана врста уноса
+Default Rate,Подразумевана сатница
+Default activity type,Подразумевана врста активности
+Delete,Обриши
+Description,Опис
+Dismiss,Одбаци
+Do you want to sync all unsynced time entries to ERPNext now?,Да ли желите да сада синхронизујете све несинхронизоване временске уносе у ERPNext?
+Duplicate,Дуплирај
+Duration,Трајање
+Edit,Измени
+Enable ERPNext bridge,Омогући ERPNext мост
+End time,Време завршетка
+Entries forwarded,Уноси прослеђени
+Entries older than {0} days are locked. Contact your administrator.,Уноси старији од {0} дана су закључани. Обратите се администратору.
+ERPNext Bridge,ERPNext мост
+ERPNext is not installed on this site.,ERPNext није инсталиран на овом сајту.
+ERPNext is reachable and Timesheet access is confirmed.,ERPNext је доступан и приступ временским листовима је потврђен.
+ERPNext site URL,ERPNext URL сајта
+ERPNext Timesheet {0} for {1} is submitted — re-sync blocked.,ERPNext временски лист {0} за {1} је поднет — поновна синхронизација блокирана.
+ERPNext Timesheet is submitted — re-sync blocked,ERPNext временски лист је поднет — поновна синхронизација блокирана
+Est. {0},Проц. {0}
+Est. amount,Проц. износ
+Every 6 hours,Сваких 6 сати
+All time,Све време
+This year,Ова година
+Last year,Прошла година
+Download CSV,Преузми CSV
+Export my data,Извези моје податке
+Download all your time entries as CSV.,Преузмите све своје временске уносе као CSV.
+Export CSV,Извези CSV
+Export successful,Извоз успешан
+Failed to forward entries: {0},Прослеђивање уноса није успело: {0}
+Watch Settings,Watch подешавања
+Watch Tag,Watch ознака
+Watch Entry,Watch унос
+Watch Entry Tag,Watch ознака уноса
+Watch Timer,Watch мерач
+Forwarded {0} to {1},Прослеђено {0} у {1}
+From,Од
+General,Опште
+Hourly,Сваки сат
+hours,сати
+Hide weekends,Сакриј викенде
+Internal,Интерно
+Internal / overhead,Интерно / режијско
+Last bulk sync,Задња масовна синхронизација
+Last month,Прошли месец
+Last sync error,Задња грешка синхронизације
+Last week,Прошле недеље
+Less,Мање
+Lock Entries Older Than,Закључај уносе старије од
+Manual,Ручно
+Map project tags,Мапирај ознаке пројекта
+Merge,Споји
+Merge {0} into:,Споји {0} у:
+Mon,Пон
+More,Више
+Navigate,Навигирај
+New Tag,Нова ознака
+No entries for {0},Нема уноса за {0}
+No entries yet,Још нема уноса
+No tags yet,Још нема ознака
+No timer is running,Ниједан мерач није активан
+Non-billable,Ненаплативо
+(no description),(без описа)
+(not billed),(није обрачунато)
+Nothing logged yesterday ({0}),Ништа није забележено јуче ({0})
+Open prepare summary,Отвори сажетак припреме
+Open settings,Отвори подешавања
+Open tag management,Отвори управљање ознакама
+Open today's view,Отвори данашњи приказ
+Open weekly view,Отвори недељни приказ
+Other,Остало
+Pause,Паузирај
+Prepare,Припреми
+Prepare Summary,Сажетак припреме
+Project,Пројекат
+Rate,Сатница
+Rename,Преименуј
+Resume,Настави
+Saved — {0},Сачувано — {0}
+Save,Сачувај
+Sat,Суб
+Scheduled,Заказано
+Send,Пошаљи
+Settings,Подешавања
+Show weekends,Прикажи викенде
+Start time,Време почетка
+Start Timer,Покрени мерач
+"Start timer: ""{0}""","Покрени мерач: ""{0}"""
+"Stop current & start: ""{0}""","Заустави тренутни и покрени: ""{0}"""
+Started yesterday,Покренуто јуче
+Sun,Нед
+Sync all unsynced entries,Синхронизуј све несинхронизоване уносе
+Sync billable entries only,Синхронизуј само наплативе уносе
+Sync completed with errors,Синхронизација завршена са грешкама
+Sync complete,Синхронизација завршена
+Sync interval,Интервал синхронизације
+Sync mode,Начин синхронизације
+Synced to ERPNext,Синхронизовано у ERPNext
+Syncing entries to ERPNext…,Синхронизација уноса у ERPNext…
+{0} day(s) synced.,{0} дан(а) синхронизовано.
+Tag,Ознака
+Tag management,Управљање ознакама
+Tag Name,Назив ознаке
+Tag renamed. {0} entries updated.,Ознака преименована. {0} уноса ажурирано.
+Tags,Ознаке
+Tags merged. {0} entries re-tagged.,Ознаке спојене. {0} уноса поново означено.
+Task,Задатак
+Test connection,Тестирај повезивање
+Test Connection,Тестирај повезивање
+This entry is locked,Овај унос је закључан
+This month,Овај месец
+This week,Ова недеља
+Thu,Чет
+Time Bridge,Временски мост
+Time Entries,Временски уноси
+Timer already running,Мерач је већ активан
+Timer is already running,Мерач је већ активан
+Timer is not paused,Мерач није паузиран
+Timer is not running,Мерач није активан
+To,До
+Today,Данас
+Total,Укупно
+Total billable,Укупно наплативо
+Tue,Уто
+Unknown error,Непозната грешка
+Unassigned,Недодељено
+(untagged project),(неозначени пројекат)
+View entry →,Прикажи унос →
+Warning: This entry is more than 7 days old.,Упозорење: Овај унос је старији од 7 дана.
+Wed,Сре
+Week {0},Недеља {0}
+What are you working on?,На чему радите?
+What did you work on?,На чему сте радили?
+Work Days,Радни дани
+Yesterday,Јуче
+draft,нацрт
+entries this month,уноса овог месеца
+no entries,нема уноса
+no entries yet,још нема уноса
+sent,послато
++{0} more,+{0} више
+← from {0},← од {0}
+[Auto-stopped after {0}h],[Аутоматски заустављено после {0}h]
+Entry Type,Врста уноса
+Fri,Пет
+Keyboard Shortcuts,Тастерске пречице
+Start / Pause / Resume timer,Покрени / Паузирај / Настави мерач
+Stop timer,Заустави мерач
+New entry (focus quick-add bar),Нови унос (фокус на траку за брзо додавање)
+Previous / next day or week,Претходни / следећи дан или недеља
+Show / hide this overlay,Прикажи / сакриј овај прекривач
+Press H or Esc to close,Притисните H или Esc за затварање
+Close,Затвори
+Timer,Мерач
+Entries,Уноси
+This week at a glance,Ова недеља на први поглед
+Time by tag,Време по ознаци
+Hours per day,Сати по дану
+No entries this week,Нема уноса ове недеље
+No entries,Нема уноса
+Untagged,Неозначено
+Monthly Budget (h),Месечни буџет (h)
+Warn at (%),Упозори на (%)
+0 = no limit,0 = без ограничења
+0 = site default,0 = подразумевано сајта
+Approaching limit,Приближавање ограничењу
+Budget exceeded,Буџет прекорачен
+budget used this month,буџета искоришћено овог месеца
+used this month,искоришћено овог месеца
+of,од
+Focus,Фокус
+Start Focus,Покрени фокус
+End focus,Заврши фокус
+Skip break,Прескочи паузу
+Break over,Пауза завршена
+Time to focus!,Време за фокус!
+Session complete,Сесија завршена
+Focus complete!,Фокус завршен!
+All sessions done. Great work!,Све сесије завршене. Одличан рад!
+sessions done. Great work!,сесија завршено. Одличан рад!
+Start new,Покрени нову
+Work in focused sessions with timed breaks.,Радите у фокусираним сесијама са временским паузама.
+Session,Сесија
+Break,Пауза
+Work (min),Рад (мин)
+Break (min),Пауза (мин)
+Sessions,Сесије
+No break is active,Ниједна пауза није активна
+No focus session is running,Ниједна фокус сесија није активна
+Context,Контекст
+Contact,Контакт
+Context Type,Врста контекста
+For whom?,За кога?
+Working on?,На чему радите?
+Search contacts...,Претражи контакте...
+Select type...,Изабери врсту...
+All contacts,Сви контакти
+All projects,Сви пројекти
+(no contact),(без контакта)
+(no project),(без пројекта)
+(no task),(без задатка)
+Filter by:,Филтрирај по:
+Time by contact,Време по контакту
+Time by context,Време по контексту
+Time by task,Време по задатку
+Contact hours summary,Сажетак сати по контакту

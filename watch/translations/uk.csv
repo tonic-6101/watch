@@ -1,0 +1,247 @@
+source,translation
+Billed as {0},Виставлено рахунок як {0}
+exact — rounding skipped,точно — округлення пропущено
+Use exact,Використовувати точно
+Apply rounding,Застосувати округлення
+Exact,Точно
+Billed,Виставлено рахунок
+* Rounded up to nearest increment,* Округлено вгору до найближчого кроку
+billable,оплатне
+non-billable,неоплатне
+internal,внутрішнє
+on_save,on_save
+manual,manual
+scheduled,scheduled
+hourly,hourly
+every_6_hours,every_6_hours
+daily,daily
+stopped,зупинено
+running,працює
+paused,призупинено
+Add a note...,Додати нотатку...
+Add entry for yesterday,Додати запис за вчора
+Add your first entry,Додайте свій перший запис
+Archive,Архівувати
+Auto-stop Timer After,Автозупинка таймера після
+Billable,Оплатне
+Billable {0},Оплатне {0}
+Cancel,Скасувати
+Cannot delete tag — {0} entries use it.,Неможливо видалити тег — {0} записів його використовують.
+Category,Категорія
+Client,Клієнт
+Color,Колір
+Connection Failed,Підключення не вдалося
+Connection OK,Підключення успішне
+Custom…,Власне…
+Daily,Щоденно
+Daily view,Денний вигляд
+Date range,Діапазон дат
+days,днів
+Default Entry Type,Типовий тип запису
+Default Rate,Типова погодинна ставка
+Default activity type,Типовий тип діяльності
+Delete,Видалити
+Description,Опис
+Dismiss,Закрити
+Do you want to sync all unsynced time entries to ERPNext now?,Бажаєте зараз синхронізувати всі несинхронізовані часові записи в ERPNext?
+Duplicate,Дублювати
+Duration,Тривалість
+Edit,Редагувати
+Enable ERPNext bridge,Увімкнути міст ERPNext
+End time,Час завершення
+Entries forwarded,Записи переслано
+Entries older than {0} days are locked. Contact your administrator.,Записи старіші за {0} днів заблоковано. Зверніться до адміністратора.
+ERPNext Bridge,Міст ERPNext
+ERPNext is not installed on this site.,ERPNext не встановлено на цьому сайті.
+ERPNext is reachable and Timesheet access is confirmed.,ERPNext доступний і доступ до табелів підтверджено.
+ERPNext site URL,URL сайту ERPNext
+ERPNext Timesheet {0} for {1} is submitted — re-sync blocked.,Табель ERPNext {0} для {1} подано — повторна синхронізація заблокована.
+ERPNext Timesheet is submitted — re-sync blocked,Табель ERPNext подано — повторна синхронізація заблокована
+Est. {0},Орієнт. {0}
+Est. amount,Орієнт. сума
+Every 6 hours,Кожні 6 годин
+All time,Весь час
+This year,Цей рік
+Last year,Минулий рік
+Download CSV,Завантажити CSV
+Export my data,Експортувати мої дані
+Download all your time entries as CSV.,Завантажте всі свої часові записи як CSV.
+Export CSV,Експортувати CSV
+Export successful,Експорт успішний
+Failed to forward entries: {0},Не вдалося переслати записи: {0}
+Watch Settings,Watch налаштування
+Watch Tag,Watch тег
+Watch Entry,Watch запис
+Watch Entry Tag,Watch тег запису
+Watch Timer,Watch таймер
+Forwarded {0} to {1},Переслано {0} до {1}
+From,Від
+General,Загальне
+Hourly,Щогодини
+hours,годин
+Hide weekends,Сховати вихідні
+Internal,Внутрішнє
+Internal / overhead,Внутрішнє / накладні витрати
+Last bulk sync,Остання масова синхронізація
+Last month,Минулий місяць
+Last sync error,Остання помилка синхронізації
+Last week,Минулий тиждень
+Less,Менше
+Lock Entries Older Than,Заблокувати записи старіші за
+Manual,Вручну
+Map project tags,Зіставити теги проєкту
+Merge,Об'єднати
+Merge {0} into:,Об'єднати {0} у:
+Mon,Пн
+More,Більше
+Navigate,Навігація
+New Tag,Новий тег
+No entries for {0},Немає записів за {0}
+No entries yet,Записів ще немає
+No tags yet,Тегів ще немає
+No timer is running,Жоден таймер не працює
+Non-billable,Неоплатне
+(no description),(без опису)
+(not billed),(не виставлено рахунок)
+Nothing logged yesterday ({0}),Вчора нічого не зафіксовано ({0})
+Open prepare summary,Відкрити зведення підготовки
+Open settings,Відкрити налаштування
+Open tag management,Відкрити керування тегами
+Open today's view,Відкрити сьогоднішній вигляд
+Open weekly view,Відкрити тижневий вигляд
+Other,Інше
+Pause,Призупинити
+Prepare,Підготувати
+Prepare Summary,Зведення підготовки
+Project,Проєкт
+Rate,Погодинна ставка
+Rename,Перейменувати
+Resume,Продовжити
+Saved — {0},Збережено — {0}
+Save,Зберегти
+Sat,Сб
+Scheduled,Заплановано
+Send,Надіслати
+Settings,Налаштування
+Show weekends,Показати вихідні
+Start time,Час початку
+Start Timer,Запустити таймер
+"Start timer: ""{0}""","Запустити таймер: ""{0}"""
+"Stop current & start: ""{0}""","Зупинити поточний і запустити: ""{0}"""
+Started yesterday,Розпочато вчора
+Sun,Нд
+Sync all unsynced entries,Синхронізувати всі несинхронізовані записи
+Sync billable entries only,Синхронізувати лише оплатні записи
+Sync completed with errors,Синхронізацію завершено з помилками
+Sync complete,Синхронізацію завершено
+Sync interval,Інтервал синхронізації
+Sync mode,Режим синхронізації
+Synced to ERPNext,Синхронізовано до ERPNext
+Syncing entries to ERPNext…,Синхронізація записів до ERPNext…
+{0} day(s) synced.,{0} день(-ів) синхронізовано.
+Tag,Тег
+Tag management,Керування тегами
+Tag Name,Назва тегу
+Tag renamed. {0} entries updated.,Тег перейменовано. {0} записів оновлено.
+Tags,Теги
+Tags merged. {0} entries re-tagged.,Теги об'єднано. {0} записів перепозначено.
+Task,Завдання
+Test connection,Перевірити підключення
+Test Connection,Перевірити підключення
+This entry is locked,Цей запис заблоковано
+This month,Цей місяць
+This week,Цей тиждень
+Thu,Чт
+Time Bridge,Часовий міст
+Time Entries,Часові записи
+Timer already running,Таймер вже працює
+Timer is already running,Таймер вже працює
+Timer is not paused,Таймер не призупинено
+Timer is not running,Таймер не працює
+To,До
+Today,Сьогодні
+Total,Разом
+Total billable,Разом оплатне
+Tue,Вт
+Unknown error,Невідома помилка
+Unassigned,Не призначено
+(untagged project),(непозначений проєкт)
+View entry →,Переглянути запис →
+Warning: This entry is more than 7 days old.,Увага: Цей запис старіший за 7 днів.
+Wed,Ср
+Week {0},Тиждень {0}
+What are you working on?,Над чим працюєте?
+What did you work on?,Над чим працювали?
+Work Days,Робочі дні
+Yesterday,Вчора
+draft,чернетка
+entries this month,записів цього місяця
+no entries,немає записів
+no entries yet,записів ще немає
+sent,надіслано
++{0} more,+{0} ще
+← from {0},← від {0}
+[Auto-stopped after {0}h],[Автозупинка після {0}г]
+Entry Type,Тип запису
+Fri,Пт
+Keyboard Shortcuts,Клавіатурні скорочення
+Start / Pause / Resume timer,Запустити / Призупинити / Продовжити таймер
+Stop timer,Зупинити таймер
+New entry (focus quick-add bar),Новий запис (фокус на панель швидкого додавання)
+Previous / next day or week,Попередній / наступний день або тиждень
+Show / hide this overlay,Показати / сховати цю панель
+Press H or Esc to close,Натисніть H або Esc щоб закрити
+Close,Закрити
+Timer,Таймер
+Entries,Записи
+This week at a glance,Цей тиждень коротко
+Time by tag,Час за тегом
+Hours per day,Годин на день
+No entries this week,Цього тижня немає записів
+No entries,Немає записів
+Untagged,Без тегу
+Monthly Budget (h),Місячний бюджет (г)
+Warn at (%),Попередити при (%)
+0 = no limit,0 = без обмежень
+0 = site default,0 = типове значення сайту
+Approaching limit,Наближення до ліміту
+Budget exceeded,Бюджет перевищено
+budget used this month,бюджету використано цього місяця
+used this month,використано цього місяця
+of,з
+Focus,Фокус
+Start Focus,Розпочати фокус
+End focus,Завершити фокус
+Skip break,Пропустити перерву
+Break over,Перерва закінчилась
+Time to focus!,Час зосередитися!
+Session complete,Сесію завершено
+Focus complete!,Фокус завершено!
+All sessions done. Great work!,Усі сесії завершено. Чудова робота!
+sessions done. Great work!,сесій завершено. Чудова робота!
+Start new,Розпочати нову
+Work in focused sessions with timed breaks.,Працюйте у зосереджених сесіях із запланованими перервами.
+Session,Сесія
+Break,Перерва
+Work (min),Робота (хв)
+Break (min),Перерва (хв)
+Sessions,Сесії
+No break is active,Жодна перерва не активна
+No focus session is running,Жодна фокус-сесія не працює
+Context,Контекст
+Contact,Контакт
+Context Type,Тип контексту
+For whom?,Для кого?
+Working on?,Над чим працюєте?
+Search contacts...,Шукати контакти...
+Select type...,Оберіть тип...
+All contacts,Усі контакти
+All projects,Усі проєкти
+(no contact),(без контакту)
+(no project),(без проєкту)
+(no task),(без завдання)
+Filter by:,Фільтрувати за:
+Time by contact,Час за контактом
+Time by context,Час за контекстом
+Time by task,Час за завданням
+Contact hours summary,Зведення годин за контактами

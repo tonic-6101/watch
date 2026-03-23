@@ -1,0 +1,247 @@
+source,translation
+Billed as {0},Billed as {0}
+exact — rounding skipped,exact — rounding skipped
+Use exact,Use exact
+Apply rounding,Apply rounding
+Exact,Exact
+Billed,Billed
+* Rounded up to nearest increment,* Rounded up to nearest increment
+billable,billable
+non-billable,non-billable
+internal,internal
+on_save,on_save
+manual,manual
+scheduled,scheduled
+hourly,hourly
+every_6_hours,every_6_hours
+daily,daily
+stopped,stopped
+running,running
+paused,paused
+Add a note...,Add a note...
+Add entry for yesterday,Add entry for yesterday
+Add your first entry,Add your first entry
+Archive,Archive
+Auto-stop Timer After,Auto-stop Timer After
+Billable,Billable
+Billable {0},Billable {0}
+Cancel,Cancel
+Cannot delete tag — {0} entries use it.,Cannot delete tag — {0} entries use it.
+Category,Category
+Client,Client
+Color,Color
+Connection Failed,Connection Failed
+Connection OK,Connection OK
+Custom…,Custom…
+Daily,Daily
+Daily view,Daily view
+Date range,Date range
+days,days
+Default Entry Type,Default Entry Type
+Default Rate,Default Rate
+Default activity type,Default activity type
+Delete,Delete
+Description,Description
+Dismiss,Dismiss
+Do you want to sync all unsynced time entries to ERPNext now?,Do you want to sync all unsynced time entries to ERPNext now?
+Duplicate,Duplicate
+Duration,Duration
+Edit,Edit
+Enable ERPNext bridge,Enable ERPNext bridge
+End time,End time
+Entries forwarded,Entries forwarded
+Entries older than {0} days are locked. Contact your administrator.,Entries older than {0} days are locked. Contact your administrator.
+ERPNext Bridge,ERPNext Bridge
+ERPNext is not installed on this site.,ERPNext is not installed on this site.
+ERPNext is reachable and Timesheet access is confirmed.,ERPNext is reachable and Timesheet access is confirmed.
+ERPNext site URL,ERPNext site URL
+ERPNext Timesheet {0} for {1} is submitted — re-sync blocked.,ERPNext Timesheet {0} for {1} is submitted — re-sync blocked.
+ERPNext Timesheet is submitted — re-sync blocked,ERPNext Timesheet is submitted — re-sync blocked
+Est. {0},Est. {0}
+Est. amount,Est. amount
+Every 6 hours,Every 6 hours
+All time,All time
+This year,This year
+Last year,Last year
+Download CSV,Download CSV
+Export my data,Export my data
+Download all your time entries as CSV.,Download all your time entries as CSV.
+Export CSV,Export CSV
+Export successful,Export successful
+Failed to forward entries: {0},Failed to forward entries: {0}
+Watch Settings,Watch Settings
+Watch Tag,Watch Tag
+Watch Entry,Watch Entry
+Watch Entry Tag,Watch Entry Tag
+Watch Timer,Watch Timer
+Forwarded {0} to {1},Forwarded {0} to {1}
+From,From
+General,General
+Hourly,Hourly
+hours,hours
+Hide weekends,Hide weekends
+Internal,Internal
+Internal / overhead,Internal / overhead
+Last bulk sync,Last bulk sync
+Last month,Last month
+Last sync error,Last sync error
+Last week,Last week
+Less,Less
+Lock Entries Older Than,Lock Entries Older Than
+Manual,Manual
+Map project tags,Map project tags
+Merge,Merge
+Merge {0} into:,Merge {0} into:
+Mon,Mon
+More,More
+Navigate,Navigate
+New Tag,New Tag
+No entries for {0},No entries for {0}
+No entries yet,No entries yet
+No tags yet,No tags yet
+No timer is running,No timer is running
+Non-billable,Non-billable
+(no description),(no description)
+(not billed),(not billed)
+Nothing logged yesterday ({0}),Nothing logged yesterday ({0})
+Open prepare summary,Open prepare summary
+Open settings,Open settings
+Open tag management,Open tag management
+Open today's view,Open today's view
+Open weekly view,Open weekly view
+Other,Other
+Pause,Pause
+Prepare,Prepare
+Prepare Summary,Prepare Summary
+Project,Project
+Rate,Rate
+Rename,Rename
+Resume,Resume
+Saved — {0},Saved — {0}
+Save,Save
+Sat,Sat
+Scheduled,Scheduled
+Send,Send
+Settings,Settings
+Show weekends,Show weekends
+Start time,Start time
+Start Timer,Start Timer
+"Start timer: ""{0}""","Start timer: ""{0}"""
+"Stop current & start: ""{0}""","Stop current & start: ""{0}"""
+Started yesterday,Started yesterday
+Sun,Sun
+Sync all unsynced entries,Sync all unsynced entries
+Sync billable entries only,Sync billable entries only
+Sync completed with errors,Sync completed with errors
+Sync complete,Sync complete
+Sync interval,Sync interval
+Sync mode,Sync mode
+Synced to ERPNext,Synced to ERPNext
+Syncing entries to ERPNext…,Syncing entries to ERPNext…
+{0} day(s) synced.,{0} day(s) synced.
+Tag,Tag
+Tag management,Tag management
+Tag Name,Tag Name
+Tag renamed. {0} entries updated.,Tag renamed. {0} entries updated.
+Tags,Tags
+Tags merged. {0} entries re-tagged.,Tags merged. {0} entries re-tagged.
+Task,Task
+Test connection,Test connection
+Test Connection,Test Connection
+This entry is locked,This entry is locked
+This month,This month
+This week,This week
+Thu,Thu
+Time Bridge,Time Bridge
+Time Entries,Time Entries
+Timer already running,Timer already running
+Timer is already running,Timer is already running
+Timer is not paused,Timer is not paused
+Timer is not running,Timer is not running
+To,To
+Today,Today
+Total,Total
+Total billable,Total billable
+Tue,Tue
+Unknown error,Unknown error
+Unassigned,Unassigned
+(untagged project),(untagged project)
+View entry →,View entry →
+Warning: This entry is more than 7 days old.,Warning: This entry is more than 7 days old.
+Wed,Wed
+Week {0},Week {0}
+What are you working on?,What are you working on?
+What did you work on?,What did you work on?
+Work Days,Work Days
+Yesterday,Yesterday
+draft,draft
+entries this month,entries this month
+no entries,no entries
+no entries yet,no entries yet
+sent,sent
++{0} more,+{0} more
+← from {0},← from {0}
+[Auto-stopped after {0}h],[Auto-stopped after {0}h]
+Entry Type,Entry Type
+Fri,Fri
+Keyboard Shortcuts,Keyboard Shortcuts
+Start / Pause / Resume timer,Start / Pause / Resume timer
+Stop timer,Stop timer
+New entry (focus quick-add bar),New entry (focus quick-add bar)
+Previous / next day or week,Previous / next day or week
+Show / hide this overlay,Show / hide this overlay
+Press H or Esc to close,Press H or Esc to close
+Close,Close
+Timer,Timer
+Entries,Entries
+This week at a glance,This week at a glance
+Time by tag,Time by tag
+Hours per day,Hours per day
+No entries this week,No entries this week
+No entries,No entries
+Untagged,Untagged
+Monthly Budget (h),Monthly Budget (h)
+Warn at (%),Warn at (%)
+0 = no limit,0 = no limit
+0 = site default,0 = site default
+Approaching limit,Approaching limit
+Budget exceeded,Budget exceeded
+budget used this month,budget used this month
+used this month,used this month
+of,of
+Focus,Focus
+Start Focus,Start Focus
+End focus,End focus
+Skip break,Skip break
+Break over,Break over
+Time to focus!,Time to focus!
+Session complete,Session complete
+Focus complete!,Focus complete!
+All sessions done. Great work!,All sessions done. Great work!
+sessions done. Great work!,sessions done. Great work!
+Start new,Start new
+Work in focused sessions with timed breaks.,Work in focused sessions with timed breaks.
+Session,Session
+Break,Break
+Work (min),Work (min)
+Break (min),Break (min)
+Sessions,Sessions
+No break is active,No break is active
+No focus session is running,No focus session is running
+Context,Context
+Contact,Contact
+Context Type,Context Type
+For whom?,For whom?
+Working on?,Working on?
+Search contacts...,Search contacts...
+Select type...,Select type...
+All contacts,All contacts
+All projects,All projects
+(no contact),(no contact)
+(no project),(no project)
+(no task),(no task)
+Filter by:,Filter by:
+Time by contact,Time by contact
+Time by context,Time by context
+Time by task,Time by task
+Contact hours summary,Contact hours summary

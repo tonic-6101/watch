@@ -1,0 +1,247 @@
+source,translation
+"Billed as {0}","Siningil bilang {0}"
+"exact — rounding skipped","eksaktong — nilaktawan ang pag-round"
+"Use exact","Gamitin ang eksaktong halaga"
+"Apply rounding","Ilapat ang pag-round"
+Exact,Eksaktong
+Billed,Siningil
+"* Rounded up to nearest increment","* Ni-round up sa pinakamalapit na yunit"
+billable,masisingil
+non-billable,hindi masisingil
+internal,panloob
+on_save,on_save
+manual,manual
+scheduled,scheduled
+hourly,hourly
+every_6_hours,every_6_hours
+daily,daily
+stopped,huminto
+running,tumatakbo
+paused,naka-pause
+"Add a note...","Magdagdag ng tala..."
+"Add entry for yesterday","Magdagdag ng entry para sa kahapon"
+"Add your first entry","Magdagdag ng unang entry"
+Archive,I-archive
+"Auto-stop Timer After","Auto-stop ng Timer Pagkatapos ng"
+Billable,Masisingil
+"Billable {0}","Masisingil {0}"
+Cancel,Kanselahin
+"Cannot delete tag — {0} entries use it.","Hindi mabura ang tag — {0} na entry ang gumagamit nito."
+Category,Kategorya
+Client,Kliyente
+Color,Kulay
+"Connection Failed","Nabigong Kumonekta"
+"Connection OK","OK ang Koneksyon"
+"Custom…","Pasadya…"
+Daily,Araw-araw
+"Daily view","Pang-araw na view"
+"Date range","Saklaw ng petsa"
+days,araw
+"Default Entry Type","Default na Uri ng Entry"
+"Default Rate","Default na Rate"
+"Default activity type","Default na uri ng aktibidad"
+Delete,Burahin
+Description,Paglalarawan
+Dismiss,I-dismiss
+"Do you want to sync all unsynced time entries to ERPNext now?","Gusto mo bang i-sync ang lahat ng hindi pa naka-sync na time entry sa ERPNext ngayon?"
+Duplicate,I-duplicate
+Duration,Tagal
+Edit,I-edit
+"Enable ERPNext bridge","I-enable ang ERPNext bridge"
+"End time","Oras ng pagtatapos"
+"Entries forwarded","Nai-forward na mga entry"
+"Entries older than {0} days are locked. Contact your administrator.","Ang mga entry na higit sa {0} araw ay naka-lock. Makipag-ugnayan sa iyong administrator."
+"ERPNext Bridge","ERPNext Bridge"
+"ERPNext is not installed on this site.","Hindi naka-install ang ERPNext sa site na ito."
+"ERPNext is reachable and Timesheet access is confirmed.","Naabot ang ERPNext at nakumpirma ang access sa Timesheet."
+"ERPNext site URL","URL ng ERPNext site"
+"ERPNext Timesheet {0} for {1} is submitted — re-sync blocked.","Ang ERPNext Timesheet {0} para sa {1} ay nai-submit na — naka-block ang re-sync."
+"ERPNext Timesheet is submitted — re-sync blocked","Nai-submit na ang ERPNext Timesheet — naka-block ang re-sync"
+"Est. {0}","Tinatayang {0}"
+"Est. amount","Tinatayang halaga"
+"Every 6 hours","Bawat 6 na oras"
+"All time","Lahat ng panahon"
+"This year","Ngayong taon"
+"Last year","Nakaraang taon"
+"Download CSV","I-download ang CSV"
+"Export my data","I-export ang aking data"
+"Download all your time entries as CSV.","I-download ang lahat ng iyong time entry bilang CSV."
+"Export CSV","I-export ang CSV"
+"Export successful","Matagumpay na nai-export"
+"Failed to forward entries: {0}","Nabigong i-forward ang mga entry: {0}"
+"Watch Settings","Mga Setting ng Watch"
+"Watch Tag","Watch Tag"
+"Watch Entry","Watch Entry"
+"Watch Entry Tag","Watch Entry Tag"
+"Watch Timer","Watch Timer"
+"Forwarded {0} to {1}","Ni-forward ang {0} sa {1}"
+From,Mula
+General,Pangkalahatan
+Hourly,Bawat oras
+hours,oras
+"Hide weekends","Itago ang weekends"
+Internal,Panloob
+"Internal / overhead","Panloob / overhead"
+"Last bulk sync","Huling bulk sync"
+"Last month","Nakaraang buwan"
+"Last sync error","Huling error sa sync"
+"Last week","Nakaraang linggo"
+Less,Mas kaunti
+"Lock Entries Older Than","I-lock ang Mga Entry na Mas Luma Sa"
+Manual,Manual
+"Map project tags","I-map ang mga project tag"
+Merge,Pagsamahin
+"Merge {0} into:","Pagsamahin ang {0} sa:"
+Mon,Lun
+More,Higit pa
+Navigate,Mag-navigate
+"New Tag","Bagong Tag"
+"No entries for {0}","Walang entry para sa {0}"
+"No entries yet","Wala pang entry"
+"No tags yet","Wala pang tag"
+"No timer is running","Walang tumatakbong timer"
+Non-billable,Hindi Masisingil
+"(no description)","(walang paglalarawan)"
+"(not billed)","(hindi pa siningil)"
+"Nothing logged yesterday ({0})","Walang naitala kahapon ({0})"
+"Open prepare summary","Buksan ang buod ng paghahanda"
+"Open settings","Buksan ang mga setting"
+"Open tag management","Buksan ang pamamahala ng tag"
+"Open today's view","Buksan ang view para ngayon"
+"Open weekly view","Buksan ang lingguhang view"
+Other,Iba pa
+Pause,I-pause
+Prepare,Ihanda
+"Prepare Summary","Buod ng Paghahanda"
+Project,Proyekto
+Rate,Rate
+Rename,Palitan ang pangalan
+Resume,Ituloy
+"Saved — {0}","Nai-save — {0}"
+Save,I-save
+Sat,Sab
+Scheduled,Naka-iskedyul
+Send,Ipadala
+Settings,Mga Setting
+"Show weekends","Ipakita ang weekends"
+"Start time","Oras ng simula"
+"Start Timer","Simulan ang Timer"
+"Start timer: ""{0}""","Simulan ang timer: ""{0}"""
+"Stop current & start: ""{0}""","Itigil ang kasalukuyan at simulan: ""{0}"""
+"Started yesterday","Nagsimula kahapon"
+Sun,Lin
+"Sync all unsynced entries","I-sync ang lahat ng hindi pa naka-sync na entry"
+"Sync billable entries only","I-sync lang ang mga masisingil na entry"
+"Sync completed with errors","Natapos ang sync na may mga error"
+"Sync complete","Kumpleto na ang sync"
+"Sync interval","Agwat ng sync"
+"Sync mode","Mode ng sync"
+"Synced to ERPNext","Naka-sync na sa ERPNext"
+"Syncing entries to ERPNext…","Sine-sync ang mga entry sa ERPNext…"
+"{0} day(s) synced.","{0} araw ang nai-sync."
+Tag,Tag
+"Tag management","Pamamahala ng tag"
+"Tag Name","Pangalan ng Tag"
+"Tag renamed. {0} entries updated.","Napalitan ang pangalan ng tag. {0} entry ang na-update."
+Tags,Mga Tag
+"Tags merged. {0} entries re-tagged.","Pinagsama ang mga tag. {0} entry ang na-re-tag."
+Task,Gawain
+"Test connection","Subukan ang koneksyon"
+"Test Connection","Subukan ang Koneksyon"
+"This entry is locked","Naka-lock ang entry na ito"
+"This month","Ngayong buwan"
+"This week","Ngayong linggo"
+Thu,Huw
+"Time Bridge","Time Bridge"
+"Time Entries","Mga Time Entry"
+"Timer already running","Tumatakbo na ang timer"
+"Timer is already running","Tumatakbo na ang timer"
+"Timer is not paused","Hindi naka-pause ang timer"
+"Timer is not running","Hindi tumatakbo ang timer"
+To,Hanggang
+Today,Ngayon
+Total,Kabuuan
+"Total billable","Kabuuang masisingil"
+Tue,Mar
+"Unknown error","Hindi kilalang error"
+Unassigned,Hindi pa nakatalaga
+"(untagged project)","(proyektong walang tag)"
+"View entry →","Tingnan ang entry →"
+"Warning: This entry is more than 7 days old.","Babala: Ang entry na ito ay higit sa 7 araw ang gulang."
+Wed,Miy
+"Week {0}","Linggo {0}"
+"What are you working on?","Ano ang ginagawa mo?"
+"What did you work on?","Ano ang ginawa mo?"
+"Work Days","Araw ng Trabaho"
+Yesterday,Kahapon
+draft,draft
+"entries this month","mga entry ngayong buwan"
+"no entries","walang entry"
+"no entries yet","wala pang entry"
+sent,naipadala
+"+{0} more","+{0} pa"
+"← from {0}","← mula sa {0}"
+"[Auto-stopped after {0}h]","[Auto-stop pagkatapos ng {0}h]"
+"Entry Type","Uri ng Entry"
+Fri,Biy
+"Keyboard Shortcuts","Mga Keyboard Shortcut"
+"Start / Pause / Resume timer","Simulan / I-pause / Ituloy ang timer"
+"Stop timer","Itigil ang timer"
+"New entry (focus quick-add bar)","Bagong entry (focus sa quick-add bar)"
+"Previous / next day or week","Nakaraang / susunod na araw o linggo"
+"Show / hide this overlay","Ipakita / itago ang overlay na ito"
+"Press H or Esc to close","Pindutin ang H o Esc upang isara"
+Close,Isara
+Timer,Timer
+Entries,Mga Entry
+"This week at a glance","Sulyap sa linggong ito"
+"Time by tag","Oras ayon sa tag"
+"Hours per day","Oras bawat araw"
+"No entries this week","Walang entry ngayong linggo"
+"No entries","Walang entry"
+Untagged,Walang tag
+"Monthly Budget (h)","Buwanang Budget (oras)"
+"Warn at (%)","Balaan sa (%)"
+"0 = no limit","0 = walang limitasyon"
+"0 = site default","0 = default ng site"
+"Approaching limit","Papalapit sa limitasyon"
+"Budget exceeded","Lumampas sa budget"
+"budget used this month","budget na nagamit ngayong buwan"
+"used this month","nagamit ngayong buwan"
+of,ng
+Focus,Focus
+"Start Focus","Simulan ang Focus"
+"End focus","Tapusin ang focus"
+"Skip break","Laktawan ang break"
+"Break over","Tapos na ang break"
+"Time to focus!","Oras na para mag-focus!"
+"Session complete","Tapos na ang session"
+"Focus complete!","Tapos na ang focus!"
+"All sessions done. Great work!","Tapos na lahat ng session. Magaling!"
+"sessions done. Great work!","session ang natapos. Magaling!"
+"Start new","Magsimula ng bago"
+"Work in focused sessions with timed breaks.","Magtrabaho sa mga focused session na may timed break."
+Session,Session
+Break,Break
+"Work (min)","Trabaho (min)"
+"Break (min)","Break (min)"
+Sessions,Mga Session
+"No break is active","Walang aktibong break"
+"No focus session is running","Walang tumatakbong focus session"
+Context,Konteksto
+Contact,Kontak
+"Context Type","Uri ng Konteksto"
+"For whom?","Para kanino?"
+"Working on?","Ano ang ginagawa?"
+"Search contacts...","Maghanap ng kontak..."
+"Select type...","Pumili ng uri..."
+"All contacts","Lahat ng kontak"
+"All projects","Lahat ng proyekto"
+"(no contact)","(walang kontak)"
+"(no project)","(walang proyekto)"
+"(no task)","(walang gawain)"
+"Filter by:","I-filter ayon sa:"
+"Time by contact","Oras ayon sa kontak"
+"Time by context","Oras ayon sa konteksto"
+"Time by task","Oras ayon sa gawain"
+"Contact hours summary","Buod ng oras ng kontak"

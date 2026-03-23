@@ -1,0 +1,247 @@
+source,translation
+Billed as {0},Iffatturat bħala {0}
+exact — rounding skipped,eżatt — ir-rounding inqabeż
+Use exact,Uża eżatt
+Apply rounding,Applika r-rounding
+Exact,Eżatt
+Billed,Iffatturat
+* Rounded up to nearest increment,* Irrawndjar 'il fuq għall-eqreb inkrement
+billable,fatturabbli
+non-billable,mhux fatturabbli
+internal,intern
+on_save,on_save
+manual,manual
+scheduled,scheduled
+hourly,hourly
+every_6_hours,every_6_hours
+daily,daily
+stopped,waqaf
+running,mixgħul
+paused,ippawżat
+Add a note...,Żid nota...
+Add entry for yesterday,Żid dħul għal-bieraħ
+Add your first entry,Żid l-ewwel dħul tiegħek
+Archive,Arkivja
+Auto-stop Timer After,Waqqaf it-tajmer awtomatikament wara
+Billable,Fatturabbli
+Billable {0},Fatturabbli {0}
+Cancel,Ikkanċella
+Cannot delete tag — {0} entries use it.,Ma tistax tħassar it-tikketta — {0} dħuliet jużawha.
+Category,Kategorija
+Client,Klijent
+Color,Kulur
+Connection Failed,Il-konnessjoni falliet
+Connection OK,Il-konnessjoni tajba
+Custom…,Personalizzat…
+Daily,Kuljum
+Daily view,Vista ta' kuljum
+Date range,Medda tad-data
+days,ġranet
+Default Entry Type,Tip ta' dħul awtomatiku
+Default Rate,Rata tas-siegħa awtomatika
+Default activity type,Tip ta' attività awtomatiku
+Delete,Ħassar
+Description,Deskrizzjoni
+Dismiss,Armi
+Do you want to sync all unsynced time entries to ERPNext now?,Trid tissinkronizza d-dħuliet kollha mhux sinkronizzati lejn ERPNext issa?
+Duplicate,Idduplika
+Duration,Tul ta' żmien
+Edit,Editja
+Enable ERPNext bridge,Attiva l-pont ta' ERPNext
+End time,Ħin tat-tmiem
+Entries forwarded,Id-dħuliet intbagħtu
+Entries older than {0} days are locked. Contact your administrator.,Id-dħuliet eqdem minn {0} ġurnata huma msakkar. Ikkuntattja l-amministratur tiegħek.
+ERPNext Bridge,Pont ERPNext
+ERPNext is not installed on this site.,ERPNext mhuwiex installat fuq dan is-sit.
+ERPNext is reachable and Timesheet access is confirmed.,ERPNext jista' jintlaħaq u l-aċċess għat-timesheet ikkkonfermat.
+ERPNext site URL,URL tas-sit ERPNext
+ERPNext Timesheet {0} for {1} is submitted — re-sync blocked.,It-timesheet ERPNext {0} għal {1} intbagħtet — is-sinkronizzazzjoni mill-ġdid imblukkata.
+ERPNext Timesheet is submitted — re-sync blocked,It-timesheet ERPNext intbagħtet — is-sinkronizzazzjoni mill-ġdid imblukkata
+Est. {0},Stmat. {0}
+Est. amount,Stmat. ammont
+Every 6 hours,Kull 6 sigħat
+All time,Iż-żmien kollu
+This year,Din is-sena
+Last year,Is-sena l-oħra
+Download CSV,Niżżel CSV
+Export my data,Esporta d-data tiegħi
+Download all your time entries as CSV.,Niżżel id-dħuliet kollha tiegħek bħala CSV.
+Export CSV,Esporta CSV
+Export successful,L-esportazzjoni rnexxiet
+Failed to forward entries: {0},Ma rnexxilekx tibgħat id-dħuliet: {0}
+Watch Settings,Watch settings
+Watch Tag,Watch tikketta
+Watch Entry,Watch dħul
+Watch Entry Tag,Watch tikketta tad-dħul
+Watch Timer,Watch tajmer
+Forwarded {0} to {1},Intbagħat {0} lejn {1}
+From,Minn
+General,Ġenerali
+Hourly,Kull siegħa
+hours,sigħat
+Hide weekends,Aħbi l-weekends
+Internal,Intern
+Internal / overhead,Intern / spejjeż ġenerali
+Last bulk sync,L-aħħar sinkronizzazzjoni bl-ingrossa
+Last month,Ix-xahar l-ieħor
+Last sync error,L-aħħar żball tas-sinkronizzazzjoni
+Last week,Il-ġimgħa l-oħra
+Less,Inqas
+Lock Entries Older Than,Sakkar dħuliet eqdem minn
+Manual,Manwali
+Map project tags,Immappja t-tikketetti tal-proġett
+Merge,Għaqqad
+Merge {0} into:,Għaqqad {0} fi:
+Mon,Tn
+More,Aktar
+Navigate,Innaviga
+New Tag,Tikketta ġdida
+No entries for {0},L-ebda dħuliet għal {0}
+No entries yet,Għad m'hemm l-ebda dħuliet
+No tags yet,Għad m'hemm l-ebda tikketetti
+No timer is running,L-ebda tajmer qed jaħdem
+Non-billable,Mhux fatturabbli
+(no description),(l-ebda deskrizzjoni)
+(not billed),(mhux iffatturat)
+Nothing logged yesterday ({0}),Xejn ma ġie rreġistrat il-bieraħ ({0})
+Open prepare summary,Iftaħ is-sommarju tal-preparazzjoni
+Open settings,Iftaħ is-settings
+Open tag management,Iftaħ il-ġestjoni tat-tikketetti
+Open today's view,Iftaħ il-vista tal-lum
+Open weekly view,Iftaħ il-vista tal-ġimgħa
+Other,Oħra
+Pause,Pawża
+Prepare,Ipprepara
+Prepare Summary,Sommarju tal-preparazzjoni
+Project,Proġett
+Rate,Rata tas-siegħa
+Rename,Erġa' semmi
+Resume,Kompli
+Saved — {0},Issejvjat — {0}
+Save,Issejvja
+Sat,Sb
+Scheduled,Skedat
+Send,Ibgħat
+Settings,Settings
+Show weekends,Uri l-weekends
+Start time,Ħin tal-bidu
+Start Timer,Ibda t-tajmer
+"Start timer: ""{0}""","Ibda t-tajmer: ""{0}"""
+"Stop current & start: ""{0}""","Waqqaf il-kurrenti u ibda: ""{0}"""
+Started yesterday,Beda l-bieraħ
+Sun,Ħd
+Sync all unsynced entries,Issinkronizza d-dħuliet kollha mhux sinkronizzati
+Sync billable entries only,Issinkronizza biss id-dħuliet fatturabbli
+Sync completed with errors,Is-sinkronizzazzjoni tlestiet bi żbalji
+Sync complete,Is-sinkronizzazzjoni tlestiet
+Sync interval,Intervall tas-sinkronizzazzjoni
+Sync mode,Mod tas-sinkronizzazzjoni
+Synced to ERPNext,Issinkronizzat lejn ERPNext
+Syncing entries to ERPNext…,Qed jissinkronizzaw id-dħuliet lejn ERPNext…
+{0} day(s) synced.,{0} ġurnata/ġranet issinkronizzati.
+Tag,Tikketta
+Tag management,Ġestjoni tat-tikketetti
+Tag Name,Isem tat-tikketta
+Tag renamed. {0} entries updated.,It-tikketta ssemmiet mill-ġdid. {0} dħuliet aġġornati.
+Tags,Tikketetti
+Tags merged. {0} entries re-tagged.,It-tikketetti ngħaqdu. {0} dħuliet ittikkettjati mill-ġdid.
+Task,Kompitu
+Test connection,Ittestja l-konnessjoni
+Test Connection,Ittestja l-konnessjoni
+This entry is locked,Din id-dħul huwa msakkar
+This month,Dan ix-xahar
+This week,Din il-ġimgħa
+Thu,Ħm
+Time Bridge,Pont taż-Żmien
+Time Entries,Dħuliet taż-żmien
+Timer already running,It-tajmer diġà qed jaħdem
+Timer is already running,It-tajmer diġà qed jaħdem
+Timer is not paused,It-tajmer mhuwiex ippawżat
+Timer is not running,It-tajmer mhuwiex jaħdem
+To,Sa
+Today,Illum
+Total,Total
+Total billable,Total fatturabbli
+Tue,Tl
+Unknown error,Żball mhux magħruf
+Unassigned,Mhux assenjat
+(untagged project),(proġett mhux ittikkettat)
+View entry →,Ara d-dħul →
+Warning: This entry is more than 7 days old.,Twissija: Din id-dħul huwa eqdem minn 7 ijiem.
+Wed,Er
+Week {0},Ġimgħa {0}
+What are you working on?,Fuq xiex qed taħdem?
+What did you work on?,Fuq xiex ħdimt?
+Work Days,Ġranet tax-xogħol
+Yesterday,Il-bieraħ
+draft,abbozz
+entries this month,dħuliet dan ix-xahar
+no entries,l-ebda dħuliet
+no entries yet,għad m'hemm l-ebda dħuliet
+sent,mibgħut
++{0} more,+{0} aktar
+← from {0},← minn {0}
+[Auto-stopped after {0}h],[Waqaf awtomatikament wara {0}s]
+Entry Type,Tip ta' dħul
+Fri,Ġm
+Keyboard Shortcuts,Shortcuts tat-tastiera
+Start / Pause / Resume timer,Ibda / Pawża / Kompli t-tajmer
+Stop timer,Waqqaf it-tajmer
+New entry (focus quick-add bar),Dħul ġdid (iffoka fuq il-bar ta' żieda mgħaġġla)
+Previous / next day or week,Il-ġurnata / ġimgħa ta' qabel jew ta' wara
+Show / hide this overlay,Uri / aħbi din l-overlay
+Press H or Esc to close,Agħfas H jew Esc biex tagħlaq
+Close,Agħlaq
+Timer,Tajmer
+Entries,Dħuliet
+This week at a glance,Din il-ġimgħa f'daqqa t'għajn
+Time by tag,Żmien skont it-tikketta
+Hours per day,Sigħat kuljum
+No entries this week,L-ebda dħuliet din il-ġimgħa
+No entries,L-ebda dħuliet
+Untagged,Mhux ittikkettat
+Monthly Budget (h),Baġit ta' kull xahar (s)
+Warn at (%),Avża fil (%)
+0 = no limit,0 = bla limitu
+0 = site default,0 = default tas-sit
+Approaching limit,Qed joqrob il-limitu
+Budget exceeded,Il-baġit inqabeż
+budget used this month,baġit użat dan ix-xahar
+used this month,użat dan ix-xahar
+of,minn
+Focus,Fokus
+Start Focus,Ibda l-fokus
+End focus,Temm il-fokus
+Skip break,Aqbeż il-waqfa
+Break over,Il-waqfa spiċċat
+Time to focus!,Ħin għall-fokus!
+Session complete,Is-sessjoni tlestiet
+Focus complete!,Il-fokus tlesta!
+All sessions done. Great work!,Is-sessjonijiet kollha tlestew. Xogħol tajjeb!
+sessions done. Great work!,sessjonijiet tlestew. Xogħol tajjeb!
+Start new,Ibda ġdida
+Work in focused sessions with timed breaks.,Aħdem f'sessjonijiet iffukati b'waqfiet kronometrati.
+Session,Sessjoni
+Break,Waqfa
+Work (min),Xogħol (min)
+Break (min),Waqfa (min)
+Sessions,Sessjonijiet
+No break is active,L-ebda waqfa hija attiva
+No focus session is running,L-ebda sessjoni ta' fokus qed taħdem
+Context,Kuntest
+Contact,Kuntatt
+Context Type,Tip ta' kuntest
+For whom?,Għal min?
+Working on?,Fuq xiex qed taħdem?
+Search contacts...,Fittex kuntatti...
+Select type...,Agħżel it-tip...
+All contacts,Il-kuntatti kollha
+All projects,Il-proġetti kollha
+(no contact),(l-ebda kuntatt)
+(no project),(l-ebda proġett)
+(no task),(l-ebda kompitu)
+Filter by:,Iffiltra skont:
+Time by contact,Żmien skont il-kuntatt
+Time by context,Żmien skont il-kuntest
+Time by task,Żmien skont il-kompitu
+Contact hours summary,Sommarju tas-sigħat skont il-kuntatt

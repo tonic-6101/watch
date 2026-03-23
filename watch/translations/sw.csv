@@ -1,0 +1,247 @@
+source,translation
+"Billed as {0}","Imetozwa kama {0}"
+"exact — rounding skipped","halisi — kuzungusha kurukwa"
+"Use exact","Tumia halisi"
+"Apply rounding","Tumia kuzungusha"
+Exact,Halisi
+Billed,Imetozwa
+"* Rounded up to nearest increment","* Imezungushwa hadi kiwango cha karibu"
+billable,inayotozwa
+non-billable,haiatoswi
+internal,ya ndani
+on_save,on_save
+manual,manual
+scheduled,scheduled
+hourly,hourly
+every_6_hours,every_6_hours
+daily,daily
+stopped,imesimama
+running,inafanya kazi
+paused,imesitishwa
+"Add a note...","Ongeza maelezo..."
+"Add entry for yesterday","Ongeza ingizo la jana"
+"Add your first entry","Ongeza ingizo lako la kwanza"
+Archive,Hifadhi
+"Auto-stop Timer After","Simamisha Kipima Muda Kiotomatiki Baada ya"
+Billable,Inayotozwa
+"Billable {0}","Inayotozwa {0}"
+Cancel,Ghairi
+"Cannot delete tag — {0} entries use it.","Haiwezi kufuta lebo — maingizo {0} yanaitumia."
+Category,Kategoria
+Client,Mteja
+Color,Rangi
+"Connection Failed","Muunganisho Umeshindikana"
+"Connection OK","Muunganisho Umefanikiwa"
+"Custom…","Maalum…"
+Daily,Kila siku
+"Daily view","Mtazamo wa kila siku"
+"Date range","Kipindi cha tarehe"
+days,siku
+"Default Entry Type","Aina ya Ingizo Chaguo-msingi"
+"Default Rate","Kiwango Chaguo-msingi"
+"Default activity type","Aina ya shughuli chaguo-msingi"
+Delete,Futa
+Description,Maelezo
+Dismiss,Ondoa
+"Do you want to sync all unsynced time entries to ERPNext now?","Unataka kulandanisha maingizo yote ambayo hayajalandanishwa kwenda ERPNext sasa?"
+Duplicate,Nakili
+Duration,Muda
+Edit,Hariri
+"Enable ERPNext bridge","Wezesha daraja la ERPNext"
+"End time","Muda wa mwisho"
+"Entries forwarded","Maingizo yametumwa"
+"Entries older than {0} days are locked. Contact your administrator.","Maingizo ya zaidi ya siku {0} yamefungwa. Wasiliana na msimamizi wako."
+"ERPNext Bridge","Daraja la ERPNext"
+"ERPNext is not installed on this site.","ERPNext haijasanikishwa kwenye tovuti hii."
+"ERPNext is reachable and Timesheet access is confirmed.","ERPNext inapatikana na ufikiaji wa Timesheet umethibitishwa."
+"ERPNext site URL","URL ya tovuti ya ERPNext"
+"ERPNext Timesheet {0} for {1} is submitted — re-sync blocked.","Timesheet ya ERPNext {0} kwa {1} imetumwa — kulandanisha tena kumezuiwa."
+"ERPNext Timesheet is submitted — re-sync blocked","Timesheet ya ERPNext imetumwa — kulandanisha tena kumezuiwa"
+"Est. {0}","Makad. {0}"
+"Est. amount","Makad. kiasi"
+"Every 6 hours","Kila masaa 6"
+"All time","Wakati wote"
+"This year","Mwaka huu"
+"Last year","Mwaka uliopita"
+"Download CSV","Pakua CSV"
+"Export my data","Hamisha data yangu"
+"Download all your time entries as CSV.","Pakua maingizo yako yote ya muda kama CSV."
+"Export CSV","Hamisha CSV"
+"Export successful","Uhamishaji umefanikiwa"
+"Failed to forward entries: {0}","Imeshindikana kutuma maingizo: {0}"
+"Watch Settings","Mipangilio ya Watch"
+"Watch Tag","Lebo ya Watch"
+"Watch Entry","Ingizo la Watch"
+"Watch Entry Tag","Lebo ya Ingizo la Watch"
+"Watch Timer","Kipima Muda cha Watch"
+"Forwarded {0} to {1}","{0} imetumwa kwa {1}"
+From,Kutoka
+General,Jumla
+Hourly,Kila saa
+hours,masaa
+"Hide weekends","Ficha wikendi"
+Internal,Ya ndani
+"Internal / overhead","Ya ndani / gharama za kawaida"
+"Last bulk sync","Ulandanishaji wa wingi wa mwisho"
+"Last month","Mwezi uliopita"
+"Last sync error","Hitilafu ya mwisho ya ulandanishaji"
+"Last week","Wiki iliyopita"
+Less,Punguza
+"Lock Entries Older Than","Funga Maingizo ya Zamani Zaidi ya"
+Manual,Mwongozo
+"Map project tags","Unganisha lebo za mradi"
+Merge,Unganisha
+"Merge {0} into:","Unganisha {0} ndani ya:"
+Mon,Jtt
+More,Zaidi
+Navigate,Elekeza
+"New Tag","Lebo Mpya"
+"No entries for {0}","Hakuna maingizo kwa {0}"
+"No entries yet","Bado hakuna maingizo"
+"No tags yet","Bado hakuna lebo"
+"No timer is running","Hakuna kipima muda kinachofanya kazi"
+Non-billable,Haiatoswi
+"(no description)","(hakuna maelezo)"
+"(not billed)","(haijatozwa)"
+"Nothing logged yesterday ({0})","Hakuna kilichorekodiwa jana ({0})"
+"Open prepare summary","Fungua muhtasari wa maandalizi"
+"Open settings","Fungua mipangilio"
+"Open tag management","Fungua usimamizi wa lebo"
+"Open today's view","Fungua mtazamo wa leo"
+"Open weekly view","Fungua mtazamo wa wiki"
+Other,Nyingine
+Pause,Sitisha
+Prepare,Maandalizi
+"Prepare Summary","Muhtasari wa Maandalizi"
+Project,Mradi
+Rate,Kiwango
+Rename,Badilisha jina
+Resume,Endelea
+"Saved — {0}","Imehifadhiwa — {0}"
+Save,Hifadhi
+Sat,Jmt
+Scheduled,Imeratibiwa
+Send,Tuma
+Settings,Mipangilio
+"Show weekends","Onyesha wikendi"
+"Start time","Muda wa kuanza"
+"Start Timer","Anzisha Kipima Muda"
+"Start timer: ""{0}""","Anzisha kipima muda: ""{0}"""
+"Stop current & start: ""{0}""","Simamisha sasa na uanze: ""{0}"""
+"Started yesterday","Ilianza jana"
+Sun,Jpl
+"Sync all unsynced entries","Landanisha maingizo yote ambayo hayajalandanishwa"
+"Sync billable entries only","Landanisha maingizo yanayotozwa tu"
+"Sync completed with errors","Ulandanishaji umekamilika na hitilafu"
+"Sync complete","Ulandanishaji umekamilika"
+"Sync interval","Kipindi cha ulandanishaji"
+"Sync mode","Hali ya ulandanishaji"
+"Synced to ERPNext","Imeunganishwa na ERPNext"
+"Syncing entries to ERPNext…","Kulandanisha maingizo kwenda ERPNext…"
+"{0} day(s) synced.","Siku {0} zimeundanishwa."
+Tag,Lebo
+"Tag management","Usimamizi wa lebo"
+"Tag Name","Jina la Lebo"
+"Tag renamed. {0} entries updated.","Lebo imebadilishwa jina. Maingizo {0} yamesasishwa."
+Tags,Lebo
+"Tags merged. {0} entries re-tagged.","Lebo zimeunganishwa. Maingizo {0} yamewekwa lebo mpya."
+Task,Kazi
+"Test connection","Jaribu muunganisho"
+"Test Connection","Jaribu Muunganisho"
+"This entry is locked","Ingizo hili limefungwa"
+"This month","Mwezi huu"
+"This week","Wiki hii"
+Thu,Alh
+"Time Bridge","Daraja la Muda"
+"Time Entries","Maingizo ya Muda"
+"Timer already running","Kipima muda kinafanya kazi tayari"
+"Timer is already running","Kipima muda kinafanya kazi tayari"
+"Timer is not paused","Kipima muda hakijasitishwa"
+"Timer is not running","Kipima muda hakifanyi kazi"
+To,Hadi
+Today,Leo
+Total,Jumla
+"Total billable","Jumla inayotozwa"
+Tue,Jnn
+"Unknown error","Hitilafu isiyojulikana"
+Unassigned,Haijapewa
+"(untagged project)","(mradi bila lebo)"
+"View entry →","Tazama ingizo →"
+"Warning: This entry is more than 7 days old.","Onyo: Ingizo hili lina zaidi ya siku 7."
+Wed,Jtn
+"Week {0}","Wiki {0}"
+"What are you working on?","Unafanya kazi gani?"
+"What did you work on?","Ulifanya kazi gani?"
+"Work Days","Siku za Kazi"
+Yesterday,Jana
+draft,rasimu
+"entries this month","maingizo mwezi huu"
+"no entries","hakuna maingizo"
+"no entries yet","bado hakuna maingizo"
+sent,imetumwa
+"+{0} more","+{0} zaidi"
+"← from {0}","← kutoka {0}"
+"[Auto-stopped after {0}h]","[Ilisimamishwa kiotomatiki baada ya saa {0}]"
+"Entry Type","Aina ya Ingizo"
+Fri,Ijm
+"Keyboard Shortcuts","Njia za Mkato za Kibodi"
+"Start / Pause / Resume timer","Anzisha / Sitisha / Endelea kipima muda"
+"Stop timer","Simamisha kipima muda"
+"New entry (focus quick-add bar)","Ingizo jipya (fokasi kwenye baa ya kuongeza haraka)"
+"Previous / next day or week","Siku au wiki iliyopita / inayofuata"
+"Show / hide this overlay","Onyesha / ficha mwangaza huu"
+"Press H or Esc to close","Bonyeza H au Esc kufunga"
+Close,Funga
+Timer,Kipima Muda
+Entries,Maingizo
+"This week at a glance","Wiki hii kwa mtazamo"
+"Time by tag","Muda kwa lebo"
+"Hours per day","Masaa kwa siku"
+"No entries this week","Hakuna maingizo wiki hii"
+"No entries","Hakuna maingizo"
+Untagged,Bila lebo
+"Monthly Budget (h)","Bajeti ya Kila Mwezi (s)"
+"Warn at (%)","Onya kwa (%)"
+"0 = no limit","0 = hakuna kikomo"
+"0 = site default","0 = chaguo-msingi la tovuti"
+"Approaching limit","Inakaribia kikomo"
+"Budget exceeded","Bajeti imezidi"
+"budget used this month","bajeti iliyotumika mwezi huu"
+"used this month","imetumika mwezi huu"
+of,ya
+Focus,Fokasi
+"Start Focus","Anza Fokasi"
+"End focus","Maliza fokasi"
+"Skip break","Ruka mapumziko"
+"Break over","Mapumziko yamekwisha"
+"Time to focus!","Wakati wa kufokasi!"
+"Session complete","Kipindi kimekamilika"
+"Focus complete!","Fokasi imekamilika!"
+"All sessions done. Great work!","Vipindi vyote vimekamilika. Kazi nzuri!"
+"sessions done. Great work!","vipindi vimekamilika. Kazi nzuri!"
+"Start new","Anza upya"
+"Work in focused sessions with timed breaks.","Fanya kazi katika vipindi vya fokasi na mapumziko ya muda."
+Session,Kipindi
+Break,Mapumziko
+"Work (min)","Kazi (dak)"
+"Break (min)","Mapumziko (dak)"
+Sessions,Vipindi
+"No break is active","Hakuna mapumziko yanayoendelea"
+"No focus session is running","Hakuna kipindi cha fokasi kinachoendelea"
+Context,Muktadha
+Contact,Anwani
+"Context Type","Aina ya Muktadha"
+"For whom?","Kwa nani?"
+"Working on?","Unafanya nini?"
+"Search contacts...","Tafuta anwani..."
+"Select type...","Chagua aina..."
+"All contacts","Anwani zote"
+"All projects","Miradi yote"
+"(no contact)","(hakuna anwani)"
+"(no project)","(hakuna mradi)"
+"(no task)","(hakuna kazi)"
+"Filter by:","Chuja kwa:"
+"Time by contact","Muda kwa anwani"
+"Time by context","Muda kwa muktadha"
+"Time by task","Muda kwa kazi"
+"Contact hours summary","Muhtasari wa masaa ya anwani"

@@ -1,0 +1,247 @@
+source,translation
+Billed as {0},Contabilizado como {0}
+exact — rounding skipped,exato — arredondamento ignorado
+Use exact,Usar valor exato
+Apply rounding,Aplicar arredondamento
+Exact,Exato
+Billed,Contabilizado
+* Rounded up to nearest increment,* Arredondado para o incremento mais próximo
+billable,imputável
+non-billable,não imputável
+internal,interno
+on_save,on_save
+manual,manual
+scheduled,scheduled
+hourly,hourly
+every_6_hours,every_6_hours
+daily,daily
+stopped,parado
+running,em curso
+paused,em pausa
+Add a note...,Adicionar uma nota…
+Add entry for yesterday,Adicionar entrada para ontem
+Add your first entry,Adicione a sua primeira entrada
+Archive,Arquivar
+Auto-stop Timer After,Parar temporizador automaticamente após
+Billable,Imputável
+Billable {0},Imputável {0}
+Cancel,Cancelar
+Cannot delete tag — {0} entries use it.,Não é possível eliminar o tag — {0} entradas utilizam-no.
+Category,Categoria
+Client,Cliente
+Color,Cor
+Connection Failed,Ligação falhada
+Connection OK,Ligação OK
+Custom…,Personalizado…
+Daily,Diário
+Daily view,Vista diária
+Date range,Período
+days,dias
+Default Entry Type,Tipo de entrada predefinido
+Default Rate,Taxa predefinida
+Default activity type,Tipo de atividade predefinido
+Delete,Eliminar
+Description,Descrição
+Dismiss,Dispensar
+Do you want to sync all unsynced time entries to ERPNext now?,Pretende sincronizar agora todas as entradas não sincronizadas com o ERPNext?
+Duplicate,Duplicar
+Duration,Duração
+Edit,Editar
+Enable ERPNext bridge,Ativar ponte ERPNext
+End time,Hora de fim
+Entries forwarded,Entradas transmitidas
+Entries older than {0} days are locked. Contact your administrator.,As entradas com mais de {0} dias estão bloqueadas. Contacte o seu administrador.
+ERPNext Bridge,Ponte ERPNext
+ERPNext is not installed on this site.,O ERPNext não está instalado neste site.
+ERPNext is reachable and Timesheet access is confirmed.,O ERPNext está acessível e o acesso às folhas de horas está confirmado.
+ERPNext site URL,URL do site ERPNext
+ERPNext Timesheet {0} for {1} is submitted — re-sync blocked.,A folha de horas ERPNext {0} para {1} está submetida — re-sincronização bloqueada.
+ERPNext Timesheet is submitted — re-sync blocked,A folha de horas ERPNext está submetida — re-sincronização bloqueada
+Est. {0},Est. {0}
+Est. amount,Valor est.
+Every 6 hours,A cada 6 horas
+All time,Todos os períodos
+This year,Este ano
+Last year,O ano passado
+Download CSV,Transferir CSV
+Export my data,Exportar os meus dados
+Download all your time entries as CSV.,Transfira todas as suas entradas de tempo como CSV.
+Export CSV,Exportar CSV
+Export successful,Exportação concluída
+Failed to forward entries: {0},Falha ao transmitir entradas: {0}
+Watch Settings,Definições Watch
+Watch Tag,Tag Watch
+Watch Entry,Entrada Watch
+Watch Entry Tag,Tag de entrada Watch
+Watch Timer,Temporizador Watch
+Forwarded {0} to {1},{0} transmitido para {1}
+From,De
+General,Geral
+Hourly,De hora em hora
+hours,horas
+Hide weekends,Ocultar fins de semana
+Internal,Interno
+Internal / overhead,Interno / despesas gerais
+Last bulk sync,Última sincronização em massa
+Last month,O mês passado
+Last sync error,Último erro de sincronização
+Last week,A semana passada
+Less,Menos
+Lock Entries Older Than,Bloquear entradas com mais de
+Manual,Manual
+Map project tags,Associar tags de projeto
+Merge,Fundir
+Merge {0} into:,Fundir {0} em:
+Mon,Seg
+More,Mais
+Navigate,Navegar
+New Tag,Novo tag
+No entries for {0},Sem entradas para {0}
+No entries yet,Ainda sem entradas
+No tags yet,Ainda sem tags
+No timer is running,Nenhum temporizador em curso
+Non-billable,Não imputável
+(no description),(sem descrição)
+(not billed),(não contabilizado)
+Nothing logged yesterday ({0}),Nada registado ontem ({0})
+Open prepare summary,Abrir resumo
+Open settings,Abrir definições
+Open tag management,Abrir gestão de tags
+Open today's view,Abrir vista de hoje
+Open weekly view,Abrir vista semanal
+Other,Outro
+Pause,Pausa
+Prepare,Preparar
+Prepare Summary,Resumo
+Project,Projeto
+Rate,Taxa
+Rename,Renomear
+Resume,Retomar
+Saved — {0},Guardado — {0}
+Save,Guardar
+Sat,Sáb
+Scheduled,Agendado
+Send,Enviar
+Settings,Definições
+Show weekends,Mostrar fins de semana
+Start time,Hora de início
+Start Timer,Iniciar temporizador
+"Start timer: ""{0}""","Iniciar temporizador: ""{0}"""
+"Stop current & start: ""{0}""","Parar e iniciar: ""{0}"""
+Started yesterday,Iniciado ontem
+Sun,Dom
+Sync all unsynced entries,Sincronizar todas as entradas não sincronizadas
+Sync billable entries only,Sincronizar apenas entradas imputáveis
+Sync completed with errors,Sincronização concluída com erros
+Sync complete,Sincronização concluída
+Sync interval,Intervalo de sincronização
+Sync mode,Modo de sincronização
+Synced to ERPNext,Sincronizado com o ERPNext
+Syncing entries to ERPNext…,A sincronizar entradas com o ERPNext…
+{0} day(s) synced.,{0} dia(s) sincronizado(s).
+Tag,Tag
+Tag management,Gestão de tags
+Tag Name,Nome do tag
+Tag renamed. {0} entries updated.,Tag renomeado. {0} entradas atualizadas.
+Tags,Tags
+Tags merged. {0} entries re-tagged.,Tags fundidos. {0} entradas re-etiquetadas.
+Task,Tarefa
+Test connection,Testar ligação
+Test Connection,Testar ligação
+This entry is locked,Esta entrada está bloqueada
+This month,Este mês
+This week,Esta semana
+Thu,Qui
+Time Bridge,Ponte temporal
+Time Entries,Entradas de tempo
+Timer already running,Temporizador já em curso
+Timer is already running,O temporizador já está em curso
+Timer is not paused,O temporizador não está em pausa
+Timer is not running,O temporizador não está em curso
+To,Até
+Today,Hoje
+Total,Total
+Total billable,Total imputável
+Tue,Ter
+Unknown error,Erro desconhecido
+Unassigned,Não atribuído
+(untagged project),(projeto sem tag)
+View entry →,Ver entrada →
+Warning: This entry is more than 7 days old.,Aviso: esta entrada tem mais de 7 dias.
+Wed,Qua
+Week {0},Semana {0}
+What are you working on?,Em que está a trabalhar?
+What did you work on?,Em que trabalhou?
+Work Days,Dias úteis
+Yesterday,Ontem
+draft,rascunho
+entries this month,entradas este mês
+no entries,sem entradas
+no entries yet,ainda sem entradas
+sent,transmitido
++{0} more,+{0} mais
+← from {0},← de {0}
+[Auto-stopped after {0}h],[Paragem automática após {0}h]
+Entry Type,Tipo de entrada
+Fri,Sex
+Keyboard Shortcuts,Atalhos de teclado
+Start / Pause / Resume timer,Iniciar / Pausar / Retomar temporizador
+Stop timer,Parar temporizador
+New entry (focus quick-add bar),Nova entrada (barra de adição rápida)
+Previous / next day or week,Dia ou semana anterior / seguinte
+Show / hide this overlay,Mostrar / ocultar este painel
+Press H or Esc to close,Prima H ou Esc para fechar
+Close,Fechar
+Timer,Temporizador
+Entries,Entradas
+This week at a glance,Esta semana num relance
+Time by tag,Tempo por tag
+Hours per day,Horas por dia
+No entries this week,Sem entradas esta semana
+No entries,Sem entradas
+Untagged,Sem tag
+Monthly Budget (h),Orçamento mensal (h)
+Warn at (%),Alerta a (%)
+0 = no limit,0 = sem limite
+0 = site default,0 = valor predefinido do site
+Approaching limit,A aproximar-se do limite
+Budget exceeded,Orçamento excedido
+budget used this month,orçamento utilizado este mês
+used this month,utilizado este mês
+of,de
+Focus,Concentração
+Start Focus,Iniciar concentração
+End focus,Terminar concentração
+Skip break,Saltar pausa
+Break over,Pausa terminada
+Time to focus!,Hora de se concentrar!
+Session complete,Sessão concluída
+Focus complete!,Concentração concluída!
+All sessions done. Great work!,Todas as sessões concluídas. Excelente trabalho!
+sessions done. Great work!,sessões concluídas. Excelente trabalho!
+Start new,Iniciar nova
+Work in focused sessions with timed breaks.,Trabalhe em sessões de concentração com pausas cronometradas.
+Session,Sessão
+Break,Pausa
+Work (min),Trabalho (min)
+Break (min),Pausa (min)
+Sessions,Sessões
+No break is active,Nenhuma pausa ativa
+No focus session is running,Nenhuma sessão de concentração em curso
+Context,Contexto
+Contact,Contacto
+Context Type,Tipo de contexto
+For whom?,Para quem?
+Working on?,A trabalhar em?
+Search contacts...,Pesquisar contactos…
+Select type...,Selecionar tipo…
+All contacts,Todos os contactos
+All projects,Todos os projetos
+(no contact),(sem contacto)
+(no project),(sem projeto)
+(no task),(sem tarefa)
+Filter by:,Filtrar por:
+Time by contact,Tempo por contacto
+Time by context,Tempo por contexto
+Time by task,Tempo por tarefa
+Contact hours summary,Resumo de horas por contacto

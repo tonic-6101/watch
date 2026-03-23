@@ -1,0 +1,247 @@
+source,translation
+Billed as {0},Zaračunano kot {0}
+exact — rounding skipped,natančno — zaokroževanje preskočeno
+Use exact,Uporabi natančno
+Apply rounding,Uporabi zaokroževanje
+Exact,Natančno
+Billed,Zaračunano
+* Rounded up to nearest increment,* Zaokroženo navzgor na najbližji inkrement
+billable,zaračunljivo
+non-billable,nezaračunljivo
+internal,interno
+on_save,on_save
+manual,manual
+scheduled,scheduled
+hourly,hourly
+every_6_hours,every_6_hours
+daily,daily
+stopped,ustavljeno
+running,teče
+paused,začasno ustavljeno
+Add a note...,Dodaj opombo...
+Add entry for yesterday,Dodaj vnos za včeraj
+Add your first entry,Dodaj svoj prvi vnos
+Archive,Arhiviraj
+Auto-stop Timer After,Samodejno ustavi merilnik po
+Billable,Zaračunljivo
+Billable {0},Zaračunljivo {0}
+Cancel,Prekliči
+Cannot delete tag — {0} entries use it.,Ni mogoče izbrisati oznake — {0} vnosov jo uporablja.
+Category,Kategorija
+Client,Stranka
+Color,Barva
+Connection Failed,Povezava ni uspela
+Connection OK,Povezava uspešna
+Custom…,Po meri…
+Daily,Dnevno
+Daily view,Dnevni pogled
+Date range,Časovno obdobje
+days,dni
+Default Entry Type,Privzeta vrsta vnosa
+Default Rate,Privzeta urna postavka
+Default activity type,Privzeta vrsta dejavnosti
+Delete,Izbriši
+Description,Opis
+Dismiss,Opusti
+Do you want to sync all unsynced time entries to ERPNext now?,Ali želite zdaj sinhronizirati vse nesinhronizirane časovne vnose v ERPNext?
+Duplicate,Podvoji
+Duration,Trajanje
+Edit,Uredi
+Enable ERPNext bridge,Omogoči ERPNext most
+End time,Čas konca
+Entries forwarded,Vnosi posredovani
+Entries older than {0} days are locked. Contact your administrator.,Vnosi starejši od {0} dni so zaklenjeni. Obrnite se na skrbnika.
+ERPNext Bridge,ERPNext most
+ERPNext is not installed on this site.,ERPNext ni nameščen na tem mestu.
+ERPNext is reachable and Timesheet access is confirmed.,ERPNext je dosegljiv in dostop do časovnih listov je potrjen.
+ERPNext site URL,ERPNext URL mesta
+ERPNext Timesheet {0} for {1} is submitted — re-sync blocked.,ERPNext časovni list {0} za {1} je oddan — ponovna sinhronizacija blokirana.
+ERPNext Timesheet is submitted — re-sync blocked,ERPNext časovni list je oddan — ponovna sinhronizacija blokirana
+Est. {0},Oc. {0}
+Est. amount,Oc. znesek
+Every 6 hours,Vsakih 6 ur
+All time,Ves čas
+This year,Letos
+Last year,Lani
+Download CSV,Prenesi CSV
+Export my data,Izvozi moje podatke
+Download all your time entries as CSV.,Prenesite vse svoje časovne vnose kot CSV.
+Export CSV,Izvozi CSV
+Export successful,Izvoz uspešen
+Failed to forward entries: {0},Posredovanje vnosov ni uspelo: {0}
+Watch Settings,Watch nastavitve
+Watch Tag,Watch oznaka
+Watch Entry,Watch vnos
+Watch Entry Tag,Watch oznaka vnosa
+Watch Timer,Watch merilnik
+Forwarded {0} to {1},Posredovano {0} v {1}
+From,Od
+General,Splošno
+Hourly,Vsako uro
+hours,ur
+Hide weekends,Skrij vikende
+Internal,Interno
+Internal / overhead,Interno / režijsko
+Last bulk sync,Zadnja skupinska sinhronizacija
+Last month,Prejšnji mesec
+Last sync error,Zadnja napaka sinhronizacije
+Last week,Prejšnji teden
+Less,Manj
+Lock Entries Older Than,Zakleni vnose starejše od
+Manual,Ročno
+Map project tags,Preslikaj oznake projekta
+Merge,Združi
+Merge {0} into:,Združi {0} v:
+Mon,Pon
+More,Več
+Navigate,Navigiraj
+New Tag,Nova oznaka
+No entries for {0},Ni vnosov za {0}
+No entries yet,Še ni vnosov
+No tags yet,Še ni oznak
+No timer is running,Noben merilnik ne teče
+Non-billable,Nezaračunljivo
+(no description),(brez opisa)
+(not billed),(ni zaračunano)
+Nothing logged yesterday ({0}),Včeraj ni bilo zabeleženo nič ({0})
+Open prepare summary,Odpri povzetek priprave
+Open settings,Odpri nastavitve
+Open tag management,Odpri upravljanje oznak
+Open today's view,Odpri današnji pogled
+Open weekly view,Odpri tedenski pogled
+Other,Drugo
+Pause,Začasno ustavi
+Prepare,Pripravi
+Prepare Summary,Povzetek priprave
+Project,Projekt
+Rate,Urna postavka
+Rename,Preimenuj
+Resume,Nadaljuj
+Saved — {0},Shranjeno — {0}
+Save,Shrani
+Sat,Sob
+Scheduled,Načrtovano
+Send,Pošlji
+Settings,Nastavitve
+Show weekends,Prikaži vikende
+Start time,Čas začetka
+Start Timer,Zaženi merilnik
+"Start timer: ""{0}""","Zaženi merilnik: ""{0}"""
+"Stop current & start: ""{0}""","Ustavi trenutnega in zaženi: ""{0}"""
+Started yesterday,Začeto včeraj
+Sun,Ned
+Sync all unsynced entries,Sinhroniziraj vse nesinhronizirane vnose
+Sync billable entries only,Sinhroniziraj samo zaračunljive vnose
+Sync completed with errors,Sinhronizacija končana z napakami
+Sync complete,Sinhronizacija končana
+Sync interval,Interval sinhronizacije
+Sync mode,Način sinhronizacije
+Synced to ERPNext,Sinhronizirano v ERPNext
+Syncing entries to ERPNext…,Sinhronizacija vnosov v ERPNext…
+{0} day(s) synced.,{0} dan/dni sinhronizirano.
+Tag,Oznaka
+Tag management,Upravljanje oznak
+Tag Name,Ime oznake
+Tag renamed. {0} entries updated.,Oznaka preimenovana. {0} vnosov posodobljenih.
+Tags,Oznake
+Tags merged. {0} entries re-tagged.,Oznake združene. {0} vnosov ponovno označenih.
+Task,Naloga
+Test connection,Preizkusi povezavo
+Test Connection,Preizkusi povezavo
+This entry is locked,Ta vnos je zaklenjen
+This month,Ta mesec
+This week,Ta teden
+Thu,Čet
+Time Bridge,Časovni most
+Time Entries,Časovni vnosi
+Timer already running,Merilnik že teče
+Timer is already running,Merilnik že teče
+Timer is not paused,Merilnik ni začasno ustavljen
+Timer is not running,Merilnik ne teče
+To,Do
+Today,Danes
+Total,Skupaj
+Total billable,Skupaj zaračunljivo
+Tue,Tor
+Unknown error,Neznana napaka
+Unassigned,Nedodeljeno
+(untagged project),(neoznačen projekt)
+View entry →,Poglej vnos →
+Warning: This entry is more than 7 days old.,Opozorilo: Ta vnos je starejši od 7 dni.
+Wed,Sre
+Week {0},Teden {0}
+What are you working on?,Na čem delate?
+What did you work on?,Na čem ste delali?
+Work Days,Delovni dnevi
+Yesterday,Včeraj
+draft,osnutek
+entries this month,vnosov ta mesec
+no entries,ni vnosov
+no entries yet,še ni vnosov
+sent,poslano
++{0} more,+{0} več
+← from {0},← od {0}
+[Auto-stopped after {0}h],[Samodejno ustavljeno po {0}h]
+Entry Type,Vrsta vnosa
+Fri,Pet
+Keyboard Shortcuts,Bližnjice na tipkovnici
+Start / Pause / Resume timer,Zaženi / Začasno ustavi / Nadaljuj merilnik
+Stop timer,Ustavi merilnik
+New entry (focus quick-add bar),Nov vnos (fokus na hitro vrstico za dodajanje)
+Previous / next day or week,Prejšnji / naslednji dan ali teden
+Show / hide this overlay,Prikaži / skrij to prekrivanje
+Press H or Esc to close,Pritisnite H ali Esc za zapiranje
+Close,Zapri
+Timer,Merilnik
+Entries,Vnosi
+This week at a glance,Ta teden na prvi pogled
+Time by tag,Čas po oznaki
+Hours per day,Ur na dan
+No entries this week,Ni vnosov ta teden
+No entries,Ni vnosov
+Untagged,Neoznačeno
+Monthly Budget (h),Mesečni proračun (h)
+Warn at (%),Opozori pri (%)
+0 = no limit,0 = brez omejitve
+0 = site default,0 = privzeto mesta
+Approaching limit,Bližanje omejitvi
+Budget exceeded,Proračun presežen
+budget used this month,proračuna porabljenega ta mesec
+used this month,porabljenega ta mesec
+of,od
+Focus,Fokus
+Start Focus,Začni fokus
+End focus,Končaj fokus
+Skip break,Preskoči odmor
+Break over,Odmor končan
+Time to focus!,Čas za fokus!
+Session complete,Seja končana
+Focus complete!,Fokus končan!
+All sessions done. Great work!,Vse seje končane. Odlično delo!
+sessions done. Great work!,sej končanih. Odlično delo!
+Start new,Začni novo
+Work in focused sessions with timed breaks.,Delajte v fokusiranih sejah z odmerjenimi odmori.
+Session,Seja
+Break,Odmor
+Work (min),Delo (min)
+Break (min),Odmor (min)
+Sessions,Seje
+No break is active,Noben odmor ni aktiven
+No focus session is running,Nobena fokus seja ne teče
+Context,Kontekst
+Contact,Stik
+Context Type,Vrsta konteksta
+For whom?,Za koga?
+Working on?,Na čem delate?
+Search contacts...,Išči stike...
+Select type...,Izberi vrsto...
+All contacts,Vsi stiki
+All projects,Vsi projekti
+(no contact),(brez stika)
+(no project),(brez projekta)
+(no task),(brez naloge)
+Filter by:,Filtriraj po:
+Time by contact,Čas po stiku
+Time by context,Čas po kontekstu
+Time by task,Čas po nalogi
+Contact hours summary,Povzetek ur po stiku

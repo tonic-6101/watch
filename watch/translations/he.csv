@@ -1,0 +1,247 @@
+source,translation
+Billed as {0},חויב כ-{0}
+exact — rounding skipped,מדויק — עיגול דולג
+Use exact,השתמש במדויק
+Apply rounding,החל עיגול
+Exact,מדויק
+Billed,חויב
+* Rounded up to nearest increment,* עוגל כלפי מעלה לתוספת הקרובה
+billable,לחיוב
+non-billable,לא לחיוב
+internal,פנימי
+on_save,on_save
+manual,manual
+scheduled,scheduled
+hourly,hourly
+every_6_hours,every_6_hours
+daily,daily
+stopped,עצור
+running,פועל
+paused,מושהה
+Add a note...,הוסף הערה...
+Add entry for yesterday,הוסף רשומה ליום אתמול
+Add your first entry,הוסף את הרשומה הראשונה שלך
+Archive,ארכיון
+Auto-stop Timer After,עצור טיימר אוטומטית אחרי
+Billable,לחיוב
+Billable {0},לחיוב {0}
+Cancel,ביטול
+Cannot delete tag — {0} entries use it.,לא ניתן למחוק תגית — {0} רשומות משתמשות בה.
+Category,קטגוריה
+Client,לקוח
+Color,צבע
+Connection Failed,החיבור נכשל
+Connection OK,החיבור תקין
+Custom…,מותאם אישית…
+Daily,יומי
+Daily view,תצוגה יומית
+Date range,טווח תאריכים
+days,ימים
+Default Entry Type,סוג רשומה ברירת מחדל
+Default Rate,תעריף ברירת מחדל
+Default activity type,סוג פעילות ברירת מחדל
+Delete,מחק
+Description,תיאור
+Dismiss,סגור
+Do you want to sync all unsynced time entries to ERPNext now?,האם ברצונך לסנכרן את כל רשומות הזמן שלא סונכרנו ל-ERPNext כעת?
+Duplicate,שכפל
+Duration,משך
+Edit,ערוך
+Enable ERPNext bridge,הפעל גשר ERPNext
+End time,שעת סיום
+Entries forwarded,רשומות הועברו
+Entries older than {0} days are locked. Contact your administrator.,רשומות ישנות מ-{0} ימים נעולות. פנה למנהל המערכת.
+ERPNext Bridge,גשר ERPNext
+ERPNext is not installed on this site.,ERPNext לא מותקן באתר זה.
+ERPNext is reachable and Timesheet access is confirmed.,ERPNext נגיש וגישה לדף שעות אושרה.
+ERPNext site URL,כתובת אתר ERPNext
+ERPNext Timesheet {0} for {1} is submitted — re-sync blocked.,דף שעות ERPNext {0} עבור {1} הוגש — סנכרון מחדש חסום.
+ERPNext Timesheet is submitted — re-sync blocked,דף שעות ERPNext הוגש — סנכרון מחדש חסום
+Est. {0},משו. {0}
+Est. amount,משו. סכום
+Every 6 hours,כל 6 שעות
+All time,כל הזמנים
+This year,השנה
+Last year,שנה שעברה
+Download CSV,הורד CSV
+Export my data,ייצא את הנתונים שלי
+Download all your time entries as CSV.,הורד את כל רשומות הזמן שלך כ-CSV.
+Export CSV,ייצוא CSV
+Export successful,הייצוא הצליח
+Failed to forward entries: {0},העברת רשומות נכשלה: {0}
+Watch Settings,הגדרות Watch
+Watch Tag,תגית Watch
+Watch Entry,רשומת Watch
+Watch Entry Tag,תגית רשומת Watch
+Watch Timer,טיימר Watch
+Forwarded {0} to {1},הועבר {0} ל-{1}
+From,מ
+General,כללי
+Hourly,שעתי
+hours,שעות
+Hide weekends,הסתר סופי שבוע
+Internal,פנימי
+Internal / overhead,פנימי / תקורה
+Last bulk sync,סנכרון המוני אחרון
+Last month,חודש שעבר
+Last sync error,שגיאת סנכרון אחרונה
+Last week,שבוע שעבר
+Less,פחות
+Lock Entries Older Than,נעל רשומות ישנות מ
+Manual,ידני
+Map project tags,מפה תגיות פרויקט
+Merge,מזג
+Merge {0} into:,מזג {0} לתוך:
+Mon,ב׳
+More,עוד
+Navigate,נווט
+New Tag,תגית חדשה
+No entries for {0},אין רשומות עבור {0}
+No entries yet,אין רשומות עדיין
+No tags yet,אין תגיות עדיין
+No timer is running,אין טיימר פועל
+Non-billable,לא לחיוב
+(no description),(ללא תיאור)
+(not billed),(לא חויב)
+Nothing logged yesterday ({0}),לא נרשם דבר אתמול ({0})
+Open prepare summary,פתח סיכום הכנה
+Open settings,פתח הגדרות
+Open tag management,פתח ניהול תגיות
+Open today's view,פתח תצוגת היום
+Open weekly view,פתח תצוגה שבועית
+Other,אחר
+Pause,השהה
+Prepare,הכן
+Prepare Summary,סיכום הכנה
+Project,פרויקט
+Rate,תעריף
+Rename,שנה שם
+Resume,המשך
+Saved — {0},נשמר — {0}
+Save,שמור
+Sat,ש׳
+Scheduled,מתוזמן
+Send,שלח
+Settings,הגדרות
+Show weekends,הצג סופי שבוע
+Start time,שעת התחלה
+Start Timer,התחל טיימר
+"Start timer: ""{0}""","התחל טיימר: ""{0}"""
+"Stop current & start: ""{0}""","עצור נוכחי והתחל: ""{0}"""
+Started yesterday,התחיל אתמול
+Sun,א׳
+Sync all unsynced entries,סנכרן את כל הרשומות שלא סונכרנו
+Sync billable entries only,סנכרן רשומות לחיוב בלבד
+Sync completed with errors,הסנכרון הושלם עם שגיאות
+Sync complete,הסנכרון הושלם
+Sync interval,מרווח סנכרון
+Sync mode,מצב סנכרון
+Synced to ERPNext,סונכרן ל-ERPNext
+Syncing entries to ERPNext…,מסנכרן רשומות ל-ERPNext…
+{0} day(s) synced.,{0} ימים סונכרנו.
+Tag,תגית
+Tag management,ניהול תגיות
+Tag Name,שם תגית
+Tag renamed. {0} entries updated.,התגית שונתה. {0} רשומות עודכנו.
+Tags,תגיות
+Tags merged. {0} entries re-tagged.,תגיות מוזגו. {0} רשומות תויגו מחדש.
+Task,משימה
+Test connection,בדוק חיבור
+Test Connection,בדוק חיבור
+This entry is locked,רשומה זו נעולה
+This month,החודש
+This week,השבוע
+Thu,ה׳
+Time Bridge,גשר זמן
+Time Entries,רשומות זמן
+Timer already running,הטיימר כבר פועל
+Timer is already running,הטיימר כבר פועל
+Timer is not paused,הטיימר אינו מושהה
+Timer is not running,הטיימר אינו פועל
+To,עד
+Today,היום
+Total,סה״כ
+Total billable,סה״כ לחיוב
+Tue,ג׳
+Unknown error,שגיאה לא ידועה
+Unassigned,לא מוקצה
+(untagged project),(פרויקט ללא תגית)
+View entry →,צפה ברשומה →
+Warning: This entry is more than 7 days old.,אזהרה: רשומה זו ישנה מ-7 ימים.
+Wed,ד׳
+Week {0},שבוע {0}
+What are you working on?,על מה אתה עובד?
+What did you work on?,על מה עבדת?
+Work Days,ימי עבודה
+Yesterday,אתמול
+draft,טיוטה
+entries this month,רשומות החודש
+no entries,אין רשומות
+no entries yet,אין רשומות עדיין
+sent,נשלח
++{0} more,+{0} נוספים
+← from {0},← מ-{0}
+[Auto-stopped after {0}h],[נעצר אוטומטית אחרי {0} שעות]
+Entry Type,סוג רשומה
+Fri,ו׳
+Keyboard Shortcuts,קיצורי מקלדת
+Start / Pause / Resume timer,התחל / השהה / המשך טיימר
+Stop timer,עצור טיימר
+New entry (focus quick-add bar),רשומה חדשה (מיקוד על סרגל הוספה מהירה)
+Previous / next day or week,יום או שבוע קודם / הבא
+Show / hide this overlay,הצג / הסתר שכבת-על זו
+Press H or Esc to close,לחץ H או Esc לסגירה
+Close,סגור
+Timer,טיימר
+Entries,רשומות
+This week at a glance,השבוע במבט חטוף
+Time by tag,זמן לפי תגית
+Hours per day,שעות ליום
+No entries this week,אין רשומות השבוע
+No entries,אין רשומות
+Untagged,ללא תגית
+Monthly Budget (h),תקציב חודשי (ש)
+Warn at (%),הזהר ב-(%)
+0 = no limit,0 = ללא הגבלה
+0 = site default,0 = ברירת מחדל של האתר
+Approaching limit,מתקרב למגבלה
+Budget exceeded,התקציב חורג
+budget used this month,תקציב שנוצל החודש
+used this month,נוצל החודש
+of,מתוך
+Focus,מיקוד
+Start Focus,התחל מיקוד
+End focus,סיים מיקוד
+Skip break,דלג על הפסקה
+Break over,ההפסקה נגמרה
+Time to focus!,הגיע הזמן להתמקד!
+Session complete,הפגישה הושלמה
+Focus complete!,המיקוד הושלם!
+All sessions done. Great work!,כל הפגישות הושלמו. עבודה מצוינת!
+sessions done. Great work!,פגישות הושלמו. עבודה מצוינת!
+Start new,התחל חדש
+Work in focused sessions with timed breaks.,עבוד בפגישות ממוקדות עם הפסקות מתוזמנות.
+Session,פגישה
+Break,הפסקה
+Work (min),עבודה (דק׳)
+Break (min),הפסקה (דק׳)
+Sessions,פגישות
+No break is active,אין הפסקה פעילה
+No focus session is running,אין פגישת מיקוד פועלת
+Context,הקשר
+Contact,איש קשר
+Context Type,סוג הקשר
+For whom?,עבור מי?
+Working on?,עובד על?
+Search contacts...,חפש אנשי קשר...
+Select type...,בחר סוג...
+All contacts,כל אנשי הקשר
+All projects,כל הפרויקטים
+(no contact),(ללא איש קשר)
+(no project),(ללא פרויקט)
+(no task),(ללא משימה)
+Filter by:,סנן לפי:
+Time by contact,זמן לפי איש קשר
+Time by context,זמן לפי הקשר
+Time by task,זמן לפי משימה
+Contact hours summary,סיכום שעות לפי איש קשר

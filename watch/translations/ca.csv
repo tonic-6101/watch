@@ -1,0 +1,247 @@
+source,translation
+Billed as {0},Comptabilitzat com a {0}
+exact — rounding skipped,exacte — arrodoniment omès
+Use exact,Usar exacte
+Apply rounding,Aplicar arrodoniment
+Exact,Exacte
+Billed,Comptabilitzat
+* Rounded up to nearest increment,* Arrodonit a l'increment més proper
+billable,cobrable
+non-billable,no cobrable
+internal,intern
+on_save,on_save
+manual,manual
+scheduled,programat
+hourly,cada hora
+every_6_hours,every_6_hours
+daily,diari
+stopped,aturat
+running,en marxa
+paused,en pausa
+Add a note...,Afegeix una nota...
+Add entry for yesterday,Afegeix entrada d'ahir
+Add your first entry,Afegeix la teva primera entrada
+Archive,Arxiva
+Auto-stop Timer After,Aturar temporitzador automàticament després de
+Billable,Cobrable
+Billable {0},Cobrable {0}
+Cancel,Cancel·la
+Cannot delete tag — {0} entries use it.,No es pot suprimir l'etiqueta — {0} entrades la utilitzen.
+Category,Categoria
+Client,Client
+Color,Color
+Connection Failed,Connexió fallida
+Connection OK,Connexió correcta
+Custom…,Personalitzat…
+Daily,Diari
+Daily view,Vista diària
+Date range,Interval de dates
+days,dies
+Default Entry Type,Tipus d'entrada per defecte
+Default Rate,Tarifa per defecte
+Default activity type,Tipus d'activitat per defecte
+Delete,Suprimeix
+Description,Descripció
+Dismiss,Descarta
+Do you want to sync all unsynced time entries to ERPNext now?,Vols sincronitzar totes les entrades de temps no sincronitzades amb ERPNext ara?
+Duplicate,Duplica
+Duration,Durada
+Edit,Edita
+Enable ERPNext bridge,Activa el pont ERPNext
+End time,Hora de finalització
+Entries forwarded,Entrades trameses
+Entries older than {0} days are locked. Contact your administrator.,Les entrades de més de {0} dies estan bloquejades. Contacta amb l'administrador.
+ERPNext Bridge,Pont ERPNext
+ERPNext is not installed on this site.,ERPNext no està instal·lat en aquest lloc.
+ERPNext is reachable and Timesheet access is confirmed.,ERPNext és accessible i l'accés al full d'hores està confirmat.
+ERPNext site URL,URL del lloc ERPNext
+ERPNext Timesheet {0} for {1} is submitted — re-sync blocked.,El full d'hores ERPNext {0} per a {1} està enviat — re-sincronització bloquejada.
+ERPNext Timesheet is submitted — re-sync blocked,El full d'hores ERPNext està enviat — re-sincronització bloquejada
+Est. {0},Est. {0}
+Est. amount,Import est.
+Every 6 hours,Cada 6 hores
+All time,Tot el temps
+This year,Enguany
+Last year,L'any passat
+Download CSV,Descarrega CSV
+Export my data,Exporta les meves dades
+Download all your time entries as CSV.,Descarrega totes les teves entrades de temps com a CSV.
+Export CSV,Exporta CSV
+Export successful,Exportació correcta
+Failed to forward entries: {0},Error en trametre les entrades: {0}
+Watch Settings,Configuració de Watch
+Watch Tag,Etiqueta de Watch
+Watch Entry,Entrada de Watch
+Watch Entry Tag,Etiqueta d'entrada de Watch
+Watch Timer,Temporitzador de Watch
+Forwarded {0} to {1},Tramès {0} a {1}
+From,Des de
+General,General
+Hourly,Cada hora
+hours,hores
+Hide weekends,Amaga caps de setmana
+Internal,Intern
+Internal / overhead,Intern / despeses generals
+Last bulk sync,Última sincronització massiva
+Last month,El mes passat
+Last sync error,Últim error de sincronització
+Last week,La setmana passada
+Less,Menys
+Lock Entries Older Than,Bloquejar entrades de més de
+Manual,Manual
+Map project tags,Assigna etiquetes de projecte
+Merge,Fusiona
+Merge {0} into:,Fusiona {0} en:
+Mon,Dl
+More,Més
+Navigate,Navega
+New Tag,Etiqueta nova
+No entries for {0},Cap entrada per a {0}
+No entries yet,Encara no hi ha entrades
+No tags yet,Encara no hi ha etiquetes
+No timer is running,Cap temporitzador en marxa
+Non-billable,No cobrable
+(no description),(sense descripció)
+(not billed),(no comptabilitzat)
+Nothing logged yesterday ({0}),Res registrat ahir ({0})
+Open prepare summary,Obre el resum de preparació
+Open settings,Obre la configuració
+Open tag management,Obre la gestió d'etiquetes
+Open today's view,Obre la vista d'avui
+Open weekly view,Obre la vista setmanal
+Other,Altres
+Pause,Pausa
+Prepare,Prepara
+Prepare Summary,Resum de preparació
+Project,Projecte
+Rate,Tarifa
+Rename,Reanomena
+Resume,Reprèn
+Saved — {0},Desat — {0}
+Save,Desa
+Sat,Ds
+Scheduled,Programat
+Send,Envia
+Settings,Configuració
+Show weekends,Mostra caps de setmana
+Start time,Hora d'inici
+Start Timer,Inicia temporitzador
+"Start timer: ""{0}""","Inicia temporitzador: ""{0}"""
+"Stop current & start: ""{0}""","Atura l'actual i inicia: ""{0}"""
+Started yesterday,Iniciat ahir
+Sun,Dg
+Sync all unsynced entries,Sincronitza totes les entrades no sincronitzades
+Sync billable entries only,Sincronitza només les entrades cobrables
+Sync completed with errors,Sincronització completada amb errors
+Sync complete,Sincronització completa
+Sync interval,Interval de sincronització
+Sync mode,Mode de sincronització
+Synced to ERPNext,Sincronitzat amb ERPNext
+Syncing entries to ERPNext…,Sincronitzant entrades amb ERPNext…
+{0} day(s) synced.,{0} dia/dies sincronitzat(s).
+Tag,Etiqueta
+Tag management,Gestió d'etiquetes
+Tag Name,Nom de l'etiqueta
+Tag renamed. {0} entries updated.,Etiqueta reanomenada. {0} entrades actualitzades.
+Tags,Etiquetes
+Tags merged. {0} entries re-tagged.,Etiquetes fusionades. {0} entrades reetiquetades.
+Task,Tasca
+Test connection,Prova la connexió
+Test Connection,Prova la connexió
+This entry is locked,Aquesta entrada està bloquejada
+This month,Aquest mes
+This week,Aquesta setmana
+Thu,Dj
+Time Bridge,Pont de temps
+Time Entries,Entrades de temps
+Timer already running,El temporitzador ja està en marxa
+Timer is already running,El temporitzador ja està en marxa
+Timer is not paused,El temporitzador no està en pausa
+Timer is not running,El temporitzador no està en marxa
+To,Fins a
+Today,Avui
+Total,Total
+Total billable,Total cobrable
+Tue,Dm
+Unknown error,Error desconegut
+Unassigned,Sense assignar
+(untagged project),(projecte sense etiqueta)
+View entry →,Veure entrada →
+Warning: This entry is more than 7 days old.,Avís: Aquesta entrada té més de 7 dies.
+Wed,Dc
+Week {0},Setmana {0}
+What are you working on?,En què estàs treballant?
+What did you work on?,En què has treballat?
+Work Days,Dies laborables
+Yesterday,Ahir
+draft,esborrany
+entries this month,entrades aquest mes
+no entries,sense entrades
+no entries yet,encara sense entrades
+sent,enviat
++{0} more,+{0} més
+← from {0},← des de {0}
+[Auto-stopped after {0}h],[Aturat automàticament després de {0}h]
+Entry Type,Tipus d'entrada
+Fri,Dv
+Keyboard Shortcuts,Dreceres de teclat
+Start / Pause / Resume timer,Inicia / Pausa / Reprèn temporitzador
+Stop timer,Atura temporitzador
+New entry (focus quick-add bar),Nova entrada (enfoca la barra d'afegir ràpid)
+Previous / next day or week,Dia o setmana anterior / següent
+Show / hide this overlay,Mostra / amaga aquesta superposició
+Press H or Esc to close,Prem H o Esc per tancar
+Close,Tanca
+Timer,Temporitzador
+Entries,Entrades
+This week at a glance,Aquesta setmana d'un cop d'ull
+Time by tag,Temps per etiqueta
+Hours per day,Hores per dia
+No entries this week,Cap entrada aquesta setmana
+No entries,Sense entrades
+Untagged,Sense etiqueta
+Monthly Budget (h),Pressupost mensual (h)
+Warn at (%),Avís al (%)
+0 = no limit,0 = sense límit
+0 = site default,0 = per defecte del lloc
+Approaching limit,S'acosta al límit
+Budget exceeded,Pressupost superat
+budget used this month,pressupost gastat aquest mes
+used this month,gastat aquest mes
+of,de
+Focus,Concentració
+Start Focus,Inicia concentració
+End focus,Finalitza concentració
+Skip break,Omet pausa
+Break over,Pausa acabada
+Time to focus!,Hora de concentrar-se!
+Session complete,Sessió completa
+Focus complete!,Concentració completa!
+All sessions done. Great work!,Totes les sessions fetes. Bon treball!
+sessions done. Great work!,sessions fetes. Bon treball!
+Start new,Inicia nova
+Work in focused sessions with timed breaks.,Treballa en sessions de concentració amb pauses temporitzades.
+Session,Sessió
+Break,Pausa
+Work (min),Treball (min)
+Break (min),Pausa (min)
+Sessions,Sessions
+No break is active,Cap pausa activa
+No focus session is running,Cap sessió de concentració en marxa
+Context,Context
+Contact,Contacte
+Context Type,Tipus de context
+For whom?,Per a qui?
+Working on?,En què treballes?
+Search contacts...,Cerca contactes...
+Select type...,Selecciona el tipus...
+All contacts,Tots els contactes
+All projects,Tots els projectes
+(no contact),(sense contacte)
+(no project),(sense projecte)
+(no task),(sense tasca)
+Filter by:,Filtra per:
+Time by contact,Temps per contacte
+Time by context,Temps per context
+Time by task,Temps per tasca
+Contact hours summary,Resum d'hores per contacte

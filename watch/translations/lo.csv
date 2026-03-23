@@ -1,0 +1,247 @@
+source,translation
+Billed as {0},ບິນເປັນ {0}
+exact — rounding skipped,ແນ່ນອນ — ການປັດເສດຖືກຂ້າມ
+Use exact,ໃຊ້ແນ່ນອນ
+Apply rounding,ນຳໃຊ້ການປັດເສດ
+Exact,ແນ່ນອນ
+Billed,ບິນແລ້ວ
+* Rounded up to nearest increment,* ປັດຂຶ້ນຫາການເພີ່ມຂຶ້ນໃກ້ທີ່ສຸດ
+billable,ສາມາດບິນໄດ້
+non-billable,ບໍ່ສາມາດບິນໄດ້
+internal,ພາຍໃນ
+on_save,on_save
+manual,manual
+scheduled,scheduled
+hourly,hourly
+every_6_hours,every_6_hours
+daily,daily
+stopped,ຢຸດແລ້ວ
+running,ກຳລັງເຮັດວຽກ
+paused,ຢຸດຊົ່ວຄາວ
+Add a note...,ເພີ່ມບັນທຶກ...
+Add entry for yesterday,ເພີ່ມລາຍການສຳລັບມື້ວານ
+Add your first entry,ເພີ່ມລາຍການທຳອິດຂອງທ່ານ
+Archive,ເກັບມ້ຽນ
+Auto-stop Timer After,ຢຸດໂມງອັດຕະໂນມັດຫລັງຈາກ
+Billable,ສາມາດບິນໄດ້
+Billable {0},ສາມາດບິນໄດ້ {0}
+Cancel,ຍົກເລີກ
+Cannot delete tag — {0} entries use it.,ບໍ່ສາມາດລຶບປ້າຍໄດ້ — {0} ລາຍການໃຊ້ມັນ.
+Category,ໝວດໝູ່
+Client,ລູກຄ້າ
+Color,ສີ
+Connection Failed,ການເຊື່ອມຕໍ່ລົ້ມເຫລວ
+Connection OK,ການເຊື່ອມຕໍ່ໂອເຄ
+Custom…,ກຳນົດເອງ…
+Daily,ປະຈຳວັນ
+Daily view,ມຸມມອງປະຈຳວັນ
+Date range,ຊ່ວງວັນທີ
+days,ວັນ
+Default Entry Type,ປະເພດລາຍການເລີ່ມຕົ້ນ
+Default Rate,ອັດຕາເລີ່ມຕົ້ນ
+Default activity type,ປະເພດກິດຈະກຳເລີ່ມຕົ້ນ
+Delete,ລຶບ
+Description,ລາຍລະອຽດ
+Dismiss,ປິດ
+Do you want to sync all unsynced time entries to ERPNext now?,ທ່ານຕ້ອງການຊິງລາຍການເວລາທີ່ຍັງບໍ່ໄດ້ຊິງທັງໝົດໄປ ERPNext ຕອນນີ້ບໍ?
+Duplicate,ສຳເນົາ
+Duration,ໄລຍະເວລາ
+Edit,ແກ້ໄຂ
+Enable ERPNext bridge,ເປີດໃຊ້ສະພານ ERPNext
+End time,ເວລາສິ້ນສຸດ
+Entries forwarded,ລາຍການຖືກສົ່ງຕໍ່
+Entries older than {0} days are locked. Contact your administrator.,ລາຍການເກົ່າກວ່າ {0} ວັນຖືກລັອກ. ຕິດຕໍ່ຜູ້ດູແລລະບົບ.
+ERPNext Bridge,ສະພານ ERPNext
+ERPNext is not installed on this site.,ERPNext ບໍ່ໄດ້ຕິດຕັ້ງຢູ່ເວັບໄຊນີ້.
+ERPNext is reachable and Timesheet access is confirmed.,ERPNext ເຂົ້າເຖິງໄດ້ ແລະ ການເຂົ້າເຖິງຕາຕະລາງເວລາຖືກຢືນຢັນ.
+ERPNext site URL,URL ເວັບໄຊ ERPNext
+ERPNext Timesheet {0} for {1} is submitted — re-sync blocked.,ຕາຕະລາງເວລາ ERPNext {0} (ສຳລັບ {1}) ຖືກສົ່ງ — ການຊິງຄືນຖືກບລັອກ.
+ERPNext Timesheet is submitted — re-sync blocked,ຕາຕະລາງເວລາ ERPNext ຖືກສົ່ງ — ການຊິງຄືນຖືກບລັອກ
+Est. {0},ປະ. {0}
+Est. amount,ປະ. ຈຳນວນ
+Every 6 hours,ທຸກ 6 ຊົ່ວໂມງ
+All time,ທຸກເວລາ
+This year,ປີນີ້
+Last year,ປີກາຍ
+Download CSV,ດາວໂຫລດ CSV
+Export my data,ສົ່ງອອກຂໍ້ມູນຂອງຂ້ອຍ
+Download all your time entries as CSV.,ດາວໂຫລດລາຍການເວລາທັງໝົດເປັນ CSV.
+Export CSV,ສົ່ງອອກ CSV
+Export successful,ສົ່ງອອກສຳເລັດ
+Failed to forward entries: {0},ສົ່ງຕໍ່ລາຍການລົ້ມເຫລວ: {0}
+Watch Settings,ການຕັ້ງຄ່າ Watch
+Watch Tag,ປ້າຍ Watch
+Watch Entry,ລາຍການ Watch
+Watch Entry Tag,ປ້າຍລາຍການ Watch
+Watch Timer,ໂມງ Watch
+Forwarded {0} to {1},{0} ຖືກສົ່ງຕໍ່ໄປ {1}
+From,ຈາກ
+General,ທົ່ວໄປ
+Hourly,ຕໍ່ຊົ່ວໂມງ
+hours,ຊົ່ວໂມງ
+Hide weekends,ເຊື່ອງທ້າຍອາທິດ
+Internal,ພາຍໃນ
+Internal / overhead,ພາຍໃນ / ຄ່າໃຊ້ຈ່າຍສ່ວນເກີນ
+Last bulk sync,ການຊິງເປັນກຸ່ມຄັ້ງສຸດທ້າຍ
+Last month,ເດືອນທີ່ແລ້ວ
+Last sync error,ຂໍ້ຜິດພາດການຊິງຄັ້ງສຸດທ້າຍ
+Last week,ອາທິດທີ່ແລ້ວ
+Less,ໜ້ອຍ
+Lock Entries Older Than,ລັອກລາຍການເກົ່າກວ່າ
+Manual,ດ້ວຍມື
+Map project tags,ແຜນທີ່ປ້າຍໂຄງການ
+Merge,ລວມ
+Merge {0} into:,ລວມ {0}:
+Mon,ຈັນ
+More,ເພີ່ມຕື່ມ
+Navigate,ນຳທາງ
+New Tag,ປ້າຍໃໝ່
+No entries for {0},ບໍ່ມີລາຍການສຳລັບ {0}
+No entries yet,ຍັງບໍ່ມີລາຍການ
+No tags yet,ຍັງບໍ່ມີປ້າຍ
+No timer is running,ບໍ່ມີໂມງກຳລັງເຮັດວຽກ
+Non-billable,ບໍ່ສາມາດບິນໄດ້
+(no description),(ບໍ່ມີລາຍລະອຽດ)
+(not billed),(ບໍ່ໄດ້ບິນ)
+Nothing logged yesterday ({0}),ມື້ວານບໍ່ມີຫຍັງຖືກບັນທຶກ ({0})
+Open prepare summary,ເປີດບົດສະຫລຸບການກຽມ
+Open settings,ເປີດການຕັ້ງຄ່າ
+Open tag management,ເປີດການຈັດການປ້າຍ
+Open today's view,ເປີດມຸມມອງມື້ນີ້
+Open weekly view,ເປີດມຸມມອງອາທິດ
+Other,ອື່ນໆ
+Pause,ຢຸດຊົ່ວຄາວ
+Prepare,ກຽມ
+Prepare Summary,ບົດສະຫລຸບການກຽມ
+Project,ໂຄງການ
+Rate,ອັດຕາ
+Rename,ປ່ຽນຊື່
+Resume,ເລີ່ມຕໍ່
+Saved — {0},ບັນທຶກແລ້ວ — {0}
+Save,ບັນທຶກ
+Sat,ສ
+Scheduled,ກຳນົດໄວ້
+Send,ສົ່ງ
+Settings,ການຕັ້ງຄ່າ
+Show weekends,ສະແດງທ້າຍອາທິດ
+Start time,ເວລາເລີ່ມ
+Start Timer,ເລີ່ມໂມງ
+"Start timer: ""{0}""","ເລີ່ມໂມງ: ""{0}"""
+"Stop current & start: ""{0}""","ຢຸດປັດຈຸບັນ ແລະ ເລີ່ມ: ""{0}"""
+Started yesterday,ເລີ່ມມື້ວານ
+Sun,ອາ
+Sync all unsynced entries,ຊິງລາຍການທີ່ຍັງບໍ່ໄດ້ຊິງທັງໝົດ
+Sync billable entries only,ຊິງລາຍການທີ່ສາມາດບິນໄດ້ເທົ່ານັ້ນ
+Sync completed with errors,ການຊິງສຳເລັດດ້ວຍຂໍ້ຜິດພາດ
+Sync complete,ການຊິງສຳເລັດ
+Sync interval,ຊ່ວງເວລາຊິງ
+Sync mode,ໂໝດຊິງ
+Synced to ERPNext,ຊິງໄປ ERPNext ແລ້ວ
+Syncing entries to ERPNext…,ກຳລັງຊິງລາຍການໄປ ERPNext…
+{0} day(s) synced.,{0} ວັນຖືກຊິງ.
+Tag,ປ້າຍ
+Tag management,ການຈັດການປ້າຍ
+Tag Name,ຊື່ປ້າຍ
+Tag renamed. {0} entries updated.,ປ້າຍຖືກປ່ຽນຊື່. {0} ລາຍການຖືກປັບປຸງ.
+Tags,ປ້າຍ
+Tags merged. {0} entries re-tagged.,ປ້າຍຖືກລວມ. {0} ລາຍການຖືກປ້າຍຄືນ.
+Task,ວຽກ
+Test connection,ທົດສອບການເຊື່ອມຕໍ່
+Test Connection,ທົດສອບການເຊື່ອມຕໍ່
+This entry is locked,ລາຍການນີ້ຖືກລັອກ
+This month,ເດືອນນີ້
+This week,ອາທິດນີ້
+Thu,ພຫ
+Time Bridge,ສະພານເວລາ
+Time Entries,ລາຍການເວລາ
+Timer already running,ໂມງກຳລັງເຮັດວຽກຢູ່ແລ້ວ
+Timer is already running,ໂມງກຳລັງເຮັດວຽກຢູ່ແລ້ວ
+Timer is not paused,ໂມງບໍ່ໄດ້ຢຸດຊົ່ວຄາວ
+Timer is not running,ໂມງບໍ່ໄດ້ເຮັດວຽກ
+To,ເຖິງ
+Today,ມື້ນີ້
+Total,ລວມ
+Total billable,ລວມສາມາດບິນໄດ້
+Tue,ອ
+Unknown error,ຂໍ້ຜິດພາດທີ່ບໍ່ຮູ້
+Unassigned,ບໍ່ໄດ້ກຳນົດ
+(untagged project),(ໂຄງການບໍ່ມີປ້າຍ)
+View entry →,ເບິ່ງລາຍການ →
+Warning: This entry is more than 7 days old.,ເຕືອນ: ລາຍການນີ້ເກົ່າກວ່າ 7 ວັນ.
+Wed,ພ
+Week {0},ອາທິດ {0}
+What are you working on?,ທ່ານກຳລັງເຮັດຫຍັງ?
+What did you work on?,ທ່ານເຮັດຫຍັງ?
+Work Days,ວັນເຮັດວຽກ
+Yesterday,ມື້ວານ
+draft,ຮ່າງ
+entries this month,ລາຍການເດືອນນີ້
+no entries,ບໍ່ມີລາຍການ
+no entries yet,ຍັງບໍ່ມີລາຍການ
+sent,ສົ່ງແລ້ວ
++{0} more,+{0} ເພີ່ມຕື່ມ
+← from {0},← ຈາກ {0}
+[Auto-stopped after {0}h],[ຢຸດອັດຕະໂນມັດຫລັງຈາກ {0} ຊົ່ວໂມງ]
+Entry Type,ປະເພດລາຍການ
+Fri,ສກ
+Keyboard Shortcuts,ທາງລັດແປ້ນພິມ
+Start / Pause / Resume timer,ເລີ່ມ / ຢຸດຊົ່ວຄາວ / ເລີ່ມຕໍ່ໂມງ
+Stop timer,ຢຸດໂມງ
+New entry (focus quick-add bar),ລາຍການໃໝ່ (ໂຟກັສທີ່ແຖບເພີ່ມດ່ວນ)
+Previous / next day or week,ວັນ ຫຼື ອາທິດກ່ອນ / ຕໍ່ໄປ
+Show / hide this overlay,ສະແດງ / ເຊື່ອງການວາງທັບນີ້
+Press H or Esc to close,ກົດ H ຫຼື Esc ເພື່ອປິດ
+Close,ປິດ
+Timer,ໂມງ
+Entries,ລາຍການ
+This week at a glance,ອາທິດນີ້ແນມເບິ່ງ
+Time by tag,ເວລາຕາມປ້າຍ
+Hours per day,ຊົ່ວໂມງຕໍ່ວັນ
+No entries this week,ບໍ່ມີລາຍການອາທິດນີ້
+No entries,ບໍ່ມີລາຍການ
+Untagged,ບໍ່ມີປ້າຍ
+Monthly Budget (h),ງົບປະມານລາຍເດືອນ (ຊມ)
+Warn at (%),ເຕືອນທີ່ (%)
+0 = no limit,0 = ບໍ່ມີຂອບເຂດ
+0 = site default,0 = ຄ່າເລີ່ມຕົ້ນຂອງເວັບໄຊ
+Approaching limit,ໃກ້ຈະເຖິງຂອບເຂດ
+Budget exceeded,ງົບປະມານເກີນ
+budget used this month,ງົບປະມານໃຊ້ເດືອນນີ້
+used this month,ໃຊ້ເດືອນນີ້
+of,ຂອງ
+Focus,ໂຟກັສ
+Start Focus,ເລີ່ມໂຟກັສ
+End focus,ຈົບໂຟກັສ
+Skip break,ຂ້າມພັກ
+Break over,ພັກຈົບ
+Time to focus!,ເວລາໂຟກັສ!
+Session complete,ເຊສຊັນສຳເລັດ
+Focus complete!,ໂຟກັສສຳເລັດ!
+All sessions done. Great work!,ເຊສຊັນທັງໝົດສຳເລັດ. ວຽກດີ!
+sessions done. Great work!,ເຊສຊັນສຳເລັດ. ວຽກດີ!
+Start new,ເລີ່ມໃໝ່
+Work in focused sessions with timed breaks.,ເຮັດວຽກໃນເຊສຊັນໂຟກັສກັບພັກທີ່ມີເວລາກຳນົດ.
+Session,ເຊສຊັນ
+Break,ພັກ
+Work (min),ວຽກ (ນາທີ)
+Break (min),ພັກ (ນາທີ)
+Sessions,ເຊສຊັນ
+No break is active,ບໍ່ມີການພັກຢູ່
+No focus session is running,ບໍ່ມີເຊສຊັນໂຟກັສກຳລັງເຮັດວຽກ
+Context,ບໍລິບົດ
+Contact,ຕິດຕໍ່
+Context Type,ປະເພດບໍລິບົດ
+For whom?,ສຳລັບໃຜ?
+Working on?,ກຳລັງເຮັດຫຍັງ?
+Search contacts...,ຄົ້ນຫາຕິດຕໍ່...
+Select type...,ເລືອກປະເພດ...
+All contacts,ຕິດຕໍ່ທັງໝົດ
+All projects,ໂຄງການທັງໝົດ
+(no contact),(ບໍ່ມີຕິດຕໍ່)
+(no project),(ບໍ່ມີໂຄງການ)
+(no task),(ບໍ່ມີວຽກ)
+Filter by:,ກັ່ນຕອງ:
+Time by contact,ເວລາຕາມຕິດຕໍ່
+Time by context,ເວລາຕາມບໍລິບົດ
+Time by task,ເວລາຕາມວຽກ
+Contact hours summary,ສະຫລຸບຊົ່ວໂມງຕິດຕໍ່

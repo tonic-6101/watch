@@ -1,0 +1,247 @@
+source,translation
+Billed as {0},Wekî {0} fatûre kirin
+exact — rounding skipped,rast — girêdana dorpêçê hat derbaskirin
+Use exact,Rast bi kar bîne
+Apply rounding,Girêdana dorpêçê bi kar bîne
+Exact,Rast
+Billed,Fatûre kirin
+* Rounded up to nearest increment,* Ber bi zêdebûna herî nêzîk ve girêdana dorpêçê
+billable,ji bo fatûrê
+non-billable,ne ji bo fatûrê
+internal,hundirîn
+on_save,on_save
+manual,manual
+scheduled,scheduled
+hourly,hourly
+every_6_hours,every_6_hours
+daily,daily
+stopped,rawestandî
+running,dixebite
+paused,raweste
+Add a note...,Nîşeyek zêde bike...
+Add entry for yesterday,Ji bo duh têketinê zêde bike
+Add your first entry,Têketina xwe ya yekem zêde bike
+Archive,Arşîv
+Auto-stop Timer After,Piştî vê demê demjimêr bixweber raweste
+Billable,Ji bo fatûrê
+Billable {0},Ji bo fatûrê {0}
+Cancel,Betal bike
+Cannot delete tag — {0} entries use it.,Etîket nayê jêbirin — {0} têketin wê bi kar tînin.
+Category,Kategorî
+Client,Xerîdar
+Color,Reng
+Connection Failed,Girêdan têk çû
+Connection OK,Girêdan baş e
+Custom…,Taybet…
+Daily,Rojane
+Daily view,Dîtina rojane
+Date range,Rêza dîrokê
+days,roj
+Default Entry Type,Cureyê têketinê yê berdest
+Default Rate,Rêjeya berdest
+Default activity type,Cureyê çalakiyê yê berdest
+Delete,Jê bibe
+Description,Danasîn
+Dismiss,Paşguh bike
+Do you want to sync all unsynced time entries to ERPNext now?,Ma tu dixwazî niha hemû têketinên demê yên nehevgirtî bi ERPNext re hevgirî bikî?
+Duplicate,Dubare
+Duration,Dem
+Edit,Biguherîne
+Enable ERPNext bridge,Pira ERPNext çalak bike
+End time,Dema dawiyê
+Entries forwarded,Têketin hatin şandin
+Entries older than {0} days are locked. Contact your administrator.,Têketinên ji {0} rojan kevntir hatine girtin. Bi rêveberê xwe re têkiliyê deyne.
+ERPNext Bridge,Pira ERPNext
+ERPNext is not installed on this site.,ERPNext li ser vê malperê nehatiye sazkirin.
+ERPNext is reachable and Timesheet access is confirmed.,ERPNext gihîştî ye û gihîştina pelê demê hat pejirandin.
+ERPNext site URL,URL-ya malpera ERPNext
+ERPNext Timesheet {0} for {1} is submitted — re-sync blocked.,Pelê demê yê ERPNext {0} (ji bo {1}) hat şandin — ji nû ve hevgirtin hat astengkirin.
+ERPNext Timesheet is submitted — re-sync blocked,Pelê demê yê ERPNext hat şandin — ji nû ve hevgirtin hat astengkirin
+Est. {0},Tex. {0}
+Est. amount,Tex. miqdar
+Every 6 hours,Her 6 saetan
+All time,Hemû dem
+This year,Îsal
+Last year,Sala borî
+Download CSV,CSV daxîne
+Export my data,Daneyên min derxîne
+Download all your time entries as CSV.,Hemû têketinên demê yên xwe wekî CSV daxîne.
+Export CSV,CSV derxîne
+Export successful,Derxistin serketî
+Failed to forward entries: {0},Şandina têketinan têk çû: {0}
+Watch Settings,Mîhengên Watch
+Watch Tag,Etîketa Watch
+Watch Entry,Têketina Watch
+Watch Entry Tag,Etîketa Têketina Watch
+Watch Timer,Demjimêra Watch
+Forwarded {0} to {1},{0} ji {1} re hat şandin
+From,Ji
+General,Giştî
+Hourly,Saetî
+hours,saet
+Hide weekends,Dawiya hefteyê veşêre
+Internal,Hundirîn
+Internal / overhead,Hundirîn / serbixwe
+Last bulk sync,Hevgirtina girseyî ya dawîn
+Last month,Meha borî
+Last sync error,Çewtiya hevgirtinê ya dawîn
+Last week,Hefteya borî
+Less,Kêmtir
+Lock Entries Older Than,Têketinên ji vê kevntir bigire
+Manual,Bi destan
+Map project tags,Etîketên projeyê nexşe bike
+Merge,Bike yek
+Merge {0} into:,{0} bike yek:
+Mon,Dûşem
+More,Bêtir
+Navigate,Bigere
+New Tag,Etîketa nû
+No entries for {0},Ji bo {0} têketin tune ne
+No entries yet,Hêj têketin tune ne
+No tags yet,Hêj etîket tune ne
+No timer is running,Tu demjimêr naxebite
+Non-billable,Ne ji bo fatûrê
+(no description),(danasîn tune)
+(not billed),(fatûre nekirî)
+Nothing logged yesterday ({0}),Duh tiştek nehat tomarkirin ({0})
+Open prepare summary,Kurteya amadekirinê veke
+Open settings,Mîhengan veke
+Open tag management,Rêveberiya etîketan veke
+Open today's view,Dîtina îro veke
+Open weekly view,Dîtina heftane veke
+Other,Yên din
+Pause,Raweste
+Prepare,Amade bike
+Prepare Summary,Kurteya amadekirinê
+Project,Proje
+Rate,Rêje
+Rename,Nav biguherîne
+Resume,Berdewam bike
+Saved — {0},Hat tomarkirin — {0}
+Save,Tomar bike
+Sat,Şemî
+Scheduled,Plankirin
+Send,Bişîne
+Settings,Mîheng
+Show weekends,Dawiya hefteyê nîşan bide
+Start time,Dema destpêkê
+Start Timer,Demjimêrê dest pê bike
+"Start timer: ""{0}""","Demjimêrê dest pê bike: ""{0}"""
+"Stop current & start: ""{0}""","Yê niha raweste û dest pê bike: ""{0}"""
+Started yesterday,Duh dest pê kir
+Sun,Yekşem
+Sync all unsynced entries,Hemû têketinên nehevgirtî hevgirî bike
+Sync billable entries only,Tenê têketinên ji bo fatûrê hevgirî bike
+Sync completed with errors,Hevgirtin bi çewtiyan qediya
+Sync complete,Hevgirtin qediya
+Sync interval,Navbera hevgirtinê
+Sync mode,Moda hevgirtinê
+Synced to ERPNext,Bi ERPNext re hat hevgirtin
+Syncing entries to ERPNext…,Têketin bi ERPNext re tên hevgirtin…
+{0} day(s) synced.,{0} roj hatin hevgirtin.
+Tag,Etîket
+Tag management,Rêveberiya etîketan
+Tag Name,Navê etîketê
+Tag renamed. {0} entries updated.,Etîket hat guherandin. {0} têketin hatin nûkirin.
+Tags,Etîket
+Tags merged. {0} entries re-tagged.,Etîket hatin yekirin. {0} têketin ji nû ve hatin etîketkirin.
+Task,Erk
+Test connection,Girêdanê biceribîne
+Test Connection,Girêdanê biceribîne
+This entry is locked,Ev têketin girtî ye
+This month,Vê mehê
+This week,Vê hefteyê
+Thu,Pêncşem
+Time Bridge,Pira demê
+Time Entries,Têketinên demê
+Timer already running,Demjimêr berê ve dixebite
+Timer is already running,Demjimêr berê ve dixebite
+Timer is not paused,Demjimêr ne rawestayî ye
+Timer is not running,Demjimêr naxebite
+To,Heta
+Today,Îro
+Total,Tevahî
+Total billable,Tevahî ji bo fatûrê
+Tue,Sêşem
+Unknown error,Çewtiya nenas
+Unassigned,Nehatiye destnîşankirin
+(untagged project),(projeya bê etîket)
+View entry →,Têketinê bibîne →
+Warning: This entry is more than 7 days old.,Hişyarî: Ev têketin ji 7 rojan kevntir e.
+Wed,Çarşem
+Week {0},Hefteya {0}
+What are you working on?,Tu li ser çi dixebitî?
+What did you work on?,Te li ser çi xebitî?
+Work Days,Rojên xebatê
+Yesterday,Duh
+draft,reşnivîs
+entries this month,têketinên vê mehê
+no entries,têketin tune ne
+no entries yet,hêj têketin tune ne
+sent,hat şandin
++{0} more,+{0} bêtir
+← from {0},← ji {0}
+[Auto-stopped after {0}h],[Piştî {0} saetan bixweber rawesta]
+Entry Type,Cureyê têketinê
+Fri,Înî
+Keyboard Shortcuts,Kurterêyên klavyeyê
+Start / Pause / Resume timer,Demjimêrê dest pê bike / raweste / berdewam bike
+Stop timer,Demjimêrê raweste
+New entry (focus quick-add bar),Têketina nû (baldarî li ser leza zêdekirinê)
+Previous / next day or week,Roja / hefteya berê / ya pêş
+Show / hide this overlay,Vê qatê nîşan bide / veşêre
+Press H or Esc to close,Ji bo girtinê H an Esc pêl bike
+Close,Bigire
+Timer,Demjimêr
+Entries,Têketin
+This week at a glance,Ev hefte bi yek nihêrînê
+Time by tag,Dem li gorî etîketê
+Hours per day,Saetên rojê
+No entries this week,Vê hefteyê têketin tune ne
+No entries,Têketin tune ne
+Untagged,Bê etîket
+Monthly Budget (h),Budceya mehane (s)
+Warn at (%),Hişyarî (%)
+0 = no limit,0 = bê sînor
+0 = site default,0 = berdest a malperê
+Approaching limit,Nêzîkî sînor
+Budget exceeded,Budce derbas bû
+budget used this month,budceya vê mehê bikaranî
+used this month,vê mehê hate bikaranîn
+of,ji
+Focus,Baldarî
+Start Focus,Baldariyê dest pê bike
+End focus,Baldariyê biqedîne
+Skip break,Navberê derbas bike
+Break over,Navber qediya
+Time to focus!,Dema baldariyê ye!
+Session complete,Danişîn qediya
+Focus complete!,Baldarî qediya!
+All sessions done. Great work!,Hemû danişîn qediyan. Xebata hêja!
+sessions done. Great work!,Danişîn qediyan. Xebata hêja!
+Start new,Nû dest pê bike
+Work in focused sessions with timed breaks.,Di danişînên bi baldarî de bi navberên demkî re bixebite.
+Session,Danişîn
+Break,Navber
+Work (min),Xebat (deq)
+Break (min),Navber (deq)
+Sessions,Danişîn
+No break is active,Tu navber çalak nîne
+No focus session is running,Tu danişîna baldariyê naxebite
+Context,Çarçove
+Contact,Têkilî
+Context Type,Cureyê çarçoveyê
+For whom?,Ji bo kê?
+Working on?,Li ser çi dixebitî?
+Search contacts...,Têkiliyan bigere...
+Select type...,Cure hilbijêre...
+All contacts,Hemû têkilî
+All projects,Hemû proje
+(no contact),(têkilî tune)
+(no project),(proje tune)
+(no task),(erk tune)
+Filter by:,Parzûn bike:
+Time by contact,Dem li gorî têkiliyê
+Time by context,Dem li gorî çarçoveyê
+Time by task,Dem li gorî erkê
+Contact hours summary,Kurteya saetên têkiliyê

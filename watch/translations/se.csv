@@ -1,0 +1,247 @@
+source,translation
+Billed as {0},Rehkejuvvon {0}
+exact — rounding skipped,dárki — jorgaleapmi guođđojuvvon
+Use exact,Geavat dárkilis
+Apply rounding,Geavat jorgaleami
+Exact,Dárki
+Billed,Rehkejuvvon
+* Rounded up to nearest increment,* Jorgaluvvon lagamus lassáneapmái
+billable,máksojahtti
+non-billable,ii-máksojahtti
+internal,siskkáldas
+on_save,on_save
+manual,giehtamielde
+scheduled,plánejuvvon
+hourly,diibmái
+every_6_hours,every_6_hours
+daily,beaivválaččat
+stopped,bisánan
+running,johtimin
+paused,botkin
+Add a note...,Lasit muittuhusa...
+Add entry for yesterday,Lasit ikte merkema
+Add your first entry,Lasit vuosttaš merkema
+Archive,Arkiiva
+Auto-stop Timer After,Automáhtalaččat bisánet áigemeari maŋŋel
+Billable,Máksojahtti
+Billable {0},Máksojahtti {0}
+Cancel,Šluhtte
+Cannot delete tag — {0} entries use it.,Ii sáhte sihkkut galbbá — {0} merkemat geavahit dan.
+Category,Kategoriija
+Client,Áššehas
+Color,Ivdni
+Connection Failed,Oktavuohta ii lihkostuvvan
+Connection OK,Oktavuohta lea buorre
+Custom…,Iešráhkaduvvon…
+Daily,Beaivválaččat
+Daily view,Beaivválaš oaidnu
+Date range,Beaiveráidu
+days,beaivvit
+Default Entry Type,Dábálaš merkemašládja
+Default Rate,Dábálaš diibmohaddi
+Default activity type,Dábálaš doaibmašládja
+Delete,Sihko
+Description,Čilgehus
+Dismiss,Hilgu
+Do you want to sync all unsynced time entries to ERPNext now?,Hálidatgo synkroniseret buot synkroniserehis áigemerkemaid ERPNext:ii dál?
+Duplicate,Dubbilet
+Duration,Bisttu
+Edit,Rievdat
+Enable ERPNext bridge,Ávkkástalat ERPNext šaldu
+End time,Nohkkanáigi
+Entries forwarded,Merkemat sáddejuvvon
+Entries older than {0} days are locked. Contact your administrator.,Merkemat mat leat boarrásut go {0} beaivvit leat giddejuvvon. Váldde oktavuođa hálddaheddjiiguin.
+ERPNext Bridge,ERPNext šaldi
+ERPNext is not installed on this site.,ERPNext ii leat ásahuvvon dán báikái.
+ERPNext is reachable and Timesheet access is confirmed.,ERPNext lea olámuttus ja áigeraportabeassan lea duođaštuvvon.
+ERPNext site URL,ERPNext báikki URL
+ERPNext Timesheet {0} for {1} is submitted — re-sync blocked.,ERPNext áigeraporta {0} {1} ovddas lea sáddejuvvon — ođđasit synkroniseren eastaduvvon.
+ERPNext Timesheet is submitted — re-sync blocked,ERPNext áigeraporta lea sáddejuvvon — ođđasit synkroniseren eastaduvvon
+Est. {0},Árvv. {0}
+Est. amount,Árvv. mearri
+Every 6 hours,Juohke 6 diibmu
+All time,Buot áigi
+This year,Dán jagi
+Last year,Diibmá
+Download CSV,Viečča CSV
+Export my data,Olggosfievrrut mu dieđuid
+Download all your time entries as CSV.,Viečča buot du áigemerkemaid CSV:n.
+Export CSV,Olggosfievrrut CSV
+Export successful,Olggosfievrrun lihkostuvai
+Failed to forward entries: {0},Merkemaid sádden ii lihkostuvvan: {0}
+Watch Settings,Watch heivehusat
+Watch Tag,Watch galba
+Watch Entry,Watch merkema
+Watch Entry Tag,Watch merkema galba
+Watch Timer,Watch áigemeari
+Forwarded {0} to {1},{0} sáddejuvvon {1}:i
+From,Rájes
+General,Oppalaš
+Hourly,Diibmái
+hours,diibmut
+Hide weekends,Čiega vahkuloahppaid
+Internal,Siskkáldas
+Internal / overhead,Siskkáldas / oppalašgolut
+Last bulk sync,Maŋemuš massiiva synkroniseren
+Last month,Mannan mánu
+Last sync error,Maŋemuš synkroniserenmeattáhus
+Last week,Mannan vahkku
+Less,Unnit
+Lock Entries Older Than,Giddet merkemaid boarrásut go
+Manual,Giehtamielde
+Map project tags,Kártejit prošeakta galbáid
+Merge,Ovttastahte
+Merge {0} into:,Ovttastahte {0} dása:
+Mon,Vuos
+More,Eanet
+Navigate,Navigere
+New Tag,Ođđa galba
+No entries for {0},Eai leat merkemat {0}
+No entries yet,Vel eai leat merkemat
+No tags yet,Vel eai leat galbát
+No timer is running,Ii oktage áigemeari johte
+Non-billable,Ii-máksojahtti
+(no description),(ii čilgehus)
+(not billed),(ii rehkejuvvon)
+Nothing logged yesterday ({0}),Ikte ii merkejuvvon mihkkege ({0})
+Open prepare summary,Rabas válmmaštallanoppalašgeahču
+Open settings,Rabas heivehusaid
+Open tag management,Rabas galbáid hálddaheami
+Open today's view,Rabas otne oainnu
+Open weekly view,Rabas vahkooainnu
+Other,Eará
+Pause,Botke
+Prepare,Válmmaštallan
+Prepare Summary,Válmmaštallanoppalašgeahčči
+Project,Prošeakta
+Rate,Diibmohaddi
+Rename,Ođđasit nammadit
+Resume,Joatkke
+Saved — {0},Vurkkoduvvon — {0}
+Save,Vurke
+Sat,Láv
+Scheduled,Plánejuvvon
+Send,Sádde
+Settings,Heivehusat
+Show weekends,Čájet vahkuloahppaid
+Start time,Álgoáigi
+Start Timer,Álggat áigemeari
+"Start timer: ""{0}""","Álggat áigemeari: ""{0}"""
+"Stop current & start: ""{0}""","Bisánet dálá ja álggat: ""{0}"""
+Started yesterday,Álggahuvvon ikte
+Sun,Sotn
+Sync all unsynced entries,Synkroniseret buot synkroniserehis merkemaid
+Sync billable entries only,Synkroniseret dušše máksojahtti merkemaid
+Sync completed with errors,Synkroniseren čađahuvvon meattáhusaiguin
+Sync complete,Synkroniseren čađahuvvon
+Sync interval,Synkroniserenráidu
+Sync mode,Synkroniserenvuohki
+Synced to ERPNext,Synkroniserejuvvon ERPNext:ii
+Syncing entries to ERPNext…,Synkroniseremen merkemaid ERPNext:ii…
+{0} day(s) synced.,{0} beaivvi synkroniserejuvvon.
+Tag,Galba
+Tag management,Galbáid hálddaheapmi
+Tag Name,Galbbanamma
+Tag renamed. {0} entries updated.,Galba ođđasit nammaduvvon. {0} merkema ođasmahttojuvvon.
+Tags,Galbát
+Tags merged. {0} entries re-tagged.,Galbát ovttastahttojuvvon. {0} merkema ođđasit galbejuvvon.
+Task,Bargu
+Test connection,Geahččal oktavuođa
+Test Connection,Geahččal oktavuođa
+This entry is locked,Dát merkema lea giddejuvvon
+This month,Dán mánu
+This week,Dán vahku
+Thu,Duor
+Time Bridge,Áigešaldi
+Time Entries,Áigemerkemat
+Timer already running,Áigemeari lea juo johtimin
+Timer is already running,Áigemeari lea juo johtimin
+Timer is not paused,Áigemeari ii leat botkejuvvon
+Timer is not running,Áigemeari ii johte
+To,Rádjái
+Today,Otne
+Total,Oppalašmeari
+Total billable,Oppalašmeari máksojahtti
+Tue,Maŋŋ
+Unknown error,Dovdameahttun meattáhus
+Unassigned,Ii mielde juolluduvvon
+(untagged project),(prošeakta galbba haga)
+View entry →,Geahča merkema →
+Warning: This entry is more than 7 days old.,Váruhus: Dát merkema lea badjel 7 beaivve boaris.
+Wed,Gask
+Week {0},Vahkku {0}
+What are you working on?,Maid barggat dál?
+What did you work on?,Maid don barggadit?
+Work Days,Bargabeaivvit
+Yesterday,Ikte
+draft,šládja
+entries this month,merkemat dán mánu
+no entries,eai merkemat
+no entries yet,vel eai merkemat
+sent,sáddejuvvon
++{0} more,+{0} eanet
+← from {0},← rájes {0}
+[Auto-stopped after {0}h],[Automáhtalaččat bisánan {0}d maŋŋel]
+Entry Type,Merkemašládja
+Fri,Bear
+Keyboard Shortcuts,Boallobeavdeoanehasat
+Start / Pause / Resume timer,Álggat / Botket / Joatkit áigemeari
+Stop timer,Bisánet áigemeari
+New entry (focus quick-add bar),Ođđa merkema (fokusere johtillasidbálkái)
+Previous / next day or week,Ovddit / čuovvovaš beaivi dahje vahkku
+Show / hide this overlay,Čájet / čiege dán goahcamušbálu
+Press H or Esc to close,Deatte H dahje Esc giddemii
+Close,Gidde
+Timer,Áigemeari
+Entries,Merkemat
+This week at a glance,Dán vahku geahčastasat
+Time by tag,Áigi galbba mielde
+Hours per day,Diibmut beaivái
+No entries this week,Eai merkemat dán vahku
+No entries,Eai merkemat
+Untagged,Galbba haga
+Monthly Budget (h),Mánnobušeahtta (d)
+Warn at (%),Váruhat (%)
+0 = no limit,0 = ii rádji
+0 = site default,0 = báikki dábálaš
+Approaching limit,Lahkona rádjái
+Budget exceeded,Bušeahtta badjel mannojuvvon
+budget used this month,bušeahtta geavahuvvon dán mánu
+used this month,geavahuvvon dán mánu
+of,rájes
+Focus,Fokus
+Start Focus,Álggat fokusa
+End focus,Nohkat fokusa
+Skip break,Guođđe botki
+Break over,Botki nohkan
+Time to focus!,Áigi fokuseret!
+Session complete,Sesšuvdna čađahuvvon
+Focus complete!,Fokus čađahuvvon!
+All sessions done. Great work!,Buot sesšuvnnat čađahuvvon. Buorre bargu!
+sessions done. Great work!,sesšuvnnat čađahuvvon. Buorre bargu!
+Start new,Álggat ođđasa
+Work in focused sessions with timed breaks.,Bargga fokusserejuvvon sesšuvnnain áigestuvvon botkiiguin.
+Session,Sesšuvdna
+Break,Botki
+Work (min),Bargu (min)
+Break (min),Botki (min)
+Sessions,Sesšuvnnat
+No break is active,Ii oktage botki leat aktiiva
+No focus session is running,Ii oktage fokussesšuvdna johte
+Context,Konteavsta
+Contact,Oktavuohta
+Context Type,Konteavstašládja
+For whom?,Geasa?
+Working on?,Mainna barggat?
+Search contacts...,Oza oktavuođaid...
+Select type...,Vállje šlája...
+All contacts,Buot oktavuođat
+All projects,Buot prošeavttat
+(no contact),(ii oktavuohta)
+(no project),(ii prošeakta)
+(no task),(ii bargu)
+Filter by:,Sille mielde:
+Time by contact,Áigi oktavuođa mielde
+Time by context,Áigi konteavstta mielde
+Time by task,Áigi barggu mielde
+Contact hours summary,Oktavuohtadiibmuid oppalašgeahčči

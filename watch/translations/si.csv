@@ -1,0 +1,247 @@
+source,translation
+Billed as {0},{0} ලෙස බිල් කරන ලදී
+exact — rounding skipped,නිවැරදි — වට කිරීම මග හැරිණි
+Use exact,නිවැරදි භාවිතා කරන්න
+Apply rounding,වට කිරීම යොදන්න
+Exact,නිවැරදි
+Billed,බිල් කරන ලදී
+* Rounded up to nearest increment,* ළඟම වර්ධනයට වට කරන ලදී
+billable,බිල් කළ හැකි
+non-billable,බිල් කළ නොහැකි
+internal,අභ්‍යන්තර
+on_save,on_save
+manual,manual
+scheduled,scheduled
+hourly,hourly
+every_6_hours,every_6_hours
+daily,daily
+stopped,නවතා ඇත
+running,ක්‍රියාත්මකයි
+paused,විරාමයි
+Add a note...,සටහනක් එක් කරන්න...
+Add entry for yesterday,ඊයේ සඳහා ඇතුළත් කිරීමක් එක් කරන්න
+Add your first entry,ඔබේ පළමු ඇතුළත් කිරීම එක් කරන්න
+Archive,සංරක්ෂිතය
+Auto-stop Timer After,මෙතෙක් කාලයකින් පසු ටයිමරය ස්වයංක්‍රීයව නවතන්න
+Billable,බිල් කළ හැකි
+Billable {0},බිල් කළ හැකි {0}
+Cancel,අවලංගු කරන්න
+Cannot delete tag — {0} entries use it.,ටැගය මකා දැමිය නොහැක — ඇතුළත් කිරීම් {0}ක් එය භාවිතා කරයි.
+Category,ප්‍රවර්ගය
+Client,සේවාදායකයා
+Color,වර්ණය
+Connection Failed,සම්බන්ධතාවය අසාර්ථකයි
+Connection OK,සම්බන්ධතාවය හරි
+Custom…,අභිරුචි…
+Daily,දෛනික
+Daily view,දෛනික දසුන
+Date range,දිනයන් පරාසය
+days,දින
+Default Entry Type,පෙරනිමි ඇතුළත් කිරීම් වර්ගය
+Default Rate,පෙරනිමි අනුපාතය
+Default activity type,පෙරනිමි ක්‍රියාකාරකම් වර්ගය
+Delete,මකන්න
+Description,විස්තරය
+Dismiss,ඉවත් කරන්න
+Do you want to sync all unsynced time entries to ERPNext now?,සමමුහුර්ත නොකළ සියලුම කාල ඇතුළත් කිරීම් දැන් ERPNext වෙත සමමුහුර්ත කරන්නද?
+Duplicate,අනුපිටපත
+Duration,කාලසීමාව
+Edit,සංස්කරණය
+Enable ERPNext bridge,ERPNext පාලම සක්‍රීය කරන්න
+End time,අවසන් වේලාව
+Entries forwarded,ඇතුළත් කිරීම් යොමු කරන ලදී
+Entries older than {0} days are locked. Contact your administrator.,දින {0}ට වඩා පැරණි ඇතුළත් කිරීම් අගුලු දමා ඇත. ඔබේ පරිපාලක සම්බන්ධ කරගන්න.
+ERPNext Bridge,ERPNext පාලම
+ERPNext is not installed on this site.,මෙම අඩවියේ ERPNext ස්ථාපනය කර නැත.
+ERPNext is reachable and Timesheet access is confirmed.,ERPNext ලබාගත හැකි අතර කාලපත්‍ර ප්‍රවේශය තහවුරු වී ඇත.
+ERPNext site URL,ERPNext අඩවි URL
+ERPNext Timesheet {0} for {1} is submitted — re-sync blocked.,ERPNext කාලපත්‍රය {0} ({1} සඳහා) ඉදිරිපත් කර ඇත — නැවත සමමුහුර්ත කිරීම අවහිරයි.
+ERPNext Timesheet is submitted — re-sync blocked,ERPNext කාලපත්‍රය ඉදිරිපත් කර ඇත — නැවත සමමුහුර්ත කිරීම අවහිරයි
+Est. {0},ඇස්. {0}
+Est. amount,ඇස්. මුදල
+Every 6 hours,සෑම පැය 6කටම
+All time,සියලු කාලය
+This year,මෙම වර්ෂය
+Last year,පසුගිය වර්ෂය
+Download CSV,CSV බාගන්න
+Export my data,මගේ දත්ත අපනයනය කරන්න
+Download all your time entries as CSV.,ඔබේ සියලුම කාල ඇතුළත් කිරීම් CSV ලෙස බාගන්න.
+Export CSV,CSV අපනයනය
+Export successful,අපනයනය සාර්ථකයි
+Failed to forward entries: {0},ඇතුළත් කිරීම් යොමු කිරීම අසාර්ථකයි: {0}
+Watch Settings,Watch සැකසුම්
+Watch Tag,Watch ටැගය
+Watch Entry,Watch ඇතුළත් කිරීම
+Watch Entry Tag,Watch ඇතුළත් කිරීම් ටැගය
+Watch Timer,Watch ටයිමරය
+Forwarded {0} to {1},{0} {1} වෙත යොමු කරන ලදී
+From,සිට
+General,සාමාන්‍ය
+Hourly,පැයකට
+hours,පැය
+Hide weekends,සති අන්ත සඟවන්න
+Internal,අභ්‍යන්තර
+Internal / overhead,අභ්‍යන්තර / උඩිස්
+Last bulk sync,අවසන් තොග සමමුහුර්තය
+Last month,පසුගිය මාසය
+Last sync error,අවසන් සමමුහුර්ත දෝෂය
+Last week,පසුගිය සතිය
+Less,අඩු
+Lock Entries Older Than,මෙයට වඩා පැරණි ඇතුළත් කිරීම් අගුලු දමන්න
+Manual,අතින්
+Map project tags,ව්‍යාපෘති ටැග් සිතියම් ගත කරන්න
+Merge,ඒකාබද්ධ කරන්න
+Merge {0} into:,{0} ඒකාබද්ධ කරන්න:
+Mon,සඳුදා
+More,තවත්
+Navigate,සැරිසරන්න
+New Tag,නව ටැගය
+No entries for {0},{0} සඳහා ඇතුළත් කිරීම් නැත
+No entries yet,තවම ඇතුළත් කිරීම් නැත
+No tags yet,තවම ටැග් නැත
+No timer is running,ටයිමරයක් ක්‍රියාත්මක නැත
+Non-billable,බිල් කළ නොහැකි
+(no description),(විස්තරයක් නැත)
+(not billed),(බිල් කර නැත)
+Nothing logged yesterday ({0}),ඊයේ කිසිවක් වාර්තා කර නැත ({0})
+Open prepare summary,සකස් කිරීම් සාරාංශය විවෘත කරන්න
+Open settings,සැකසුම් විවෘත කරන්න
+Open tag management,ටැග් කළමනාකරණය විවෘත කරන්න
+Open today's view,අද දසුන විවෘත කරන්න
+Open weekly view,සතිපතා දසුන විවෘත කරන්න
+Other,වෙනත්
+Pause,විරාමය
+Prepare,සකස් කරන්න
+Prepare Summary,සකස් කිරීම් සාරාංශය
+Project,ව්‍යාපෘතිය
+Rate,අනුපාතය
+Rename,නැවත නම් කරන්න
+Resume,නැවත ආරම්භ කරන්න
+Saved — {0},සුරැකිණි — {0}
+Save,සුරකින්න
+Sat,සෙන
+Scheduled,කාලසටහන්ගත
+Send,යවන්න
+Settings,සැකසුම්
+Show weekends,සති අන්ත පෙන්වන්න
+Start time,ආරම්භ වේලාව
+Start Timer,ටයිමරය ආරම්භ කරන්න
+"Start timer: ""{0}""","ටයිමරය ආරම්භ කරන්න: ""{0}"""
+"Stop current & start: ""{0}""","වත්මන් නවත්වා ආරම්භ කරන්න: ""{0}"""
+Started yesterday,ඊයේ ආරම්භ විය
+Sun,ඉරිදා
+Sync all unsynced entries,සමමුහුර්ත නොකළ සියලුම ඇතුළත් කිරීම් සමමුහුර්ත කරන්න
+Sync billable entries only,බිල් කළ හැකි ඇතුළත් කිරීම් පමණක් සමමුහුර්ත කරන්න
+Sync completed with errors,දෝෂ සහිතව සමමුහුර්තය සම්පූර්ණයි
+Sync complete,සමමුහුර්තය සම්පූර්ණයි
+Sync interval,සමමුහුර්ත කාල පරතරය
+Sync mode,සමමුහුර්ත ප්‍රකාරය
+Synced to ERPNext,ERPNext වෙත සමමුහුර්ත කරන ලදී
+Syncing entries to ERPNext…,ERPNext වෙත ඇතුළත් කිරීම් සමමුහුර්ත වෙමින්…
+{0} day(s) synced.,දින {0}ක් සමමුහුර්ත විය.
+Tag,ටැගය
+Tag management,ටැග් කළමනාකරණය
+Tag Name,ටැග් නම
+Tag renamed. {0} entries updated.,ටැගය නැවත නම් කරන ලදී. ඇතුළත් කිරීම් {0}ක් යාවත්කාලීන විය.
+Tags,ටැග්
+Tags merged. {0} entries re-tagged.,ටැග් ඒකාබද්ධ කරන ලදී. ඇතුළත් කිරීම් {0}ක් නැවත ටැග් කරන ලදී.
+Task,කාර්යය
+Test connection,සම්බන්ධතාවය පරීක්ෂා කරන්න
+Test Connection,සම්බන්ධතාවය පරීක්ෂා කරන්න
+This entry is locked,මෙම ඇතුළත් කිරීම අගුලු දමා ඇත
+This month,මෙම මාසය
+This week,මෙම සතිය
+Thu,බ්‍රහස්
+Time Bridge,ටයිම් බ්‍රිජ්
+Time Entries,කාල ඇතුළත් කිරීම්
+Timer already running,ටයිමරය දැනටමත් ක්‍රියාත්මකයි
+Timer is already running,ටයිමරය දැනටමත් ක්‍රියාත්මකයි
+Timer is not paused,ටයිමරය විරාමයේ නැත
+Timer is not running,ටයිමරය ක්‍රියාත්මක නැත
+To,දක්වා
+Today,අද
+Total,එකතුව
+Total billable,එකතු බිල් කළ හැකි
+Tue,අඟහ
+Unknown error,නොදන්නා දෝෂය
+Unassigned,පැවරී නැත
+(untagged project),(ටැග් නොකළ ව්‍යාපෘතිය)
+View entry →,ඇතුළත් කිරීම බලන්න →
+Warning: This entry is more than 7 days old.,අවවාදයයි: මෙම ඇතුළත් කිරීම දින 7ට වඩා පැරණිය.
+Wed,බදාදා
+Week {0},සතිය {0}
+What are you working on?,ඔබ මොන වැඩක්ද කරන්නේ?
+What did you work on?,ඔබ මොන වැඩක්ද කළේ?
+Work Days,වැඩ දින
+Yesterday,ඊයේ
+draft,කටු සටහන
+entries this month,මෙම මාසයේ ඇතුළත් කිරීම්
+no entries,ඇතුළත් කිරීම් නැත
+no entries yet,තවම ඇතුළත් කිරීම් නැත
+sent,යවන ලදී
++{0} more,+{0} තවත්
+← from {0},← {0} සිට
+[Auto-stopped after {0}h],[පැය {0}කින් පසු ස්වයංක්‍රීයව නවතා ඇත]
+Entry Type,ඇතුළත් කිරීම් වර්ගය
+Fri,සිකු
+Keyboard Shortcuts,යතුරුපුවරු කෙටිමං
+Start / Pause / Resume timer,ටයිමරය ආරම්භ / විරාම / නැවත ආරම්භ
+Stop timer,ටයිමරය නවතන්න
+New entry (focus quick-add bar),නව ඇතුළත් කිරීම (ක්ෂණ-එක් කිරීම් තීරුවට අවධානය)
+Previous / next day or week,පෙර / ඊළඟ දිනය හෝ සතිය
+Show / hide this overlay,මෙම උඩුතලය පෙන්වන්න / සඟවන්න
+Press H or Esc to close,වසන්න H හෝ Esc ඔබන්න
+Close,වසන්න
+Timer,ටයිමරය
+Entries,ඇතුළත් කිරීම්
+This week at a glance,මෙම සතිය එක බැල්මකින්
+Time by tag,ටැගය අනුව කාලය
+Hours per day,දිනකට පැය
+No entries this week,මෙම සතියේ ඇතුළත් කිරීම් නැත
+No entries,ඇතුළත් කිරීම් නැත
+Untagged,ටැග් නොකළ
+Monthly Budget (h),මාසික අයවැය (පැ)
+Warn at (%),අවවාදය (%)
+0 = no limit,0 = සීමාවක් නැත
+0 = site default,0 = අඩවි පෙරනිමිය
+Approaching limit,සීමාවට ළඟා වෙමින්
+Budget exceeded,අයවැය ඉක්මවා ඇත
+budget used this month,මෙම මාසයේ භාවිත අයවැය
+used this month,මෙම මාසයේ භාවිතා කරන ලදී
+of,හි
+Focus,අවධානය
+Start Focus,අවධානය ආරම්භ කරන්න
+End focus,අවධානය අවසන් කරන්න
+Skip break,විරාමය මඟ හරින්න
+Break over,විරාමය අවසානයි
+Time to focus!,අවධානය යොමු කරන වේලාවයි!
+Session complete,සැසිය සම්පූර්ණයි
+Focus complete!,අවධානය සම්පූර්ණයි!
+All sessions done. Great work!,සියලුම සැසි සම්පූර්ණයි. විශිෂ්ට වැඩක්!
+sessions done. Great work!,සැසි සම්පූර්ණයි. විශිෂ්ට වැඩක්!
+Start new,අලුතින් ආරම්භ කරන්න
+Work in focused sessions with timed breaks.,කාල සීමිත විරාම සහිතව අවධාන සැසිවල වැඩ කරන්න.
+Session,සැසිය
+Break,විරාමය
+Work (min),වැඩ (මිනි)
+Break (min),විරාමය (මිනි)
+Sessions,සැසි
+No break is active,විරාමයක් සක්‍රිය නැත
+No focus session is running,අවධාන සැසියක් ක්‍රියාත්මක නැත
+Context,සන්දර්භය
+Contact,සම්බන්ධතාවය
+Context Type,සන්දර්භ වර්ගය
+For whom?,කා සඳහාද?
+Working on?,මොන වැඩක්ද?
+Search contacts...,සම්බන්ධතා සොයන්න...
+Select type...,වර්ගය තෝරන්න...
+All contacts,සියලුම සම්බන්ධතා
+All projects,සියලුම ව්‍යාපෘති
+(no contact),(සම්බන්ධතාවයක් නැත)
+(no project),(ව්‍යාපෘතියක් නැත)
+(no task),(කාර්යයක් නැත)
+Filter by:,පෙරන්න:
+Time by contact,සම්බන්ධතාව අනුව කාලය
+Time by context,සන්දර්භය අනුව කාලය
+Time by task,කාර්යය අනුව කාලය
+Contact hours summary,සම්බන්ධතා පැය සාරාංශය

@@ -1,0 +1,247 @@
+source,translation
+Billed as {0},Naplaćeno kao {0}
+exact — rounding skipped,tačno — zaokruživanje preskočeno
+Use exact,Koristi tačno
+Apply rounding,Primijeni zaokruživanje
+Exact,Tačno
+Billed,Naplaćeno
+* Rounded up to nearest increment,* Zaokruženo na najbliži inkrement
+billable,naplativo
+non-billable,nenaplativo
+internal,interno
+on_save,on_save
+manual,manual
+scheduled,scheduled
+hourly,hourly
+every_6_hours,every_6_hours
+daily,daily
+stopped,zaustavljeno
+running,u toku
+paused,pauzirano
+Add a note...,Dodaj bilješku...
+Add entry for yesterday,Dodaj unos za jučer
+Add your first entry,Dodaj svoj prvi unos
+Archive,Arhiviraj
+Auto-stop Timer After,Automatsko zaustavljanje mjerača nakon
+Billable,Naplativo
+Billable {0},Naplativo {0}
+Cancel,Otkaži
+Cannot delete tag — {0} entries use it.,Oznaka se ne može obrisati — {0} unosa je koristi.
+Category,Kategorija
+Client,Klijent
+Color,Boja
+Connection Failed,Povezivanje neuspješno
+Connection OK,Povezivanje uspješno
+Custom…,Prilagođeno…
+Daily,Dnevno
+Daily view,Dnevni prikaz
+Date range,Raspon datuma
+days,dana
+Default Entry Type,Zadana vrsta unosa
+Default Rate,Zadana satnica
+Default activity type,Zadana vrsta aktivnosti
+Delete,Obriši
+Description,Opis
+Dismiss,Odbaci
+Do you want to sync all unsynced time entries to ERPNext now?,Želite li sada sinhronizirati sve nesinhronizovane vremenske unose u ERPNext?
+Duplicate,Dupliciraj
+Duration,Trajanje
+Edit,Uredi
+Enable ERPNext bridge,Omogući ERPNext most
+End time,Vrijeme završetka
+Entries forwarded,Unosi proslijeđeni
+Entries older than {0} days are locked. Contact your administrator.,Unosi stariji od {0} dana su zaključani. Obratite se administratoru.
+ERPNext Bridge,ERPNext most
+ERPNext is not installed on this site.,ERPNext nije instaliran na ovoj stranici.
+ERPNext is reachable and Timesheet access is confirmed.,ERPNext je dostupan i pristup vremenskim listama je potvrđen.
+ERPNext site URL,ERPNext URL stranice
+ERPNext Timesheet {0} for {1} is submitted — re-sync blocked.,ERPNext vremenska lista {0} za {1} je podnesena — ponovna sinhronizacija blokirana.
+ERPNext Timesheet is submitted — re-sync blocked,ERPNext vremenska lista je podnesena — ponovna sinhronizacija blokirana
+Est. {0},Proc. {0}
+Est. amount,Proc. iznos
+Every 6 hours,Svakih 6 sati
+All time,Sve vrijeme
+This year,Ova godina
+Last year,Prošla godina
+Download CSV,Preuzmi CSV
+Export my data,Izvezi moje podatke
+Download all your time entries as CSV.,Preuzmite sve svoje vremenske unose kao CSV.
+Export CSV,Izvezi CSV
+Export successful,Izvoz uspješan
+Failed to forward entries: {0},Prosljeđivanje unosa nije uspjelo: {0}
+Watch Settings,Watch postavke
+Watch Tag,Watch oznaka
+Watch Entry,Watch unos
+Watch Entry Tag,Watch oznaka unosa
+Watch Timer,Watch mjerač
+Forwarded {0} to {1},Proslijeđeno {0} u {1}
+From,Od
+General,Općenito
+Hourly,Svaki sat
+hours,sati
+Hide weekends,Sakrij vikende
+Internal,Interno
+Internal / overhead,Interno / režijsko
+Last bulk sync,Zadnja skupna sinhronizacija
+Last month,Prošli mjesec
+Last sync error,Zadnja greška sinhronizacije
+Last week,Prošla sedmica
+Less,Manje
+Lock Entries Older Than,Zaključaj unose starije od
+Manual,Ručno
+Map project tags,Mapiraj oznake projekta
+Merge,Spoji
+Merge {0} into:,Spoji {0} u:
+Mon,Pon
+More,Više
+Navigate,Navigiraj
+New Tag,Nova oznaka
+No entries for {0},Nema unosa za {0}
+No entries yet,Još nema unosa
+No tags yet,Još nema oznaka
+No timer is running,Nijedan mjerač nije aktivan
+Non-billable,Nenaplativo
+(no description),(bez opisa)
+(not billed),(nije naplaćeno)
+Nothing logged yesterday ({0}),Ništa nije zabilježeno jučer ({0})
+Open prepare summary,Otvori sažetak pripreme
+Open settings,Otvori postavke
+Open tag management,Otvori upravljanje oznakama
+Open today's view,Otvori današnji prikaz
+Open weekly view,Otvori sedmični prikaz
+Other,Ostalo
+Pause,Pauziraj
+Prepare,Pripremi
+Prepare Summary,Sažetak pripreme
+Project,Projekat
+Rate,Satnica
+Rename,Preimenuj
+Resume,Nastavi
+Saved — {0},Sačuvano — {0}
+Save,Sačuvaj
+Sat,Sub
+Scheduled,Zakazano
+Send,Pošalji
+Settings,Postavke
+Show weekends,Prikaži vikende
+Start time,Vrijeme početka
+Start Timer,Pokreni mjerač
+"Start timer: ""{0}""","Pokreni mjerač: ""{0}"""
+"Stop current & start: ""{0}""","Zaustavi trenutni i pokreni: ""{0}"""
+Started yesterday,Pokrenuto jučer
+Sun,Ned
+Sync all unsynced entries,Sinhronizuj sve nesinhronizovane unose
+Sync billable entries only,Sinhronizuj samo naplative unose
+Sync completed with errors,Sinhronizacija završena sa greškama
+Sync complete,Sinhronizacija završena
+Sync interval,Interval sinhronizacije
+Sync mode,Način sinhronizacije
+Synced to ERPNext,Sinhronizovano u ERPNext
+Syncing entries to ERPNext…,Sinhronizacija unosa u ERPNext…
+{0} day(s) synced.,{0} dan(a) sinhronizovano.
+Tag,Oznaka
+Tag management,Upravljanje oznakama
+Tag Name,Naziv oznake
+Tag renamed. {0} entries updated.,Oznaka preimenovana. {0} unosa ažurirano.
+Tags,Oznake
+Tags merged. {0} entries re-tagged.,Oznake spojene. {0} unosa ponovo označeno.
+Task,Zadatak
+Test connection,Testiraj povezivanje
+Test Connection,Testiraj povezivanje
+This entry is locked,Ovaj unos je zaključan
+This month,Ovaj mjesec
+This week,Ova sedmica
+Thu,Čet
+Time Bridge,Vremenski most
+Time Entries,Vremenski unosi
+Timer already running,Mjerač je već aktivan
+Timer is already running,Mjerač je već aktivan
+Timer is not paused,Mjerač nije pauziran
+Timer is not running,Mjerač nije aktivan
+To,Do
+Today,Danas
+Total,Ukupno
+Total billable,Ukupno naplativo
+Tue,Uto
+Unknown error,Nepoznata greška
+Unassigned,Nedodijeljeno
+(untagged project),(neoznačeni projekat)
+View entry →,Prikaži unos →
+Warning: This entry is more than 7 days old.,Upozorenje: Ovaj unos je stariji od 7 dana.
+Wed,Sri
+Week {0},Sedmica {0}
+What are you working on?,Na čemu radite?
+What did you work on?,Na čemu ste radili?
+Work Days,Radni dani
+Yesterday,Jučer
+draft,nacrt
+entries this month,unosa ovog mjeseca
+no entries,nema unosa
+no entries yet,još nema unosa
+sent,poslano
++{0} more,+{0} više
+← from {0},← od {0}
+[Auto-stopped after {0}h],[Automatski zaustavljeno nakon {0}h]
+Entry Type,Vrsta unosa
+Fri,Pet
+Keyboard Shortcuts,Prečice na tastaturi
+Start / Pause / Resume timer,Pokreni / Pauziraj / Nastavi mjerač
+Stop timer,Zaustavi mjerač
+New entry (focus quick-add bar),Novi unos (fokus na traku za brzo dodavanje)
+Previous / next day or week,Prethodna / sljedeća dan ili sedmica
+Show / hide this overlay,Prikaži / sakrij ovaj prekrivač
+Press H or Esc to close,Pritisnite H ili Esc za zatvaranje
+Close,Zatvori
+Timer,Mjerač
+Entries,Unosi
+This week at a glance,Ova sedmica na prvi pogled
+Time by tag,Vrijeme po oznaci
+Hours per day,Sati po danu
+No entries this week,Nema unosa ove sedmice
+No entries,Nema unosa
+Untagged,Neoznačeno
+Monthly Budget (h),Mjesečni budžet (h)
+Warn at (%),Upozori na (%)
+0 = no limit,0 = bez ograničenja
+0 = site default,0 = zadano stranice
+Approaching limit,Približavanje ograničenju
+Budget exceeded,Budžet prekoračen
+budget used this month,budžeta iskorišteno ovog mjeseca
+used this month,iskorišteno ovog mjeseca
+of,od
+Focus,Fokus
+Start Focus,Pokreni fokus
+End focus,Završi fokus
+Skip break,Preskoči pauzu
+Break over,Pauza završena
+Time to focus!,Vrijeme za fokus!
+Session complete,Sesija završena
+Focus complete!,Fokus završen!
+All sessions done. Great work!,Sve sesije završene. Odličan posao!
+sessions done. Great work!,sesija završeno. Odličan posao!
+Start new,Pokreni novu
+Work in focused sessions with timed breaks.,Radite u fokusiranim sesijama sa vremenskim pauzama.
+Session,Sesija
+Break,Pauza
+Work (min),Rad (min)
+Break (min),Pauza (min)
+Sessions,Sesije
+No break is active,Nijedna pauza nije aktivna
+No focus session is running,Nijedna fokus sesija nije aktivna
+Context,Kontekst
+Contact,Kontakt
+Context Type,Vrsta konteksta
+For whom?,Za koga?
+Working on?,Na čemu radite?
+Search contacts...,Pretraži kontakte...
+Select type...,Odaberi vrstu...
+All contacts,Svi kontakti
+All projects,Svi projekti
+(no contact),(bez kontakta)
+(no project),(bez projekta)
+(no task),(bez zadatka)
+Filter by:,Filtriraj po:
+Time by contact,Vrijeme po kontaktu
+Time by context,Vrijeme po kontekstu
+Time by task,Vrijeme po zadatku
+Contact hours summary,Sažetak sati po kontaktu

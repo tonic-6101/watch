@@ -1,0 +1,247 @@
+source,translation
+"Billed as {0}","以{0}記錄"
+"exact — rounding skipped","精確 — 已略過進位"
+"Use exact","使用精確值"
+"Apply rounding","套用進位"
+Exact,精確
+Billed,已記錄
+"* Rounded up to nearest increment","* 已進位至最近單位"
+billable,可記錄
+non-billable,不可記錄
+internal,內部
+on_save,on_save
+manual,manual
+scheduled,scheduled
+hourly,hourly
+every_6_hours,every_6_hours
+daily,daily
+stopped,已停止
+running,執行中
+paused,已暫停
+"Add a note...","新增備註..."
+"Add entry for yesterday","新增昨日紀錄"
+"Add your first entry","新增第一筆紀錄"
+Archive,封存
+"Auto-stop Timer After","計時器自動停止時間"
+Billable,可記錄
+"Billable {0}","可記錄 {0}"
+Cancel,取消
+"Cannot delete tag — {0} entries use it.","無法刪除標籤 — {0}筆紀錄正在使用。"
+Category,類別
+Client,客戶
+Color,顏色
+"Connection Failed","連線失敗"
+"Connection OK","連線正常"
+"Custom…","自訂…"
+Daily,每日
+"Daily view","每日檢視"
+"Date range","日期範圍"
+days,天
+"Default Entry Type","預設紀錄類型"
+"Default Rate","預設單價"
+"Default activity type","預設活動類型"
+Delete,刪除
+Description,說明
+Dismiss,關閉
+"Do you want to sync all unsynced time entries to ERPNext now?","是否立即將所有未同步的時間紀錄同步到ERPNext？"
+Duplicate,複製
+Duration,時長
+Edit,編輯
+"Enable ERPNext bridge","啟用ERPNext橋接"
+"End time","結束時間"
+"Entries forwarded","紀錄已轉發"
+"Entries older than {0} days are locked. Contact your administrator.","超過{0}天的紀錄已鎖定。請聯絡管理員。"
+"ERPNext Bridge","ERPNext橋接"
+"ERPNext is not installed on this site.","此站台未安裝ERPNext。"
+"ERPNext is reachable and Timesheet access is confirmed.","ERPNext可連線，已確認工時表存取權限。"
+"ERPNext site URL","ERPNext站台URL"
+"ERPNext Timesheet {0} for {1} is submitted — re-sync blocked.","ERPNext工時表{0}（{1}）已送出 — 無法重新同步。"
+"ERPNext Timesheet is submitted — re-sync blocked","ERPNext工時表已送出 — 無法重新同步"
+"Est. {0}","預估 {0}"
+"Est. amount","預估金額"
+"Every 6 hours","每6小時"
+"All time","所有時間"
+"This year","今年"
+"Last year","去年"
+"Download CSV","下載CSV"
+"Export my data","匯出我的資料"
+"Download all your time entries as CSV.","將所有時間紀錄下載為CSV。"
+"Export CSV","匯出CSV"
+"Export successful","匯出成功"
+"Failed to forward entries: {0}","轉發紀錄失敗: {0}"
+"Watch Settings","Watch 設定"
+"Watch Tag","Watch 標籤"
+"Watch Entry","Watch 紀錄"
+"Watch Entry Tag","Watch 紀錄標籤"
+"Watch Timer","Watch 計時器"
+"Forwarded {0} to {1}","已將{0}轉發至{1}"
+From,開始
+General,一般
+Hourly,每小時
+hours,小時
+"Hide weekends","隱藏週末"
+Internal,內部
+"Internal / overhead","內部 / 間接費用"
+"Last bulk sync","上次批次同步"
+"Last month","上個月"
+"Last sync error","上次同步錯誤"
+"Last week","上週"
+Less,收合
+"Lock Entries Older Than","鎖定超過指定天數的紀錄"
+Manual,手動
+"Map project tags","對應專案標籤"
+Merge,合併
+"Merge {0} into:","將{0}合併到:"
+Mon,一
+More,展開
+Navigate,瀏覽
+"New Tag","新增標籤"
+"No entries for {0}","{0}沒有紀錄"
+"No entries yet","尚無紀錄"
+"No tags yet","尚無標籤"
+"No timer is running","沒有執行中的計時器"
+Non-billable,不可記錄
+"(no description)","（無說明）"
+"(not billed)","（未記錄）"
+"Nothing logged yesterday ({0})","昨天（{0}）沒有紀錄"
+"Open prepare summary","開啟準備摘要"
+"Open settings","開啟設定"
+"Open tag management","開啟標籤管理"
+"Open today's view","開啟今日檢視"
+"Open weekly view","開啟週檢視"
+Other,其他
+Pause,暫停
+Prepare,準備
+"Prepare Summary","準備摘要"
+Project,專案
+Rate,單價
+Rename,重新命名
+Resume,繼續
+"Saved — {0}","已儲存 — {0}"
+Save,儲存
+Sat,六
+Scheduled,排程
+Send,傳送
+Settings,設定
+"Show weekends","顯示週末"
+"Start time","開始時間"
+"Start Timer","啟動計時器"
+"Start timer: ""{0}""","啟動計時器: 「{0}」"
+"Stop current & start: ""{0}""","停止目前並啟動: 「{0}」"
+"Started yesterday","昨日已開始"
+Sun,日
+"Sync all unsynced entries","同步所有未同步紀錄"
+"Sync billable entries only","僅同步可記錄紀錄"
+"Sync completed with errors","同步完成（有錯誤）"
+"Sync complete","同步完成"
+"Sync interval","同步間隔"
+"Sync mode","同步模式"
+"Synced to ERPNext","已同步到ERPNext"
+"Syncing entries to ERPNext…","正在同步紀錄到ERPNext…"
+"{0} day(s) synced.","已同步{0}天。"
+Tag,標籤
+"Tag management","標籤管理"
+"Tag Name","標籤名稱"
+"Tag renamed. {0} entries updated.","標籤已重新命名。{0}筆紀錄已更新。"
+Tags,標籤
+"Tags merged. {0} entries re-tagged.","標籤已合併。{0}筆紀錄已重新標記。"
+Task,工作
+"Test connection","測試連線"
+"Test Connection","測試連線"
+"This entry is locked","此紀錄已鎖定"
+"This month","本月"
+"This week","本週"
+Thu,四
+"Time Bridge","時間橋接"
+"Time Entries","時間紀錄"
+"Timer already running","計時器已在執行"
+"Timer is already running","計時器已在執行"
+"Timer is not paused","計時器未暫停"
+"Timer is not running","計時器未執行"
+To,結束
+Today,今天
+Total,合計
+"Total billable","可記錄合計"
+Tue,二
+"Unknown error","未知錯誤"
+Unassigned,未指派
+"(untagged project)","（無標籤專案）"
+"View entry →","檢視紀錄 →"
+"Warning: This entry is more than 7 days old.","警告：此紀錄已超過7天。"
+Wed,三
+"Week {0}","第{0}週"
+"What are you working on?","你在做什麼？"
+"What did you work on?","你做了什麼？"
+"Work Days","工作日"
+Yesterday,昨天
+draft,草稿
+"entries this month","本月紀錄"
+"no entries","無紀錄"
+"no entries yet","尚無紀錄"
+sent,已傳送
+"+{0} more","還有{0}筆"
+"← from {0}","← 來自{0}"
+"[Auto-stopped after {0}h]","[{0}小時後自動停止]"
+"Entry Type","紀錄類型"
+Fri,五
+"Keyboard Shortcuts","鍵盤快捷鍵"
+"Start / Pause / Resume timer","啟動 / 暫停 / 繼續計時器"
+"Stop timer","停止計時器"
+"New entry (focus quick-add bar)","新增紀錄（聚焦快速新增列）"
+"Previous / next day or week","上一 / 下一天或週"
+"Show / hide this overlay","顯示 / 隱藏此覆蓋層"
+"Press H or Esc to close","按H或Esc關閉"
+Close,關閉
+Timer,計時器
+Entries,紀錄
+"This week at a glance","本週概覽"
+"Time by tag","依標籤統計時間"
+"Hours per day","每日時數"
+"No entries this week","本週無紀錄"
+"No entries","無紀錄"
+Untagged,無標籤
+"Monthly Budget (h)","每月預算（小時）"
+"Warn at (%)","警告門檻（%）"
+"0 = no limit","0 = 無限制"
+"0 = site default","0 = 站台預設值"
+"Approaching limit","接近上限"
+"Budget exceeded","預算已超額"
+"budget used this month","本月已用預算"
+"used this month","本月已用"
+of,/
+Focus,專注
+"Start Focus","開始專注"
+"End focus","結束專注"
+"Skip break","略過休息"
+"Break over","休息結束"
+"Time to focus!","專注時間到！"
+"Session complete","工作階段完成"
+"Focus complete!","專注完成！"
+"All sessions done. Great work!","所有工作階段已完成。做得好！"
+"sessions done. Great work!","個工作階段已完成。做得好！"
+"Start new","重新開始"
+"Work in focused sessions with timed breaks.","以定時休息的方式進行專注工作。"
+Session,工作階段
+Break,休息
+"Work (min)","工作（分鐘）"
+"Break (min)","休息（分鐘）"
+Sessions,工作階段
+"No break is active","目前無休息"
+"No focus session is running","目前無專注工作階段"
+Context,情境
+Contact,聯絡人
+"Context Type","情境類型"
+"For whom?","為誰？"
+"Working on?","在做什麼？"
+"Search contacts...","搜尋聯絡人..."
+"Select type...","選擇類型..."
+"All contacts","所有聯絡人"
+"All projects","所有專案"
+"(no contact)","（無聯絡人）"
+"(no project)","（無專案）"
+"(no task)","（無工作）"
+"Filter by:","篩選:"
+"Time by contact","依聯絡人統計時間"
+"Time by context","依情境統計時間"
+"Time by task","依工作統計時間"
+"Contact hours summary","聯絡人時間摘要"

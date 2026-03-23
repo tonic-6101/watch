@@ -1,0 +1,247 @@
+source,translation
+Billed as {0},Rēķinā iekļauts kā {0}
+exact — rounding skipped,precīzi — noapaļošana izlaista
+Use exact,Lietot precīzi
+Apply rounding,Piemērot noapaļošanu
+Exact,Precīzi
+Billed,Rēķinā iekļauts
+* Rounded up to nearest increment,* Noapaļots uz augšu līdz tuvākajam solim
+billable,apmaksājams
+non-billable,neapmaksājams
+internal,iekšējs
+on_save,on_save
+manual,manual
+scheduled,scheduled
+hourly,hourly
+every_6_hours,every_6_hours
+daily,daily
+stopped,apturēts
+running,darbojas
+paused,pauzēts
+Add a note...,Pievienot piezīmi...
+Add entry for yesterday,Pievienot ierakstu par vakardienu
+Add your first entry,Pievienot savu pirmo ierakstu
+Archive,Arhivēt
+Auto-stop Timer After,Automātiski apturēt taimeri pēc
+Billable,Apmaksājams
+Billable {0},Apmaksājams {0}
+Cancel,Atcelt
+Cannot delete tag — {0} entries use it.,Birku nevar dzēst — {0} ieraksti to izmanto.
+Category,Kategorija
+Client,Klients
+Color,Krāsa
+Connection Failed,Savienojums neizdevās
+Connection OK,Savienojums kārtībā
+Custom…,Pielāgots…
+Daily,Ikdienas
+Daily view,Dienas skats
+Date range,Datumu diapazons
+days,dienas
+Default Entry Type,Noklusējuma ieraksta tips
+Default Rate,Noklusējuma stundas likme
+Default activity type,Noklusējuma darbības tips
+Delete,Dzēst
+Description,Apraksts
+Dismiss,Noraidīt
+Do you want to sync all unsynced time entries to ERPNext now?,Vai vēlaties tagad sinhronizēt visus nesinhronizētos laika ierakstus uz ERPNext?
+Duplicate,Dublēt
+Duration,Ilgums
+Edit,Rediģēt
+Enable ERPNext bridge,Iespējot ERPNext tiltu
+End time,Beigu laiks
+Entries forwarded,Ieraksti pārsūtīti
+Entries older than {0} days are locked. Contact your administrator.,Ieraksti vecāki par {0} dienām ir bloķēti. Sazinieties ar administratoru.
+ERPNext Bridge,ERPNext tilts
+ERPNext is not installed on this site.,ERPNext nav instalēts šajā vietnē.
+ERPNext is reachable and Timesheet access is confirmed.,ERPNext ir sasniedzams un piekļuve laika uzskaites lapām ir apstiprināta.
+ERPNext site URL,ERPNext vietnes URL
+ERPNext Timesheet {0} for {1} is submitted — re-sync blocked.,ERPNext laika uzskaites lapa {0} lietotājam {1} ir iesniegta — atkārtota sinhronizācija bloķēta.
+ERPNext Timesheet is submitted — re-sync blocked,ERPNext laika uzskaites lapa ir iesniegta — atkārtota sinhronizācija bloķēta
+Est. {0},Apl. {0}
+Est. amount,Apl. summa
+Every 6 hours,Ik pēc 6 stundām
+All time,Visu laiku
+This year,Šogad
+Last year,Pagājušogad
+Download CSV,Lejupielādēt CSV
+Export my data,Eksportēt manus datus
+Download all your time entries as CSV.,Lejupielādējiet visus savus laika ierakstus kā CSV.
+Export CSV,Eksportēt CSV
+Export successful,Eksports veiksmīgs
+Failed to forward entries: {0},Ierakstu pārsūtīšana neizdevās: {0}
+Watch Settings,Watch iestatījumi
+Watch Tag,Watch birka
+Watch Entry,Watch ieraksts
+Watch Entry Tag,Watch ieraksta birka
+Watch Timer,Watch taimeris
+Forwarded {0} to {1},Pārsūtīts {0} uz {1}
+From,No
+General,Vispārīgi
+Hourly,Ik stundu
+hours,stundas
+Hide weekends,Slēpt nedēļas nogales
+Internal,Iekšējs
+Internal / overhead,Iekšējs / pieskaitāmās izmaksas
+Last bulk sync,Pēdējā kopējā sinhronizācija
+Last month,Pagājušais mēnesis
+Last sync error,Pēdējā sinhronizācijas kļūda
+Last week,Pagājušā nedēļa
+Less,Mazāk
+Lock Entries Older Than,Bloķēt ierakstus vecākus par
+Manual,Manuāli
+Map project tags,Kartēt projekta birkas
+Merge,Apvienot
+Merge {0} into:,Apvienot {0} ar:
+Mon,Pr
+More,Vairāk
+Navigate,Navigēt
+New Tag,Jauna birka
+No entries for {0},Nav ierakstu par {0}
+No entries yet,Vēl nav ierakstu
+No tags yet,Vēl nav birku
+No timer is running,Neviens taimeris nedarbojas
+Non-billable,Neapmaksājams
+(no description),(bez apraksta)
+(not billed),(nav iekļauts rēķinā)
+Nothing logged yesterday ({0}),Vakar nekas nav reģistrēts ({0})
+Open prepare summary,Atvērt sagatavošanas kopsavilkumu
+Open settings,Atvērt iestatījumus
+Open tag management,Atvērt birku pārvaldību
+Open today's view,Atvērt šodienas skatu
+Open weekly view,Atvērt nedēļas skatu
+Other,Cits
+Pause,Pauzēt
+Prepare,Sagatavot
+Prepare Summary,Sagatavošanas kopsavilkums
+Project,Projekts
+Rate,Stundas likme
+Rename,Pārdēvēt
+Resume,Turpināt
+Saved — {0},Saglabāts — {0}
+Save,Saglabāt
+Sat,Se
+Scheduled,Ieplānots
+Send,Sūtīt
+Settings,Iestatījumi
+Show weekends,Rādīt nedēļas nogales
+Start time,Sākuma laiks
+Start Timer,Sākt taimeri
+"Start timer: ""{0}""","Sākt taimeri: ""{0}"""
+"Stop current & start: ""{0}""","Apturēt pašreizējo un sākt: ""{0}"""
+Started yesterday,Sākts vakar
+Sun,Sv
+Sync all unsynced entries,Sinhronizēt visus nesinhronizētos ierakstus
+Sync billable entries only,Sinhronizēt tikai apmaksājamos ierakstus
+Sync completed with errors,Sinhronizācija pabeigta ar kļūdām
+Sync complete,Sinhronizācija pabeigta
+Sync interval,Sinhronizācijas intervāls
+Sync mode,Sinhronizācijas režīms
+Synced to ERPNext,Sinhronizēts uz ERPNext
+Syncing entries to ERPNext…,Ierakstu sinhronizācija uz ERPNext…
+{0} day(s) synced.,{0} diena(-as) sinhronizēta(-as).
+Tag,Birka
+Tag management,Birku pārvaldība
+Tag Name,Birkas nosaukums
+Tag renamed. {0} entries updated.,Birka pārdēvēta. {0} ieraksti atjaunināti.
+Tags,Birkas
+Tags merged. {0} entries re-tagged.,Birkas apvienotas. {0} ieraksti pārbiržoti.
+Task,Uzdevums
+Test connection,Testēt savienojumu
+Test Connection,Testēt savienojumu
+This entry is locked,Šis ieraksts ir bloķēts
+This month,Šis mēnesis
+This week,Šī nedēļa
+Thu,Ce
+Time Bridge,Laika tilts
+Time Entries,Laika ieraksti
+Timer already running,Taimeris jau darbojas
+Timer is already running,Taimeris jau darbojas
+Timer is not paused,Taimeris nav pauzēts
+Timer is not running,Taimeris nedarbojas
+To,Līdz
+Today,Šodien
+Total,Kopā
+Total billable,Kopā apmaksājams
+Tue,Ot
+Unknown error,Nezināma kļūda
+Unassigned,Nepiešķirts
+(untagged project),(nebiržots projekts)
+View entry →,Skatīt ierakstu →
+Warning: This entry is more than 7 days old.,Brīdinājums: Šis ieraksts ir vecāks par 7 dienām.
+Wed,Tr
+Week {0},Nedēļa {0}
+What are you working on?,Pie kā strādājat?
+What did you work on?,Pie kā strādājāt?
+Work Days,Darba dienas
+Yesterday,Vakar
+draft,melnraksts
+entries this month,ieraksti šomēnes
+no entries,nav ierakstu
+no entries yet,vēl nav ierakstu
+sent,nosūtīts
++{0} more,+{0} vēl
+← from {0},← no {0}
+[Auto-stopped after {0}h],[Automātiski apturēts pēc {0}h]
+Entry Type,Ieraksta tips
+Fri,Pk
+Keyboard Shortcuts,Tastatūras saīsnes
+Start / Pause / Resume timer,Sākt / Pauzēt / Turpināt taimeri
+Stop timer,Apturēt taimeri
+New entry (focus quick-add bar),Jauns ieraksts (fokuss uz ātrās pievienošanas joslu)
+Previous / next day or week,Iepriekšējā / nākamā diena vai nedēļa
+Show / hide this overlay,Rādīt / slēpt šo pārklājumu
+Press H or Esc to close,Nospiediet H vai Esc lai aizvērtu
+Close,Aizvērt
+Timer,Taimeris
+Entries,Ieraksti
+This week at a glance,Šī nedēļa īsumā
+Time by tag,Laiks pēc birkas
+Hours per day,Stundas dienā
+No entries this week,Šonedēļ nav ierakstu
+No entries,Nav ierakstu
+Untagged,Nebiržots
+Monthly Budget (h),Mēneša budžets (h)
+Warn at (%),Brīdināt pie (%)
+0 = no limit,0 = bez ierobežojuma
+0 = site default,0 = vietnes noklusējums
+Approaching limit,Tuvojas ierobežojumam
+Budget exceeded,Budžets pārsniegts
+budget used this month,budžeta izmantots šomēnes
+used this month,izmantots šomēnes
+of,no
+Focus,Fokuss
+Start Focus,Sākt fokusu
+End focus,Beigt fokusu
+Skip break,Izlaist pārtraukumu
+Break over,Pārtraukums beidzies
+Time to focus!,Laiks fokusēties!
+Session complete,Sesija pabeigta
+Focus complete!,Fokuss pabeigts!
+All sessions done. Great work!,Visas sesijas pabeigtas. Lielisks darbs!
+sessions done. Great work!,sesijas pabeigtas. Lielisks darbs!
+Start new,Sākt jaunu
+Work in focused sessions with timed breaks.,Strādājiet fokusētās sesijās ar hronometrētiem pārtraukumiem.
+Session,Sesija
+Break,Pārtraukums
+Work (min),Darbs (min)
+Break (min),Pārtraukums (min)
+Sessions,Sesijas
+No break is active,Neviens pārtraukums nav aktīvs
+No focus session is running,Neviena fokusa sesija nedarbojas
+Context,Konteksts
+Contact,Kontaktpersona
+Context Type,Konteksta tips
+For whom?,Kam?
+Working on?,Pie kā strādājat?
+Search contacts...,Meklēt kontaktpersonas...
+Select type...,Izvēlēties tipu...
+All contacts,Visas kontaktpersonas
+All projects,Visi projekti
+(no contact),(bez kontaktpersonas)
+(no project),(bez projekta)
+(no task),(bez uzdevuma)
+Filter by:,Filtrēt pēc:
+Time by contact,Laiks pēc kontaktpersonas
+Time by context,Laiks pēc konteksta
+Time by task,Laiks pēc uzdevuma
+Contact hours summary,Kontaktpersonu stundu kopsavilkums

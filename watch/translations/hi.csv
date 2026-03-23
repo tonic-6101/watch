@@ -1,0 +1,247 @@
+source,translation
+"Billed as {0}","{0} के रूप में दर्ज किया गया"
+"exact — rounding skipped","सटीक — राउंडिंग छोड़ी गई"
+"Use exact","सटीक उपयोग करें"
+"Apply rounding","राउंडिंग लागू करें"
+Exact,सटीक
+Billed,दर्ज किया गया
+"* Rounded up to nearest increment","* निकटतम इकाई तक राउंड अप किया गया"
+billable,शुल्क योग्य
+non-billable,शुल्क अयोग्य
+internal,आंतरिक
+on_save,on_save
+manual,manual
+scheduled,scheduled
+hourly,hourly
+every_6_hours,every_6_hours
+daily,daily
+stopped,रुका हुआ
+running,चालू
+paused,विराम
+"Add a note...","नोट जोड़ें..."
+"Add entry for yesterday","कल की प्रविष्टि जोड़ें"
+"Add your first entry","अपनी पहली प्रविष्टि जोड़ें"
+Archive,संग्रह
+"Auto-stop Timer After","टाइमर स्वतः बंद समय"
+Billable,शुल्क योग्य
+"Billable {0}","शुल्क योग्य {0}"
+Cancel,रद्द करें
+"Cannot delete tag — {0} entries use it.","टैग हटाया नहीं जा सकता — {0} प्रविष्टियाँ इसका उपयोग कर रही हैं।"
+Category,श्रेणी
+Client,ग्राहक
+Color,रंग
+"Connection Failed","कनेक्शन विफल"
+"Connection OK","कनेक्शन ठीक"
+"Custom…","कस्टम…"
+Daily,दैनिक
+"Daily view","दैनिक दृश्य"
+"Date range","तिथि सीमा"
+days,दिन
+"Default Entry Type","डिफ़ॉल्ट प्रविष्टि प्रकार"
+"Default Rate","डिफ़ॉल्ट दर"
+"Default activity type","डिफ़ॉल्ट गतिविधि प्रकार"
+Delete,हटाएं
+Description,विवरण
+Dismiss,खारिज करें
+"Do you want to sync all unsynced time entries to ERPNext now?","क्या आप अभी सभी असिंक्ड समय प्रविष्टियों को ERPNext में सिंक करना चाहते हैं?"
+Duplicate,डुप्लिकेट
+Duration,अवधि
+Edit,संपादित करें
+"Enable ERPNext bridge","ERPNext ब्रिज सक्षम करें"
+"End time","समाप्ति समय"
+"Entries forwarded","प्रविष्टियाँ अग्रेषित"
+"Entries older than {0} days are locked. Contact your administrator.","{0} दिन से पुरानी प्रविष्टियाँ लॉक हैं। अपने व्यवस्थापक से संपर्क करें।"
+"ERPNext Bridge","ERPNext ब्रिज"
+"ERPNext is not installed on this site.","इस साइट पर ERPNext इंस्टॉल नहीं है।"
+"ERPNext is reachable and Timesheet access is confirmed.","ERPNext उपलब्ध है और टाइमशीट एक्सेस की पुष्टि हो गई है।"
+"ERPNext site URL","ERPNext साइट URL"
+"ERPNext Timesheet {0} for {1} is submitted — re-sync blocked.","ERPNext टाइमशीट {0} ({1}) सबमिट हो चुकी है — पुनः सिंक अवरुद्ध।"
+"ERPNext Timesheet is submitted — re-sync blocked","ERPNext टाइमशीट सबमिट हो चुकी है — पुनः सिंक अवरुद्ध"
+"Est. {0}","अनुमानित {0}"
+"Est. amount","अनुमानित राशि"
+"Every 6 hours","हर 6 घंटे"
+"All time","सभी समय"
+"This year","इस वर्ष"
+"Last year","पिछला वर्ष"
+"Download CSV","CSV डाउनलोड करें"
+"Export my data","मेरा डेटा निर्यात करें"
+"Download all your time entries as CSV.","अपनी सभी समय प्रविष्टियों को CSV के रूप में डाउनलोड करें।"
+"Export CSV","CSV निर्यात करें"
+"Export successful","निर्यात सफल"
+"Failed to forward entries: {0}","प्रविष्टियाँ अग्रेषित करने में विफल: {0}"
+"Watch Settings","Watch सेटिंग्स"
+"Watch Tag","Watch टैग"
+"Watch Entry","Watch प्रविष्टि"
+"Watch Entry Tag","Watch प्रविष्टि टैग"
+"Watch Timer","Watch टाइमर"
+"Forwarded {0} to {1}","{0} को {1} पर अग्रेषित किया"
+From,से
+General,सामान्य
+Hourly,प्रति घंटा
+hours,घंटे
+"Hide weekends","सप्ताहांत छुपाएं"
+Internal,आंतरिक
+"Internal / overhead","आंतरिक / अप्रत्यक्ष"
+"Last bulk sync","अंतिम बल्क सिंक"
+"Last month","पिछला महीना"
+"Last sync error","अंतिम सिंक त्रुटि"
+"Last week","पिछला सप्ताह"
+Less,कम
+"Lock Entries Older Than","प्रविष्टि लॉक अवधि"
+Manual,मैनुअल
+"Map project tags","प्रोजेक्ट टैग मैप करें"
+Merge,मर्ज करें
+"Merge {0} into:","{0} को इसमें मर्ज करें:"
+Mon,सोम
+More,अधिक
+Navigate,नेविगेट करें
+"New Tag","नया टैग"
+"No entries for {0}","{0} के लिए कोई प्रविष्टि नहीं"
+"No entries yet","अभी कोई प्रविष्टि नहीं"
+"No tags yet","अभी कोई टैग नहीं"
+"No timer is running","कोई टाइमर चालू नहीं है"
+Non-billable,शुल्क अयोग्य
+"(no description)","(कोई विवरण नहीं)"
+"(not billed)","(दर्ज नहीं किया गया)"
+"Nothing logged yesterday ({0})","कल ({0}) कोई रिकॉर्ड नहीं"
+"Open prepare summary","तैयारी सारांश खोलें"
+"Open settings","सेटिंग्स खोलें"
+"Open tag management","टैग प्रबंधन खोलें"
+"Open today's view","आज का दृश्य खोलें"
+"Open weekly view","साप्ताहिक दृश्य खोलें"
+Other,अन्य
+Pause,विराम
+Prepare,तैयारी
+"Prepare Summary","तैयारी सारांश"
+Project,प्रोजेक्ट
+Rate,दर
+Rename,नाम बदलें
+Resume,फिर से शुरू करें
+"Saved — {0}","सहेजा गया — {0}"
+Save,सहेजें
+Sat,शनि
+Scheduled,अनुसूचित
+Send,भेजें
+Settings,सेटिंग्स
+"Show weekends","सप्ताहांत दिखाएं"
+"Start time","प्रारंभ समय"
+"Start Timer","टाइमर शुरू करें"
+"Start timer: ""{0}""","टाइमर शुरू करें: ""{0}"""
+"Stop current & start: ""{0}""","वर्तमान रोकें और शुरू करें: ""{0}"""
+"Started yesterday","कल शुरू हुआ"
+Sun,रवि
+"Sync all unsynced entries","सभी असिंक्ड प्रविष्टियाँ सिंक करें"
+"Sync billable entries only","केवल शुल्क योग्य प्रविष्टियाँ सिंक करें"
+"Sync completed with errors","सिंक त्रुटियों के साथ पूरा हुआ"
+"Sync complete","सिंक पूरा"
+"Sync interval","सिंक अंतराल"
+"Sync mode","सिंक मोड"
+"Synced to ERPNext","ERPNext में सिंक किया गया"
+"Syncing entries to ERPNext…","ERPNext में प्रविष्टियाँ सिंक हो रही हैं…"
+"{0} day(s) synced.","{0} दिन सिंक किए गए।"
+Tag,टैग
+"Tag management","टैग प्रबंधन"
+"Tag Name","टैग नाम"
+"Tag renamed. {0} entries updated.","टैग का नाम बदला गया। {0} प्रविष्टियाँ अपडेट की गईं।"
+Tags,टैग
+"Tags merged. {0} entries re-tagged.","टैग मर्ज किए गए। {0} प्रविष्टियों को पुनः टैग किया गया।"
+Task,कार्य
+"Test connection","कनेक्शन परीक्षण"
+"Test Connection","कनेक्शन परीक्षण"
+"This entry is locked","यह प्रविष्टि लॉक है"
+"This month","इस महीने"
+"This week","इस सप्ताह"
+Thu,गुरु
+"Time Bridge","टाइम ब्रिज"
+"Time Entries","समय प्रविष्टियाँ"
+"Timer already running","टाइमर पहले से चालू है"
+"Timer is already running","टाइमर पहले से चालू है"
+"Timer is not paused","टाइमर विराम पर नहीं है"
+"Timer is not running","टाइमर चालू नहीं है"
+To,तक
+Today,आज
+Total,कुल
+"Total billable","कुल शुल्क योग्य"
+Tue,मंगल
+"Unknown error","अज्ञात त्रुटि"
+Unassigned,अनिर्धारित
+"(untagged project)","(बिना टैग प्रोजेक्ट)"
+"View entry →","प्रविष्टि देखें →"
+"Warning: This entry is more than 7 days old.","चेतावनी: यह प्रविष्टि 7 दिन से अधिक पुरानी है।"
+Wed,बुध
+"Week {0}","सप्ताह {0}"
+"What are you working on?","आप किस पर काम कर रहे हैं?"
+"What did you work on?","आपने किस पर काम किया?"
+"Work Days","कार्य दिवस"
+Yesterday,कल
+draft,ड्राफ्ट
+"entries this month","इस महीने की प्रविष्टियाँ"
+"no entries","कोई प्रविष्टि नहीं"
+"no entries yet","अभी कोई प्रविष्टि नहीं"
+sent,भेजा गया
+"+{0} more","+{0} और"
+"← from {0}","← {0} से"
+"[Auto-stopped after {0}h]","[{0} घंटे बाद स्वतः बंद]"
+"Entry Type","प्रविष्टि प्रकार"
+Fri,शुक्र
+"Keyboard Shortcuts","कीबोर्ड शॉर्टकट"
+"Start / Pause / Resume timer","टाइमर शुरू / विराम / फिर से शुरू करें"
+"Stop timer","टाइमर रोकें"
+"New entry (focus quick-add bar)","नई प्रविष्टि (क्विक-ऐड बार पर फोकस)"
+"Previous / next day or week","पिछला / अगला दिन या सप्ताह"
+"Show / hide this overlay","यह ओवरले दिखाएं / छुपाएं"
+"Press H or Esc to close","बंद करने के लिए H या Esc दबाएं"
+Close,बंद करें
+Timer,टाइमर
+Entries,प्रविष्टियाँ
+"This week at a glance","इस सप्ताह का सारांश"
+"Time by tag","टैग के अनुसार समय"
+"Hours per day","प्रति दिन घंटे"
+"No entries this week","इस सप्ताह कोई प्रविष्टि नहीं"
+"No entries","कोई प्रविष्टि नहीं"
+Untagged,बिना टैग
+"Monthly Budget (h)","मासिक बजट (घंटे)"
+"Warn at (%)","चेतावनी (%)"
+"0 = no limit","0 = कोई सीमा नहीं"
+"0 = site default","0 = साइट डिफ़ॉल्ट"
+"Approaching limit","सीमा के करीब"
+"Budget exceeded","बजट पार"
+"budget used this month","इस महीने बजट उपयोग"
+"used this month","इस महीने उपयोग"
+of,का
+Focus,फोकस
+"Start Focus","फोकस शुरू करें"
+"End focus","फोकस समाप्त करें"
+"Skip break","ब्रेक छोड़ें"
+"Break over","ब्रेक खत्म"
+"Time to focus!","फोकस का समय!"
+"Session complete","सत्र पूरा"
+"Focus complete!","फोकस पूरा!"
+"All sessions done. Great work!","सभी सत्र पूरे। शानदार काम!"
+"sessions done. Great work!","सत्र पूरे। शानदार काम!"
+"Start new","नया शुरू करें"
+"Work in focused sessions with timed breaks.","समयबद्ध ब्रेक के साथ फोकस सत्रों में काम करें।"
+Session,सत्र
+Break,ब्रेक
+"Work (min)","कार्य (मिनट)"
+"Break (min)","ब्रेक (मिनट)"
+Sessions,सत्र
+"No break is active","कोई ब्रेक सक्रिय नहीं"
+"No focus session is running","कोई फोकस सत्र चालू नहीं"
+Context,संदर्भ
+Contact,संपर्क
+"Context Type","संदर्भ प्रकार"
+"For whom?","किसके लिए?"
+"Working on?","किस पर काम कर रहे हैं?"
+"Search contacts...","संपर्क खोजें..."
+"Select type...","प्रकार चुनें..."
+"All contacts","सभी संपर्क"
+"All projects","सभी प्रोजेक्ट"
+"(no contact)","(कोई संपर्क नहीं)"
+"(no project)","(कोई प्रोजेक्ट नहीं)"
+"(no task)","(कोई कार्य नहीं)"
+"Filter by:","फ़िल्टर:"
+"Time by contact","संपर्क के अनुसार समय"
+"Time by context","संदर्भ के अनुसार समय"
+"Time by task","कार्य के अनुसार समय"
+"Contact hours summary","संपर्क घंटे सारांश"

@@ -1,0 +1,247 @@
+source,translation
+Billed as {0},{0} کے طور پر بل کیا گیا
+exact — rounding skipped,عین — راؤنڈنگ چھوڑ دی گئی
+Use exact,عین استعمال کریں
+Apply rounding,راؤنڈنگ لاگو کریں
+Exact,عین
+Billed,بل کیا گیا
+* Rounded up to nearest increment,* قریب ترین اضافے تک راؤنڈ اپ
+billable,قابل بل
+non-billable,ناقابل بل
+internal,اندرونی
+on_save,on_save
+manual,manual
+scheduled,scheduled
+hourly,hourly
+every_6_hours,every_6_hours
+daily,daily
+stopped,رکا ہوا
+running,چل رہا ہے
+paused,موقوف
+Add a note...,نوٹ شامل کریں...
+Add entry for yesterday,کل کے لیے اندراج شامل کریں
+Add your first entry,اپنا پہلا اندراج شامل کریں
+Archive,آرکائیو
+Auto-stop Timer After,اتنے وقت بعد ٹائمر خودکار طور پر بند کریں
+Billable,قابل بل
+Billable {0},قابل بل {0}
+Cancel,منسوخ کریں
+Cannot delete tag — {0} entries use it.,ٹیگ حذف نہیں ہو سکتا — {0} اندراجات اسے استعمال کر رہے ہیں۔
+Category,زمرہ
+Client,کلائنٹ
+Color,رنگ
+Connection Failed,کنکشن ناکام
+Connection OK,کنکشن ٹھیک ہے
+Custom…,حسب ضرورت…
+Daily,روزانہ
+Daily view,روزانہ نظارہ
+Date range,تاریخ کی حد
+days,دن
+Default Entry Type,طے شدہ اندراج کی قسم
+Default Rate,طے شدہ ریٹ
+Default activity type,طے شدہ سرگرمی کی قسم
+Delete,حذف کریں
+Description,تفصیل
+Dismiss,خارج کریں
+Do you want to sync all unsynced time entries to ERPNext now?,کیا آپ ابھی تمام غیر مطابقت شدہ وقت کے اندراجات کو ERPNext سے مطابقت کرنا چاہتے ہیں؟
+Duplicate,نقل
+Duration,دورانیہ
+Edit,ترمیم
+Enable ERPNext bridge,ERPNext بریج فعال کریں
+End time,اختتامی وقت
+Entries forwarded,اندراجات آگے بھیجے گئے
+Entries older than {0} days are locked. Contact your administrator.,{0} دنوں سے پرانے اندراجات مقفل ہیں۔ اپنے منتظم سے رابطہ کریں۔
+ERPNext Bridge,ERPNext بریج
+ERPNext is not installed on this site.,اس سائٹ پر ERPNext انسٹال نہیں ہے۔
+ERPNext is reachable and Timesheet access is confirmed.,ERPNext قابل رسائی ہے اور ٹائم شیٹ رسائی کی تصدیق ہو گئی۔
+ERPNext site URL,ERPNext سائٹ URL
+ERPNext Timesheet {0} for {1} is submitted — re-sync blocked.,ERPNext ٹائم شیٹ {0} ({1} کے لیے) جمع کرائی گئی — دوبارہ مطابقت مسدود۔
+ERPNext Timesheet is submitted — re-sync blocked,ERPNext ٹائم شیٹ جمع کرائی گئی — دوبارہ مطابقت مسدود
+Est. {0},تخمی. {0}
+Est. amount,تخمی. رقم
+Every 6 hours,ہر 6 گھنٹے
+All time,تمام وقت
+This year,اس سال
+Last year,گزشتہ سال
+Download CSV,CSV ڈاؤن لوڈ کریں
+Export my data,میرا ڈیٹا برآمد کریں
+Download all your time entries as CSV.,اپنے تمام وقت کے اندراجات CSV کے طور پر ڈاؤن لوڈ کریں۔
+Export CSV,CSV برآمد
+Export successful,برآمد کامیاب
+Failed to forward entries: {0},اندراجات آگے بھیجنے میں ناکام: {0}
+Watch Settings,Watch ترتیبات
+Watch Tag,Watch ٹیگ
+Watch Entry,Watch اندراج
+Watch Entry Tag,Watch اندراج ٹیگ
+Watch Timer,Watch ٹائمر
+Forwarded {0} to {1},{0} کو {1} کی طرف آگے بھیجا گیا
+From,سے
+General,عمومی
+Hourly,فی گھنٹہ
+hours,گھنٹے
+Hide weekends,ہفتے کے آخری دن چھپائیں
+Internal,اندرونی
+Internal / overhead,اندرونی / اوور ہیڈ
+Last bulk sync,آخری بلک مطابقت
+Last month,گزشتہ ماہ
+Last sync error,آخری مطابقت کی خرابی
+Last week,گزشتہ ہفتہ
+Less,کم
+Lock Entries Older Than,اس سے پرانے اندراجات مقفل کریں
+Manual,دستی
+Map project tags,پروجیکٹ ٹیگز نقشہ بنائیں
+Merge,ضم کریں
+Merge {0} into:,{0} کو ضم کریں:
+Mon,پیر
+More,مزید
+Navigate,تشریف لے جائیں
+New Tag,نیا ٹیگ
+No entries for {0},{0} کے لیے کوئی اندراج نہیں
+No entries yet,ابھی تک کوئی اندراج نہیں
+No tags yet,ابھی تک کوئی ٹیگ نہیں
+No timer is running,کوئی ٹائمر نہیں چل رہا
+Non-billable,ناقابل بل
+(no description),(کوئی تفصیل نہیں)
+(not billed),(بل نہیں کیا گیا)
+Nothing logged yesterday ({0}),کل کچھ بھی درج نہیں ہوا ({0})
+Open prepare summary,تیاری خلاصہ کھولیں
+Open settings,ترتیبات کھولیں
+Open tag management,ٹیگ انتظام کھولیں
+Open today's view,آج کا نظارہ کھولیں
+Open weekly view,ہفتہ وار نظارہ کھولیں
+Other,دیگر
+Pause,موقوف کریں
+Prepare,تیار کریں
+Prepare Summary,تیاری خلاصہ
+Project,پروجیکٹ
+Rate,ریٹ
+Rename,نام تبدیل کریں
+Resume,دوبارہ شروع کریں
+Saved — {0},محفوظ — {0}
+Save,محفوظ کریں
+Sat,ہفتہ
+Scheduled,طے شدہ
+Send,بھیجیں
+Settings,ترتیبات
+Show weekends,ہفتے کے آخری دن دکھائیں
+Start time,آغاز کا وقت
+Start Timer,ٹائمر شروع کریں
+"Start timer: ""{0}""","ٹائمر شروع کریں: ""{0}"""
+"Stop current & start: ""{0}""","موجودہ روکیں اور شروع کریں: ""{0}"""
+Started yesterday,کل شروع ہوا
+Sun,اتوار
+Sync all unsynced entries,تمام غیر مطابقت شدہ اندراجات مطابقت کریں
+Sync billable entries only,صرف قابل بل اندراجات مطابقت کریں
+Sync completed with errors,خرابیوں کے ساتھ مطابقت مکمل
+Sync complete,مطابقت مکمل
+Sync interval,مطابقت وقفہ
+Sync mode,مطابقت موڈ
+Synced to ERPNext,ERPNext سے مطابقت ہو گئی
+Syncing entries to ERPNext…,ERPNext سے اندراجات مطابقت ہو رہے ہیں…
+{0} day(s) synced.,{0} دن مطابقت ہو گئے۔
+Tag,ٹیگ
+Tag management,ٹیگ انتظام
+Tag Name,ٹیگ کا نام
+Tag renamed. {0} entries updated.,ٹیگ کا نام تبدیل ہو گیا۔ {0} اندراجات اپ ڈیٹ ہو گئے۔
+Tags,ٹیگز
+Tags merged. {0} entries re-tagged.,ٹیگز ضم ہو گئے۔ {0} اندراجات دوبارہ ٹیگ ہو گئے۔
+Task,ٹاسک
+Test connection,کنکشن جانچیں
+Test Connection,کنکشن جانچیں
+This entry is locked,یہ اندراج مقفل ہے
+This month,اس ماہ
+This week,اس ہفتے
+Thu,جمعرات
+Time Bridge,ٹائم بریج
+Time Entries,وقت کے اندراجات
+Timer already running,ٹائمر پہلے سے چل رہا ہے
+Timer is already running,ٹائمر پہلے سے چل رہا ہے
+Timer is not paused,ٹائمر موقوف نہیں ہے
+Timer is not running,ٹائمر نہیں چل رہا
+To,تک
+Today,آج
+Total,کل
+Total billable,کل قابل بل
+Tue,منگل
+Unknown error,نامعلوم خرابی
+Unassigned,غیر تفویض
+(untagged project),(بغیر ٹیگ پروجیکٹ)
+View entry →,اندراج دیکھیں →
+Warning: This entry is more than 7 days old.,انتباہ: یہ اندراج 7 دن سے زیادہ پرانا ہے۔
+Wed,بدھ
+Week {0},ہفتہ {0}
+What are you working on?,آپ کس پر کام کر رہے ہیں؟
+What did you work on?,آپ نے کس پر کام کیا؟
+Work Days,کام کے دن
+Yesterday,کل
+draft,مسودہ
+entries this month,اس ماہ کے اندراجات
+no entries,کوئی اندراج نہیں
+no entries yet,ابھی تک کوئی اندراج نہیں
+sent,بھیجا گیا
++{0} more,+{0} مزید
+← from {0},← {0} سے
+[Auto-stopped after {0}h],[{0} گھنٹے بعد خودکار طور پر رکا]
+Entry Type,اندراج کی قسم
+Fri,جمعہ
+Keyboard Shortcuts,کی بورڈ شارٹ کٹس
+Start / Pause / Resume timer,ٹائمر شروع / موقوف / دوبارہ شروع
+Stop timer,ٹائمر روکیں
+New entry (focus quick-add bar),نیا اندراج (فوری شامل بار پر توجہ)
+Previous / next day or week,پچھلا / اگلا دن یا ہفتہ
+Show / hide this overlay,یہ اوورلے دکھائیں / چھپائیں
+Press H or Esc to close,بند کرنے کے لیے H یا Esc دبائیں
+Close,بند کریں
+Timer,ٹائمر
+Entries,اندراجات
+This week at a glance,اس ہفتے ایک نظر میں
+Time by tag,ٹیگ کے مطابق وقت
+Hours per day,فی دن گھنٹے
+No entries this week,اس ہفتے کوئی اندراج نہیں
+No entries,کوئی اندراج نہیں
+Untagged,بغیر ٹیگ
+Monthly Budget (h),ماہانہ بجٹ (گھ)
+Warn at (%),انتباہ (%)
+0 = no limit,0 = کوئی حد نہیں
+0 = site default,0 = سائٹ طے شدہ
+Approaching limit,حد کے قریب
+Budget exceeded,بجٹ سے تجاوز
+budget used this month,اس ماہ استعمال شدہ بجٹ
+used this month,اس ماہ استعمال ہوا
+of,کا
+Focus,توجہ
+Start Focus,توجہ شروع کریں
+End focus,توجہ ختم کریں
+Skip break,وقفہ چھوڑیں
+Break over,وقفہ ختم
+Time to focus!,توجہ مرکوز کرنے کا وقت!
+Session complete,سیشن مکمل
+Focus complete!,توجہ مکمل!
+All sessions done. Great work!,تمام سیشن مکمل۔ شاندار کام!
+sessions done. Great work!,سیشن مکمل۔ شاندار کام!
+Start new,نیا شروع کریں
+Work in focused sessions with timed breaks.,وقتی وقفوں کے ساتھ مرکوز سیشنز میں کام کریں۔
+Session,سیشن
+Break,وقفہ
+Work (min),کام (منٹ)
+Break (min),وقفہ (منٹ)
+Sessions,سیشنز
+No break is active,کوئی وقفہ فعال نہیں
+No focus session is running,کوئی توجہ سیشن نہیں چل رہا
+Context,سیاق
+Contact,رابطہ
+Context Type,سیاق کی قسم
+For whom?,کس کے لیے؟
+Working on?,کس پر کام کر رہے ہیں؟
+Search contacts...,رابطے تلاش کریں...
+Select type...,قسم منتخب کریں...
+All contacts,تمام رابطے
+All projects,تمام پروجیکٹس
+(no contact),(کوئی رابطہ نہیں)
+(no project),(کوئی پروجیکٹ نہیں)
+(no task),(کوئی ٹاسک نہیں)
+Filter by:,فلٹر بذریعہ:
+Time by contact,رابطے کے مطابق وقت
+Time by context,سیاق کے مطابق وقت
+Time by task,ٹاسک کے مطابق وقت
+Contact hours summary,رابطہ اوقات کا خلاصہ

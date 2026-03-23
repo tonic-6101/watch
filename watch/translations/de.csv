@@ -1,13 +1,13 @@
 source,translation
-"Billed as {0}","Abgerechnet als {0}"
+"Billed as {0}","Erfasst als {0}"
 "exact — rounding skipped","exakt — Rundung übersprungen"
-"Use exact","Genau abrechnen"
+"Use exact","Genau erfassen"
 "Apply rounding","Rundung anwenden"
 Exact,Exakt
-Billed,Abgerechnet
+Billed,Erfasst
 "* Rounded up to nearest increment","* Aufgerundet auf nächstes Intervall"
-billable,Abrechenbar
-non-billable,Nicht abrechenbar
+billable,Erfassbar
+non-billable,Nicht erfassbar
 internal,Intern
 on_save,Beim Speichern
 manual,Manuell
@@ -23,8 +23,8 @@ Add entry for yesterday,Eintrag für gestern hinzufügen
 Add your first entry,Ersten Eintrag hinzufügen
 Archive,Archivieren
 Auto-stop Timer After,Timer automatisch stoppen nach
-Billable,Abrechenbar
-"Billable {0}","Abrechenbar {0}"
+Billable,Erfassbar
+"Billable {0}","Erfassbar {0}"
 Cancel,Abbrechen
 "Cannot delete tag — {0} entries use it.","Etikett kann nicht gelöscht werden – {0} Einträge verwenden es."
 Category,Kategorie
@@ -58,7 +58,7 @@ ERPNext Bridge,ERPNext-Brücke
 "ERPNext Timesheet {0} for {1} is submitted — re-sync blocked.","ERPNext-Stundenzettel {0} für {1} ist eingereicht – erneute Synchronisierung nicht möglich."
 "ERPNext Timesheet is submitted — re-sync blocked","ERPNext-Stundenzettel ist eingereicht – erneute Synchronisierung nicht möglich"
 "Est. {0}","Gesch. {0}"
-"Est. amount",Betrag
+"Est. amount","Gesch. Betrag"
 "Every 6 hours","Alle 6 Stunden"
 "All time","Gesamter Zeitraum"
 "This year","Dieses Jahr"
@@ -100,9 +100,9 @@ Navigate,Navigation
 "No entries yet","Noch keine Einträge"
 "No tags yet","Noch keine Etiketten"
 "No timer is running","Kein Timer aktiv"
-"Non-billable","Nicht abrechenbar"
+"Non-billable","Nicht erfassbar"
 "(no description)","(keine Beschreibung)"
-"(not billed)","(nicht abgerechnet)"
+"(not billed)","(nicht erfasst)"
 "Nothing logged yesterday ({0})","Gestern ({0}) nichts eingetragen"
 "Open prepare summary","Vorbereitung öffnen"
 "Open settings","Einstellungen öffnen"
@@ -134,7 +134,7 @@ Stop,Stoppen
 "Started yesterday","Gestern gestartet"
 Sun,So
 "Sync all unsynced entries","Alle nicht synchronisierten Einträge synchronisieren"
-"Sync billable entries only","Nur abrechenbare Einträge synchronisieren"
+"Sync billable entries only","Nur erfassbare Einträge synchronisieren"
 "Sync completed with errors","Synchronisierung mit Fehlern abgeschlossen"
 "Sync complete","Synchronisierung abgeschlossen"
 "Sync interval","Synchronisierungsintervall"
@@ -164,7 +164,7 @@ Thu,Do
 To,Bis
 Today,Heute
 Total,Gesamt
-"Total billable","Gesamt abrechenbar"
+"Total billable","Gesamt erfassbar"
 Tue,Di
 "Unknown error","Unbekannter Fehler"
 "Unassigned","Nicht zugewiesen"

@@ -1,0 +1,247 @@
+source,translation
+Billed as {0},د {0} په توګه بل شوی
+exact — rounding skipped,دقیق — ګردول پریښودل شوي
+Use exact,دقیق وکاروئ
+Apply rounding,ګردول پلي کړئ
+Exact,دقیق
+Billed,بل شوی
+* Rounded up to nearest increment,* نږدې زیاتوالي ته ګرد شوی
+billable,د بل وړ
+non-billable,د بل نه وړ
+internal,داخلي
+on_save,on_save
+manual,manual
+scheduled,scheduled
+hourly,hourly
+every_6_hours,every_6_hours
+daily,daily
+stopped,ودرول شوی
+running,روان دی
+paused,ځنډول شوی
+Add a note...,یادښت اضافه کړئ...
+Add entry for yesterday,د پرون لپاره ننوتل اضافه کړئ
+Add your first entry,خپل لومړی ننوتل اضافه کړئ
+Archive,آرشیف
+Auto-stop Timer After,له دې وخت وروسته ټایمر پخپله ودروئ
+Billable,د بل وړ
+Billable {0},د بل وړ {0}
+Cancel,لغوه کړئ
+Cannot delete tag — {0} entries use it.,ټګ نشي حذف کیدای — {0} ننوتلونه یې کاروي.
+Category,کتګوري
+Client,پیرودونکی
+Color,رنګ
+Connection Failed,اتصال ناکام شو
+Connection OK,اتصال سم دی
+Custom…,دودیز…
+Daily,ورځنی
+Daily view,ورځنی لید
+Date range,نیټې لړۍ
+days,ورځې
+Default Entry Type,ډیفالټ ننوتلو ډول
+Default Rate,ډیفالټ ریټ
+Default activity type,ډیفالټ فعالیت ډول
+Delete,حذف کړئ
+Description,تفصیل
+Dismiss,رد کړئ
+Do you want to sync all unsynced time entries to ERPNext now?,ایا تاسو غواړئ اوس ټول غیر همغام شوي وختي ننوتلونه ERPNext ته همغام کړئ؟
+Duplicate,نقل
+Duration,موده
+Edit,سمون
+Enable ERPNext bridge,ERPNext پل فعال کړئ
+End time,د پای وخت
+Entries forwarded,ننوتلونه لیږل شوي
+Entries older than {0} days are locked. Contact your administrator.,د {0} ورځو څخه زاړه ننوتلونه تړل شوي دي. خپل مدیر سره اړیکه ونیسئ.
+ERPNext Bridge,ERPNext پل
+ERPNext is not installed on this site.,پدې سایټ کې ERPNext نصب شوی نه دی.
+ERPNext is reachable and Timesheet access is confirmed.,ERPNext د لاسرسي وړ دی او د وخت پاڼې لاسرسی تایید شوی.
+ERPNext site URL,ERPNext سایټ URL
+ERPNext Timesheet {0} for {1} is submitted — re-sync blocked.,ERPNext وخت پاڼه {0} (د {1} لپاره) وسپارل شوې — بیا همغامول بند شوي.
+ERPNext Timesheet is submitted — re-sync blocked,ERPNext وخت پاڼه وسپارل شوې — بیا همغامول بند شوي
+Est. {0},اند. {0}
+Est. amount,اند. اندازه
+Every 6 hours,هرې ۶ ساعته
+All time,ټول وخت
+This year,سږکال
+Last year,تیر کال
+Download CSV,CSV ښکته کړئ
+Export my data,زما ډاټا صادر کړئ
+Download all your time entries as CSV.,خپل ټول وختي ننوتلونه د CSV په توګه ښکته کړئ.
+Export CSV,CSV صادر
+Export successful,صادرول بریالی شو
+Failed to forward entries: {0},ننوتلونه لیږل ناکام شول: {0}
+Watch Settings,Watch ترتیبات
+Watch Tag,Watch ټګ
+Watch Entry,Watch ننوتل
+Watch Entry Tag,Watch ننوتل ټګ
+Watch Timer,Watch ټایمر
+Forwarded {0} to {1},{0} {1} ته لیږل شو
+From,له
+General,عمومي
+Hourly,ساعتنۍ
+hours,ساعتونه
+Hide weekends,د اونۍ پای پټ کړئ
+Internal,داخلي
+Internal / overhead,داخلي / سربار
+Last bulk sync,وروستی لوی همغامول
+Last month,تیره میاشت
+Last sync error,وروستی همغامولو تېروتنه
+Last week,تیره اونۍ
+Less,لږ
+Lock Entries Older Than,له دې زاړه ننوتلونه وتړئ
+Manual,لاسي
+Map project tags,د پروژې ټګونه نقشه کړئ
+Merge,یوځای کړئ
+Merge {0} into:,{0} یوځای کړئ:
+Mon,دوشنبه
+More,نور
+Navigate,لاړ شئ
+New Tag,نوی ټګ
+No entries for {0},د {0} لپاره ننوتلونه نشته
+No entries yet,تر اوسه ننوتلونه نشته
+No tags yet,تر اوسه ټګونه نشته
+No timer is running,هیڅ ټایمر نه روان دی
+Non-billable,د بل نه وړ
+(no description),(تفصیل نشته)
+(not billed),(بل شوی نه دی)
+Nothing logged yesterday ({0}),پرون هیڅ ثبت شوي نه وو ({0})
+Open prepare summary,د چمتو کولو لنډیز خلاص کړئ
+Open settings,ترتیبات خلاص کړئ
+Open tag management,د ټګ مدیریت خلاص کړئ
+Open today's view,د نن لید خلاص کړئ
+Open weekly view,اونیز لید خلاص کړئ
+Other,نور
+Pause,ځنډول
+Prepare,چمتو کړئ
+Prepare Summary,د چمتو کولو لنډیز
+Project,پروژه
+Rate,ریټ
+Rename,نوم بدل کړئ
+Resume,بیا پیل کړئ
+Saved — {0},خوندي شو — {0}
+Save,خوندي کړئ
+Sat,شنبه
+Scheduled,ټاکل شوی
+Send,ولیږئ
+Settings,ترتیبات
+Show weekends,د اونۍ پای ښکاره کړئ
+Start time,د پیل وخت
+Start Timer,ټایمر پیل کړئ
+"Start timer: ""{0}""","ټایمر پیل کړئ: ""{0}"""
+"Stop current & start: ""{0}""","اوسنی ودروئ او پیل کړئ: ""{0}"""
+Started yesterday,پرون پیل شو
+Sun,یکشنبه
+Sync all unsynced entries,ټول غیر همغام ننوتلونه همغام کړئ
+Sync billable entries only,یوازې د بل وړ ننوتلونه همغام کړئ
+Sync completed with errors,همغامول د تېروتنو سره بشپړ شو
+Sync complete,همغامول بشپړ شو
+Sync interval,د همغامولو موده
+Sync mode,د همغامولو حالت
+Synced to ERPNext,ERPNext ته همغام شو
+Syncing entries to ERPNext…,ERPNext ته ننوتلونه همغامیږي…
+{0} day(s) synced.,{0} ورځ(ې) همغام شوې.
+Tag,ټګ
+Tag management,د ټګ مدیریت
+Tag Name,د ټګ نوم
+Tag renamed. {0} entries updated.,ټګ نوم بدل شو. {0} ننوتلونه تازه شوې.
+Tags,ټګونه
+Tags merged. {0} entries re-tagged.,ټګونه یوځای شول. {0} ننوتلونه بیا ټګ شوې.
+Task,دنده
+Test connection,اتصال وازمایئ
+Test Connection,اتصال وازمایئ
+This entry is locked,دا ننوتل تړل شوي دي
+This month,دا میاشت
+This week,دا اونۍ
+Thu,پنجشنبه
+Time Bridge,وخت پل
+Time Entries,وختي ننوتلونه
+Timer already running,ټایمر مخکې له مخکې روان دی
+Timer is already running,ټایمر مخکې له مخکې روان دی
+Timer is not paused,ټایمر ځنډول شوی نه دی
+Timer is not running,ټایمر روان نه دی
+To,تر
+Today,نن
+Total,ټولټال
+Total billable,ټول د بل وړ
+Tue,سه‌شنبه
+Unknown error,نامعلومه تېروتنه
+Unassigned,ټاکل شوی نه دی
+(untagged project),(بې ټګ پروژه)
+View entry →,ننوتل وګورئ →
+Warning: This entry is more than 7 days old.,خبرداری: دا ننوتل له ۷ ورځو زاړه دي.
+Wed,چهارشنبه
+Week {0},اونۍ {0}
+What are you working on?,تاسو په څه کار کوئ؟
+What did you work on?,تاسو په څه کار وکړ؟
+Work Days,کاري ورځې
+Yesterday,پرون
+draft,مسوده
+entries this month,د دې میاشتې ننوتلونه
+no entries,ننوتلونه نشته
+no entries yet,تر اوسه ننوتلونه نشته
+sent,لیږل شوی
++{0} more,+{0} نور
+← from {0},← له {0}
+[Auto-stopped after {0}h],[د {0} ساعتو وروسته پخپله ودرول شو]
+Entry Type,د ننوتلو ډول
+Fri,جمعه
+Keyboard Shortcuts,د کیبورډ شارټ کټونه
+Start / Pause / Resume timer,ټایمر پیل / ځنډول / بیا پیل
+Stop timer,ټایمر ودروئ
+New entry (focus quick-add bar),نوی ننوتل (چټک اضافه بار تمرکز)
+Previous / next day or week,مخکینۍ / راتلونکې ورځ یا اونۍ
+Show / hide this overlay,دا اوورلی ښکاره / پټ کړئ
+Press H or Esc to close,د بندولو لپاره H یا Esc فشار ورکړئ
+Close,بند کړئ
+Timer,ټایمر
+Entries,ننوتلونه
+This week at a glance,دا اونۍ یوه لنډه کتنه
+Time by tag,د ټګ له مخې وخت
+Hours per day,په ورځ ساعتونه
+No entries this week,دا اونۍ ننوتلونه نشته
+No entries,ننوتلونه نشته
+Untagged,بې ټګ
+Monthly Budget (h),میاشتنۍ بودجه (س)
+Warn at (%),خبرداری (%)
+0 = no limit,۰ = هیڅ حد نشته
+0 = site default,۰ = سایټ ډیفالټ
+Approaching limit,حد ته نږدې
+Budget exceeded,بودجه اوښتې
+budget used this month,دا میاشت کارول شوې بودجه
+used this month,دا میاشت کارول شوي
+of,د
+Focus,تمرکز
+Start Focus,تمرکز پیل کړئ
+End focus,تمرکز پای ته ورسوئ
+Skip break,وقفه پریږدئ
+Break over,وقفه پای ته ورسیده
+Time to focus!,د تمرکز وخت دی!
+Session complete,ناسته بشپړه شوه
+Focus complete!,تمرکز بشپړ شو!
+All sessions done. Great work!,ټولې ناستې بشپړې شوې. عالي کار!
+sessions done. Great work!,ناستې بشپړې شوې. عالي کار!
+Start new,نوی پیل کړئ
+Work in focused sessions with timed breaks.,د وختي وقفو سره په تمرکز شوو ناستو کې کار وکړئ.
+Session,ناسته
+Break,وقفه
+Work (min),کار (دقیقې)
+Break (min),وقفه (دقیقې)
+Sessions,ناستې
+No break is active,هیڅ وقفه فعاله نه ده
+No focus session is running,هیڅ تمرکز ناسته نه روانه ده
+Context,سیاق
+Contact,اړیکه
+Context Type,د سیاق ډول
+For whom?,د چا لپاره؟
+Working on?,په څه کار کوئ؟
+Search contacts...,اړیکې ولټوئ...
+Select type...,ډول غوره کړئ...
+All contacts,ټولې اړیکې
+All projects,ټولې پروژې
+(no contact),(اړیکه نشته)
+(no project),(پروژه نشته)
+(no task),(دنده نشته)
+Filter by:,فلتر:
+Time by contact,د اړیکې له مخې وخت
+Time by context,د سیاق له مخې وخت
+Time by task,د دندې له مخې وخت
+Contact hours summary,د اړیکې ساعتونو لنډیز

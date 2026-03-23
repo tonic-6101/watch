@@ -1,0 +1,247 @@
+source,translation
+Billed as {0},Arveldatud kui {0}
+exact — rounding skipped,täpne — ümardamine vahele jäetud
+Use exact,Kasuta täpset
+Apply rounding,Rakenda ümardamine
+Exact,Täpne
+Billed,Arveldatud
+* Rounded up to nearest increment,* Ümardatud ülespoole lähima sammuni
+billable,arveldatav
+non-billable,mittearveldatav
+internal,sisemine
+on_save,on_save
+manual,manual
+scheduled,scheduled
+hourly,hourly
+every_6_hours,every_6_hours
+daily,daily
+stopped,peatatud
+running,käib
+paused,paus
+Add a note...,Lisa märkus...
+Add entry for yesterday,Lisa eilne kirje
+Add your first entry,Lisa oma esimene kirje
+Archive,Arhiveeri
+Auto-stop Timer After,Peata taimer automaatselt pärast
+Billable,Arveldatav
+Billable {0},Arveldatav {0}
+Cancel,Tühista
+Cannot delete tag — {0} entries use it.,Silti ei saa kustutada — {0} kirjet kasutab seda.
+Category,Kategooria
+Client,Klient
+Color,Värv
+Connection Failed,Ühendus ebaõnnestus
+Connection OK,Ühendus korras
+Custom…,Kohandatud…
+Daily,Igapäevane
+Daily view,Päevavaade
+Date range,Kuupäevavahemik
+days,päeva
+Default Entry Type,Vaikimisi kirje tüüp
+Default Rate,Vaikimisi tunnitasu
+Default activity type,Vaikimisi tegevuse tüüp
+Delete,Kustuta
+Description,Kirjeldus
+Dismiss,Lõpeta
+Do you want to sync all unsynced time entries to ERPNext now?,Kas soovite nüüd kõik sünkroniseerimata ajakirjed ERPNext-i sünkroniseerida?
+Duplicate,Dubleeri
+Duration,Kestus
+Edit,Muuda
+Enable ERPNext bridge,Luba ERPNext sild
+End time,Lõpuaeg
+Entries forwarded,Kirjed edastatud
+Entries older than {0} days are locked. Contact your administrator.,Kirjed vanemad kui {0} päeva on lukustatud. Võtke ühendust administraatoriga.
+ERPNext Bridge,ERPNext sild
+ERPNext is not installed on this site.,ERPNext ei ole sellel saidil installitud.
+ERPNext is reachable and Timesheet access is confirmed.,ERPNext on kättesaadav ja ajatabelile juurdepääs on kinnitatud.
+ERPNext site URL,ERPNext saidi URL
+ERPNext Timesheet {0} for {1} is submitted — re-sync blocked.,ERPNext ajatabel {0} kasutajale {1} on esitatud — uuesti sünkroonimine blokeeritud.
+ERPNext Timesheet is submitted — re-sync blocked,ERPNext ajatabel on esitatud — uuesti sünkroonimine blokeeritud
+Est. {0},Hinn. {0}
+Est. amount,Hinn. summa
+Every 6 hours,Iga 6 tunni järel
+All time,Kogu aeg
+This year,See aasta
+Last year,Eelmine aasta
+Download CSV,Laadi alla CSV
+Export my data,Ekspordi minu andmed
+Download all your time entries as CSV.,Laadige alla kõik oma ajakirjed CSV-na.
+Export CSV,Ekspordi CSV
+Export successful,Eksport õnnestus
+Failed to forward entries: {0},Kirjete edastamine ebaõnnestus: {0}
+Watch Settings,Watch seaded
+Watch Tag,Watch silt
+Watch Entry,Watch kirje
+Watch Entry Tag,Watch kirje silt
+Watch Timer,Watch taimer
+Forwarded {0} to {1},Edastatud {0} asukohta {1}
+From,Alates
+General,Üldine
+Hourly,Iga tund
+hours,tundi
+Hide weekends,Peida nädalavahetused
+Internal,Sisemine
+Internal / overhead,Sisemine / üldkulu
+Last bulk sync,Viimane hulgisünkroonimine
+Last month,Eelmine kuu
+Last sync error,Viimane sünkroonimise viga
+Last week,Eelmine nädal
+Less,Vähem
+Lock Entries Older Than,Lukusta kirjed vanemad kui
+Manual,Käsitsi
+Map project tags,Kaardista projekti sildid
+Merge,Ühenda
+Merge {0} into:,Ühenda {0} sihtmärki:
+Mon,Esm
+More,Rohkem
+Navigate,Navigeeri
+New Tag,Uus silt
+No entries for {0},Kirjed puuduvad: {0}
+No entries yet,Kirjeid veel pole
+No tags yet,Silte veel pole
+No timer is running,Ükski taimer ei tööta
+Non-billable,Mittearveldatav
+(no description),(kirjeldus puudub)
+(not billed),(arveldamata)
+Nothing logged yesterday ({0}),Eile ei registreeritud midagi ({0})
+Open prepare summary,Ava ettevalmistuse kokkuvõte
+Open settings,Ava seaded
+Open tag management,Ava siltide haldus
+Open today's view,Ava tänane vaade
+Open weekly view,Ava nädala vaade
+Other,Muu
+Pause,Paus
+Prepare,Valmista ette
+Prepare Summary,Ettevalmistuse kokkuvõte
+Project,Projekt
+Rate,Tunnitasu
+Rename,Nimeta ümber
+Resume,Jätka
+Saved — {0},Salvestatud — {0}
+Save,Salvesta
+Sat,Lau
+Scheduled,Ajastatud
+Send,Saada
+Settings,Seaded
+Show weekends,Näita nädalavahetused
+Start time,Algusaeg
+Start Timer,Käivita taimer
+"Start timer: ""{0}""","Käivita taimer: ""{0}"""
+"Stop current & start: ""{0}""","Peata praegune ja käivita: ""{0}"""
+Started yesterday,Alustatud eile
+Sun,Püh
+Sync all unsynced entries,Sünkroniseeri kõik sünkroniseerimata kirjed
+Sync billable entries only,Sünkroniseeri ainult arveldatavad kirjed
+Sync completed with errors,Sünkroonimine lõppes vigadega
+Sync complete,Sünkroonimine lõpetatud
+Sync interval,Sünkroonimise intervall
+Sync mode,Sünkroonimise režiim
+Synced to ERPNext,Sünkroniseeritud ERPNext-i
+Syncing entries to ERPNext…,Kirjete sünkroonimine ERPNext-i…
+{0} day(s) synced.,{0} päev(a) sünkroniseeritud.
+Tag,Silt
+Tag management,Siltide haldus
+Tag Name,Sildi nimi
+Tag renamed. {0} entries updated.,Silt ümbernimetatud. {0} kirjet värskendatud.
+Tags,Sildid
+Tags merged. {0} entries re-tagged.,Sildid ühendatud. {0} kirjet uuesti sildistatud.
+Task,Ülesanne
+Test connection,Testi ühendust
+Test Connection,Testi ühendust
+This entry is locked,See kirje on lukustatud
+This month,See kuu
+This week,See nädal
+Thu,Nel
+Time Bridge,Aja sild
+Time Entries,Ajakirjed
+Timer already running,Taimer juba töötab
+Timer is already running,Taimer juba töötab
+Timer is not paused,Taimer ei ole peatatud
+Timer is not running,Taimer ei tööta
+To,Kuni
+Today,Täna
+Total,Kokku
+Total billable,Kokku arveldatav
+Tue,Tei
+Unknown error,Tundmatu viga
+Unassigned,Määramata
+(untagged project),(sildistamata projekt)
+View entry →,Vaata kirjet →
+Warning: This entry is more than 7 days old.,Hoiatus: See kirje on vanem kui 7 päeva.
+Wed,Kol
+Week {0},Nädal {0}
+What are you working on?,Millega tegelete?
+What did you work on?,Millega tegelesid?
+Work Days,Tööpäevad
+Yesterday,Eile
+draft,mustand
+entries this month,kirjet sel kuul
+no entries,kirjed puuduvad
+no entries yet,kirjeid veel pole
+sent,saadetud
++{0} more,+{0} veel
+← from {0},← alates {0}
+[Auto-stopped after {0}h],[Automaatselt peatatud pärast {0}h]
+Entry Type,Kirje tüüp
+Fri,Ree
+Keyboard Shortcuts,Kiirklahvid
+Start / Pause / Resume timer,Käivita / Peata / Jätka taimerit
+Stop timer,Peata taimer
+New entry (focus quick-add bar),Uus kirje (fookus kiirlisamise ribal)
+Previous / next day or week,Eelmine / järgmine päev või nädal
+Show / hide this overlay,Näita / peida see ülekate
+Press H or Esc to close,Vajutage H või Esc sulgemiseks
+Close,Sulge
+Timer,Taimer
+Entries,Kirjed
+This week at a glance,Nädal lühidalt
+Time by tag,Aeg sildi järgi
+Hours per day,Tunde päevas
+No entries this week,Sel nädalal kirjed puuduvad
+No entries,Kirjed puuduvad
+Untagged,Sildistamata
+Monthly Budget (h),Kuueelarve (h)
+Warn at (%),Hoiata (%)
+0 = no limit,0 = piiranguta
+0 = site default,0 = saidi vaikeväärtus
+Approaching limit,Limiit läheneb
+Budget exceeded,Eelarve ületatud
+budget used this month,eelarvest kasutatud sel kuul
+used this month,kasutatud sel kuul
+of,/
+Focus,Fookus
+Start Focus,Alusta fookust
+End focus,Lõpeta fookus
+Skip break,Jäta paus vahele
+Break over,Paus läbi
+Time to focus!,Aeg fokuseerida!
+Session complete,Sessioon lõpetatud
+Focus complete!,Fookus lõpetatud!
+All sessions done. Great work!,Kõik sessioonid tehtud. Suurepärane töö!
+sessions done. Great work!,sessiooni tehtud. Suurepärane töö!
+Start new,Alusta uut
+Work in focused sessions with timed breaks.,Töötage fokuseeritud sessioonides ajastatud pausidega.
+Session,Sessioon
+Break,Paus
+Work (min),Töö (min)
+Break (min),Paus (min)
+Sessions,Sessioonid
+No break is active,Ükski paus ei ole aktiivne
+No focus session is running,Ükski fookussessioon ei tööta
+Context,Kontekst
+Contact,Kontakt
+Context Type,Konteksti tüüp
+For whom?,Kellele?
+Working on?,Millega tegelete?
+Search contacts...,Otsi kontakte...
+Select type...,Vali tüüp...
+All contacts,Kõik kontaktid
+All projects,Kõik projektid
+(no contact),(kontakt puudub)
+(no project),(projekt puudub)
+(no task),(ülesanne puudub)
+Filter by:,Filtreeri:
+Time by contact,Aeg kontakti järgi
+Time by context,Aeg konteksti järgi
+Time by task,Aeg ülesande järgi
+Contact hours summary,Kontakti tundide kokkuvõte

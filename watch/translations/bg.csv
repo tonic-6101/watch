@@ -1,0 +1,247 @@
+source,translation
+"Billed as {0}","Отчетено като {0}"
+"exact — rounding skipped","точно — закръглянето е пропуснато"
+"Use exact","Използвай точно"
+"Apply rounding","Приложи закръгляне"
+Exact,Точно
+Billed,Отчетено
+"* Rounded up to nearest increment","* Закръглено нагоре до най-близкия интервал"
+billable,платимо
+non-billable,неплатимо
+internal,вътрешно
+on_save,on_save
+manual,manual
+scheduled,scheduled
+hourly,hourly
+every_6_hours,every_6_hours
+daily,daily
+stopped,спряно
+running,работи
+paused,на пауза
+"Add a note...","Добави бележка..."
+"Add entry for yesterday","Добави запис за вчера"
+"Add your first entry","Добавете първия си запис"
+Archive,Архивирай
+"Auto-stop Timer After","Автоматично спиране на таймера след"
+Billable,Платимо
+"Billable {0}","Платимо {0}"
+Cancel,Отказ
+"Cannot delete tag — {0} entries use it.","Етикетът не може да бъде изтрит — {0} записа го използват."
+Category,Категория
+Client,Клиент
+Color,Цвят
+"Connection Failed","Връзката е неуспешна"
+"Connection OK","Връзката е OK"
+"Custom…","Персонализирано…"
+Daily,Дневно
+"Daily view","Дневен изглед"
+"Date range","Период"
+days,дни
+"Default Entry Type","Тип запис по подразбиране"
+"Default Rate","Часова ставка по подразбиране"
+"Default activity type","Тип дейност по подразбиране"
+Delete,Изтрий
+Description,Описание
+Dismiss,Отхвърли
+"Do you want to sync all unsynced time entries to ERPNext now?","Искате ли да синхронизирате всички несинхронизирани записи за време в ERPNext сега?"
+Duplicate,Дублирай
+Duration,Продължителност
+Edit,Редактирай
+"Enable ERPNext bridge","Активирай ERPNext мост"
+"End time","Крайно време"
+"Entries forwarded","Записи препратени"
+"Entries older than {0} days are locked. Contact your administrator.","Записи по-стари от {0} дни са заключени. Свържете се с администратора."
+"ERPNext Bridge","ERPNext мост"
+"ERPNext is not installed on this site.","ERPNext не е инсталиран на този сайт."
+"ERPNext is reachable and Timesheet access is confirmed.","ERPNext е достъпен и достъпът до отчети за време е потвърден."
+"ERPNext site URL","URL на ERPNext сайт"
+"ERPNext Timesheet {0} for {1} is submitted — re-sync blocked.","ERPNext отчет за време {0} за {1} е подаден — повторна синхронизация е блокирана."
+"ERPNext Timesheet is submitted — re-sync blocked","ERPNext отчет за време е подаден — повторна синхронизация е блокирана"
+"Est. {0}","Прибл. {0}"
+"Est. amount","Прибл. сума"
+"Every 6 hours","На всеки 6 часа"
+"All time","Цялото време"
+"This year","Тази година"
+"Last year","Миналата година"
+"Download CSV","Изтегли CSV"
+"Export my data","Експортирай данните ми"
+"Download all your time entries as CSV.","Изтеглете всичките си записи за време като CSV."
+"Export CSV","Експортирай CSV"
+"Export successful","Експортът е успешен"
+"Failed to forward entries: {0}","Неуспешно препращане на записи: {0}"
+"Watch Settings","Настройки на Watch"
+"Watch Tag","Watch етикет"
+"Watch Entry","Watch запис"
+"Watch Entry Tag","Watch етикет на запис"
+"Watch Timer","Watch таймер"
+"Forwarded {0} to {1}","Препратено {0} към {1}"
+From,От
+General,Общи
+Hourly,На всеки час
+hours,часа
+"Hide weekends","Скрий уикендите"
+Internal,Вътрешно
+"Internal / overhead","Вътрешно / общи разходи"
+"Last bulk sync","Последна масова синхронизация"
+"Last month","Миналия месец"
+"Last sync error","Последна грешка при синхронизация"
+"Last week","Миналата седмица"
+Less,По-малко
+"Lock Entries Older Than","Заключи записи по-стари от"
+Manual,Ръчно
+"Map project tags","Свържи етикети на проекти"
+Merge,Обедини
+"Merge {0} into:","Обедини {0} в:"
+Mon,Пон
+More,Повече
+Navigate,Навигирай
+"New Tag","Нов етикет"
+"No entries for {0}","Няма записи за {0}"
+"No entries yet","Все още няма записи"
+"No tags yet","Все още няма етикети"
+"No timer is running","Няма работещ таймер"
+Non-billable,Неплатимо
+"(no description)","(без описание)"
+"(not billed)","(неотчетено)"
+"Nothing logged yesterday ({0})","Нищо записано вчера ({0})"
+"Open prepare summary","Отвори обобщение за подготовка"
+"Open settings","Отвори настройки"
+"Open tag management","Отвори управление на етикети"
+"Open today's view","Отвори днешния изглед"
+"Open weekly view","Отвори седмичен изглед"
+Other,Друго
+Pause,Пауза
+Prepare,Подготовка
+"Prepare Summary","Обобщение за подготовка"
+Project,Проект
+Rate,Часова ставка
+Rename,Преименувай
+Resume,Продължи
+"Saved — {0}","Запазено — {0}"
+Save,Запази
+Sat,Съб
+Scheduled,Планирано
+Send,Изпрати
+Settings,Настройки
+"Show weekends","Покажи уикендите"
+"Start time","Начално време"
+"Start Timer","Стартирай таймера"
+"Start timer: ""{0}""","Стартирай таймер: ""{0}"""
+"Stop current & start: ""{0}""","Спри текущия и стартирай: ""{0}"""
+"Started yesterday","Стартиран вчера"
+Sun,Нед
+"Sync all unsynced entries","Синхронизирай всички несинхронизирани записи"
+"Sync billable entries only","Синхронизирай само платими записи"
+"Sync completed with errors","Синхронизацията завърши с грешки"
+"Sync complete","Синхронизацията е завършена"
+"Sync interval","Интервал на синхронизация"
+"Sync mode","Режим на синхронизация"
+"Synced to ERPNext","Синхронизирано с ERPNext"
+"Syncing entries to ERPNext…","Синхронизиране на записи с ERPNext…"
+"{0} day(s) synced.","{0} ден/дни синхронизирани."
+Tag,Етикет
+"Tag management","Управление на етикети"
+"Tag Name","Име на етикет"
+"Tag renamed. {0} entries updated.","Етикетът е преименуван. {0} записа са актуализирани."
+Tags,Етикети
+"Tags merged. {0} entries re-tagged.","Етикетите са обединени. {0} записа са преетикетирани."
+Task,Задача
+"Test connection","Тествай връзката"
+"Test Connection","Тествай връзката"
+"This entry is locked","Този запис е заключен"
+"This month","Този месец"
+"This week","Тази седмица"
+Thu,Чет
+"Time Bridge","Мост за време"
+"Time Entries","Записи за време"
+"Timer already running","Таймерът вече работи"
+"Timer is already running","Таймерът вече работи"
+"Timer is not paused","Таймерът не е на пауза"
+"Timer is not running","Таймерът не работи"
+To,До
+Today,Днес
+Total,Общо
+"Total billable","Общо платимо"
+Tue,Вто
+"Unknown error","Неизвестна грешка"
+Unassigned,Неприсвоено
+"(untagged project)","(проект без етикет)"
+"View entry →","Виж запис →"
+"Warning: This entry is more than 7 days old.","Внимание: Този запис е по-стар от 7 дни."
+Wed,Сря
+"Week {0}","Седмица {0}"
+"What are you working on?","Над какво работите?"
+"What did you work on?","Над какво работихте?"
+"Work Days","Работни дни"
+Yesterday,Вчера
+draft,чернова
+"entries this month","записа този месец"
+"no entries","няма записи"
+"no entries yet","все още няма записи"
+sent,изпратено
+"+{0} more","+{0} още"
+"← from {0}","← от {0}"
+"[Auto-stopped after {0}h]","[Автоматично спряно след {0}ч]"
+"Entry Type","Тип запис"
+Fri,Пет
+"Keyboard Shortcuts","Клавишни комбинации"
+"Start / Pause / Resume timer","Старт / Пауза / Продължи таймера"
+"Stop timer","Спри таймера"
+"New entry (focus quick-add bar)","Нов запис (фокус върху бързо добавяне)"
+"Previous / next day or week","Предишен / следващ ден или седмица"
+"Show / hide this overlay","Покажи / скрий този панел"
+"Press H or Esc to close","Натиснете H или Esc за затваряне"
+Close,Затвори
+Timer,Таймер
+Entries,Записи
+"This week at a glance","Тази седмица накратко"
+"Time by tag","Време по етикет"
+"Hours per day","Часове на ден"
+"No entries this week","Няма записи тази седмица"
+"No entries","Няма записи"
+Untagged,Без етикет
+"Monthly Budget (h)","Месечен бюджет (ч)"
+"Warn at (%)","Предупреди при (%)"
+"0 = no limit","0 = без лимит"
+"0 = site default","0 = по подразбиране на сайта"
+"Approaching limit","Приближаване до лимита"
+"Budget exceeded","Бюджетът е превишен"
+"budget used this month","от бюджета използван този месец"
+"used this month","използвано този месец"
+of,от
+Focus,Фокус
+"Start Focus","Започни фокус"
+"End focus","Край на фокуса"
+"Skip break","Пропусни почивката"
+"Break over","Почивката свърши"
+"Time to focus!","Време за фокус!"
+"Session complete","Сесията е завършена"
+"Focus complete!","Фокусът е завършен!"
+"All sessions done. Great work!","Всички сесии са завършени. Браво!"
+"sessions done. Great work!","сесии завършени. Браво!"
+"Start new","Започни нова"
+"Work in focused sessions with timed breaks.","Работете във фокусирани сесии с хронометрирани почивки."
+Session,Сесия
+Break,Почивка
+"Work (min)","Работа (мин)"
+"Break (min)","Почивка (мин)"
+Sessions,Сесии
+"No break is active","Няма активна почивка"
+"No focus session is running","Няма работеща фокус сесия"
+Context,Контекст
+Contact,Контакт
+"Context Type","Тип контекст"
+"For whom?","За кого?"
+"Working on?","Работите по?"
+"Search contacts...","Търси контакти..."
+"Select type...","Избери тип..."
+"All contacts","Всички контакти"
+"All projects","Всички проекти"
+"(no contact)","(без контакт)"
+"(no project)","(без проект)"
+"(no task)","(без задача)"
+"Filter by:","Филтрирай по:"
+"Time by contact","Време по контакт"
+"Time by context","Време по контекст"
+"Time by task","Време по задача"
+"Contact hours summary","Обобщение на часовете по контакти"

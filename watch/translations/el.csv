@@ -1,0 +1,247 @@
+source,translation
+"Billed as {0}","Χρεώθηκε ως {0}"
+"exact — rounding skipped","ακριβές — η στρογγυλοποίηση παραλείφθηκε"
+"Use exact","Χρήση ακριβούς"
+"Apply rounding","Εφαρμογή στρογγυλοποίησης"
+Exact,Ακριβές
+Billed,Χρεωμένο
+"* Rounded up to nearest increment","* Στρογγυλοποιήθηκε προς τα πάνω στο πλησιέστερο διάστημα"
+billable,χρεώσιμο
+non-billable,μη χρεώσιμο
+internal,εσωτερικό
+on_save,on_save
+manual,manual
+scheduled,scheduled
+hourly,hourly
+every_6_hours,every_6_hours
+daily,daily
+stopped,σταματημένο
+running,εκτελείται
+paused,σε παύση
+"Add a note...","Προσθήκη σημείωσης..."
+"Add entry for yesterday","Προσθήκη καταχώρησης για χθες"
+"Add your first entry","Προσθέστε την πρώτη σας καταχώρηση"
+Archive,Αρχειοθέτηση
+"Auto-stop Timer After","Αυτόματη διακοπή χρονομέτρου μετά από"
+Billable,Χρεώσιμο
+"Billable {0}","Χρεώσιμο {0}"
+Cancel,Ακύρωση
+"Cannot delete tag — {0} entries use it.","Δεν μπορεί να διαγραφεί η ετικέτα — {0} καταχωρήσεις τη χρησιμοποιούν."
+Category,Κατηγορία
+Client,Πελάτης
+Color,Χρώμα
+"Connection Failed","Η σύνδεση απέτυχε"
+"Connection OK","Σύνδεση OK"
+"Custom…","Προσαρμοσμένο…"
+Daily,Ημερήσιο
+"Daily view","Ημερήσια προβολή"
+"Date range","Εύρος ημερομηνιών"
+days,ημέρες
+"Default Entry Type","Προεπιλεγμένος τύπος καταχώρησης"
+"Default Rate","Προεπιλεγμένη ωριαία αμοιβή"
+"Default activity type","Προεπιλεγμένος τύπος δραστηριότητας"
+Delete,Διαγραφή
+Description,Περιγραφή
+Dismiss,Απόρριψη
+"Do you want to sync all unsynced time entries to ERPNext now?","Θέλετε να συγχρονίσετε τώρα όλες τις μη συγχρονισμένες χρονοκαταχωρήσεις στο ERPNext;"
+Duplicate,Αντίγραφο
+Duration,Διάρκεια
+Edit,Επεξεργασία
+"Enable ERPNext bridge","Ενεργοποίηση γέφυρας ERPNext"
+"End time","Ώρα λήξης"
+"Entries forwarded","Καταχωρήσεις προωθήθηκαν"
+"Entries older than {0} days are locked. Contact your administrator.","Καταχωρήσεις παλαιότερες από {0} ημέρες είναι κλειδωμένες. Επικοινωνήστε με τον διαχειριστή."
+"ERPNext Bridge","Γέφυρα ERPNext"
+"ERPNext is not installed on this site.","Το ERPNext δεν είναι εγκατεστημένο σε αυτόν τον ιστότοπο."
+"ERPNext is reachable and Timesheet access is confirmed.","Το ERPNext είναι προσβάσιμο και η πρόσβαση στα φύλλα χρόνου επιβεβαιώθηκε."
+"ERPNext site URL","URL ιστότοπου ERPNext"
+"ERPNext Timesheet {0} for {1} is submitted — re-sync blocked.","Το φύλλο χρόνου ERPNext {0} για {1} έχει υποβληθεί — ο επανασυγχρονισμός αποκλείστηκε."
+"ERPNext Timesheet is submitted — re-sync blocked","Το φύλλο χρόνου ERPNext έχει υποβληθεί — ο επανασυγχρονισμός αποκλείστηκε"
+"Est. {0}","Εκτ. {0}"
+"Est. amount","Εκτ. ποσό"
+"Every 6 hours","Κάθε 6 ώρες"
+"All time","Όλο το διάστημα"
+"This year","Φέτος"
+"Last year","Πέρσι"
+"Download CSV","Λήψη CSV"
+"Export my data","Εξαγωγή δεδομένων μου"
+"Download all your time entries as CSV.","Κατεβάστε όλες τις χρονοκαταχωρήσεις σας ως CSV."
+"Export CSV","Εξαγωγή CSV"
+"Export successful","Η εξαγωγή ολοκληρώθηκε"
+"Failed to forward entries: {0}","Αποτυχία προώθησης καταχωρήσεων: {0}"
+"Watch Settings","Ρυθμίσεις Watch"
+"Watch Tag","Ετικέτα Watch"
+"Watch Entry","Καταχώρηση Watch"
+"Watch Entry Tag","Ετικέτα καταχώρησης Watch"
+"Watch Timer","Χρονόμετρο Watch"
+"Forwarded {0} to {1}","Προωθήθηκε {0} σε {1}"
+From,Από
+General,Γενικά
+Hourly,Ωριαία
+hours,ώρες
+"Hide weekends","Απόκρυψη Σαββατοκύριακων"
+Internal,Εσωτερικό
+"Internal / overhead","Εσωτερικό / γενικά έξοδα"
+"Last bulk sync","Τελευταίος μαζικός συγχρονισμός"
+"Last month","Προηγούμενος μήνας"
+"Last sync error","Τελευταίο σφάλμα συγχρονισμού"
+"Last week","Προηγούμενη εβδομάδα"
+Less,Λιγότερα
+"Lock Entries Older Than","Κλείδωμα καταχωρήσεων παλαιότερων από"
+Manual,Χειροκίνητο
+"Map project tags","Αντιστοίχιση ετικετών έργου"
+Merge,Συγχώνευση
+"Merge {0} into:","Συγχώνευση {0} σε:"
+Mon,Δευ
+More,Περισσότερα
+Navigate,Πλοήγηση
+"New Tag","Νέα ετικέτα"
+"No entries for {0}","Καμία καταχώρηση για {0}"
+"No entries yet","Δεν υπάρχουν καταχωρήσεις ακόμα"
+"No tags yet","Δεν υπάρχουν ετικέτες ακόμα"
+"No timer is running","Κανένα χρονόμετρο δεν εκτελείται"
+Non-billable,Μη χρεώσιμο
+"(no description)","(χωρίς περιγραφή)"
+"(not billed)","(μη χρεωμένο)"
+"Nothing logged yesterday ({0})","Τίποτα δεν καταγράφηκε χθες ({0})"
+"Open prepare summary","Άνοιγμα σύνοψης προετοιμασίας"
+"Open settings","Άνοιγμα ρυθμίσεων"
+"Open tag management","Άνοιγμα διαχείρισης ετικετών"
+"Open today's view","Άνοιγμα σημερινής προβολής"
+"Open weekly view","Άνοιγμα εβδομαδιαίας προβολής"
+Other,Άλλο
+Pause,Παύση
+Prepare,Προετοιμασία
+"Prepare Summary","Σύνοψη προετοιμασίας"
+Project,Έργο
+Rate,Ωριαία αμοιβή
+Rename,Μετονομασία
+Resume,Συνέχιση
+"Saved — {0}","Αποθηκεύτηκε — {0}"
+Save,Αποθήκευση
+Sat,Σάβ
+Scheduled,Προγραμματισμένο
+Send,Αποστολή
+Settings,Ρυθμίσεις
+"Show weekends","Εμφάνιση Σαββατοκύριακων"
+"Start time","Ώρα έναρξης"
+"Start Timer","Εκκίνηση χρονομέτρου"
+"Start timer: ""{0}""","Εκκίνηση χρονομέτρου: ""{0}"""
+"Stop current & start: ""{0}""","Διακοπή τρέχοντος και εκκίνηση: ""{0}"""
+"Started yesterday","Ξεκίνησε χθες"
+Sun,Κυρ
+"Sync all unsynced entries","Συγχρονισμός όλων των μη συγχρονισμένων καταχωρήσεων"
+"Sync billable entries only","Συγχρονισμός μόνο χρεώσιμων καταχωρήσεων"
+"Sync completed with errors","Ο συγχρονισμός ολοκληρώθηκε με σφάλματα"
+"Sync complete","Ο συγχρονισμός ολοκληρώθηκε"
+"Sync interval","Διάστημα συγχρονισμού"
+"Sync mode","Λειτουργία συγχρονισμού"
+"Synced to ERPNext","Συγχρονίστηκε στο ERPNext"
+"Syncing entries to ERPNext…","Συγχρονισμός καταχωρήσεων στο ERPNext…"
+"{0} day(s) synced.","{0} ημέρα(-ες) συγχρονίστηκαν."
+Tag,Ετικέτα
+"Tag management","Διαχείριση ετικετών"
+"Tag Name","Όνομα ετικέτας"
+"Tag renamed. {0} entries updated.","Η ετικέτα μετονομάστηκε. {0} καταχωρήσεις ενημερώθηκαν."
+Tags,Ετικέτες
+"Tags merged. {0} entries re-tagged.","Οι ετικέτες συγχωνεύτηκαν. {0} καταχωρήσεις επανετικετοποιήθηκαν."
+Task,Εργασία
+"Test connection","Δοκιμή σύνδεσης"
+"Test Connection","Δοκιμή σύνδεσης"
+"This entry is locked","Αυτή η καταχώρηση είναι κλειδωμένη"
+"This month","Αυτό τον μήνα"
+"This week","Αυτή την εβδομάδα"
+Thu,Πέμ
+"Time Bridge","Γέφυρα χρόνου"
+"Time Entries","Χρονοκαταχωρήσεις"
+"Timer already running","Το χρονόμετρο εκτελείται ήδη"
+"Timer is already running","Το χρονόμετρο εκτελείται ήδη"
+"Timer is not paused","Το χρονόμετρο δεν είναι σε παύση"
+"Timer is not running","Το χρονόμετρο δεν εκτελείται"
+To,Έως
+Today,Σήμερα
+Total,Σύνολο
+"Total billable","Σύνολο χρεώσιμου"
+Tue,Τρί
+"Unknown error","Άγνωστο σφάλμα"
+Unassigned,Μη ανατεθειμένο
+"(untagged project)","(έργο χωρίς ετικέτα)"
+"View entry →","Προβολή καταχώρησης →"
+"Warning: This entry is more than 7 days old.","Προειδοποίηση: Αυτή η καταχώρηση είναι παλαιότερη από 7 ημέρες."
+Wed,Τετ
+"Week {0}","Εβδομάδα {0}"
+"What are you working on?","Σε τι εργάζεστε;"
+"What did you work on?","Σε τι εργαστήκατε;"
+"Work Days","Εργάσιμες ημέρες"
+Yesterday,Χθες
+draft,πρόχειρο
+"entries this month","καταχωρήσεις αυτό τον μήνα"
+"no entries","καμία καταχώρηση"
+"no entries yet","καμία καταχώρηση ακόμα"
+sent,εστάλη
+"+{0} more","+{0} ακόμα"
+"← from {0}","← από {0}"
+"[Auto-stopped after {0}h]","[Αυτόματη διακοπή μετά από {0}ώ]"
+"Entry Type","Τύπος καταχώρησης"
+Fri,Παρ
+"Keyboard Shortcuts","Συντομεύσεις πληκτρολογίου"
+"Start / Pause / Resume timer","Εκκίνηση / Παύση / Συνέχιση χρονομέτρου"
+"Stop timer","Διακοπή χρονομέτρου"
+"New entry (focus quick-add bar)","Νέα καταχώρηση (εστίαση στη γραμμή γρήγορης προσθήκης)"
+"Previous / next day or week","Προηγούμενη / επόμενη ημέρα ή εβδομάδα"
+"Show / hide this overlay","Εμφάνιση / απόκρυψη αυτού του πάνελ"
+"Press H or Esc to close","Πατήστε H ή Esc για κλείσιμο"
+Close,Κλείσιμο
+Timer,Χρονόμετρο
+Entries,Καταχωρήσεις
+"This week at a glance","Η εβδομάδα με μια ματιά"
+"Time by tag","Χρόνος ανά ετικέτα"
+"Hours per day","Ώρες ανά ημέρα"
+"No entries this week","Καμία καταχώρηση αυτή την εβδομάδα"
+"No entries","Καμία καταχώρηση"
+Untagged,Χωρίς ετικέτα
+"Monthly Budget (h)","Μηνιαίο όριο (ώ)"
+"Warn at (%)","Προειδοποίηση στο (%)"
+"0 = no limit","0 = χωρίς όριο"
+"0 = site default","0 = προεπιλογή ιστότοπου"
+"Approaching limit","Πλησιάζει το όριο"
+"Budget exceeded","Το όριο ξεπεράστηκε"
+"budget used this month","του ορίου χρησιμοποιήθηκε αυτό τον μήνα"
+"used this month","χρησιμοποιήθηκε αυτό τον μήνα"
+of,από
+Focus,Εστίαση
+"Start Focus","Έναρξη εστίασης"
+"End focus","Τέλος εστίασης"
+"Skip break","Παράλειψη διαλείμματος"
+"Break over","Το διάλειμμα τελείωσε"
+"Time to focus!","Ώρα για εστίαση!"
+"Session complete","Η συνεδρία ολοκληρώθηκε"
+"Focus complete!","Η εστίαση ολοκληρώθηκε!"
+"All sessions done. Great work!","Όλες οι συνεδρίες ολοκληρώθηκαν. Εξαιρετική δουλειά!"
+"sessions done. Great work!","συνεδρίες ολοκληρώθηκαν. Εξαιρετική δουλειά!"
+"Start new","Έναρξη νέας"
+"Work in focused sessions with timed breaks.","Εργαστείτε σε εστιασμένες συνεδρίες με χρονομετρημένα διαλείμματα."
+Session,Συνεδρία
+Break,Διάλειμμα
+"Work (min)","Εργασία (λεπ)"
+"Break (min)","Διάλειμμα (λεπ)"
+Sessions,Συνεδρίες
+"No break is active","Κανένα διάλειμμα δεν είναι ενεργό"
+"No focus session is running","Καμία συνεδρία εστίασης δεν εκτελείται"
+Context,Πλαίσιο
+Contact,Επαφή
+"Context Type","Τύπος πλαισίου"
+"For whom?","Για ποιον;"
+"Working on?","Εργάζεστε σε;"
+"Search contacts...","Αναζήτηση επαφών..."
+"Select type...","Επιλογή τύπου..."
+"All contacts","Όλες οι επαφές"
+"All projects","Όλα τα έργα"
+"(no contact)","(χωρίς επαφή)"
+"(no project)","(χωρίς έργο)"
+"(no task)","(χωρίς εργασία)"
+"Filter by:","Φιλτράρισμα κατά:"
+"Time by contact","Χρόνος ανά επαφή"
+"Time by context","Χρόνος ανά πλαίσιο"
+"Time by task","Χρόνος ανά εργασία"
+"Contact hours summary","Σύνοψη ωρών ανά επαφή"

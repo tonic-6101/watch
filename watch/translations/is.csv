@@ -1,0 +1,247 @@
+source,translation
+Billed as {0},Innheimt sem {0}
+exact — rounding skipped,nákvæmt — sléttun sleppt
+Use exact,Nota nákvæmt
+Apply rounding,Nota sléttun
+Exact,Nákvæmt
+Billed,Innheimt
+* Rounded up to nearest increment,* Sléttað upp að næsta þrepi
+billable,reikningshæft
+non-billable,ekki reikningshæft
+internal,innra
+on_save,on_save
+manual,manual
+scheduled,scheduled
+hourly,hourly
+every_6_hours,every_6_hours
+daily,daily
+stopped,stöðvað
+running,í gangi
+paused,í pásu
+Add a note...,Bæta við athugasemd...
+Add entry for yesterday,Bæta við færslu fyrir í gær
+Add your first entry,Bættu við fyrstu færslunni þinni
+Archive,Setja í geymslu
+Auto-stop Timer After,Sjálfvirk stöðvun tímamælis eftir
+Billable,Reikningshæft
+Billable {0},Reikningshæft {0}
+Cancel,Hætta við
+Cannot delete tag — {0} entries use it.,Ekki hægt að eyða merki — {0} færslur nota það.
+Category,Flokkur
+Client,Viðskiptavinur
+Color,Litur
+Connection Failed,Tenging mistókst
+Connection OK,Tenging í lagi
+Custom…,Sérsniðið…
+Daily,Daglega
+Daily view,Dagsýn
+Date range,Dagsetningabil
+days,dagar
+Default Entry Type,Sjálfgefin færslutegund
+Default Rate,Sjálfgefið tímagjald
+Default activity type,Sjálfgefin tegund verkefnis
+Delete,Eyða
+Description,Lýsing
+Dismiss,Hunsa
+Do you want to sync all unsynced time entries to ERPNext now?,Viltu samstilla allar ósamstilltar tímafærslur við ERPNext núna?
+Duplicate,Afrita
+Duration,Lengd
+Edit,Breyta
+Enable ERPNext bridge,Virkja ERPNext brú
+End time,Lokatími
+Entries forwarded,Færslur áframsendar
+Entries older than {0} days are locked. Contact your administrator.,Færslur eldri en {0} daga eru læstar. Hafðu samband við kerfisstjóra.
+ERPNext Bridge,ERPNext brú
+ERPNext is not installed on this site.,ERPNext er ekki uppsett á þessari síðu.
+ERPNext is reachable and Timesheet access is confirmed.,ERPNext er aðgengilegt og aðgangur að tímaskýrslum er staðfestur.
+ERPNext site URL,ERPNext vefslóð
+ERPNext Timesheet {0} for {1} is submitted — re-sync blocked.,ERPNext tímaskýrsla {0} fyrir {1} er send inn — endursamstilling útilokuð.
+ERPNext Timesheet is submitted — re-sync blocked,ERPNext tímaskýrsla er send inn — endursamstilling útilokuð
+Est. {0},Áætl. {0}
+Est. amount,Áætl. upphæð
+Every 6 hours,Á 6 klukkustunda fresti
+All time,Allan tíma
+This year,Í ár
+Last year,Í fyrra
+Download CSV,Hala niður CSV
+Export my data,Flytja út gögnin mín
+Download all your time entries as CSV.,Halaðu niður öllum tímafærslum þínum sem CSV.
+Export CSV,Flytja út CSV
+Export successful,Útflutningur tókst
+Failed to forward entries: {0},Áframsending færslna mistókst: {0}
+Watch Settings,Watch stillingar
+Watch Tag,Watch merki
+Watch Entry,Watch færsla
+Watch Entry Tag,Watch færslumerki
+Watch Timer,Watch tímamælir
+Forwarded {0} to {1},Áframsent {0} til {1}
+From,Frá
+General,Almennt
+Hourly,Á klukkustund
+hours,klukkustundir
+Hide weekends,Fela helgar
+Internal,Innra
+Internal / overhead,Innra / sameiginlegur kostnaður
+Last bulk sync,Síðasta fjöldasamstilling
+Last month,Síðasta mánuð
+Last sync error,Síðasta samstillingarvilla
+Last week,Síðustu viku
+Less,Minna
+Lock Entries Older Than,Læsa færslur eldri en
+Manual,Handvirkt
+Map project tags,Varpa verkefnismerkjum
+Merge,Sameina
+Merge {0} into:,Sameina {0} í:
+Mon,Mán
+More,Meira
+Navigate,Flakka
+New Tag,Nýtt merki
+No entries for {0},Engar færslur fyrir {0}
+No entries yet,Engar færslur enn
+No tags yet,Engin merki enn
+No timer is running,Enginn tímamælir er í gangi
+Non-billable,Ekki reikningshæft
+(no description),(engin lýsing)
+(not billed),(ekki innheimt)
+Nothing logged yesterday ({0}),Ekkert skráð í gær ({0})
+Open prepare summary,Opna undirbúningsyfirlit
+Open settings,Opna stillingar
+Open tag management,Opna merkjastjórnun
+Open today's view,Opna dagsýn
+Open weekly view,Opna vikuyfirlit
+Other,Annað
+Pause,Gera hlé
+Prepare,Undirbúa
+Prepare Summary,Undirbúningsyfirlit
+Project,Verkefni
+Rate,Tímagjald
+Rename,Endurnefna
+Resume,Halda áfram
+Saved — {0},Vistað — {0}
+Save,Vista
+Sat,Lau
+Scheduled,Áætlað
+Send,Senda
+Settings,Stillingar
+Show weekends,Sýna helgar
+Start time,Upphafstími
+Start Timer,Ræsa tímamæli
+"Start timer: ""{0}""","Ræsa tímamæli: ""{0}"""
+"Stop current & start: ""{0}""","Stöðva núverandi og ræsa: ""{0}"""
+Started yesterday,Byrjaði í gær
+Sun,Sun
+Sync all unsynced entries,Samstilla allar ósamstilltar færslur
+Sync billable entries only,Samstilla aðeins reikningshæfar færslur
+Sync completed with errors,Samstilling lokið með villum
+Sync complete,Samstilling lokið
+Sync interval,Samstillingarbil
+Sync mode,Samstillingarhamur
+Synced to ERPNext,Samstillt við ERPNext
+Syncing entries to ERPNext…,Samstilli færslur við ERPNext…
+{0} day(s) synced.,{0} dagur/dagar samstillt/ir.
+Tag,Merki
+Tag management,Merkjastjórnun
+Tag Name,Heiti merkis
+Tag renamed. {0} entries updated.,Merki endurnefnt. {0} færslur uppfærðar.
+Tags,Merki
+Tags merged. {0} entries re-tagged.,Merki sameinuð. {0} færslur endurmerktar.
+Task,Verkefni
+Test connection,Prófa tengingu
+Test Connection,Prófa tengingu
+This entry is locked,Þessi færsla er læst
+This month,Þennan mánuð
+This week,Þessa viku
+Thu,Fim
+Time Bridge,Tímabrú
+Time Entries,Tímafærslur
+Timer already running,Tímamælir er þegar í gangi
+Timer is already running,Tímamælir er þegar í gangi
+Timer is not paused,Tímamælir er ekki í pásu
+Timer is not running,Tímamælir er ekki í gangi
+To,Til
+Today,Í dag
+Total,Samtals
+Total billable,Samtals reikningshæft
+Tue,Þri
+Unknown error,Óþekkt villa
+Unassigned,Óúthlutað
+(untagged project),(ómerkt verkefni)
+View entry →,Skoða færslu →
+Warning: This entry is more than 7 days old.,Viðvörun: Þessi færsla er eldri en 7 daga.
+Wed,Mið
+Week {0},Vika {0}
+What are you working on?,Hvað ertu að vinna í?
+What did you work on?,Hvað vannstu í?
+Work Days,Vinnudagar
+Yesterday,Í gær
+draft,drög
+entries this month,færslur þennan mánuð
+no entries,engar færslur
+no entries yet,engar færslur enn
+sent,sent
++{0} more,+{0} fleiri
+← from {0},← frá {0}
+[Auto-stopped after {0}h],[Sjálfvirkt stöðvað eftir {0}klst]
+Entry Type,Færslutegund
+Fri,Fös
+Keyboard Shortcuts,Flýtilyklar
+Start / Pause / Resume timer,Ræsa / Gera hlé / Halda áfram tímamæli
+Stop timer,Stöðva tímamæli
+New entry (focus quick-add bar),Ný færsla (fókus á hraðviðbótarstiku)
+Previous / next day or week,Fyrri / næsti dagur eða vika
+Show / hide this overlay,Sýna / fela þessa yfirlögn
+Press H or Esc to close,Ýttu á H eða Esc til að loka
+Close,Loka
+Timer,Tímamælir
+Entries,Færslur
+This week at a glance,Þessi vika í hnotskurn
+Time by tag,Tími eftir merki
+Hours per day,Klukkustundir á dag
+No entries this week,Engar færslur þessa viku
+No entries,Engar færslur
+Untagged,Ómerkt
+Monthly Budget (h),Mánaðarleg fjárhagsáætlun (klst)
+Warn at (%),Vara við (%)
+0 = no limit,0 = engin takmörk
+0 = site default,0 = sjálfgefið síðu
+Approaching limit,Nálgast takmörk
+Budget exceeded,Fjárhagsáætlun farið fram úr
+budget used this month,fjárhagsáætlun notuð þennan mánuð
+used this month,notað þennan mánuð
+of,af
+Focus,Einbeiting
+Start Focus,Hefja einbeitingu
+End focus,Ljúka einbeitingu
+Skip break,Sleppa hléi
+Break over,Hlé lokið
+Time to focus!,Tími til einbeitingar!
+Session complete,Lotu lokið
+Focus complete!,Einbeitingu lokið!
+All sessions done. Great work!,Öllum lotum lokið. Frábært!
+sessions done. Great work!,lotum lokið. Frábært!
+Start new,Byrja nýja
+Work in focused sessions with timed breaks.,Vinndu í einbeittum lotum með tímasettum hlém.
+Session,Lota
+Break,Hlé
+Work (min),Vinna (mín)
+Break (min),Hlé (mín)
+Sessions,Lotur
+No break is active,Ekkert hlé er virkt
+No focus session is running,Engin einbeitingarlota er í gangi
+Context,Samhengi
+Contact,Tengiliður
+Context Type,Tegund samhengis
+For whom?,Fyrir hvern?
+Working on?,Hvað ertu að vinna í?
+Search contacts...,Leita að tengiliðum...
+Select type...,Veldu tegund...
+All contacts,Allir tengiliðir
+All projects,Öll verkefni
+(no contact),(enginn tengiliður)
+(no project),(ekkert verkefni)
+(no task),(ekkert verkefni)
+Filter by:,Sía eftir:
+Time by contact,Tími eftir tengilið
+Time by context,Tími eftir samhengi
+Time by task,Tími eftir verkefni
+Contact hours summary,Yfirlit tíma eftir tengilið

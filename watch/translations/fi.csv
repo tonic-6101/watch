@@ -1,0 +1,247 @@
+source,translation
+"Billed as {0}","Merkitty tilaksi {0}"
+"exact — rounding skipped","tarkka — pyöristys ohitettu"
+"Use exact","Käytä tarkkaa"
+"Apply rounding","Käytä pyöristystä"
+Exact,Tarkka
+Billed,Merkitty
+"* Rounded up to nearest increment","* Pyöristetty ylöspäin lähimpään jaksoon"
+billable,veloitettava
+non-billable,ei-veloitettava
+internal,sisäinen
+on_save,on_save
+manual,manual
+scheduled,scheduled
+hourly,hourly
+every_6_hours,every_6_hours
+daily,daily
+stopped,pysäytetty
+running,käynnissä
+paused,tauolla
+"Add a note...","Lisää muistiinpano..."
+"Add entry for yesterday","Lisää merkintä eiliselle"
+"Add your first entry","Lisää ensimmäinen merkintä"
+Archive,Arkistoi
+"Auto-stop Timer After","Pysäytä ajastin automaattisesti"
+Billable,Veloitettava
+"Billable {0}","Veloitettava {0}"
+Cancel,Peruuta
+"Cannot delete tag — {0} entries use it.","Tagia ei voi poistaa — {0} merkintää käyttää sitä."
+Category,Kategoria
+Client,Asiakas
+Color,Väri
+"Connection Failed","Yhteys epäonnistui"
+"Connection OK","Yhteys OK"
+"Custom…","Mukautettu…"
+Daily,Päivittäinen
+"Daily view","Päivänäkymä"
+"Date range","Aikaväli"
+days,päivää
+"Default Entry Type","Oletusmerkintätyyppi"
+"Default Rate","Oletustuntihinta"
+"Default activity type","Oletusaktiviteettityyppi"
+Delete,Poista
+Description,Kuvaus
+Dismiss,Hylkää
+"Do you want to sync all unsynced time entries to ERPNext now?","Haluatko synkronoida kaikki synkronoimattomat aikamerkinnät ERPNext-järjestelmään nyt?"
+Duplicate,Kopioi
+Duration,Kesto
+Edit,Muokkaa
+"Enable ERPNext bridge","Ota ERPNext-silta käyttöön"
+"End time","Lopetusaika"
+"Entries forwarded","Merkinnät välitetty"
+"Entries older than {0} days are locked. Contact your administrator.","Yli {0} päivää vanhat merkinnät on lukittu. Ota yhteyttä järjestelmänvalvojaan."
+"ERPNext Bridge","ERPNext-silta"
+"ERPNext is not installed on this site.","ERPNext ei ole asennettu tälle sivustolle."
+"ERPNext is reachable and Timesheet access is confirmed.","ERPNext on tavoitettavissa ja tuntilistan käyttöoikeus vahvistettu."
+"ERPNext site URL","ERPNext-sivuston URL"
+"ERPNext Timesheet {0} for {1} is submitted — re-sync blocked.","ERPNext-tuntilista {0} käyttäjälle {1} on lähetetty — uudelleensynkronointi estetty."
+"ERPNext Timesheet is submitted — re-sync blocked","ERPNext-tuntilista on lähetetty — uudelleensynkronointi estetty"
+"Est. {0}","Arv. {0}"
+"Est. amount","Arv. summa"
+"Every 6 hours","Joka 6. tunti"
+"All time","Koko aika"
+"This year","Tämä vuosi"
+"Last year","Viime vuosi"
+"Download CSV","Lataa CSV"
+"Export my data","Vie omat tiedot"
+"Download all your time entries as CSV.","Lataa kaikki aikamerkintäsi CSV-tiedostona."
+"Export CSV","Vie CSV"
+"Export successful","Vienti onnistui"
+"Failed to forward entries: {0}","Merkintöjen välitys epäonnistui: {0}"
+"Watch Settings","Watch-asetukset"
+"Watch Tag","Watch-tagi"
+"Watch Entry","Watch-merkintä"
+"Watch Entry Tag","Watch-merkintätagi"
+"Watch Timer","Watch-ajastin"
+"Forwarded {0} to {1}","Välitetty {0} kohteeseen {1}"
+From,Alkaen
+General,Yleiset
+Hourly,Tunneittain
+hours,tuntia
+"Hide weekends","Piilota viikonloput"
+Internal,Sisäinen
+"Internal / overhead","Sisäinen / yleiskustannus"
+"Last bulk sync","Viimeisin massasynkronointi"
+"Last month","Viime kuukausi"
+"Last sync error","Viimeisin synkronointivirhe"
+"Last week","Viime viikko"
+Less,Vähemmän
+"Lock Entries Older Than","Lukitse merkinnät vanhemmat kuin"
+Manual,Manuaalinen
+"Map project tags","Yhdistä projektitägit"
+Merge,Yhdistä
+"Merge {0} into:","Yhdistä {0} kohteeseen:"
+Mon,Ma
+More,Lisää
+Navigate,Siirry
+"New Tag","Uusi tagi"
+"No entries for {0}","Ei merkintöjä kohteelle {0}"
+"No entries yet","Ei merkintöjä vielä"
+"No tags yet","Ei tageja vielä"
+"No timer is running","Ajastin ei ole käynnissä"
+Non-billable,Ei-veloitettava
+"(no description)","(ei kuvausta)"
+"(not billed)","(ei merkitty)"
+"Nothing logged yesterday ({0})","Eiliselle ei kirjattu mitään ({0})"
+"Open prepare summary","Avaa valmistelun yhteenveto"
+"Open settings","Avaa asetukset"
+"Open tag management","Avaa tagien hallinta"
+"Open today's view","Avaa päivänäkymä"
+"Open weekly view","Avaa viikkonäkymä"
+Other,Muu
+Pause,Tauko
+Prepare,Valmistele
+"Prepare Summary","Valmistelun yhteenveto"
+Project,Projekti
+Rate,Tuntihinta
+Rename,Nimeä uudelleen
+Resume,Jatka
+"Saved — {0}","Tallennettu — {0}"
+Save,Tallenna
+Sat,La
+Scheduled,Ajastettu
+Send,Lähetä
+Settings,Asetukset
+"Show weekends","Näytä viikonloput"
+"Start time","Aloitusaika"
+"Start Timer","Käynnistä ajastin"
+"Start timer: ""{0}""","Käynnistä ajastin: ""{0}"""
+"Stop current & start: ""{0}""","Pysäytä nykyinen ja käynnistä: ""{0}"""
+"Started yesterday","Aloitettu eilen"
+Sun,Su
+"Sync all unsynced entries","Synkronoi kaikki synkronoimattomat merkinnät"
+"Sync billable entries only","Synkronoi vain veloitettavat merkinnät"
+"Sync completed with errors","Synkronointi valmistui virheillä"
+"Sync complete","Synkronointi valmis"
+"Sync interval","Synkronointiväli"
+"Sync mode","Synkronointitila"
+"Synced to ERPNext","Synkronoitu ERPNext-järjestelmään"
+"Syncing entries to ERPNext…","Synkronoidaan merkintöjä ERPNext-järjestelmään…"
+"{0} day(s) synced.","{0} päivä(ä) synkronoitu."
+Tag,Tagi
+"Tag management","Tagien hallinta"
+"Tag Name","Tagin nimi"
+"Tag renamed. {0} entries updated.","Tagi nimetty uudelleen. {0} merkintää päivitetty."
+Tags,Tagit
+"Tags merged. {0} entries re-tagged.","Tagit yhdistetty. {0} merkintää merkitty uudelleen."
+Task,Tehtävä
+"Test connection","Testaa yhteys"
+"Test Connection","Testaa yhteys"
+"This entry is locked","Tämä merkintä on lukittu"
+"This month","Tämä kuukausi"
+"This week","Tämä viikko"
+Thu,To
+"Time Bridge","Aikasilta"
+"Time Entries","Aikamerkinnät"
+"Timer already running","Ajastin on jo käynnissä"
+"Timer is already running","Ajastin on jo käynnissä"
+"Timer is not paused","Ajastin ei ole tauolla"
+"Timer is not running","Ajastin ei ole käynnissä"
+To,Asti
+Today,Tänään
+Total,Yhteensä
+"Total billable","Veloitettavat yhteensä"
+Tue,Ti
+"Unknown error","Tuntematon virhe"
+Unassigned,Määrittämätön
+"(untagged project)","(tagitön projekti)"
+"View entry →","Näytä merkintä →"
+"Warning: This entry is more than 7 days old.","Varoitus: Tämä merkintä on yli 7 päivää vanha."
+Wed,Ke
+"Week {0}","Viikko {0}"
+"What are you working on?","Mitä teet parhaillaan?"
+"What did you work on?","Mitä teit?"
+"Work Days","Työpäivät"
+Yesterday,Eilen
+draft,luonnos
+"entries this month","merkintää tässä kuussa"
+"no entries","ei merkintöjä"
+"no entries yet","ei merkintöjä vielä"
+sent,lähetetty
+"+{0} more","+{0} lisää"
+"← from {0}","← kohteesta {0}"
+"[Auto-stopped after {0}h]","[Pysäytetty automaattisesti {0}h jälkeen]"
+"Entry Type","Merkintätyyppi"
+Fri,Pe
+"Keyboard Shortcuts","Pikanäppäimet"
+"Start / Pause / Resume timer","Käynnistä / Tauko / Jatka ajastinta"
+"Stop timer","Pysäytä ajastin"
+"New entry (focus quick-add bar)","Uusi merkintä (kohdista pikalisiäys)"
+"Previous / next day or week","Edellinen / seuraava päivä tai viikko"
+"Show / hide this overlay","Näytä / piilota tämä peittokuva"
+"Press H or Esc to close","Paina H tai Esc sulkeaksesi"
+Close,Sulje
+Timer,Ajastin
+Entries,Merkinnät
+"This week at a glance","Viikon yleiskatsaus"
+"Time by tag","Aika tageittain"
+"Hours per day","Tuntia päivässä"
+"No entries this week","Ei merkintöjä tällä viikolla"
+"No entries","Ei merkintöjä"
+Untagged,Tagitön
+"Monthly Budget (h)","Kuukausibudjetti (t)"
+"Warn at (%)","Varoita tasolla (%)"
+"0 = no limit","0 = ei rajaa"
+"0 = site default","0 = sivuston oletus"
+"Approaching limit","Lähestymässä rajaa"
+"Budget exceeded","Budjetti ylitetty"
+"budget used this month","budjetista käytetty tässä kuussa"
+"used this month","käytetty tässä kuussa"
+of,/
+Focus,Keskittyminen
+"Start Focus","Aloita keskittyminen"
+"End focus","Lopeta keskittyminen"
+"Skip break","Ohita tauko"
+"Break over","Tauko ohi"
+"Time to focus!","Aika keskittyä!"
+"Session complete","Jakso valmis"
+"Focus complete!","Keskittyminen valmis!"
+"All sessions done. Great work!","Kaikki jaksot valmiit. Hienoa työtä!"
+"sessions done. Great work!","jaksoa valmiina. Hienoa työtä!"
+"Start new","Aloita uusi"
+"Work in focused sessions with timed breaks.","Työskentele keskittyneissä jaksoissa ajastetuin tauoin."
+Session,Jakso
+Break,Tauko
+"Work (min)","Työ (min)"
+"Break (min)","Tauko (min)"
+Sessions,Jaksot
+"No break is active","Tauko ei ole käynnissä"
+"No focus session is running","Keskittymisjakso ei ole käynnissä"
+Context,Konteksti
+Contact,Yhteystieto
+"Context Type","Kontekstityyppi"
+"For whom?","Kenelle?"
+"Working on?","Työskentelet?"
+"Search contacts...","Hae yhteystietoja..."
+"Select type...","Valitse tyyppi..."
+"All contacts","Kaikki yhteystiedot"
+"All projects","Kaikki projektit"
+"(no contact)","(ei yhteystietoa)"
+"(no project)","(ei projektia)"
+"(no task)","(ei tehtävää)"
+"Filter by:","Suodata:"
+"Time by contact","Aika yhteystiedoittain"
+"Time by context","Aika konteksteittain"
+"Time by task","Aika tehtävittäin"
+"Contact hours summary","Yhteystietojen tuntikooste"

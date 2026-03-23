@@ -1,0 +1,247 @@
+source,translation
+Billed as {0},Billeáilte mar {0}
+exact — rounding skipped,beacht — slánú scipeáilte
+Use exact,Úsáid beacht
+Apply rounding,Cuir slánú i bhfeidhm
+Exact,Beacht
+Billed,Billeáilte
+* Rounded up to nearest increment,* Slánaithe suas go dtí an t-incrimint is gaire
+billable,inbhilleáilte
+non-billable,neamh-inbhilleáilte
+internal,inmheánach
+on_save,on_save
+manual,láimhe
+scheduled,sceidealta
+hourly,in aghaidh na huaire
+every_6_hours,every_6_hours
+daily,laethúil
+stopped,stoptha
+running,ag rith
+paused,curtha ar sos
+Add a note...,Cuir nóta leis...
+Add entry for yesterday,Cuir iontráil inné leis
+Add your first entry,Cuir d'iontráil chéad leis
+Archive,Cartlann
+Auto-stop Timer After,Uath-stop amadóir tar éis
+Billable,Inbhilleáilte
+Billable {0},Inbhilleáilte {0}
+Cancel,Cealaigh
+Cannot delete tag — {0} entries use it.,Ní féidir an clib a scriosadh — úsáideann {0} iontráil é.
+Category,Catagóir
+Client,Cliant
+Color,Dath
+Connection Failed,Theip ar an gceangal
+Connection OK,Ceangal ceart go leor
+Custom…,Saincheaptha…
+Daily,Laethúil
+Daily view,Amharc laethúil
+Date range,Raon dátaí
+days,lá
+Default Entry Type,Cineál iontráil réamhshocraithe
+Default Rate,Ráta réamhshocraithe
+Default activity type,Cineál gníomhaíochta réamhshocraithe
+Delete,Scrios
+Description,Cur síos
+Dismiss,Díbhe
+Do you want to sync all unsynced time entries to ERPNext now?,Ar mhaith leat na hiontrálacha ama neamh-shioncronaithe go léir a shioncronú le ERPNext anois?
+Duplicate,Dúblaigh
+Duration,Fad
+Edit,Cuir in eagar
+Enable ERPNext bridge,Cumasaigh droichead ERPNext
+End time,Am deiridh
+Entries forwarded,Iontrálacha curtha ar aghaidh
+Entries older than {0} days are locked. Contact your administrator.,Tá iontrálacha níos sine ná {0} lá glasáilte. Déan teagmháil le do riarthóir.
+ERPNext Bridge,Droichead ERPNext
+ERPNext is not installed on this site.,Níl ERPNext suiteáilte ar an suíomh seo.
+ERPNext is reachable and Timesheet access is confirmed.,Tá ERPNext inrochtana agus tá rochtain ar an mbileog ama deimhnithe.
+ERPNext site URL,URL suímh ERPNext
+ERPNext Timesheet {0} for {1} is submitted — re-sync blocked.,Tá bileog ama ERPNext {0} do {1} curtha isteach — ath-shioncronú blocáilte.
+ERPNext Timesheet is submitted — re-sync blocked,Tá bileog ama ERPNext curtha isteach — ath-shioncronú blocáilte
+Est. {0},Meast. {0}
+Est. amount,Méid meast.
+Every 6 hours,Gach 6 uair an chloig
+All time,An t-am go léir
+This year,I mbliana
+Last year,Anuraidh
+Download CSV,Íoslódáil CSV
+Export my data,Easpórtáil mo chuid sonraí
+Download all your time entries as CSV.,Íoslódáil d'iontrálacha ama go léir mar CSV.
+Export CSV,Easpórtáil CSV
+Export successful,D'éirigh leis an easpórtáil
+Failed to forward entries: {0},Theip ar iontrálacha a chur ar aghaidh: {0}
+Watch Settings,Socruithe Watch
+Watch Tag,Clib Watch
+Watch Entry,Iontráil Watch
+Watch Entry Tag,Clib iontráil Watch
+Watch Timer,Amadóir Watch
+Forwarded {0} to {1},{0} curtha ar aghaidh go {1}
+From,Ó
+General,Ginearálta
+Hourly,In aghaidh na huaire
+hours,uair an chloig
+Hide weekends,Folaigh deirí seachtaine
+Internal,Inmheánach
+Internal / overhead,Inmheánach / forchostais
+Last bulk sync,Sioncronú mór deireanach
+Last month,An mhí seo caite
+Last sync error,Earráid shioncronaithe dheireanach
+Last week,An tseachtain seo caite
+Less,Níos lú
+Lock Entries Older Than,Glasáil iontrálacha níos sine ná
+Manual,Láimhe
+Map project tags,Mapáil clibeanna tionscadail
+Merge,Cumaisc
+Merge {0} into:,Cumaisc {0} isteach i:
+Mon,Lua
+More,Tuilleadh
+Navigate,Nascleanúint
+New Tag,Clib nua
+No entries for {0},Gan iontrálacha do {0}
+No entries yet,Gan iontrálacha fós
+No tags yet,Gan clibeanna fós
+No timer is running,Níl aon amadóir ag rith
+Non-billable,Neamh-inbhilleáilte
+(no description),(gan cur síos)
+(not billed),(gan bhilleáil)
+Nothing logged yesterday ({0}),Rud ar bith logáilte inné ({0})
+Open prepare summary,Oscail achoimre ullmhúcháin
+Open settings,Oscail socruithe
+Open tag management,Oscail bainistíocht clibeanna
+Open today's view,Oscail amharc an lae inniu
+Open weekly view,Oscail amharc seachtainiúil
+Other,Eile
+Pause,Cuir ar sos
+Prepare,Ullmhaigh
+Prepare Summary,Achoimre ullmhúcháin
+Project,Tionscadal
+Rate,Ráta
+Rename,Athainmnigh
+Resume,Atosaigh
+Saved — {0},Sábháilte — {0}
+Save,Sábháil
+Sat,Sat
+Scheduled,Sceidealta
+Send,Seol
+Settings,Socruithe
+Show weekends,Taispeáin deirí seachtaine
+Start time,Am tosaithe
+Start Timer,Tosaigh amadóir
+"Start timer: ""{0}""","Tosaigh amadóir: ""{0}"""
+"Stop current & start: ""{0}""","Stop an ceann reatha agus tosaigh: ""{0}"""
+Started yesterday,Tosaithe inné
+Sun,Dom
+Sync all unsynced entries,Sioncronaigh na hiontrálacha neamh-shioncronaithe go léir
+Sync billable entries only,Sioncronaigh iontrálacha inbhilleáilte amháin
+Sync completed with errors,Sioncronú críochnaithe le hearráidí
+Sync complete,Sioncronú críochnaithe
+Sync interval,Eatramh sioncronaithe
+Sync mode,Mód sioncronaithe
+Synced to ERPNext,Sioncronaithe le ERPNext
+Syncing entries to ERPNext…,Iontrálacha á sioncronú le ERPNext…
+{0} day(s) synced.,{0} lá sioncronaithe.
+Tag,Clib
+Tag management,Bainistíocht clibeanna
+Tag Name,Ainm an chlib
+Tag renamed. {0} entries updated.,Clib athainmnithe. {0} iontráil nuashonraithe.
+Tags,Clibeanna
+Tags merged. {0} entries re-tagged.,Clibeanna cumaiscthe. {0} iontráil athchlibeáilte.
+Task,Tasc
+Test connection,Tástáil ceangal
+Test Connection,Tástáil ceangal
+This entry is locked,Tá an iontráil seo glasáilte
+This month,An mhí seo
+This week,An tseachtain seo
+Thu,Déa
+Time Bridge,Droichead ama
+Time Entries,Iontrálacha ama
+Timer already running,Amadóir ag rith cheana féin
+Timer is already running,Tá an t-amadóir ag rith cheana féin
+Timer is not paused,Níl an t-amadóir ar sos
+Timer is not running,Níl an t-amadóir ag rith
+To,Go dtí
+Today,Inniu
+Total,Iomlán
+Total billable,Iomlán inbhilleáilte
+Tue,Mái
+Unknown error,Earráid anaithnid
+Unassigned,Gan sannta
+(untagged project),(tionscadal gan chlib)
+View entry →,Féach ar iontráil →
+Warning: This entry is more than 7 days old.,Rabhadh: Tá an iontráil seo níos sine ná 7 lá.
+Wed,Céa
+Week {0},Seachtain {0}
+What are you working on?,Cad air a bhfuil tú ag obair?
+What did you work on?,Cad air a d'oibrigh tú?
+Work Days,Laethanta oibre
+Yesterday,Inné
+draft,dréacht
+entries this month,iontrálacha an mhí seo
+no entries,gan iontrálacha
+no entries yet,gan iontrálacha fós
+sent,seolta
++{0} more,+{0} eile
+← from {0},← ó {0}
+[Auto-stopped after {0}h],[Uath-stoptha tar éis {0}u]
+Entry Type,Cineál iontráil
+Fri,Aoi
+Keyboard Shortcuts,Aicearraí méarchláir
+Start / Pause / Resume timer,Tosaigh / Cuir ar sos / Atosaigh amadóir
+Stop timer,Stop amadóir
+New entry (focus quick-add bar),Iontráil nua (fócas ar bharra mear-chur leis)
+Previous / next day or week,Lá nó seachtain roimhe / ina dhiaidh
+Show / hide this overlay,Taispeáin / folaigh an forleagan seo
+Press H or Esc to close,Brúigh H nó Esc chun dúnadh
+Close,Dún
+Timer,Amadóir
+Entries,Iontrálacha
+This week at a glance,An tseachtain seo ag féachaint
+Time by tag,Am de réir clib
+Hours per day,Uaireanta in aghaidh an lae
+No entries this week,Gan iontrálacha an tseachtain seo
+No entries,Gan iontrálacha
+Untagged,Gan chlib
+Monthly Budget (h),Buiséad míosúil (u)
+Warn at (%),Rabhadh ag (%)
+0 = no limit,0 = gan teorainn
+0 = site default,0 = réamhshocrú an tsuímh
+Approaching limit,Ag druidim leis an teorainn
+Budget exceeded,Buiséad sáraithe
+budget used this month,buiséad úsáidte an mhí seo
+used this month,úsáidte an mhí seo
+of,de
+Focus,Fócas
+Start Focus,Tosaigh fócas
+End focus,Críochnaigh fócas
+Skip break,Scipeáil sos
+Break over,Sos thart
+Time to focus!,Am díriú isteach!
+Session complete,Seisiún críochnaithe
+Focus complete!,Fócas críochnaithe!
+All sessions done. Great work!,Gach seisiún déanta. Obair iontach!
+sessions done. Great work!,seisiún déanta. Obair iontach!
+Start new,Tosaigh ceann nua
+Work in focused sessions with timed breaks.,Oibrigh i seisiúin dhírithe le sosanna ama.
+Session,Seisiún
+Break,Sos
+Work (min),Obair (nóim)
+Break (min),Sos (nóim)
+Sessions,Seisiúin
+No break is active,Níl aon sos gníomhach
+No focus session is running,Níl aon seisiún fócais ag rith
+Context,Comhthéacs
+Contact,Teagmháil
+Context Type,Cineál comhthéacs
+For whom?,Cé dó?
+Working on?,Ag obair ar?
+Search contacts...,Cuardaigh teagmhálacha...
+Select type...,Roghnaigh cineál...
+All contacts,Gach teagmháil
+All projects,Gach tionscadal
+(no contact),(gan teagmháil)
+(no project),(gan tionscadal)
+(no task),(gan tasc)
+Filter by:,Scag de réir:
+Time by contact,Am de réir teagmhála
+Time by context,Am de réir comhthéacs
+Time by task,Am de réir taisc
+Contact hours summary,Achoimre uaireanta teagmhála

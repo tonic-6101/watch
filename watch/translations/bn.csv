@@ -1,0 +1,247 @@
+source,translation
+Billed as {0},{0} হিসেবে বিল করা হয়েছে
+exact — rounding skipped,সঠিক — রাউন্ডিং এড়ানো হয়েছে
+Use exact,সঠিক ব্যবহার করুন
+Apply rounding,রাউন্ডিং প্রয়োগ করুন
+Exact,সঠিক
+Billed,বিল করা হয়েছে
+* Rounded up to nearest increment,* নিকটতম ইনক্রিমেন্টে রাউন্ড আপ করা হয়েছে
+billable,বিলযোগ্য
+non-billable,বিলযোগ্য নয়
+internal,অভ্যন্তরীণ
+on_save,on_save
+manual,manual
+scheduled,scheduled
+hourly,hourly
+every_6_hours,every_6_hours
+daily,daily
+stopped,বন্ধ
+running,চলছে
+paused,বিরতি
+Add a note...,একটি নোট যোগ করুন...
+Add entry for yesterday,গতকালের জন্য এন্ট্রি যোগ করুন
+Add your first entry,আপনার প্রথম এন্ট্রি যোগ করুন
+Archive,আর্কাইভ
+Auto-stop Timer After,এত সময় পর টাইমার স্বয়ংক্রিয়ভাবে বন্ধ
+Billable,বিলযোগ্য
+Billable {0},বিলযোগ্য {0}
+Cancel,বাতিল
+Cannot delete tag — {0} entries use it.,ট্যাগ মুছতে পারবেন না — {0}টি এন্ট্রি এটি ব্যবহার করছে।
+Category,বিভাগ
+Client,ক্লায়েন্ট
+Color,রঙ
+Connection Failed,সংযোগ ব্যর্থ
+Connection OK,সংযোগ ঠিক আছে
+Custom…,কাস্টম…
+Daily,দৈনিক
+Daily view,দৈনিক দৃশ্য
+Date range,তারিখের পরিসর
+days,দিন
+Default Entry Type,ডিফল্ট এন্ট্রি ধরন
+Default Rate,ডিফল্ট রেট
+Default activity type,ডিফল্ট কার্যকলাপের ধরন
+Delete,মুছুন
+Description,বিবরণ
+Dismiss,খারিজ
+Do you want to sync all unsynced time entries to ERPNext now?,আপনি কি এখন সমস্ত আনসিঙ্ক করা টাইম এন্ট্রি ERPNext-এ সিঙ্ক করতে চান?
+Duplicate,ডুপ্লিকেট
+Duration,সময়কাল
+Edit,সম্পাদনা
+Enable ERPNext bridge,ERPNext ব্রিজ সক্রিয় করুন
+End time,শেষ সময়
+Entries forwarded,এন্ট্রি ফরোয়ার্ড করা হয়েছে
+Entries older than {0} days are locked. Contact your administrator.,{0} দিনের পুরানো এন্ট্রি লক করা আছে। আপনার প্রশাসকের সাথে যোগাযোগ করুন।
+ERPNext Bridge,ERPNext ব্রিজ
+ERPNext is not installed on this site.,এই সাইটে ERPNext ইনস্টল করা নেই।
+ERPNext is reachable and Timesheet access is confirmed.,ERPNext অ্যাক্সেসযোগ্য এবং টাইমশিট অ্যাক্সেস নিশ্চিত করা হয়েছে।
+ERPNext site URL,ERPNext সাইট URL
+ERPNext Timesheet {0} for {1} is submitted — re-sync blocked.,ERPNext টাইমশিট {0} ({1}-এর জন্য) জমা দেওয়া হয়েছে — পুনরায় সিঙ্ক ব্লক করা হয়েছে।
+ERPNext Timesheet is submitted — re-sync blocked,ERPNext টাইমশিট জমা দেওয়া হয়েছে — পুনরায় সিঙ্ক ব্লক করা হয়েছে
+Est. {0},আনু. {0}
+Est. amount,আনু. পরিমাণ
+Every 6 hours,প্রতি ৬ ঘণ্টায়
+All time,সর্বকালীন
+This year,এই বছর
+Last year,গত বছর
+Download CSV,CSV ডাউনলোড করুন
+Export my data,আমার ডেটা এক্সপোর্ট করুন
+Download all your time entries as CSV.,আপনার সমস্ত টাইম এন্ট্রি CSV হিসেবে ডাউনলোড করুন।
+Export CSV,CSV এক্সপোর্ট
+Export successful,এক্সপোর্ট সফল
+Failed to forward entries: {0},এন্ট্রি ফরোয়ার্ড করতে ব্যর্থ: {0}
+Watch Settings,Watch সেটিংস
+Watch Tag,Watch ট্যাগ
+Watch Entry,Watch এন্ট্রি
+Watch Entry Tag,Watch এন্ট্রি ট্যাগ
+Watch Timer,Watch টাইমার
+Forwarded {0} to {1},{0} থেকে {1}-এ ফরোয়ার্ড করা হয়েছে
+From,থেকে
+General,সাধারণ
+Hourly,ঘণ্টায়
+hours,ঘণ্টা
+Hide weekends,সপ্তাহান্ত লুকান
+Internal,অভ্যন্তরীণ
+Internal / overhead,অভ্যন্তরীণ / ওভারহেড
+Last bulk sync,শেষ বাল্ক সিঙ্ক
+Last month,গত মাস
+Last sync error,শেষ সিঙ্ক ত্রুটি
+Last week,গত সপ্তাহ
+Less,কম
+Lock Entries Older Than,এর চেয়ে পুরানো এন্ট্রি লক করুন
+Manual,ম্যানুয়াল
+Map project tags,প্রকল্প ট্যাগ ম্যাপ করুন
+Merge,মার্জ
+Merge {0} into:,{0} মার্জ করুন:
+Mon,সোম
+More,আরও
+Navigate,নেভিগেট
+New Tag,নতুন ট্যাগ
+No entries for {0},{0}-এর জন্য কোনো এন্ট্রি নেই
+No entries yet,এখনো কোনো এন্ট্রি নেই
+No tags yet,এখনো কোনো ট্যাগ নেই
+No timer is running,কোনো টাইমার চলছে না
+Non-billable,বিলযোগ্য নয়
+(no description),(কোনো বিবরণ নেই)
+(not billed),(বিল করা হয়নি)
+Nothing logged yesterday ({0}),গতকাল কিছু লগ করা হয়নি ({0})
+Open prepare summary,প্রস্তুতি সারাংশ খুলুন
+Open settings,সেটিংস খুলুন
+Open tag management,ট্যাগ ব্যবস্থাপনা খুলুন
+Open today's view,আজকের দৃশ্য খুলুন
+Open weekly view,সাপ্তাহিক দৃশ্য খুলুন
+Other,অন্যান্য
+Pause,বিরতি
+Prepare,প্রস্তুত করুন
+Prepare Summary,প্রস্তুতি সারাংশ
+Project,প্রকল্প
+Rate,রেট
+Rename,নাম পরিবর্তন
+Resume,পুনরায় শুরু
+Saved — {0},সংরক্ষিত — {0}
+Save,সংরক্ষণ
+Sat,শনি
+Scheduled,নির্ধারিত
+Send,পাঠান
+Settings,সেটিংস
+Show weekends,সপ্তাহান্ত দেখান
+Start time,শুরুর সময়
+Start Timer,টাইমার শুরু করুন
+"Start timer: ""{0}""","টাইমার শুরু করুন: ""{0}"""
+"Stop current & start: ""{0}""","বর্তমান বন্ধ করুন ও শুরু করুন: ""{0}"""
+Started yesterday,গতকাল শুরু হয়েছে
+Sun,রবি
+Sync all unsynced entries,সমস্ত আনসিঙ্ক করা এন্ট্রি সিঙ্ক করুন
+Sync billable entries only,শুধুমাত্র বিলযোগ্য এন্ট্রি সিঙ্ক করুন
+Sync completed with errors,ত্রুটি সহ সিঙ্ক সম্পন্ন
+Sync complete,সিঙ্ক সম্পন্ন
+Sync interval,সিঙ্ক ব্যবধান
+Sync mode,সিঙ্ক মোড
+Synced to ERPNext,ERPNext-এ সিঙ্ক করা হয়েছে
+Syncing entries to ERPNext…,ERPNext-এ এন্ট্রি সিঙ্ক হচ্ছে…
+{0} day(s) synced.,{0} দিন সিঙ্ক করা হয়েছে।
+Tag,ট্যাগ
+Tag management,ট্যাগ ব্যবস্থাপনা
+Tag Name,ট্যাগের নাম
+Tag renamed. {0} entries updated.,ট্যাগ নাম পরিবর্তিত। {0}টি এন্ট্রি আপডেট করা হয়েছে।
+Tags,ট্যাগসমূহ
+Tags merged. {0} entries re-tagged.,ট্যাগ মার্জ করা হয়েছে। {0}টি এন্ট্রি পুনরায় ট্যাগ করা হয়েছে।
+Task,কাজ
+Test connection,সংযোগ পরীক্ষা
+Test Connection,সংযোগ পরীক্ষা
+This entry is locked,এই এন্ট্রি লক করা আছে
+This month,এই মাস
+This week,এই সপ্তাহ
+Thu,বৃহস্পতি
+Time Bridge,টাইম ব্রিজ
+Time Entries,টাইম এন্ট্রি
+Timer already running,টাইমার ইতিমধ্যে চলছে
+Timer is already running,টাইমার ইতিমধ্যে চলছে
+Timer is not paused,টাইমার বিরতিতে নেই
+Timer is not running,টাইমার চলছে না
+To,পর্যন্ত
+Today,আজ
+Total,মোট
+Total billable,মোট বিলযোগ্য
+Tue,মঙ্গল
+Unknown error,অজানা ত্রুটি
+Unassigned,অ্যাসাইন করা হয়নি
+(untagged project),(ট্যাগবিহীন প্রকল্প)
+View entry →,এন্ট্রি দেখুন →
+Warning: This entry is more than 7 days old.,সতর্কতা: এই এন্ট্রি ৭ দিনের বেশি পুরানো।
+Wed,বুধ
+Week {0},সপ্তাহ {0}
+What are you working on?,আপনি কী নিয়ে কাজ করছেন?
+What did you work on?,আপনি কী নিয়ে কাজ করেছেন?
+Work Days,কর্মদিবস
+Yesterday,গতকাল
+draft,খসড়া
+entries this month,এই মাসের এন্ট্রি
+no entries,কোনো এন্ট্রি নেই
+no entries yet,এখনো কোনো এন্ট্রি নেই
+sent,পাঠানো হয়েছে
++{0} more,+{0} আরও
+← from {0},← {0} থেকে
+[Auto-stopped after {0}h],[{0} ঘণ্টা পর স্বয়ংক্রিয়ভাবে বন্ধ]
+Entry Type,এন্ট্রি ধরন
+Fri,শুক্র
+Keyboard Shortcuts,কীবোর্ড শর্টকাট
+Start / Pause / Resume timer,টাইমার শুরু / বিরতি / পুনরায় শুরু
+Stop timer,টাইমার বন্ধ করুন
+New entry (focus quick-add bar),নতুন এন্ট্রি (কুইক-অ্যাড বারে ফোকাস)
+Previous / next day or week,আগের / পরের দিন বা সপ্তাহ
+Show / hide this overlay,এই ওভারলে দেখান / লুকান
+Press H or Esc to close,বন্ধ করতে H বা Esc চাপুন
+Close,বন্ধ
+Timer,টাইমার
+Entries,এন্ট্রি
+This week at a glance,এই সপ্তাহের সংক্ষিপ্ত বিবরণ
+Time by tag,ট্যাগ অনুযায়ী সময়
+Hours per day,প্রতিদিনের ঘণ্টা
+No entries this week,এই সপ্তাহে কোনো এন্ট্রি নেই
+No entries,কোনো এন্ট্রি নেই
+Untagged,ট্যাগবিহীন
+Monthly Budget (h),মাসিক বাজেট (ঘ)
+Warn at (%),সতর্কতা (%)
+0 = no limit,০ = কোনো সীমা নেই
+0 = site default,০ = সাইট ডিফল্ট
+Approaching limit,সীমার কাছাকাছি
+Budget exceeded,বাজেট অতিক্রম করেছে
+budget used this month,এই মাসে ব্যবহৃত বাজেট
+used this month,এই মাসে ব্যবহৃত
+of,এর
+Focus,ফোকাস
+Start Focus,ফোকাস শুরু করুন
+End focus,ফোকাস শেষ করুন
+Skip break,বিরতি এড়িয়ে যান
+Break over,বিরতি শেষ
+Time to focus!,ফোকাস করার সময়!
+Session complete,সেশন সম্পন্ন
+Focus complete!,ফোকাস সম্পন্ন!
+All sessions done. Great work!,সব সেশন সম্পন্ন। চমৎকার কাজ!
+sessions done. Great work!,সেশন সম্পন্ন। চমৎকার কাজ!
+Start new,নতুন শুরু করুন
+Work in focused sessions with timed breaks.,সময়বদ্ধ বিরতি সহ ফোকাস সেশনে কাজ করুন।
+Session,সেশন
+Break,বিরতি
+Work (min),কাজ (মিনিট)
+Break (min),বিরতি (মিনিট)
+Sessions,সেশনসমূহ
+No break is active,কোনো বিরতি সক্রিয় নেই
+No focus session is running,কোনো ফোকাস সেশন চলছে না
+Context,প্রসঙ্গ
+Contact,যোগাযোগ
+Context Type,প্রসঙ্গের ধরন
+For whom?,কার জন্য?
+Working on?,কী নিয়ে কাজ করছেন?
+Search contacts...,যোগাযোগ খুঁজুন...
+Select type...,ধরন নির্বাচন করুন...
+All contacts,সকল যোগাযোগ
+All projects,সকল প্রকল্প
+(no contact),(কোনো যোগাযোগ নেই)
+(no project),(কোনো প্রকল্প নেই)
+(no task),(কোনো কাজ নেই)
+Filter by:,ফিল্টার:
+Time by contact,যোগাযোগ অনুযায়ী সময়
+Time by context,প্রসঙ্গ অনুযায়ী সময়
+Time by task,কাজ অনুযায়ী সময়
+Contact hours summary,যোগাযোগ ঘণ্টার সারাংশ

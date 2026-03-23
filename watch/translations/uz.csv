@@ -1,0 +1,247 @@
+source,translation
+Billed as {0},{0} sifatida hisobga olingan
+exact — rounding skipped,aniq — yaxlitlash oʻtkazib yuborildi
+Use exact,Aniq qiymatdan foydalanish
+Apply rounding,Yaxlitlashni qoʻllash
+Exact,Aniq
+Billed,Hisobga olingan
+* Rounded up to nearest increment,* Eng yaqin qadamga yaxlitlangan
+billable,hisoblanadigon
+non-billable,hisoblanmaydigan
+internal,ichki
+on_save,on_save
+manual,qoʻlda
+scheduled,rejalashtirilgan
+hourly,har soatda
+every_6_hours,every_6_hours
+daily,kundalik
+stopped,toʻxtatilgan
+running,ishlayapti
+paused,toʻxtatib turilgan
+Add a note...,Eslatma qoʻshish...
+Add entry for yesterday,Kechagi uchun yozuv qoʻshish
+Add your first entry,Birinchi yozuvingizni qoʻshing
+Archive,Arxivlash
+Auto-stop Timer After,Taymerni avtomatik toʻxtatish vaqti
+Billable,Hisoblanadigon
+Billable {0},Hisoblanadigon {0}
+Cancel,Bekor qilish
+Cannot delete tag — {0} entries use it.,Tegni oʻchirib boʻlmaydi — {0} ta yozuv undan foydalanmoqda.
+Category,Turkum
+Client,Mijoz
+Color,Rang
+Connection Failed,Ulanish amalga oshmadi
+Connection OK,Ulanish muvaffaqiyatli
+Custom…,Maxsus…
+Daily,Kundalik
+Daily view,Kunlik koʻrinish
+Date range,Sana oraliqʻi
+days,kun
+Default Entry Type,Standart yozuv turi
+Default Rate,Standart soatlik stavka
+Default activity type,Standart faoliyat turi
+Delete,Oʻchirish
+Description,Tavsif
+Dismiss,Rad etish
+Do you want to sync all unsynced time entries to ERPNext now?,Barcha sinxronlanmagan vaqt yozuvlarini hozir ERPNext bilan sinxronlashni xohlaysizmi?
+Duplicate,Nusxa koʻchirish
+Duration,Davomiylik
+Edit,Tahrirlash
+Enable ERPNext bridge,ERPNext koʻprigini yoqish
+End time,Tugash vaqti
+Entries forwarded,Yozuvlar uzatildi
+Entries older than {0} days are locked. Contact your administrator.,{0} kundan eski yozuvlar qulflangan. Administratoringiz bilan bogʻlaning.
+ERPNext Bridge,ERPNext koʻprigi
+ERPNext is not installed on this site.,ERPNext bu saytga oʻrnatilmagan.
+ERPNext is reachable and Timesheet access is confirmed.,ERPNext mavjud va vaqt jadvali ruxsati tasdiqlangan.
+ERPNext site URL,ERPNext sayt URLi
+ERPNext Timesheet {0} for {1} is submitted — re-sync blocked.,ERPNext vaqt jadvali {0} ({1} uchun) topshirilgan — qayta sinxronlash bloklangan.
+ERPNext Timesheet is submitted — re-sync blocked,ERPNext vaqt jadvali topshirilgan — qayta sinxronlash bloklangan
+Est. {0},Tax. {0}
+Est. amount,Tax. summa
+Every 6 hours,Har 6 soatda
+All time,Barcha vaqt
+This year,Bu yil
+Last year,Oʻtgan yil
+Download CSV,CSV yuklab olish
+Export my data,Maʼlumotlarimni eksport qilish
+Download all your time entries as CSV.,Barcha vaqt yozuvlaringizni CSV sifatida yuklab oling.
+Export CSV,CSV eksport qilish
+Export successful,Eksport muvaffaqiyatli
+Failed to forward entries: {0},Yozuvlarni uzatishda xatolik: {0}
+Watch Settings,Watch sozlamalari
+Watch Tag,Watch tegi
+Watch Entry,Watch yozuvi
+Watch Entry Tag,Watch yozuv tegi
+Watch Timer,Watch taymeri
+Forwarded {0} to {1},{0} {1} ga uzatildi
+From,Dan
+General,Umumiy
+Hourly,Har soatda
+hours,soat
+Hide weekends,Dam olish kunlarini yashirish
+Internal,Ichki
+Internal / overhead,Ichki / umumiy xarajatlar
+Last bulk sync,Soʻnggi ommaviy sinxronlash
+Last month,Oʻtgan oy
+Last sync error,Soʻnggi sinxronlash xatosi
+Last week,Oʻtgan hafta
+Less,Kamroq
+Lock Entries Older Than,Shundan eski yozuvlarni qulflash
+Manual,Qoʻlda
+Map project tags,Loyiha teglarini moslashtirish
+Merge,Birlashtirish
+Merge {0} into:,{0} ni birlashtirish:
+Mon,Du
+More,Koʻproq
+Navigate,Navigatsiya
+New Tag,Yangi teg
+No entries for {0},{0} uchun yozuvlar yoʻq
+No entries yet,Hali yozuvlar yoʻq
+No tags yet,Hali teglar yoʻq
+No timer is running,Hech qaysi taymer ishlamayapti
+Non-billable,Hisoblanmaydigan
+(no description),(tavsifsiz)
+(not billed),(hisobga olinmagan)
+Nothing logged yesterday ({0}),Kecha hech narsa qayd etilmagan ({0})
+Open prepare summary,Tayyorlash xulosasini ochish
+Open settings,Sozlamalarni ochish
+Open tag management,Teg boshqaruvini ochish
+Open today's view,Bugungi koʻrinishni ochish
+Open weekly view,Haftalik koʻrinishni ochish
+Other,Boshqa
+Pause,Toʻxtatib turish
+Prepare,Tayyorlash
+Prepare Summary,Tayyorlash xulosasi
+Project,Loyiha
+Rate,Soatlik stavka
+Rename,Qayta nomlash
+Resume,Davom ettirish
+Saved — {0},Saqlandi — {0}
+Save,Saqlash
+Sat,Sha
+Scheduled,Rejalashtirilgan
+Send,Yuborish
+Settings,Sozlamalar
+Show weekends,Dam olish kunlarini koʻrsatish
+Start time,Boshlanish vaqti
+Start Timer,Taymerni boshlash
+"Start timer: ""{0}""","Taymerni boshlash: ""{0}"""
+"Stop current & start: ""{0}""","Joriyni toʻxtatish va boshlash: ""{0}"""
+Started yesterday,Kecha boshlangan
+Sun,Ya
+Sync all unsynced entries,Barcha sinxronlanmagan yozuvlarni sinxronlash
+Sync billable entries only,Faqat hisoblanadigon yozuvlarni sinxronlash
+Sync completed with errors,Sinxronlash xatolar bilan yakunlandi
+Sync complete,Sinxronlash yakunlandi
+Sync interval,Sinxronlash oraliqʻi
+Sync mode,Sinxronlash rejimi
+Synced to ERPNext,ERPNext bilan sinxronlangan
+Syncing entries to ERPNext…,Yozuvlar ERPNext bilan sinxronlanmoqda…
+{0} day(s) synced.,{0} kun sinxronlandi.
+Tag,Teg
+Tag management,Teg boshqaruvi
+Tag Name,Teg nomi
+Tag renamed. {0} entries updated.,Teg qayta nomlandi. {0} ta yozuv yangilandi.
+Tags,Teglar
+Tags merged. {0} entries re-tagged.,Teglar birlashtirildi. {0} ta yozuv qayta teglandi.
+Task,Vazifa
+Test connection,Ulanishni sinash
+Test Connection,Ulanishni sinash
+This entry is locked,Bu yozuv qulflangan
+This month,Bu oy
+This week,Bu hafta
+Thu,Pa
+Time Bridge,Vaqt koʻprigi
+Time Entries,Vaqt yozuvlari
+Timer already running,Taymer allaqachon ishlayapti
+Timer is already running,Taymer allaqachon ishlayapti
+Timer is not paused,Taymer toʻxtatib turilmagan
+Timer is not running,Taymer ishlamayapti
+To,Gacha
+Today,Bugun
+Total,Jami
+Total billable,Jami hisoblanadigon
+Tue,Se
+Unknown error,Nomaʼlum xato
+Unassigned,Tayinlanmagan
+(untagged project),(tegsiz loyiha)
+View entry →,Yozuvni koʻrish →
+Warning: This entry is more than 7 days old.,Ogohlantirish: Bu yozuv 7 kundan eski.
+Wed,Cho
+Week {0},{0}-hafta
+What are you working on?,Nima ustida ishlayapsiz?
+What did you work on?,Nima ustida ishladingiz?
+Work Days,Ish kunlari
+Yesterday,Kecha
+draft,qoralama
+entries this month,bu oydagi yozuvlar
+no entries,yozuvlar yoʻq
+no entries yet,hali yozuvlar yoʻq
+sent,yuborilgan
++{0} more,+{0} ta yana
+← from {0},← {0} dan
+[Auto-stopped after {0}h],[{0} soatdan keyin avtomatik toʻxtatildi]
+Entry Type,Yozuv turi
+Fri,Ju
+Keyboard Shortcuts,Klaviatura yorliqʻlari
+Start / Pause / Resume timer,Boshlash / Toʻxtatish / Davom ettirish
+Stop timer,Taymerni toʻxtatish
+New entry (focus quick-add bar),Yangi yozuv (tezkor qoʻshish paneliga fokus)
+Previous / next day or week,Oldingi / keyingi kun yoki hafta
+Show / hide this overlay,Bu qatlamni koʻrsatish / yashirish
+Press H or Esc to close,Yopish uchun H yoki Esc bosing
+Close,Yopish
+Timer,Taymer
+Entries,Yozuvlar
+This week at a glance,Bu haftaga bir nazar
+Time by tag,Teg boʻyicha vaqt
+Hours per day,Kuniga soatlar
+No entries this week,Bu hafta yozuvlar yoʻq
+No entries,Yozuvlar yoʻq
+Untagged,Tegsiz
+Monthly Budget (h),Oylik byudjet (s)
+Warn at (%),Ogohlantirishda (%)
+0 = no limit,0 = chegarasiz
+0 = site default,0 = sayt standart
+Approaching limit,Chegaraga yaqinlashmoqda
+Budget exceeded,Byudjet oshirildi
+budget used this month,bu oyda ishlatilgan byudjet
+used this month,bu oyda ishlatilgan
+of,dan
+Focus,Fokus
+Start Focus,Fokusni boshlash
+End focus,Fokusni tugatish
+Skip break,Tanaffusni oʻtkazib yuborish
+Break over,Tanaffus tugadi
+Time to focus!,Diqqatni jamlash vaqti!
+Session complete,Seans yakunlandi
+Focus complete!,Fokus yakunlandi!
+All sessions done. Great work!,Barcha seanslar yakunlandi. Ajoyib ish!
+sessions done. Great work!,seanslar yakunlandi. Ajoyib ish!
+Start new,Yangisini boshlash
+Work in focused sessions with timed breaks.,Vaqtlangan tanaffuslar bilan fokus seanslarda ishlang.
+Session,Seans
+Break,Tanaffus
+Work (min),Ish (min)
+Break (min),Tanaffus (min)
+Sessions,Seanslar
+No break is active,Hech qaysi tanaffus faol emas
+No focus session is running,Hech qaysi fokus seansi ishlamayapti
+Context,Kontekst
+Contact,Kontakt
+Context Type,Kontekst turi
+For whom?,Kim uchun?
+Working on?,Nima ustida?
+Search contacts...,Kontaktlarni qidirish...
+Select type...,Turni tanlang...
+All contacts,Barcha kontaktlar
+All projects,Barcha loyihalar
+(no contact),(kontaktsiz)
+(no project),(loyihasiz)
+(no task),(vazifasiz)
+Filter by:,Filtr:
+Time by contact,Kontakt boʻyicha vaqt
+Time by context,Kontekst boʻyicha vaqt
+Time by task,Vazifa boʻyicha vaqt
+Contact hours summary,Kontakt soatlari xulosasi

@@ -1,0 +1,247 @@
+source,translation
+Billed as {0},{0} အဖြစ် ဘီလ်တင်ပြီး
+exact — rounding skipped,အတိအကျ — ဝိုင်းခြင်းကို ကျော်လိုက်ပြီ
+Use exact,အတိအကျ သုံးပါ
+Apply rounding,ဝိုင်းခြင်း အသုံးပြုပါ
+Exact,အတိအကျ
+Billed,ဘီလ်တင်ပြီး
+* Rounded up to nearest increment,* အနီးဆုံးတိုးမြင့်မှုသို့ ဝိုင်းတင်ပြီး
+billable,ဘီလ်တင်နိုင်သော
+non-billable,ဘီလ်မတင်နိုင်သော
+internal,အတွင်းပိုင်း
+on_save,on_save
+manual,manual
+scheduled,scheduled
+hourly,hourly
+every_6_hours,every_6_hours
+daily,daily
+stopped,ရပ်ထားသည်
+running,အလုပ်လုပ်နေသည်
+paused,ခေတ္တရပ်ထားသည်
+Add a note...,မှတ်ချက်ထည့်ပါ...
+Add entry for yesterday,မနေ့အတွက် ထည့်သွင်းမှုထည့်ပါ
+Add your first entry,ပထမဆုံး ထည့်သွင်းမှုထည့်ပါ
+Archive,မှတ်တမ်းတိုက်
+Auto-stop Timer After,ဤအချိန်ပြီးနောက် တိုင်မာ အလိုအလျောက်ရပ်ပါ
+Billable,ဘီလ်တင်နိုင်သော
+Billable {0},ဘီလ်တင်နိုင်သော {0}
+Cancel,ပယ်ဖျက်ပါ
+Cannot delete tag — {0} entries use it.,တဂ်ကို ဖျက်၍မရပါ — ထည့်သွင်းမှု {0} ခုက သုံးနေပါသည်။
+Category,အမျိုးအစား
+Client,ဖောက်သည်
+Color,အရောင်
+Connection Failed,ချိတ်ဆက်မှုမအောင်မြင်ပါ
+Connection OK,ချိတ်ဆက်မှုအဆင်ပြေပါသည်
+Custom…,စိတ်ကြိုက်…
+Daily,နေ့စဉ်
+Daily view,နေ့စဉ်မြင်ကွင်း
+Date range,ရက်စွဲအပိုင်းအခြား
+days,ရက်
+Default Entry Type,ပုံသေထည့်သွင်းမှုအမျိုးအစား
+Default Rate,ပုံသေနှုန်း
+Default activity type,ပုံသေလုပ်ဆောင်ချက်အမျိုးအစား
+Delete,ဖျက်ပါ
+Description,ဖော်ပြချက်
+Dismiss,ပယ်ပါ
+Do you want to sync all unsynced time entries to ERPNext now?,ချိန်ကိုက်မထားသော အချိန်ထည့်သွင်းမှုအားလုံးကို ယခု ERPNext သို့ ချိန်ကိုက်လိုပါသလား?
+Duplicate,ပွားပါ
+Duration,ကြာချိန်
+Edit,တည်းဖြတ်ပါ
+Enable ERPNext bridge,ERPNext တံတား ဖွင့်ပါ
+End time,ပြီးဆုံးချိန်
+Entries forwarded,ထည့်သွင်းမှုများ ပေးပို့ပြီး
+Entries older than {0} days are locked. Contact your administrator.,ရက် {0} ထက်ဟောင်းသော ထည့်သွင်းမှုများ လော့ခ်ထားပါသည်။ သင့်စီမံခန့်ခွဲသူကို ဆက်သွယ်ပါ။
+ERPNext Bridge,ERPNext တံတား
+ERPNext is not installed on this site.,ဤဆိုက်တွင် ERPNext ထည့်သွင်းထားခြင်းမရှိပါ။
+ERPNext is reachable and Timesheet access is confirmed.,ERPNext ဆက်သွယ်နိုင်ပြီး အချိန်စာရွက် ဝင်ရောက်ခွင့် အတည်ပြုပြီးဖြစ်ပါသည်။
+ERPNext site URL,ERPNext ဆိုက် URL
+ERPNext Timesheet {0} for {1} is submitted — re-sync blocked.,ERPNext အချိန်စာရွက် {0} ({1} အတွက်) တင်သွင်းပြီး — ပြန်လည်ချိန်ကိုက်ခြင်း ပိတ်ဆို့ထားသည်။
+ERPNext Timesheet is submitted — re-sync blocked,ERPNext အချိန်စာရွက် တင်သွင်းပြီး — ပြန်လည်ချိန်ကိုက်ခြင်း ပိတ်ဆို့ထားသည်
+Est. {0},ခန့်. {0}
+Est. amount,ခန့်. ပမာဏ
+Every 6 hours,၆ နာရီတိုင်း
+All time,အချိန်တိုင်း
+This year,ယခုနှစ်
+Last year,ယမန်နှစ်
+Download CSV,CSV ဒေါင်းလုဒ်ဆွဲပါ
+Export my data,ကျွန်ုပ်၏ဒေတာ ထုတ်ယူပါ
+Download all your time entries as CSV.,သင့်အချိန်ထည့်သွင်းမှုအားလုံးကို CSV အဖြစ် ဒေါင်းလုဒ်ဆွဲပါ။
+Export CSV,CSV ထုတ်ယူပါ
+Export successful,ထုတ်ယူမှုအောင်မြင်ပါသည်
+Failed to forward entries: {0},ထည့်သွင်းမှုများ ပေးပို့ရန် မအောင်မြင်ပါ: {0}
+Watch Settings,Watch ဆက်တင်များ
+Watch Tag,Watch တဂ်
+Watch Entry,Watch ထည့်သွင်းမှု
+Watch Entry Tag,Watch ထည့်သွင်းမှု တဂ်
+Watch Timer,Watch တိုင်မာ
+Forwarded {0} to {1},{0} ကို {1} သို့ ပေးပို့ပြီး
+From,မှ
+General,အထွေထွေ
+Hourly,နာရီစဉ်
+hours,နာရီ
+Hide weekends,အပတ်ကုန်ရက်များ ဖျောက်ပါ
+Internal,အတွင်းပိုင်း
+Internal / overhead,အတွင်းပိုင်း / ကုန်ကျစရိတ်
+Last bulk sync,နောက်ဆုံးအကြိမ် အစုလိုက်ချိန်ကိုက်မှု
+Last month,ယမန်လ
+Last sync error,နောက်ဆုံးချိန်ကိုက်မှုအမှား
+Last week,ယမန်အပတ်
+Less,နည်း
+Lock Entries Older Than,ဤထက်ဟောင်းသော ထည့်သွင်းမှုများ လော့ခ်ပါ
+Manual,ကိုယ်တိုင်
+Map project tags,ပရောဂျက်တဂ်များ ပုံဖော်ပါ
+Merge,ပေါင်းစည်းပါ
+Merge {0} into:,{0} ကို ပေါင်းစည်းပါ:
+Mon,တနင်္လာ
+More,ပိုမို
+Navigate,လမ်းညွှန်
+New Tag,တဂ်အသစ်
+No entries for {0},{0} အတွက် ထည့်သွင်းမှုမရှိပါ
+No entries yet,ထည့်သွင်းမှု မရှိသေးပါ
+No tags yet,တဂ် မရှိသေးပါ
+No timer is running,တိုင်မာ အလုပ်မလုပ်နေပါ
+Non-billable,ဘီလ်မတင်နိုင်သော
+(no description),(ဖော်ပြချက်မရှိ)
+(not billed),(ဘီလ်မတင်ရသေး)
+Nothing logged yesterday ({0}),မနေ့က ဘာမှမမှတ်တမ်းတင်ထားပါ ({0})
+Open prepare summary,ပြင်ဆင်မှုအကျဉ်းချုပ် ဖွင့်ပါ
+Open settings,ဆက်တင်များ ဖွင့်ပါ
+Open tag management,တဂ်စီမံခန့်ခွဲမှု ဖွင့်ပါ
+Open today's view,ယနေ့မြင်ကွင်း ဖွင့်ပါ
+Open weekly view,အပတ်စဉ်မြင်ကွင်း ဖွင့်ပါ
+Other,အခြား
+Pause,ခေတ္တရပ်ပါ
+Prepare,ပြင်ဆင်ပါ
+Prepare Summary,ပြင်ဆင်မှုအကျဉ်းချုပ်
+Project,ပရောဂျက်
+Rate,နှုန်း
+Rename,အမည်ပြောင်းပါ
+Resume,ဆက်လက်ပါ
+Saved — {0},သိမ်းဆည်းပြီး — {0}
+Save,သိမ်းဆည်းပါ
+Sat,စနေ
+Scheduled,အချိန်ဇယားဆွဲထားသော
+Send,ပို့ပါ
+Settings,ဆက်တင်များ
+Show weekends,အပတ်ကုန်ရက်များ ပြပါ
+Start time,စတင်ချိန်
+Start Timer,တိုင်မာ စတင်ပါ
+"Start timer: ""{0}""","တိုင်မာ စတင်ပါ: ""{0}"""
+"Stop current & start: ""{0}""","လက်ရှိကို ရပ်ပြီး စတင်ပါ: ""{0}"""
+Started yesterday,မနေ့က စတင်ခဲ့သည်
+Sun,တနင်္ဂနွေ
+Sync all unsynced entries,ချိန်ကိုက်မထားသော ထည့်သွင်းမှုအားလုံးကို ချိန်ကိုက်ပါ
+Sync billable entries only,ဘီလ်တင်နိုင်သော ထည့်သွင်းမှုများကိုသာ ချိန်ကိုက်ပါ
+Sync completed with errors,အမှားများနှင့် ချိန်ကိုက်မှုပြီးဆုံးပါပြီ
+Sync complete,ချိန်ကိုက်မှုပြီးဆုံးပါပြီ
+Sync interval,ချိန်ကိုက်ကြားကာလ
+Sync mode,ချိန်ကိုက်မုဒ်
+Synced to ERPNext,ERPNext သို့ ချိန်ကိုက်ပြီး
+Syncing entries to ERPNext…,ERPNext သို့ ထည့်သွင်းမှုများ ချိန်ကိုက်နေပါသည်…
+{0} day(s) synced.,ရက် {0} ချိန်ကိုက်ပြီး။
+Tag,တဂ်
+Tag management,တဂ်စီမံခန့်ခွဲမှု
+Tag Name,တဂ်အမည်
+Tag renamed. {0} entries updated.,တဂ်အမည်ပြောင်းပြီး။ ထည့်သွင်းမှု {0} ခု အပ်ဒိတ်လုပ်ပြီး။
+Tags,တဂ်များ
+Tags merged. {0} entries re-tagged.,တဂ်များ ပေါင်းစည်းပြီး။ ထည့်သွင်းမှု {0} ခု ပြန်လည်တဂ်တပ်ပြီး။
+Task,လုပ်ငန်းတာဝန်
+Test connection,ချိတ်ဆက်မှုစမ်းသပ်ပါ
+Test Connection,ချိတ်ဆက်မှုစမ်းသပ်ပါ
+This entry is locked,ဤထည့်သွင်းမှု လော့ခ်ထားပါသည်
+This month,ဤလ
+This week,ဤအပတ်
+Thu,ကြာသပတေး
+Time Bridge,အချိန်တံတား
+Time Entries,အချိန်ထည့်သွင်းမှုများ
+Timer already running,တိုင်မာ အလုပ်လုပ်နေပြီးဖြစ်သည်
+Timer is already running,တိုင်မာ အလုပ်လုပ်နေပြီးဖြစ်သည်
+Timer is not paused,တိုင်မာ ခေတ္တမရပ်ထားပါ
+Timer is not running,တိုင်မာ အလုပ်မလုပ်နေပါ
+To,သို့
+Today,ယနေ့
+Total,စုစုပေါင်း
+Total billable,စုစုပေါင်း ဘီလ်တင်နိုင်သော
+Tue,အင်္ဂါ
+Unknown error,မသိသောအမှား
+Unassigned,သတ်မှတ်မထားသော
+(untagged project),(တဂ်မတပ်ထားသော ပရောဂျက်)
+View entry →,ထည့်သွင်းမှုကြည့်ပါ →
+Warning: This entry is more than 7 days old.,သတိပေးချက်: ဤထည့်သွင်းမှုသည် ၇ ရက်ထက်ဟောင်းပါသည်။
+Wed,ဗုဒ္ဓဟူး
+Week {0},အပတ် {0}
+What are you working on?,ဘာအလုပ်လုပ်နေပါသလဲ?
+What did you work on?,ဘာအလုပ်လုပ်ခဲ့ပါသလဲ?
+Work Days,အလုပ်ရက်များ
+Yesterday,မနေ့
+draft,မူကြမ်း
+entries this month,ဤလ ထည့်သွင်းမှုများ
+no entries,ထည့်သွင်းမှုမရှိပါ
+no entries yet,ထည့်သွင်းမှု မရှိသေးပါ
+sent,ပို့ပြီး
++{0} more,+{0} ပိုမို
+← from {0},← {0} မှ
+[Auto-stopped after {0}h],[{0} နာရီပြီးနောက် အလိုအလျောက်ရပ်ပြီး]
+Entry Type,ထည့်သွင်းမှုအမျိုးအစား
+Fri,သောကြာ
+Keyboard Shortcuts,ကီးဘုတ်ဖြတ်လမ်းများ
+Start / Pause / Resume timer,တိုင်မာ စတင် / ခေတ္တရပ် / ဆက်လက်
+Stop timer,တိုင်မာ ရပ်ပါ
+New entry (focus quick-add bar),ထည့်သွင်းမှုအသစ် (အမြန်ထည့်ဘားသို့ အာရုံစိုက်)
+Previous / next day or week,ယခင် / နောက် ရက် သို့မဟုတ် အပတ်
+Show / hide this overlay,ဤ overlay ပြ / ဖျောက်ပါ
+Press H or Esc to close,ပိတ်ရန် H သို့မဟုတ် Esc နှိပ်ပါ
+Close,ပိတ်ပါ
+Timer,တိုင်မာ
+Entries,ထည့်သွင်းမှုများ
+This week at a glance,ဤအပတ် အကျဉ်းချုပ်
+Time by tag,တဂ်အလိုက် အချိန်
+Hours per day,တစ်ရက်လျှင် နာရီ
+No entries this week,ဤအပတ် ထည့်သွင်းမှုမရှိပါ
+No entries,ထည့်သွင်းမှုမရှိပါ
+Untagged,တဂ်မတပ်ထားသော
+Monthly Budget (h),လစဉ်ဘတ်ဂျက် (န)
+Warn at (%),သတိပေးခြင်း (%)
+0 = no limit,0 = ကန့်သတ်ချက်မရှိ
+0 = site default,0 = ဆိုက်ပုံသေ
+Approaching limit,ကန့်သတ်ချက်နီးကပ်နေပါပြီ
+Budget exceeded,ဘတ်ဂျက်ကျော်လွန်သွားပါပြီ
+budget used this month,ဤလ အသုံးပြုသောဘတ်ဂျက်
+used this month,ဤလ အသုံးပြုပြီး
+of,၏
+Focus,အာရုံစိုက်
+Start Focus,အာရုံစိုက်မှု စတင်ပါ
+End focus,အာရုံစိုက်မှု ပြီးဆုံးပါ
+Skip break,အနားယူချိန် ကျော်ပါ
+Break over,အနားယူချိန် ပြီးပါပြီ
+Time to focus!,အာရုံစိုက်ရမည့်အချိန်!
+Session complete,စက်ရှင်ပြီးဆုံးပါပြီ
+Focus complete!,အာရုံစိုက်မှုပြီးဆုံးပါပြီ!
+All sessions done. Great work!,စက်ရှင်အားလုံးပြီးပါပြီ။ အလုပ်ကောင်းပါတယ်!
+sessions done. Great work!,စက်ရှင်များပြီးပါပြီ။ အလုပ်ကောင်းပါတယ်!
+Start new,အသစ်စတင်ပါ
+Work in focused sessions with timed breaks.,အချိန်သတ်မှတ်ထားသော အနားယူချိန်များနှင့် အာရုံစိုက်စက်ရှင်များတွင် အလုပ်လုပ်ပါ။
+Session,စက်ရှင်
+Break,အနားယူ
+Work (min),အလုပ် (မိနစ်)
+Break (min),အနားယူ (မိနစ်)
+Sessions,စက်ရှင်များ
+No break is active,အနားယူချိန် အသက်ဝင်မနေပါ
+No focus session is running,အာရုံစိုက်စက်ရှင် အလုပ်မလုပ်နေပါ
+Context,အကြောင်းအရာ
+Contact,အဆက်အသွယ်
+Context Type,အကြောင်းအရာအမျိုးအစား
+For whom?,ဘယ်သူ့အတွက်?
+Working on?,ဘာလုပ်နေပါသလဲ?
+Search contacts...,အဆက်အသွယ်ရှာပါ...
+Select type...,အမျိုးအစားရွေးပါ...
+All contacts,အဆက်အသွယ်အားလုံး
+All projects,ပရောဂျက်အားလုံး
+(no contact),(အဆက်အသွယ်မရှိ)
+(no project),(ပရောဂျက်မရှိ)
+(no task),(လုပ်ငန်းတာဝန်မရှိ)
+Filter by:,စစ်ထုတ်ရန်:
+Time by contact,အဆက်အသွယ်အလိုက် အချိန်
+Time by context,အကြောင်းအရာအလိုက် အချိန်
+Time by task,လုပ်ငန်းတာဝန်အလိုက် အချိန်
+Contact hours summary,အဆက်အသွယ်နာရီ အကျဉ်းချုပ်

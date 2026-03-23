@@ -1,0 +1,247 @@
+source,translation
+"Billed as {0}","Registreret som {0}"
+"exact — rounding skipped","præcis — afrunding sprunget over"
+"Use exact","Brug præcis"
+"Apply rounding","Anvend afrunding"
+Exact,Præcis
+Billed,Registreret
+"* Rounded up to nearest increment","* Afrundet op til nærmeste interval"
+billable,debiterbar
+non-billable,ikke-debiterbar
+internal,intern
+on_save,on_save
+manual,manual
+scheduled,scheduled
+hourly,hourly
+every_6_hours,every_6_hours
+daily,daily
+stopped,stoppet
+running,kører
+paused,sat på pause
+"Add a note...","Tilføj en note..."
+"Add entry for yesterday","Tilføj post for i går"
+"Add your first entry","Tilføj din første post"
+Archive,Arkivér
+"Auto-stop Timer After","Stop timer automatisk efter"
+Billable,Debiterbar
+"Billable {0}","Debiterbar {0}"
+Cancel,Annuller
+"Cannot delete tag — {0} entries use it.","Kan ikke slette tag — {0} poster bruger den."
+Category,Kategori
+Client,Klient
+Color,Farve
+"Connection Failed","Forbindelse mislykkedes"
+"Connection OK","Forbindelse OK"
+"Custom…","Brugerdefineret…"
+Daily,Daglig
+"Daily view","Dagsvisning"
+"Date range","Datointerval"
+days,dage
+"Default Entry Type","Standardposttype"
+"Default Rate","Standardtimepris"
+"Default activity type","Standardaktivitetstype"
+Delete,Slet
+Description,Beskrivelse
+Dismiss,Afvis
+"Do you want to sync all unsynced time entries to ERPNext now?","Vil du synkronisere alle usynkroniserede tidsposter til ERPNext nu?"
+Duplicate,Duplikér
+Duration,Varighed
+Edit,Rediger
+"Enable ERPNext bridge","Aktivér ERPNext-bro"
+"End time","Sluttid"
+"Entries forwarded","Poster videresendt"
+"Entries older than {0} days are locked. Contact your administrator.","Poster ældre end {0} dage er låst. Kontakt din administrator."
+"ERPNext Bridge","ERPNext-bro"
+"ERPNext is not installed on this site.","ERPNext er ikke installeret på denne side."
+"ERPNext is reachable and Timesheet access is confirmed.","ERPNext er tilgængelig og timeseddeladgang er bekræftet."
+"ERPNext site URL","ERPNext side-URL"
+"ERPNext Timesheet {0} for {1} is submitted — re-sync blocked.","ERPNext-timeseddel {0} for {1} er indsendt — gensynkronisering blokeret."
+"ERPNext Timesheet is submitted — re-sync blocked","ERPNext-timeseddel er indsendt — gensynkronisering blokeret"
+"Est. {0}","Ansl. {0}"
+"Est. amount","Ansl. beløb"
+"Every 6 hours","Hver 6. time"
+"All time","Al tid"
+"This year","I år"
+"Last year","Sidste år"
+"Download CSV","Download CSV"
+"Export my data","Eksportér mine data"
+"Download all your time entries as CSV.","Download alle dine tidsposter som CSV."
+"Export CSV","Eksportér CSV"
+"Export successful","Eksport gennemført"
+"Failed to forward entries: {0}","Kunne ikke videresende poster: {0}"
+"Watch Settings","Watch-indstillinger"
+"Watch Tag","Watch-tag"
+"Watch Entry","Watch-post"
+"Watch Entry Tag","Watch-posttag"
+"Watch Timer","Watch-timer"
+"Forwarded {0} to {1}","Videresendt {0} til {1}"
+From,Fra
+General,Generelt
+Hourly,Hver time
+hours,timer
+"Hide weekends","Skjul weekender"
+Internal,Intern
+"Internal / overhead","Intern / overhead"
+"Last bulk sync","Seneste massesynkronisering"
+"Last month","Sidste måned"
+"Last sync error","Seneste synkfejl"
+"Last week","Sidste uge"
+Less,Mindre
+"Lock Entries Older Than","Lås poster ældre end"
+Manual,Manuel
+"Map project tags","Tilknyt projekttags"
+Merge,Flet
+"Merge {0} into:","Flet {0} ind i:"
+Mon,Man
+More,Mere
+Navigate,Navigér
+"New Tag","Ny tag"
+"No entries for {0}","Ingen poster for {0}"
+"No entries yet","Ingen poster endnu"
+"No tags yet","Ingen tags endnu"
+"No timer is running","Ingen timer kører"
+Non-billable,Ikke-debiterbar
+"(no description)","(ingen beskrivelse)"
+"(not billed)","(ikke registreret)"
+"Nothing logged yesterday ({0})","Intet logget i går ({0})"
+"Open prepare summary","Åbn forberedelsesoversigt"
+"Open settings","Åbn indstillinger"
+"Open tag management","Åbn taghåndtering"
+"Open today's view","Åbn dagens visning"
+"Open weekly view","Åbn ugevisning"
+Other,Andet
+Pause,Pause
+Prepare,Forbered
+"Prepare Summary","Forberedelsesoversigt"
+Project,Projekt
+Rate,Timepris
+Rename,Omdøb
+Resume,Genoptag
+"Saved — {0}","Gemt — {0}"
+Save,Gem
+Sat,Lør
+Scheduled,Planlagt
+Send,Send
+Settings,Indstillinger
+"Show weekends","Vis weekender"
+"Start time","Starttid"
+"Start Timer","Start timer"
+"Start timer: ""{0}""","Start timer: ""{0}"""
+"Stop current & start: ""{0}""","Stop aktuel og start: ""{0}"""
+"Started yesterday","Startet i går"
+Sun,Søn
+"Sync all unsynced entries","Synkronisér alle usynkroniserede poster"
+"Sync billable entries only","Synkronisér kun debiterbare poster"
+"Sync completed with errors","Synkronisering fuldført med fejl"
+"Sync complete","Synkronisering fuldført"
+"Sync interval","Synkinterval"
+"Sync mode","Synktilstand"
+"Synced to ERPNext","Synkroniseret til ERPNext"
+"Syncing entries to ERPNext…","Synkroniserer poster til ERPNext…"
+"{0} day(s) synced.","{0} dag(e) synkroniseret."
+Tag,Tag
+"Tag management","Taghåndtering"
+"Tag Name","Tagnavn"
+"Tag renamed. {0} entries updated.","Tag omdøbt. {0} poster opdateret."
+Tags,Tags
+"Tags merged. {0} entries re-tagged.","Tags flettet. {0} poster gen-tagget."
+Task,Opgave
+"Test connection","Test forbindelse"
+"Test Connection","Test forbindelse"
+"This entry is locked","Denne post er låst"
+"This month","Denne måned"
+"This week","Denne uge"
+Thu,Tor
+"Time Bridge","Tidsbro"
+"Time Entries","Tidsposter"
+"Timer already running","Timer kører allerede"
+"Timer is already running","Timer kører allerede"
+"Timer is not paused","Timer er ikke sat på pause"
+"Timer is not running","Timer kører ikke"
+To,Til
+Today,I dag
+Total,Total
+"Total billable","Total debiterbar"
+Tue,Tir
+"Unknown error","Ukendt fejl"
+Unassigned,Ikke tildelt
+"(untagged project)","(utagget projekt)"
+"View entry →","Vis post →"
+"Warning: This entry is more than 7 days old.","Advarsel: Denne post er mere end 7 dage gammel."
+Wed,Ons
+"Week {0}","Uge {0}"
+"What are you working on?","Hvad arbejder du på?"
+"What did you work on?","Hvad arbejdede du på?"
+"Work Days","Arbejdsdage"
+Yesterday,I går
+draft,kladde
+"entries this month","poster denne måned"
+"no entries","ingen poster"
+"no entries yet","ingen poster endnu"
+sent,sendt
+"+{0} more","+{0} flere"
+"← from {0}","← fra {0}"
+"[Auto-stopped after {0}h]","[Automatisk stoppet efter {0}t]"
+"Entry Type","Posttype"
+Fri,Fre
+"Keyboard Shortcuts","Tastaturgenveje"
+"Start / Pause / Resume timer","Start / Pause / Genoptag timer"
+"Stop timer","Stop timer"
+"New entry (focus quick-add bar)","Ny post (fokusér hurtigtilføjelse)"
+"Previous / next day or week","Forrige / næste dag eller uge"
+"Show / hide this overlay","Vis / skjul denne overlejring"
+"Press H or Esc to close","Tryk H eller Esc for at lukke"
+Close,Luk
+Timer,Timer
+Entries,Poster
+"This week at a glance","Denne uge i overblik"
+"Time by tag","Tid pr. tag"
+"Hours per day","Timer pr. dag"
+"No entries this week","Ingen poster denne uge"
+"No entries","Ingen poster"
+Untagged,Utagget
+"Monthly Budget (h)","Månedligt budget (t)"
+"Warn at (%)","Advar ved (%)"
+"0 = no limit","0 = ingen grænse"
+"0 = site default","0 = sidens standard"
+"Approaching limit","Nærmer sig grænsen"
+"Budget exceeded","Budget overskredet"
+"budget used this month","budget brugt denne måned"
+"used this month","brugt denne måned"
+of,af
+Focus,Fokus
+"Start Focus","Start fokus"
+"End focus","Afslut fokus"
+"Skip break","Spring pause over"
+"Break over","Pause slut"
+"Time to focus!","Tid til at fokusere!"
+"Session complete","Session fuldført"
+"Focus complete!","Fokus fuldført!"
+"All sessions done. Great work!","Alle sessioner fuldført. Godt arbejde!"
+"sessions done. Great work!","sessioner fuldført. Godt arbejde!"
+"Start new","Start ny"
+"Work in focused sessions with timed breaks.","Arbejd i fokuserede sessioner med tidsbestemte pauser."
+Session,Session
+Break,Pause
+"Work (min)","Arbejde (min)"
+"Break (min)","Pause (min)"
+Sessions,Sessioner
+"No break is active","Ingen pause er aktiv"
+"No focus session is running","Ingen fokussession kører"
+Context,Kontekst
+Contact,Kontakt
+"Context Type","Konteksttype"
+"For whom?","For hvem?"
+"Working on?","Arbejder på?"
+"Search contacts...","Søg kontakter..."
+"Select type...","Vælg type..."
+"All contacts","Alle kontakter"
+"All projects","Alle projekter"
+"(no contact)","(ingen kontakt)"
+"(no project)","(intet projekt)"
+"(no task)","(ingen opgave)"
+"Filter by:","Filtrer efter:"
+"Time by contact","Tid pr. kontakt"
+"Time by context","Tid pr. kontekst"
+"Time by task","Tid pr. opgave"
+"Contact hours summary","Kontakttimeoversigt"

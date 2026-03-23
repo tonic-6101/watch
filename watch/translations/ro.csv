@@ -1,0 +1,247 @@
+source,translation
+"Billed as {0}","Înregistrat ca {0}"
+"exact — rounding skipped","exact — rotunjire omisă"
+"Use exact","Folosește exact"
+"Apply rounding","Aplică rotunjire"
+Exact,Exact
+Billed,Înregistrat
+"* Rounded up to nearest increment","* Rotunjit în sus la cel mai apropiat interval"
+billable,tarifabil
+non-billable,netarifabil
+internal,intern
+on_save,on_save
+manual,manual
+scheduled,scheduled
+hourly,hourly
+every_6_hours,every_6_hours
+daily,daily
+stopped,oprit
+running,rulează
+paused,în pauză
+"Add a note...","Adaugă o notă..."
+"Add entry for yesterday","Adaugă înregistrare pentru ieri"
+"Add your first entry","Adaugă prima ta înregistrare"
+Archive,Arhivează
+"Auto-stop Timer After","Oprire automată cronometru după"
+Billable,Tarifabil
+"Billable {0}","Tarifabil {0}"
+Cancel,Anulează
+"Cannot delete tag — {0} entries use it.","Nu se poate șterge eticheta — {0} înregistrări o folosesc."
+Category,Categorie
+Client,Client
+Color,Culoare
+"Connection Failed","Conexiune eșuată"
+"Connection OK","Conexiune OK"
+"Custom…","Personalizat…"
+Daily,Zilnic
+"Daily view","Vizualizare zilnică"
+"Date range","Interval de date"
+days,zile
+"Default Entry Type","Tip implicit de înregistrare"
+"Default Rate","Tarif orar implicit"
+"Default activity type","Tip implicit de activitate"
+Delete,Șterge
+Description,Descriere
+Dismiss,Respinge
+"Do you want to sync all unsynced time entries to ERPNext now?","Doriți să sincronizați acum toate înregistrările de timp nesincronizate în ERPNext?"
+Duplicate,Duplică
+Duration,Durată
+Edit,Editează
+"Enable ERPNext bridge","Activează puntea ERPNext"
+"End time","Ora de sfârșit"
+"Entries forwarded","Înregistrări transmise"
+"Entries older than {0} days are locked. Contact your administrator.","Înregistrările mai vechi de {0} zile sunt blocate. Contactați administratorul."
+"ERPNext Bridge","Punte ERPNext"
+"ERPNext is not installed on this site.","ERPNext nu este instalat pe acest site."
+"ERPNext is reachable and Timesheet access is confirmed.","ERPNext este accesibil și accesul la foile de pontaj este confirmat."
+"ERPNext site URL","URL site ERPNext"
+"ERPNext Timesheet {0} for {1} is submitted — re-sync blocked.","Foaia de pontaj ERPNext {0} pentru {1} este trimisă — resincronizare blocată."
+"ERPNext Timesheet is submitted — re-sync blocked","Foaia de pontaj ERPNext este trimisă — resincronizare blocată"
+"Est. {0}","Est. {0}"
+"Est. amount","Est. sumă"
+"Every 6 hours","La fiecare 6 ore"
+"All time","Tot timpul"
+"This year","Anul acesta"
+"Last year","Anul trecut"
+"Download CSV","Descarcă CSV"
+"Export my data","Exportă datele mele"
+"Download all your time entries as CSV.","Descarcă toate înregistrările tale de timp ca CSV."
+"Export CSV","Exportă CSV"
+"Export successful","Export reușit"
+"Failed to forward entries: {0}","Nu s-au putut transmite înregistrările: {0}"
+"Watch Settings","Setări Watch"
+"Watch Tag","Etichetă Watch"
+"Watch Entry","Înregistrare Watch"
+"Watch Entry Tag","Etichetă înregistrare Watch"
+"Watch Timer","Cronometru Watch"
+"Forwarded {0} to {1}","Transmis {0} către {1}"
+From,De la
+General,General
+Hourly,Orar
+hours,ore
+"Hide weekends","Ascunde weekendurile"
+Internal,Intern
+"Internal / overhead","Intern / costuri generale"
+"Last bulk sync","Ultima sincronizare în masă"
+"Last month","Luna trecută"
+"Last sync error","Ultima eroare de sincronizare"
+"Last week","Săptămâna trecută"
+Less,Mai puțin
+"Lock Entries Older Than","Blochează înregistrări mai vechi de"
+Manual,Manual
+"Map project tags","Asociază etichete de proiect"
+Merge,Îmbină
+"Merge {0} into:","Îmbină {0} în:"
+Mon,Lun
+More,Mai mult
+Navigate,Navighează
+"New Tag","Etichetă nouă"
+"No entries for {0}","Nicio înregistrare pentru {0}"
+"No entries yet","Nicio înregistrare încă"
+"No tags yet","Nicio etichetă încă"
+"No timer is running","Niciun cronometru nu rulează"
+Non-billable,Netarifabil
+"(no description)","(fără descriere)"
+"(not billed)","(neînregistrat)"
+"Nothing logged yesterday ({0})","Nimic înregistrat ieri ({0})"
+"Open prepare summary","Deschide sumar de pregătire"
+"Open settings","Deschide setări"
+"Open tag management","Deschide gestionarea etichetelor"
+"Open today's view","Deschide vizualizarea de azi"
+"Open weekly view","Deschide vizualizarea săptămânală"
+Other,Altele
+Pause,Pauză
+Prepare,Pregătire
+"Prepare Summary","Sumar de pregătire"
+Project,Proiect
+Rate,Tarif orar
+Rename,Redenumește
+Resume,Reia
+"Saved — {0}","Salvat — {0}"
+Save,Salvează
+Sat,Sâm
+Scheduled,Programat
+Send,Trimite
+Settings,Setări
+"Show weekends","Arată weekendurile"
+"Start time","Ora de început"
+"Start Timer","Pornește cronometru"
+"Start timer: ""{0}""","Pornește cronometru: ""{0}"""
+"Stop current & start: ""{0}""","Oprește curent și pornește: ""{0}"""
+"Started yesterday","Început ieri"
+Sun,Dum
+"Sync all unsynced entries","Sincronizează toate înregistrările nesincronizate"
+"Sync billable entries only","Sincronizează doar înregistrările tarifabile"
+"Sync completed with errors","Sincronizare finalizată cu erori"
+"Sync complete","Sincronizare completă"
+"Sync interval","Interval de sincronizare"
+"Sync mode","Mod de sincronizare"
+"Synced to ERPNext","Sincronizat în ERPNext"
+"Syncing entries to ERPNext…","Se sincronizează înregistrările în ERPNext…"
+"{0} day(s) synced.","{0} zi(le) sincronizate."
+Tag,Etichetă
+"Tag management","Gestionarea etichetelor"
+"Tag Name","Nume etichetă"
+"Tag renamed. {0} entries updated.","Etichetă redenumită. {0} înregistrări actualizate."
+Tags,Etichete
+"Tags merged. {0} entries re-tagged.","Etichete îmbinate. {0} înregistrări reetichetate."
+Task,Sarcină
+"Test connection","Testează conexiunea"
+"Test Connection","Testează conexiunea"
+"This entry is locked","Această înregistrare este blocată"
+"This month","Luna aceasta"
+"This week","Săptămâna aceasta"
+Thu,Joi
+"Time Bridge","Punte de timp"
+"Time Entries","Înregistrări de timp"
+"Timer already running","Cronometrul rulează deja"
+"Timer is already running","Cronometrul rulează deja"
+"Timer is not paused","Cronometrul nu este în pauză"
+"Timer is not running","Cronometrul nu rulează"
+To,Până la
+Today,Azi
+Total,Total
+"Total billable","Total tarifabil"
+Tue,Mar
+"Unknown error","Eroare necunoscută"
+Unassigned,Neatribuit
+"(untagged project)","(proiect fără etichetă)"
+"View entry →","Vezi înregistrarea →"
+"Warning: This entry is more than 7 days old.","Atenție: Această înregistrare are mai mult de 7 zile."
+Wed,Mie
+"Week {0}","Săptămâna {0}"
+"What are you working on?","La ce lucrezi?"
+"What did you work on?","La ce ai lucrat?"
+"Work Days","Zile lucrătoare"
+Yesterday,Ieri
+draft,ciornă
+"entries this month","înregistrări luna aceasta"
+"no entries","nicio înregistrare"
+"no entries yet","nicio înregistrare încă"
+sent,trimis
+"+{0} more","+{0} mai multe"
+"← from {0}","← de la {0}"
+"[Auto-stopped after {0}h]","[Oprit automat după {0}h]"
+"Entry Type","Tip înregistrare"
+Fri,Vin
+"Keyboard Shortcuts","Scurtături de tastatură"
+"Start / Pause / Resume timer","Pornește / Pauză / Reia cronometru"
+"Stop timer","Oprește cronometru"
+"New entry (focus quick-add bar)","Înregistrare nouă (bara de adăugare rapidă)"
+"Previous / next day or week","Ziua / săptămâna anterioară sau următoare"
+"Show / hide this overlay","Arată / ascunde acest panou"
+"Press H or Esc to close","Apasă H sau Esc pentru a închide"
+Close,Închide
+Timer,Cronometru
+Entries,Înregistrări
+"This week at a glance","Săptămâna aceasta pe scurt"
+"Time by tag","Timp pe etichetă"
+"Hours per day","Ore pe zi"
+"No entries this week","Nicio înregistrare săptămâna aceasta"
+"No entries","Nicio înregistrare"
+Untagged,Fără etichetă
+"Monthly Budget (h)","Buget lunar (h)"
+"Warn at (%)","Avertizare la (%)"
+"0 = no limit","0 = fără limită"
+"0 = site default","0 = implicit site"
+"Approaching limit","Se apropie de limită"
+"Budget exceeded","Buget depășit"
+"budget used this month","buget utilizat luna aceasta"
+"used this month","utilizat luna aceasta"
+of,din
+Focus,Concentrare
+"Start Focus","Începe concentrare"
+"End focus","Termină concentrare"
+"Skip break","Sări peste pauză"
+"Break over","Pauză terminată"
+"Time to focus!","E timpul să te concentrezi!"
+"Session complete","Sesiune completă"
+"Focus complete!","Concentrare completă!"
+"All sessions done. Great work!","Toate sesiunile terminate. Bravo!"
+"sessions done. Great work!","sesiuni terminate. Bravo!"
+"Start new","Începe una nouă"
+"Work in focused sessions with timed breaks.","Lucrează în sesiuni concentrate cu pauze cronometrate."
+Session,Sesiune
+Break,Pauză
+"Work (min)","Lucru (min)"
+"Break (min)","Pauză (min)"
+Sessions,Sesiuni
+"No break is active","Nicio pauză nu este activă"
+"No focus session is running","Nicio sesiune de concentrare nu rulează"
+Context,Context
+Contact,Contact
+"Context Type","Tip context"
+"For whom?","Pentru cine?"
+"Working on?","Lucrezi la?"
+"Search contacts...","Caută contacte..."
+"Select type...","Selectează tipul..."
+"All contacts","Toate contactele"
+"All projects","Toate proiectele"
+"(no contact)","(fără contact)"
+"(no project)","(fără proiect)"
+"(no task)","(fără sarcină)"
+"Filter by:","Filtrează după:"
+"Time by contact","Timp pe contact"
+"Time by context","Timp pe context"
+"Time by task","Timp pe sarcină"
+"Contact hours summary","Sumar ore pe contacte"

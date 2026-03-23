@@ -1,0 +1,247 @@
+source,translation
+Billed as {0},{0} గా బిల్ చేయబడింది
+exact — rounding skipped,ఖచ్చితం — రౌండింగ్ దాటవేయబడింది
+Use exact,ఖచ్చితం వాడండి
+Apply rounding,రౌండింగ్ అమలు చేయండి
+Exact,ఖచ్చితం
+Billed,బిల్ చేయబడింది
+* Rounded up to nearest increment,* సమీప పెరుగుదలకు రౌండ్ అప్
+billable,బిల్ చేయగల
+non-billable,బిల్ చేయలేని
+internal,అంతర్గత
+on_save,on_save
+manual,manual
+scheduled,scheduled
+hourly,hourly
+every_6_hours,every_6_hours
+daily,daily
+stopped,ఆపబడింది
+running,నడుస్తోంది
+paused,పాజ్ చేయబడింది
+Add a note...,గమనిక జోడించండి...
+Add entry for yesterday,నిన్నటి కోసం ఎంట్రీ జోడించండి
+Add your first entry,మీ మొదటి ఎంట్రీ జోడించండి
+Archive,ఆర్కైవ్
+Auto-stop Timer After,ఈ సమయం తర్వాత టైమర్ ఆటో-ఆపు
+Billable,బిల్ చేయగల
+Billable {0},బిల్ చేయగల {0}
+Cancel,రద్దు చేయండి
+Cannot delete tag — {0} entries use it.,ట్యాగ్ తొలగించలేరు — {0} ఎంట్రీలు దీన్ని వాడుతున్నాయి.
+Category,వర్గం
+Client,క్లయింట్
+Color,రంగు
+Connection Failed,కనెక్షన్ విఫలం
+Connection OK,కనెక్షన్ సరి
+Custom…,అనుకూల…
+Daily,రోజువారీ
+Daily view,రోజువారీ వీక్షణ
+Date range,తేదీ పరిధి
+days,రోజులు
+Default Entry Type,డిఫాల్ట్ ఎంట్రీ రకం
+Default Rate,డిఫాల్ట్ రేట్
+Default activity type,డిఫాల్ట్ కార్యాచరణ రకం
+Delete,తొలగించండి
+Description,వివరణ
+Dismiss,తీసివేయండి
+Do you want to sync all unsynced time entries to ERPNext now?,సింక్ చేయని టైమ్ ఎంట్రీలన్నింటినీ ఇప్పుడు ERPNext కు సింక్ చేయాలనుకుంటున్నారా?
+Duplicate,నకలు
+Duration,వ్యవధి
+Edit,సవరించండి
+Enable ERPNext bridge,ERPNext బ్రిడ్జ్ ప్రారంభించండి
+End time,ముగింపు సమయం
+Entries forwarded,ఎంట్రీలు ఫార్వర్డ్ చేయబడ్డాయి
+Entries older than {0} days are locked. Contact your administrator.,{0} రోజులకన్నా పాత ఎంట్రీలు లాక్ చేయబడ్డాయి. మీ నిర్వాహకుడిని సంప్రదించండి.
+ERPNext Bridge,ERPNext బ్రిడ్జ్
+ERPNext is not installed on this site.,ఈ సైట్‌లో ERPNext ఇన్‌స్టాల్ చేయబడలేదు.
+ERPNext is reachable and Timesheet access is confirmed.,ERPNext అందుబాటులో ఉంది మరియు టైమ్‌షీట్ యాక్సెస్ నిర్ధారించబడింది.
+ERPNext site URL,ERPNext సైట్ URL
+ERPNext Timesheet {0} for {1} is submitted — re-sync blocked.,ERPNext టైమ్‌షీట్ {0} ({1} కోసం) సమర్పించబడింది — మళ్ళీ సింక్ నిరోధించబడింది.
+ERPNext Timesheet is submitted — re-sync blocked,ERPNext టైమ్‌షీట్ సమర్పించబడింది — మళ్ళీ సింక్ నిరోధించబడింది
+Est. {0},అంచ. {0}
+Est. amount,అంచ. మొత్తం
+Every 6 hours,ప్రతి 6 గంటలకు
+All time,అన్ని సమయం
+This year,ఈ సంవత్సరం
+Last year,గత సంవత్సరం
+Download CSV,CSV డౌన్‌లోడ్ చేయండి
+Export my data,నా డేటా ఎగుమతి చేయండి
+Download all your time entries as CSV.,మీ అన్ని టైమ్ ఎంట్రీలను CSV గా డౌన్‌లోడ్ చేయండి.
+Export CSV,CSV ఎగుమతి
+Export successful,ఎగుమతి విజయవంతం
+Failed to forward entries: {0},ఎంట్రీలను ఫార్వర్డ్ చేయడంలో విఫలం: {0}
+Watch Settings,Watch సెట్టింగ్‌లు
+Watch Tag,Watch ట్యాగ్
+Watch Entry,Watch ఎంట్రీ
+Watch Entry Tag,Watch ఎంట్రీ ట్యాగ్
+Watch Timer,Watch టైమర్
+Forwarded {0} to {1},{0} ని {1} కి ఫార్వర్డ్ చేయబడింది
+From,నుండి
+General,సాధారణ
+Hourly,గంటకు
+hours,గంటలు
+Hide weekends,వారాంతాలను దాచండి
+Internal,అంతర్గత
+Internal / overhead,అంతర్గత / ఓవర్‌హెడ్
+Last bulk sync,చివరి బల్క్ సింక్
+Last month,గత నెల
+Last sync error,చివరి సింక్ లోపం
+Last week,గత వారం
+Less,తక్కువ
+Lock Entries Older Than,దీని కంటే పాత ఎంట్రీలను లాక్ చేయండి
+Manual,మాన్యువల్
+Map project tags,ప్రాజెక్ట్ ట్యాగ్‌లను మ్యాప్ చేయండి
+Merge,విలీనం
+Merge {0} into:,{0} ని విలీనం చేయండి:
+Mon,సోమ
+More,మరిన్ని
+Navigate,నావిగేట్
+New Tag,కొత్త ట్యాగ్
+No entries for {0},{0} కోసం ఎంట్రీలు లేవు
+No entries yet,ఇంకా ఎంట్రీలు లేవు
+No tags yet,ఇంకా ట్యాగ్‌లు లేవు
+No timer is running,టైమర్ నడవడం లేదు
+Non-billable,బిల్ చేయలేని
+(no description),(వివరణ లేదు)
+(not billed),(బిల్ చేయబడలేదు)
+Nothing logged yesterday ({0}),నిన్న ఏమీ నమోదు చేయబడలేదు ({0})
+Open prepare summary,తయారీ సారాంశం తెరవండి
+Open settings,సెట్టింగ్‌లు తెరవండి
+Open tag management,ట్యాగ్ నిర్వహణ తెరవండి
+Open today's view,ఈరోజు వీక్షణ తెరవండి
+Open weekly view,వారపు వీక్షణ తెరవండి
+Other,ఇతర
+Pause,పాజ్
+Prepare,తయారు చేయండి
+Prepare Summary,తయారీ సారాంశం
+Project,ప్రాజెక్ట్
+Rate,రేట్
+Rename,పేరు మార్చండి
+Resume,మళ్ళీ ప్రారంభించండి
+Saved — {0},సేవ్ చేయబడింది — {0}
+Save,సేవ్
+Sat,శని
+Scheduled,షెడ్యూల్ చేయబడింది
+Send,పంపండి
+Settings,సెట్టింగ్‌లు
+Show weekends,వారాంతాలను చూపించండి
+Start time,ప్రారంభ సమయం
+Start Timer,టైమర్ ప్రారంభించండి
+"Start timer: ""{0}""","టైమర్ ప్రారంభించండి: ""{0}"""
+"Stop current & start: ""{0}""","ప్రస్తుతం ఆపి ప్రారంభించండి: ""{0}"""
+Started yesterday,నిన్న ప్రారంభించబడింది
+Sun,ఆది
+Sync all unsynced entries,సింక్ చేయని అన్ని ఎంట్రీలను సింక్ చేయండి
+Sync billable entries only,బిల్ చేయగల ఎంట్రీలను మాత్రమే సింక్ చేయండి
+Sync completed with errors,లోపాలతో సింక్ పూర్తయింది
+Sync complete,సింక్ పూర్తయింది
+Sync interval,సింక్ విరామం
+Sync mode,సింక్ మోడ్
+Synced to ERPNext,ERPNext కు సింక్ చేయబడింది
+Syncing entries to ERPNext…,ERPNext కు ఎంట్రీలు సింక్ అవుతున్నాయి…
+{0} day(s) synced.,{0} రోజు(లు) సింక్ అయ్యాయి.
+Tag,ట్యాగ్
+Tag management,ట్యాగ్ నిర్వహణ
+Tag Name,ట్యాగ్ పేరు
+Tag renamed. {0} entries updated.,ట్యాగ్ పేరు మార్చబడింది. {0} ఎంట్రీలు అప్‌డేట్ చేయబడ్డాయి.
+Tags,ట్యాగ్‌లు
+Tags merged. {0} entries re-tagged.,ట్యాగ్‌లు విలీనం చేయబడ్డాయి. {0} ఎంట్రీలు మళ్ళీ ట్యాగ్ చేయబడ్డాయి.
+Task,పని
+Test connection,కనెక్షన్ పరీక్షించండి
+Test Connection,కనెక్షన్ పరీక్షించండి
+This entry is locked,ఈ ఎంట్రీ లాక్ చేయబడింది
+This month,ఈ నెల
+This week,ఈ వారం
+Thu,గురు
+Time Bridge,టైమ్ బ్రిడ్జ్
+Time Entries,టైమ్ ఎంట్రీలు
+Timer already running,టైమర్ ఇప్పటికే నడుస్తోంది
+Timer is already running,టైమర్ ఇప్పటికే నడుస్తోంది
+Timer is not paused,టైమర్ పాజ్ చేయబడలేదు
+Timer is not running,టైమర్ నడవడం లేదు
+To,వరకు
+Today,ఈరోజు
+Total,మొత్తం
+Total billable,మొత్తం బిల్ చేయగల
+Tue,మంగళ
+Unknown error,తెలియని లోపం
+Unassigned,కేటాయించబడలేదు
+(untagged project),(ట్యాగ్ లేని ప్రాజెక్ట్)
+View entry →,ఎంట్రీ చూడండి →
+Warning: This entry is more than 7 days old.,హెచ్చరిక: ఈ ఎంట్రీ 7 రోజులకన్నా పాతది.
+Wed,బుధ
+Week {0},వారం {0}
+What are you working on?,మీరు దేనిపై పని చేస్తున్నారు?
+What did you work on?,మీరు దేనిపై పని చేశారు?
+Work Days,పని దినాలు
+Yesterday,నిన్న
+draft,డ్రాఫ్ట్
+entries this month,ఈ నెల ఎంట్రీలు
+no entries,ఎంట్రీలు లేవు
+no entries yet,ఇంకా ఎంట్రీలు లేవు
+sent,పంపబడింది
++{0} more,+{0} మరిన్ని
+← from {0},← {0} నుండి
+[Auto-stopped after {0}h],[{0} గంటల తర్వాత ఆటో-ఆపు]
+Entry Type,ఎంట్రీ రకం
+Fri,శుక్ర
+Keyboard Shortcuts,కీబోర్డ్ షార్ట్‌కట్‌లు
+Start / Pause / Resume timer,టైమర్ ప్రారంభం / పాజ్ / మళ్ళీ ప్రారంభం
+Stop timer,టైమర్ ఆపండి
+New entry (focus quick-add bar),కొత్త ఎంట్రీ (క్విక్-యాడ్ బార్ ఫోకస్)
+Previous / next day or week,మునుపటి / తదుపరి రోజు లేదా వారం
+Show / hide this overlay,ఈ ఓవర్‌లేను చూపించు / దాచు
+Press H or Esc to close,మూసివేయడానికి H లేదా Esc నొక్కండి
+Close,మూసివేయండి
+Timer,టైమర్
+Entries,ఎంట్రీలు
+This week at a glance,ఈ వారం ఒక చూపులో
+Time by tag,ట్యాగ్ ప్రకారం సమయం
+Hours per day,రోజుకు గంటలు
+No entries this week,ఈ వారం ఎంట్రీలు లేవు
+No entries,ఎంట్రీలు లేవు
+Untagged,ట్యాగ్ లేని
+Monthly Budget (h),నెలవారీ బడ్జెట్ (గం)
+Warn at (%),హెచ్చరిక (%)
+0 = no limit,0 = పరిమితి లేదు
+0 = site default,0 = సైట్ డిఫాల్ట్
+Approaching limit,పరిమితి సమీపిస్తోంది
+Budget exceeded,బడ్జెట్ మించిపోయింది
+budget used this month,ఈ నెల వాడిన బడ్జెట్
+used this month,ఈ నెల వాడబడింది
+of,యొక్క
+Focus,ఫోకస్
+Start Focus,ఫోకస్ ప్రారంభించండి
+End focus,ఫోకస్ ముగించండి
+Skip break,విరామం దాటవేయండి
+Break over,విరామం ముగిసింది
+Time to focus!,ఫోకస్ చేయాల్సిన సమయం!
+Session complete,సెషన్ పూర్తయింది
+Focus complete!,ఫోకస్ పూర్తయింది!
+All sessions done. Great work!,అన్ని సెషన్‌లు పూర్తయ్యాయి. అద్భుతమైన పని!
+sessions done. Great work!,సెషన్‌లు పూర్తయ్యాయి. అద్భుతమైన పని!
+Start new,కొత్తది ప్రారంభించండి
+Work in focused sessions with timed breaks.,సమయ విరామాలతో ఫోకస్ సెషన్‌లలో పని చేయండి.
+Session,సెషన్
+Break,విరామం
+Work (min),పని (నిమిషాలు)
+Break (min),విరామం (నిమిషాలు)
+Sessions,సెషన్‌లు
+No break is active,విరామం సక్రియంగా లేదు
+No focus session is running,ఫోకస్ సెషన్ నడవడం లేదు
+Context,సందర్భం
+Contact,సంప్రదింపు
+Context Type,సందర్భం రకం
+For whom?,ఎవరి కోసం?
+Working on?,దేనిపై పని చేస్తున్నారు?
+Search contacts...,సంప్రదింపులను వెతకండి...
+Select type...,రకాన్ని ఎంచుకోండి...
+All contacts,అన్ని సంప్రదింపులు
+All projects,అన్ని ప్రాజెక్ట్‌లు
+(no contact),(సంప్రదింపు లేదు)
+(no project),(ప్రాజెక్ట్ లేదు)
+(no task),(పని లేదు)
+Filter by:,వడపోత:
+Time by contact,సంప్రదింపు ప్రకారం సమయం
+Time by context,సందర్భం ప్రకారం సమయం
+Time by task,పని ప్రకారం సమయం
+Contact hours summary,సంప్రదింపు గంటల సారాంశం

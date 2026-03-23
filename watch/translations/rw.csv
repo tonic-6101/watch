@@ -1,0 +1,247 @@
+source,translation
+Billed as {0},Byafaturiwe nka {0}
+exact — rounding skipped,nyazo — gusubiranya byaciwe
+Use exact,Koresha inyazo
+Apply rounding,Koresha gusubiranya
+Exact,Nyazo
+Billed,Byafaturiwe
+* Rounded up to nearest increment,* Byasubiririjwe kugeza ku gihembo cya hafi
+billable,bishobora gufaturwa
+non-billable,bidashobora gufaturwa
+internal,imbere
+on_save,on_save
+manual,manual
+scheduled,scheduled
+hourly,hourly
+every_6_hours,every_6_hours
+daily,daily
+stopped,bihagaritswe
+running,birakora
+paused,bihagaritswe gato
+Add a note...,Ongeraho icyitonderwa...
+Add entry for yesterday,Ongeraho ibyanditswe by'ejo hashize
+Add your first entry,Ongeraho ibyanditswe byawe bya mbere
+Archive,Ububiko
+Auto-stop Timer After,Hagarika isaha byikora nyuma ya
+Billable,Bishobora gufaturwa
+Billable {0},Bishobora gufaturwa {0}
+Cancel,Hagarika
+Cannot delete tag — {0} entries use it.,Ntushobora gusiba itagi — ibyanditswe {0} birayikoresha.
+Category,Icyiciro
+Client,Umukiriya
+Color,Ibara
+Connection Failed,Guhuza byanze
+Connection OK,Guhuza nibyo
+Custom…,Bisanzwe…
+Daily,Buri munsi
+Daily view,Igaragara ry'umunsi
+Date range,Agace k'itariki
+days,iminsi
+Default Entry Type,Ubwoko bw'ibyanditswe busanzwe
+Default Rate,Igiciro gisanzwe
+Default activity type,Ubwoko bw'ibikorwa busanzwe
+Delete,Siba
+Description,Ibisobanuro
+Dismiss,Kureka
+Do you want to sync all unsynced time entries to ERPNext now?,Urashaka guhuza ibyanditswe by'igihe byose bidahurijwe kuri ERPNext nonaha?
+Duplicate,Gusubiramo
+Duration,Igihe
+Edit,Hindura
+Enable ERPNext bridge,Fungura ikiraro cya ERPNext
+End time,Igihe cyo kurangiza
+Entries forwarded,Ibyanditswe byoherejwe
+Entries older than {0} days are locked. Contact your administrator.,Ibyanditswe bishaje iminsi {0} bifunze. Vugana n'umuyobozi wawe.
+ERPNext Bridge,Ikiraro cya ERPNext
+ERPNext is not installed on this site.,ERPNext ntabwo yashyizweho kuri uru rubuga.
+ERPNext is reachable and Timesheet access is confirmed.,ERPNext iragerwaho kandi kwinjira mu rupapuro rw'igihe byemejwe.
+ERPNext site URL,URL y'urubuga rwa ERPNext
+ERPNext Timesheet {0} for {1} is submitted — re-sync blocked.,Irupapuro rw'igihe rya ERPNext {0} (rya {1}) ryoherejwe — guhuza bundi byahagaritswe.
+ERPNext Timesheet is submitted — re-sync blocked,Irupapuro rw'igihe rya ERPNext ryoherejwe — guhuza bundi byahagaritswe
+Est. {0},Iger. {0}
+Est. amount,Iger. ingano
+Every 6 hours,Buri masaha 6
+All time,Igihe cyose
+This year,Uyu mwaka
+Last year,Umwaka ushize
+Download CSV,Kuramo CSV
+Export my data,Kohereza amakuru yanjye
+Download all your time entries as CSV.,Kuramo ibyanditswe byawe by'igihe byose nka CSV.
+Export CSV,Kohereza CSV
+Export successful,Kohereza byagenze neza
+Failed to forward entries: {0},Kohereza ibyanditswe byanze: {0}
+Watch Settings,Igenamiterere rya Watch
+Watch Tag,Itagi ya Watch
+Watch Entry,Ibyanditswe bya Watch
+Watch Entry Tag,Itagi y'ibyanditswe bya Watch
+Watch Timer,Isaha ya Watch
+Forwarded {0} to {1},{0} byoherejwe kuri {1}
+From,Kuva
+General,Rusange
+Hourly,Buri saha
+hours,amasaha
+Hide weekends,Hisha impera z'icyumweru
+Internal,Imbere
+Internal / overhead,Imbere / ibisurikiwe
+Last bulk sync,Guhuza byinshi bya nyuma
+Last month,Ukwezi gushize
+Last sync error,Ikosa ryo guhuza rya nyuma
+Last week,Icyumweru gishize
+Less,Bike
+Lock Entries Older Than,Funga ibyanditswe bishaje
+Manual,Ukuboko
+Map project tags,Kwerekana amatagi y'umushinga
+Merge,Guhuza
+Merge {0} into:,Huza {0} muri:
+Mon,Kuwa mbere
+More,Birenshi
+Navigate,Kuyobora
+New Tag,Itagi nshya
+No entries for {0},Nta byanditswe kuri {0}
+No entries yet,Nta byanditswe na rimwe
+No tags yet,Nta matagi na rimwe
+No timer is running,Nta saha irakora
+Non-billable,Bidashobora gufaturwa
+(no description),(nta bisobanuro)
+(not billed),(ntabwo byafaturiwe)
+Nothing logged yesterday ({0}),Nta kintu cyanditswe ejo ({0})
+Open prepare summary,Fungura incamake yo gutegura
+Open settings,Fungura igenamiterere
+Open tag management,Fungura gucunga amatagi
+Open today's view,Fungura igaragara ry'uyu munsi
+Open weekly view,Fungura igaragara ry'icyumweru
+Other,Ibindi
+Pause,Hagarika gato
+Prepare,Gutegura
+Prepare Summary,Incamake yo gutegura
+Project,Umushinga
+Rate,Igiciro
+Rename,Hindura izina
+Resume,Komeza
+Saved — {0},Byabitswe — {0}
+Save,Bika
+Sat,Kuwa gatandatu
+Scheduled,Byateganyijwe
+Send,Ohereza
+Settings,Igenamiterere
+Show weekends,Erekana impera z'icyumweru
+Start time,Igihe cyo gutangira
+Start Timer,Tangira isaha
+"Start timer: ""{0}""","Tangira isaha: ""{0}"""
+"Stop current & start: ""{0}""","Hagarika uburiho utangire: ""{0}"""
+Started yesterday,Byatangiye ejo hashize
+Sun,Ku cyumweru
+Sync all unsynced entries,Huza ibyanditswe byose bidahurijwe
+Sync billable entries only,Huza ibyanditswe bishobora gufaturwa gusa
+Sync completed with errors,Guhuza byarangiye hamwe n'amakosa
+Sync complete,Guhuza byarangiye
+Sync interval,Agaciro ko guhuza
+Sync mode,Uburyo bwo guhuza
+Synced to ERPNext,Byahujwe na ERPNext
+Syncing entries to ERPNext…,Ibyanditswe birimo guhuzwa na ERPNext…
+{0} day(s) synced.,Umunsi (iminsi) {0} yahurijwe.
+Tag,Itagi
+Tag management,Gucunga amatagi
+Tag Name,Izina ry'itagi
+Tag renamed. {0} entries updated.,Itagi yahinduwe izina. Ibyanditswe {0} byavuguruwe.
+Tags,Amatagi
+Tags merged. {0} entries re-tagged.,Amatagi yahujwe. Ibyanditswe {0} byongeye gutagwa.
+Task,Umurimo
+Test connection,Gerageza guhuza
+Test Connection,Gerageza guhuza
+This entry is locked,Iki cyanditswe gifunze
+This month,Uku kwezi
+This week,Iki cyumweru
+Thu,Kuwa kane
+Time Bridge,Ikiraro cy'igihe
+Time Entries,Ibyanditswe by'igihe
+Timer already running,Isaha iramaze gukoreshwa
+Timer is already running,Isaha iramaze gukoreshwa
+Timer is not paused,Isaha ntabwo ihagaritswe
+Timer is not running,Isaha ntabwo irakora
+To,Kugeza
+Today,Uyu munsi
+Total,Igiteranyo
+Total billable,Igiteranyo gishobora gufaturwa
+Tue,Kuwa kabiri
+Unknown error,Ikosa ritazwi
+Unassigned,Ntabwo byashyizweho
+(untagged project),(umushinga udafite itagi)
+View entry →,Reba ibyanditswe →
+Warning: This entry is more than 7 days old.,Umburira: Iki cyanditswe gishaje iminsi 7.
+Wed,Kuwa gatatu
+Week {0},Icyumweru {0}
+What are you working on?,Uri ku kihe gikorwa?
+What did you work on?,Wakoze iki?
+Work Days,Iminsi y'akazi
+Yesterday,Ejo hashize
+draft,umwandiko w'intangiriro
+entries this month,ibyanditswe by'uku kwezi
+no entries,nta byanditswe
+no entries yet,nta byanditswe na rimwe
+sent,byoherejwe
++{0} more,+{0} birenshi
+← from {0},← kuva {0}
+[Auto-stopped after {0}h],[Byahagaritswe byikora nyuma ya {0}h]
+Entry Type,Ubwoko bw'ibyanditswe
+Fri,Kuwa gatanu
+Keyboard Shortcuts,Inzira ngufi za klaviye
+Start / Pause / Resume timer,Tangira / Hagarika gato / Komeza isaha
+Stop timer,Hagarika isaha
+New entry (focus quick-add bar),Ibyanditswe bishya (jya ku mugongo wihuse wo kongeraho)
+Previous / next day or week,Umunsi / icyumweru kibanziriza / gikurikira
+Show / hide this overlay,Erekana / hisha iki gitwikiro
+Press H or Esc to close,Kanda H cyangwa Esc kugirango ufunge
+Close,Funga
+Timer,Isaha
+Entries,Ibyanditswe
+This week at a glance,Iki cyumweru mu ncamake
+Time by tag,Igihe ku itagi
+Hours per day,Amasaha ku munsi
+No entries this week,Nta byanditswe iki cyumweru
+No entries,Nta byanditswe
+Untagged,Nta tagi
+Monthly Budget (h),Ingengo y'imari y'ukwezi (s)
+Warn at (%),Burira kuri (%)
+0 = no limit,0 = nta mpaka
+0 = site default,0 = isanzwe y'urubuga
+Approaching limit,Biregereye impaka
+Budget exceeded,Ingengo y'imari yarenzwe
+budget used this month,ingengo y'imari yakoreshejwe uku kwezi
+used this month,byakoreshejwe uku kwezi
+of,bya
+Focus,Kwibanda
+Start Focus,Tangira kwibanda
+End focus,Rangiza kwibanda
+Skip break,Simbuka ikiruhuko
+Break over,Ikiruhuko kirangiye
+Time to focus!,Ni igihe cyo kwibanda!
+Session complete,Igikorwa kirangiye
+Focus complete!,Kwibanda birangiye!
+All sessions done. Great work!,Ibikorwa byose birangiye. Akazi keza!
+sessions done. Great work!,Ibikorwa birangiye. Akazi keza!
+Start new,Tangira bishya
+Work in focused sessions with timed breaks.,Kora mu bikorwa by'umwete hamwe n'ibiruhuko bifite igihe.
+Session,Igikorwa
+Break,Ikiruhuko
+Work (min),Akazi (min)
+Break (min),Ikiruhuko (min)
+Sessions,Ibikorwa
+No break is active,Nta kiruhuko gikoreshwa
+No focus session is running,Nta gikorwa cyo kwibanda gikoreshwa
+Context,Imiterere
+Contact,Uwahamagawe
+Context Type,Ubwoko bw'imiterere
+For whom?,Ninde?
+Working on?,Uri ku ki?
+Search contacts...,Shakisha abahamagawe...
+Select type...,Hitamo ubwoko...
+All contacts,Abahamagawe bose
+All projects,Imishinga yose
+(no contact),(nta muhamagawe)
+(no project),(nta mushinga)
+(no task),(nta murimo)
+Filter by:,Shungura:
+Time by contact,Igihe ku muhamagawe
+Time by context,Igihe ku miterere
+Time by task,Igihe ku murimo
+Contact hours summary,Incamake y'amasaha y'abahamagawe

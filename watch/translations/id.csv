@@ -1,0 +1,247 @@
+source,translation
+"Billed as {0}","Dicatat sebagai {0}"
+"exact — rounding skipped","tepat — pembulatan dilewati"
+"Use exact","Gunakan tepat"
+"Apply rounding","Terapkan pembulatan"
+Exact,Tepat
+Billed,Dicatat
+"* Rounded up to nearest increment","* Dibulatkan ke atas ke unit terdekat"
+billable,dapat dicatat
+non-billable,tidak dapat dicatat
+internal,internal
+on_save,on_save
+manual,manual
+scheduled,scheduled
+hourly,hourly
+every_6_hours,every_6_hours
+daily,daily
+stopped,berhenti
+running,berjalan
+paused,dijeda
+"Add a note...","Tambah catatan..."
+"Add entry for yesterday","Tambah entri untuk kemarin"
+"Add your first entry","Tambah entri pertama Anda"
+Archive,Arsipkan
+"Auto-stop Timer After","Hentikan Timer Otomatis Setelah"
+Billable,Dapat Dicatat
+"Billable {0}","Dapat Dicatat {0}"
+Cancel,Batal
+"Cannot delete tag — {0} entries use it.","Tidak dapat menghapus tag — {0} entri menggunakannya."
+Category,Kategori
+Client,Klien
+Color,Warna
+"Connection Failed","Koneksi Gagal"
+"Connection OK","Koneksi OK"
+"Custom…","Kustom…"
+Daily,Harian
+"Daily view","Tampilan harian"
+"Date range","Rentang tanggal"
+days,hari
+"Default Entry Type","Jenis Entri Default"
+"Default Rate","Tarif Default"
+"Default activity type","Jenis aktivitas default"
+Delete,Hapus
+Description,Deskripsi
+Dismiss,Tutup
+"Do you want to sync all unsynced time entries to ERPNext now?","Apakah Anda ingin menyinkronkan semua entri waktu yang belum disinkronkan ke ERPNext sekarang?"
+Duplicate,Duplikat
+Duration,Durasi
+Edit,Edit
+"Enable ERPNext bridge","Aktifkan jembatan ERPNext"
+"End time","Waktu selesai"
+"Entries forwarded","Entri diteruskan"
+"Entries older than {0} days are locked. Contact your administrator.","Entri yang lebih dari {0} hari dikunci. Hubungi administrator Anda."
+"ERPNext Bridge","Jembatan ERPNext"
+"ERPNext is not installed on this site.","ERPNext tidak terpasang di situs ini."
+"ERPNext is reachable and Timesheet access is confirmed.","ERPNext dapat dijangkau dan akses Timesheet telah dikonfirmasi."
+"ERPNext site URL","URL situs ERPNext"
+"ERPNext Timesheet {0} for {1} is submitted — re-sync blocked.","Timesheet ERPNext {0} untuk {1} telah dikirim — sinkronisasi ulang diblokir."
+"ERPNext Timesheet is submitted — re-sync blocked","Timesheet ERPNext telah dikirim — sinkronisasi ulang diblokir"
+"Est. {0}","Est. {0}"
+"Est. amount","Est. jumlah"
+"Every 6 hours","Setiap 6 jam"
+"All time","Semua waktu"
+"This year","Tahun ini"
+"Last year","Tahun lalu"
+"Download CSV","Unduh CSV"
+"Export my data","Ekspor data saya"
+"Download all your time entries as CSV.","Unduh semua entri waktu Anda sebagai CSV."
+"Export CSV","Ekspor CSV"
+"Export successful","Ekspor berhasil"
+"Failed to forward entries: {0}","Gagal meneruskan entri: {0}"
+"Watch Settings","Pengaturan Watch"
+"Watch Tag","Tag Watch"
+"Watch Entry","Entri Watch"
+"Watch Entry Tag","Tag Entri Watch"
+"Watch Timer","Timer Watch"
+"Forwarded {0} to {1}","{0} diteruskan ke {1}"
+From,Dari
+General,Umum
+Hourly,Per jam
+hours,jam
+"Hide weekends","Sembunyikan akhir pekan"
+Internal,Internal
+"Internal / overhead","Internal / overhead"
+"Last bulk sync","Sinkronisasi massal terakhir"
+"Last month","Bulan lalu"
+"Last sync error","Error sinkronisasi terakhir"
+"Last week","Minggu lalu"
+Less,Lebih sedikit
+"Lock Entries Older Than","Kunci Entri Lebih Lama Dari"
+Manual,Manual
+"Map project tags","Petakan tag proyek"
+Merge,Gabung
+"Merge {0} into:","Gabungkan {0} ke:"
+Mon,Sen
+More,Lebih banyak
+Navigate,Navigasi
+"New Tag","Tag Baru"
+"No entries for {0}","Tidak ada entri untuk {0}"
+"No entries yet","Belum ada entri"
+"No tags yet","Belum ada tag"
+"No timer is running","Tidak ada timer yang berjalan"
+Non-billable,Tidak Dapat Dicatat
+"(no description)","(tanpa deskripsi)"
+"(not billed)","(belum dicatat)"
+"Nothing logged yesterday ({0})","Tidak ada catatan kemarin ({0})"
+"Open prepare summary","Buka ringkasan persiapan"
+"Open settings","Buka pengaturan"
+"Open tag management","Buka manajemen tag"
+"Open today's view","Buka tampilan hari ini"
+"Open weekly view","Buka tampilan mingguan"
+Other,Lainnya
+Pause,Jeda
+Prepare,Persiapan
+"Prepare Summary","Ringkasan Persiapan"
+Project,Proyek
+Rate,Tarif
+Rename,Ubah nama
+Resume,Lanjutkan
+"Saved — {0}","Tersimpan — {0}"
+Save,Simpan
+Sat,Sab
+Scheduled,Terjadwal
+Send,Kirim
+Settings,Pengaturan
+"Show weekends","Tampilkan akhir pekan"
+"Start time","Waktu mulai"
+"Start Timer","Mulai Timer"
+"Start timer: ""{0}""","Mulai timer: ""{0}"""
+"Stop current & start: ""{0}""","Hentikan saat ini & mulai: ""{0}"""
+"Started yesterday","Dimulai kemarin"
+Sun,Min
+"Sync all unsynced entries","Sinkronkan semua entri yang belum disinkronkan"
+"Sync billable entries only","Sinkronkan entri yang dapat dicatat saja"
+"Sync completed with errors","Sinkronisasi selesai dengan error"
+"Sync complete","Sinkronisasi selesai"
+"Sync interval","Interval sinkronisasi"
+"Sync mode","Mode sinkronisasi"
+"Synced to ERPNext","Disinkronkan ke ERPNext"
+"Syncing entries to ERPNext…","Menyinkronkan entri ke ERPNext…"
+"{0} day(s) synced.","{0} hari disinkronkan."
+Tag,Tag
+"Tag management","Manajemen tag"
+"Tag Name","Nama Tag"
+"Tag renamed. {0} entries updated.","Tag berganti nama. {0} entri diperbarui."
+Tags,Tag
+"Tags merged. {0} entries re-tagged.","Tag digabungkan. {0} entri ditandai ulang."
+Task,Tugas
+"Test connection","Uji koneksi"
+"Test Connection","Uji Koneksi"
+"This entry is locked","Entri ini dikunci"
+"This month","Bulan ini"
+"This week","Minggu ini"
+Thu,Kam
+"Time Bridge","Jembatan Waktu"
+"Time Entries","Entri Waktu"
+"Timer already running","Timer sudah berjalan"
+"Timer is already running","Timer sudah berjalan"
+"Timer is not paused","Timer tidak dalam jeda"
+"Timer is not running","Timer tidak berjalan"
+To,Ke
+Today,Hari ini
+Total,Total
+"Total billable","Total dapat dicatat"
+Tue,Sel
+"Unknown error","Error tidak dikenal"
+Unassigned,Belum ditetapkan
+"(untagged project)","(proyek tanpa tag)"
+"View entry →","Lihat entri →"
+"Warning: This entry is more than 7 days old.","Peringatan: Entri ini berusia lebih dari 7 hari."
+Wed,Rab
+"Week {0}","Minggu {0}"
+"What are you working on?","Apa yang sedang Anda kerjakan?"
+"What did you work on?","Apa yang Anda kerjakan?"
+"Work Days","Hari Kerja"
+Yesterday,Kemarin
+draft,draf
+"entries this month","entri bulan ini"
+"no entries","tidak ada entri"
+"no entries yet","belum ada entri"
+sent,terkirim
+"+{0} more","+{0} lagi"
+"← from {0}","← dari {0}"
+"[Auto-stopped after {0}h]","[Otomatis berhenti setelah {0}j]"
+"Entry Type","Jenis Entri"
+Fri,Jum
+"Keyboard Shortcuts","Pintasan Keyboard"
+"Start / Pause / Resume timer","Mulai / Jeda / Lanjutkan timer"
+"Stop timer","Hentikan timer"
+"New entry (focus quick-add bar)","Entri baru (fokus bilah tambah cepat)"
+"Previous / next day or week","Hari atau minggu sebelumnya / berikutnya"
+"Show / hide this overlay","Tampilkan / sembunyikan overlay ini"
+"Press H or Esc to close","Tekan H atau Esc untuk menutup"
+Close,Tutup
+Timer,Timer
+Entries,Entri
+"This week at a glance","Sekilas minggu ini"
+"Time by tag","Waktu per tag"
+"Hours per day","Jam per hari"
+"No entries this week","Tidak ada entri minggu ini"
+"No entries","Tidak ada entri"
+Untagged,Tanpa tag
+"Monthly Budget (h)","Anggaran Bulanan (j)"
+"Warn at (%)","Peringatan pada (%)"
+"0 = no limit","0 = tanpa batas"
+"0 = site default","0 = default situs"
+"Approaching limit","Mendekati batas"
+"Budget exceeded","Anggaran terlampaui"
+"budget used this month","anggaran digunakan bulan ini"
+"used this month","digunakan bulan ini"
+of,dari
+Focus,Fokus
+"Start Focus","Mulai Fokus"
+"End focus","Akhiri fokus"
+"Skip break","Lewati istirahat"
+"Break over","Istirahat selesai"
+"Time to focus!","Waktunya fokus!"
+"Session complete","Sesi selesai"
+"Focus complete!","Fokus selesai!"
+"All sessions done. Great work!","Semua sesi selesai. Kerja bagus!"
+"sessions done. Great work!","sesi selesai. Kerja bagus!"
+"Start new","Mulai baru"
+"Work in focused sessions with timed breaks.","Bekerja dalam sesi fokus dengan istirahat berjangka."
+Session,Sesi
+Break,Istirahat
+"Work (min)","Kerja (menit)"
+"Break (min)","Istirahat (menit)"
+Sessions,Sesi
+"No break is active","Tidak ada istirahat aktif"
+"No focus session is running","Tidak ada sesi fokus yang berjalan"
+Context,Konteks
+Contact,Kontak
+"Context Type","Jenis Konteks"
+"For whom?","Untuk siapa?"
+"Working on?","Sedang mengerjakan?"
+"Search contacts...","Cari kontak..."
+"Select type...","Pilih jenis..."
+"All contacts","Semua kontak"
+"All projects","Semua proyek"
+"(no contact)","(tanpa kontak)"
+"(no project)","(tanpa proyek)"
+"(no task)","(tanpa tugas)"
+"Filter by:","Filter:"
+"Time by contact","Waktu per kontak"
+"Time by context","Waktu per konteks"
+"Time by task","Waktu per tugas"
+"Contact hours summary","Ringkasan jam kontak"

@@ -1,0 +1,247 @@
+source,translation
+Billed as {0},{0} என பில் செய்யப்பட்டது
+exact — rounding skipped,சரியான — ரவுண்டிங் தவிர்க்கப்பட்டது
+Use exact,சரியானதைப் பயன்படுத்து
+Apply rounding,ரவுண்டிங் பயன்படுத்து
+Exact,சரியான
+Billed,பில் செய்யப்பட்டது
+* Rounded up to nearest increment,* அருகிலுள்ள அதிகரிப்புக்கு ரவுண்ட் அப்
+billable,பில் செய்யக்கூடிய
+non-billable,பில் செய்ய முடியாத
+internal,உள்ளக
+on_save,on_save
+manual,manual
+scheduled,scheduled
+hourly,hourly
+every_6_hours,every_6_hours
+daily,daily
+stopped,நிறுத்தப்பட்டது
+running,இயங்குகிறது
+paused,இடைநிறுத்தம்
+Add a note...,குறிப்பு சேர்க்கவும்...
+Add entry for yesterday,நேற்றுக்கான பதிவை சேர்க்கவும்
+Add your first entry,உங்கள் முதல் பதிவை சேர்க்கவும்
+Archive,காப்பகம்
+Auto-stop Timer After,இவ்வளவு நேரத்திற்குப் பிறகு டைமர் தானாக நிறுத்து
+Billable,பில் செய்யக்கூடிய
+Billable {0},பில் செய்யக்கூடிய {0}
+Cancel,ரத்து செய்
+Cannot delete tag — {0} entries use it.,குறிச்சொல்லை நீக்க முடியாது — {0} பதிவுகள் இதைப் பயன்படுத்துகின்றன.
+Category,வகை
+Client,வாடிக்கையாளர்
+Color,நிறம்
+Connection Failed,இணைப்பு தோல்வி
+Connection OK,இணைப்பு சரி
+Custom…,தனிப்பயன்…
+Daily,தினசரி
+Daily view,தினசரி காட்சி
+Date range,தேதி வரம்பு
+days,நாட்கள்
+Default Entry Type,இயல்புநிலை பதிவு வகை
+Default Rate,இயல்புநிலை ரேட்
+Default activity type,இயல்புநிலை செயல்பாட்டு வகை
+Delete,நீக்கு
+Description,விளக்கம்
+Dismiss,நிராகரி
+Do you want to sync all unsynced time entries to ERPNext now?,ஒத்திசைக்கப்படாத அனைத்து நேரப் பதிவுகளையும் இப்போது ERPNext-க்கு ஒத்திசைக்க விரும்புகிறீர்களா?
+Duplicate,நகல்
+Duration,கால அளவு
+Edit,திருத்து
+Enable ERPNext bridge,ERPNext பிரிட்ஜை இயக்கு
+End time,முடிவு நேரம்
+Entries forwarded,பதிவுகள் அனுப்பப்பட்டன
+Entries older than {0} days are locked. Contact your administrator.,{0} நாட்களுக்கு மேற்பட்ட பதிவுகள் பூட்டப்பட்டுள்ளன. உங்கள் நிர்வாகியைத் தொடர்பு கொள்ளுங்கள்.
+ERPNext Bridge,ERPNext பிரிட்ஜ்
+ERPNext is not installed on this site.,இந்த தளத்தில் ERPNext நிறுவப்படவில்லை.
+ERPNext is reachable and Timesheet access is confirmed.,ERPNext கிடைக்கிறது மற்றும் டைம்ஷீட் அணுகல் உறுதிசெய்யப்பட்டது.
+ERPNext site URL,ERPNext தள URL
+ERPNext Timesheet {0} for {1} is submitted — re-sync blocked.,ERPNext டைம்ஷீட் {0} ({1} க்கு) சமர்ப்பிக்கப்பட்டது — மீண்டும் ஒத்திசைவு தடுக்கப்பட்டது.
+ERPNext Timesheet is submitted — re-sync blocked,ERPNext டைம்ஷீட் சமர்ப்பிக்கப்பட்டது — மீண்டும் ஒத்திசைவு தடுக்கப்பட்டது
+Est. {0},மதிப். {0}
+Est. amount,மதிப். தொகை
+Every 6 hours,ஒவ்வொரு 6 மணி நேரத்திற்கும்
+All time,அனைத்து நேரமும்
+This year,இந்த ஆண்டு
+Last year,கடந்த ஆண்டு
+Download CSV,CSV பதிவிறக்கு
+Export my data,எனது தரவை ஏற்றுமதி செய்
+Download all your time entries as CSV.,உங்கள் அனைத்து நேரப் பதிவுகளையும் CSV ஆகப் பதிவிறக்கவும்.
+Export CSV,CSV ஏற்றுமதி
+Export successful,ஏற்றுமதி வெற்றிகரம்
+Failed to forward entries: {0},பதிவுகளை அனுப்புவதில் தோல்வி: {0}
+Watch Settings,Watch அமைப்புகள்
+Watch Tag,Watch குறிச்சொல்
+Watch Entry,Watch பதிவு
+Watch Entry Tag,Watch பதிவு குறிச்சொல்
+Watch Timer,Watch டைமர்
+Forwarded {0} to {1},{0} ஐ {1} க்கு அனுப்பியது
+From,இலிருந்து
+General,பொது
+Hourly,மணி நேரத்திற்கு
+hours,மணி நேரம்
+Hide weekends,வார இறுதிகளை மறை
+Internal,உள்ளக
+Internal / overhead,உள்ளக / மேல்நிலை
+Last bulk sync,கடைசி மொத்த ஒத்திசைவு
+Last month,கடந்த மாதம்
+Last sync error,கடைசி ஒத்திசைவு பிழை
+Last week,கடந்த வாரம்
+Less,குறைவு
+Lock Entries Older Than,இதை விட பழைய பதிவுகளைப் பூட்டு
+Manual,கைமுறை
+Map project tags,திட்ட குறிச்சொற்களை வரைபடமாக்கு
+Merge,ஒன்றிணை
+Merge {0} into:,{0} ஐ ஒன்றிணை:
+Mon,திங்
+More,மேலும்
+Navigate,செல்
+New Tag,புதிய குறிச்சொல்
+No entries for {0},{0} க்கு பதிவுகள் இல்லை
+No entries yet,இன்னும் பதிவுகள் இல்லை
+No tags yet,இன்னும் குறிச்சொற்கள் இல்லை
+No timer is running,டைமர் இயங்கவில்லை
+Non-billable,பில் செய்ய முடியாத
+(no description),(விளக்கம் இல்லை)
+(not billed),(பில் செய்யப்படவில்லை)
+Nothing logged yesterday ({0}),நேற்று எதுவும் பதிவு செய்யப்படவில்லை ({0})
+Open prepare summary,தயாரிப்பு சுருக்கத்தை திற
+Open settings,அமைப்புகளைத் திற
+Open tag management,குறிச்சொல் நிர்வாகத்தைத் திற
+Open today's view,இன்றைய காட்சியைத் திற
+Open weekly view,வாராந்திர காட்சியைத் திற
+Other,மற்றவை
+Pause,இடைநிறுத்தம்
+Prepare,தயாரி
+Prepare Summary,தயாரிப்பு சுருக்கம்
+Project,திட்டம்
+Rate,ரேட்
+Rename,பெயர்மாற்று
+Resume,மீண்டும் தொடங்கு
+Saved — {0},சேமிக்கப்பட்டது — {0}
+Save,சேமி
+Sat,சனி
+Scheduled,திட்டமிடப்பட்டது
+Send,அனுப்பு
+Settings,அமைப்புகள்
+Show weekends,வார இறுதிகளைக் காட்டு
+Start time,தொடக்க நேரம்
+Start Timer,டைமர் தொடங்கு
+"Start timer: ""{0}""","டைமர் தொடங்கு: ""{0}"""
+"Stop current & start: ""{0}""","தற்போதையதை நிறுத்தி தொடங்கு: ""{0}"""
+Started yesterday,நேற்று தொடங்கியது
+Sun,ஞாயிறு
+Sync all unsynced entries,ஒத்திசைக்கப்படாத அனைத்து பதிவுகளையும் ஒத்திசை
+Sync billable entries only,பில் செய்யக்கூடிய பதிவுகளை மட்டும் ஒத்திசை
+Sync completed with errors,பிழைகளுடன் ஒத்திசைவு முடிந்தது
+Sync complete,ஒத்திசைவு முடிந்தது
+Sync interval,ஒத்திசைவு இடைவெளி
+Sync mode,ஒத்திசைவு பயன்முறை
+Synced to ERPNext,ERPNext க்கு ஒத்திசைக்கப்பட்டது
+Syncing entries to ERPNext…,ERPNext க்கு பதிவுகள் ஒத்திசைக்கப்படுகின்றன…
+{0} day(s) synced.,{0} நாள்(கள்) ஒத்திசைக்கப்பட்டன.
+Tag,குறிச்சொல்
+Tag management,குறிச்சொல் நிர்வாகம்
+Tag Name,குறிச்சொல் பெயர்
+Tag renamed. {0} entries updated.,குறிச்சொல் பெயர்மாற்றப்பட்டது. {0} பதிவுகள் புதுப்பிக்கப்பட்டன.
+Tags,குறிச்சொற்கள்
+Tags merged. {0} entries re-tagged.,குறிச்சொற்கள் ஒன்றிணைக்கப்பட்டன. {0} பதிவுகள் மீண்டும் குறிச்சொல்லிடப்பட்டன.
+Task,பணி
+Test connection,இணைப்பைச் சோதி
+Test Connection,இணைப்பைச் சோதி
+This entry is locked,இந்த பதிவு பூட்டப்பட்டுள்ளது
+This month,இந்த மாதம்
+This week,இந்த வாரம்
+Thu,வியாழன்
+Time Bridge,டைம் பிரிட்ஜ்
+Time Entries,நேரப் பதிவுகள்
+Timer already running,டைமர் ஏற்கனவே இயங்குகிறது
+Timer is already running,டைமர் ஏற்கனவே இயங்குகிறது
+Timer is not paused,டைமர் இடைநிறுத்தத்தில் இல்லை
+Timer is not running,டைமர் இயங்கவில்லை
+To,வரை
+Today,இன்று
+Total,மொத்தம்
+Total billable,மொத்த பில் செய்யக்கூடிய
+Tue,செவ்வாய்
+Unknown error,தெரியாத பிழை
+Unassigned,ஒதுக்கப்படவில்லை
+(untagged project),(குறிச்சொல் இல்லாத திட்டம்)
+View entry →,பதிவைக் காண் →
+Warning: This entry is more than 7 days old.,எச்சரிக்கை: இந்த பதிவு 7 நாட்களுக்கு மேற்பட்டது.
+Wed,புதன்
+Week {0},வாரம் {0}
+What are you working on?,நீங்கள் எதன் மீது பணிபுரிகிறீர்கள்?
+What did you work on?,நீங்கள் எதன் மீது பணிபுரிந்தீர்கள்?
+Work Days,வேலை நாட்கள்
+Yesterday,நேற்று
+draft,வரைவு
+entries this month,இந்த மாத பதிவுகள்
+no entries,பதிவுகள் இல்லை
+no entries yet,இன்னும் பதிவுகள் இல்லை
+sent,அனுப்பப்பட்டது
++{0} more,+{0} மேலும்
+← from {0},← {0} இலிருந்து
+[Auto-stopped after {0}h],[{0} மணி நேரத்திற்குப் பிறகு தானாக நிறுத்தப்பட்டது]
+Entry Type,பதிவு வகை
+Fri,வெள்ளி
+Keyboard Shortcuts,விசைப்பலகை குறுக்குவழிகள்
+Start / Pause / Resume timer,டைமர் தொடங்கு / இடைநிறுத்து / மீண்டும் தொடங்கு
+Stop timer,டைமர் நிறுத்து
+New entry (focus quick-add bar),புதிய பதிவு (விரைவு-சேர் பட்டியில் கவனம்)
+Previous / next day or week,முந்தைய / அடுத்த நாள் அல்லது வாரம்
+Show / hide this overlay,இந்த மேலடுக்கைக் காட்டு / மறை
+Press H or Esc to close,மூட H அல்லது Esc அழுத்தவும்
+Close,மூடு
+Timer,டைமர்
+Entries,பதிவுகள்
+This week at a glance,இந்த வாரம் ஒரு பார்வையில்
+Time by tag,குறிச்சொல் வாரியாக நேரம்
+Hours per day,நாள் ஒன்றுக்கு மணி நேரம்
+No entries this week,இந்த வாரம் பதிவுகள் இல்லை
+No entries,பதிவுகள் இல்லை
+Untagged,குறிச்சொல் இல்லாத
+Monthly Budget (h),மாதாந்திர வரவு செலவு (ம)
+Warn at (%),எச்சரிக்கை (%)
+0 = no limit,0 = வரம்பு இல்லை
+0 = site default,0 = தள இயல்புநிலை
+Approaching limit,வரம்பு நெருங்குகிறது
+Budget exceeded,வரவு செலவு மீறப்பட்டது
+budget used this month,இந்த மாதம் பயன்படுத்திய வரவு செலவு
+used this month,இந்த மாதம் பயன்படுத்தியது
+of,இன்
+Focus,கவனம்
+Start Focus,கவனம் தொடங்கு
+End focus,கவனம் முடி
+Skip break,இடைவேளை தவிர்
+Break over,இடைவேளை முடிந்தது
+Time to focus!,கவனம் செலுத்த வேண்டிய நேரம்!
+Session complete,அமர்வு முடிந்தது
+Focus complete!,கவனம் முடிந்தது!
+All sessions done. Great work!,அனைத்து அமர்வுகளும் முடிந்தன. சிறந்த பணி!
+sessions done. Great work!,அமர்வுகள் முடிந்தன. சிறந்த பணி!
+Start new,புதியதைத் தொடங்கு
+Work in focused sessions with timed breaks.,நேர இடைவேளைகளுடன் கவன அமர்வுகளில் பணிபுரியுங்கள்.
+Session,அமர்வு
+Break,இடைவேளை
+Work (min),பணி (நிமிடம்)
+Break (min),இடைவேளை (நிமிடம்)
+Sessions,அமர்வுகள்
+No break is active,இடைவேளை செயலில் இல்லை
+No focus session is running,கவன அமர்வு இயங்கவில்லை
+Context,சூழல்
+Contact,தொடர்பு
+Context Type,சூழல் வகை
+For whom?,யாருக்காக?
+Working on?,எதன் மீது பணிபுரிகிறீர்கள்?
+Search contacts...,தொடர்புகளைத் தேடு...
+Select type...,வகையைத் தேர்ந்தெடு...
+All contacts,அனைத்து தொடர்புகள்
+All projects,அனைத்து திட்டங்கள்
+(no contact),(தொடர்பு இல்லை)
+(no project),(திட்டம் இல்லை)
+(no task),(பணி இல்லை)
+Filter by:,வடிகட்டு:
+Time by contact,தொடர்பு வாரியாக நேரம்
+Time by context,சூழல் வாரியாக நேரம்
+Time by task,பணி வாரியாக நேரம்
+Contact hours summary,தொடர்பு மணி நேர சுருக்கம்

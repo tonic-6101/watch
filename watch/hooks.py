@@ -98,6 +98,16 @@ dock_bridges = [
 	},
 ]
 
+# Activity sources for Dock's cross-app activity feed
+dock_activity_sources = [
+	{
+		"doctype": "Watch Entry",
+		"label": "Time Entry",
+		"icon": "clock",
+		"display_field": "description",
+	},
+]
+
 # Notification types for Dock's notification system (budget alerts)
 dock_notification_types = [
 	{"type": "budget_warning", "label": "Budget Warning", "icon": "alert-triangle"},

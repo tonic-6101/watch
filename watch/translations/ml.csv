@@ -1,0 +1,247 @@
+source,translation
+Billed as {0},{0} ആയി ബില്‍ ചെയ്തു
+exact — rounding skipped,കൃത്യം — റൗണ്ടിംഗ് ഒഴിവാക്കി
+Use exact,കൃത്യം ഉപയോഗിക്കുക
+Apply rounding,റൗണ്ടിംഗ് പ്രയോഗിക്കുക
+Exact,കൃത്യം
+Billed,ബില്‍ ചെയ്തു
+* Rounded up to nearest increment,* അടുത്ത ഇന്‍ക്രിമെന്‍റിലേക്ക് റൗണ്ട് അപ്
+billable,ബില്ലബിള്‍
+non-billable,നോണ്‍-ബില്ലബിള്‍
+internal,ആന്തരികം
+on_save,on_save
+manual,manual
+scheduled,scheduled
+hourly,hourly
+every_6_hours,every_6_hours
+daily,daily
+stopped,നിര്‍ത്തി
+running,പ്രവര്‍ത്തിക്കുന്നു
+paused,താല്‍ക്കാലികമായി നിര്‍ത്തി
+Add a note...,ഒരു കുറിപ്പ് ചേര്‍ക്കുക...
+Add entry for yesterday,ഇന്നലേക്കുള്ള എന്‍ട്രി ചേര്‍ക്കുക
+Add your first entry,നിങ്ങളുടെ ആദ്യ എന്‍ട്രി ചേര്‍ക്കുക
+Archive,ആര്‍ക്കൈവ്
+Auto-stop Timer After,ഇത്ര സമയത്തിന് ശേഷം ടൈമര്‍ സ്വയം നിര്‍ത്തുക
+Billable,ബില്ലബിള്‍
+Billable {0},ബില്ലബിള്‍ {0}
+Cancel,റദ്ദാക്കുക
+Cannot delete tag — {0} entries use it.,ടാഗ് ഡിലീറ്റ് ചെയ്യാനാകില്ല — {0} എന്‍ട്രികള്‍ ഇത് ഉപയോഗിക്കുന്നു.
+Category,വിഭാഗം
+Client,ക്ലയന്‍റ്
+Color,നിറം
+Connection Failed,കണക്ഷന്‍ പരാജയപ്പെട്ടു
+Connection OK,കണക്ഷന്‍ ശരി
+Custom…,ഇഷ്ടാനുസൃതം…
+Daily,ദൈനിക
+Daily view,ദൈനിക കാഴ്ച
+Date range,തീയതി ശ്രേണി
+days,ദിവസങ്ങള്‍
+Default Entry Type,ഡിഫോള്‍ട്ട് എന്‍ട്രി തരം
+Default Rate,ഡിഫോള്‍ട്ട് റേറ്റ്
+Default activity type,ഡിഫോള്‍ട്ട് ആക്ടിവിറ്റി തരം
+Delete,ഡിലീറ്റ്
+Description,വിവരണം
+Dismiss,ഡിസ്മിസ്
+Do you want to sync all unsynced time entries to ERPNext now?,ERPNext-ലേക്ക് എല്ലാ സിങ്ക് ചെയ്യാത്ത ടൈം എന്‍ട്രികളും ഇപ്പോള്‍ സിങ്ക് ചെയ്യണോ?
+Duplicate,ഡ്യൂപ്ലിക്കേറ്റ്
+Duration,ദൈര്‍ഘ്യം
+Edit,എഡിറ്റ്
+Enable ERPNext bridge,ERPNext ബ്രിഡ്ജ് സജീവമാക്കുക
+End time,അവസാന സമയം
+Entries forwarded,എന്‍ട്രികള്‍ ഫോര്‍വേഡ് ചെയ്തു
+Entries older than {0} days are locked. Contact your administrator.,{0} ദിവസത്തിലും പഴയ എന്‍ട്രികള്‍ ലോക്ക് ചെയ്തിരിക്കുന്നു. നിങ്ങളുടെ അഡ്മിനിസ്ട്രേറ്ററെ ബന്ധപ്പെടുക.
+ERPNext Bridge,ERPNext ബ്രിഡ്ജ്
+ERPNext is not installed on this site.,ഈ സൈറ്റില്‍ ERPNext ഇന്‍സ്റ്റാള്‍ ചെയ്തിട്ടില്ല.
+ERPNext is reachable and Timesheet access is confirmed.,ERPNext ലഭ്യമാണ്. ടൈംഷീറ്റ് ആക്സസ് സ്ഥിരീകരിച്ചു.
+ERPNext site URL,ERPNext സൈറ്റ് URL
+ERPNext Timesheet {0} for {1} is submitted — re-sync blocked.,ERPNext ടൈംഷീറ്റ് {0} ({1}-ന്) സമര്‍പ്പിച്ചു — വീണ്ടും സിങ്ക് തടഞ്ഞു.
+ERPNext Timesheet is submitted — re-sync blocked,ERPNext ടൈംഷീറ്റ് സമര്‍പ്പിച്ചു — വീണ്ടും സിങ്ക് തടഞ്ഞു
+Est. {0},കണക്ക്. {0}
+Est. amount,കണക്ക്. തുക
+Every 6 hours,ഓരോ 6 മണിക്കൂറിലും
+All time,എല്ലാ സമയവും
+This year,ഈ വര്‍ഷം
+Last year,കഴിഞ്ഞ വര്‍ഷം
+Download CSV,CSV ഡൗണ്‍ലോഡ് ചെയ്യുക
+Export my data,എന്‍റെ ഡാറ്റ എക്സ്പോര്‍ട്ട് ചെയ്യുക
+Download all your time entries as CSV.,നിങ്ങളുടെ എല്ലാ ടൈം എന്‍ട്രികളും CSV ആയി ഡൗണ്‍ലോഡ് ചെയ്യുക.
+Export CSV,CSV എക്സ്പോര്‍ട്ട്
+Export successful,എക്സ്പോര്‍ട്ട് വിജയകരം
+Failed to forward entries: {0},എന്‍ട്രികള്‍ ഫോര്‍വേഡ് ചെയ്യുന്നതില്‍ പരാജയം: {0}
+Watch Settings,Watch ക്രമീകരണങ്ങള്‍
+Watch Tag,Watch ടാഗ്
+Watch Entry,Watch എന്‍ട്രി
+Watch Entry Tag,Watch എന്‍ട്രി ടാഗ്
+Watch Timer,Watch ടൈമര്‍
+Forwarded {0} to {1},{0} {1}-ലേക്ക് ഫോര്‍വേഡ് ചെയ്തു
+From,മുതല്‍
+General,സാധാരണ
+Hourly,മണിക്കൂര്‍ തോറും
+hours,മണിക്കൂറുകള്‍
+Hide weekends,വാരാന്ത്യങ്ങള്‍ മറയ്ക്കുക
+Internal,ആന്തരികം
+Internal / overhead,ആന്തരികം / ഓവര്‍ഹെഡ്
+Last bulk sync,അവസാന ബള്‍ക്ക് സിങ്ക്
+Last month,കഴിഞ്ഞ മാസം
+Last sync error,അവസാന സിങ്ക് പിശക്
+Last week,കഴിഞ്ഞ ആഴ്ച
+Less,കുറവ്
+Lock Entries Older Than,ഇതിലും പഴയ എന്‍ട്രികള്‍ ലോക്ക് ചെയ്യുക
+Manual,മാനുവല്‍
+Map project tags,പ്രോജക്ട് ടാഗുകള്‍ മാപ്പ് ചെയ്യുക
+Merge,ലയിപ്പിക്കുക
+Merge {0} into:,{0} ലയിപ്പിക്കുക:
+Mon,തിങ്കള്‍
+More,കൂടുതല്‍
+Navigate,നാവിഗേറ്റ്
+New Tag,പുതിയ ടാഗ്
+No entries for {0},{0}-ന് എന്‍ട്രികളില്ല
+No entries yet,ഇതുവരെ എന്‍ട്രികളില്ല
+No tags yet,ഇതുവരെ ടാഗുകളില്ല
+No timer is running,ടൈമര്‍ പ്രവര്‍ത്തിക്കുന്നില്ല
+Non-billable,നോണ്‍-ബില്ലബിള്‍
+(no description),(വിവരണമില്ല)
+(not billed),(ബില്‍ ചെയ്തിട്ടില്ല)
+Nothing logged yesterday ({0}),ഇന്നലെ ഒന്നും ലോഗ് ചെയ്തിട്ടില്ല ({0})
+Open prepare summary,തയ്യാറാക്കല്‍ സംഗ്രഹം തുറക്കുക
+Open settings,ക്രമീകരണങ്ങള്‍ തുറക്കുക
+Open tag management,ടാഗ് മാനേജ്മെന്‍റ് തുറക്കുക
+Open today's view,ഇന്നത്തെ കാഴ്ച തുറക്കുക
+Open weekly view,ആഴ്ചയിലെ കാഴ്ച തുറക്കുക
+Other,മറ്റുള്ളവ
+Pause,താല്‍ക്കാലികമായി നിര്‍ത്തുക
+Prepare,തയ്യാറാക്കുക
+Prepare Summary,തയ്യാറാക്കല്‍ സംഗ്രഹം
+Project,പ്രോജക്ട്
+Rate,റേറ്റ്
+Rename,പേരുമാറ്റുക
+Resume,തുടരുക
+Saved — {0},സേവ് ചെയ്തു — {0}
+Save,സേവ്
+Sat,ശനി
+Scheduled,ഷെഡ്യൂള്‍ ചെയ്തത്
+Send,അയയ്ക്കുക
+Settings,ക്രമീകരണങ്ങള്‍
+Show weekends,വാരാന്ത്യങ്ങള്‍ കാണിക്കുക
+Start time,ആരംഭ സമയം
+Start Timer,ടൈമര്‍ ആരംഭിക്കുക
+"Start timer: ""{0}""","ടൈമര്‍ ആരംഭിക്കുക: ""{0}"""
+"Stop current & start: ""{0}""","നിലവിലുള്ളത് നിര്‍ത്തി ആരംഭിക്കുക: ""{0}"""
+Started yesterday,ഇന്നലെ ആരംഭിച്ചു
+Sun,ഞായര്‍
+Sync all unsynced entries,എല്ലാ സിങ്ക് ചെയ്യാത്ത എന്‍ട്രികളും സിങ്ക് ചെയ്യുക
+Sync billable entries only,ബില്ലബിള്‍ എന്‍ട്രികള്‍ മാത്രം സിങ്ക് ചെയ്യുക
+Sync completed with errors,പിശകുകളോടെ സിങ്ക് പൂര്‍ത്തിയായി
+Sync complete,സിങ്ക് പൂര്‍ത്തിയായി
+Sync interval,സിങ്ക് ഇടവേള
+Sync mode,സിങ്ക് മോഡ്
+Synced to ERPNext,ERPNext-ലേക്ക് സിങ്ക് ചെയ്തു
+Syncing entries to ERPNext…,ERPNext-ലേക്ക് എന്‍ട്രികള്‍ സിങ്ക് ചെയ്യുന്നു…
+{0} day(s) synced.,{0} ദിവസം സിങ്ക് ചെയ്തു.
+Tag,ടാഗ്
+Tag management,ടാഗ് മാനേജ്മെന്‍റ്
+Tag Name,ടാഗ് പേര്
+Tag renamed. {0} entries updated.,ടാഗ് പേരുമാറ്റി. {0} എന്‍ട്രികള്‍ അപ്ഡേറ്റ് ചെയ്തു.
+Tags,ടാഗുകള്‍
+Tags merged. {0} entries re-tagged.,ടാഗുകള്‍ ലയിപ്പിച്ചു. {0} എന്‍ട്രികള്‍ വീണ്ടും ടാഗ് ചെയ്തു.
+Task,ടാസ്ക്
+Test connection,കണക്ഷന്‍ പരീക്ഷിക്കുക
+Test Connection,കണക്ഷന്‍ പരീക്ഷിക്കുക
+This entry is locked,ഈ എന്‍ട്രി ലോക്ക് ചെയ്തിരിക്കുന്നു
+This month,ഈ മാസം
+This week,ഈ ആഴ്ച
+Thu,വ്യാഴം
+Time Bridge,ടൈം ബ്രിഡ്ജ്
+Time Entries,ടൈം എന്‍ട്രികള്‍
+Timer already running,ടൈമര്‍ ഇതിനകം പ്രവര്‍ത്തിക്കുന്നു
+Timer is already running,ടൈമര്‍ ഇതിനകം പ്രവര്‍ത്തിക്കുന്നു
+Timer is not paused,ടൈമര്‍ താല്‍ക്കാലികമായി നിര്‍ത്തിയിട്ടില്ല
+Timer is not running,ടൈമര്‍ പ്രവര്‍ത്തിക്കുന്നില്ല
+To,വരെ
+Today,ഇന്ന്
+Total,ആകെ
+Total billable,ആകെ ബില്ലബിള്‍
+Tue,ചൊവ്വ
+Unknown error,അജ്ഞാത പിശക്
+Unassigned,അസൈന്‍ ചെയ്തിട്ടില്ല
+(untagged project),(ടാഗ് ചെയ്യാത്ത പ്രോജക്ട്)
+View entry →,എന്‍ട്രി കാണുക →
+Warning: This entry is more than 7 days old.,മുന്നറിയിപ്പ്: ഈ എന്‍ട്രി 7 ദിവസത്തിലും പഴയതാണ്.
+Wed,ബുധന്‍
+Week {0},ആഴ്ച {0}
+What are you working on?,നിങ്ങള്‍ എന്താണ് ജോലി ചെയ്യുന്നത്?
+What did you work on?,നിങ്ങള്‍ എന്താണ് ജോലി ചെയ്തത്?
+Work Days,പ്രവൃത്തി ദിനങ്ങള്‍
+Yesterday,ഇന്നലെ
+draft,ഡ്രാഫ്റ്റ്
+entries this month,ഈ മാസത്തെ എന്‍ട്രികള്‍
+no entries,എന്‍ട്രികളില്ല
+no entries yet,ഇതുവരെ എന്‍ട്രികളില്ല
+sent,അയച്ചു
++{0} more,+{0} കൂടുതല്‍
+← from {0},← {0} മുതല്‍
+[Auto-stopped after {0}h],[{0} മണിക്കൂറിന് ശേഷം സ്വയം നിര്‍ത്തി]
+Entry Type,എന്‍ട്രി തരം
+Fri,വെള്ളി
+Keyboard Shortcuts,കീബോര്‍ഡ് ഷോര്‍ട്ട്കട്ടുകള്‍
+Start / Pause / Resume timer,ടൈമര്‍ ആരംഭിക്കുക / നിര്‍ത്തുക / തുടരുക
+Stop timer,ടൈമര്‍ നിര്‍ത്തുക
+New entry (focus quick-add bar),പുതിയ എന്‍ട്രി (ക്വിക്ക്-ആഡ് ബാര്‍ ഫോക്കസ്)
+Previous / next day or week,മുമ്പത്തെ / അടുത്ത ദിവസം അല്ലെങ്കില്‍ ആഴ്ച
+Show / hide this overlay,ഈ ഓവര്‍ലേ കാണിക്കുക / മറയ്ക്കുക
+Press H or Esc to close,ക്ലോസ് ചെയ്യാന്‍ H അല്ലെങ്കില്‍ Esc അമര്‍ത്തുക
+Close,ക്ലോസ്
+Timer,ടൈമര്‍
+Entries,എന്‍ട്രികള്‍
+This week at a glance,ഈ ആഴ്ച ഒറ്റ നോട്ടത്തില്‍
+Time by tag,ടാഗ് അനുസരിച്ച് സമയം
+Hours per day,ദിവസത്തിലെ മണിക്കൂറുകള്‍
+No entries this week,ഈ ആഴ്ച എന്‍ട്രികളില്ല
+No entries,എന്‍ട്രികളില്ല
+Untagged,ടാഗ് ചെയ്യാത്തത്
+Monthly Budget (h),പ്രതിമാസ ബജറ്റ് (മ)
+Warn at (%),മുന്നറിയിപ്പ് (%)
+0 = no limit,0 = പരിധിയില്ല
+0 = site default,0 = സൈറ്റ് ഡിഫോള്‍ട്ട്
+Approaching limit,പരിധി അടുക്കുന്നു
+Budget exceeded,ബജറ്റ് കവിഞ്ഞു
+budget used this month,ഈ മാസം ഉപയോഗിച്ച ബജറ്റ്
+used this month,ഈ മാസം ഉപയോഗിച്ചത്
+of,ന്‍റെ
+Focus,ഫോക്കസ്
+Start Focus,ഫോക്കസ് ആരംഭിക്കുക
+End focus,ഫോക്കസ് അവസാനിപ്പിക്കുക
+Skip break,ബ്രേക്ക് ഒഴിവാക്കുക
+Break over,ബ്രേക്ക് കഴിഞ്ഞു
+Time to focus!,ഫോക്കസ് ചെയ്യേണ്ട സമയം!
+Session complete,സെഷന്‍ പൂര്‍ത്തിയായി
+Focus complete!,ഫോക്കസ് പൂര്‍ത്തിയായി!
+All sessions done. Great work!,എല്ലാ സെഷനുകളും പൂര്‍ത്തിയായി. മികച്ച പ്രവര്‍ത്തനം!
+sessions done. Great work!,സെഷനുകള്‍ പൂര്‍ത്തിയായി. മികച്ച പ്രവര്‍ത്തനം!
+Start new,പുതിയത് ആരംഭിക്കുക
+Work in focused sessions with timed breaks.,സമയബന്ധിത ബ്രേക്കുകളോടെ ഫോക്കസ് സെഷനുകളില്‍ ജോലി ചെയ്യുക.
+Session,സെഷന്‍
+Break,ബ്രേക്ക്
+Work (min),ജോലി (മിനിറ്റ്)
+Break (min),ബ്രേക്ക് (മിനിറ്റ്)
+Sessions,സെഷനുകള്‍
+No break is active,ബ്രേക്ക് സജീവമല്ല
+No focus session is running,ഫോക്കസ് സെഷന്‍ പ്രവര്‍ത്തിക്കുന്നില്ല
+Context,സന്ദര്‍ഭം
+Contact,കോണ്‍ടാക്ട്
+Context Type,സന്ദര്‍ഭ തരം
+For whom?,ആര്‍ക്കുവേണ്ടി?
+Working on?,എന്തിലാണ് ജോലി?
+Search contacts...,കോണ്‍ടാക്ടുകള്‍ തിരയുക...
+Select type...,തരം തിരഞ്ഞെടുക്കുക...
+All contacts,എല്ലാ കോണ്‍ടാക്ടുകളും
+All projects,എല്ലാ പ്രോജക്ടുകളും
+(no contact),(കോണ്‍ടാക്ട് ഇല്ല)
+(no project),(പ്രോജക്ട് ഇല്ല)
+(no task),(ടാസ്ക് ഇല്ല)
+Filter by:,ഫില്‍റ്റര്‍:
+Time by contact,കോണ്‍ടാക്ട് അനുസരിച്ച് സമയം
+Time by context,സന്ദര്‍ഭം അനുസരിച്ച് സമയം
+Time by task,ടാസ്ക് അനുസരിച്ച് സമയം
+Contact hours summary,കോണ്‍ടാക്ട് മണിക്കൂര്‍ സംഗ്രഹം

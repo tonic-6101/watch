@@ -1,0 +1,247 @@
+source,translation
+Billed as {0},Apskaičiuota kaip {0}
+exact — rounding skipped,tiksliai — apvalinimas praleistas
+Use exact,Naudoti tiksliai
+Apply rounding,Taikyti apvalinimą
+Exact,Tiksliai
+Billed,Apskaičiuota
+* Rounded up to nearest increment,* Suapvalinta iki artimiausio žingsnio
+billable,apmokestinamas
+non-billable,neapmokestinamas
+internal,vidinis
+on_save,on_save
+manual,manual
+scheduled,scheduled
+hourly,hourly
+every_6_hours,every_6_hours
+daily,daily
+stopped,sustabdytas
+running,veikia
+paused,pristabdytas
+Add a note...,Pridėti pastabą...
+Add entry for yesterday,Pridėti vakarykštį įrašą
+Add your first entry,Pridėti pirmą įrašą
+Archive,Archyvuoti
+Auto-stop Timer After,Automatiškai sustabdyti laikmatį po
+Billable,Apmokestinamas
+Billable {0},Apmokestinamas {0}
+Cancel,Atšaukti
+Cannot delete tag — {0} entries use it.,Žymės negalima ištrinti — {0} įrašų ją naudoja.
+Category,Kategorija
+Client,Klientas
+Color,Spalva
+Connection Failed,Ryšys nepavyko
+Connection OK,Ryšys sėkmingas
+Custom…,Pasirinktinis…
+Daily,Kasdieninis
+Daily view,Dienos vaizdas
+Date range,Datų intervalas
+days,dienų
+Default Entry Type,Numatytasis įrašo tipas
+Default Rate,Numatytasis valandinis įkainis
+Default activity type,Numatytasis veiklos tipas
+Delete,Ištrinti
+Description,Aprašymas
+Dismiss,Atmesti
+Do you want to sync all unsynced time entries to ERPNext now?,Ar norite dabar sinchronizuoti visus nesinchronizuotus laiko įrašus į ERPNext?
+Duplicate,Dubliuoti
+Duration,Trukmė
+Edit,Redaguoti
+Enable ERPNext bridge,Įgalinti ERPNext tiltą
+End time,Pabaigos laikas
+Entries forwarded,Įrašai persiųsti
+Entries older than {0} days are locked. Contact your administrator.,Įrašai senesni nei {0} dienų yra užrakinti. Kreipkitės į administratorių.
+ERPNext Bridge,ERPNext tiltas
+ERPNext is not installed on this site.,ERPNext nėra įdiegtas šioje svetainėje.
+ERPNext is reachable and Timesheet access is confirmed.,ERPNext pasiekiamas ir prieiga prie darbo laiko apskaitos patvirtinta.
+ERPNext site URL,ERPNext svetainės URL
+ERPNext Timesheet {0} for {1} is submitted — re-sync blocked.,ERPNext darbo laiko apskaita {0} naudotojui {1} pateikta — pakartotinė sinchronizacija užblokuota.
+ERPNext Timesheet is submitted — re-sync blocked,ERPNext darbo laiko apskaita pateikta — pakartotinė sinchronizacija užblokuota
+Est. {0},Num. {0}
+Est. amount,Num. suma
+Every 6 hours,Kas 6 valandas
+All time,Visą laiką
+This year,Šiais metais
+Last year,Praeitais metais
+Download CSV,Atsisiųsti CSV
+Export my data,Eksportuoti mano duomenis
+Download all your time entries as CSV.,Atsisiųskite visus savo laiko įrašus kaip CSV.
+Export CSV,Eksportuoti CSV
+Export successful,Eksportas sėkmingas
+Failed to forward entries: {0},Nepavyko persiųsti įrašų: {0}
+Watch Settings,Watch nustatymai
+Watch Tag,Watch žymė
+Watch Entry,Watch įrašas
+Watch Entry Tag,Watch įrašo žymė
+Watch Timer,Watch laikmatis
+Forwarded {0} to {1},Persiųsta {0} į {1}
+From,Nuo
+General,Bendra
+Hourly,Kas valandą
+hours,valandų
+Hide weekends,Slėpti savaitgalius
+Internal,Vidinis
+Internal / overhead,Vidinis / pridėtinės išlaidos
+Last bulk sync,Paskutinė masinė sinchronizacija
+Last month,Praeitą mėnesį
+Last sync error,Paskutinė sinchronizacijos klaida
+Last week,Praeitą savaitę
+Less,Mažiau
+Lock Entries Older Than,Užrakinti įrašus senesnius nei
+Manual,Rankinis
+Map project tags,Susieti projekto žymes
+Merge,Sujungti
+Merge {0} into:,Sujungti {0} į:
+Mon,Pr
+More,Daugiau
+Navigate,Naviguoti
+New Tag,Nauja žymė
+No entries for {0},Nėra įrašų: {0}
+No entries yet,Kol kas nėra įrašų
+No tags yet,Kol kas nėra žymių
+No timer is running,Joks laikmatis neveikia
+Non-billable,Neapmokestinamas
+(no description),(be aprašymo)
+(not billed),(neapskaičiuota)
+Nothing logged yesterday ({0}),Vakar nieko neužregistruota ({0})
+Open prepare summary,Atidaryti paruošimo suvestinę
+Open settings,Atidaryti nustatymus
+Open tag management,Atidaryti žymių tvarkymą
+Open today's view,Atidaryti šiandienos vaizdą
+Open weekly view,Atidaryti savaitės vaizdą
+Other,Kita
+Pause,Pristabdyti
+Prepare,Paruošti
+Prepare Summary,Paruošimo suvestinė
+Project,Projektas
+Rate,Valandinis įkainis
+Rename,Pervadinti
+Resume,Tęsti
+Saved — {0},Išsaugota — {0}
+Save,Išsaugoti
+Sat,Šš
+Scheduled,Suplanuota
+Send,Siųsti
+Settings,Nustatymai
+Show weekends,Rodyti savaitgalius
+Start time,Pradžios laikas
+Start Timer,Paleisti laikmatį
+"Start timer: ""{0}""","Paleisti laikmatį: ""{0}"""
+"Stop current & start: ""{0}""","Sustabdyti dabartinį ir paleisti: ""{0}"""
+Started yesterday,Pradėta vakar
+Sun,Sk
+Sync all unsynced entries,Sinchronizuoti visus nesinchronizuotus įrašus
+Sync billable entries only,Sinchronizuoti tik apmokestinamus įrašus
+Sync completed with errors,Sinchronizacija baigta su klaidomis
+Sync complete,Sinchronizacija baigta
+Sync interval,Sinchronizacijos intervalas
+Sync mode,Sinchronizacijos režimas
+Synced to ERPNext,Sinchronizuota į ERPNext
+Syncing entries to ERPNext…,Įrašų sinchronizavimas į ERPNext…
+{0} day(s) synced.,{0} diena(-ų) sinchronizuota.
+Tag,Žymė
+Tag management,Žymių tvarkymas
+Tag Name,Žymės pavadinimas
+Tag renamed. {0} entries updated.,Žymė pervadinta. {0} įrašų atnaujinta.
+Tags,Žymės
+Tags merged. {0} entries re-tagged.,Žymės sujungtos. {0} įrašų pažymėta iš naujo.
+Task,Užduotis
+Test connection,Testuoti ryšį
+Test Connection,Testuoti ryšį
+This entry is locked,Šis įrašas užrakintas
+This month,Šį mėnesį
+This week,Šią savaitę
+Thu,Kt
+Time Bridge,Laiko tiltas
+Time Entries,Laiko įrašai
+Timer already running,Laikmatis jau veikia
+Timer is already running,Laikmatis jau veikia
+Timer is not paused,Laikmatis nėra pristabdytas
+Timer is not running,Laikmatis neveikia
+To,Iki
+Today,Šiandien
+Total,Iš viso
+Total billable,Iš viso apmokestinamas
+Tue,An
+Unknown error,Nežinoma klaida
+Unassigned,Nepriskirta
+(untagged project),(nepažymėtas projektas)
+View entry →,Peržiūrėti įrašą →
+Warning: This entry is more than 7 days old.,Įspėjimas: Šis įrašas senesnis nei 7 dienos.
+Wed,Tr
+Week {0},Savaitė {0}
+What are you working on?,Ką darote?
+What did you work on?,Ką darėte?
+Work Days,Darbo dienos
+Yesterday,Vakar
+draft,juodraštis
+entries this month,įrašų šį mėnesį
+no entries,nėra įrašų
+no entries yet,kol kas nėra įrašų
+sent,išsiųsta
++{0} more,+{0} daugiau
+← from {0},← nuo {0}
+[Auto-stopped after {0}h],[Automatiškai sustabdyta po {0}h]
+Entry Type,Įrašo tipas
+Fri,Pn
+Keyboard Shortcuts,Spartieji klavišai
+Start / Pause / Resume timer,Paleisti / Pristabdyti / Tęsti laikmatį
+Stop timer,Sustabdyti laikmatį
+New entry (focus quick-add bar),Naujas įrašas (fokusas ant greito pridėjimo juostos)
+Previous / next day or week,Ankstesnė / kita diena arba savaitė
+Show / hide this overlay,Rodyti / slėpti šį perdangą
+Press H or Esc to close,Paspauskite H arba Esc norėdami uždaryti
+Close,Uždaryti
+Timer,Laikmatis
+Entries,Įrašai
+This week at a glance,Ši savaitė trumpai
+Time by tag,Laikas pagal žymę
+Hours per day,Valandos per dieną
+No entries this week,Šią savaitę nėra įrašų
+No entries,Nėra įrašų
+Untagged,Nepažymėta
+Monthly Budget (h),Mėnesio biudžetas (h)
+Warn at (%),Perspėti ties (%)
+0 = no limit,0 = be apribojimo
+0 = site default,0 = svetainės numatytasis
+Approaching limit,Artėja prie ribos
+Budget exceeded,Biudžetas viršytas
+budget used this month,biudžeto panaudota šį mėnesį
+used this month,panaudota šį mėnesį
+of,iš
+Focus,Fokusas
+Start Focus,Pradėti fokusą
+End focus,Baigti fokusą
+Skip break,Praleisti pertrauką
+Break over,Pertrauka baigėsi
+Time to focus!,Laikas susikaupti!
+Session complete,Sesija baigta
+Focus complete!,Fokusas baigtas!
+All sessions done. Great work!,Visos sesijos baigtos. Puikus darbas!
+sessions done. Great work!,sesijų baigta. Puikus darbas!
+Start new,Pradėti naują
+Work in focused sessions with timed breaks.,Dirbkite susikaupę sesijomis su nustatytomis pertraukomis.
+Session,Sesija
+Break,Pertrauka
+Work (min),Darbas (min)
+Break (min),Pertrauka (min)
+Sessions,Sesijos
+No break is active,Jokia pertrauka neaktyvi
+No focus session is running,Jokia fokuso sesija nevyksta
+Context,Kontekstas
+Contact,Kontaktas
+Context Type,Konteksto tipas
+For whom?,Kam?
+Working on?,Ką darote?
+Search contacts...,Ieškoti kontaktų...
+Select type...,Pasirinkti tipą...
+All contacts,Visi kontaktai
+All projects,Visi projektai
+(no contact),(be kontakto)
+(no project),(be projekto)
+(no task),(be užduoties)
+Filter by:,Filtruoti pagal:
+Time by contact,Laikas pagal kontaktą
+Time by context,Laikas pagal kontekstą
+Time by task,Laikas pagal užduotį
+Contact hours summary,Kontaktų valandų suvestinė

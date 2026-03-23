@@ -1,0 +1,247 @@
+source,translation
+Billed as {0},{0} म्हणून बिल केले
+exact — rounding skipped,अचूक — राउंडिंग वगळले
+Use exact,अचूक वापरा
+Apply rounding,राउंडिंग लागू करा
+Exact,अचूक
+Billed,बिल केले
+* Rounded up to nearest increment,* जवळच्या वाढीपर्यंत राउंड अप
+billable,बिलपात्र
+non-billable,बिलपात्र नाही
+internal,अंतर्गत
+on_save,on_save
+manual,manual
+scheduled,scheduled
+hourly,hourly
+every_6_hours,every_6_hours
+daily,daily
+stopped,थांबले
+running,चालू
+paused,विराम
+Add a note...,टीप जोडा...
+Add entry for yesterday,कालसाठी एन्ट्री जोडा
+Add your first entry,तुमची पहिली एन्ट्री जोडा
+Archive,संग्रहित करा
+Auto-stop Timer After,इतक्या वेळानंतर टायमर स्वयं-थांबा
+Billable,बिलपात्र
+Billable {0},बिलपात्र {0}
+Cancel,रद्द करा
+Cannot delete tag — {0} entries use it.,टॅग हटवता येत नाही — {0} एन्ट्री हे वापरतात.
+Category,वर्ग
+Client,क्लायंट
+Color,रंग
+Connection Failed,कनेक्शन अयशस्वी
+Connection OK,कनेक्शन ठीक
+Custom…,सानुकूल…
+Daily,दैनिक
+Daily view,दैनिक दृश्य
+Date range,तारीख श्रेणी
+days,दिवस
+Default Entry Type,डीफॉल्ट एन्ट्री प्रकार
+Default Rate,डीफॉल्ट रेट
+Default activity type,डीफॉल्ट क्रियाकलाप प्रकार
+Delete,हटवा
+Description,वर्णन
+Dismiss,डिसमिस
+Do you want to sync all unsynced time entries to ERPNext now?,तुम्ही आता सर्व अनसिंक टाइम एन्ट्री ERPNext ला सिंक करू इच्छिता?
+Duplicate,डुप्लिकेट
+Duration,कालावधी
+Edit,संपादन
+Enable ERPNext bridge,ERPNext ब्रिज सक्रिय करा
+End time,समाप्ती वेळ
+Entries forwarded,एन्ट्री फॉरवर्ड केल्या
+Entries older than {0} days are locked. Contact your administrator.,{0} दिवसांपेक्षा जुन्या एन्ट्री लॉक आहेत. तुमच्या प्रशासकाशी संपर्क साधा.
+ERPNext Bridge,ERPNext ब्रिज
+ERPNext is not installed on this site.,या साइटवर ERPNext इन्स्टॉल नाही.
+ERPNext is reachable and Timesheet access is confirmed.,ERPNext उपलब्ध आहे आणि टाइमशीट ऍक्सेस पुष्टी झाली.
+ERPNext site URL,ERPNext साइट URL
+ERPNext Timesheet {0} for {1} is submitted — re-sync blocked.,ERPNext टाइमशीट {0} ({1} साठी) सबमिट केले — पुन्हा सिंक अवरोधित.
+ERPNext Timesheet is submitted — re-sync blocked,ERPNext टाइमशीट सबमिट केले — पुन्हा सिंक अवरोधित
+Est. {0},अंदा. {0}
+Est. amount,अंदा. रक्कम
+Every 6 hours,दर ६ तासांनी
+All time,सर्व काळ
+This year,हे वर्ष
+Last year,मागील वर्ष
+Download CSV,CSV डाउनलोड करा
+Export my data,माझा डेटा एक्सपोर्ट करा
+Download all your time entries as CSV.,तुमच्या सर्व टाइम एन्ट्री CSV म्हणून डाउनलोड करा.
+Export CSV,CSV एक्सपोर्ट
+Export successful,एक्सपोर्ट यशस्वी
+Failed to forward entries: {0},एन्ट्री फॉरवर्ड करण्यात अयशस्वी: {0}
+Watch Settings,Watch सेटिंग्ज
+Watch Tag,Watch टॅग
+Watch Entry,Watch एन्ट्री
+Watch Entry Tag,Watch एन्ट्री टॅग
+Watch Timer,Watch टायमर
+Forwarded {0} to {1},{0} ला {1} कडे फॉरवर्ड केले
+From,पासून
+General,सामान्य
+Hourly,तासाला
+hours,तास
+Hide weekends,आठवड्याच्या शेवटचे दिवस लपवा
+Internal,अंतर्गत
+Internal / overhead,अंतर्गत / ओव्हरहेड
+Last bulk sync,शेवटचे बल्क सिंक
+Last month,मागील महिना
+Last sync error,शेवटची सिंक त्रुटी
+Last week,मागील आठवडा
+Less,कमी
+Lock Entries Older Than,यापेक्षा जुन्या एन्ट्री लॉक करा
+Manual,मॅन्युअल
+Map project tags,प्रकल्प टॅग मॅप करा
+Merge,विलीन करा
+Merge {0} into:,{0} विलीन करा:
+Mon,सोम
+More,अधिक
+Navigate,नेव्हिगेट
+New Tag,नवीन टॅग
+No entries for {0},{0} साठी एन्ट्री नाहीत
+No entries yet,अजून एन्ट्री नाहीत
+No tags yet,अजून टॅग नाहीत
+No timer is running,कोणताही टायमर चालू नाही
+Non-billable,बिलपात्र नाही
+(no description),(वर्णन नाही)
+(not billed),(बिल केले नाही)
+Nothing logged yesterday ({0}),काल काहीही लॉग केले नाही ({0})
+Open prepare summary,तयारी सारांश उघडा
+Open settings,सेटिंग्ज उघडा
+Open tag management,टॅग व्यवस्थापन उघडा
+Open today's view,आजचे दृश्य उघडा
+Open weekly view,साप्ताहिक दृश्य उघडा
+Other,इतर
+Pause,विराम
+Prepare,तयार करा
+Prepare Summary,तयारी सारांश
+Project,प्रकल्प
+Rate,रेट
+Rename,नाव बदला
+Resume,पुन्हा सुरू करा
+Saved — {0},जतन केले — {0}
+Save,जतन करा
+Sat,शनि
+Scheduled,निर्धारित
+Send,पाठवा
+Settings,सेटिंग्ज
+Show weekends,आठवड्याच्या शेवटचे दिवस दाखवा
+Start time,सुरुवातीची वेळ
+Start Timer,टायमर सुरू करा
+"Start timer: ""{0}""","टायमर सुरू करा: ""{0}"""
+"Stop current & start: ""{0}""","सध्याचे थांबवा आणि सुरू करा: ""{0}"""
+Started yesterday,काल सुरू झाले
+Sun,रवि
+Sync all unsynced entries,सर्व अनसिंक एन्ट्री सिंक करा
+Sync billable entries only,फक्त बिलपात्र एन्ट्री सिंक करा
+Sync completed with errors,त्रुटींसह सिंक पूर्ण
+Sync complete,सिंक पूर्ण
+Sync interval,सिंक अंतराल
+Sync mode,सिंक मोड
+Synced to ERPNext,ERPNext ला सिंक केले
+Syncing entries to ERPNext…,ERPNext ला एन्ट्री सिंक होत आहेत…
+{0} day(s) synced.,{0} दिवस सिंक झाले.
+Tag,टॅग
+Tag management,टॅग व्यवस्थापन
+Tag Name,टॅग नाव
+Tag renamed. {0} entries updated.,टॅग नाव बदलले. {0} एन्ट्री अपडेट झाल्या.
+Tags,टॅग्ज
+Tags merged. {0} entries re-tagged.,टॅग विलीन केले. {0} एन्ट्री पुन्हा टॅग केल्या.
+Task,कार्य
+Test connection,कनेक्शन तपासा
+Test Connection,कनेक्शन तपासा
+This entry is locked,ही एन्ट्री लॉक आहे
+This month,हा महिना
+This week,हा आठवडा
+Thu,गुरु
+Time Bridge,टाइम ब्रिज
+Time Entries,टाइम एन्ट्री
+Timer already running,टायमर आधीच चालू आहे
+Timer is already running,टायमर आधीच चालू आहे
+Timer is not paused,टायमर विरामात नाही
+Timer is not running,टायमर चालू नाही
+To,पर्यंत
+Today,आज
+Total,एकूण
+Total billable,एकूण बिलपात्र
+Tue,मंगळ
+Unknown error,अज्ञात त्रुटी
+Unassigned,असाइन नाही
+(untagged project),(टॅग नसलेला प्रकल्प)
+View entry →,एन्ट्री पहा →
+Warning: This entry is more than 7 days old.,सूचना: ही एन्ट्री ७ दिवसांपेक्षा जुनी आहे.
+Wed,बुध
+Week {0},आठवडा {0}
+What are you working on?,तुम्ही कशावर काम करत आहात?
+What did you work on?,तुम्ही कशावर काम केले?
+Work Days,कामाचे दिवस
+Yesterday,काल
+draft,मसुदा
+entries this month,या महिन्यातील एन्ट्री
+no entries,एन्ट्री नाहीत
+no entries yet,अजून एन्ट्री नाहीत
+sent,पाठवले
++{0} more,+{0} अधिक
+← from {0},← {0} पासून
+[Auto-stopped after {0}h],[{0} तासांनंतर स्वयं-थांबले]
+Entry Type,एन्ट्री प्रकार
+Fri,शुक्र
+Keyboard Shortcuts,कीबोर्ड शॉर्टकट
+Start / Pause / Resume timer,टायमर सुरू / विराम / पुन्हा सुरू
+Stop timer,टायमर थांबवा
+New entry (focus quick-add bar),नवीन एन्ट्री (क्विक-ऍड बार फोकस)
+Previous / next day or week,मागील / पुढील दिवस किंवा आठवडा
+Show / hide this overlay,हा ओव्हरले दाखवा / लपवा
+Press H or Esc to close,बंद करण्यासाठी H किंवा Esc दाबा
+Close,बंद
+Timer,टायमर
+Entries,एन्ट्री
+This week at a glance,या आठवड्याचा सारांश
+Time by tag,टॅगनुसार वेळ
+Hours per day,दररोज तास
+No entries this week,या आठवड्यात एन्ट्री नाहीत
+No entries,एन्ट्री नाहीत
+Untagged,टॅग नसलेले
+Monthly Budget (h),मासिक बजेट (ता)
+Warn at (%),सूचना (%)
+0 = no limit,० = मर्यादा नाही
+0 = site default,० = साइट डीफॉल्ट
+Approaching limit,मर्यादेजवळ
+Budget exceeded,बजेट ओलांडले
+budget used this month,या महिन्यात वापरलेले बजेट
+used this month,या महिन्यात वापरले
+of,चे
+Focus,फोकस
+Start Focus,फोकस सुरू करा
+End focus,फोकस संपवा
+Skip break,विराम वगळा
+Break over,विराम संपला
+Time to focus!,फोकस करण्याची वेळ!
+Session complete,सत्र पूर्ण
+Focus complete!,फोकस पूर्ण!
+All sessions done. Great work!,सर्व सत्रे पूर्ण. उत्तम काम!
+sessions done. Great work!,सत्रे पूर्ण. उत्तम काम!
+Start new,नवीन सुरू करा
+Work in focused sessions with timed breaks.,वेळबद्ध विरामांसह फोकस सत्रांमध्ये काम करा.
+Session,सत्र
+Break,विराम
+Work (min),काम (मिनिटे)
+Break (min),विराम (मिनिटे)
+Sessions,सत्रे
+No break is active,कोणताही विराम सक्रिय नाही
+No focus session is running,कोणतेही फोकस सत्र चालू नाही
+Context,संदर्भ
+Contact,संपर्क
+Context Type,संदर्भ प्रकार
+For whom?,कोणासाठी?
+Working on?,कशावर काम करत आहात?
+Search contacts...,संपर्क शोधा...
+Select type...,प्रकार निवडा...
+All contacts,सर्व संपर्क
+All projects,सर्व प्रकल्प
+(no contact),(संपर्क नाही)
+(no project),(प्रकल्प नाही)
+(no task),(कार्य नाही)
+Filter by:,फिल्टर:
+Time by contact,संपर्कानुसार वेळ
+Time by context,संदर्भानुसार वेळ
+Time by task,कार्यानुसार वेळ
+Contact hours summary,संपर्क तास सारांश

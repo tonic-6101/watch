@@ -1,0 +1,247 @@
+source,translation
+"Billed as {0}","Tính phí theo {0}"
+"exact — rounding skipped","chính xác — bỏ qua làm tròn"
+"Use exact","Dùng chính xác"
+"Apply rounding","Áp dụng làm tròn"
+Exact,Chính xác
+Billed,Đã tính phí
+"* Rounded up to nearest increment","* Làm tròn lên đơn vị gần nhất"
+billable,tính phí được
+non-billable,không tính phí
+internal,nội bộ
+on_save,on_save
+manual,manual
+scheduled,scheduled
+hourly,hourly
+every_6_hours,every_6_hours
+daily,daily
+stopped,đã dừng
+running,đang chạy
+paused,tạm dừng
+"Add a note...","Thêm ghi chú..."
+"Add entry for yesterday","Thêm mục cho hôm qua"
+"Add your first entry","Thêm mục đầu tiên"
+Archive,Lưu trữ
+"Auto-stop Timer After","Tự động dừng bộ đếm sau"
+Billable,Tính Phí Được
+"Billable {0}","Tính Phí Được {0}"
+Cancel,Hủy
+"Cannot delete tag — {0} entries use it.","Không thể xóa nhãn — {0} mục đang sử dụng."
+Category,Danh mục
+Client,Khách hàng
+Color,Màu sắc
+"Connection Failed","Kết nối thất bại"
+"Connection OK","Kết nối thành công"
+"Custom…","Tùy chỉnh…"
+Daily,Hằng ngày
+"Daily view","Xem theo ngày"
+"Date range","Khoảng thời gian"
+days,ngày
+"Default Entry Type","Loại mục mặc định"
+"Default Rate","Đơn giá mặc định"
+"Default activity type","Loại hoạt động mặc định"
+Delete,Xóa
+Description,Mô tả
+Dismiss,Bỏ qua
+"Do you want to sync all unsynced time entries to ERPNext now?","Bạn có muốn đồng bộ tất cả các mục thời gian chưa đồng bộ sang ERPNext ngay bây giờ không?"
+Duplicate,Nhân bản
+Duration,Thời lượng
+Edit,Sửa
+"Enable ERPNext bridge","Bật cầu nối ERPNext"
+"End time","Thời gian kết thúc"
+"Entries forwarded","Đã chuyển tiếp mục"
+"Entries older than {0} days are locked. Contact your administrator.","Các mục cũ hơn {0} ngày đã bị khóa. Liên hệ quản trị viên."
+"ERPNext Bridge","Cầu nối ERPNext"
+"ERPNext is not installed on this site.","ERPNext chưa được cài đặt trên trang này."
+"ERPNext is reachable and Timesheet access is confirmed.","Đã kết nối ERPNext và xác nhận quyền truy cập Bảng chấm công."
+"ERPNext site URL","URL trang ERPNext"
+"ERPNext Timesheet {0} for {1} is submitted — re-sync blocked.","Bảng chấm công ERPNext {0} cho {1} đã gửi — chặn đồng bộ lại."
+"ERPNext Timesheet is submitted — re-sync blocked","Bảng chấm công ERPNext đã gửi — chặn đồng bộ lại"
+"Est. {0}","Ước tính {0}"
+"Est. amount","Ước tính số tiền"
+"Every 6 hours","Mỗi 6 giờ"
+"All time","Tất cả thời gian"
+"This year","Năm nay"
+"Last year","Năm ngoái"
+"Download CSV","Tải CSV"
+"Export my data","Xuất dữ liệu của tôi"
+"Download all your time entries as CSV.","Tải tất cả các mục thời gian dưới dạng CSV."
+"Export CSV","Xuất CSV"
+"Export successful","Xuất thành công"
+"Failed to forward entries: {0}","Chuyển tiếp mục thất bại: {0}"
+"Watch Settings","Cài đặt Watch"
+"Watch Tag","Nhãn Watch"
+"Watch Entry","Mục Watch"
+"Watch Entry Tag","Nhãn Mục Watch"
+"Watch Timer","Bộ đếm Watch"
+"Forwarded {0} to {1}","Đã chuyển tiếp {0} đến {1}"
+From,Từ
+General,Chung
+Hourly,Hằng giờ
+hours,giờ
+"Hide weekends","Ẩn cuối tuần"
+Internal,Nội bộ
+"Internal / overhead","Nội bộ / chi phí chung"
+"Last bulk sync","Đồng bộ hàng loạt lần cuối"
+"Last month","Tháng trước"
+"Last sync error","Lỗi đồng bộ lần cuối"
+"Last week","Tuần trước"
+Less,Thu gọn
+"Lock Entries Older Than","Khóa mục cũ hơn"
+Manual,Thủ công
+"Map project tags","Ánh xạ nhãn dự án"
+Merge,Gộp
+"Merge {0} into:","Gộp {0} vào:"
+Mon,T2
+More,Mở rộng
+Navigate,Điều hướng
+"New Tag","Nhãn mới"
+"No entries for {0}","Không có mục cho {0}"
+"No entries yet","Chưa có mục nào"
+"No tags yet","Chưa có nhãn nào"
+"No timer is running","Không có bộ đếm đang chạy"
+Non-billable,Không Tính Phí
+"(no description)","(không có mô tả)"
+"(not billed)","(chưa tính phí)"
+"Nothing logged yesterday ({0})","Không có ghi nhận hôm qua ({0})"
+"Open prepare summary","Mở tóm tắt chuẩn bị"
+"Open settings","Mở cài đặt"
+"Open tag management","Mở quản lý nhãn"
+"Open today's view","Mở xem hôm nay"
+"Open weekly view","Mở xem theo tuần"
+Other,Khác
+Pause,Tạm dừng
+Prepare,Chuẩn bị
+"Prepare Summary","Tóm tắt Chuẩn bị"
+Project,Dự án
+Rate,Đơn giá
+Rename,Đổi tên
+Resume,Tiếp tục
+"Saved — {0}","Đã lưu — {0}"
+Save,Lưu
+Sat,T7
+Scheduled,Đã lên lịch
+Send,Gửi
+Settings,Cài đặt
+"Show weekends","Hiện cuối tuần"
+"Start time","Thời gian bắt đầu"
+"Start Timer","Bắt đầu đếm"
+"Start timer: ""{0}""","Bắt đầu đếm: ""{0}"""
+"Stop current & start: ""{0}""","Dừng hiện tại & bắt đầu: ""{0}"""
+"Started yesterday","Đã bắt đầu hôm qua"
+Sun,CN
+"Sync all unsynced entries","Đồng bộ tất cả mục chưa đồng bộ"
+"Sync billable entries only","Chỉ đồng bộ mục tính phí được"
+"Sync completed with errors","Đồng bộ hoàn tất với lỗi"
+"Sync complete","Đồng bộ hoàn tất"
+"Sync interval","Khoảng đồng bộ"
+"Sync mode","Chế độ đồng bộ"
+"Synced to ERPNext","Đã đồng bộ sang ERPNext"
+"Syncing entries to ERPNext…","Đang đồng bộ mục sang ERPNext…"
+"{0} day(s) synced.","Đã đồng bộ {0} ngày."
+Tag,Nhãn
+"Tag management","Quản lý nhãn"
+"Tag Name","Tên nhãn"
+"Tag renamed. {0} entries updated.","Đã đổi tên nhãn. {0} mục được cập nhật."
+Tags,Nhãn
+"Tags merged. {0} entries re-tagged.","Đã gộp nhãn. {0} mục được gắn nhãn lại."
+Task,Nhiệm vụ
+"Test connection","Kiểm tra kết nối"
+"Test Connection","Kiểm tra Kết nối"
+"This entry is locked","Mục này đã bị khóa"
+"This month","Tháng này"
+"This week","Tuần này"
+Thu,T5
+"Time Bridge","Cầu nối Thời gian"
+"Time Entries","Mục Thời gian"
+"Timer already running","Bộ đếm đã đang chạy"
+"Timer is already running","Bộ đếm đã đang chạy"
+"Timer is not paused","Bộ đếm không ở trạng thái tạm dừng"
+"Timer is not running","Bộ đếm không đang chạy"
+To,Đến
+Today,Hôm nay
+Total,Tổng
+"Total billable","Tổng tính phí được"
+Tue,T3
+"Unknown error","Lỗi không xác định"
+Unassigned,Chưa phân công
+"(untagged project)","(dự án chưa gắn nhãn)"
+"View entry →","Xem mục →"
+"Warning: This entry is more than 7 days old.","Cảnh báo: Mục này đã hơn 7 ngày."
+Wed,T4
+"Week {0}","Tuần {0}"
+"What are you working on?","Bạn đang làm gì?"
+"What did you work on?","Bạn đã làm gì?"
+"Work Days","Ngày làm việc"
+Yesterday,Hôm qua
+draft,nháp
+"entries this month","mục tháng này"
+"no entries","không có mục"
+"no entries yet","chưa có mục nào"
+sent,đã gửi
+"+{0} more","+{0} nữa"
+"← from {0}","← từ {0}"
+"[Auto-stopped after {0}h]","[Tự động dừng sau {0}h]"
+"Entry Type","Loại mục"
+Fri,T6
+"Keyboard Shortcuts","Phím tắt"
+"Start / Pause / Resume timer","Bắt đầu / Tạm dừng / Tiếp tục bộ đếm"
+"Stop timer","Dừng bộ đếm"
+"New entry (focus quick-add bar)","Mục mới (chuyển đến thanh thêm nhanh)"
+"Previous / next day or week","Ngày hoặc tuần trước / sau"
+"Show / hide this overlay","Hiện / ẩn lớp phủ này"
+"Press H or Esc to close","Nhấn H hoặc Esc để đóng"
+Close,Đóng
+Timer,Bộ đếm
+Entries,Mục
+"This week at a glance","Tổng quan tuần này"
+"Time by tag","Thời gian theo nhãn"
+"Hours per day","Giờ mỗi ngày"
+"No entries this week","Không có mục tuần này"
+"No entries","Không có mục"
+Untagged,Chưa gắn nhãn
+"Monthly Budget (h)","Ngân sách tháng (h)"
+"Warn at (%)","Cảnh báo tại (%)"
+"0 = no limit","0 = không giới hạn"
+"0 = site default","0 = mặc định trang"
+"Approaching limit","Gần đạt giới hạn"
+"Budget exceeded","Vượt ngân sách"
+"budget used this month","ngân sách đã dùng tháng này"
+"used this month","đã dùng tháng này"
+of,trên
+Focus,Tập trung
+"Start Focus","Bắt đầu Tập trung"
+"End focus","Kết thúc tập trung"
+"Skip break","Bỏ qua nghỉ"
+"Break over","Hết giờ nghỉ"
+"Time to focus!","Đến giờ tập trung!"
+"Session complete","Phiên hoàn tất"
+"Focus complete!","Tập trung hoàn tất!"
+"All sessions done. Great work!","Tất cả phiên đã xong. Tuyệt vời!"
+"sessions done. Great work!","phiên đã xong. Tuyệt vời!"
+"Start new","Bắt đầu mới"
+"Work in focused sessions with timed breaks.","Làm việc trong các phiên tập trung với giờ nghỉ định sẵn."
+Session,Phiên
+Break,Nghỉ
+"Work (min)","Làm việc (phút)"
+"Break (min)","Nghỉ (phút)"
+Sessions,Phiên
+"No break is active","Không có giờ nghỉ đang hoạt động"
+"No focus session is running","Không có phiên tập trung đang chạy"
+Context,Ngữ cảnh
+Contact,Liên hệ
+"Context Type","Loại ngữ cảnh"
+"For whom?","Cho ai?"
+"Working on?","Đang làm gì?"
+"Search contacts...","Tìm liên hệ..."
+"Select type...","Chọn loại..."
+"All contacts","Tất cả liên hệ"
+"All projects","Tất cả dự án"
+"(no contact)","(không có liên hệ)"
+"(no project)","(không có dự án)"
+"(no task)","(không có nhiệm vụ)"
+"Filter by:","Lọc theo:"
+"Time by contact","Thời gian theo liên hệ"
+"Time by context","Thời gian theo ngữ cảnh"
+"Time by task","Thời gian theo nhiệm vụ"
+"Contact hours summary","Tóm tắt giờ liên hệ"

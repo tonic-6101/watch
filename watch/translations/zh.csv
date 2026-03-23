@@ -1,0 +1,247 @@
+source,translation
+"Billed as {0}","按{0}记录"
+"exact — rounding skipped","精确 — 已跳过取整"
+"Use exact","使用精确值"
+"Apply rounding","应用取整"
+Exact,精确
+Billed,已记录
+"* Rounded up to nearest increment","* 已向上取整至最近单位"
+billable,可记录
+non-billable,不可记录
+internal,内部
+on_save,on_save
+manual,manual
+scheduled,scheduled
+hourly,hourly
+every_6_hours,every_6_hours
+daily,daily
+stopped,已停止
+running,运行中
+paused,已暂停
+"Add a note...","添加备注..."
+"Add entry for yesterday","添加昨日记录"
+"Add your first entry","添加第一条记录"
+Archive,归档
+"Auto-stop Timer After","计时器自动停止时间"
+Billable,可记录
+"Billable {0}","可记录 {0}"
+Cancel,取消
+"Cannot delete tag — {0} entries use it.","无法删除标签 — {0}条记录正在使用。"
+Category,分类
+Client,客户
+Color,颜色
+"Connection Failed","连接失败"
+"Connection OK","连接正常"
+"Custom…","自定义…"
+Daily,每日
+"Daily view","每日视图"
+"Date range","日期范围"
+days,天
+"Default Entry Type","默认记录类型"
+"Default Rate","默认单价"
+"Default activity type","默认活动类型"
+Delete,删除
+Description,描述
+Dismiss,关闭
+"Do you want to sync all unsynced time entries to ERPNext now?","是否立即将所有未同步的时间记录同步到ERPNext？"
+Duplicate,复制
+Duration,时长
+Edit,编辑
+"Enable ERPNext bridge","启用ERPNext桥接"
+"End time","结束时间"
+"Entries forwarded","记录已转发"
+"Entries older than {0} days are locked. Contact your administrator.","超过{0}天的记录已锁定。请联系管理员。"
+"ERPNext Bridge","ERPNext桥接"
+"ERPNext is not installed on this site.","此站点未安装ERPNext。"
+"ERPNext is reachable and Timesheet access is confirmed.","ERPNext可访问，已确认工时表访问权限。"
+"ERPNext site URL","ERPNext站点URL"
+"ERPNext Timesheet {0} for {1} is submitted — re-sync blocked.","ERPNext工时表{0}（{1}）已提交 — 无法重新同步。"
+"ERPNext Timesheet is submitted — re-sync blocked","ERPNext工时表已提交 — 无法重新同步"
+"Est. {0}","预估 {0}"
+"Est. amount","预估金额"
+"Every 6 hours","每6小时"
+"All time","全部时间"
+"This year","今年"
+"Last year","去年"
+"Download CSV","下载CSV"
+"Export my data","导出我的数据"
+"Download all your time entries as CSV.","将所有时间记录下载为CSV。"
+"Export CSV","导出CSV"
+"Export successful","导出成功"
+"Failed to forward entries: {0}","转发记录失败: {0}"
+"Watch Settings","Watch 设置"
+"Watch Tag","Watch 标签"
+"Watch Entry","Watch 记录"
+"Watch Entry Tag","Watch 记录标签"
+"Watch Timer","Watch 计时器"
+"Forwarded {0} to {1}","已将{0}转发至{1}"
+From,开始
+General,常规
+Hourly,每小时
+hours,小时
+"Hide weekends","隐藏周末"
+Internal,内部
+"Internal / overhead","内部 / 间接开销"
+"Last bulk sync","上次批量同步"
+"Last month","上月"
+"Last sync error","上次同步错误"
+"Last week","上周"
+Less,收起
+"Lock Entries Older Than","锁定超过指定天数的记录"
+Manual,手动
+"Map project tags","映射项目标签"
+Merge,合并
+"Merge {0} into:","将{0}合并到:"
+Mon,一
+More,展开
+Navigate,导航
+"New Tag","新建标签"
+"No entries for {0}","{0}没有记录"
+"No entries yet","暂无记录"
+"No tags yet","暂无标签"
+"No timer is running","没有运行中的计时器"
+Non-billable,不可记录
+"(no description)","（无描述）"
+"(not billed)","（未记录）"
+"Nothing logged yesterday ({0})","昨天（{0}）没有记录"
+"Open prepare summary","打开准备摘要"
+"Open settings","打开设置"
+"Open tag management","打开标签管理"
+"Open today's view","打开今日视图"
+"Open weekly view","打开周视图"
+Other,其他
+Pause,暂停
+Prepare,准备
+"Prepare Summary","准备摘要"
+Project,项目
+Rate,单价
+Rename,重命名
+Resume,继续
+"Saved — {0}","已保存 — {0}"
+Save,保存
+Sat,六
+Scheduled,定时
+Send,发送
+Settings,设置
+"Show weekends","显示周末"
+"Start time","开始时间"
+"Start Timer","启动计时器"
+"Start timer: ""{0}""","启动计时器: ""{0}"""
+"Stop current & start: ""{0}""","停止当前并启动: ""{0}"""
+"Started yesterday","昨日已开始"
+Sun,日
+"Sync all unsynced entries","同步所有未同步记录"
+"Sync billable entries only","仅同步可记录记录"
+"Sync completed with errors","同步完成（有错误）"
+"Sync complete","同步完成"
+"Sync interval","同步间隔"
+"Sync mode","同步模式"
+"Synced to ERPNext","已同步到ERPNext"
+"Syncing entries to ERPNext…","正在同步记录到ERPNext…"
+"{0} day(s) synced.","已同步{0}天。"
+Tag,标签
+"Tag management","标签管理"
+"Tag Name","标签名称"
+"Tag renamed. {0} entries updated.","标签已重命名。{0}条记录已更新。"
+Tags,标签
+"Tags merged. {0} entries re-tagged.","标签已合并。{0}条记录已重新标记。"
+Task,任务
+"Test connection","测试连接"
+"Test Connection","测试连接"
+"This entry is locked","此记录已锁定"
+"This month","本月"
+"This week","本周"
+Thu,四
+"Time Bridge","时间桥接"
+"Time Entries","时间记录"
+"Timer already running","计时器已在运行"
+"Timer is already running","计时器已在运行"
+"Timer is not paused","计时器未暂停"
+"Timer is not running","计时器未运行"
+To,结束
+Today,今天
+Total,合计
+"Total billable","可记录合计"
+Tue,二
+"Unknown error","未知错误"
+Unassigned,未分配
+"(untagged project)","（无标签项目）"
+"View entry →","查看记录 →"
+"Warning: This entry is more than 7 days old.","警告：此记录已超过7天。"
+Wed,三
+"Week {0}","第{0}周"
+"What are you working on?","你在做什么？"
+"What did you work on?","你做了什么？"
+"Work Days","工作日"
+Yesterday,昨天
+draft,草稿
+"entries this month","本月记录"
+"no entries","无记录"
+"no entries yet","暂无记录"
+sent,已发送
+"+{0} more","还有{0}条"
+"← from {0}","← 来自{0}"
+"[Auto-stopped after {0}h]","[{0}小时后自动停止]"
+"Entry Type","记录类型"
+Fri,五
+"Keyboard Shortcuts","键盘快捷键"
+"Start / Pause / Resume timer","启动 / 暂停 / 继续计时器"
+"Stop timer","停止计时器"
+"New entry (focus quick-add bar)","新建记录（聚焦快速添加栏）"
+"Previous / next day or week","上一 / 下一天或周"
+"Show / hide this overlay","显示 / 隐藏此覆盖层"
+"Press H or Esc to close","按H或Esc关闭"
+Close,关闭
+Timer,计时器
+Entries,记录
+"This week at a glance","本周概览"
+"Time by tag","按标签统计时间"
+"Hours per day","每日时长"
+"No entries this week","本周无记录"
+"No entries","无记录"
+Untagged,无标签
+"Monthly Budget (h)","月度预算（小时）"
+"Warn at (%)","警告阈值（%）"
+"0 = no limit","0 = 无限制"
+"0 = site default","0 = 站点默认值"
+"Approaching limit","接近上限"
+"Budget exceeded","预算已超"
+"budget used this month","本月已用预算"
+"used this month","本月已用"
+of,/
+Focus,专注
+"Start Focus","开始专注"
+"End focus","结束专注"
+"Skip break","跳过休息"
+"Break over","休息结束"
+"Time to focus!","专注时间到！"
+"Session complete","会话完成"
+"Focus complete!","专注完成！"
+"All sessions done. Great work!","所有会话已完成。干得好！"
+"sessions done. Great work!","个会话已完成。干得好！"
+"Start new","重新开始"
+"Work in focused sessions with timed breaks.","以定时休息的方式进行专注工作。"
+Session,会话
+Break,休息
+"Work (min)","工作（分钟）"
+"Break (min)","休息（分钟）"
+Sessions,会话
+"No break is active","当前无休息"
+"No focus session is running","当前无专注会话"
+Context,上下文
+Contact,联系人
+"Context Type","上下文类型"
+"For whom?","为谁？"
+"Working on?","在做什么？"
+"Search contacts...","搜索联系人..."
+"Select type...","选择类型..."
+"All contacts","所有联系人"
+"All projects","所有项目"
+"(no contact)","（无联系人）"
+"(no project)","（无项目）"
+"(no task)","（无任务）"
+"Filter by:","筛选:"
+"Time by contact","按联系人统计时间"
+"Time by context","按上下文统计时间"
+"Time by task","按任务统计时间"
+"Contact hours summary","联系人时间摘要"
