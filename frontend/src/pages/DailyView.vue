@@ -397,7 +397,7 @@ const onTrackHint = computed(() => {
 </script>
 
 <template>
-  <div class="min-h-screen bg-[var(--watch-bg-secondary)]">
+  <div class="min-h-screen bg-gray-50 dark:bg-slate-800">
     <div class="max-w-2xl mx-auto px-4 py-6 space-y-4">
 
       <!-- Nudge banners — stacking order: idle → daily → empty-yesterday -->
@@ -449,27 +449,27 @@ const onTrackHint = computed(() => {
       >
         <div
           v-if="nudgeVisible"
-          class="bg-[var(--watch-bg)] rounded-xl border border-[var(--watch-border)]
+          class="bg-white dark:bg-slate-950 rounded-xl border border-gray-200 dark:border-slate-700
                  px-4 py-3 flex flex-wrap items-center gap-3"
         >
-          <CornerDownLeft class="w-4 h-4 shrink-0 text-[var(--watch-text-muted)]" aria-hidden="true" />
-          <span class="flex-1 text-sm text-[var(--watch-text)]">
+          <CornerDownLeft class="w-4 h-4 shrink-0 text-gray-500 dark:text-slate-500" aria-hidden="true" />
+          <span class="flex-1 text-sm text-gray-900 dark:text-slate-100">
             {{ __('Nothing logged yesterday') }}
-            <span class="text-[var(--watch-text-muted)] ml-1">
+            <span class="text-gray-500 dark:text-slate-500 ml-1">
               ({{ nudgeYesterday ? new Date(nudgeYesterday + 'T00:00:00').toLocaleDateString(undefined, { weekday: 'short', day: 'numeric', month: 'short' }) : '' }})
             </span>
           </span>
           <button
             type="button"
-            class="text-xs text-[var(--watch-primary)] hover:underline shrink-0"
+            class="text-xs text-[var(--app-accent-500)] hover:underline shrink-0"
             @click="goYesterday"
           >
             {{ __('Add entry for yesterday') }}
           </button>
           <button
             type="button"
-            class="p-1 rounded text-[var(--watch-text-muted)] hover:text-[var(--watch-text)]
-                   hover:bg-[var(--watch-bg-secondary)] transition-colors shrink-0"
+            class="p-1 rounded text-gray-500 dark:text-slate-500 hover:text-gray-900 dark:hover:text-slate-100
+                   hover:bg-gray-50 dark:hover:bg-slate-800 transition-colors shrink-0"
             :title="__('Dismiss')"
             @click="dismissNudge"
           >
@@ -484,7 +484,7 @@ const onTrackHint = computed(() => {
       <!-- "Started on a different day" note -->
       <p
         v-if="timerDateNote"
-        class="text-xs text-[var(--watch-text-muted)] italic text-center -mt-2"
+        class="text-xs text-gray-500 dark:text-slate-500 italic text-center -mt-2"
       >
         {{ timerDateNote }}
       </p>
@@ -493,9 +493,9 @@ const onTrackHint = computed(() => {
       <div class="flex items-center gap-3">
         <button
           type="button"
-          class="p-1.5 rounded-lg hover:bg-[var(--watch-bg)] border border-transparent
-                 hover:border-[var(--watch-border)] text-[var(--watch-text-muted)]
-                 hover:text-[var(--watch-text)] transition-colors"
+          class="p-1.5 rounded-lg hover:bg-white dark:hover:bg-slate-950 border border-transparent
+                 hover:border-gray-200 dark:hover:border-slate-700 text-gray-500 dark:text-slate-500
+                 hover:text-gray-900 dark:hover:text-slate-100 transition-colors"
           :title="__('Previous day')"
           @click="goDate(navDate(-1))"
         >
@@ -506,8 +506,8 @@ const onTrackHint = computed(() => {
         <div class="relative flex-1 text-center">
           <button
             type="button"
-            class="text-sm font-semibold text-[var(--watch-text)]
-                   hover:text-[var(--watch-primary)] transition-colors"
+            class="text-sm font-semibold text-gray-900 dark:text-slate-100
+                   hover:text-[var(--app-accent-500)] transition-colors"
             :title="__('Jump to date')"
             @click="openDatePicker"
           >
@@ -530,8 +530,8 @@ const onTrackHint = computed(() => {
           type="button"
           class="p-1.5 rounded-lg border border-transparent transition-colors"
           :class="isToday
-            ? 'text-[var(--watch-border)] cursor-not-allowed'
-            : 'hover:bg-[var(--watch-bg)] hover:border-[var(--watch-border)] text-[var(--watch-text-muted)] hover:text-[var(--watch-text)]'"
+            ? 'text-gray-200 dark:text-slate-700 cursor-not-allowed'
+            : 'hover:bg-white dark:hover:bg-slate-950 hover:border-gray-200 dark:hover:border-slate-700 text-gray-500 dark:text-slate-500 hover:text-gray-900 dark:hover:text-slate-100'"
           :disabled="isToday"
           :title="isToday ? undefined : __('Next day')"
           @click="!isToday && goDate(navDate(1))"
@@ -543,7 +543,7 @@ const onTrackHint = computed(() => {
         <button
           v-if="!isToday"
           type="button"
-          class="text-xs text-[var(--watch-primary)] hover:underline shrink-0"
+          class="text-xs text-[var(--app-accent-500)] hover:underline shrink-0"
           @click="goDate(todayStr())"
         >
           {{ __('Today') }}
@@ -567,26 +567,26 @@ const onTrackHint = computed(() => {
           <div
             v-for="i in 3"
             :key="i"
-            class="bg-[var(--watch-bg)] rounded-xl border border-[var(--watch-border)]
+            class="bg-white dark:bg-slate-950 rounded-xl border border-gray-200 dark:border-slate-700
                    p-4 animate-pulse"
           >
-            <div class="h-3 bg-[var(--watch-border)] rounded w-1/4 mb-2" />
-            <div class="h-4 bg-[var(--watch-border)] rounded w-3/4" />
+            <div class="h-3 bg-gray-200 dark:bg-slate-700 rounded w-1/4 mb-2" />
+            <div class="h-4 bg-gray-200 dark:bg-slate-700 rounded w-3/4" />
           </div>
         </template>
 
         <!-- Empty state -->
         <div
           v-else-if="!entries.loading.value && !entries.entries.value.length"
-          class="bg-[var(--watch-bg)] rounded-xl border border-[var(--watch-border)]
+          class="bg-white dark:bg-slate-950 rounded-xl border border-gray-200 dark:border-slate-700
                  p-8 text-center space-y-3"
         >
-          <p class="text-sm text-[var(--watch-text-muted)]">
+          <p class="text-sm text-gray-500 dark:text-slate-500">
             {{ __('No entries for') }} {{ formatDateLabel(activeDate) }}
           </p>
           <button
             type="button"
-            class="text-sm text-[var(--watch-primary)] hover:underline"
+            class="text-sm text-[var(--app-accent-500)] hover:underline"
             @click="focusEntryBar"
           >
             {{ __('+ Add your first entry') }}
@@ -611,19 +611,19 @@ const onTrackHint = computed(() => {
       <!-- Daily totals bar -->
       <div
         v-if="entries.entries.value.length"
-        class="bg-[var(--watch-bg)] rounded-xl border border-[var(--watch-border)]
+        class="bg-white dark:bg-slate-950 rounded-xl border border-gray-200 dark:border-slate-700
                px-4 py-3 flex flex-wrap items-center gap-x-6 gap-y-1 text-sm"
       >
-        <span class="text-[var(--watch-text-muted)]">
+        <span class="text-gray-500 dark:text-slate-500">
           {{ __('Total') }}
-          <strong class="text-[var(--watch-text)] ml-1">
+          <strong class="text-gray-900 dark:text-slate-100 ml-1">
             {{ formatHours(entries.totalHours.value) }}
           </strong>
         </span>
 
-        <span v-if="entries.billableHours.value" class="text-[var(--watch-text-muted)]">
+        <span v-if="entries.billableHours.value" class="text-gray-500 dark:text-slate-500">
           {{ __('Billable') }}
-          <strong class="text-[var(--watch-text)] ml-1">
+          <strong class="text-gray-900 dark:text-slate-100 ml-1">
             {{ formatHours(entries.billableHours.value) }}
           </strong>
         </span>
@@ -633,7 +633,7 @@ const onTrackHint = computed(() => {
       <!-- Weekly target "on track" hint -->
       <p
         v-if="onTrackHint"
-        class="text-xs text-[var(--watch-text-muted)] italic px-1 -mt-2"
+        class="text-xs text-gray-500 dark:text-slate-500 italic px-1 -mt-2"
       >
         {{ onTrackHint }}
       </p>

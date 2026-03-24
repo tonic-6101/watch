@@ -197,7 +197,7 @@ function handleDone() {
          SETUP FORM
          ══════════════════════════════════════════════════════════════ -->
     <div v-if="view === 'setup'">
-      <p class="text-xs text-[var(--watch-text-muted)] mb-3">
+      <p class="text-xs text-gray-500 dark:text-slate-500 mb-3">
         {{ __('Work in focused sessions with timed breaks.') }}
       </p>
 
@@ -206,11 +206,11 @@ function handleDone() {
         v-model="formDesc"
         type="text"
         :placeholder="__('What are you working on?')"
-        class="w-full px-3 py-2 mb-3 rounded-lg border border-[var(--watch-border)]
-               bg-[var(--watch-bg)] text-sm text-[var(--watch-text)]
-               placeholder-[var(--watch-text-muted)] outline-none
-               focus:ring-2 focus:ring-[var(--watch-primary)]/30
-               focus:border-[var(--watch-primary)]"
+        class="w-full px-3 py-2 mb-3 rounded-lg border border-gray-200 dark:border-slate-700
+               bg-white dark:bg-slate-950 text-sm text-gray-900 dark:text-slate-100
+               placeholder-gray-500 dark:placeholder-slate-500 outline-none
+               focus:ring-2 focus:ring-[var(--app-accent-500)]/30
+               focus:border-[var(--app-accent-500)]"
       />
 
       <!-- Tags -->
@@ -227,8 +227,8 @@ function handleDone() {
           :class="[
             'flex-1 py-1.5 rounded-lg text-xs font-medium border transition-colors',
             formType === opt.value
-              ? 'bg-[var(--watch-primary)] border-[var(--watch-primary)] text-white'
-              : 'border-[var(--watch-border)] text-[var(--watch-text-secondary)] hover:border-[var(--watch-primary)]/50',
+              ? 'bg-[var(--app-accent-500)] border-[var(--app-accent-500)] text-white'
+              : 'border-gray-200 dark:border-slate-700 text-gray-600 dark:text-slate-400 hover:border-[var(--app-accent-500)]/50',
           ]"
           @click="formType = opt.value"
         >
@@ -238,7 +238,7 @@ function handleDone() {
 
       <!-- Sessions -->
       <div class="mb-3">
-        <label class="block text-xs text-[var(--watch-text-muted)] mb-1.5">{{ __('Sessions') }}</label>
+        <label class="block text-xs text-gray-500 dark:text-slate-500 mb-1.5">{{ __('Sessions') }}</label>
         <div class="flex gap-1.5">
           <button
             v-for="n in SESSION_PRESETS"
@@ -247,8 +247,8 @@ function handleDone() {
             :class="[
               'px-3 py-1.5 rounded-lg text-xs font-medium border transition-colors',
               formSessions === n
-                ? 'bg-[var(--watch-primary)] border-[var(--watch-primary)] text-white'
-                : 'border-[var(--watch-border)] text-[var(--watch-text-secondary)] hover:border-[var(--watch-primary)]/50',
+                ? 'bg-[var(--app-accent-500)] border-[var(--app-accent-500)] text-white'
+                : 'border-gray-200 dark:border-slate-700 text-gray-600 dark:text-slate-400 hover:border-[var(--app-accent-500)]/50',
             ]"
             @click="formSessions = n"
           >{{ n }}</button>
@@ -257,9 +257,9 @@ function handleDone() {
             type="number"
             min="1"
             max="12"
-            class="w-14 px-2 py-1.5 rounded-lg border border-[var(--watch-border)]
-                   bg-[var(--watch-bg)] text-xs text-[var(--watch-text)] outline-none
-                   focus:border-[var(--watch-primary)]"
+            class="w-14 px-2 py-1.5 rounded-lg border border-gray-200 dark:border-slate-700
+                   bg-white dark:bg-slate-950 text-xs text-gray-900 dark:text-slate-100 outline-none
+                   focus:border-[var(--app-accent-500)]"
           />
         </div>
       </div>
@@ -267,7 +267,7 @@ function handleDone() {
       <!-- Work / Break -->
       <div class="flex gap-3 mb-4">
         <div class="flex-1">
-          <label class="block text-xs text-[var(--watch-text-muted)] mb-1.5">{{ __('Work (min)') }}</label>
+          <label class="block text-xs text-gray-500 dark:text-slate-500 mb-1.5">{{ __('Work (min)') }}</label>
           <div class="flex gap-1.5">
             <button
               v-for="n in WORK_PRESETS"
@@ -276,15 +276,15 @@ function handleDone() {
               :class="[
                 'px-2 py-1.5 rounded-lg text-xs font-medium border transition-colors',
                 formWorkMinutes === n
-                  ? 'bg-[var(--watch-primary)] border-[var(--watch-primary)] text-white'
-                  : 'border-[var(--watch-border)] text-[var(--watch-text-secondary)] hover:border-[var(--watch-primary)]/50',
+                  ? 'bg-[var(--app-accent-500)] border-[var(--app-accent-500)] text-white'
+                  : 'border-gray-200 dark:border-slate-700 text-gray-600 dark:text-slate-400 hover:border-[var(--app-accent-500)]/50',
               ]"
               @click="formWorkMinutes = n"
             >{{ n }}</button>
           </div>
         </div>
         <div class="flex-1">
-          <label class="block text-xs text-[var(--watch-text-muted)] mb-1.5">{{ __('Break (min)') }}</label>
+          <label class="block text-xs text-gray-500 dark:text-slate-500 mb-1.5">{{ __('Break (min)') }}</label>
           <div class="flex gap-1.5">
             <button
               v-for="n in BREAK_PRESETS"
@@ -293,8 +293,8 @@ function handleDone() {
               :class="[
                 'px-2 py-1.5 rounded-lg text-xs font-medium border transition-colors',
                 formBreakMinutes === n
-                  ? 'bg-[var(--watch-primary)] border-[var(--watch-primary)] text-white'
-                  : 'border-[var(--watch-border)] text-[var(--watch-text-secondary)] hover:border-[var(--watch-primary)]/50',
+                  ? 'bg-[var(--app-accent-500)] border-[var(--app-accent-500)] text-white'
+                  : 'border-gray-200 dark:border-slate-700 text-gray-600 dark:text-slate-400 hover:border-[var(--app-accent-500)]/50',
               ]"
               @click="formBreakMinutes = n"
             >{{ n }}</button>
@@ -305,7 +305,7 @@ function handleDone() {
       <!-- Start -->
       <button
         class="w-full flex items-center justify-center gap-2 py-2.5 rounded-lg
-               bg-[var(--watch-primary)] hover:bg-[var(--watch-primary-dark)]
+               bg-[var(--app-accent-500)] hover:bg-[var(--app-accent-700)]
                text-white text-sm font-medium transition-colors disabled:opacity-50"
         :disabled="timer.loading.value"
         @click="handleStart"
@@ -322,7 +322,7 @@ function handleDone() {
 
       <!-- Session indicator -->
       <div class="flex items-center justify-between mb-3">
-        <span class="text-xs font-medium text-[var(--watch-primary)]">
+        <span class="text-xs font-medium text-[var(--app-accent-500)]">
           {{ __('Session') }} {{ timer.focusSessionNumber.value }} / {{ timer.focusTotalSessions.value }}
         </span>
         <span class="inline-block w-2 h-2 rounded-full bg-[var(--timer-running)] animate-pulse" aria-hidden="true" />
@@ -330,21 +330,21 @@ function handleDone() {
 
       <!-- Countdown -->
       <div class="text-center mb-3">
-        <span class="text-4xl font-semibold tabular-nums text-[var(--watch-text)]">
+        <span class="text-4xl font-semibold tabular-nums text-gray-900 dark:text-slate-100">
           {{ formatCountdown(workRemaining) }}
         </span>
       </div>
 
       <!-- Progress bar -->
-      <div class="h-1.5 rounded-full bg-[var(--watch-border)] mb-3 overflow-hidden">
+      <div class="h-1.5 rounded-full bg-gray-200 dark:bg-slate-700 mb-3 overflow-hidden">
         <div
-          class="h-full rounded-full bg-[var(--watch-primary)] transition-all duration-1000"
+          class="h-full rounded-full bg-[var(--app-accent-500)] transition-all duration-1000"
           :style="{ width: `${workProgressPct}%` }"
         />
       </div>
 
       <!-- Description -->
-      <p v-if="timer.focusDescription.value" class="text-xs text-[var(--watch-text-secondary)] truncate mb-3">
+      <p v-if="timer.focusDescription.value" class="text-xs text-gray-600 dark:text-slate-400 truncate mb-3">
         "{{ timer.focusDescription.value }}"
       </p>
 
@@ -356,10 +356,10 @@ function handleDone() {
           :class="[
             'w-2 h-2 rounded-full transition-colors',
             i < timer.focusSessionNumber.value
-              ? 'bg-[var(--watch-primary)]'
+              ? 'bg-[var(--app-accent-500)]'
               : i === timer.focusSessionNumber.value
-              ? 'bg-[var(--watch-primary)] opacity-100 ring-2 ring-[var(--watch-primary)]/30'
-              : 'bg-[var(--watch-border)]',
+              ? 'bg-[var(--app-accent-500)] opacity-100 ring-2 ring-[var(--app-accent-500)]/30'
+              : 'bg-gray-200 dark:bg-slate-700',
           ]"
         />
       </div>
@@ -367,8 +367,8 @@ function handleDone() {
       <!-- Abort -->
       <button
         class="w-full flex items-center justify-center gap-2 py-2 rounded-lg
-               border border-[var(--watch-border)] text-sm text-[var(--watch-text-secondary)]
-               hover:bg-[var(--watch-bg-secondary)] transition-colors disabled:opacity-50"
+               border border-gray-200 dark:border-slate-700 text-sm text-gray-600 dark:text-slate-400
+               hover:bg-gray-50 dark:hover:bg-slate-800 transition-colors disabled:opacity-50"
         :disabled="timer.loading.value"
         @click="handleEndFocus"
       >
@@ -384,23 +384,23 @@ function handleDone() {
 
       <!-- Header -->
       <div class="flex items-center justify-between mb-3">
-        <span class="text-xs font-medium text-[var(--watch-text-muted)]">
+        <span class="text-xs font-medium text-gray-500 dark:text-slate-500">
           {{ __('Break') }} · {{ __('Session') }} {{ timer.focusSessionNumber.value }} / {{ timer.focusTotalSessions.value }}
         </span>
-        <Coffee class="w-4 h-4 text-[var(--watch-text-muted)]" aria-hidden="true" />
+        <Coffee class="w-4 h-4 text-gray-500 dark:text-slate-500" aria-hidden="true" />
       </div>
 
       <!-- Countdown -->
       <div class="text-center mb-3">
-        <span class="text-4xl font-semibold tabular-nums text-[var(--watch-text-secondary)]">
+        <span class="text-4xl font-semibold tabular-nums text-gray-600 dark:text-slate-400">
           {{ formatCountdown(breakRemaining) }}
         </span>
       </div>
 
       <!-- Progress bar -->
-      <div class="h-1.5 rounded-full bg-[var(--watch-border)] mb-4 overflow-hidden">
+      <div class="h-1.5 rounded-full bg-gray-200 dark:bg-slate-700 mb-4 overflow-hidden">
         <div
-          class="h-full rounded-full bg-[var(--watch-text-muted)] transition-all duration-1000"
+          class="h-full rounded-full bg-gray-500 dark:bg-slate-500 transition-all duration-1000"
           :style="{ width: `${breakProgressPct}%` }"
         />
       </div>
@@ -413,8 +413,8 @@ function handleDone() {
           :class="[
             'w-2 h-2 rounded-full',
             i <= timer.focusSessionNumber.value
-              ? 'bg-[var(--watch-primary)]'
-              : 'bg-[var(--watch-border)]',
+              ? 'bg-[var(--app-accent-500)]'
+              : 'bg-gray-200 dark:bg-slate-700',
           ]"
         />
       </div>
@@ -423,7 +423,7 @@ function handleDone() {
       <div class="flex gap-2">
         <button
           class="flex-1 flex items-center justify-center gap-2 py-2 rounded-lg
-                 bg-[var(--watch-primary)] hover:bg-[var(--watch-primary-dark)]
+                 bg-[var(--app-accent-500)] hover:bg-[var(--app-accent-700)]
                  text-white text-sm font-medium transition-colors disabled:opacity-50"
           :disabled="timer.loading.value"
           @click="handleSkipBreak"
@@ -433,8 +433,8 @@ function handleDone() {
         </button>
         <button
           class="flex items-center justify-center gap-2 px-3 py-2 rounded-lg
-                 border border-[var(--watch-border)] text-sm text-[var(--watch-text-secondary)]
-                 hover:bg-[var(--watch-bg-secondary)] transition-colors disabled:opacity-50"
+                 border border-gray-200 dark:border-slate-700 text-sm text-gray-600 dark:text-slate-400
+                 hover:bg-gray-50 dark:hover:bg-slate-800 transition-colors disabled:opacity-50"
           :disabled="timer.loading.value"
           @click="handleEndFocus"
         >
@@ -451,15 +451,15 @@ function handleDone() {
                   bg-[var(--timer-running)] mx-auto mb-3">
         <Check class="w-5 h-5 text-white" aria-hidden="true" />
       </div>
-      <p class="text-sm font-semibold text-[var(--watch-text)] mb-1">
+      <p class="text-sm font-semibold text-gray-900 dark:text-slate-100 mb-1">
         {{ __('Focus complete!') }}
       </p>
-      <p class="text-xs text-[var(--watch-text-muted)] mb-4">
+      <p class="text-xs text-gray-500 dark:text-slate-500 mb-4">
         {{ timer.focusTotalSessions.value }} {{ __('sessions done. Great work!') }}
       </p>
       <button
-        class="w-full py-2 rounded-lg bg-[var(--watch-primary)]
-               hover:bg-[var(--watch-primary-dark)] text-white text-sm font-medium
+        class="w-full py-2 rounded-lg bg-[var(--app-accent-500)]
+               hover:bg-[var(--app-accent-700)] text-white text-sm font-medium
                transition-colors"
         @click="handleDone"
       >

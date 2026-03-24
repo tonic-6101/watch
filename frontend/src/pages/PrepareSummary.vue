@@ -324,7 +324,7 @@ function groupLabel(g: ContactGroup): string {
 }
 
 function chipStyle(color: string | null) {
-  const c = color || 'var(--watch-primary)'
+  const c = color || 'var(--app-accent-500)'
   return { backgroundColor: `${c}22`, color: c, borderColor: `${c}44` }
 }
 
@@ -513,36 +513,36 @@ function fmtDate(d: string): string {
 </script>
 
 <template>
-  <div class="min-h-screen bg-[var(--watch-bg-secondary)]">
+  <div class="min-h-screen bg-gray-50 dark:bg-slate-800">
     <div class="max-w-2xl mx-auto px-4 py-6 space-y-4">
 
       <!-- Page heading -->
-      <h1 class="text-lg font-semibold text-[var(--watch-text)]">
+      <h1 class="text-lg font-semibold text-gray-900 dark:text-slate-100">
         {{ __('Prepare Draft') }}
       </h1>
 
       <!-- Date range bar -->
-      <div class="bg-[var(--watch-bg)] rounded-xl border border-[var(--watch-border)] px-4 py-3 space-y-3">
+      <div class="bg-white dark:bg-slate-950 rounded-xl border border-gray-200 dark:border-slate-700 px-4 py-3 space-y-3">
         <div class="flex flex-wrap items-center gap-2">
           <!-- From date -->
           <input
             v-model="fromDate"
             type="date"
             :max="toDate"
-            class="px-2 py-1.5 text-sm rounded-lg border border-[var(--watch-border)]
-                   bg-[var(--watch-bg)] text-[var(--watch-text)] outline-none
-                   focus:ring-2 focus:ring-[var(--watch-primary)]/30 focus:border-[var(--watch-primary)]"
+            class="px-2 py-1.5 text-sm rounded-lg border border-gray-200 dark:border-slate-700
+                   bg-white dark:bg-slate-950 text-gray-900 dark:text-slate-100 outline-none
+                   focus:ring-2 focus:ring-[var(--app-accent-500)]/30 focus:border-[var(--app-accent-500)]"
             @change="activePreset = 'custom'; showCustomPickers = true"
           />
-          <span class="text-[var(--watch-text-muted)] text-sm">→</span>
+          <span class="text-gray-500 dark:text-slate-500 text-sm">→</span>
           <!-- To date -->
           <input
             v-model="toDate"
             type="date"
             :min="fromDate"
-            class="px-2 py-1.5 text-sm rounded-lg border border-[var(--watch-border)]
-                   bg-[var(--watch-bg)] text-[var(--watch-text)] outline-none
-                   focus:ring-2 focus:ring-[var(--watch-primary)]/30 focus:border-[var(--watch-primary)]"
+            class="px-2 py-1.5 text-sm rounded-lg border border-gray-200 dark:border-slate-700
+                   bg-white dark:bg-slate-950 text-gray-900 dark:text-slate-100 outline-none
+                   focus:ring-2 focus:ring-[var(--app-accent-500)]/30 focus:border-[var(--app-accent-500)]"
             @change="activePreset = 'custom'; showCustomPickers = true"
           />
 
@@ -550,8 +550,8 @@ function fmtDate(d: string): string {
           <div class="relative ml-auto">
             <button
               type="button"
-              class="flex items-center gap-1 px-3 py-1.5 rounded-lg border border-[var(--watch-border)]
-                     text-sm text-[var(--watch-text)] hover:border-[var(--watch-primary)]/50 transition-colors"
+              class="flex items-center gap-1 px-3 py-1.5 rounded-lg border border-gray-200 dark:border-slate-700
+                     text-sm text-gray-900 dark:text-slate-100 hover:border-[var(--app-accent-500)]/50 transition-colors"
               @click="presetOpen = !presetOpen"
             >
               {{ __(activePresetLabel) }}
@@ -559,7 +559,7 @@ function fmtDate(d: string): string {
             </button>
             <div
               v-if="presetOpen"
-              class="absolute right-0 top-full mt-1 z-20 bg-[var(--watch-bg)] border border-[var(--watch-border)]
+              class="absolute right-0 top-full mt-1 z-20 bg-white dark:bg-slate-950 border border-gray-200 dark:border-slate-700
                      rounded-xl shadow-lg py-1 min-w-[160px]"
             >
               <button
@@ -569,8 +569,8 @@ function fmtDate(d: string): string {
                 :class="[
                   'w-full text-left px-3 py-1.5 text-sm transition-colors',
                   activePreset === p.value
-                    ? 'text-[var(--watch-primary)] font-medium'
-                    : 'text-[var(--watch-text)] hover:bg-[var(--watch-bg-secondary)]',
+                    ? 'text-[var(--app-accent-500)] font-medium'
+                    : 'text-gray-900 dark:text-slate-100 hover:bg-gray-50 dark:hover:bg-slate-800',
                 ]"
                 @click="applyPreset(p.value)"
               >
@@ -583,7 +583,7 @@ function fmtDate(d: string): string {
           <button
             v-if="activePreset === 'custom'"
             type="button"
-            class="px-3 py-1.5 rounded-lg bg-[var(--watch-primary)] hover:bg-[var(--watch-primary-dark)]
+            class="px-3 py-1.5 rounded-lg bg-[var(--app-accent-500)] hover:bg-[var(--app-accent-700)]
                    text-white text-sm font-medium transition-colors"
             @click="applyCustomRange"
           >
@@ -593,8 +593,8 @@ function fmtDate(d: string): string {
           <!-- General export CSV (all entry types, no billing side-effects) -->
           <button
             type="button"
-            class="flex items-center gap-1.5 px-3 py-1.5 rounded-lg border border-[var(--watch-border)]
-                   text-sm text-[var(--watch-text-muted)] hover:bg-[var(--watch-bg-secondary)]
+            class="flex items-center gap-1.5 px-3 py-1.5 rounded-lg border border-gray-200 dark:border-slate-700
+                   text-sm text-gray-500 dark:text-slate-500 hover:bg-gray-50 dark:hover:bg-slate-800
                    transition-colors"
             :title="__('Download all entries for this period as CSV')"
             @click="downloadGeneralCsv"
@@ -609,12 +609,12 @@ function fmtDate(d: string): string {
           v-if="summaryData && (summaryData.available_contacts.length > 0 || summaryData.available_projects.length > 0)"
           class="flex flex-wrap items-center gap-2 pt-1"
         >
-          <span class="text-xs text-[var(--watch-text-muted)]">{{ __('Filter by:') }}</span>
+          <span class="text-xs text-gray-500 dark:text-slate-500">{{ __('Filter by:') }}</span>
           <select
             v-if="summaryData.available_contacts.length > 0"
             v-model="filterContact"
-            class="px-2 py-1 text-sm rounded-lg border border-[var(--watch-border)]
-                   bg-[var(--watch-bg)] text-[var(--watch-text)] outline-none"
+            class="px-2 py-1 text-sm rounded-lg border border-gray-200 dark:border-slate-700
+                   bg-white dark:bg-slate-950 text-gray-900 dark:text-slate-100 outline-none"
             @change="onFilterChange"
           >
             <option value="">{{ __('All contacts') }}</option>
@@ -625,8 +625,8 @@ function fmtDate(d: string): string {
           <select
             v-if="summaryData.available_projects.length > 0"
             v-model="filterProject"
-            class="px-2 py-1 text-sm rounded-lg border border-[var(--watch-border)]
-                   bg-[var(--watch-bg)] text-[var(--watch-text)] outline-none"
+            class="px-2 py-1 text-sm rounded-lg border border-gray-200 dark:border-slate-700
+                   bg-white dark:bg-slate-950 text-gray-900 dark:text-slate-100 outline-none"
             @change="onFilterChange"
           >
             <option value="">{{ __('All projects') }}</option>
@@ -673,18 +673,18 @@ function fmtDate(d: string): string {
         <div
           v-for="i in 2"
           :key="i"
-          class="bg-[var(--watch-bg)] rounded-xl border border-[var(--watch-border)] p-4 animate-pulse"
+          class="bg-white dark:bg-slate-950 rounded-xl border border-gray-200 dark:border-slate-700 p-4 animate-pulse"
         >
-          <div class="h-4 bg-[var(--watch-border)] rounded w-1/3 mb-2" />
-          <div class="h-3 bg-[var(--watch-border)] rounded w-1/2" />
+          <div class="h-4 bg-gray-200 dark:bg-slate-700 rounded w-1/3 mb-2" />
+          <div class="h-3 bg-gray-200 dark:bg-slate-700 rounded w-1/2" />
         </div>
       </template>
 
       <!-- Empty state -->
       <div
         v-else-if="!loading && summaryData && !summaryData.groups.length"
-        class="bg-[var(--watch-bg)] rounded-xl border border-[var(--watch-border)]
-               p-8 text-center text-sm text-[var(--watch-text-muted)]"
+        class="bg-white dark:bg-slate-950 rounded-xl border border-gray-200 dark:border-slate-700
+               p-8 text-center text-sm text-gray-500 dark:text-slate-500"
       >
         {{ __('No billable entries for this period.') }}
       </div>
@@ -694,16 +694,16 @@ function fmtDate(d: string): string {
         <div
           v-for="group in summaryData.groups"
           :key="groupKey(group)"
-          class="bg-[var(--watch-bg)] rounded-xl border border-[var(--watch-border)] overflow-hidden"
+          class="bg-white dark:bg-slate-950 rounded-xl border border-gray-200 dark:border-slate-700 overflow-hidden"
         >
           <!-- Level 1: Contact/Client header row -->
           <div
-            class="flex items-center gap-3 px-4 py-3 cursor-pointer hover:bg-[var(--watch-bg-secondary)] transition-colors"
+            class="flex items-center gap-3 px-4 py-3 cursor-pointer hover:bg-gray-50 dark:hover:bg-slate-800 transition-colors"
             @click="toggleCollapse(group)"
           >
             <component
               :is="collapsed[groupKey(group)] ? ChevronRight : ChevronDown"
-              class="w-4 h-4 shrink-0 text-[var(--watch-text-muted)]"
+              class="w-4 h-4 shrink-0 text-gray-500 dark:text-slate-500"
               aria-hidden="true"
             />
 
@@ -717,13 +717,13 @@ function fmtDate(d: string): string {
             </span>
             <span
               v-else
-              class="text-sm font-medium text-[var(--watch-text)] shrink-0"
+              class="text-sm font-medium text-gray-900 dark:text-slate-100 shrink-0"
             >
               {{ groupLabel(group) }}
             </span>
 
             <!-- Hours -->
-            <span class="text-sm font-semibold text-[var(--watch-text)]">
+            <span class="text-sm font-semibold text-gray-900 dark:text-slate-100">
               {{ formatHours(group.total_hours) }}
             </span>
 
@@ -747,8 +747,8 @@ function fmtDate(d: string): string {
                 v-if="!billingActions.length"
                 type="button"
                 :disabled="sending === groupKey(group)"
-                class="flex items-center gap-1.5 px-3 py-1.5 rounded-lg border border-[var(--watch-border)]
-                       text-sm text-[var(--watch-text-secondary)] hover:bg-[var(--watch-bg-secondary)]
+                class="flex items-center gap-1.5 px-3 py-1.5 rounded-lg border border-gray-200 dark:border-slate-700
+                       text-sm text-gray-600 dark:text-slate-400 hover:bg-gray-50 dark:hover:bg-slate-800
                        transition-colors disabled:opacity-50"
                 @click="doExportCsv(group)"
               >
@@ -762,7 +762,7 @@ function fmtDate(d: string): string {
                 type="button"
                 :disabled="sending === groupKey(group)"
                 class="flex items-center gap-1.5 px-3 py-1.5 rounded-lg
-                       bg-[var(--watch-primary)] hover:bg-[var(--watch-primary-dark)]
+                       bg-[var(--app-accent-500)] hover:bg-[var(--app-accent-700)]
                        text-white text-sm font-medium transition-colors disabled:opacity-50"
                 @click="doSend(group, billingActions[0])"
               >
@@ -776,7 +776,7 @@ function fmtDate(d: string): string {
                   type="button"
                   :disabled="sending === groupKey(group)"
                   class="flex items-center gap-1.5 px-3 py-1.5 rounded-lg
-                         bg-[var(--watch-primary)] hover:bg-[var(--watch-primary-dark)]
+                         bg-[var(--app-accent-500)] hover:bg-[var(--app-accent-700)]
                          text-white text-sm font-medium transition-colors disabled:opacity-50"
                   @click="openSendMenu(group, $event)"
                 >
@@ -786,15 +786,15 @@ function fmtDate(d: string): string {
                 </button>
                 <div
                   v-if="sendMenuOpen === groupKey(group)"
-                  class="absolute right-0 top-full mt-1 z-20 bg-[var(--watch-bg)]
-                         border border-[var(--watch-border)] rounded-xl shadow-lg py-1 min-w-[160px]"
+                  class="absolute right-0 top-full mt-1 z-20 bg-white dark:bg-slate-950
+                         border border-gray-200 dark:border-slate-700 rounded-xl shadow-lg py-1 min-w-[160px]"
                 >
                   <button
                     v-for="action in billingActions"
                     :key="action.app"
                     type="button"
-                    class="w-full text-left px-3 py-1.5 text-sm text-[var(--watch-text)]
-                           hover:bg-[var(--watch-bg-secondary)] transition-colors"
+                    class="w-full text-left px-3 py-1.5 text-sm text-gray-900 dark:text-slate-100
+                           hover:bg-gray-50 dark:hover:bg-slate-800 transition-colors"
                     @click="doSend(group, action)"
                   >
                     {{ __('Send to {0}', [action.label]) }}
@@ -807,7 +807,7 @@ function fmtDate(d: string): string {
           <!-- Budget warning (always visible, non-blocking) -->
           <div
             v-if="group.client_tag && groupBudgets[group.client_tag] && groupBudgets[group.client_tag].status !== 'none'"
-            class="px-4 py-2 border-t border-[var(--watch-border)]"
+            class="px-4 py-2 border-t border-gray-200 dark:border-slate-700"
             :class="groupBudgets[group.client_tag].status === 'exceeded' ? 'bg-red-50 dark:bg-red-900/10' : 'bg-amber-50 dark:bg-amber-900/10'"
           >
             <span
@@ -834,7 +834,7 @@ function fmtDate(d: string): string {
           <!-- Level 2: Project sub-rows -->
           <div
             v-if="!collapsed[groupKey(group)]"
-            class="border-t border-[var(--watch-border)]"
+            class="border-t border-gray-200 dark:border-slate-700"
           >
             <template
               v-for="project in group.projects"
@@ -843,9 +843,9 @@ function fmtDate(d: string): string {
               <!-- Project row — clickable to expand tasks/entries -->
               <div
                 class="flex items-center gap-3 px-4 py-2.5 pl-8
-                       border-b border-[var(--watch-border)]
-                       text-sm text-[var(--watch-text-muted)] cursor-pointer
-                       hover:bg-[var(--watch-bg-secondary)] transition-colors"
+                       border-b border-gray-200 dark:border-slate-700
+                       text-sm text-gray-500 dark:text-slate-500 cursor-pointer
+                       hover:bg-gray-50 dark:hover:bg-slate-800 transition-colors"
                 @click="toggleProject(group, project)"
               >
                 <component
@@ -855,11 +855,11 @@ function fmtDate(d: string): string {
                 />
                 <span
                   v-if="project.is_tag_based && project.project_tag"
-                  class="flex-1 text-[var(--watch-text)] italic"
+                  class="flex-1 text-gray-900 dark:text-slate-100 italic"
                 >
                   {{ project.project_tag }}
                 </span>
-                <span v-else class="flex-1 text-[var(--watch-text)]">
+                <span v-else class="flex-1 text-gray-900 dark:text-slate-100">
                   {{ projectLabel(project) }}
                 </span>
                 <span>{{ formatHours(project.hours) }}</span>
@@ -868,7 +868,7 @@ function fmtDate(d: string): string {
               <!-- Level 3: Tasks + entries (expanded) -->
               <div
                 v-if="projectExpanded[projectKey(group, project)]"
-                class="border-b border-[var(--watch-border)]"
+                class="border-b border-gray-200 dark:border-slate-700"
               >
                 <template
                   v-for="task in project.tasks"
@@ -878,9 +878,9 @@ function fmtDate(d: string): string {
                   <div
                     v-if="task.context_name"
                     class="flex items-center gap-3 px-4 py-2 pl-12
-                           text-sm text-[var(--watch-text-muted)] cursor-pointer
-                           hover:bg-[var(--watch-bg-secondary)] transition-colors
-                           border-b border-[var(--watch-border)]"
+                           text-sm text-gray-500 dark:text-slate-500 cursor-pointer
+                           hover:bg-gray-50 dark:hover:bg-slate-800 transition-colors
+                           border-b border-gray-200 dark:border-slate-700"
                     @click="toggleTask(group, project, task)"
                   >
                     <component
@@ -888,7 +888,7 @@ function fmtDate(d: string): string {
                       class="w-3 h-3 shrink-0"
                       aria-hidden="true"
                     />
-                    <span class="flex-1 text-[var(--watch-text)]">
+                    <span class="flex-1 text-gray-900 dark:text-slate-100">
                       {{ task.task_display ?? __('(no task)') }}
                     </span>
                     <span class="text-xs">{{ formatHours(task.hours) }}</span>
@@ -897,26 +897,26 @@ function fmtDate(d: string): string {
                   <!-- Entry rows (shown directly when no task, or when task is expanded) -->
                   <div
                     v-if="!task.context_name || taskExpanded[taskKey(group, project, task)]"
-                    class="bg-[var(--watch-bg-secondary)]"
+                    class="bg-gray-50 dark:bg-slate-800"
                   >
                     <div
                       v-for="entry in task.entries"
                       :key="entry.name"
-                      class="px-4 py-1.5 text-xs border-t border-[var(--watch-border)]"
+                      class="px-4 py-1.5 text-xs border-t border-gray-200 dark:border-slate-700"
                       :class="task.context_name ? 'pl-[4.5rem]' : 'pl-14'"
                     >
                       <div class="flex items-center gap-2">
-                        <span class="flex-1 text-[var(--watch-text)] truncate">
+                        <span class="flex-1 text-gray-900 dark:text-slate-100 truncate">
                           {{ entry.description || __('(no description)') }}
                         </span>
-                        <span class="w-12 text-right text-[var(--watch-text-muted)] shrink-0">
+                        <span class="w-12 text-right text-gray-500 dark:text-slate-500 shrink-0">
                           {{ formatDurationInput(entry.duration_hours) }}
                         </span>
                       </div>
                       <!-- Event context detail -->
                       <div
                         v-if="entry.event_display"
-                        class="text-[0.625rem] text-[var(--watch-text-muted)] mt-0.5"
+                        class="text-[0.625rem] text-gray-500 dark:text-slate-500 mt-0.5"
                       >
                         {{ entry.event_display }} ({{ __('Event') }})
                       </div>
@@ -939,8 +939,8 @@ function fmtDate(d: string): string {
             v-if="!billingActions.length"
             type="button"
             :disabled="sendingAll"
-            class="flex items-center gap-1.5 px-3 py-1.5 rounded-lg border border-[var(--watch-border)]
-                   text-sm text-[var(--watch-text-secondary)] hover:bg-[var(--watch-bg-secondary)]
+            class="flex items-center gap-1.5 px-3 py-1.5 rounded-lg border border-gray-200 dark:border-slate-700
+                   text-sm text-gray-600 dark:text-slate-400 hover:bg-gray-50 dark:hover:bg-slate-800
                    transition-colors disabled:opacity-50"
             @click="doExportAll"
           >
@@ -954,7 +954,7 @@ function fmtDate(d: string): string {
             type="button"
             :disabled="sendingAll"
             class="flex items-center gap-1.5 px-3 py-1.5 rounded-lg
-                   bg-[var(--watch-primary)] hover:bg-[var(--watch-primary-dark)]
+                   bg-[var(--app-accent-500)] hover:bg-[var(--app-accent-700)]
                    text-white text-sm font-medium transition-colors disabled:opacity-50"
             @click="doSendAll(billingActions[0])"
           >
@@ -968,7 +968,7 @@ function fmtDate(d: string): string {
               type="button"
               :disabled="sendingAll"
               class="flex items-center gap-1.5 px-3 py-1.5 rounded-lg
-                     bg-[var(--watch-primary)] hover:bg-[var(--watch-primary-dark)]
+                     bg-[var(--app-accent-500)] hover:bg-[var(--app-accent-700)]
                      text-white text-sm font-medium transition-colors disabled:opacity-50"
               @click="openSendAllMenu($event)"
             >
@@ -978,15 +978,15 @@ function fmtDate(d: string): string {
             </button>
             <div
               v-if="sendAllOpen"
-              class="absolute right-0 top-full mt-1 z-20 bg-[var(--watch-bg)]
-                     border border-[var(--watch-border)] rounded-xl shadow-lg py-1 min-w-[180px]"
+              class="absolute right-0 top-full mt-1 z-20 bg-white dark:bg-slate-950
+                     border border-gray-200 dark:border-slate-700 rounded-xl shadow-lg py-1 min-w-[180px]"
             >
               <button
                 v-for="action in billingActions"
                 :key="action.app"
                 type="button"
-                class="w-full text-left px-3 py-1.5 text-sm text-[var(--watch-text)]
-                       hover:bg-[var(--watch-bg-secondary)] transition-colors"
+                class="w-full text-left px-3 py-1.5 text-sm text-gray-900 dark:text-slate-100
+                       hover:bg-gray-50 dark:hover:bg-slate-800 transition-colors"
                 @click="doSendAll(action)"
               >
                 {{ __('Send All to {0}', [action.label]) }}
@@ -997,13 +997,13 @@ function fmtDate(d: string): string {
 
         <!-- Footer totals -->
         <div
-          class="bg-[var(--watch-bg)] rounded-xl border border-[var(--watch-border)]
+          class="bg-white dark:bg-slate-950 rounded-xl border border-gray-200 dark:border-slate-700
                  px-4 py-3 space-y-1.5 text-sm"
         >
           <!-- Total billable -->
           <div class="flex items-center gap-4">
-            <span class="text-[var(--watch-text-muted)] flex-1">{{ __('Total billable') }}</span>
-            <span class="font-semibold text-[var(--watch-text)]">
+            <span class="text-gray-500 dark:text-slate-500 flex-1">{{ __('Total billable') }}</span>
+            <span class="font-semibold text-gray-900 dark:text-slate-100">
               {{ formatHours(summaryData.totals.billable_hours) }}
             </span>
           </div>
@@ -1011,7 +1011,7 @@ function fmtDate(d: string): string {
           <!-- Internal -->
           <div
             v-if="summaryData.totals.internal_hours"
-            class="flex items-center gap-4 text-[var(--watch-text-muted)]"
+            class="flex items-center gap-4 text-gray-500 dark:text-slate-500"
           >
             <span class="flex-1">{{ __('Internal / overhead') }}</span>
             <span>{{ formatHours(summaryData.totals.internal_hours) }}</span>
@@ -1021,7 +1021,7 @@ function fmtDate(d: string): string {
           <!-- Non-billable -->
           <div
             v-if="summaryData.totals.non_billable_hours"
-            class="flex items-center gap-4 text-[var(--watch-text-muted)]"
+            class="flex items-center gap-4 text-gray-500 dark:text-slate-500"
           >
             <span class="flex-1">{{ __('Non-billable') }}</span>
             <span>{{ formatHours(summaryData.totals.non_billable_hours) }}</span>

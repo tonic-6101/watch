@@ -71,20 +71,20 @@ const groups: ShortcutGroup[] = [
   >
     <!-- Panel -->
     <div
-      class="relative w-full max-w-md rounded-2xl bg-[var(--watch-bg)] border border-[var(--watch-border)]
+      class="relative w-full max-w-md rounded-2xl bg-white dark:bg-slate-950 border border-gray-200 dark:border-slate-700
              shadow-2xl p-6"
       role="dialog"
       :aria-label="__('Keyboard Shortcuts')"
     >
       <!-- Header -->
       <div class="flex items-center justify-between mb-5">
-        <h2 class="text-base font-semibold text-[var(--watch-text)]">
+        <h2 class="text-base font-semibold text-gray-900 dark:text-slate-100">
           {{ __('Keyboard Shortcuts') }}
         </h2>
         <button
           type="button"
-          class="p-1 rounded-lg text-[var(--watch-text-muted)] hover:text-[var(--watch-text)]
-                 hover:bg-[var(--watch-bg-secondary)] transition-colors"
+          class="p-1 rounded-lg text-gray-500 dark:text-slate-500 hover:text-gray-900 dark:hover:text-slate-100
+                 hover:bg-gray-50 dark:hover:bg-slate-800 transition-colors"
           :aria-label="__('Close')"
           @click="emit('close')"
         >
@@ -95,23 +95,23 @@ const groups: ShortcutGroup[] = [
       <!-- Shortcut groups -->
       <div class="space-y-4 text-sm">
         <div v-for="group in groups" :key="group.label">
-          <p class="text-xs font-semibold uppercase tracking-wide text-[var(--watch-text-muted)] mb-2">
+          <p class="text-xs font-semibold uppercase tracking-wide text-gray-500 dark:text-slate-500 mb-2">
             {{ group.label }}
           </p>
           <div class="space-y-1.5">
             <div v-for="row in group.rows" :key="row.key" class="flex items-center gap-3">
               <kbd class="inline-flex items-center justify-center min-w-[2.25rem] px-1.5 py-0.5
-                          rounded border border-[var(--watch-border)] bg-[var(--watch-bg-secondary)]
-                          text-xs font-mono font-medium text-[var(--watch-text)] shrink-0">
+                          rounded border border-gray-200 dark:border-slate-700 bg-gray-50 dark:bg-slate-800
+                          text-xs font-mono font-medium text-gray-900 dark:text-slate-100 shrink-0">
                 {{ row.key }}
               </kbd>
-              <span class="text-[var(--watch-text-secondary)]">{{ row.desc }}</span>
+              <span class="text-gray-600 dark:text-slate-400">{{ row.desc }}</span>
             </div>
           </div>
         </div>
       </div>
 
-      <p class="mt-5 text-xs text-center text-[var(--watch-text-muted)]">
+      <p class="mt-5 text-xs text-center text-gray-500 dark:text-slate-500">
         {{ __('Press H or Esc to close') }}
       </p>
     </div>

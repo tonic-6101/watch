@@ -44,7 +44,7 @@ async function handleStop() {
 <template>
   <div
     v-if="timer.isActive.value"
-    class="bg-[var(--watch-bg)] rounded-xl border border-[var(--watch-border)]
+    class="bg-white dark:bg-slate-950 rounded-xl border border-gray-200 dark:border-slate-700
            px-4 py-3 space-y-2"
   >
     <!-- Row 1: status dot + elapsed + description + tags -->
@@ -54,18 +54,18 @@ async function handleStop() {
           'inline-block w-2.5 h-2.5 rounded-full shrink-0',
           timer.isRunning.value
             ? 'bg-green-500 animate-pulse'
-            : 'bg-[var(--watch-text-muted)]',
+            : 'bg-gray-500 dark:bg-slate-500',
         ]"
         aria-hidden="true"
       />
 
-      <span class="text-lg font-semibold text-[var(--watch-text)] tabular-nums font-mono shrink-0">
+      <span class="text-lg font-semibold text-gray-900 dark:text-slate-100 tabular-nums font-mono shrink-0">
         {{ formatElapsed(timer.elapsed.value) }}
       </span>
 
       <span
         v-if="timer.description.value"
-        class="text-sm text-[var(--watch-text)] truncate min-w-0"
+        class="text-sm text-gray-900 dark:text-slate-100 truncate min-w-0"
       >
         &ldquo;{{ timer.description.value }}&rdquo;
       </span>
@@ -75,7 +75,7 @@ async function handleStop() {
           v-for="tag in timer.tags.value"
           :key="tag"
           class="px-2 py-0.5 rounded-md text-xs font-medium
-                 bg-[var(--watch-primary)]/10 text-[var(--watch-primary)]"
+                 bg-[var(--app-accent-500)]/10 text-[var(--app-accent-500)]"
         >
           {{ tag }}
         </span>
@@ -87,8 +87,8 @@ async function handleStop() {
       <button
         type="button"
         class="flex items-center gap-1.5 text-xs px-3 py-1.5 rounded-lg
-               border border-[var(--watch-border)]
-               text-[var(--watch-text)] hover:bg-[var(--watch-bg-secondary)]
+               border border-gray-200 dark:border-slate-700
+               text-gray-900 dark:text-slate-100 hover:bg-gray-50 dark:hover:bg-slate-800
                transition-colors"
         @click="handlePauseResume"
       >
@@ -100,7 +100,7 @@ async function handleStop() {
       <button
         type="button"
         class="flex items-center gap-1.5 text-xs px-3 py-1.5 rounded-lg
-               bg-[var(--watch-primary)] text-white
+               bg-[var(--app-accent-500)] text-white
                hover:opacity-90 transition-opacity"
         @click="handleStop"
       >

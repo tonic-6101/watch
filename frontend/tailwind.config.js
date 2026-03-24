@@ -1,21 +1,20 @@
-/** @type {import('tailwindcss').Config} */
-import colors from 'tailwindcss/colors'
 import dockPreset from '../../dock/frontend/src/styles/dock-tailwind-preset.js'
 
+/** @type {import('tailwindcss').Config} */
 export default {
   presets: [dockPreset],
   content: [
     './index.html',
     './src/**/*.{vue,js,ts,jsx,tsx}',
     './node_modules/frappe-ui/src/components/**/*.{vue,js,ts,jsx,tsx}',
+    // Dock shared pages loaded at runtime via ESM — scan source so
+    // Tailwind generates the utility classes they use (calendar, people, etc.)
+    '../../dock/frontend/src/**/*.{vue,js,ts,jsx,tsx}',
   ],
   theme: {
     extend: {
       colors: {
-        watch: colors.indigo,
-        'watch-primary': '#6366f1',
-        'watch-primary-light': '#eef2ff',
-        'watch-primary-dark': '#4338ca',
+        // Domain-specific colors (not part of shared design system)
         'entry-billable': '#6366f1',
         'entry-nonbillable': '#6b7280',
         'entry-internal': '#f59e0b',

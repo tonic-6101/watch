@@ -267,27 +267,27 @@ const mergeTargetOptions = computed(() =>
 </script>
 
 <template>
-  <div class="min-h-screen bg-[var(--watch-bg-secondary)]">
+  <div class="min-h-screen bg-gray-50 dark:bg-slate-800">
     <div class="max-w-3xl mx-auto px-4 py-6 space-y-4">
 
       <!-- Header -->
       <div class="flex items-center justify-between">
-        <h1 class="text-lg font-semibold text-[var(--watch-text)]">{{ __('Tags') }}</h1>
+        <h1 class="text-lg font-semibold text-gray-900 dark:text-slate-100">{{ __('Tags') }}</h1>
         <div class="flex items-center gap-2">
           <!-- Category filter -->
           <select
             v-model="filter"
-            class="px-2 py-1.5 rounded-lg border border-[var(--watch-border)]
-                   bg-[var(--watch-bg)] text-sm text-[var(--watch-text)] outline-none
-                   focus:ring-2 focus:ring-[var(--watch-primary)]/30 focus:border-[var(--watch-primary)]"
+            class="px-2 py-1.5 rounded-lg border border-gray-200 dark:border-slate-700
+                   bg-white dark:bg-slate-950 text-sm text-gray-900 dark:text-slate-100 outline-none
+                   focus:ring-2 focus:ring-[var(--app-accent-500)]/30 focus:border-[var(--app-accent-500)]"
           >
             <option v-for="f in FILTER_OPTIONS" :key="f" :value="f">{{ __(f) }}</option>
           </select>
 
           <button
             type="button"
-            class="flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-[var(--watch-primary)]
-                   hover:bg-[var(--watch-primary-dark)] text-white text-sm font-medium transition-colors"
+            class="flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-[var(--app-accent-500)]
+                   hover:bg-[var(--app-accent-700)] text-white text-sm font-medium transition-colors"
             @click="showNewForm = !showNewForm"
           >
             <Plus class="w-4 h-4" aria-hidden="true" />
@@ -299,43 +299,43 @@ const mergeTargetOptions = computed(() =>
       <!-- New tag form -->
       <div
         v-if="showNewForm"
-        class="bg-[var(--watch-bg)] rounded-xl border border-[var(--watch-primary)]/40 p-4 space-y-3"
+        class="bg-white dark:bg-slate-950 rounded-xl border border-[var(--app-accent-500)]/40 p-4 space-y-3"
       >
         <div class="grid grid-cols-2 gap-3">
           <div class="flex flex-col gap-1">
-            <label class="text-xs text-[var(--watch-text-muted)]">{{ __('Name') }}</label>
+            <label class="text-xs text-gray-500 dark:text-slate-500">{{ __('Name') }}</label>
             <input
               v-model="newName"
               type="text"
               :placeholder="__('Tag name')"
-              class="px-2 py-1.5 rounded-lg border border-[var(--watch-border)]
-                     bg-[var(--watch-bg)] text-sm text-[var(--watch-text)] outline-none
-                     focus:ring-2 focus:ring-[var(--watch-primary)]/30 focus:border-[var(--watch-primary)]"
+              class="px-2 py-1.5 rounded-lg border border-gray-200 dark:border-slate-700
+                     bg-white dark:bg-slate-950 text-sm text-gray-900 dark:text-slate-100 outline-none
+                     focus:ring-2 focus:ring-[var(--app-accent-500)]/30 focus:border-[var(--app-accent-500)]"
               @keydown.enter="handleCreate"
             />
           </div>
           <div class="flex flex-col gap-1">
-            <label class="text-xs text-[var(--watch-text-muted)]">{{ __('Category') }}</label>
+            <label class="text-xs text-gray-500 dark:text-slate-500">{{ __('Category') }}</label>
             <select
               v-model="newCategory"
-              class="px-2 py-1.5 rounded-lg border border-[var(--watch-border)]
-                     bg-[var(--watch-bg)] text-sm text-[var(--watch-text)] outline-none
-                     focus:ring-2 focus:ring-[var(--watch-primary)]/30 focus:border-[var(--watch-primary)]"
+              class="px-2 py-1.5 rounded-lg border border-gray-200 dark:border-slate-700
+                     bg-white dark:bg-slate-950 text-sm text-gray-900 dark:text-slate-100 outline-none
+                     focus:ring-2 focus:ring-[var(--app-accent-500)]/30 focus:border-[var(--app-accent-500)]"
             >
               <option v-for="c in CATEGORIES" :key="c" :value="c">{{ c || __('— none —') }}</option>
             </select>
           </div>
           <div class="flex flex-col gap-1">
-            <label class="text-xs text-[var(--watch-text-muted)]">{{ __('Color') }}</label>
-            <input v-model="newColor" type="color" class="w-8 h-8 rounded cursor-pointer border border-[var(--watch-border)]" />
+            <label class="text-xs text-gray-500 dark:text-slate-500">{{ __('Color') }}</label>
+            <input v-model="newColor" type="color" class="w-8 h-8 rounded cursor-pointer border border-gray-200 dark:border-slate-700" />
           </div>
           <div class="flex flex-col gap-1">
-            <label class="text-xs text-[var(--watch-text-muted)]">{{ __('Default Type') }}</label>
+            <label class="text-xs text-gray-500 dark:text-slate-500">{{ __('Default Type') }}</label>
             <select
               v-model="newType"
-              class="px-2 py-1.5 rounded-lg border border-[var(--watch-border)]
-                     bg-[var(--watch-bg)] text-sm text-[var(--watch-text)] outline-none
-                     focus:ring-2 focus:ring-[var(--watch-primary)]/30 focus:border-[var(--watch-primary)]"
+              class="px-2 py-1.5 rounded-lg border border-gray-200 dark:border-slate-700
+                     bg-white dark:bg-slate-950 text-sm text-gray-900 dark:text-slate-100 outline-none
+                     focus:ring-2 focus:ring-[var(--app-accent-500)]/30 focus:border-[var(--app-accent-500)]"
             >
               <option v-for="bt in BILLING_TYPES" :key="bt.value" :value="bt.value">{{ __(bt.label) }}</option>
             </select>
@@ -344,13 +344,13 @@ const mergeTargetOptions = computed(() =>
         <div class="flex gap-2">
           <button
             type="button"
-            class="flex-1 py-2 rounded-lg border border-[var(--watch-border)]
-                   text-sm text-[var(--watch-text-secondary)] hover:bg-[var(--watch-bg-secondary)] transition-colors"
+            class="flex-1 py-2 rounded-lg border border-gray-200 dark:border-slate-700
+                   text-sm text-gray-600 dark:text-slate-400 hover:bg-gray-50 dark:hover:bg-slate-800 transition-colors"
             @click="showNewForm = false"
           >{{ __('Cancel') }}</button>
           <button
             type="button"
-            class="flex-1 py-2 rounded-lg bg-[var(--watch-primary)] hover:bg-[var(--watch-primary-dark)]
+            class="flex-1 py-2 rounded-lg bg-[var(--app-accent-500)] hover:bg-[var(--app-accent-700)]
                    text-white text-sm font-medium transition-colors disabled:opacity-50"
             :disabled="!newName.trim() || newFormSaving"
             @click="handleCreate"
@@ -364,30 +364,30 @@ const mergeTargetOptions = computed(() =>
       <!-- Bulk action bar -->
       <div
         v-if="selected.size > 0"
-        class="bg-[var(--watch-bg)] rounded-xl border border-[var(--watch-border)] px-4 py-2
+        class="bg-white dark:bg-slate-950 rounded-xl border border-gray-200 dark:border-slate-700 px-4 py-2
                flex items-center gap-3 flex-wrap"
       >
-        <span class="text-sm font-medium text-[var(--watch-text)]">
+        <span class="text-sm font-medium text-gray-900 dark:text-slate-100">
           {{ selected.size }} {{ __('selected') }}
         </span>
 
         <div v-if="!bulkChangeCat" class="flex items-center gap-2 ml-auto flex-wrap">
           <button
             type="button"
-            class="px-3 py-1.5 rounded-lg border border-[var(--watch-border)]
-                   text-xs text-[var(--watch-text-secondary)] hover:bg-[var(--watch-bg-secondary)] transition-colors"
+            class="px-3 py-1.5 rounded-lg border border-gray-200 dark:border-slate-700
+                   text-xs text-gray-600 dark:text-slate-400 hover:bg-gray-50 dark:hover:bg-slate-800 transition-colors"
             @click="bulkArchive(true)"
           >{{ __('Archive') }}</button>
           <button
             type="button"
-            class="px-3 py-1.5 rounded-lg border border-[var(--watch-border)]
-                   text-xs text-[var(--watch-text-secondary)] hover:bg-[var(--watch-bg-secondary)] transition-colors"
+            class="px-3 py-1.5 rounded-lg border border-gray-200 dark:border-slate-700
+                   text-xs text-gray-600 dark:text-slate-400 hover:bg-gray-50 dark:hover:bg-slate-800 transition-colors"
             @click="bulkArchive(false)"
           >{{ __('Unarchive') }}</button>
           <button
             type="button"
-            class="px-3 py-1.5 rounded-lg border border-[var(--watch-border)]
-                   text-xs text-[var(--watch-text-secondary)] hover:bg-[var(--watch-bg-secondary)] transition-colors"
+            class="px-3 py-1.5 rounded-lg border border-gray-200 dark:border-slate-700
+                   text-xs text-gray-600 dark:text-slate-400 hover:bg-gray-50 dark:hover:bg-slate-800 transition-colors"
             @click="bulkChangeCat = true"
           >{{ __('Change Category') }}</button>
           <button
@@ -398,7 +398,7 @@ const mergeTargetOptions = computed(() =>
           >{{ __('Delete') }}</button>
           <button
             type="button"
-            class="p-1 text-[var(--watch-text-muted)] hover:text-[var(--watch-text)] transition-colors"
+            class="p-1 text-gray-500 dark:text-slate-500 hover:text-gray-900 dark:hover:text-slate-100 transition-colors"
             @click="clearSelection"
           >
             <X class="w-4 h-4" aria-hidden="true" />
@@ -409,18 +409,18 @@ const mergeTargetOptions = computed(() =>
         <div v-if="bulkChangeCat" class="flex items-center gap-2 ml-auto">
           <select
             v-model="bulkNewCat"
-            class="px-2 py-1.5 rounded-lg border border-[var(--watch-border)]
-                   bg-[var(--watch-bg)] text-sm text-[var(--watch-text)] outline-none"
+            class="px-2 py-1.5 rounded-lg border border-gray-200 dark:border-slate-700
+                   bg-white dark:bg-slate-950 text-sm text-gray-900 dark:text-slate-100 outline-none"
           >
             <option v-for="c in CATEGORIES" :key="c" :value="c">{{ c || __('— none —') }}</option>
           </select>
           <button
             type="button"
-            class="px-3 py-1.5 rounded-lg bg-[var(--watch-primary)] text-white text-xs font-medium
-                   hover:bg-[var(--watch-primary-dark)] transition-colors"
+            class="px-3 py-1.5 rounded-lg bg-[var(--app-accent-500)] text-white text-xs font-medium
+                   hover:bg-[var(--app-accent-700)] transition-colors"
             @click="bulkChangeCategory"
           >{{ __('Apply') }}</button>
-          <button type="button" class="text-xs text-[var(--watch-text-muted)]" @click="bulkChangeCat = false">
+          <button type="button" class="text-xs text-gray-500 dark:text-slate-500" @click="bulkChangeCat = false">
             {{ __('Cancel') }}
           </button>
         </div>
@@ -429,7 +429,7 @@ const mergeTargetOptions = computed(() =>
       <!-- Column header -->
       <div
         v-if="!loading && filteredTags.length"
-        class="flex items-center gap-3 px-4 text-xs text-[var(--watch-text-muted)]"
+        class="flex items-center gap-3 px-4 text-xs text-gray-500 dark:text-slate-500"
       >
         <span class="w-4 shrink-0" />
         <span class="w-2.5 shrink-0" />
@@ -445,18 +445,18 @@ const mergeTargetOptions = computed(() =>
         <div
           v-for="i in 5"
           :key="i"
-          class="bg-[var(--watch-bg)] rounded-xl border border-[var(--watch-border)] p-4 animate-pulse"
+          class="bg-white dark:bg-slate-950 rounded-xl border border-gray-200 dark:border-slate-700 p-4 animate-pulse"
         >
-          <div class="h-4 bg-[var(--watch-border)] rounded w-1/3" />
+          <div class="h-4 bg-gray-200 dark:bg-slate-700 rounded w-1/3" />
         </div>
       </template>
 
       <!-- Empty state -->
       <div
         v-else-if="!filteredTags.length"
-        class="bg-[var(--watch-bg)] rounded-xl border border-[var(--watch-border)] p-6 text-center"
+        class="bg-white dark:bg-slate-950 rounded-xl border border-gray-200 dark:border-slate-700 p-6 text-center"
       >
-        <p class="text-sm text-[var(--watch-text-muted)]">
+        <p class="text-sm text-gray-500 dark:text-slate-500">
           {{ filter === 'All' ? __('No tags yet. Create your first tag.') : __('No tags in this category.') }}
         </p>
       </div>
@@ -493,22 +493,22 @@ const mergeTargetOptions = computed(() =>
         class="fixed inset-0 bg-black/40 z-50 flex items-center justify-center p-4"
         @click.self="mergeSource = null"
       >
-        <div class="bg-[var(--watch-bg)] rounded-2xl border border-[var(--watch-border)] p-6 w-full max-w-md shadow-xl">
-          <h2 class="text-base font-semibold text-[var(--watch-text)] mb-1">
+        <div class="bg-white dark:bg-slate-950 rounded-2xl border border-gray-200 dark:border-slate-700 p-6 w-full max-w-md shadow-xl">
+          <h2 class="text-base font-semibold text-gray-900 dark:text-slate-100 mb-1">
             {{ __('Merge tag') }}
           </h2>
-          <p class="text-sm text-[var(--watch-text-secondary)] mb-4">
+          <p class="text-sm text-gray-600 dark:text-slate-400 mb-4">
             {{ __('All entries tagged') }}
             <strong>{{ mergeSource }}</strong>
             {{ __('will be re-tagged with the target. The source will be archived. This cannot be undone.') }}
           </p>
 
-          <label class="text-xs text-[var(--watch-text-muted)] block mb-1">{{ __('Merge into') }}</label>
+          <label class="text-xs text-gray-500 dark:text-slate-500 block mb-1">{{ __('Merge into') }}</label>
           <select
             v-model="mergeTarget"
-            class="w-full px-3 py-2 mb-4 rounded-lg border border-[var(--watch-border)]
-                   bg-[var(--watch-bg)] text-sm text-[var(--watch-text)] outline-none
-                   focus:ring-2 focus:ring-[var(--watch-primary)]/30 focus:border-[var(--watch-primary)]"
+            class="w-full px-3 py-2 mb-4 rounded-lg border border-gray-200 dark:border-slate-700
+                   bg-white dark:bg-slate-950 text-sm text-gray-900 dark:text-slate-100 outline-none
+                   focus:ring-2 focus:ring-[var(--app-accent-500)]/30 focus:border-[var(--app-accent-500)]"
           >
             <option value="">{{ __('— select target —') }}</option>
             <option v-for="t in mergeTargetOptions" :key="t.name" :value="t.name">
@@ -521,13 +521,13 @@ const mergeTargetOptions = computed(() =>
           <div class="flex gap-2">
             <button
               type="button"
-              class="flex-1 py-2 rounded-lg border border-[var(--watch-border)]
-                     text-sm text-[var(--watch-text-secondary)] hover:bg-[var(--watch-bg-secondary)] transition-colors"
+              class="flex-1 py-2 rounded-lg border border-gray-200 dark:border-slate-700
+                     text-sm text-gray-600 dark:text-slate-400 hover:bg-gray-50 dark:hover:bg-slate-800 transition-colors"
               @click="mergeSource = null"
             >{{ __('Cancel') }}</button>
             <button
               type="button"
-              class="flex-1 py-2 rounded-lg bg-[var(--watch-primary)] hover:bg-[var(--watch-primary-dark)]
+              class="flex-1 py-2 rounded-lg bg-[var(--app-accent-500)] hover:bg-[var(--app-accent-700)]
                      text-white text-sm font-medium transition-colors disabled:opacity-50"
               :disabled="!mergeTarget || mergeLoading"
               @click="handleMerge"

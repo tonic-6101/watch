@@ -338,17 +338,17 @@ function downloadMyData() {
 </script>
 
 <template>
-  <div class="min-h-screen bg-[var(--watch-bg-secondary)]">
+  <div class="min-h-screen bg-gray-50 dark:bg-slate-800">
     <div class="max-w-2xl mx-auto px-4 py-6 space-y-4">
 
       <!-- Heading -->
-      <h1 class="text-lg font-semibold text-[var(--watch-text)]">{{ __('Settings') }}</h1>
+      <h1 class="text-lg font-semibold text-gray-900 dark:text-slate-100">{{ __('Settings') }}</h1>
 
       <!-- Loading skeleton -->
       <template v-if="loading">
         <div
           v-for="i in 4" :key="i"
-          class="bg-[var(--watch-bg)] rounded-xl border border-[var(--watch-border)] p-4 animate-pulse h-14"
+          class="bg-white dark:bg-slate-950 rounded-xl border border-gray-200 dark:border-slate-700 p-4 animate-pulse h-14"
         />
       </template>
 
@@ -358,17 +358,17 @@ function downloadMyData() {
       <template v-else>
 
         <!-- ── My Preferences (per-user) ──────────────────────────── -->
-        <div class="bg-[var(--watch-bg)] rounded-xl border border-[var(--watch-border)] overflow-hidden divide-y divide-[var(--watch-border)]">
+        <div class="bg-white dark:bg-slate-950 rounded-xl border border-gray-200 dark:border-slate-700 overflow-hidden divide-y divide-gray-200 dark:divide-slate-700">
           <div class="px-4 py-3">
-            <h2 class="text-sm font-semibold text-[var(--watch-text)]">{{ __('My Preferences') }}</h2>
-            <p class="text-xs text-[var(--watch-text-muted)] mt-0.5">{{ __('Personal settings — only you can see these.') }}</p>
+            <h2 class="text-sm font-semibold text-gray-900 dark:text-slate-100">{{ __('My Preferences') }}</h2>
+            <p class="text-xs text-gray-500 dark:text-slate-500 mt-0.5">{{ __('Personal settings — only you can see these.') }}</p>
           </div>
 
           <!-- Weekly hour target -->
           <div class="px-4 py-3 flex items-center gap-4">
             <div class="flex-1">
-              <div class="text-sm text-[var(--watch-text)]">{{ __('Weekly hour target') }}</div>
-              <div class="text-xs text-[var(--watch-text-muted)]">{{ __('0 = no target (progress bar hidden).') }}</div>
+              <div class="text-sm text-gray-900 dark:text-slate-100">{{ __('Weekly hour target') }}</div>
+              <div class="text-xs text-gray-500 dark:text-slate-500">{{ __('0 = no target (progress bar hidden).') }}</div>
             </div>
             <div class="flex items-center gap-1.5">
               <input
@@ -376,25 +376,25 @@ function downloadMyData() {
                 type="number"
                 min="0"
                 step="1"
-                class="w-20 px-2 py-1.5 rounded-lg border border-[var(--watch-border)] bg-[var(--watch-bg)]
-                       text-sm text-[var(--watch-text)] outline-none
-                       focus:ring-2 focus:ring-[var(--watch-primary)]/30 focus:border-[var(--watch-primary)]"
+                class="w-20 px-2 py-1.5 rounded-lg border border-gray-200 dark:border-slate-700 bg-white dark:bg-slate-950
+                       text-sm text-gray-900 dark:text-slate-100 outline-none
+                       focus:ring-2 focus:ring-[var(--app-accent-500)]/30 focus:border-[var(--app-accent-500)]"
               />
-              <span class="text-xs text-[var(--watch-text-muted)]">{{ __('hours') }}</span>
+              <span class="text-xs text-gray-500 dark:text-slate-500">{{ __('hours') }}</span>
             </div>
           </div>
 
           <!-- Keyboard shortcuts -->
           <div class="px-4 py-3 flex items-center gap-4">
-            <label class="text-sm text-[var(--watch-text)] flex-1">{{ __('Keyboard shortcuts') }}</label>
+            <label class="text-sm text-gray-900 dark:text-slate-100 flex-1">{{ __('Keyboard shortcuts') }}</label>
             <label class="flex items-center gap-2 cursor-pointer shrink-0">
               <input
                 type="checkbox"
                 :checked="!!prefs.enable_keyboard_shortcuts"
-                class="w-4 h-4 rounded accent-[var(--watch-primary)]"
+                class="w-4 h-4 rounded accent-[var(--app-accent-500)]"
                 @change="prefs.enable_keyboard_shortcuts = ($event.target as HTMLInputElement).checked ? 1 : 0"
               />
-              <span class="text-sm text-[var(--watch-text)]">{{ __('Enabled') }}</span>
+              <span class="text-sm text-gray-900 dark:text-slate-100">{{ __('Enabled') }}</span>
             </label>
           </div>
 
@@ -405,7 +405,7 @@ function downloadMyData() {
             <button
               type="button"
               :disabled="prefsSaving"
-              class="px-4 py-1.5 rounded-lg bg-[var(--watch-primary)] hover:bg-[var(--watch-primary-dark)]
+              class="px-4 py-1.5 rounded-lg bg-[var(--app-accent-500)] hover:bg-[var(--app-accent-700)]
                      text-white text-sm font-medium transition-colors disabled:opacity-50"
               @click="handleSavePrefs"
             >
@@ -415,19 +415,19 @@ function downloadMyData() {
         </div>
 
         <!-- ── Browser Extension ──────────────────────────────────── -->
-        <div class="bg-[var(--watch-bg)] rounded-xl border border-[var(--watch-border)] overflow-hidden divide-y divide-[var(--watch-border)]">
+        <div class="bg-white dark:bg-slate-950 rounded-xl border border-gray-200 dark:border-slate-700 overflow-hidden divide-y divide-gray-200 dark:divide-slate-700">
           <div class="px-4 py-3">
-            <h2 class="text-sm font-semibold text-[var(--watch-text)]">{{ __('Browser Extension') }}</h2>
-            <p class="text-xs text-[var(--watch-text-muted)] mt-0.5">{{ __('Connect the Watch browser extension to this site.') }}</p>
+            <h2 class="text-sm font-semibold text-gray-900 dark:text-slate-100">{{ __('Browser Extension') }}</h2>
+            <p class="text-xs text-gray-500 dark:text-slate-500 mt-0.5">{{ __('Connect the Watch browser extension to this site.') }}</p>
           </div>
 
           <div class="px-4 py-3 space-y-3">
             <!-- Status -->
             <div class="flex items-center gap-2">
-              <span class="text-sm text-[var(--watch-text-muted)]">{{ __('Status') }}:</span>
+              <span class="text-sm text-gray-500 dark:text-slate-500">{{ __('Status') }}:</span>
               <span
                 class="text-sm font-medium"
-                :class="prefs.extension_token_active ? 'text-green-600 dark:text-green-400' : 'text-[var(--watch-text-muted)]'"
+                :class="prefs.extension_token_active ? 'text-green-600 dark:text-green-400' : 'text-gray-500 dark:text-slate-500'"
               >
                 {{ prefs.extension_token_active ? __('Token active') : __('Not connected') }}
               </span>
@@ -440,14 +440,14 @@ function downloadMyData() {
                   type="text"
                   :value="extToken"
                   readonly
-                  class="flex-1 px-2 py-1.5 rounded-lg border border-[var(--watch-border)] bg-[var(--watch-bg-secondary)]
-                         text-xs font-mono text-[var(--watch-text)] outline-none select-all"
+                  class="flex-1 px-2 py-1.5 rounded-lg border border-gray-200 dark:border-slate-700 bg-gray-50 dark:bg-slate-800
+                         text-xs font-mono text-gray-900 dark:text-slate-100 outline-none select-all"
                   @focus="($event.target as HTMLInputElement).select()"
                 />
                 <button
                   type="button"
-                  class="px-3 py-1.5 rounded-lg border border-[var(--watch-border)] text-xs font-medium
-                         text-[var(--watch-text)] hover:bg-[var(--watch-bg-secondary)] transition-colors"
+                  class="px-3 py-1.5 rounded-lg border border-gray-200 dark:border-slate-700 text-xs font-medium
+                         text-gray-900 dark:text-slate-100 hover:bg-gray-50 dark:hover:bg-slate-800 transition-colors"
                   @click="copyToken"
                 >
                   {{ extCopied ? __('Copied') : __('Copy') }}
@@ -467,7 +467,7 @@ function downloadMyData() {
                 v-if="!prefs.extension_token_active"
                 type="button"
                 :disabled="extGenerating"
-                class="px-4 py-1.5 rounded-lg bg-[var(--watch-primary)] hover:bg-[var(--watch-primary-dark)]
+                class="px-4 py-1.5 rounded-lg bg-[var(--app-accent-500)] hover:bg-[var(--app-accent-700)]
                        text-white text-sm font-medium transition-colors disabled:opacity-50"
                 @click="handleGenerateToken"
               >
@@ -478,9 +478,9 @@ function downloadMyData() {
                 <button
                   type="button"
                   :disabled="extGenerating"
-                  class="px-4 py-1.5 rounded-lg border border-[var(--watch-border)]
-                         text-sm font-medium text-[var(--watch-text)]
-                         hover:bg-[var(--watch-bg-secondary)] transition-colors disabled:opacity-50"
+                  class="px-4 py-1.5 rounded-lg border border-gray-200 dark:border-slate-700
+                         text-sm font-medium text-gray-900 dark:text-slate-100
+                         hover:bg-gray-50 dark:hover:bg-slate-800 transition-colors disabled:opacity-50"
                   @click="handleGenerateToken"
                 >
                   {{ extGenerating ? __('Generating…') : __('Regenerate token') }}
@@ -501,19 +501,19 @@ function downloadMyData() {
         </div>
 
         <!-- ── General ────────────────────────────────────────────── -->
-        <div class="bg-[var(--watch-bg)] rounded-xl border border-[var(--watch-border)] overflow-hidden divide-y divide-[var(--watch-border)]">
+        <div class="bg-white dark:bg-slate-950 rounded-xl border border-gray-200 dark:border-slate-700 overflow-hidden divide-y divide-gray-200 dark:divide-slate-700">
           <div class="px-4 py-3">
-            <h2 class="text-sm font-semibold text-[var(--watch-text)]">{{ __('General') }}</h2>
+            <h2 class="text-sm font-semibold text-gray-900 dark:text-slate-100">{{ __('General') }}</h2>
           </div>
 
           <!-- Default entry type -->
           <div class="px-4 py-3 flex items-center gap-4">
-            <label class="text-sm text-[var(--watch-text)] flex-1">{{ __('Default entry type') }}</label>
+            <label class="text-sm text-gray-900 dark:text-slate-100 flex-1">{{ __('Default entry type') }}</label>
             <select
               v-model="form.default_entry_type"
-              class="px-2 py-1.5 rounded-lg border border-[var(--watch-border)] bg-[var(--watch-bg)]
-                     text-sm text-[var(--watch-text)] outline-none
-                     focus:ring-2 focus:ring-[var(--watch-primary)]/30 focus:border-[var(--watch-primary)]"
+              class="px-2 py-1.5 rounded-lg border border-gray-200 dark:border-slate-700 bg-white dark:bg-slate-950
+                     text-sm text-gray-900 dark:text-slate-100 outline-none
+                     focus:ring-2 focus:ring-[var(--app-accent-500)]/30 focus:border-[var(--app-accent-500)]"
             >
               <option v-for="opt in ENTRY_TYPE_OPTIONS" :key="opt.value" :value="opt.value">
                 {{ __(opt.label) }}
@@ -524,38 +524,38 @@ function downloadMyData() {
           <!-- Lock entries -->
           <div class="px-4 py-3 flex items-center gap-4">
             <div class="flex-1">
-              <div class="text-sm text-[var(--watch-text)]">{{ __('Lock entries older than (days)') }}</div>
-              <div class="text-xs text-[var(--watch-text-muted)]">{{ __('0 = disabled.') }}</div>
+              <div class="text-sm text-gray-900 dark:text-slate-100">{{ __('Lock entries older than (days)') }}</div>
+              <div class="text-xs text-gray-500 dark:text-slate-500">{{ __('0 = disabled.') }}</div>
             </div>
             <input
               v-model.number="form.lock_entries_older_than"
               type="number"
               min="0"
-              class="w-20 px-2 py-1.5 rounded-lg border border-[var(--watch-border)] bg-[var(--watch-bg)]
-                     text-sm text-[var(--watch-text)] outline-none
-                     focus:ring-2 focus:ring-[var(--watch-primary)]/30 focus:border-[var(--watch-primary)]"
+              class="w-20 px-2 py-1.5 rounded-lg border border-gray-200 dark:border-slate-700 bg-white dark:bg-slate-950
+                     text-sm text-gray-900 dark:text-slate-100 outline-none
+                     focus:ring-2 focus:ring-[var(--app-accent-500)]/30 focus:border-[var(--app-accent-500)]"
             />
           </div>
 
           <!-- Auto-stop -->
           <div class="px-4 py-3 flex items-center gap-4">
             <div class="flex-1">
-              <div class="text-sm text-[var(--watch-text)]">{{ __('Auto-stop timer after (hours)') }}</div>
-              <div class="text-xs text-[var(--watch-text-muted)]">{{ __('0 = disabled.') }}</div>
+              <div class="text-sm text-gray-900 dark:text-slate-100">{{ __('Auto-stop timer after (hours)') }}</div>
+              <div class="text-xs text-gray-500 dark:text-slate-500">{{ __('0 = disabled.') }}</div>
             </div>
             <input
               v-model.number="form.auto_stop_timer_after"
               type="number"
               min="0"
-              class="w-20 px-2 py-1.5 rounded-lg border border-[var(--watch-border)] bg-[var(--watch-bg)]
-                     text-sm text-[var(--watch-text)] outline-none
-                     focus:ring-2 focus:ring-[var(--watch-primary)]/30 focus:border-[var(--watch-primary)]"
+              class="w-20 px-2 py-1.5 rounded-lg border border-gray-200 dark:border-slate-700 bg-white dark:bg-slate-950
+                     text-sm text-gray-900 dark:text-slate-100 outline-none
+                     focus:ring-2 focus:ring-[var(--app-accent-500)]/30 focus:border-[var(--app-accent-500)]"
             />
           </div>
 
           <!-- Work days — horizontal checkbox row -->
           <div class="px-4 py-3 space-y-2">
-            <div class="text-sm text-[var(--watch-text)]">{{ __('Work days') }}</div>
+            <div class="text-sm text-gray-900 dark:text-slate-100">{{ __('Work days') }}</div>
             <div class="flex gap-4">
               <label
                 v-for="day in WORK_DAYS"
@@ -565,10 +565,10 @@ function downloadMyData() {
                 <input
                   type="checkbox"
                   :checked="!!form[day.key]"
-                  class="w-4 h-4 rounded accent-[var(--watch-primary)]"
+                  class="w-4 h-4 rounded accent-[var(--app-accent-500)]"
                   @change="toggleWorkDay(day.key, ($event.target as HTMLInputElement).checked)"
                 />
-                <span class="text-xs text-[var(--watch-text-muted)] select-none">{{ __(day.label) }}</span>
+                <span class="text-xs text-gray-500 dark:text-slate-500 select-none">{{ __(day.label) }}</span>
               </label>
             </div>
           </div>
@@ -576,45 +576,45 @@ function downloadMyData() {
         </div>
 
         <!-- ── ERPNext Bridge ─────────────────────────────────────── -->
-        <div class="bg-[var(--watch-bg)] rounded-xl border border-[var(--watch-border)] overflow-hidden divide-y divide-[var(--watch-border)]">
+        <div class="bg-white dark:bg-slate-950 rounded-xl border border-gray-200 dark:border-slate-700 overflow-hidden divide-y divide-gray-200 dark:divide-slate-700">
           <div class="px-4 py-3 flex items-center gap-4">
             <div class="flex-1">
-              <h2 class="text-sm font-semibold text-[var(--watch-text)]">{{ __('ERPNext Bridge') }}</h2>
-              <p class="text-xs text-[var(--watch-text-muted)]">{{ __('One-way sync of billable entries to ERPNext Timesheets.') }}</p>
+              <h2 class="text-sm font-semibold text-gray-900 dark:text-slate-100">{{ __('ERPNext Bridge') }}</h2>
+              <p class="text-xs text-gray-500 dark:text-slate-500">{{ __('One-way sync of billable entries to ERPNext Timesheets.') }}</p>
             </div>
             <label class="flex items-center gap-2 cursor-pointer shrink-0">
               <input
                 type="checkbox"
                 :checked="!!form.enable_erpnext_bridge"
-                class="w-4 h-4 rounded accent-[var(--watch-primary)]"
+                class="w-4 h-4 rounded accent-[var(--app-accent-500)]"
                 @change="toggleCheck('enable_erpnext_bridge', ($event.target as HTMLInputElement).checked)"
               />
-              <span class="text-sm text-[var(--watch-text)]">{{ __('Enable') }}</span>
+              <span class="text-sm text-gray-900 dark:text-slate-100">{{ __('Enable') }}</span>
             </label>
           </div>
 
           <template v-if="form.enable_erpnext_bridge">
             <!-- ERPNext site URL -->
             <div class="px-4 py-3 flex items-center gap-4">
-              <label class="text-sm text-[var(--watch-text)] flex-1">{{ __('ERPNext site URL') }}</label>
+              <label class="text-sm text-gray-900 dark:text-slate-100 flex-1">{{ __('ERPNext site URL') }}</label>
               <input
                 v-model="form.erpnext_site_url"
                 type="url"
                 placeholder="https://erp.example.com"
-                class="w-56 px-2 py-1.5 rounded-lg border border-[var(--watch-border)] bg-[var(--watch-bg)]
-                       text-sm text-[var(--watch-text)] outline-none
-                       focus:ring-2 focus:ring-[var(--watch-primary)]/30 focus:border-[var(--watch-primary)]"
+                class="w-56 px-2 py-1.5 rounded-lg border border-gray-200 dark:border-slate-700 bg-white dark:bg-slate-950
+                       text-sm text-gray-900 dark:text-slate-100 outline-none
+                       focus:ring-2 focus:ring-[var(--app-accent-500)]/30 focus:border-[var(--app-accent-500)]"
               />
             </div>
 
             <!-- Sync mode -->
             <div class="px-4 py-3 flex items-center gap-4">
-              <label class="text-sm text-[var(--watch-text)] flex-1">{{ __('Sync mode') }}</label>
+              <label class="text-sm text-gray-900 dark:text-slate-100 flex-1">{{ __('Sync mode') }}</label>
               <select
                 v-model="form.sync_mode"
-                class="px-2 py-1.5 rounded-lg border border-[var(--watch-border)] bg-[var(--watch-bg)]
-                       text-sm text-[var(--watch-text)] outline-none
-                       focus:ring-2 focus:ring-[var(--watch-primary)]/30 focus:border-[var(--watch-primary)]"
+                class="px-2 py-1.5 rounded-lg border border-gray-200 dark:border-slate-700 bg-white dark:bg-slate-950
+                       text-sm text-gray-900 dark:text-slate-100 outline-none
+                       focus:ring-2 focus:ring-[var(--app-accent-500)]/30 focus:border-[var(--app-accent-500)]"
               >
                 <option v-for="opt in SYNC_MODE_OPTIONS" :key="opt.value" :value="opt.value">
                   {{ __(opt.label) }}
@@ -624,12 +624,12 @@ function downloadMyData() {
 
             <!-- Sync interval (scheduled only) -->
             <div v-if="form.sync_mode === 'scheduled'" class="px-4 py-3 flex items-center gap-4">
-              <label class="text-sm text-[var(--watch-text)] flex-1">{{ __('Sync interval') }}</label>
+              <label class="text-sm text-gray-900 dark:text-slate-100 flex-1">{{ __('Sync interval') }}</label>
               <select
                 v-model="form.sync_interval"
-                class="px-2 py-1.5 rounded-lg border border-[var(--watch-border)] bg-[var(--watch-bg)]
-                       text-sm text-[var(--watch-text)] outline-none
-                       focus:ring-2 focus:ring-[var(--watch-primary)]/30 focus:border-[var(--watch-primary)]"
+                class="px-2 py-1.5 rounded-lg border border-gray-200 dark:border-slate-700 bg-white dark:bg-slate-950
+                       text-sm text-gray-900 dark:text-slate-100 outline-none
+                       focus:ring-2 focus:ring-[var(--app-accent-500)]/30 focus:border-[var(--app-accent-500)]"
               >
                 <option v-for="opt in SYNC_INTERVAL_OPTIONS" :key="opt.value" :value="opt.value">
                   {{ __(opt.label) }}
@@ -639,34 +639,34 @@ function downloadMyData() {
 
             <!-- Default activity type -->
             <div class="px-4 py-3 flex items-center gap-4">
-              <label class="text-sm text-[var(--watch-text)] flex-1">{{ __('Default activity type') }}</label>
+              <label class="text-sm text-gray-900 dark:text-slate-100 flex-1">{{ __('Default activity type') }}</label>
               <input
                 v-model="form.default_activity_type"
                 type="text"
-                class="w-40 px-2 py-1.5 rounded-lg border border-[var(--watch-border)] bg-[var(--watch-bg)]
-                       text-sm text-[var(--watch-text)] outline-none
-                       focus:ring-2 focus:ring-[var(--watch-primary)]/30 focus:border-[var(--watch-primary)]"
+                class="w-40 px-2 py-1.5 rounded-lg border border-gray-200 dark:border-slate-700 bg-white dark:bg-slate-950
+                       text-sm text-gray-900 dark:text-slate-100 outline-none
+                       focus:ring-2 focus:ring-[var(--app-accent-500)]/30 focus:border-[var(--app-accent-500)]"
               />
             </div>
 
             <!-- Sync billable only -->
             <div class="px-4 py-3 flex items-center gap-4">
-              <label class="text-sm text-[var(--watch-text)] flex-1">{{ __('Sync billable entries only') }}</label>
+              <label class="text-sm text-gray-900 dark:text-slate-100 flex-1">{{ __('Sync billable entries only') }}</label>
               <input
                 type="checkbox"
                 :checked="!!form.sync_billable_only"
-                class="w-4 h-4 rounded accent-[var(--watch-primary)]"
+                class="w-4 h-4 rounded accent-[var(--app-accent-500)]"
                 @change="toggleCheck('sync_billable_only', ($event.target as HTMLInputElement).checked)"
               />
             </div>
 
             <!-- Map project tags -->
             <div class="px-4 py-3 flex items-center gap-4">
-              <label class="text-sm text-[var(--watch-text)] flex-1">{{ __('Map project tags to ERPNext projects') }}</label>
+              <label class="text-sm text-gray-900 dark:text-slate-100 flex-1">{{ __('Map project tags to ERPNext projects') }}</label>
               <input
                 type="checkbox"
                 :checked="!!form.map_project_tags"
-                class="w-4 h-4 rounded accent-[var(--watch-primary)]"
+                class="w-4 h-4 rounded accent-[var(--app-accent-500)]"
                 @change="toggleCheck('map_project_tags', ($event.target as HTMLInputElement).checked)"
               />
             </div>
@@ -674,31 +674,31 @@ function downloadMyData() {
         </div>
 
         <!-- ── Integrations ────────────────────────────────────────── -->
-        <div class="bg-[var(--watch-bg)] rounded-xl border border-[var(--watch-border)] overflow-hidden divide-y divide-[var(--watch-border)]">
+        <div class="bg-white dark:bg-slate-950 rounded-xl border border-gray-200 dark:border-slate-700 overflow-hidden divide-y divide-gray-200 dark:divide-slate-700">
           <div class="px-4 py-3">
-            <h2 class="text-sm font-semibold text-[var(--watch-text)]">{{ __('Integrations') }}</h2>
-            <p class="text-xs text-[var(--watch-text-muted)] mt-0.5">{{ __('Connect Watch to Slack, Linear, and GitHub.') }}</p>
+            <h2 class="text-sm font-semibold text-gray-900 dark:text-slate-100">{{ __('Integrations') }}</h2>
+            <p class="text-xs text-gray-500 dark:text-slate-500 mt-0.5">{{ __('Connect Watch to Slack, Linear, and GitHub.') }}</p>
           </div>
 
           <!-- Slack -->
           <div class="px-4 py-3 space-y-3">
-            <div class="text-xs font-semibold text-[var(--watch-text-muted)] uppercase tracking-wide">{{ __('Slack') }}</div>
+            <div class="text-xs font-semibold text-gray-500 dark:text-slate-500 uppercase tracking-wide">{{ __('Slack') }}</div>
 
             <div class="flex items-center gap-3">
-              <label class="text-sm text-[var(--watch-text)] w-32 shrink-0">{{ __('Webhook URL') }}</label>
+              <label class="text-sm text-gray-900 dark:text-slate-100 w-32 shrink-0">{{ __('Webhook URL') }}</label>
               <input
                 v-model="form.slack_webhook_url"
                 type="password"
                 placeholder="https://hooks.slack.com/..."
-                class="flex-1 px-2 py-1.5 rounded-lg border border-[var(--watch-border)] bg-[var(--watch-bg)]
-                       text-sm text-[var(--watch-text)] outline-none
-                       focus:ring-2 focus:ring-[var(--watch-primary)]/30 focus:border-[var(--watch-primary)]"
+                class="flex-1 px-2 py-1.5 rounded-lg border border-gray-200 dark:border-slate-700 bg-white dark:bg-slate-950
+                       text-sm text-gray-900 dark:text-slate-100 outline-none
+                       focus:ring-2 focus:ring-[var(--app-accent-500)]/30 focus:border-[var(--app-accent-500)]"
               />
               <button
                 type="button"
                 :disabled="slackTesting || !form.slack_webhook_url"
-                class="px-3 py-1.5 rounded-lg border border-[var(--watch-border)] text-xs font-medium
-                       text-[var(--watch-text)] hover:bg-[var(--watch-bg-secondary)] transition-colors
+                class="px-3 py-1.5 rounded-lg border border-gray-200 dark:border-slate-700 text-xs font-medium
+                       text-gray-900 dark:text-slate-100 hover:bg-gray-50 dark:hover:bg-slate-800 transition-colors
                        disabled:opacity-40"
                 @click="testSlack"
               >
@@ -711,22 +711,22 @@ function downloadMyData() {
                 <input
                   type="checkbox"
                   :checked="!!form.slack_notify_on_stop"
-                  class="w-4 h-4 rounded accent-[var(--watch-primary)]"
+                  class="w-4 h-4 rounded accent-[var(--app-accent-500)]"
                   @change="toggleCheck('slack_notify_on_stop', ($event.target as HTMLInputElement).checked)"
                 />
-                <span class="text-sm text-[var(--watch-text)]">{{ __('Notify on timer stop') }}</span>
+                <span class="text-sm text-gray-900 dark:text-slate-100">{{ __('Notify on timer stop') }}</span>
               </label>
             </div>
 
             <div class="flex flex-col gap-1">
-              <label class="text-xs text-[var(--watch-text-muted)]">{{ __('Message template (optional)') }}</label>
+              <label class="text-xs text-gray-500 dark:text-slate-500">{{ __('Message template (optional)') }}</label>
               <input
                 v-model="form.slack_message_template"
                 type="text"
                 :placeholder="'⏱ {description} — {duration} logged{tag_part}'"
-                class="px-2 py-1.5 rounded-lg border border-[var(--watch-border)] bg-[var(--watch-bg)]
-                       text-sm text-[var(--watch-text)] outline-none
-                       focus:ring-2 focus:ring-[var(--watch-primary)]/30 focus:border-[var(--watch-primary)]"
+                class="px-2 py-1.5 rounded-lg border border-gray-200 dark:border-slate-700 bg-white dark:bg-slate-950
+                       text-sm text-gray-900 dark:text-slate-100 outline-none
+                       focus:ring-2 focus:ring-[var(--app-accent-500)]/30 focus:border-[var(--app-accent-500)]"
               />
             </div>
 
@@ -741,23 +741,23 @@ function downloadMyData() {
 
           <!-- Linear -->
           <div class="px-4 py-3 space-y-3">
-            <div class="text-xs font-semibold text-[var(--watch-text-muted)] uppercase tracking-wide">{{ __('Linear') }}</div>
+            <div class="text-xs font-semibold text-gray-500 dark:text-slate-500 uppercase tracking-wide">{{ __('Linear') }}</div>
 
             <div class="flex items-center gap-3">
-              <label class="text-sm text-[var(--watch-text)] w-32 shrink-0">{{ __('API Key') }}</label>
+              <label class="text-sm text-gray-900 dark:text-slate-100 w-32 shrink-0">{{ __('API Key') }}</label>
               <input
                 v-model="form.linear_api_key"
                 type="password"
                 placeholder="lin_api_…"
-                class="flex-1 px-2 py-1.5 rounded-lg border border-[var(--watch-border)] bg-[var(--watch-bg)]
-                       text-sm text-[var(--watch-text)] outline-none
-                       focus:ring-2 focus:ring-[var(--watch-primary)]/30 focus:border-[var(--watch-primary)]"
+                class="flex-1 px-2 py-1.5 rounded-lg border border-gray-200 dark:border-slate-700 bg-white dark:bg-slate-950
+                       text-sm text-gray-900 dark:text-slate-100 outline-none
+                       focus:ring-2 focus:ring-[var(--app-accent-500)]/30 focus:border-[var(--app-accent-500)]"
               />
               <button
                 type="button"
                 :disabled="linearTesting || !form.linear_api_key"
-                class="px-3 py-1.5 rounded-lg border border-[var(--watch-border)] text-xs font-medium
-                       text-[var(--watch-text)] hover:bg-[var(--watch-bg-secondary)] transition-colors
+                class="px-3 py-1.5 rounded-lg border border-gray-200 dark:border-slate-700 text-xs font-medium
+                       text-gray-900 dark:text-slate-100 hover:bg-gray-50 dark:hover:bg-slate-800 transition-colors
                        disabled:opacity-40"
                 @click="testLinear"
               >
@@ -770,10 +770,10 @@ function downloadMyData() {
                 <input
                   type="checkbox"
                   :checked="!!form.linear_post_comment"
-                  class="w-4 h-4 rounded accent-[var(--watch-primary)]"
+                  class="w-4 h-4 rounded accent-[var(--app-accent-500)]"
                   @change="toggleCheck('linear_post_comment', ($event.target as HTMLInputElement).checked)"
                 />
-                <span class="text-sm text-[var(--watch-text)]">{{ __('Post comment on save') }}</span>
+                <span class="text-sm text-gray-900 dark:text-slate-100">{{ __('Post comment on save') }}</span>
               </label>
             </div>
 
@@ -788,23 +788,23 @@ function downloadMyData() {
 
           <!-- GitHub -->
           <div class="px-4 py-3 space-y-3">
-            <div class="text-xs font-semibold text-[var(--watch-text-muted)] uppercase tracking-wide">{{ __('GitHub') }}</div>
+            <div class="text-xs font-semibold text-gray-500 dark:text-slate-500 uppercase tracking-wide">{{ __('GitHub') }}</div>
 
             <div class="flex items-center gap-3">
-              <label class="text-sm text-[var(--watch-text)] w-32 shrink-0">{{ __('Token') }}</label>
+              <label class="text-sm text-gray-900 dark:text-slate-100 w-32 shrink-0">{{ __('Token') }}</label>
               <input
                 v-model="form.github_token"
                 type="password"
                 placeholder="ghp_…"
-                class="flex-1 px-2 py-1.5 rounded-lg border border-[var(--watch-border)] bg-[var(--watch-bg)]
-                       text-sm text-[var(--watch-text)] outline-none
-                       focus:ring-2 focus:ring-[var(--watch-primary)]/30 focus:border-[var(--watch-primary)]"
+                class="flex-1 px-2 py-1.5 rounded-lg border border-gray-200 dark:border-slate-700 bg-white dark:bg-slate-950
+                       text-sm text-gray-900 dark:text-slate-100 outline-none
+                       focus:ring-2 focus:ring-[var(--app-accent-500)]/30 focus:border-[var(--app-accent-500)]"
               />
               <button
                 type="button"
                 :disabled="githubTesting || !form.github_token"
-                class="px-3 py-1.5 rounded-lg border border-[var(--watch-border)] text-xs font-medium
-                       text-[var(--watch-text)] hover:bg-[var(--watch-bg-secondary)] transition-colors
+                class="px-3 py-1.5 rounded-lg border border-gray-200 dark:border-slate-700 text-xs font-medium
+                       text-gray-900 dark:text-slate-100 hover:bg-gray-50 dark:hover:bg-slate-800 transition-colors
                        disabled:opacity-40"
                 @click="testGitHub"
               >
@@ -813,14 +813,14 @@ function downloadMyData() {
             </div>
 
             <div class="flex items-center gap-3">
-              <label class="text-sm text-[var(--watch-text)] w-32 shrink-0">{{ __('Default repo') }}</label>
+              <label class="text-sm text-gray-900 dark:text-slate-100 w-32 shrink-0">{{ __('Default repo') }}</label>
               <input
                 v-model="form.github_default_repo"
                 type="text"
                 placeholder="owner/repo"
-                class="flex-1 px-2 py-1.5 rounded-lg border border-[var(--watch-border)] bg-[var(--watch-bg)]
-                       text-sm text-[var(--watch-text)] outline-none
-                       focus:ring-2 focus:ring-[var(--watch-primary)]/30 focus:border-[var(--watch-primary)]"
+                class="flex-1 px-2 py-1.5 rounded-lg border border-gray-200 dark:border-slate-700 bg-white dark:bg-slate-950
+                       text-sm text-gray-900 dark:text-slate-100 outline-none
+                       focus:ring-2 focus:ring-[var(--app-accent-500)]/30 focus:border-[var(--app-accent-500)]"
               />
             </div>
 
@@ -829,10 +829,10 @@ function downloadMyData() {
                 <input
                   type="checkbox"
                   :checked="!!form.github_post_comment"
-                  class="w-4 h-4 rounded accent-[var(--watch-primary)]"
+                  class="w-4 h-4 rounded accent-[var(--app-accent-500)]"
                   @change="toggleCheck('github_post_comment', ($event.target as HTMLInputElement).checked)"
                 />
-                <span class="text-sm text-[var(--watch-text)]">{{ __('Post comment on save') }}</span>
+                <span class="text-sm text-gray-900 dark:text-slate-100">{{ __('Post comment on save') }}</span>
               </label>
             </div>
 
@@ -847,10 +847,10 @@ function downloadMyData() {
         </div>
 
         <!-- ── Export my data ─────────────────────────────────────── -->
-        <div class="bg-[var(--watch-bg)] rounded-xl border border-[var(--watch-border)] overflow-hidden divide-y divide-[var(--watch-border)]">
+        <div class="bg-white dark:bg-slate-950 rounded-xl border border-gray-200 dark:border-slate-700 overflow-hidden divide-y divide-gray-200 dark:divide-slate-700">
           <div class="px-4 py-3">
-            <h2 class="text-sm font-semibold text-[var(--watch-text)]">{{ __('Export my data') }}</h2>
-            <p class="text-xs text-[var(--watch-text-muted)] mt-0.5">{{ __('Download all your time entries as CSV.') }}</p>
+            <h2 class="text-sm font-semibold text-gray-900 dark:text-slate-100">{{ __('Export my data') }}</h2>
+            <p class="text-xs text-gray-500 dark:text-slate-500 mt-0.5">{{ __('Download all your time entries as CSV.') }}</p>
           </div>
 
           <div class="px-4 py-3 flex flex-wrap items-center gap-2">
@@ -858,8 +858,8 @@ function downloadMyData() {
             <div class="relative">
               <button
                 type="button"
-                class="flex items-center gap-1 px-3 py-1.5 rounded-lg border border-[var(--watch-border)]
-                       text-sm text-[var(--watch-text)] hover:border-[var(--watch-primary)]/50 transition-colors"
+                class="flex items-center gap-1 px-3 py-1.5 rounded-lg border border-gray-200 dark:border-slate-700
+                       text-sm text-gray-900 dark:text-slate-100 hover:border-[var(--app-accent-500)]/50 transition-colors"
                 @click="exportPresetOpen = !exportPresetOpen"
               >
                 {{ __(exportPresetLabel) }}
@@ -867,7 +867,7 @@ function downloadMyData() {
               </button>
               <div
                 v-if="exportPresetOpen"
-                class="absolute left-0 top-full mt-1 z-20 bg-[var(--watch-bg)] border border-[var(--watch-border)]
+                class="absolute left-0 top-full mt-1 z-20 bg-white dark:bg-slate-950 border border-gray-200 dark:border-slate-700
                        rounded-xl shadow-lg py-1 min-w-[140px]"
               >
                 <button
@@ -877,8 +877,8 @@ function downloadMyData() {
                   :class="[
                     'w-full text-left px-3 py-1.5 text-sm transition-colors',
                     exportPreset === p.value
-                      ? 'text-[var(--watch-primary)] font-medium'
-                      : 'text-[var(--watch-text)] hover:bg-[var(--watch-bg-secondary)]',
+                      ? 'text-[var(--app-accent-500)] font-medium'
+                      : 'text-gray-900 dark:text-slate-100 hover:bg-gray-50 dark:hover:bg-slate-800',
                   ]"
                   @click="exportPreset = p.value; exportPresetOpen = false"
                 >
@@ -893,26 +893,26 @@ function downloadMyData() {
                 v-model="exportFromDate"
                 type="date"
                 :max="exportToDate || undefined"
-                class="px-2 py-1.5 text-sm rounded-lg border border-[var(--watch-border)]
-                       bg-[var(--watch-bg)] text-[var(--watch-text)] outline-none
-                       focus:ring-2 focus:ring-[var(--watch-primary)]/30 focus:border-[var(--watch-primary)]"
+                class="px-2 py-1.5 text-sm rounded-lg border border-gray-200 dark:border-slate-700
+                       bg-white dark:bg-slate-950 text-gray-900 dark:text-slate-100 outline-none
+                       focus:ring-2 focus:ring-[var(--app-accent-500)]/30 focus:border-[var(--app-accent-500)]"
               />
-              <span class="text-[var(--watch-text-muted)] text-sm">→</span>
+              <span class="text-gray-500 dark:text-slate-500 text-sm">→</span>
               <input
                 v-model="exportToDate"
                 type="date"
                 :min="exportFromDate || undefined"
-                class="px-2 py-1.5 text-sm rounded-lg border border-[var(--watch-border)]
-                       bg-[var(--watch-bg)] text-[var(--watch-text)] outline-none
-                       focus:ring-2 focus:ring-[var(--watch-primary)]/30 focus:border-[var(--watch-primary)]"
+                class="px-2 py-1.5 text-sm rounded-lg border border-gray-200 dark:border-slate-700
+                       bg-white dark:bg-slate-950 text-gray-900 dark:text-slate-100 outline-none
+                       focus:ring-2 focus:ring-[var(--app-accent-500)]/30 focus:border-[var(--app-accent-500)]"
               />
             </template>
 
             <button
               type="button"
               :disabled="exportPreset === 'custom' && (!exportFromDate || !exportToDate)"
-              class="flex items-center gap-1.5 px-3 py-1.5 rounded-lg border border-[var(--watch-border)]
-                     text-sm text-[var(--watch-text)] hover:bg-[var(--watch-bg-secondary)]
+              class="flex items-center gap-1.5 px-3 py-1.5 rounded-lg border border-gray-200 dark:border-slate-700
+                     text-sm text-gray-900 dark:text-slate-100 hover:bg-gray-50 dark:hover:bg-slate-800
                      transition-colors disabled:opacity-40"
               @click="downloadMyData"
             >
@@ -931,7 +931,7 @@ function downloadMyData() {
           <button
             type="button"
             :disabled="saving"
-            class="px-5 py-2 rounded-lg bg-[var(--watch-primary)] hover:bg-[var(--watch-primary-dark)]
+            class="px-5 py-2 rounded-lg bg-[var(--app-accent-500)] hover:bg-[var(--app-accent-700)]
                    text-white text-sm font-medium transition-colors disabled:opacity-50"
             @click="handleSave"
           >

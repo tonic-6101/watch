@@ -8,8 +8,8 @@
     <link rel="icon" type="image/svg+xml" href="/assets/watch/images/logo.svg" />
     <link rel="stylesheet" href="/assets/dock/css/dock-tokens.css">
     <link rel="stylesheet" href="/assets/dock/css/dock-navbar.css">
-    <script type="module" crossorigin src="/assets/watch/frontend/assets/main-DrUUsTTg.js"></script>
-    <link rel="stylesheet" crossorigin href="/assets/watch/frontend/assets/main-Cff3cr-v.css">
+    <script type="module" crossorigin src="/assets/watch/frontend/assets/main-CXfl9sif.js"></script>
+    <link rel="stylesheet" crossorigin href="/assets/watch/frontend/assets/main-DSA8stHb.css">
   </head>
   <body>
     <script>
@@ -18,6 +18,8 @@
         var isDark = stored === 'dark' ||
           (!stored || stored === 'auto') && window.matchMedia('(prefers-color-scheme: dark)').matches;
         if (isDark) document.documentElement.classList.add('dark');
+        var cm = localStorage.getItem('color-mode');
+        if (cm === 'neutral') document.documentElement.setAttribute('data-color-mode', 'neutral');
       })();
     </script>
     <div id="app" class="h-screen"></div>

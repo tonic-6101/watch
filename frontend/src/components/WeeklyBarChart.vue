@@ -109,7 +109,7 @@ function tipX(idx: number): number {
           :y1="PAD_T + yPx(tick)"
           :x2="W - PAD_R"
           :y2="PAD_T + yPx(tick)"
-          stroke="var(--watch-border)"
+          stroke="#e5e7eb"
           stroke-width="0.5"
         />
         <text
@@ -117,7 +117,7 @@ function tipX(idx: number): number {
           :y="PAD_T + yPx(tick) + 3"
           text-anchor="end"
           font-size="8"
-          fill="var(--watch-text-muted)"
+          fill="#6b7280"
         >{{ tick }}</text>
       </g>
 
@@ -128,7 +128,7 @@ function tipX(idx: number): number {
         :y1="PAD_T + yPx(targetHoursPerDay)"
         :x2="W - PAD_R"
         :y2="PAD_T + yPx(targetHoursPerDay)"
-        stroke="var(--watch-primary)"
+        stroke="var(--app-accent-500)"
         stroke-width="1"
         stroke-dasharray="4 3"
         opacity="0.6"
@@ -160,7 +160,7 @@ function tipX(idx: number): number {
           :width="barWidth"
           :height="barH(d.hours)"
           :rx="2"
-          :fill="d.is_work_day ? 'var(--watch-primary)' : 'var(--watch-text-muted)'"
+          :fill="d.is_work_day ? 'var(--app-accent-500)' : '#6b7280'"
           :opacity="hoveredIdx === idx ? 1 : 0.75"
           class="transition-opacity duration-100"
         />
@@ -171,7 +171,7 @@ function tipX(idx: number): number {
           :y="H - 4"
           text-anchor="middle"
           font-size="8"
-          :fill="hoveredIdx === idx ? 'var(--watch-text)' : 'var(--watch-text-muted)'"
+          :fill="hoveredIdx === idx ? '#111827' : '#6b7280'"
         >{{ d.label }}</text>
 
         <!-- Tooltip -->
@@ -182,7 +182,7 @@ function tipX(idx: number): number {
             width="36"
             height="14"
             rx="3"
-            fill="var(--watch-text)"
+            fill="#111827"
             opacity="0.88"
           />
           <text
@@ -190,7 +190,7 @@ function tipX(idx: number): number {
             :y="barY(Math.max(d.hours, 0.5)) - 9"
             text-anchor="middle"
             font-size="8"
-            fill="var(--watch-bg)"
+            fill="#ffffff"
             font-weight="500"
           >{{ tooltipLabel(d) }}</text>
         </g>

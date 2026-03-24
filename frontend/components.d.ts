@@ -22,7 +22,6 @@ declare module 'vue' {
     TagInput: typeof import('./src/components/timer/TagInput.vue')['default']
     TagRow: typeof import('./src/components/tags/TagRow.vue')['default']
     ToastContainer: typeof import('./src/components/ToastContainer.vue')['default']
-    WatchSidebar: typeof import('./src/components/WatchSidebar.vue')['default']
     WeeklyBarChart: typeof import('./src/components/WeeklyBarChart.vue')['default']
     WeeklyDonut: typeof import('./src/components/WeeklyDonut.vue')['default']
   }

@@ -72,7 +72,7 @@ const ENTRY_OPTIONS: { value: EntryType; label: string }[] = [
 </script>
 
 <template>
-  <div class="bg-[var(--watch-bg)] rounded-xl border border-[var(--watch-border)] p-3">
+  <div class="bg-white dark:bg-slate-950 rounded-xl border border-gray-200 dark:border-slate-700 p-3">
 
     <!-- ── Quick bar ──────────────────────────────────────────────── -->
     <div v-if="!expanded" class="space-y-2">
@@ -84,27 +84,27 @@ const ENTRY_OPTIONS: { value: EntryType; label: string }[] = [
           v-model="quickDesc"
           type="text"
           :placeholder="__('What did you work on?')"
-          class="flex-1 min-w-0 px-3 py-2 rounded-lg border border-[var(--watch-border)]
-                 bg-[var(--watch-bg)] text-sm text-[var(--watch-text)]
-                 placeholder-[var(--watch-text-muted)] outline-none
-                 focus:ring-2 focus:ring-[var(--watch-primary)]/30
-                 focus:border-[var(--watch-primary)]"
+          class="flex-1 min-w-0 px-3 py-2 rounded-lg border border-gray-200 dark:border-slate-700
+                 bg-white dark:bg-slate-950 text-sm text-gray-900 dark:text-slate-100
+                 placeholder-gray-500 dark:placeholder-slate-500 outline-none
+                 focus:ring-2 focus:ring-[var(--app-accent-500)]/30
+                 focus:border-[var(--app-accent-500)]"
           @keydown.enter.prevent="handleQuickSave"
         />
         <input
           v-model="quickDuration"
           type="text"
           placeholder="h:mm"
-          class="w-16 shrink-0 px-2 py-2 rounded-lg border border-[var(--watch-border)]
-                 bg-[var(--watch-bg)] text-sm text-[var(--watch-text)] text-center outline-none
-                 focus:ring-2 focus:ring-[var(--watch-primary)]/30
-                 focus:border-[var(--watch-primary)]"
+          class="w-16 shrink-0 px-2 py-2 rounded-lg border border-gray-200 dark:border-slate-700
+                 bg-white dark:bg-slate-950 text-sm text-gray-900 dark:text-slate-100 text-center outline-none
+                 focus:ring-2 focus:ring-[var(--app-accent-500)]/30
+                 focus:border-[var(--app-accent-500)]"
           @keydown.enter.prevent="handleQuickSave"
         />
         <button
           type="button"
-          class="shrink-0 px-3 py-2 rounded-lg bg-[var(--watch-primary)]
-                 hover:bg-[var(--watch-primary-dark)] text-white text-sm font-medium
+          class="shrink-0 px-3 py-2 rounded-lg bg-[var(--app-accent-500)]
+                 hover:bg-[var(--app-accent-700)] text-white text-sm font-medium
                  transition-colors disabled:opacity-50"
           :disabled="!parseDurationInput(quickDuration)"
           @click="handleQuickSave"
@@ -126,8 +126,8 @@ const ENTRY_OPTIONS: { value: EntryType; label: string }[] = [
             :class="[
               'px-2 py-1 rounded text-xs font-medium border transition-colors',
               quickType === opt.value
-                ? 'bg-[var(--watch-primary)] border-[var(--watch-primary)] text-white'
-                : 'border-[var(--watch-border)] text-[var(--watch-text-secondary)] hover:border-[var(--watch-primary)]/50',
+                ? 'bg-[var(--app-accent-500)] border-[var(--app-accent-500)] text-white'
+                : 'border-gray-200 dark:border-slate-700 text-gray-600 dark:text-slate-400 hover:border-[var(--app-accent-500)]/50',
             ]"
             @click="quickType = opt.value"
           >
@@ -137,8 +137,8 @@ const ENTRY_OPTIONS: { value: EntryType; label: string }[] = [
 
         <button
           type="button"
-          class="ml-auto flex items-center gap-1 text-xs text-[var(--watch-text-muted)]
-                 hover:text-[var(--watch-text)] transition-colors"
+          class="ml-auto flex items-center gap-1 text-xs text-gray-500 dark:text-slate-500
+                 hover:text-gray-900 dark:hover:text-slate-100 transition-colors"
           @click="expanded = true"
         >
           {{ __('More') }}
@@ -150,13 +150,13 @@ const ENTRY_OPTIONS: { value: EntryType; label: string }[] = [
     <!-- ── Expanded full form ────────────────────────────────────── -->
     <div v-else>
       <div class="flex items-center justify-between mb-3">
-        <span class="text-sm font-semibold text-[var(--watch-text)]">
+        <span class="text-sm font-semibold text-gray-900 dark:text-slate-100">
           {{ __('Add Entry') }}
         </span>
         <button
           type="button"
-          class="flex items-center gap-1 text-xs text-[var(--watch-text-muted)]
-                 hover:text-[var(--watch-text)] transition-colors"
+          class="flex items-center gap-1 text-xs text-gray-500 dark:text-slate-500
+                 hover:text-gray-900 dark:hover:text-slate-100 transition-colors"
           @click="expanded = false"
         >
           {{ __('Less') }}

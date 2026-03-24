@@ -87,7 +87,7 @@ const hoveredIdx = ref<number | null>(null)
         <circle
           :cx="CX" :cy="CY" :r="R"
           fill="none"
-          stroke="var(--watch-border)"
+          stroke="#e5e7eb"
           :stroke-width="SW"
         />
 
@@ -96,7 +96,7 @@ const hoveredIdx = ref<number | null>(null)
           <circle
             :cx="CX" :cy="CY" :r="R"
             fill="none"
-            stroke="var(--watch-border)"
+            stroke="#e5e7eb"
             :stroke-width="SW"
           />
         </template>
@@ -122,7 +122,7 @@ const hoveredIdx = ref<number | null>(null)
 
       <!-- Center label (not rotated) -->
       <div class="absolute inset-0 flex items-center justify-center pointer-events-none">
-        <span class="text-sm font-semibold text-[var(--watch-text)] rotate-0">
+        <span class="text-sm font-semibold text-gray-900 dark:text-slate-100 rotate-0">
           {{ totalHours ? formatHours(totalHours) : '—' }}
         </span>
       </div>
@@ -132,7 +132,7 @@ const hoveredIdx = ref<number | null>(null)
     <div class="flex-1 min-w-0 space-y-1.5 pt-1">
       <div
         v-if="!tags.length"
-        class="text-xs text-[var(--watch-text-muted)] italic"
+        class="text-xs text-gray-500 dark:text-slate-500 italic"
       >
         {{ __('No entries this week') }}
       </div>
@@ -142,7 +142,7 @@ const hoveredIdx = ref<number | null>(null)
         :key="idx"
         type="button"
         class="w-full flex items-center gap-2 text-left group rounded px-1 py-0.5 transition-colors"
-        :class="hoveredIdx === idx ? 'bg-[var(--watch-bg-secondary)]' : 'hover:bg-[var(--watch-bg-secondary)]'"
+        :class="hoveredIdx === idx ? 'bg-gray-50 dark:bg-slate-800' : 'hover:bg-gray-50 dark:hover:bg-slate-800'"
         @mouseenter="hoveredIdx = idx"
         @mouseleave="hoveredIdx = null"
         @click="emit('clickTag', seg.tag.tag_name)"
@@ -151,13 +151,13 @@ const hoveredIdx = ref<number | null>(null)
           class="w-2.5 h-2.5 rounded-full shrink-0"
           :style="{ backgroundColor: seg.color }"
         />
-        <span class="flex-1 min-w-0 truncate text-xs text-[var(--watch-text-secondary)]">
+        <span class="flex-1 min-w-0 truncate text-xs text-gray-600 dark:text-slate-400">
           {{ seg.tag.tag_name ?? __('Untagged') }}
         </span>
-        <span class="text-xs tabular-nums text-[var(--watch-text-muted)] shrink-0">
+        <span class="text-xs tabular-nums text-gray-500 dark:text-slate-500 shrink-0">
           {{ formatHours(seg.tag.hours) }}
         </span>
-        <span class="text-xs tabular-nums text-[var(--watch-text-muted)] shrink-0 w-9 text-right">
+        <span class="text-xs tabular-nums text-gray-500 dark:text-slate-500 shrink-0 w-9 text-right">
           {{ seg.tag.pct }}%
         </span>
       </button>

@@ -366,7 +366,7 @@ function isToday(dateStr: string): boolean {
 }
 
 function chipStyle(color: string | null) {
-  const c = color || 'var(--watch-primary)'
+  const c = color || 'var(--app-accent-500)'
   return { backgroundColor: `${c}22`, color: c, borderColor: `${c}44` }
 }
 
@@ -486,23 +486,23 @@ async function handleDayCopyToDate(sourceDate: string, name: string, targetDate:
 </script>
 
 <template>
-  <div class="min-h-screen bg-[var(--watch-bg-secondary)]">
+  <div class="min-h-screen bg-gray-50 dark:bg-slate-800">
     <div class="max-w-2xl mx-auto px-4 py-6 space-y-4">
 
       <!-- Week navigation -->
       <div class="flex items-center gap-3">
         <button
           type="button"
-          class="p-1.5 rounded-lg hover:bg-[var(--watch-bg)] border border-transparent
-                 hover:border-[var(--watch-border)] text-[var(--watch-text-muted)]
-                 hover:text-[var(--watch-text)] transition-colors"
+          class="p-1.5 rounded-lg hover:bg-white dark:hover:bg-slate-950 border border-transparent
+                 hover:border-gray-200 dark:hover:border-slate-700 text-gray-500 dark:text-slate-500
+                 hover:text-gray-900 dark:hover:text-slate-100 transition-colors"
           :title="__('Previous week')"
           @click="goWeek(addWeeks(activeWeek, -1))"
         >
           <ChevronLeft class="w-5 h-5" aria-hidden="true" />
         </button>
 
-        <span class="flex-1 text-center text-sm font-semibold text-[var(--watch-text)]">
+        <span class="flex-1 text-center text-sm font-semibold text-gray-900 dark:text-slate-100">
           {{ weekLabel(activeMonday) }}
         </span>
 
@@ -510,8 +510,8 @@ async function handleDayCopyToDate(sourceDate: string, name: string, targetDate:
           type="button"
           class="p-1.5 rounded-lg border border-transparent transition-colors"
           :class="isThisWeek
-            ? 'text-[var(--watch-border)] cursor-not-allowed'
-            : 'hover:bg-[var(--watch-bg)] hover:border-[var(--watch-border)] text-[var(--watch-text-muted)] hover:text-[var(--watch-text)]'"
+            ? 'text-gray-200 dark:text-slate-700 cursor-not-allowed'
+            : 'hover:bg-white dark:hover:bg-slate-950 hover:border-gray-200 dark:hover:border-slate-700 text-gray-500 dark:text-slate-500 hover:text-gray-900 dark:hover:text-slate-100'"
           :disabled="isThisWeek"
           :title="isThisWeek ? undefined : __('Next week')"
           @click="!isThisWeek && goWeek(addWeeks(activeWeek, 1))"
@@ -522,7 +522,7 @@ async function handleDayCopyToDate(sourceDate: string, name: string, targetDate:
         <button
           v-if="!isThisWeek"
           type="button"
-          class="text-xs text-[var(--watch-primary)] hover:underline shrink-0"
+          class="text-xs text-[var(--app-accent-500)] hover:underline shrink-0"
           @click="goWeek(currentWeek())"
         >
           {{ __('This week') }}
@@ -532,9 +532,9 @@ async function handleDayCopyToDate(sourceDate: string, name: string, targetDate:
       <!-- Weekly target progress bar -->
       <div
         v-if="hasTarget && weekData"
-        class="bg-[var(--watch-bg)] rounded-xl border border-[var(--watch-border)] px-4 py-3 space-y-1.5"
+        class="bg-white dark:bg-slate-950 rounded-xl border border-gray-200 dark:border-slate-700 px-4 py-3 space-y-1.5"
       >
-        <div class="h-2.5 rounded-full bg-[var(--watch-border)] overflow-hidden">
+        <div class="h-2.5 rounded-full bg-gray-200 dark:bg-slate-700 overflow-hidden">
           <div
             class="h-full rounded-full transition-all duration-300"
             :class="targetBarClass"
@@ -554,9 +554,9 @@ async function handleDayCopyToDate(sourceDate: string, name: string, targetDate:
         <div
           v-for="i in 5"
           :key="i"
-          class="bg-[var(--watch-bg)] rounded-xl border border-[var(--watch-border)] p-3 animate-pulse"
+          class="bg-white dark:bg-slate-950 rounded-xl border border-gray-200 dark:border-slate-700 p-3 animate-pulse"
         >
-          <div class="h-4 bg-[var(--watch-border)] rounded w-1/3" />
+          <div class="h-4 bg-gray-200 dark:bg-slate-700 rounded w-1/3" />
         </div>
       </div>
 
@@ -564,8 +564,8 @@ async function handleDayCopyToDate(sourceDate: string, name: string, targetDate:
 
         <!-- Day rows card -->
         <div
-          class="bg-[var(--watch-bg)] rounded-xl border border-[var(--watch-border)] divide-y
-                 divide-[var(--watch-border)]"
+          class="bg-white dark:bg-slate-950 rounded-xl border border-gray-200 dark:border-slate-700 divide-y
+                 divide-gray-200 dark:divide-slate-700"
         >
           <template v-for="row in visibleDays" :key="typeof row === 'string' ? 'collapse' : row.date">
 
@@ -574,10 +574,10 @@ async function handleDayCopyToDate(sourceDate: string, name: string, targetDate:
               v-if="row === 'weekend-collapse'"
               class="px-4 py-2 flex items-center gap-3 opacity-40 cursor-default"
             >
-              <span class="text-xs text-[var(--watch-text-muted)] w-20 shrink-0">
+              <span class="text-xs text-gray-500 dark:text-slate-500 w-20 shrink-0">
                 {{ weekendLabel() }}
               </span>
-              <div class="flex-1 h-1.5 rounded-full bg-[var(--watch-border)]" />
+              <div class="flex-1 h-1.5 rounded-full bg-gray-200 dark:bg-slate-700" />
             </div>
 
             <!-- Day wrapper (summary + expansion) -->
@@ -587,24 +587,24 @@ async function handleDayCopyToDate(sourceDate: string, name: string, targetDate:
                 class="px-4 py-3 flex items-center gap-3 cursor-pointer transition-colors"
                 :class="[
                   isToday(row.date)
-                    ? 'bg-[var(--watch-primary)]/5'
-                    : 'hover:bg-[var(--watch-bg-secondary)]',
+                    ? 'bg-[var(--app-accent-500)]/5'
+                    : 'hover:bg-gray-50 dark:hover:bg-slate-800',
                 ]"
                 @click="toggleDay(row.date)"
               >
                 <!-- Day label -->
                 <span
                   class="text-xs font-medium shrink-0 w-16"
-                  :class="isToday(row.date) ? 'text-[var(--watch-primary)]' : 'text-[var(--watch-text-muted)]'"
+                  :class="isToday(row.date) ? 'text-[var(--app-accent-500)]' : 'text-gray-500 dark:text-slate-500'"
                 >
                   {{ formatDayLabel(row.date) }}
                 </span>
 
                 <!-- Progress bar -->
-                <div class="relative flex-1 h-2 rounded-full bg-[var(--watch-border)] overflow-hidden">
+                <div class="relative flex-1 h-2 rounded-full bg-gray-200 dark:bg-slate-700 overflow-hidden">
                   <template v-if="row.entry_count > 0">
                     <div
-                      class="absolute inset-y-0 left-0 rounded-full bg-[var(--watch-primary)]/70 transition-all"
+                      class="absolute inset-y-0 left-0 rounded-full bg-[var(--app-accent-500)]/70 transition-all"
                       :style="{ width: dayBarPercent(row.total_hours) + '%' }"
                     />
                   </template>
@@ -613,8 +613,8 @@ async function handleDayCopyToDate(sourceDate: string, name: string, targetDate:
                       class="absolute inset-0 rounded-full"
                       style="background: repeating-linear-gradient(
                         90deg,
-                        var(--watch-border) 0,
-                        var(--watch-border) 4px,
+                        #e5e7eb 0,
+                        #e5e7eb 4px,
                         transparent 4px,
                         transparent 8px
                       )"
@@ -624,7 +624,7 @@ async function handleDayCopyToDate(sourceDate: string, name: string, targetDate:
 
                 <!-- Hours or dash -->
                 <span class="text-xs tabular-nums shrink-0 w-12 text-right"
-                      :class="row.entry_count > 0 ? 'text-[var(--watch-text)]' : 'text-[var(--watch-text-muted)]'"
+                      :class="row.entry_count > 0 ? 'text-gray-900 dark:text-slate-100' : 'text-gray-500 dark:text-slate-500'"
                 >
                   {{ row.entry_count > 0 ? formatHours(row.total_hours) : '—' }}
                 </span>
@@ -642,14 +642,14 @@ async function handleDayCopyToDate(sourceDate: string, name: string, targetDate:
                     </span>
                     <span
                       v-if="row.overflow_count > 0"
-                      class="px-1.5 py-0.5 rounded text-xs text-[var(--watch-text-muted)]
-                             bg-[var(--watch-bg-secondary)] shrink-0"
+                      class="px-1.5 py-0.5 rounded text-xs text-gray-500 dark:text-slate-500
+                             bg-gray-50 dark:bg-slate-800 shrink-0"
                     >
                       +{{ row.overflow_count }}
                     </span>
                   </template>
                   <template v-else-if="row.entry_count === 0 && !isDayExpanded(row.date)">
-                    <span class="text-xs text-[var(--watch-text-muted)] italic mr-1">
+                    <span class="text-xs text-gray-500 dark:text-slate-500 italic mr-1">
                       {{ isToday(row.date) ? __('no entries yet') : __('no entries') }}
                     </span>
                   </template>
@@ -658,12 +658,12 @@ async function handleDayCopyToDate(sourceDate: string, name: string, targetDate:
                 <!-- Expand/collapse chevron -->
                 <ChevronUp
                   v-if="isDayExpanded(row.date)"
-                  class="w-4 h-4 text-[var(--watch-text-muted)] shrink-0"
+                  class="w-4 h-4 text-gray-500 dark:text-slate-500 shrink-0"
                   aria-hidden="true"
                 />
                 <ChevronDown
                   v-else
-                  class="w-4 h-4 text-[var(--watch-text-muted)] shrink-0"
+                  class="w-4 h-4 text-gray-500 dark:text-slate-500 shrink-0"
                   aria-hidden="true"
                 />
               </div>
@@ -671,17 +671,17 @@ async function handleDayCopyToDate(sourceDate: string, name: string, targetDate:
               <!-- Expansion panel -->
               <div
                 v-if="isDayExpanded(row.date)"
-                class="border-t border-[var(--watch-border)] bg-[var(--watch-bg-secondary)]/50 px-3 py-3 space-y-2"
+                class="border-t border-gray-200 dark:border-slate-700 bg-gray-50 dark:bg-slate-800/50 px-3 py-3 space-y-2"
               >
                 <!-- Loading skeleton -->
                 <template v-if="getOrCreateDayEntries(row.date).loading.value && !getOrCreateDayEntries(row.date).entries.value.length">
                   <div
                     v-for="i in 2"
                     :key="i"
-                    class="bg-[var(--watch-bg)] rounded-xl border border-[var(--watch-border)] p-4 animate-pulse"
+                    class="bg-white dark:bg-slate-950 rounded-xl border border-gray-200 dark:border-slate-700 p-4 animate-pulse"
                   >
-                    <div class="h-3 bg-[var(--watch-border)] rounded w-1/4 mb-2" />
-                    <div class="h-4 bg-[var(--watch-border)] rounded w-3/4" />
+                    <div class="h-3 bg-gray-200 dark:bg-slate-700 rounded w-1/4 mb-2" />
+                    <div class="h-4 bg-gray-200 dark:bg-slate-700 rounded w-3/4" />
                   </div>
                 </template>
 
@@ -689,7 +689,7 @@ async function handleDayCopyToDate(sourceDate: string, name: string, targetDate:
                 <template v-else>
                   <p
                     v-if="!getOrCreateDayEntries(row.date).entries.value.length"
-                    class="text-xs text-[var(--watch-text-muted)] italic text-center py-2"
+                    class="text-xs text-gray-500 dark:text-slate-500 italic text-center py-2"
                   >
                     {{ __('No entries yet — add one below.') }}
                   </p>
@@ -718,25 +718,25 @@ async function handleDayCopyToDate(sourceDate: string, name: string, targetDate:
         </div>
 
         <!-- ── Chart section ──────────────────────────────────────────── -->
-        <div class="bg-[var(--watch-bg)] rounded-xl border border-[var(--watch-border)] overflow-hidden">
+        <div class="bg-white dark:bg-slate-950 rounded-xl border border-gray-200 dark:border-slate-700 overflow-hidden">
 
           <!-- Collapsible header -->
           <button
             type="button"
             class="w-full flex items-center justify-between px-4 py-3
-                   text-sm font-medium text-[var(--watch-text)] hover:bg-[var(--watch-bg-secondary)]
+                   text-sm font-medium text-gray-900 dark:text-slate-100 hover:bg-gray-50 dark:hover:bg-slate-800
                    transition-colors"
             @click="toggleChart"
           >
             <span>{{ __('This week at a glance') }}</span>
-            <ChevronDown v-if="!chartOpen" class="w-4 h-4 text-[var(--watch-text-muted)]" aria-hidden="true" />
-            <ChevronUp   v-else            class="w-4 h-4 text-[var(--watch-text-muted)]" aria-hidden="true" />
+            <ChevronDown v-if="!chartOpen" class="w-4 h-4 text-gray-500 dark:text-slate-500" aria-hidden="true" />
+            <ChevronUp   v-else            class="w-4 h-4 text-gray-500 dark:text-slate-500" aria-hidden="true" />
           </button>
 
           <!-- Charts (shown when expanded) -->
-          <div v-if="chartOpen" class="border-t border-[var(--watch-border)]">
+          <div v-if="chartOpen" class="border-t border-gray-200 dark:border-slate-700">
             <div v-if="chartLoading && !chartData" class="flex items-center justify-center h-32">
-              <div class="w-5 h-5 border-2 border-[var(--watch-primary)] border-t-transparent
+              <div class="w-5 h-5 border-2 border-[var(--app-accent-500)] border-t-transparent
                           rounded-full animate-spin" />
             </div>
             <div v-else-if="chartData" class="grid grid-cols-1 sm:grid-cols-2 gap-4 p-4">
@@ -744,7 +744,7 @@ async function handleDayCopyToDate(sourceDate: string, name: string, targetDate:
               <!-- Donut: tag breakdown -->
               <div>
                 <p class="text-xs font-semibold uppercase tracking-wide
-                           text-[var(--watch-text-muted)] mb-3">
+                           text-gray-500 dark:text-slate-500 mb-3">
                   {{ __('Time by tag') }}
                 </p>
                 <WeeklyDonut
@@ -757,7 +757,7 @@ async function handleDayCopyToDate(sourceDate: string, name: string, targetDate:
               <!-- Bar: hours per day -->
               <div>
                 <p class="text-xs font-semibold uppercase tracking-wide
-                           text-[var(--watch-text-muted)] mb-3">
+                           text-gray-500 dark:text-slate-500 mb-3">
                   {{ __('Hours per day') }}
                 </p>
                 <WeeklyBarChart
@@ -773,15 +773,15 @@ async function handleDayCopyToDate(sourceDate: string, name: string, targetDate:
         </div>
 
         <!-- Week totals row (moved outside day rows card) -->
-        <div class="bg-[var(--watch-bg)] rounded-xl border border-[var(--watch-border)]
+        <div class="bg-white dark:bg-slate-950 rounded-xl border border-gray-200 dark:border-slate-700
                     px-4 py-3 flex flex-wrap items-center gap-x-4 gap-y-1">
           <div class="flex items-center gap-2 flex-1 min-w-0">
-            <span class="text-xs font-semibold text-[var(--watch-text-muted)] shrink-0">
+            <span class="text-xs font-semibold text-gray-500 dark:text-slate-500 shrink-0">
               {{ __('Week') }}
             </span>
-            <div class="flex-1 h-2 rounded-full bg-[var(--watch-border)] overflow-hidden">
+            <div class="flex-1 h-2 rounded-full bg-gray-200 dark:bg-slate-700 overflow-hidden">
               <div
-                class="h-full rounded-full bg-[var(--watch-primary)]/50"
+                class="h-full rounded-full bg-[var(--app-accent-500)]/50"
                 :style="{
                   width: Math.min(100, Math.round(
                     (weekData.total_hours / Math.max(1, weekData.prev_week_total_hours)) * 100
@@ -790,12 +790,12 @@ async function handleDayCopyToDate(sourceDate: string, name: string, targetDate:
               />
             </div>
           </div>
-          <span class="text-sm font-semibold text-[var(--watch-text)] shrink-0">
+          <span class="text-sm font-semibold text-gray-900 dark:text-slate-100 shrink-0">
             {{ formatHours(weekData.total_hours) }}
           </span>
-          <span v-if="weekData.billable_hours" class="text-xs text-[var(--watch-text-muted)] shrink-0">
+          <span v-if="weekData.billable_hours" class="text-xs text-gray-500 dark:text-slate-500 shrink-0">
             {{ __('Billable') }}
-            <strong class="text-[var(--watch-text)] ml-1">{{ formatHours(weekData.billable_hours) }}</strong>
+            <strong class="text-gray-900 dark:text-slate-100 ml-1">{{ formatHours(weekData.billable_hours) }}</strong>
           </span>
         </div>
 
@@ -805,7 +805,7 @@ async function handleDayCopyToDate(sourceDate: string, name: string, targetDate:
       <div class="flex justify-end">
         <button
           type="button"
-          class="text-xs text-[var(--watch-text-muted)] hover:text-[var(--watch-text)] transition-colors"
+          class="text-xs text-gray-500 dark:text-slate-500 hover:text-gray-900 dark:hover:text-slate-100 transition-colors"
           @click="toggleWeekends"
         >
           {{ showWeekends ? __('Hide weekends') : __('Show weekends') }}

@@ -134,7 +134,7 @@ const BILLING_TYPES = [
 ]
 
 const dotStyle = computed(() => ({
-  backgroundColor: props.tag.color || 'var(--watch-primary)',
+  backgroundColor: props.tag.color || 'var(--app-accent-500)',
 }))
 
 const showBudgetBar = computed(() =>
@@ -142,10 +142,10 @@ const showBudgetBar = computed(() =>
 )
 
 const budgetBarColor = computed(() => {
-  if (!props.budgetStatus) return 'bg-[var(--watch-primary)]'
+  if (!props.budgetStatus) return 'bg-[var(--app-accent-500)]'
   if (props.budgetStatus.status === 'exceeded') return 'bg-red-500'
   if (props.budgetStatus.status === 'approaching') return 'bg-amber-400'
-  return 'bg-[var(--watch-primary)]'
+  return 'bg-[var(--app-accent-500)]'
 })
 
 const budgetMonthLabel = computed(() => {
@@ -158,29 +158,29 @@ const budgetMonthLabel = computed(() => {
   <!-- ── Edit mode ──────────────────────────────────────────────────── -->
   <div
     v-if="editing"
-    class="bg-[var(--watch-bg)] rounded-xl border border-[var(--watch-primary)]/40 p-4 space-y-3"
+    class="bg-white dark:bg-slate-950 rounded-xl border border-[var(--app-accent-500)]/40 p-4 space-y-3"
   >
     <div class="grid grid-cols-2 gap-3">
       <!-- Name -->
       <div class="flex flex-col gap-1">
-        <label class="text-xs text-[var(--watch-text-muted)]">{{ __('Name') }}</label>
+        <label class="text-xs text-gray-500 dark:text-slate-500">{{ __('Name') }}</label>
         <input
           v-model="editName"
           type="text"
-          class="px-2 py-1.5 rounded-lg border border-[var(--watch-border)]
-                 bg-[var(--watch-bg)] text-sm text-[var(--watch-text)] outline-none
-                 focus:ring-2 focus:ring-[var(--watch-primary)]/30 focus:border-[var(--watch-primary)]"
+          class="px-2 py-1.5 rounded-lg border border-gray-200 dark:border-slate-700
+                 bg-white dark:bg-slate-950 text-sm text-gray-900 dark:text-slate-100 outline-none
+                 focus:ring-2 focus:ring-[var(--app-accent-500)]/30 focus:border-[var(--app-accent-500)]"
         />
       </div>
 
       <!-- Category -->
       <div class="flex flex-col gap-1">
-        <label class="text-xs text-[var(--watch-text-muted)]">{{ __('Category') }}</label>
+        <label class="text-xs text-gray-500 dark:text-slate-500">{{ __('Category') }}</label>
         <select
           v-model="editCategory"
-          class="px-2 py-1.5 rounded-lg border border-[var(--watch-border)]
-                 bg-[var(--watch-bg)] text-sm text-[var(--watch-text)] outline-none
-                 focus:ring-2 focus:ring-[var(--watch-primary)]/30 focus:border-[var(--watch-primary)]"
+          class="px-2 py-1.5 rounded-lg border border-gray-200 dark:border-slate-700
+                 bg-white dark:bg-slate-950 text-sm text-gray-900 dark:text-slate-100 outline-none
+                 focus:ring-2 focus:ring-[var(--app-accent-500)]/30 focus:border-[var(--app-accent-500)]"
         >
           <option v-for="c in CATEGORIES" :key="c" :value="c">{{ c || __('— none —') }}</option>
         </select>
@@ -188,25 +188,25 @@ const budgetMonthLabel = computed(() => {
 
       <!-- Color -->
       <div class="flex flex-col gap-1">
-        <label class="text-xs text-[var(--watch-text-muted)]">{{ __('Color') }}</label>
+        <label class="text-xs text-gray-500 dark:text-slate-500">{{ __('Color') }}</label>
         <div class="flex items-center gap-2">
           <input
             v-model="editColor"
             type="color"
-            class="w-8 h-8 rounded cursor-pointer border border-[var(--watch-border)]"
+            class="w-8 h-8 rounded cursor-pointer border border-gray-200 dark:border-slate-700"
           />
-          <span class="text-xs text-[var(--watch-text-muted)]">{{ editColor || '—' }}</span>
+          <span class="text-xs text-gray-500 dark:text-slate-500">{{ editColor || '—' }}</span>
         </div>
       </div>
 
       <!-- Default billing type -->
       <div class="flex flex-col gap-1">
-        <label class="text-xs text-[var(--watch-text-muted)]">{{ __('Default Type') }}</label>
+        <label class="text-xs text-gray-500 dark:text-slate-500">{{ __('Default Type') }}</label>
         <select
           v-model="editType"
-          class="px-2 py-1.5 rounded-lg border border-[var(--watch-border)]
-                 bg-[var(--watch-bg)] text-sm text-[var(--watch-text)] outline-none
-                 focus:ring-2 focus:ring-[var(--watch-primary)]/30 focus:border-[var(--watch-primary)]"
+          class="px-2 py-1.5 rounded-lg border border-gray-200 dark:border-slate-700
+                 bg-white dark:bg-slate-950 text-sm text-gray-900 dark:text-slate-100 outline-none
+                 focus:ring-2 focus:ring-[var(--app-accent-500)]/30 focus:border-[var(--app-accent-500)]"
         >
           <option v-for="bt in BILLING_TYPES" :key="bt.value" :value="bt.value">{{ __(bt.label) }}</option>
         </select>
@@ -214,22 +214,22 @@ const budgetMonthLabel = computed(() => {
 
       <!-- Monthly budget -->
       <div class="flex flex-col gap-1">
-        <label class="text-xs text-[var(--watch-text-muted)]">{{ __('Monthly Budget (h)') }}</label>
+        <label class="text-xs text-gray-500 dark:text-slate-500">{{ __('Monthly Budget (h)') }}</label>
         <input
           v-model="editBudget"
           type="number"
           min="0"
           step="0.5"
           :placeholder="__('0 = no limit')"
-          class="px-2 py-1.5 rounded-lg border border-[var(--watch-border)]
-                 bg-[var(--watch-bg)] text-sm text-[var(--watch-text)] outline-none
-                 focus:ring-2 focus:ring-[var(--watch-primary)]/30 focus:border-[var(--watch-primary)]"
+          class="px-2 py-1.5 rounded-lg border border-gray-200 dark:border-slate-700
+                 bg-white dark:bg-slate-950 text-sm text-gray-900 dark:text-slate-100 outline-none
+                 focus:ring-2 focus:ring-[var(--app-accent-500)]/30 focus:border-[var(--app-accent-500)]"
         />
       </div>
 
       <!-- Budget warning threshold -->
       <div class="flex flex-col gap-1">
-        <label class="text-xs text-[var(--watch-text-muted)]">{{ __('Warn at (%)') }}</label>
+        <label class="text-xs text-gray-500 dark:text-slate-500">{{ __('Warn at (%)') }}</label>
         <input
           v-model="editThreshold"
           type="number"
@@ -237,9 +237,9 @@ const budgetMonthLabel = computed(() => {
           max="100"
           step="5"
           :placeholder="__('0 = site default')"
-          class="px-2 py-1.5 rounded-lg border border-[var(--watch-border)]
-                 bg-[var(--watch-bg)] text-sm text-[var(--watch-text)] outline-none
-                 focus:ring-2 focus:ring-[var(--watch-primary)]/30 focus:border-[var(--watch-primary)]"
+          class="px-2 py-1.5 rounded-lg border border-gray-200 dark:border-slate-700
+                 bg-white dark:bg-slate-950 text-sm text-gray-900 dark:text-slate-100 outline-none
+                 focus:ring-2 focus:ring-[var(--app-accent-500)]/30 focus:border-[var(--app-accent-500)]"
         />
       </div>
     </div>
@@ -247,15 +247,15 @@ const budgetMonthLabel = computed(() => {
     <div class="flex gap-2">
       <button
         type="button"
-        class="flex-1 py-2 rounded-lg border border-[var(--watch-border)]
-               text-sm text-[var(--watch-text-secondary)] hover:bg-[var(--watch-bg-secondary)] transition-colors"
+        class="flex-1 py-2 rounded-lg border border-gray-200 dark:border-slate-700
+               text-sm text-gray-600 dark:text-slate-400 hover:bg-gray-50 dark:hover:bg-slate-800 transition-colors"
         @click="editing = false; emit('cancelEdit')"
       >
         {{ __('Cancel') }}
       </button>
       <button
         type="button"
-        class="flex-1 py-2 rounded-lg bg-[var(--watch-primary)] hover:bg-[var(--watch-primary-dark)]
+        class="flex-1 py-2 rounded-lg bg-[var(--app-accent-500)] hover:bg-[var(--app-accent-700)]
                text-white text-sm font-medium transition-colors disabled:opacity-50"
         :disabled="!editName.trim()"
         @click="handleSave"
@@ -268,7 +268,7 @@ const budgetMonthLabel = computed(() => {
   <!-- ── View mode ──────────────────────────────────────────────────── -->
   <div
     v-else
-    class="bg-[var(--watch-bg)] rounded-xl border border-[var(--watch-border)]
+    class="bg-white dark:bg-slate-950 rounded-xl border border-gray-200 dark:border-slate-700
            transition-colors"
     :class="{ 'opacity-60': tag.is_archived }"
   >
@@ -277,7 +277,7 @@ const budgetMonthLabel = computed(() => {
     <input
       type="checkbox"
       :checked="isSelected"
-      class="rounded accent-[var(--watch-primary)] cursor-pointer shrink-0"
+      class="rounded accent-[var(--app-accent-500)] cursor-pointer shrink-0"
       @change="emit('toggleSelect')"
     />
 
@@ -289,30 +289,30 @@ const budgetMonthLabel = computed(() => {
 
     <!-- Name + archived badge -->
     <div class="flex-1 min-w-0">
-      <span class="text-sm font-medium text-[var(--watch-text)] truncate">
+      <span class="text-sm font-medium text-gray-900 dark:text-slate-100 truncate">
         {{ tag.tag_name }}
       </span>
       <span
         v-if="tag.is_archived"
-        class="ml-2 px-1.5 py-0.5 rounded text-xs bg-[var(--watch-bg-secondary)]
-               text-[var(--watch-text-muted)]"
+        class="ml-2 px-1.5 py-0.5 rounded text-xs bg-gray-50 dark:bg-slate-800
+               text-gray-500 dark:text-slate-500"
       >
         {{ __('archived') }}
       </span>
     </div>
 
     <!-- Category -->
-    <span class="text-xs text-[var(--watch-text-muted)] w-20 shrink-0">
+    <span class="text-xs text-gray-500 dark:text-slate-500 w-20 shrink-0">
       {{ tag.category || '—' }}
     </span>
 
     <!-- Default billing type -->
-    <span class="text-xs text-[var(--watch-text-muted)] w-24 shrink-0 text-right capitalize">
+    <span class="text-xs text-gray-500 dark:text-slate-500 w-24 shrink-0 text-right capitalize">
       {{ tag.default_entry_type || '—' }}
     </span>
 
     <!-- Entry count -->
-    <span class="text-xs text-[var(--watch-text-muted)] w-16 shrink-0 text-right">
+    <span class="text-xs text-gray-500 dark:text-slate-500 w-16 shrink-0 text-right">
       {{ tag.entry_count ?? '—' }}
     </span>
 
@@ -320,8 +320,8 @@ const budgetMonthLabel = computed(() => {
     <div class="relative shrink-0">
       <button
         type="button"
-        class="p-1.5 rounded hover:bg-[var(--watch-bg-secondary)]
-               text-[var(--watch-text-muted)] hover:text-[var(--watch-text)] transition-colors"
+        class="p-1.5 rounded hover:bg-gray-50 dark:hover:bg-slate-800
+               text-gray-500 dark:text-slate-500 hover:text-gray-900 dark:hover:text-slate-100 transition-colors"
         @click.stop="toggleMenu"
       >
         <MoreHorizontal class="w-4 h-4" aria-hidden="true" />
@@ -338,14 +338,14 @@ const budgetMonthLabel = computed(() => {
       >
         <div
           v-if="menuOpen"
-          class="absolute right-0 top-full mt-1 w-44 rounded-lg border border-[var(--watch-border)]
-                 bg-[var(--watch-bg)] shadow-lg z-20 py-1"
+          class="absolute right-0 top-full mt-1 w-44 rounded-lg border border-gray-200 dark:border-slate-700
+                 bg-white dark:bg-slate-950 shadow-lg z-20 py-1"
           @click.stop
         >
           <button
             type="button"
-            class="w-full flex items-center gap-2 px-3 py-2 text-sm text-[var(--watch-text)]
-                   hover:bg-[var(--watch-bg-secondary)] transition-colors"
+            class="w-full flex items-center gap-2 px-3 py-2 text-sm text-gray-900 dark:text-slate-100
+                   hover:bg-gray-50 dark:hover:bg-slate-800 transition-colors"
             @click="openEdit"
           >
             <Pencil class="w-4 h-4" aria-hidden="true" />
@@ -353,8 +353,8 @@ const budgetMonthLabel = computed(() => {
           </button>
           <button
             type="button"
-            class="w-full flex items-center gap-2 px-3 py-2 text-sm text-[var(--watch-text)]
-                   hover:bg-[var(--watch-bg-secondary)] transition-colors"
+            class="w-full flex items-center gap-2 px-3 py-2 text-sm text-gray-900 dark:text-slate-100
+                   hover:bg-gray-50 dark:hover:bg-slate-800 transition-colors"
             @click="closeMenu(); emit('merge')"
           >
             <GitMerge class="w-4 h-4" aria-hidden="true" />
@@ -362,8 +362,8 @@ const budgetMonthLabel = computed(() => {
           </button>
           <button
             type="button"
-            class="w-full flex items-center gap-2 px-3 py-2 text-sm text-[var(--watch-text)]
-                   hover:bg-[var(--watch-bg-secondary)] transition-colors"
+            class="w-full flex items-center gap-2 px-3 py-2 text-sm text-gray-900 dark:text-slate-100
+                   hover:bg-gray-50 dark:hover:bg-slate-800 transition-colors"
             @click="closeMenu(); emit('archive', !tag.is_archived)"
           >
             <component
@@ -380,7 +380,7 @@ const budgetMonthLabel = computed(() => {
               'w-full flex items-center gap-2 px-3 py-2 text-sm transition-colors',
               confirmDelete
                 ? 'bg-red-500 text-white hover:bg-red-600'
-                : 'text-red-500 hover:bg-[var(--watch-bg-secondary)]',
+                : 'text-red-500 hover:bg-gray-50 dark:hover:bg-slate-800',
             ]"
             @click="handleDelete"
           >
@@ -398,7 +398,7 @@ const budgetMonthLabel = computed(() => {
     class="px-4 pb-3 pt-0"
   >
     <!-- Bar -->
-    <div class="h-1.5 rounded-full bg-[var(--watch-bg-secondary)] overflow-hidden mb-1">
+    <div class="h-1.5 rounded-full bg-gray-50 dark:bg-slate-800 overflow-hidden mb-1">
       <div
         class="h-full rounded-full transition-all"
         :class="budgetBarColor"
@@ -407,7 +407,7 @@ const budgetMonthLabel = computed(() => {
     </div>
     <!-- Label row -->
     <div class="flex items-center gap-2 text-xs">
-      <span class="text-[var(--watch-text-muted)]">
+      <span class="text-gray-500 dark:text-slate-500">
         {{ formatHours(budgetStatus.used) }} / {{ formatHours(budgetStatus.budget) }}
         <template v-if="budgetStatus.pct != null"> ({{ budgetStatus.pct }}%)</template>
       </span>
@@ -419,7 +419,7 @@ const budgetMonthLabel = computed(() => {
         v-else-if="budgetStatus.status === 'exceeded'"
         class="text-red-500"
       >🔴 {{ __('Budget exceeded') }}</span>
-      <span class="ml-auto text-[var(--watch-text-muted)]">{{ budgetMonthLabel }}</span>
+      <span class="ml-auto text-gray-500 dark:text-slate-500">{{ budgetMonthLabel }}</span>
     </div>
   </div>
 

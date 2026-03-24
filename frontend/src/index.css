@@ -1,19 +1,17 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap');
+@import './app-tokens.css';
 
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
 /* ============================================
-   Watch Design System — CSS Variables
+   Watch Domain-Specific CSS Variables
+   Brand/neutral tokens now come from app-tokens.css + dock-tailwind-preset.
+   Only domain-specific tokens (timer states, entry types) remain here.
    ============================================ */
 
 :root {
-  /* Brand */
-  --watch-primary: #6366f1;
-  --watch-primary-light: #eef2ff;
-  --watch-primary-dark: #4338ca;
-
   /* Timer state colours */
   --watch-running: #10b981;
   --watch-paused: #f59e0b;
@@ -23,34 +21,6 @@
   --watch-billable: #6366f1;
   --watch-nonbillable: #6b7280;
   --watch-internal: #f59e0b;
-
-  /* Neutrals (light mode) */
-  --watch-bg: #ffffff;
-  --watch-bg-secondary: #f9fafb;
-  --watch-bg-tertiary: #f3f4f6;
-  --watch-surface: #ffffff;
-  --watch-surface-hover: #f9fafb;
-  --watch-text: #111827;
-  --watch-text-secondary: #4b5563;
-  --watch-text-muted: #6b7280;
-  --watch-border: #e5e7eb;
-  --watch-border-light: #f3f4f6;
-}
-
-
-:root.dark {
-  --watch-bg: #0f172a;
-  --watch-bg-secondary: #1e293b;
-  --watch-bg-tertiary: #334155;
-  --watch-surface: #1e293b;
-  --watch-surface-hover: #334155;
-  --watch-text: #f1f5f9;
-  --watch-text-secondary: #94a3b8;
-  --watch-text-muted: #64748b;
-  --watch-border: #334155;
-  --watch-border-light: #1e293b;
-
-  --watch-primary-light: #312e81;
 }
 
 /* ============================================
@@ -58,13 +28,18 @@
    ============================================ */
 
 body {
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, sans-serif;
+  font-family: 'Inter', ui-sans-serif, system-ui, sans-serif;
   font-size: 0.875rem;
   line-height: 1.5;
   margin: 0;
   padding: 0;
-  background: var(--watch-bg-secondary);
-  color: var(--watch-text);
+  background: #f9fafb;
+  color: #111827;
+}
+
+.dark body {
+  background: #0f172a;
+  color: #f1f5f9;
 }
 
 /* ============================================
@@ -82,8 +57,12 @@ body {
    ============================================ */
 
 .badge-billable {
-  background-color: var(--watch-primary-light);
-  color: var(--watch-primary);
+  background-color: var(--app-accent-50);
+  color: var(--app-accent-500);
+}
+
+.dark .badge-billable {
+  background-color: #312e81;
 }
 
 .badge-non-billable {
@@ -116,7 +95,11 @@ body {
 }
 
 .entry-row:hover {
-  background-color: var(--watch-surface-hover);
+  background-color: #f9fafb;
+}
+
+.dark .entry-row:hover {
+  background-color: #334155;
 }
 
 /* ============================================
@@ -143,16 +126,28 @@ body {
 }
 
 ::-webkit-scrollbar-track {
-  background: var(--watch-bg-secondary);
+  background: #f9fafb;
 }
 
 ::-webkit-scrollbar-thumb {
-  background: var(--watch-border);
+  background: #e5e7eb;
   border-radius: 3px;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: var(--watch-text-muted);
+  background: #6b7280;
+}
+
+.dark ::-webkit-scrollbar-track {
+  background: #1e293b;
+}
+
+.dark ::-webkit-scrollbar-thumb {
+  background: #334155;
+}
+
+.dark ::-webkit-scrollbar-thumb:hover {
+  background: #64748b;
 }
 
 /* ============================================
@@ -160,7 +155,7 @@ body {
    ============================================ */
 
 :focus-visible {
-  outline: 2px solid var(--watch-primary);
+  outline: 2px solid var(--app-accent-500);
   outline-offset: 2px;
   border-radius: 4px;
 }

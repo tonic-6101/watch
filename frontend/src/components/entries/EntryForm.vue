@@ -348,39 +348,39 @@ function normalizeTimeInput(v: string): string {
       v-model="formDesc"
       type="text"
       :placeholder="__('What did you work on?')"
-      class="w-full px-3 py-2 rounded-lg border border-[var(--watch-border)]
-             bg-[var(--watch-bg)] text-sm text-[var(--watch-text)]
-             placeholder-[var(--watch-text-muted)] outline-none
-             focus:ring-2 focus:ring-[var(--watch-primary)]/30
-             focus:border-[var(--watch-primary)]"
+      class="w-full px-3 py-2 rounded-lg border border-gray-200 dark:border-slate-700
+             bg-white dark:bg-slate-950 text-sm text-gray-900 dark:text-slate-100
+             placeholder-gray-500 dark:placeholder-slate-500 outline-none
+             focus:ring-2 focus:ring-[var(--app-accent-500)]/30
+             focus:border-[var(--app-accent-500)]"
     />
 
     <!-- Date + Duration + Start + End -->
     <div class="grid gap-2" :class="hideDate ? 'grid-cols-3' : 'grid-cols-4'">
       <!-- Date (hidden in quick bar) -->
       <div v-if="!hideDate" class="flex flex-col gap-1">
-        <label class="text-xs text-[var(--watch-text-muted)]">{{ __('Date') }}</label>
+        <label class="text-xs text-gray-500 dark:text-slate-500">{{ __('Date') }}</label>
         <input
           v-model="formDate"
           type="date"
-          class="px-2 py-1.5 rounded-lg border border-[var(--watch-border)]
-                 bg-[var(--watch-bg)] text-sm text-[var(--watch-text)] outline-none
-                 focus:ring-2 focus:ring-[var(--watch-primary)]/30
-                 focus:border-[var(--watch-primary)]"
+          class="px-2 py-1.5 rounded-lg border border-gray-200 dark:border-slate-700
+                 bg-white dark:bg-slate-950 text-sm text-gray-900 dark:text-slate-100 outline-none
+                 focus:ring-2 focus:ring-[var(--app-accent-500)]/30
+                 focus:border-[var(--app-accent-500)]"
         />
       </div>
 
       <!-- Duration -->
       <div class="flex flex-col gap-1">
-        <label class="text-xs text-[var(--watch-text-muted)]">{{ __('Duration') }}</label>
+        <label class="text-xs text-gray-500 dark:text-slate-500">{{ __('Duration') }}</label>
         <input
           v-model="formDuration"
           type="text"
           placeholder="h:mm"
-          class="px-2 py-1.5 rounded-lg border border-[var(--watch-border)]
-                 bg-[var(--watch-bg)] text-sm text-[var(--watch-text)] outline-none
-                 focus:ring-2 focus:ring-[var(--watch-primary)]/30
-                 focus:border-[var(--watch-primary)]"
+          class="px-2 py-1.5 rounded-lg border border-gray-200 dark:border-slate-700
+                 bg-white dark:bg-slate-950 text-sm text-gray-900 dark:text-slate-100 outline-none
+                 focus:ring-2 focus:ring-[var(--app-accent-500)]/30
+                 focus:border-[var(--app-accent-500)]"
           :class="{ 'border-red-400': formDuration && durationHours === null }"
           @keydown.enter.prevent="handleSave"
         />
@@ -388,16 +388,16 @@ function normalizeTimeInput(v: string): string {
 
       <!-- Start -->
       <div class="flex flex-col gap-1">
-        <label class="text-xs text-[var(--watch-text-muted)]">{{ __('Start') }}</label>
+        <label class="text-xs text-gray-500 dark:text-slate-500">{{ __('Start') }}</label>
         <input
           v-model="formStart"
           type="text"
           placeholder="HH:MM"
           maxlength="5"
-          class="px-2 py-1.5 rounded-lg border border-[var(--watch-border)]
-                 bg-[var(--watch-bg)] text-sm text-[var(--watch-text)] tabular-nums outline-none
-                 focus:ring-2 focus:ring-[var(--watch-primary)]/30
-                 focus:border-[var(--watch-primary)]"
+          class="px-2 py-1.5 rounded-lg border border-gray-200 dark:border-slate-700
+                 bg-white dark:bg-slate-950 text-sm text-gray-900 dark:text-slate-100 tabular-nums outline-none
+                 focus:ring-2 focus:ring-[var(--app-accent-500)]/30
+                 focus:border-[var(--app-accent-500)]"
           :class="{ 'border-red-400': formStart && !isValidTime(formStart) }"
           @blur="formStart = normalizeTimeInput(formStart)"
         />
@@ -405,16 +405,16 @@ function normalizeTimeInput(v: string): string {
 
       <!-- End -->
       <div class="flex flex-col gap-1">
-        <label class="text-xs text-[var(--watch-text-muted)]">{{ __('End') }}</label>
+        <label class="text-xs text-gray-500 dark:text-slate-500">{{ __('End') }}</label>
         <input
           v-model="formEnd"
           type="text"
           placeholder="HH:MM"
           maxlength="5"
-          class="px-2 py-1.5 rounded-lg border border-[var(--watch-border)]
-                 bg-[var(--watch-bg)] text-sm text-[var(--watch-text)] tabular-nums outline-none
-                 focus:ring-2 focus:ring-[var(--watch-primary)]/30
-                 focus:border-[var(--watch-primary)]"
+          class="px-2 py-1.5 rounded-lg border border-gray-200 dark:border-slate-700
+                 bg-white dark:bg-slate-950 text-sm text-gray-900 dark:text-slate-100 tabular-nums outline-none
+                 focus:ring-2 focus:ring-[var(--app-accent-500)]/30
+                 focus:border-[var(--app-accent-500)]"
           :class="{ 'border-red-400': formEnd && !isValidTime(formEnd) }"
           @blur="formEnd = normalizeTimeInput(formEnd)"
         />
@@ -450,8 +450,8 @@ function normalizeTimeInput(v: string): string {
           :class="[
             'px-2.5 py-1 rounded-lg text-xs font-medium border transition-colors',
             formType === opt.value
-              ? 'bg-[var(--watch-primary)] border-[var(--watch-primary)] text-white'
-              : 'border-[var(--watch-border)] text-[var(--watch-text-secondary)] hover:border-[var(--watch-primary)]/50',
+              ? 'bg-[var(--app-accent-500)] border-[var(--app-accent-500)] text-white'
+              : 'border-gray-200 dark:border-slate-700 text-gray-600 dark:text-slate-400 hover:border-[var(--app-accent-500)]/50',
           ]"
           @click="formType = opt.value; typeSource = 'manual'"
         >
@@ -464,7 +464,7 @@ function normalizeTimeInput(v: string): string {
     <div v-if="hasLinear || hasGitHub" class="space-y-2">
       <button
         type="button"
-        class="text-xs text-[var(--watch-text-muted)] hover:text-[var(--watch-text)] transition-colors flex items-center gap-1"
+        class="text-xs text-gray-500 dark:text-slate-500 hover:text-gray-900 dark:hover:text-slate-100 transition-colors flex items-center gap-1"
         @click="integrationsOpen = !integrationsOpen"
       >
         <span class="inline-block transition-transform" :class="integrationsOpen ? 'rotate-90' : ''">&#9654;</span>
@@ -474,27 +474,27 @@ function normalizeTimeInput(v: string): string {
       <div v-if="integrationsOpen" class="space-y-2 pl-3">
         <!-- Linear issue -->
         <div v-if="hasLinear" class="relative">
-          <label class="text-xs text-[var(--watch-text-muted)]">{{ __('Linear Issue') }}</label>
+          <label class="text-xs text-gray-500 dark:text-slate-500">{{ __('Linear Issue') }}</label>
           <input
             v-model="formLinearIssue"
             type="text"
             placeholder="ENG-123"
-            class="w-full px-2 py-1.5 rounded-lg border border-[var(--watch-border)]
-                   bg-[var(--watch-bg)] text-sm text-[var(--watch-text)] outline-none
-                   focus:ring-2 focus:ring-[var(--watch-primary)]/30
-                   focus:border-[var(--watch-primary)]"
+            class="w-full px-2 py-1.5 rounded-lg border border-gray-200 dark:border-slate-700
+                   bg-white dark:bg-slate-950 text-sm text-gray-900 dark:text-slate-100 outline-none
+                   focus:ring-2 focus:ring-[var(--app-accent-500)]/30
+                   focus:border-[var(--app-accent-500)]"
             @input="searchLinear(formLinearIssue)"
             @blur="dismissLinearSuggestions"
           />
           <ul
             v-if="linearSuggestions.length"
-            class="absolute left-0 right-0 top-full mt-1 z-20 bg-[var(--watch-bg)] border border-[var(--watch-border)]
+            class="absolute left-0 right-0 top-full mt-1 z-20 bg-white dark:bg-slate-950 border border-gray-200 dark:border-slate-700
                    rounded-lg shadow-lg max-h-40 overflow-y-auto py-1"
           >
             <li
               v-for="item in linearSuggestions"
               :key="item.value"
-              class="px-3 py-1.5 text-sm text-[var(--watch-text)] hover:bg-[var(--watch-bg-secondary)] cursor-pointer"
+              class="px-3 py-1.5 text-sm text-gray-900 dark:text-slate-100 hover:bg-gray-50 dark:hover:bg-slate-800 cursor-pointer"
               @mousedown.prevent="selectLinear(item)"
             >
               {{ item.label }}
@@ -504,27 +504,27 @@ function normalizeTimeInput(v: string): string {
 
         <!-- GitHub issue/PR -->
         <div v-if="hasGitHub" class="relative">
-          <label class="text-xs text-[var(--watch-text-muted)]">{{ __('GitHub Issue / PR') }}</label>
+          <label class="text-xs text-gray-500 dark:text-slate-500">{{ __('GitHub Issue / PR') }}</label>
           <input
             v-model="formGithubRef"
             type="text"
             placeholder="#42 or owner/repo#42"
-            class="w-full px-2 py-1.5 rounded-lg border border-[var(--watch-border)]
-                   bg-[var(--watch-bg)] text-sm text-[var(--watch-text)] outline-none
-                   focus:ring-2 focus:ring-[var(--watch-primary)]/30
-                   focus:border-[var(--watch-primary)]"
+            class="w-full px-2 py-1.5 rounded-lg border border-gray-200 dark:border-slate-700
+                   bg-white dark:bg-slate-950 text-sm text-gray-900 dark:text-slate-100 outline-none
+                   focus:ring-2 focus:ring-[var(--app-accent-500)]/30
+                   focus:border-[var(--app-accent-500)]"
             @input="searchGitHub(formGithubRef)"
             @blur="dismissGithubSuggestions"
           />
           <ul
             v-if="githubSuggestions.length"
-            class="absolute left-0 right-0 top-full mt-1 z-20 bg-[var(--watch-bg)] border border-[var(--watch-border)]
+            class="absolute left-0 right-0 top-full mt-1 z-20 bg-white dark:bg-slate-950 border border-gray-200 dark:border-slate-700
                    rounded-lg shadow-lg max-h-40 overflow-y-auto py-1"
           >
             <li
               v-for="item in githubSuggestions"
               :key="item.value"
-              class="px-3 py-1.5 text-sm text-[var(--watch-text)] hover:bg-[var(--watch-bg-secondary)] cursor-pointer"
+              class="px-3 py-1.5 text-sm text-gray-900 dark:text-slate-100 hover:bg-gray-50 dark:hover:bg-slate-800 cursor-pointer"
               @mousedown.prevent="selectGitHub(item)"
             >
               {{ item.label }}
@@ -549,8 +549,8 @@ function normalizeTimeInput(v: string): string {
     <div class="flex gap-2">
       <button
         type="button"
-        class="flex-1 py-2 rounded-lg border border-[var(--watch-border)]
-               text-sm text-[var(--watch-text-secondary)] hover:bg-[var(--watch-bg-secondary)]
+        class="flex-1 py-2 rounded-lg border border-gray-200 dark:border-slate-700
+               text-sm text-gray-600 dark:text-slate-400 hover:bg-gray-50 dark:hover:bg-slate-800
                transition-colors"
         @click="emit('cancel')"
       >
@@ -558,8 +558,8 @@ function normalizeTimeInput(v: string): string {
       </button>
       <button
         type="button"
-        class="flex-1 py-2 rounded-lg bg-[var(--watch-primary)]
-               hover:bg-[var(--watch-primary-dark)] text-white text-sm font-medium
+        class="flex-1 py-2 rounded-lg bg-[var(--app-accent-500)]
+               hover:bg-[var(--app-accent-700)] text-white text-sm font-medium
                transition-colors disabled:opacity-50"
         :disabled="!canSave || saving"
         @click="handleSave"

@@ -27,23 +27,23 @@ const { toasts, dismiss } = useToast()
           v-for="toast in toasts"
           :key="toast.id"
           class="pointer-events-auto flex items-center gap-3
-                 bg-[var(--watch-bg)] border border-[var(--watch-border)]
+                 bg-white dark:bg-slate-950 border border-gray-200 dark:border-slate-700
                  rounded-xl shadow-lg px-4 py-3 max-w-sm"
         >
-          <span class="text-sm text-[var(--watch-text)] flex-1">
+          <span class="text-sm text-gray-900 dark:text-slate-100 flex-1">
             {{ toast.message }}
           </span>
           <button
             v-if="toast.action"
             type="button"
-            class="text-xs text-[var(--watch-primary)] hover:underline shrink-0 font-medium"
+            class="text-xs text-[var(--app-accent-500)] hover:underline shrink-0 font-medium"
             @click="toast.action.handler(); dismiss(toast.id)"
           >
             {{ toast.action.label }}
           </button>
           <button
             type="button"
-            class="p-0.5 rounded text-[var(--watch-text-muted)] hover:text-[var(--watch-text)]
+            class="p-0.5 rounded text-gray-500 dark:text-slate-500 hover:text-gray-900 dark:hover:text-slate-100
                    transition-colors shrink-0"
             @click="dismiss(toast.id)"
           >

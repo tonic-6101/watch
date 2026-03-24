@@ -136,16 +136,16 @@ function handleBackdropClick(e: MouseEvent) {
         appear
       >
         <aside
-          class="fixed right-0 top-0 h-full w-full max-w-md bg-[var(--watch-bg)] shadow-xl z-50
+          class="fixed right-0 top-0 h-full w-full max-w-md bg-white dark:bg-slate-950 shadow-xl z-50
                  flex flex-col overflow-hidden"
           @click.stop
         >
           <!-- Header -->
-          <div class="flex items-center justify-between px-4 py-3 border-b border-[var(--watch-border)]">
-            <h2 class="text-base font-semibold text-[var(--watch-text)]">{{ __('My Preferences') }}</h2>
+          <div class="flex items-center justify-between px-4 py-3 border-b border-gray-200 dark:border-slate-700">
+            <h2 class="text-base font-semibold text-gray-900 dark:text-slate-100">{{ __('My Preferences') }}</h2>
             <button
               class="w-8 h-8 flex items-center justify-center rounded-md
-                     text-[var(--watch-text-muted)] hover:bg-black/5 dark:hover:bg-white/10 transition-colors"
+                     text-gray-500 dark:text-slate-500 hover:bg-black/5 dark:hover:bg-white/10 transition-colors"
               :aria-label="__('Close')"
               @click="emit('close')"
             >
@@ -157,16 +157,16 @@ function handleBackdropClick(e: MouseEvent) {
           <div class="flex-1 overflow-y-auto px-4 py-4 space-y-4">
 
             <!-- ── Preferences ─────────────────────────────────── -->
-            <div class="bg-[var(--watch-bg)] rounded-xl border border-[var(--watch-border)] overflow-hidden divide-y divide-[var(--watch-border)]">
+            <div class="bg-white dark:bg-slate-950 rounded-xl border border-gray-200 dark:border-slate-700 overflow-hidden divide-y divide-gray-200 dark:divide-slate-700">
               <div class="px-4 py-3">
-                <p class="text-xs text-[var(--watch-text-muted)]">{{ __('Personal settings — only you can see these.') }}</p>
+                <p class="text-xs text-gray-500 dark:text-slate-500">{{ __('Personal settings — only you can see these.') }}</p>
               </div>
 
               <!-- Weekly hour target -->
               <div class="px-4 py-3 flex items-center gap-4">
                 <div class="flex-1">
-                  <div class="text-sm text-[var(--watch-text)]">{{ __('Weekly hour target') }}</div>
-                  <div class="text-xs text-[var(--watch-text-muted)]">{{ __('0 = no target (progress bar hidden).') }}</div>
+                  <div class="text-sm text-gray-900 dark:text-slate-100">{{ __('Weekly hour target') }}</div>
+                  <div class="text-xs text-gray-500 dark:text-slate-500">{{ __('0 = no target (progress bar hidden).') }}</div>
                 </div>
                 <div class="flex items-center gap-1.5">
                   <input
@@ -174,25 +174,25 @@ function handleBackdropClick(e: MouseEvent) {
                     type="number"
                     min="0"
                     step="1"
-                    class="w-20 px-2 py-1.5 rounded-lg border border-[var(--watch-border)] bg-[var(--watch-bg)]
-                           text-sm text-[var(--watch-text)] outline-none
-                           focus:ring-2 focus:ring-[var(--watch-primary)]/30 focus:border-[var(--watch-primary)]"
+                    class="w-20 px-2 py-1.5 rounded-lg border border-gray-200 dark:border-slate-700 bg-white dark:bg-slate-950
+                           text-sm text-gray-900 dark:text-slate-100 outline-none
+                           focus:ring-2 focus:ring-[var(--app-accent-500)]/30 focus:border-[var(--app-accent-500)]"
                   />
-                  <span class="text-xs text-[var(--watch-text-muted)]">{{ __('hours') }}</span>
+                  <span class="text-xs text-gray-500 dark:text-slate-500">{{ __('hours') }}</span>
                 </div>
               </div>
 
               <!-- Keyboard shortcuts -->
               <div class="px-4 py-3 flex items-center gap-4">
-                <label class="text-sm text-[var(--watch-text)] flex-1">{{ __('Keyboard shortcuts') }}</label>
+                <label class="text-sm text-gray-900 dark:text-slate-100 flex-1">{{ __('Keyboard shortcuts') }}</label>
                 <label class="flex items-center gap-2 cursor-pointer shrink-0">
                   <input
                     type="checkbox"
                     :checked="!!prefs.enable_keyboard_shortcuts"
-                    class="w-4 h-4 rounded accent-[var(--watch-primary)]"
+                    class="w-4 h-4 rounded accent-[var(--app-accent-500)]"
                     @change="prefs.enable_keyboard_shortcuts = ($event.target as HTMLInputElement).checked ? 1 : 0"
                   />
-                  <span class="text-sm text-[var(--watch-text)]">{{ __('Enabled') }}</span>
+                  <span class="text-sm text-gray-900 dark:text-slate-100">{{ __('Enabled') }}</span>
                 </label>
               </div>
 
@@ -203,7 +203,7 @@ function handleBackdropClick(e: MouseEvent) {
                 <button
                   type="button"
                   :disabled="prefsSaving"
-                  class="px-4 py-1.5 rounded-lg bg-[var(--watch-primary)] hover:bg-[var(--watch-primary-dark)]
+                  class="px-4 py-1.5 rounded-lg bg-[var(--app-accent-500)] hover:bg-[var(--app-accent-700)]
                          text-white text-sm font-medium transition-colors disabled:opacity-50"
                   @click="handleSavePrefs"
                 >
@@ -213,19 +213,19 @@ function handleBackdropClick(e: MouseEvent) {
             </div>
 
             <!-- ── Browser Extension ───────────────────────────── -->
-            <div class="bg-[var(--watch-bg)] rounded-xl border border-[var(--watch-border)] overflow-hidden divide-y divide-[var(--watch-border)]">
+            <div class="bg-white dark:bg-slate-950 rounded-xl border border-gray-200 dark:border-slate-700 overflow-hidden divide-y divide-gray-200 dark:divide-slate-700">
               <div class="px-4 py-3">
-                <h3 class="text-sm font-semibold text-[var(--watch-text)]">{{ __('Browser Extension') }}</h3>
-                <p class="text-xs text-[var(--watch-text-muted)] mt-0.5">{{ __('Connect the Watch browser extension to this site.') }}</p>
+                <h3 class="text-sm font-semibold text-gray-900 dark:text-slate-100">{{ __('Browser Extension') }}</h3>
+                <p class="text-xs text-gray-500 dark:text-slate-500 mt-0.5">{{ __('Connect the Watch browser extension to this site.') }}</p>
               </div>
 
               <div class="px-4 py-3 space-y-3">
                 <!-- Status -->
                 <div class="flex items-center gap-2">
-                  <span class="text-sm text-[var(--watch-text-muted)]">{{ __('Status') }}:</span>
+                  <span class="text-sm text-gray-500 dark:text-slate-500">{{ __('Status') }}:</span>
                   <span
                     class="text-sm font-medium"
-                    :class="prefs.extension_token_active ? 'text-green-600 dark:text-green-400' : 'text-[var(--watch-text-muted)]'"
+                    :class="prefs.extension_token_active ? 'text-green-600 dark:text-green-400' : 'text-gray-500 dark:text-slate-500'"
                   >
                     {{ prefs.extension_token_active ? __('Token active') : __('Not connected') }}
                   </span>
@@ -238,14 +238,14 @@ function handleBackdropClick(e: MouseEvent) {
                       type="text"
                       :value="extToken"
                       readonly
-                      class="flex-1 px-2 py-1.5 rounded-lg border border-[var(--watch-border)] bg-[var(--watch-bg-secondary)]
-                             text-xs font-mono text-[var(--watch-text)] outline-none select-all"
+                      class="flex-1 px-2 py-1.5 rounded-lg border border-gray-200 dark:border-slate-700 bg-gray-50 dark:bg-slate-800
+                             text-xs font-mono text-gray-900 dark:text-slate-100 outline-none select-all"
                       @focus="($event.target as HTMLInputElement).select()"
                     />
                     <button
                       type="button"
-                      class="px-3 py-1.5 rounded-lg border border-[var(--watch-border)] text-xs font-medium
-                             text-[var(--watch-text)] hover:bg-[var(--watch-bg-secondary)] transition-colors"
+                      class="px-3 py-1.5 rounded-lg border border-gray-200 dark:border-slate-700 text-xs font-medium
+                             text-gray-900 dark:text-slate-100 hover:bg-gray-50 dark:hover:bg-slate-800 transition-colors"
                       @click="copyToken"
                     >
                       {{ extCopied ? __('Copied') : __('Copy') }}
@@ -265,7 +265,7 @@ function handleBackdropClick(e: MouseEvent) {
                     v-if="!prefs.extension_token_active"
                     type="button"
                     :disabled="extGenerating"
-                    class="px-4 py-1.5 rounded-lg bg-[var(--watch-primary)] hover:bg-[var(--watch-primary-dark)]
+                    class="px-4 py-1.5 rounded-lg bg-[var(--app-accent-500)] hover:bg-[var(--app-accent-700)]
                            text-white text-sm font-medium transition-colors disabled:opacity-50"
                     @click="handleGenerateToken"
                   >
@@ -276,9 +276,9 @@ function handleBackdropClick(e: MouseEvent) {
                     <button
                       type="button"
                       :disabled="extGenerating"
-                      class="px-4 py-1.5 rounded-lg border border-[var(--watch-border)]
-                             text-sm font-medium text-[var(--watch-text)]
-                             hover:bg-[var(--watch-bg-secondary)] transition-colors disabled:opacity-50"
+                      class="px-4 py-1.5 rounded-lg border border-gray-200 dark:border-slate-700
+                             text-sm font-medium text-gray-900 dark:text-slate-100
+                             hover:bg-gray-50 dark:hover:bg-slate-800 transition-colors disabled:opacity-50"
                       @click="handleGenerateToken"
                     >
                       {{ extGenerating ? __('Generating…') : __('Regenerate token') }}

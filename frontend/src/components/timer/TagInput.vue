@@ -158,9 +158,9 @@ function onKeydown(e: KeyboardEvent) {
     <!-- Chip row -->
     <div
       class="flex flex-wrap gap-1.5 items-center min-h-9 px-2 py-1.5 rounded-lg border
-             border-[var(--watch-border)] bg-[var(--watch-bg)] cursor-text
-             focus-within:ring-2 focus-within:ring-[var(--watch-primary)]/30
-             focus-within:border-[var(--watch-primary)]"
+             border-gray-200 dark:border-slate-700 bg-white dark:bg-slate-950 cursor-text
+             focus-within:ring-2 focus-within:ring-[var(--app-accent-500)]/30
+             focus-within:border-[var(--app-accent-500)]"
       @click="inputRef?.focus()"
     >
       <!-- Existing tags -->
@@ -168,7 +168,7 @@ function onKeydown(e: KeyboardEvent) {
         v-for="tag in modelValue"
         :key="tag"
         class="inline-flex items-center gap-1 px-2 py-0.5 rounded-md text-xs font-medium
-               bg-[var(--watch-primary-light)] text-[var(--watch-primary)]"
+               bg-[var(--app-accent-50)] dark:bg-[var(--app-accent-950)] text-[var(--app-accent-500)]"
       >
         {{ tag }}
         <button
@@ -188,7 +188,7 @@ function onKeydown(e: KeyboardEvent) {
         type="text"
         :placeholder="modelValue.length ? '' : __('Add tags…')"
         class="flex-1 min-w-[120px] bg-transparent text-sm outline-none
-               text-[var(--watch-text)] placeholder-[var(--watch-text-muted)]"
+               text-gray-900 dark:text-slate-100 placeholder-gray-500 dark:placeholder-slate-500"
         @keydown="onKeydown"
         @blur="onBlur"
         @focus="() => { if (query) showDropdown = true }"
@@ -208,7 +208,7 @@ function onKeydown(e: KeyboardEvent) {
         v-if="showDropdown && (suggestions.length || showCreateOption)"
         ref="listRef"
         class="absolute top-full left-0 right-0 mt-1 rounded-lg shadow-lg z-20
-               border border-[var(--watch-border)] bg-[var(--watch-bg)]
+               border border-gray-200 dark:border-slate-700 bg-white dark:bg-slate-950
                max-h-48 overflow-y-auto py-1"
         role="listbox"
       >
@@ -216,10 +216,10 @@ function onKeydown(e: KeyboardEvent) {
           v-for="(suggestion, idx) in suggestions"
           :key="suggestion"
           :class="[
-            'px-3 py-2 text-sm text-[var(--watch-text)] cursor-pointer transition-colors',
+            'px-3 py-2 text-sm text-gray-900 dark:text-slate-100 cursor-pointer transition-colors',
             idx === activeIndex
-              ? 'bg-[var(--watch-primary-light)] text-[var(--watch-primary)]'
-              : 'hover:bg-[var(--watch-bg-secondary)]',
+              ? 'bg-[var(--app-accent-50)] dark:bg-[var(--app-accent-950)] text-[var(--app-accent-500)]'
+              : 'hover:bg-gray-50 dark:hover:bg-slate-800',
           ]"
           role="option"
           :aria-selected="idx === activeIndex"
@@ -232,10 +232,10 @@ function onKeydown(e: KeyboardEvent) {
         <li
           v-if="showCreateOption"
           :class="[
-            'px-3 py-2 text-sm cursor-pointer transition-colors border-t border-[var(--watch-border)] flex items-center gap-1.5',
+            'px-3 py-2 text-sm cursor-pointer transition-colors border-t border-gray-200 dark:border-slate-700 flex items-center gap-1.5',
             activeIndex === createIndex
-              ? 'bg-[var(--watch-primary-light)] text-[var(--watch-primary)]'
-              : 'text-[var(--watch-text-muted)] hover:bg-[var(--watch-bg-secondary)] hover:text-[var(--watch-text)]',
+              ? 'bg-[var(--app-accent-50)] dark:bg-[var(--app-accent-950)] text-[var(--app-accent-500)]'
+              : 'text-gray-500 dark:text-slate-500 hover:bg-gray-50 dark:hover:bg-slate-800 hover:text-gray-900 dark:hover:text-slate-100',
           ]"
           role="option"
           :aria-selected="activeIndex === createIndex"
@@ -243,7 +243,7 @@ function onKeydown(e: KeyboardEvent) {
           @mouseenter="activeIndex = createIndex"
         >
           <span class="text-xs">+</span>
-          {{ __('Create') }} "<span class="font-medium text-[var(--watch-text)]">{{ trimmedQuery }}</span>"
+          {{ __('Create') }} "<span class="font-medium text-gray-900 dark:text-slate-100">{{ trimmedQuery }}</span>"
         </li>
       </ul>
     </Transition>

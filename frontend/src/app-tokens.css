@@ -1,0 +1,19 @@
+/* SPDX-License-Identifier: AGPL-3.0-or-later */
+/* Copyright (C) 2024-2026 Tonic */
+
+/* Watch app accent — indigo (per app-colors.md)
+   Overrides --app-accent-* from dock/tokens.css */
+
+:root {
+  --app-accent-50:  #eef2ff;
+  --app-accent-100: #e0e7ff;
+  --app-accent-200: #c7d2fe;
+  --app-accent-300: #a5b4fc;
+  --app-accent-400: #818cf8;
+  --app-accent-500: #6366f1;
+  --app-accent-600: #4f46e5;
+  --app-accent-700: #4338ca;
+  --app-accent-800: #3730a3;
+  --app-accent-900: #312e81;
+  --app-accent-950: #1e1b4b;
+}

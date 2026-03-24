@@ -127,7 +127,7 @@ const overflowCount = computed(() => {
 })
 
 function chipStyle(tag: TagMeta) {
-  const color = tag.color || 'var(--watch-primary)'
+  const color = tag.color || 'var(--app-accent-500)'
   return {
     backgroundColor: `${color}22`,
     color,
@@ -150,10 +150,10 @@ const isLocked  = computed(() => isSent.value || isRunning.value)
   <!-- ── Edit mode ─────────────────────────────────────────────────── -->
   <div
     v-if="editing"
-    class="bg-[var(--watch-bg)] rounded-xl border border-[var(--watch-primary)]/40 p-4"
+    class="bg-white dark:bg-slate-950 rounded-xl border border-[var(--app-accent-500)]/40 p-4"
   >
     <div class="flex items-center justify-between mb-3">
-      <span class="text-sm font-semibold text-[var(--watch-text)]">{{ __('Edit Entry') }}</span>
+      <span class="text-sm font-semibold text-gray-900 dark:text-slate-100">{{ __('Edit Entry') }}</span>
     </div>
     <EntryForm
       :entry="entry"
@@ -167,19 +167,19 @@ const isLocked  = computed(() => isSent.value || isRunning.value)
   <!-- ── View mode ─────────────────────────────────────────────────── -->
   <div
     v-else
-    class="bg-[var(--watch-bg)] rounded-xl border border-[var(--watch-border)] px-4 py-3
+    class="bg-white dark:bg-slate-950 rounded-xl border border-gray-200 dark:border-slate-700 px-4 py-3
            transition-colors select-none"
     :class="[
       isLocked
         ? 'opacity-70 cursor-default'
-        : 'cursor-pointer hover:border-[var(--watch-primary)]/40 hover:bg-[var(--watch-bg-secondary)]',
+        : 'cursor-pointer hover:border-[var(--app-accent-500)]/40 hover:bg-gray-50 dark:hover:bg-slate-800',
     ]"
     @click="handleRowClick"
   >
     <!-- Running indicator -->
     <div v-if="isRunning" class="flex items-center gap-1.5 mb-2">
       <span class="inline-block w-2 h-2 rounded-full bg-[var(--timer-running)] animate-pulse" />
-      <span class="text-xs text-[var(--watch-text-muted)]">{{ __('Timer running') }}</span>
+      <span class="text-xs text-gray-500 dark:text-slate-500">{{ __('Timer running') }}</span>
     </div>
 
     <div class="flex items-start gap-3">
@@ -188,8 +188,8 @@ const isLocked  = computed(() => isSent.value || isRunning.value)
       <div class="flex-1 min-w-0">
         <!-- Time range / duration -->
         <div class="flex items-center gap-2 mb-1">
-          <Clock class="w-3.5 h-3.5 shrink-0 text-[var(--watch-text-muted)]" aria-hidden="true" />
-          <span class="text-xs text-[var(--watch-text-muted)] tabular-nums">
+          <Clock class="w-3.5 h-3.5 shrink-0 text-gray-500 dark:text-slate-500" aria-hidden="true" />
+          <span class="text-xs text-gray-500 dark:text-slate-500 tabular-nums">
             <template v-if="entry.start_time && entry.end_time">
               {{ formatTime(entry.start_time) }} – {{ formatTime(entry.end_time) }}
             </template>
@@ -199,7 +199,7 @@ const isLocked  = computed(() => isSent.value || isRunning.value)
           </span>
           <span
             v-if="entry.start_time && entry.end_time"
-            class="text-xs text-[var(--watch-text-muted)]"
+            class="text-xs text-gray-500 dark:text-slate-500"
           >
             ({{ formatHours(entry.duration_hours) }})
           </span>
@@ -208,13 +208,13 @@ const isLocked  = computed(() => isSent.value || isRunning.value)
         <!-- Description -->
         <p
           v-if="entry.description"
-          class="text-sm text-[var(--watch-text)] truncate mb-1.5"
+          class="text-sm text-gray-900 dark:text-slate-100 truncate mb-1.5"
         >
           {{ entry.description }}
         </p>
         <p
           v-else
-          class="text-sm text-[var(--watch-text-muted)] italic mb-1.5"
+          class="text-sm text-gray-500 dark:text-slate-500 italic mb-1.5"
         >
           {{ __('No description') }}
         </p>
@@ -235,8 +235,8 @@ const isLocked  = computed(() => isSent.value || isRunning.value)
           </span>
           <span
             v-if="overflowCount > 0"
-            class="px-1.5 py-0.5 rounded text-xs text-[var(--watch-text-muted)]
-                   bg-[var(--watch-bg-secondary)]"
+            class="px-1.5 py-0.5 rounded text-xs text-gray-500 dark:text-slate-500
+                   bg-gray-50 dark:bg-slate-800"
           >
             +{{ overflowCount }}
           </span>
@@ -256,7 +256,7 @@ const isLocked  = computed(() => isSent.value || isRunning.value)
         <!-- Lock icon for sent entries -->
         <Lock
           v-if="isSent"
-          class="w-3.5 h-3.5 text-[var(--watch-text-muted)]"
+          class="w-3.5 h-3.5 text-gray-500 dark:text-slate-500"
           aria-label="Sent — read only"
         />
 
@@ -264,8 +264,8 @@ const isLocked  = computed(() => isSent.value || isRunning.value)
         <div v-else-if="!isRunning" class="relative" @click.stop>
           <button
             type="button"
-            class="p-1.5 rounded hover:bg-[var(--watch-bg-secondary)]
-                   text-[var(--watch-text-muted)] hover:text-[var(--watch-text)] transition-colors"
+            class="p-1.5 rounded hover:bg-gray-50 dark:hover:bg-slate-800
+                   text-gray-500 dark:text-slate-500 hover:text-gray-900 dark:hover:text-slate-100 transition-colors"
             :title="__('More actions')"
             @click="toggleMenu"
           >
@@ -282,14 +282,14 @@ const isLocked  = computed(() => isSent.value || isRunning.value)
           >
             <div
               v-if="menuOpen"
-              class="absolute right-0 top-full mt-1 w-40 rounded-lg border border-[var(--watch-border)]
-                     bg-[var(--watch-bg)] shadow-lg z-20 py-1"
+              class="absolute right-0 top-full mt-1 w-40 rounded-lg border border-gray-200 dark:border-slate-700
+                     bg-white dark:bg-slate-950 shadow-lg z-20 py-1"
               @click.stop
             >
               <button
                 type="button"
-                class="w-full flex items-center gap-2 px-3 py-2 text-sm text-[var(--watch-text)]
-                       hover:bg-[var(--watch-bg-secondary)] transition-colors"
+                class="w-full flex items-center gap-2 px-3 py-2 text-sm text-gray-900 dark:text-slate-100
+                       hover:bg-gray-50 dark:hover:bg-slate-800 transition-colors"
                 @click="handleEdit"
               >
                 <Pencil class="w-4 h-4" aria-hidden="true" />
@@ -297,8 +297,8 @@ const isLocked  = computed(() => isSent.value || isRunning.value)
               </button>
               <button
                 type="button"
-                class="w-full flex items-center gap-2 px-3 py-2 text-sm text-[var(--watch-text)]
-                       hover:bg-[var(--watch-bg-secondary)] transition-colors"
+                class="w-full flex items-center gap-2 px-3 py-2 text-sm text-gray-900 dark:text-slate-100
+                       hover:bg-gray-50 dark:hover:bg-slate-800 transition-colors"
                 @click="handleDuplicate"
               >
                 <Copy class="w-4 h-4" aria-hidden="true" />
@@ -307,8 +307,8 @@ const isLocked  = computed(() => isSent.value || isRunning.value)
               <button
                 v-if="!isToday"
                 type="button"
-                class="w-full flex items-center gap-2 px-3 py-2 text-sm text-[var(--watch-text)]
-                       hover:bg-[var(--watch-bg-secondary)] transition-colors"
+                class="w-full flex items-center gap-2 px-3 py-2 text-sm text-gray-900 dark:text-slate-100
+                       hover:bg-gray-50 dark:hover:bg-slate-800 transition-colors"
                 @click="handleCopyToToday"
               >
                 <Calendar class="w-4 h-4" aria-hidden="true" />
@@ -316,8 +316,8 @@ const isLocked  = computed(() => isSent.value || isRunning.value)
               </button>
               <button
                 type="button"
-                class="w-full flex items-center gap-2 px-3 py-2 text-sm text-[var(--watch-text)]
-                       hover:bg-[var(--watch-bg-secondary)] transition-colors"
+                class="w-full flex items-center gap-2 px-3 py-2 text-sm text-gray-900 dark:text-slate-100
+                       hover:bg-gray-50 dark:hover:bg-slate-800 transition-colors"
                 @click="handleCopyToDate"
               >
                 <CalendarDays class="w-4 h-4" aria-hidden="true" />
@@ -329,7 +329,7 @@ const isLocked  = computed(() => isSent.value || isRunning.value)
                   'w-full flex items-center gap-2 px-3 py-2 text-sm transition-colors',
                   confirming
                     ? 'bg-red-500 text-white hover:bg-red-600'
-                    : 'text-red-500 hover:bg-[var(--watch-bg-secondary)]',
+                    : 'text-red-500 hover:bg-gray-50 dark:hover:bg-slate-800',
                 ]"
                 @click="handleDelete"
               >
@@ -355,7 +355,7 @@ const isLocked  = computed(() => isSent.value || isRunning.value)
     <!-- Sent notice -->
     <p
       v-if="isSent"
-      class="mt-2 text-xs text-[var(--watch-text-muted)] italic"
+      class="mt-2 text-xs text-gray-500 dark:text-slate-500 italic"
     >
       {{ __('This entry has been forwarded and cannot be edited.') }}
     </p>

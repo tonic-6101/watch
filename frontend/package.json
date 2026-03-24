@@ -1,7 +1,7 @@
 {
   "name": "watch-frontend",
   "private": true,
-  "version": "0.1.1",
+  "version": "0.1.2",
   "type": "module",
   "scripts": {
     "dev": "vite",
@@ -12,7 +12,6 @@
     "test:coverage": "vitest run --coverage"
   },
   "dependencies": {
-    "feather-icons": "^4.29.0",
     "frappe-ui": "^0.1.0",
     "lucide-vue-next": "^0.469.0",
     "vue": "^3.4.0",

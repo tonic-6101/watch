@@ -3,23 +3,32 @@
   Copyright (C) 2024-2026 Tonic
 -->
 <script setup lang="ts">
-import { ref, watch, onMounted, onUnmounted } from 'vue'
+import { ref, watch } from 'vue'
 import { RouterView, useRouter, useRoute } from 'vue-router'
-import { DockLayout } from '/assets/dock/js/dock-navbar.esm.js'
-import WatchSidebar from './components/WatchSidebar.vue'
+// @ts-ignore — served by Dock's built assets
+import { DockLayout, DockSidebarShell } from '/assets/dock/js/dock-navbar.esm.js'
+import { CalendarDays, CalendarRange, FileText, Tag } from 'lucide-vue-next'
 import PreferencesPanel from './components/PreferencesPanel.vue'
 import ShortcutsOverlay from './components/ShortcutsOverlay.vue'
 import ToastContainer from './components/ToastContainer.vue'
 import { useTimer } from './composables/useTimer'
-import { useSidebar } from './composables/useSidebar'
 import { useKeyboardShortcuts } from './composables/useKeyboardShortcuts'
+import { __ } from '@/composables/useTranslate'
 
-// Bridge: DockNavbar dispatches this event when sidebar toggle is clicked
-const { toggle: sidebarToggle } = useSidebar()
-function onDockToggle() { sidebarToggle() }
+declare const __APP_VERSION__: string
 
-onMounted(() => window.addEventListener('dock:toggleSidebar', onDockToggle))
-onUnmounted(() => window.removeEventListener('dock:toggleSidebar', onDockToggle))
+const watchNavItems = [
+  { key: 'today',   label: __('Today'),   icon: CalendarDays,  path: '/watch',         exact: true },
+  { key: 'week',    label: __('Week'),     icon: CalendarRange, path: '/watch/week' },
+  { key: 'prepare', label: __('Prepare'),  icon: FileText,      path: '/watch/prepare' },
+  { key: 'tags',    label: __('Tags'),     icon: Tag,           path: '/watch/tags' },
+]
+
+const watchFooter = {
+  edition: __('Community Edition'),
+  version: __APP_VERSION__,
+  sourceUrl: 'https://github.com/Tonic-HQ/watch',
+}
 
 // ── Timer (singleton state — safe to call here) ──────────────────────────
 
@@ -129,7 +138,12 @@ useKeyboardShortcuts({
   <ToastContainer />
 
   <DockLayout>
-    <WatchSidebar />
+    <DockSidebarShell
+      color="#6366f1"
+      :items="watchNavItems"
+      :footer="watchFooter"
+      aria-label="Watch navigation"
+    />
     <main class="flex-1 overflow-y-auto">
       <RouterView />
     </main>

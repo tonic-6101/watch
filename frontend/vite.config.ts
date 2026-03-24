@@ -5,6 +5,7 @@ import { defineConfig, type Plugin } from 'vite'
 import vue from '@vitejs/plugin-vue'
 import path from 'path'
 import fs from 'fs'
+import pkg from './package.json' with { type: 'json' }
 
 // Type for frappe-ui vite plugin
 type FrappeUIVitePlugin = (options?: {
@@ -26,6 +27,7 @@ try {
 // Dock ships a single Vue ESM browser build. All ecosystem apps MUST use it
 // so that cross-bundle components (DockNavbar) share one Vue instance.
 const SHARED_VUE_URL = '/assets/dock/js/vendor/vue.esm.js'
+const SHARED_VUE_ROUTER_URL = '/assets/dock/js/vendor/vue-router.esm.js'
 
 function vueSharedPlugin(): Plugin {
   return {
@@ -34,6 +36,9 @@ function vueSharedPlugin(): Plugin {
     resolveId(id) {
       if (id === 'vue' || id === '@vue/runtime-dom' || id === '@vue/runtime-core' || id === '@vue/reactivity') {
         return { id: SHARED_VUE_URL, external: true }
+      }
+      if (id === 'vue-router') {
+        return { id: SHARED_VUE_ROUTER_URL, external: true }
       }
     },
   }
@@ -95,6 +100,8 @@ function frappeManifestPlugin(): Plugin {
         var isDark = stored === 'dark' ||
           (!stored || stored === 'auto') && window.matchMedia('(prefers-color-scheme: dark)').matches;
         if (isDark) document.documentElement.classList.add('dark');
+        var cm = localStorage.getItem('color-mode');
+        if (cm === 'neutral') document.documentElement.setAttribute('data-color-mode', 'neutral');
       })();
     </script>
     <div id="app" class="h-screen"></div>
@@ -152,6 +159,7 @@ function settingsEsmPlugin(): Plugin {
           rollupOptions: {
             external: [
               'vue',
+              'vue-router',
               '@vue/runtime-dom',
               '@vue/runtime-core',
               '@vue/reactivity',
@@ -160,6 +168,7 @@ function settingsEsmPlugin(): Plugin {
             output: {
               paths: {
                 vue: '/assets/dock/js/vendor/vue.esm.js',
+                'vue-router': '/assets/dock/js/vendor/vue-router.esm.js',
               },
             },
           },
@@ -171,6 +180,9 @@ function settingsEsmPlugin(): Plugin {
 }
 
 export default defineConfig({
+  define: {
+    __APP_VERSION__: JSON.stringify(pkg.version),
+  },
   base: '/assets/watch/frontend/',
   plugins: [
     vueSharedPlugin(),
@@ -194,8 +206,16 @@ export default defineConfig({
     target: 'es2015',
     chunkSizeWarningLimit: 1000,
     rollupOptions: {
-      // Dock ESM bundle is a runtime browser URL — never resolved at build time
-      external: ['/assets/dock/js/dock-navbar.esm.js'],
+      // Dock ESM bundle is a runtime browser URL — never resolved at build time.
+      // vue / vue-router MUST be external so all bundles share one instance with Dock.
+      external: [
+        '/assets/dock/js/dock-navbar.esm.js',
+        'vue',
+        '@vue/runtime-dom',
+        '@vue/runtime-core',
+        '@vue/reactivity',
+        'vue-router',
+      ],
       input: {
         main: path.resolve(__dirname, 'index.html'),
       },
@@ -203,6 +223,13 @@ export default defineConfig({
         entryFileNames: 'assets/[name]-[hash].js',
         chunkFileNames: 'assets/[name]-[hash].js',
         assetFileNames: 'assets/[name]-[hash].[ext]',
+        paths: {
+          vue: SHARED_VUE_URL,
+          '@vue/runtime-dom': SHARED_VUE_URL,
+          '@vue/runtime-core': SHARED_VUE_URL,
+          '@vue/reactivity': SHARED_VUE_URL,
+          'vue-router': SHARED_VUE_ROUTER_URL,
+        },
       },
     },
   },
@@ -217,6 +244,6 @@ export default defineConfig({
     },
   },
   optimizeDeps: {
-    include: ['frappe-ui', 'feather-icons', 'lucide-vue-next', 'vue-router'],
+    include: ['frappe-ui', 'lucide-vue-next', 'vue-router'],
   },
 })
