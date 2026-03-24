@@ -27,7 +27,7 @@
 
 | Layer | Technology |
 |-------|-----------|
-| Backend | Frappe v15+, Python 3.10+, MariaDB |
+| Backend | Frappe v16+, Python 3.14+, MariaDB |
 | Frontend | Vue 3, TypeScript, Tailwind CSS, Frappe UI |
 | Build | Vite |
 
