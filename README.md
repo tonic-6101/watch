@@ -2,7 +2,7 @@
 
 **Time Tracking for Frappe Framework**
 
-[![Version](https://img.shields.io/badge/version-0.1.3-blue.svg)](https://github.com/tonic-6101/watch/releases)
+[![Version](https://img.shields.io/badge/version-0.1.4-blue.svg)](https://github.com/tonic-6101/watch/releases)
 [![Frappe](https://img.shields.io/badge/frappe-v16+-green.svg)](https://frappeframework.com)
 [![License](https://img.shields.io/badge/license-AGPL--3.0-orange.svg)](LICENSE)
 
@@ -171,6 +171,17 @@ Pre-commit runs the following tools automatically:
 - **pyupgrade** — Python syntax modernization
 
 ---
+
+## Documentation
+
+| Guide | Description |
+|-------|-------------|
+| [Installation](docs/installation.md) | Install, configure, update, uninstall |
+| [Architecture](docs/architecture.md) | Timer state machine, DocTypes, permissions, build outputs |
+| [API Reference](docs/api.md) | 71 whitelisted methods across 10 modules |
+| [Dock Integration](docs/hooks.md) | Timer widget, search, settings, activity feed hooks |
+| [Troubleshooting](docs/troubleshooting.md) | Common issues and fixes |
+| [Changelog](docs/changelog.md) | Version history |
 
 ## Support
 
