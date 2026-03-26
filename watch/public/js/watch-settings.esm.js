@@ -1,6 +1,6 @@
-import { h as Q, ref as i, defineComponent as fe, onMounted as me, computed as we, openBlock as c, createElementBlock as u, createElementVNode as e, toDisplayString as o, unref as a, Fragment as h, renderList as R, withDirectives as g, vModelText as k, createCommentVNode as y, normalizeClass as F, vModelSelect as Z, createTextVNode as se, createVNode as oe } from "/assets/dock/js/vendor/vue.esm.js";
-const Se = (p) => p.replace(/([a-z0-9])([A-Z])/g, "$1-$2").toLowerCase();
-var X = {
+import { h as ee, defineComponent as ye, ref as i, reactive as se, onMounted as be, openBlock as l, createElementBlock as d, createElementVNode as e, toDisplayString as r, Fragment as w, renderList as D, normalizeClass as M, createTextVNode as re, createCommentVNode as g, unref as s, withDirectives as u, vModelText as _, vModelSelect as H, createVNode as xe } from "/assets/dock/js/vendor/vue.esm.js";
+const _e = (k) => k.replace(/([a-z0-9])([A-Z])/g, "$1-$2").toLowerCase();
+var K = {
   xmlns: "http://www.w3.org/2000/svg",
   width: 24,
   height: 24,
@@ -11,200 +11,142 @@ var X = {
   "stroke-linecap": "round",
   "stroke-linejoin": "round"
 };
-const Te = ({ size: p, strokeWidth: d = 2, absoluteStrokeWidth: v, color: x, iconNode: b, name: _, class: ee, ...Y }, { slots: U }) => Q(
+const ke = ({ size: k, strokeWidth: x = 2, absoluteStrokeWidth: C, color: p, iconNode: m, name: U, class: te, ...v }, { slots: O }) => ee(
   "svg",
   {
-    ...X,
-    width: p || X.width,
-    height: p || X.height,
-    stroke: x || X.stroke,
-    "stroke-width": v ? Number(d) * 24 / Number(p) : d,
-    class: ["lucide", `lucide-${Se(_ ?? "icon")}`],
-    ...Y
+    ...K,
+    width: k || K.width,
+    height: k || K.height,
+    stroke: p || K.stroke,
+    "stroke-width": C ? Number(x) * 24 / Number(k) : x,
+    class: ["lucide", `lucide-${_e(U ?? "icon")}`],
+    ...v
   },
-  [...b.map((B) => Q(...B)), ...U.default ? [U.default()] : []]
+  [...m.map((f) => ee(...f)), ...O.default ? [O.default()] : []]
 );
-const re = (p, d) => (v, { slots: x }) => Q(
-  Te,
+const pe = (k, x) => (C, { slots: p }) => ee(
+  ke,
   {
-    ...v,
-    iconNode: d,
-    name: p
+    ...C,
+    iconNode: x,
+    name: k
   },
-  x
+  p
 );
-const Ce = re("ChevronDownIcon", [
-  ["path", { d: "m6 9 6 6 6-6", key: "qrunsl" }]
-]);
-const Ee = re("DownloadIcon", [
+const he = pe("DownloadIcon", [
   ["path", { d: "M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4", key: "ih7n3h" }],
   ["polyline", { points: "7 10 12 15 17 10", key: "2ggqvy" }],
   ["line", { x1: "12", x2: "12", y1: "15", y2: "3", key: "1vk2je" }]
 ]);
-function s(p, d) {
-  let x = (window.__messages || {})[p] || p;
-  if (d)
-    if (Array.isArray(d))
-      for (let b = 0; b < d.length; b++)
-        x = x.replace(new RegExp(`\\{${b}\\}`, "g"), String(d[b]));
+function t(k, x) {
+  let p = (window.__messages || {})[k] || k;
+  if (x)
+    if (Array.isArray(x))
+      for (let m = 0; m < x.length; m++)
+        p = p.replace(new RegExp(`\\{${m}\\}`, "g"), String(x[m]));
     else
-      for (const [b, _] of Object.entries(d))
-        x = x.replace(new RegExp(`\\{${b}\\}`, "g"), String(_));
-  return x;
+      for (const [m, U] of Object.entries(x))
+        p = p.replace(new RegExp(`\\{${m}\\}`, "g"), String(U));
+  return p;
 }
-const S = i({
-  weekly_hour_target: 0,
-  enable_keyboard_shortcuts: 1,
-  focus_work_minutes: 25,
-  focus_break_minutes: 5,
-  focus_sessions: 4,
-  extension_token_active: 0
-}), le = i(!1), D = i(!1);
-async function Pe() {
-  D.value = !0;
-  try {
-    const p = await fetch("/api/method/watch.api.user_settings.get_preferences", {
-      headers: { "X-Frappe-CSRF-Token": window.csrf_token ?? "" }
-    }), d = await p.json();
-    if (!p.ok || d.exc) throw new Error(d.exc ?? "Load failed");
-    return Object.assign(S.value, d.message), le.value = !0, S.value;
-  } finally {
-    D.value = !1;
-  }
-}
-async function je(p) {
-  D.value = !0;
-  try {
-    const d = await fetch("/api/method/watch.api.user_settings.save_preferences", {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-        "X-Frappe-CSRF-Token": window.csrf_token ?? ""
-      },
-      body: JSON.stringify(p)
-    }), v = await d.json();
-    if (!d.ok || v.exc) throw new Error(v.exc ?? "Save failed");
-    return Object.assign(S.value, v.message), S.value;
-  } finally {
-    D.value = !1;
-  }
-}
-async function Re() {
-  const p = await fetch("/api/method/watch.api.user_settings.generate_extension_token", {
-    method: "POST",
-    headers: {
-      "Content-Type": "application/json",
-      "X-Frappe-CSRF-Token": window.csrf_token ?? ""
-    }
-  }), d = await p.json();
-  if (!p.ok || d.exc) throw new Error(d.exc ?? "Token generation failed");
-  return S.value.extension_token_active = 1, d.message.token;
-}
-async function Oe() {
-  const p = await fetch("/api/method/watch.api.user_settings.revoke_extension_token", {
-    method: "POST",
-    headers: {
-      "Content-Type": "application/json",
-      "X-Frappe-CSRF-Token": window.csrf_token ?? ""
-    }
-  }), d = await p.json();
-  if (!p.ok || d.exc) throw new Error(d.exc ?? "Token revocation failed");
-  S.value.extension_token_active = 0;
-}
-function Ne() {
-  return { prefs: S, loaded: le, loading: D, load: Pe, save: je, generateExtensionToken: Re, revokeExtensionToken: Oe };
-}
-const Ve = { class: "min-h-screen bg-gray-50 dark:bg-slate-800" }, Fe = { class: "max-w-2xl mx-auto px-4 py-6 space-y-4" }, De = { class: "text-lg font-semibold text-gray-900 dark:text-slate-100" }, Ue = {
-  key: 1,
-  class: "text-sm text-red-500 px-1"
-}, Le = { class: "bg-white dark:bg-slate-950 rounded-xl border border-gray-200 dark:border-slate-700 overflow-hidden divide-y divide-gray-200 dark:divide-slate-700" }, $e = { class: "px-4 py-3" }, Ie = { class: "text-sm font-semibold text-gray-900 dark:text-slate-100" }, Me = { class: "text-xs text-gray-500 dark:text-slate-500 mt-0.5" }, We = { class: "px-4 py-3 flex items-center gap-4" }, Ae = { class: "flex-1" }, Ge = { class: "text-sm text-gray-900 dark:text-slate-100" }, Xe = { class: "text-xs text-gray-500 dark:text-slate-500" }, Ye = { class: "flex items-center gap-1.5" }, Be = { class: "text-xs text-gray-500 dark:text-slate-500" }, He = { class: "px-4 py-3 flex items-center gap-4" }, Ke = { class: "text-sm text-gray-900 dark:text-slate-100 flex-1" }, qe = { class: "flex items-center gap-2 cursor-pointer shrink-0" }, Je = ["checked"], ze = { class: "text-sm text-gray-900 dark:text-slate-100" }, Ze = { class: "px-4 py-3 flex items-center gap-3 justify-end" }, Qe = {
+const me = {
   key: 0,
-  class: "text-xs text-red-500 flex-1"
-}, et = {
+  class: "flex items-center justify-center py-20"
+}, ve = {
   key: 1,
-  class: "text-xs text-green-600 dark:text-green-400 flex-1"
-}, tt = ["disabled"], at = { class: "bg-white dark:bg-slate-950 rounded-xl border border-gray-200 dark:border-slate-700 overflow-hidden divide-y divide-gray-200 dark:divide-slate-700" }, st = { class: "px-4 py-3" }, ot = { class: "text-sm font-semibold text-gray-900 dark:text-slate-100" }, rt = { class: "text-xs text-gray-500 dark:text-slate-500 mt-0.5" }, lt = { class: "px-4 py-3 space-y-3" }, nt = { class: "flex items-center gap-2" }, dt = { class: "text-sm text-gray-500 dark:text-slate-500" }, it = {
+  class: "text-sm text-red-500"
+}, fe = { class: "flex gap-1 border-b border-gray-200 dark:border-gray-700 mb-6" }, we = ["onClick"], Se = {
   key: 0,
-  class: "space-y-2"
-}, ct = { class: "flex items-center gap-2" }, ut = ["value"], pt = { class: "text-xs text-amber-600 dark:text-amber-400" }, xt = {
+  class: "absolute bottom-0 left-0 right-0 h-0.5 bg-accent-600 dark:bg-accent-400 rounded-full"
+}, Te = {
+  key: 0,
+  class: "max-w-2xl space-y-6"
+}, Ce = { class: "rounded-lg border border-gray-200 dark:border-gray-700 bg-white dark:bg-gray-800 p-5" }, Ee = { class: "mb-4 text-xs font-semibold uppercase tracking-wide text-gray-500 dark:text-gray-400" }, Re = { class: "mb-4 text-xs text-gray-400 dark:text-gray-500" }, Ve = { class: "space-y-5" }, Pe = { class: "flex items-center gap-4" }, Ne = { class: "flex-1" }, De = { class: "text-sm font-medium text-gray-700 dark:text-gray-300" }, Ue = { class: "text-xs text-gray-400 dark:text-gray-500" }, Oe = { class: "flex items-center gap-1.5" }, Fe = { class: "text-xs text-gray-400 dark:text-gray-500" }, Ie = { class: "flex items-center gap-4" }, Me = { class: "text-sm font-medium text-gray-700 dark:text-gray-300 flex-1" }, $e = { class: "flex items-center gap-2 cursor-pointer" }, Ae = ["checked"], We = { class: "text-sm text-gray-700 dark:text-gray-300" }, je = { class: "flex items-center gap-3 mt-5 pt-4 border-t border-gray-100 dark:border-gray-700" }, Le = ["disabled"], Ge = {
+  key: 0,
+  class: "text-xs text-green-600 dark:text-green-400"
+}, Ye = {
   key: 1,
   class: "text-xs text-red-500"
-}, _t = { class: "flex items-center gap-2" }, gt = ["disabled"], vt = ["disabled"], bt = ["disabled"], yt = { class: "bg-white dark:bg-slate-950 rounded-xl border border-gray-200 dark:border-slate-700 overflow-hidden divide-y divide-gray-200 dark:divide-slate-700" }, kt = { class: "px-4 py-3" }, ht = { class: "text-sm font-semibold text-gray-900 dark:text-slate-100" }, ft = { class: "px-4 py-3 flex items-center gap-4" }, mt = { class: "text-sm text-gray-900 dark:text-slate-100 flex-1" }, wt = ["value"], St = { class: "px-4 py-3 flex items-center gap-4" }, Tt = { class: "flex-1" }, Ct = { class: "text-sm text-gray-900 dark:text-slate-100" }, Et = { class: "text-xs text-gray-500 dark:text-slate-500" }, Pt = { class: "px-4 py-3 flex items-center gap-4" }, jt = { class: "flex-1" }, Rt = { class: "text-sm text-gray-900 dark:text-slate-100" }, Ot = { class: "text-xs text-gray-500 dark:text-slate-500" }, Nt = { class: "px-4 py-3 space-y-2" }, Vt = { class: "text-sm text-gray-900 dark:text-slate-100" }, Ft = { class: "flex gap-4" }, Dt = ["checked", "onChange"], Ut = { class: "text-xs text-gray-500 dark:text-slate-500 select-none" }, Lt = { class: "bg-white dark:bg-slate-950 rounded-xl border border-gray-200 dark:border-slate-700 overflow-hidden divide-y divide-gray-200 dark:divide-slate-700" }, $t = { class: "px-4 py-3 flex items-center gap-4" }, It = { class: "flex-1" }, Mt = { class: "text-sm font-semibold text-gray-900 dark:text-slate-100" }, Wt = { class: "text-xs text-gray-500 dark:text-slate-500" }, At = { class: "flex items-center gap-2 cursor-pointer shrink-0" }, Gt = ["checked"], Xt = { class: "text-sm text-gray-900 dark:text-slate-100" }, Yt = { class: "px-4 py-3 flex items-center gap-4" }, Bt = { class: "text-sm text-gray-900 dark:text-slate-100 flex-1" }, Ht = { class: "px-4 py-3 flex items-center gap-4" }, Kt = { class: "text-sm text-gray-900 dark:text-slate-100 flex-1" }, qt = ["value"], Jt = {
+}, Be = { class: "rounded-lg border border-gray-200 dark:border-gray-700 bg-white dark:bg-gray-800 p-5" }, He = { class: "mb-4 text-xs font-semibold uppercase tracking-wide text-gray-500 dark:text-gray-400" }, Ke = { class: "mb-4 text-xs text-gray-400 dark:text-gray-500" }, qe = { class: "space-y-4" }, Xe = { class: "flex items-center gap-2" }, Ze = { class: "text-sm text-gray-500 dark:text-gray-400" }, ze = {
   key: 0,
-  class: "px-4 py-3 flex items-center gap-4"
-}, zt = { class: "text-sm text-gray-900 dark:text-slate-100 flex-1" }, Zt = ["value"], Qt = { class: "px-4 py-3 flex items-center gap-4" }, ea = { class: "text-sm text-gray-900 dark:text-slate-100 flex-1" }, ta = { class: "px-4 py-3 flex items-center gap-4" }, aa = { class: "text-sm text-gray-900 dark:text-slate-100 flex-1" }, sa = ["checked"], oa = { class: "px-4 py-3 flex items-center gap-4" }, ra = { class: "text-sm text-gray-900 dark:text-slate-100 flex-1" }, la = ["checked"], na = { class: "bg-white dark:bg-slate-950 rounded-xl border border-gray-200 dark:border-slate-700 overflow-hidden divide-y divide-gray-200 dark:divide-slate-700" }, da = { class: "px-4 py-3" }, ia = { class: "text-sm font-semibold text-gray-900 dark:text-slate-100" }, ca = { class: "text-xs text-gray-500 dark:text-slate-500 mt-0.5" }, ua = { class: "px-4 py-3 space-y-3" }, pa = { class: "text-xs font-semibold text-gray-500 dark:text-slate-500 uppercase tracking-wide" }, xa = { class: "flex items-center gap-3" }, _a = { class: "text-sm text-gray-900 dark:text-slate-100 w-32 shrink-0" }, ga = ["disabled"], va = { class: "flex items-center gap-4" }, ba = { class: "flex items-center gap-2 cursor-pointer" }, ya = ["checked"], ka = { class: "text-sm text-gray-900 dark:text-slate-100" }, ha = { class: "flex flex-col gap-1" }, fa = { class: "text-xs text-gray-500 dark:text-slate-500" }, ma = { class: "px-4 py-3 space-y-3" }, wa = { class: "text-xs font-semibold text-gray-500 dark:text-slate-500 uppercase tracking-wide" }, Sa = { class: "flex items-center gap-3" }, Ta = { class: "text-sm text-gray-900 dark:text-slate-100 w-32 shrink-0" }, Ca = ["disabled"], Ea = { class: "flex items-center gap-4" }, Pa = { class: "flex items-center gap-2 cursor-pointer" }, ja = ["checked"], Ra = { class: "text-sm text-gray-900 dark:text-slate-100" }, Oa = { class: "px-4 py-3 space-y-3" }, Na = { class: "text-xs font-semibold text-gray-500 dark:text-slate-500 uppercase tracking-wide" }, Va = { class: "flex items-center gap-3" }, Fa = { class: "text-sm text-gray-900 dark:text-slate-100 w-32 shrink-0" }, Da = ["disabled"], Ua = { class: "flex items-center gap-3" }, La = { class: "text-sm text-gray-900 dark:text-slate-100 w-32 shrink-0" }, $a = { class: "flex items-center gap-4" }, Ia = { class: "flex items-center gap-2 cursor-pointer" }, Ma = ["checked"], Wa = { class: "text-sm text-gray-900 dark:text-slate-100" }, Aa = { class: "bg-white dark:bg-slate-950 rounded-xl border border-gray-200 dark:border-slate-700 overflow-hidden divide-y divide-gray-200 dark:divide-slate-700" }, Ga = { class: "px-4 py-3" }, Xa = { class: "text-sm font-semibold text-gray-900 dark:text-slate-100" }, Ya = { class: "text-xs text-gray-500 dark:text-slate-500 mt-0.5" }, Ba = { class: "px-4 py-3 flex flex-wrap items-center gap-2" }, Ha = { class: "relative" }, Ka = {
-  key: 0,
-  class: "absolute left-0 top-full mt-1 z-20 bg-white dark:bg-slate-950 border border-gray-200 dark:border-slate-700 rounded-xl shadow-lg py-1 min-w-[140px]"
-}, qa = ["onClick"], Ja = ["max"], za = ["min"], Za = ["disabled"], Qa = {
-  key: 0,
-  class: "text-sm text-red-500 px-1"
-}, es = {
+  class: "space-y-2"
+}, Je = { class: "flex items-center gap-2" }, Qe = ["value"], et = { class: "text-xs text-amber-600 dark:text-amber-400" }, tt = {
   key: 1,
-  class: "text-sm text-green-600 dark:text-green-400 px-1"
-}, ts = { class: "flex justify-end" }, as = ["disabled"], os = /* @__PURE__ */ fe({
+  class: "text-xs text-red-500"
+}, at = { class: "flex items-center gap-2" }, st = ["disabled"], rt = ["disabled"], ot = ["disabled"], nt = {
+  key: 1,
+  class: "max-w-2xl space-y-6"
+}, lt = { class: "rounded-lg border border-gray-200 dark:border-gray-700 bg-white dark:bg-gray-800 p-5" }, dt = { class: "mb-4 text-xs font-semibold uppercase tracking-wide text-gray-500 dark:text-gray-400" }, ct = { class: "space-y-5" }, it = { class: "flex items-center gap-4" }, gt = { class: "text-sm font-medium text-gray-700 dark:text-gray-300 flex-1" }, ut = ["value"], yt = { class: "flex items-center gap-4" }, bt = { class: "flex-1" }, xt = { class: "text-sm font-medium text-gray-700 dark:text-gray-300" }, _t = { class: "text-xs text-gray-400 dark:text-gray-500" }, kt = { class: "flex items-center gap-4" }, pt = { class: "flex-1" }, ht = { class: "text-sm font-medium text-gray-700 dark:text-gray-300" }, mt = { class: "text-xs text-gray-400 dark:text-gray-500" }, vt = { class: "text-sm font-medium text-gray-700 dark:text-gray-300 mb-2 block" }, ft = { class: "flex gap-4" }, wt = ["checked", "onChange"], St = { class: "text-xs text-gray-400 dark:text-gray-500 select-none" }, Tt = { class: "flex items-center gap-3 border-t border-gray-200 dark:border-gray-700 py-4" }, Ct = ["disabled"], Et = {
+  key: 0,
+  class: "text-xs text-green-600 dark:text-green-400"
+}, Rt = {
+  key: 1,
+  class: "text-xs text-red-500"
+}, Vt = {
+  key: 2,
+  class: "max-w-2xl space-y-6"
+}, Pt = { class: "rounded-lg border border-gray-200 dark:border-gray-700 bg-white dark:bg-gray-800 p-5" }, Nt = { class: "flex items-center justify-between mb-4" }, Dt = { class: "text-xs font-semibold uppercase tracking-wide text-gray-500 dark:text-gray-400" }, Ut = { class: "text-xs text-gray-400 dark:text-gray-500 mt-1" }, Ot = { class: "flex items-center gap-2 cursor-pointer" }, Ft = ["checked"], It = { class: "text-sm text-gray-700 dark:text-gray-300" }, Mt = {
+  key: 0,
+  class: "space-y-5"
+}, $t = { class: "block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1.5" }, At = { class: "grid gap-4 sm:grid-cols-2" }, Wt = { class: "block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1.5" }, jt = ["value"], Lt = { key: 0 }, Gt = { class: "block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1.5" }, Yt = ["value"], Bt = { class: "block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1.5" }, Ht = { class: "flex items-center gap-2 cursor-pointer" }, Kt = ["checked"], qt = { class: "text-sm text-gray-700 dark:text-gray-300" }, Xt = { class: "flex items-center gap-2 cursor-pointer" }, Zt = ["checked"], zt = { class: "text-sm text-gray-700 dark:text-gray-300" }, Jt = { class: "flex items-center gap-3 border-t border-gray-200 dark:border-gray-700 py-4" }, Qt = ["disabled"], ea = {
+  key: 0,
+  class: "text-xs text-green-600 dark:text-green-400"
+}, ta = {
+  key: 1,
+  class: "text-xs text-red-500"
+}, aa = {
+  key: 3,
+  class: "max-w-2xl space-y-6"
+}, sa = { class: "rounded-lg border border-gray-200 dark:border-gray-700 bg-white dark:bg-gray-800 p-5" }, ra = { class: "mb-4 text-xs font-semibold uppercase tracking-wide text-gray-500 dark:text-gray-400" }, oa = { class: "space-y-5" }, na = { class: "block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1.5" }, la = { class: "flex items-center gap-2 cursor-pointer" }, da = ["checked"], ca = { class: "text-sm text-gray-700 dark:text-gray-300" }, ia = { class: "block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1.5" }, ga = { class: "flex items-center gap-3" }, ua = ["disabled"], ya = { class: "rounded-lg border border-gray-200 dark:border-gray-700 bg-white dark:bg-gray-800 p-5" }, ba = { class: "mb-4 text-xs font-semibold uppercase tracking-wide text-gray-500 dark:text-gray-400" }, xa = { class: "space-y-5" }, _a = { class: "block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1.5" }, ka = { class: "flex items-center gap-2 cursor-pointer" }, pa = ["checked"], ha = { class: "text-sm text-gray-700 dark:text-gray-300" }, ma = { class: "flex items-center gap-3" }, va = ["disabled"], fa = { class: "rounded-lg border border-gray-200 dark:border-gray-700 bg-white dark:bg-gray-800 p-5" }, wa = { class: "mb-4 text-xs font-semibold uppercase tracking-wide text-gray-500 dark:text-gray-400" }, Sa = { class: "space-y-5" }, Ta = { class: "block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1.5" }, Ca = { class: "block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1.5" }, Ea = { class: "flex items-center gap-2 cursor-pointer" }, Ra = ["checked"], Va = { class: "text-sm text-gray-700 dark:text-gray-300" }, Pa = { class: "flex items-center gap-3" }, Na = ["disabled"], Da = { class: "flex items-center gap-3 border-t border-gray-200 dark:border-gray-700 py-4" }, Ua = ["disabled"], Oa = {
+  key: 0,
+  class: "text-xs text-green-600 dark:text-green-400"
+}, Fa = {
+  key: 1,
+  class: "text-xs text-red-500"
+}, Ia = {
+  key: 4,
+  class: "max-w-2xl space-y-6"
+}, Ma = { class: "rounded-lg border border-gray-200 dark:border-gray-700 bg-white dark:bg-gray-800 p-5" }, $a = { class: "mb-4 text-xs font-semibold uppercase tracking-wide text-gray-500 dark:text-gray-400" }, Aa = { class: "mb-4 text-xs text-gray-400 dark:text-gray-500" }, Wa = { class: "space-y-5" }, ja = { class: "block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1.5" }, La = ["value"], Ga = {
+  key: 0,
+  class: "flex items-center gap-3"
+}, Ya = ["max"], Ba = ["min"], Ha = ["disabled"], qa = /* @__PURE__ */ ye({
   __name: "Settings",
-  setup(p) {
-    const d = i(!0), v = i(!1), x = i(null), b = i(!1), {
-      prefs: _,
-      load: ee,
-      save: Y,
-      generateExtensionToken: U,
-      revokeExtensionToken: B
-    } = Ne(), L = i(!1), $ = i(!1), O = i(null), T = i(!1), I = i(!1), m = i(null), C = i(null), H = i(!1);
-    async function te() {
-      if (!(_.value.extension_token_active && !window.confirm(s("This will revoke the existing token. Continue?")))) {
-        T.value = !0, C.value = null, m.value = null;
-        try {
-          const n = await U();
-          m.value = n;
-        } catch (n) {
-          C.value = n.message;
-        } finally {
-          T.value = !1;
-        }
-      }
-    }
-    async function ne() {
-      I.value = !0, C.value = null, m.value = null;
-      try {
-        await B();
-      } catch (n) {
-        C.value = n.message;
-      } finally {
-        I.value = !1;
-      }
-    }
-    async function de() {
-      if (m.value)
-        try {
-          await navigator.clipboard.writeText(m.value), H.value = !0, setTimeout(() => {
-            H.value = !1;
-          }, 2e3);
-        } catch {
-        }
-    }
-    async function ie() {
-      L.value = !0, O.value = null, $.value = !1;
-      try {
-        await Y({
-          weekly_hour_target: _.value.weekly_hour_target,
-          enable_keyboard_shortcuts: _.value.enable_keyboard_shortcuts,
-          focus_work_minutes: _.value.focus_work_minutes,
-          focus_break_minutes: _.value.focus_break_minutes,
-          focus_sessions: _.value.focus_sessions
-        }), $.value = !0, setTimeout(() => {
-          $.value = !1;
-        }, 2500);
-      } catch (n) {
-        O.value = n.message;
-      } finally {
-        L.value = !1;
-      }
-    }
-    const l = i({
+  setup(k) {
+    const x = [
+      { value: "billable", label: "Billable" },
+      { value: "non-billable", label: "Non-billable" },
+      { value: "internal", label: "Internal" }
+    ], C = [
+      { value: "on_save", label: "On save" },
+      { value: "manual", label: "Manual" },
+      { value: "scheduled", label: "Scheduled" }
+    ], p = [
+      { value: "hourly", label: "Hourly" },
+      { value: "every_6_hours", label: "Every 6 hours" },
+      { value: "daily", label: "Daily" }
+    ], m = [
+      { key: "work_mon", label: "Mon" },
+      { key: "work_tue", label: "Tue" },
+      { key: "work_wed", label: "Wed" },
+      { key: "work_thu", label: "Thu" },
+      { key: "work_fri", label: "Fri" },
+      { key: "work_sat", label: "Sat" },
+      { key: "work_sun", label: "Sun" }
+    ], U = [
+      { value: "all", label: "All time" },
+      { value: "this_year", label: "This year" },
+      { value: "last_year", label: "Last year" },
+      { value: "custom", label: "Custom range" }
+    ], te = [
+      { label: t("My Preferences") },
+      { label: t("General") },
+      { label: t("ERPNext Bridge") },
+      { label: t("Integrations") },
+      { label: t("Export") }
+    ], v = i(0), O = i(!0), f = i(!1), E = i(!1), h = i(""), $ = i(!1), A = i(!1), W = i(""), n = se({
       default_entry_type: "billable",
       lock_entries_older_than: 0,
-      auto_stop_timer_after: 8,
+      auto_stop_timer_after: 0,
       work_mon: 1,
       work_tue: 1,
       work_wed: 1,
@@ -213,640 +155,620 @@ const Ve = { class: "min-h-screen bg-gray-50 dark:bg-slate-800" }, Fe = { class:
       work_sat: 0,
       work_sun: 0,
       enable_erpnext_bridge: 0,
-      sync_mode: "on_save",
-      sync_interval: "",
       erpnext_site_url: "",
+      sync_mode: "on_save",
+      sync_interval: "daily",
       default_activity_type: "",
       sync_billable_only: 0,
       map_project_tags: 0,
       slack_webhook_url: "",
-      slack_notify_on_stop: 1,
+      slack_notify_on_stop: 0,
       slack_message_template: "",
       linear_api_key: "",
       linear_post_comment: 0,
       github_token: "",
       github_default_repo: "",
       github_post_comment: 0
-    });
-    me(async () => {
-      const [, n] = await Promise.allSettled([
-        (async () => {
-          try {
-            const r = await fetch("/api/method/watch.api.settings.get_settings", {
-              headers: { "X-Frappe-CSRF-Token": window.csrf_token ?? "" }
-            }), t = await r.json();
-            if (!r.ok || t.exc) throw new Error(t.exc ?? "Load failed");
-            Object.assign(l.value, t.message);
-          } catch (r) {
-            x.value = r.message;
-          } finally {
-            d.value = !1;
-          }
-        })(),
-        ee()
-      ]);
-      n.status === "rejected" && (O.value = n.reason?.message ?? "Failed to load preferences");
-    });
-    async function ce() {
-      v.value = !0, x.value = null, b.value = !1;
+    }), b = se({
+      weekly_hour_target: 0,
+      enable_keyboard_shortcuts: 1,
+      extension_token_active: !1
+    }), R = i(""), q = i(!1), V = i(!1), j = i(!1), P = i(""), X = i(!1), L = i(null), Z = i(!1), G = i(null), z = i(!1), Y = i(null), S = i("all"), F = i(""), I = i("");
+    i(!1);
+    async function T(c, o = {}) {
+      return window.frappe.call({ method: c, args: o, type: "POST" });
+    }
+    be(async () => {
       try {
-        const n = await fetch("/api/method/watch.api.settings.save_settings", {
-          method: "POST",
-          headers: {
-            "Content-Type": "application/json",
-            "X-Frappe-CSRF-Token": window.csrf_token ?? ""
-          },
-          body: JSON.stringify(l.value)
-        }), r = await n.json();
-        if (!n.ok || r.exc) throw new Error(r.exc ?? "Save failed");
-        Object.assign(l.value, r.message), b.value = !0, setTimeout(() => {
-          b.value = !1;
-        }, 2500);
-      } catch (n) {
-        x.value = n.message;
+        const [c, o] = await Promise.all([
+          T("frappe.client.get", { doctype: "Watch Settings", name: "Watch Settings" }),
+          T("watch.api.settings.get_user_preferences")
+        ]), a = c.message;
+        a && Object.keys(n).forEach((B) => {
+          a[B] !== void 0 && (n[B] = a[B]);
+        });
+        const y = o.message;
+        y && (b.weekly_hour_target = y.weekly_hour_target ?? 0, b.enable_keyboard_shortcuts = y.enable_keyboard_shortcuts ?? 1, b.extension_token_active = !!y.extension_token_active);
+      } catch (c) {
+        h.value = c?.message || t("Failed to load settings");
       } finally {
-        v.value = !1;
+        O.value = !1;
+      }
+    });
+    async function oe() {
+      $.value = !0, W.value = "", A.value = !1;
+      try {
+        await T("watch.api.settings.save_user_preferences", {
+          weekly_hour_target: b.weekly_hour_target,
+          enable_keyboard_shortcuts: b.enable_keyboard_shortcuts
+        }), A.value = !0, setTimeout(() => A.value = !1, 2500);
+      } catch (c) {
+        W.value = c?.message || t("Failed to save");
+      } finally {
+        $.value = !1;
       }
     }
-    const K = i(!1), M = i(null), q = i(!1), W = i(null), J = i(!1), A = i(null);
-    async function z(n, r, t, f) {
-      r.value = !0, t.value = null;
+    async function J() {
+      f.value = !0, h.value = "", E.value = !1;
       try {
-        const j = await fetch(`/api/method/${n}`, {
-          method: "POST",
-          headers: {
-            "Content-Type": "application/json",
-            "X-Frappe-CSRF-Token": window.csrf_token ?? ""
-          }
-        }), w = await j.json();
-        if (!j.ok || w.exc) throw new Error(w._server_messages || w.exc || "Test failed");
-        t.value = f(w.message);
-      } catch (j) {
-        t.value = `Error: ${j.message}`;
+        await T("frappe.client.set_value", {
+          doctype: "Watch Settings",
+          name: "Watch Settings",
+          fieldname: { ...n }
+        }), E.value = !0, setTimeout(() => E.value = !1, 2500);
+      } catch (c) {
+        h.value = c?.message || t("Failed to save");
       } finally {
-        r.value = !1;
+        f.value = !1;
       }
     }
-    function ue() {
-      z("watch.api.integrations.test_slack", K, M, () => s("Connected"));
+    async function ae() {
+      V.value = !0, P.value = "", R.value = "";
+      try {
+        const c = await T("watch.api.settings.generate_extension_token");
+        R.value = c.message?.token ?? "", b.extension_token_active = !0;
+      } catch (c) {
+        P.value = c?.message || t("Failed to generate token");
+      } finally {
+        V.value = !1;
+      }
     }
-    function pe() {
-      z(
-        "watch.api.integrations.test_linear",
-        q,
-        W,
-        (n) => s("Connected") + (n?.workspace ? ` (${n.workspace})` : "")
-      );
-    }
-    function xe() {
-      z(
-        "watch.api.integrations.test_github",
-        J,
-        A,
-        (n) => s("Connected") + (n?.username ? ` (${n.username})` : "")
-      );
-    }
-    const _e = [
-      { value: "billable", label: "Billable" },
-      { value: "non-billable", label: "Non-billable" },
-      { value: "internal", label: "Internal" }
-    ], ge = [
-      { value: "on_save", label: "On save" },
-      { value: "manual", label: "Manual" },
-      { value: "scheduled", label: "Scheduled" }
-    ], ve = [
-      { value: "hourly", label: "Hourly" },
-      { value: "every_6_hours", label: "Every 6 hours" },
-      { value: "daily", label: "Daily" }
-    ], be = [
-      { key: "work_mon", label: "Mon" },
-      { key: "work_tue", label: "Tue" },
-      { key: "work_wed", label: "Wed" },
-      { key: "work_thu", label: "Thu" },
-      { key: "work_fri", label: "Fri" },
-      { key: "work_sat", label: "Sat" },
-      { key: "work_sun", label: "Sun" }
-    ];
-    function ye(n, r) {
-      l.value[n] = r ? 1 : 0;
-    }
-    function E(n, r) {
-      l.value[n] = r ? 1 : 0;
-    }
-    const ae = [
-      { value: "all_time", label: "All time" },
-      { value: "this_year", label: "This year" },
-      { value: "last_year", label: "Last year" },
-      { value: "custom", label: "Custom…" }
-    ], P = i("all_time"), N = i(""), V = i(""), G = i(!1), ke = we(
-      () => ae.find((n) => n.value === P.value)?.label ?? s("All time")
-    );
-    function he() {
-      const n = /* @__PURE__ */ new Date(), r = n.toISOString().slice(0, 10);
-      let t, f = r;
-      switch (P.value) {
-        case "this_year":
-          t = `${n.getFullYear()}-01-01`;
-          break;
-        case "last_year": {
-          const w = n.getFullYear() - 1;
-          t = `${w}-01-01`, f = `${w}-12-31`;
-          break;
+    async function ne() {
+      if (confirm(t("Revoke the browser extension token? The extension will be disconnected."))) {
+        j.value = !0, P.value = "";
+        try {
+          await T("watch.api.settings.revoke_extension_token"), b.extension_token_active = !1, R.value = "";
+        } catch (c) {
+          P.value = c?.message || t("Failed to revoke token");
+        } finally {
+          j.value = !1;
         }
-        case "custom":
-          t = N.value, f = V.value;
-          break;
-        default:
-          t = "2000-01-01";
       }
-      const j = new URLSearchParams({ from_date: t, to_date: f });
-      window.location.href = `/api/method/watch.api.time_entry.export_csv?${j}`;
     }
-    return (n, r) => (c(), u("div", Ve, [
-      e("div", Fe, [
-        e("h1", De, o(a(s)("Settings")), 1),
-        d.value ? (c(), u(h, { key: 0 }, R(4, (t) => e("div", {
-          key: t,
-          class: "bg-white dark:bg-slate-950 rounded-xl border border-gray-200 dark:border-slate-700 p-4 animate-pulse h-14"
-        })), 64)) : x.value && !l.value ? (c(), u("p", Ue, o(x.value), 1)) : (c(), u(h, { key: 2 }, [
-          e("div", Le, [
-            e("div", $e, [
-              e("h2", Ie, o(a(s)("My Preferences")), 1),
-              e("p", Me, o(a(s)("Personal settings — only you can see these.")), 1)
-            ]),
-            e("div", We, [
-              e("div", Ae, [
-                e("div", Ge, o(a(s)("Weekly hour target")), 1),
-                e("div", Xe, o(a(s)("0 = no target (progress bar hidden).")), 1)
+    function le() {
+      navigator.clipboard.writeText(R.value), q.value = !0, setTimeout(() => q.value = !1, 2e3);
+    }
+    async function Q(c, o, a) {
+      o.value = !0, a.value = null;
+      try {
+        const y = await T(`watch.api.integrations.test_${c}`);
+        a.value = { ok: y.message?.success ?? !1, msg: y.message?.message ?? "" };
+      } catch (y) {
+        a.value = { ok: !1, msg: y?.message || t("Test failed") };
+      } finally {
+        o.value = !1;
+      }
+    }
+    function de() {
+      Q("slack", X, L);
+    }
+    function ce() {
+      Q("linear", Z, G);
+    }
+    function ie() {
+      Q("github", z, Y);
+    }
+    function ge(c, o) {
+      n[c] = o ? 1 : 0;
+    }
+    function N(c, o) {
+      n[c] = o ? 1 : 0;
+    }
+    async function ue() {
+      let c = "", o = "";
+      const a = /* @__PURE__ */ new Date();
+      S.value === "this_year" ? (c = `${a.getFullYear()}-01-01`, o = a.toISOString().slice(0, 10)) : S.value === "last_year" ? (c = `${a.getFullYear() - 1}-01-01`, o = `${a.getFullYear() - 1}-12-31`) : S.value === "custom" && (c = F.value, o = I.value), window.open(
+        `/api/method/watch.api.export.download_csv?from_date=${c}&to_date=${o}`,
+        "_blank"
+      );
+    }
+    return (c, o) => O.value ? (l(), d("div", me, [...o[24] || (o[24] = [
+      e("div", { class: "h-6 w-6 animate-spin rounded-full border-2 border-accent-600 border-t-transparent" }, null, -1)
+    ])])) : h.value && !n ? (l(), d("p", ve, r(h.value), 1)) : (l(), d(w, { key: 2 }, [
+      e("nav", fe, [
+        (l(), d(w, null, D(te, (a, y) => e("button", {
+          key: a.label,
+          class: M(["relative px-3 py-2 text-sm font-medium transition-colors", v.value === y ? "text-gray-900 dark:text-white" : "text-gray-500 dark:text-gray-400 hover:text-gray-700 dark:hover:text-gray-300"]),
+          onClick: (B) => v.value = y
+        }, [
+          re(r(a.label) + " ", 1),
+          v.value === y ? (l(), d("span", Se)) : g("", !0)
+        ], 10, we)), 64))
+      ]),
+      v.value === 0 ? (l(), d("div", Te, [
+        e("div", Ce, [
+          e("h2", Ee, r(s(t)("Personal Settings")), 1),
+          e("p", Re, r(s(t)("Only you can see these.")), 1),
+          e("div", Ve, [
+            e("div", Pe, [
+              e("div", Ne, [
+                e("label", De, r(s(t)("Weekly hour target")), 1),
+                e("p", Ue, r(s(t)("0 = no target (progress bar hidden).")), 1)
               ]),
-              e("div", Ye, [
-                g(e("input", {
-                  "onUpdate:modelValue": r[0] || (r[0] = (t) => a(_).weekly_hour_target = t),
+              e("div", Oe, [
+                u(e("input", {
+                  "onUpdate:modelValue": o[0] || (o[0] = (a) => b.weekly_hour_target = a),
                   type: "number",
                   min: "0",
                   step: "1",
-                  class: "w-20 px-2 py-1.5 rounded-lg border border-gray-200 dark:border-slate-700 bg-white dark:bg-slate-950 text-sm text-gray-900 dark:text-slate-100 outline-none focus:ring-2 focus:ring-[var(--app-accent-500)]/30 focus:border-[var(--app-accent-500)]"
+                  class: "w-20 rounded-lg border border-gray-200 dark:border-gray-700 bg-white dark:bg-gray-800 px-3 py-2 text-sm text-gray-900 dark:text-white focus:outline-none focus:ring-2 focus:ring-accent-500 dark:focus:ring-accent-400"
                 }, null, 512), [
                   [
-                    k,
-                    a(_).weekly_hour_target,
+                    _,
+                    b.weekly_hour_target,
                     void 0,
                     { number: !0 }
                   ]
                 ]),
-                e("span", Be, o(a(s)("hours")), 1)
+                e("span", Fe, r(s(t)("hours")), 1)
               ])
             ]),
-            e("div", He, [
-              e("label", Ke, o(a(s)("Keyboard shortcuts")), 1),
-              e("label", qe, [
+            e("div", Ie, [
+              e("label", Me, r(s(t)("Keyboard shortcuts")), 1),
+              e("label", $e, [
                 e("input", {
                   type: "checkbox",
-                  checked: !!a(_).enable_keyboard_shortcuts,
-                  class: "w-4 h-4 rounded accent-[var(--app-accent-500)]",
-                  onChange: r[1] || (r[1] = (t) => a(_).enable_keyboard_shortcuts = t.target.checked ? 1 : 0)
-                }, null, 40, Je),
-                e("span", ze, o(a(s)("Enabled")), 1)
+                  checked: !!b.enable_keyboard_shortcuts,
+                  class: "h-4 w-4 rounded accent-accent-600 dark:accent-accent-400",
+                  onChange: o[1] || (o[1] = (a) => b.enable_keyboard_shortcuts = a.target.checked ? 1 : 0)
+                }, null, 40, Ae),
+                e("span", We, r(s(t)("Enabled")), 1)
               ])
-            ]),
-            e("div", Ze, [
-              O.value ? (c(), u("p", Qe, o(O.value), 1)) : y("", !0),
-              $.value ? (c(), u("p", et, o(a(s)("Saved.")), 1)) : y("", !0),
-              e("button", {
-                type: "button",
-                disabled: L.value,
-                class: "px-4 py-1.5 rounded-lg bg-[var(--app-accent-500)] hover:bg-[var(--app-accent-700)] text-white text-sm font-medium transition-colors disabled:opacity-50",
-                onClick: ie
-              }, o(L.value ? a(s)("Saving…") : a(s)("Save")), 9, tt)
             ])
           ]),
-          e("div", at, [
-            e("div", st, [
-              e("h2", ot, o(a(s)("Browser Extension")), 1),
-              e("p", rt, o(a(s)("Connect the Watch browser extension to this site.")), 1)
+          e("div", je, [
+            e("button", {
+              disabled: $.value,
+              class: "rounded-lg bg-accent-600 dark:bg-accent-400 px-4 py-2 text-sm font-medium text-white dark:text-gray-900 hover:bg-accent-700 dark:hover:bg-accent-300 transition-colors disabled:opacity-50",
+              onClick: oe
+            }, r($.value ? s(t)("Saving…") : s(t)("Save")), 9, Le),
+            A.value ? (l(), d("span", Ge, r(s(t)("Saved")), 1)) : g("", !0),
+            W.value ? (l(), d("span", Ye, r(W.value), 1)) : g("", !0)
+          ])
+        ]),
+        e("div", Be, [
+          e("h2", He, r(s(t)("Browser Extension")), 1),
+          e("p", Ke, r(s(t)("Connect the Watch browser extension to this site.")), 1),
+          e("div", qe, [
+            e("div", Xe, [
+              e("span", Ze, r(s(t)("Status")) + ":", 1),
+              e("span", {
+                class: M(["text-sm font-medium", b.extension_token_active ? "text-green-600 dark:text-green-400" : "text-gray-400 dark:text-gray-500"])
+              }, r(b.extension_token_active ? s(t)("Token active") : s(t)("Not connected")), 3)
             ]),
-            e("div", lt, [
-              e("div", nt, [
-                e("span", dt, o(a(s)("Status")) + ":", 1),
-                e("span", {
-                  class: F(["text-sm font-medium", a(_).extension_token_active ? "text-green-600 dark:text-green-400" : "text-gray-500 dark:text-slate-500"])
-                }, o(a(_).extension_token_active ? a(s)("Token active") : a(s)("Not connected")), 3)
+            R.value ? (l(), d("div", ze, [
+              e("div", Je, [
+                e("input", {
+                  type: "text",
+                  value: R.value,
+                  readonly: "",
+                  class: "flex-1 rounded-lg border border-gray-200 dark:border-gray-700 bg-gray-50 dark:bg-gray-900 px-3 py-2 text-xs font-mono text-gray-900 dark:text-white select-all",
+                  onFocus: o[2] || (o[2] = (a) => a.target.select())
+                }, null, 40, Qe),
+                e("button", {
+                  class: "rounded-lg border border-gray-300 dark:border-gray-600 px-3 py-1.5 text-sm font-medium text-gray-700 dark:text-gray-300 hover:bg-gray-50 dark:hover:bg-gray-700 transition-colors",
+                  onClick: le
+                }, r(q.value ? s(t)("Copied") : s(t)("Copy")), 1)
               ]),
-              m.value ? (c(), u("div", it, [
-                e("div", ct, [
-                  e("input", {
-                    type: "text",
-                    value: m.value,
-                    readonly: "",
-                    class: "flex-1 px-2 py-1.5 rounded-lg border border-gray-200 dark:border-slate-700 bg-gray-50 dark:bg-slate-800 text-xs font-mono text-gray-900 dark:text-slate-100 outline-none select-all",
-                    onFocus: r[2] || (r[2] = (t) => t.target.select())
-                  }, null, 40, ut),
-                  e("button", {
-                    type: "button",
-                    class: "px-3 py-1.5 rounded-lg border border-gray-200 dark:border-slate-700 text-xs font-medium text-gray-900 dark:text-slate-100 hover:bg-gray-50 dark:hover:bg-slate-800 transition-colors",
-                    onClick: de
-                  }, o(H.value ? a(s)("Copied") : a(s)("Copy")), 1)
-                ]),
-                e("p", pt, o(a(s)("This token will not be shown again. Paste it into the extension setup screen.")), 1)
-              ])) : y("", !0),
-              C.value ? (c(), u("p", xt, o(C.value), 1)) : y("", !0),
-              e("div", _t, [
-                a(_).extension_token_active ? (c(), u(h, { key: 1 }, [
-                  e("button", {
-                    type: "button",
-                    disabled: T.value,
-                    class: "px-4 py-1.5 rounded-lg border border-gray-200 dark:border-slate-700 text-sm font-medium text-gray-900 dark:text-slate-100 hover:bg-gray-50 dark:hover:bg-slate-800 transition-colors disabled:opacity-50",
-                    onClick: te
-                  }, o(T.value ? a(s)("Generating…") : a(s)("Regenerate token")), 9, vt),
-                  e("button", {
-                    type: "button",
-                    disabled: I.value,
-                    class: "px-4 py-1.5 rounded-lg border border-red-300 dark:border-red-700 text-sm font-medium text-red-600 dark:text-red-400 hover:bg-red-50 dark:hover:bg-red-900/20 transition-colors disabled:opacity-50",
-                    onClick: ne
-                  }, o(I.value ? a(s)("Revoking…") : a(s)("Revoke access")), 9, bt)
-                ], 64)) : (c(), u("button", {
-                  key: 0,
-                  type: "button",
-                  disabled: T.value,
-                  class: "px-4 py-1.5 rounded-lg bg-[var(--app-accent-500)] hover:bg-[var(--app-accent-700)] text-white text-sm font-medium transition-colors disabled:opacity-50",
-                  onClick: te
-                }, o(T.value ? a(s)("Generating…") : a(s)("Generate extension token")), 9, gt))
-              ])
+              e("p", et, r(s(t)("This token will not be shown again. Paste it into the extension setup screen.")), 1)
+            ])) : g("", !0),
+            P.value ? (l(), d("p", tt, r(P.value), 1)) : g("", !0),
+            e("div", at, [
+              b.extension_token_active ? (l(), d(w, { key: 1 }, [
+                e("button", {
+                  disabled: V.value,
+                  class: "rounded-lg border border-gray-300 dark:border-gray-600 px-4 py-2 text-sm font-medium text-gray-700 dark:text-gray-300 hover:bg-gray-50 dark:hover:bg-gray-700 transition-colors disabled:opacity-50",
+                  onClick: ae
+                }, r(V.value ? s(t)("Generating…") : s(t)("Regenerate token")), 9, rt),
+                e("button", {
+                  disabled: j.value,
+                  class: "rounded-lg border border-red-300 dark:border-red-700 px-4 py-2 text-sm font-medium text-red-600 dark:text-red-400 hover:bg-red-50 dark:hover:bg-red-900/20 transition-colors disabled:opacity-50",
+                  onClick: ne
+                }, r(j.value ? s(t)("Revoking…") : s(t)("Revoke access")), 9, ot)
+              ], 64)) : (l(), d("button", {
+                key: 0,
+                disabled: V.value,
+                class: "rounded-lg bg-accent-600 dark:bg-accent-400 px-4 py-2 text-sm font-medium text-white dark:text-gray-900 hover:bg-accent-700 dark:hover:bg-accent-300 transition-colors disabled:opacity-50",
+                onClick: ae
+              }, r(V.value ? s(t)("Generating…") : s(t)("Generate extension token")), 9, st))
             ])
-          ]),
-          e("div", yt, [
-            e("div", kt, [
-              e("h2", ht, o(a(s)("General")), 1)
-            ]),
-            e("div", ft, [
-              e("label", mt, o(a(s)("Default entry type")), 1),
-              g(e("select", {
-                "onUpdate:modelValue": r[3] || (r[3] = (t) => l.value.default_entry_type = t),
-                class: "px-2 py-1.5 rounded-lg border border-gray-200 dark:border-slate-700 bg-white dark:bg-slate-950 text-sm text-gray-900 dark:text-slate-100 outline-none focus:ring-2 focus:ring-[var(--app-accent-500)]/30 focus:border-[var(--app-accent-500)]"
+          ])
+        ])
+      ])) : v.value === 1 ? (l(), d("div", nt, [
+        e("div", lt, [
+          e("h2", dt, r(s(t)("Time Tracking")), 1),
+          e("div", ct, [
+            e("div", it, [
+              e("label", gt, r(s(t)("Default entry type")), 1),
+              u(e("select", {
+                "onUpdate:modelValue": o[3] || (o[3] = (a) => n.default_entry_type = a),
+                class: "rounded-lg border border-gray-200 dark:border-gray-700 bg-white dark:bg-gray-800 px-3 py-2 text-sm text-gray-900 dark:text-white focus:outline-none focus:ring-2 focus:ring-accent-500 dark:focus:ring-accent-400"
               }, [
-                (c(), u(h, null, R(_e, (t) => e("option", {
-                  key: t.value,
-                  value: t.value
-                }, o(a(s)(t.label)), 9, wt)), 64))
+                (l(), d(w, null, D(x, (a) => e("option", {
+                  key: a.value,
+                  value: a.value
+                }, r(s(t)(a.label)), 9, ut)), 64))
               ], 512), [
-                [Z, l.value.default_entry_type]
+                [H, n.default_entry_type]
               ])
             ]),
-            e("div", St, [
-              e("div", Tt, [
-                e("div", Ct, o(a(s)("Lock entries older than (days)")), 1),
-                e("div", Et, o(a(s)("0 = disabled.")), 1)
+            e("div", yt, [
+              e("div", bt, [
+                e("label", xt, r(s(t)("Lock entries older than (days)")), 1),
+                e("p", _t, r(s(t)("0 = disabled.")), 1)
               ]),
-              g(e("input", {
-                "onUpdate:modelValue": r[4] || (r[4] = (t) => l.value.lock_entries_older_than = t),
+              u(e("input", {
+                "onUpdate:modelValue": o[4] || (o[4] = (a) => n.lock_entries_older_than = a),
                 type: "number",
                 min: "0",
-                class: "w-20 px-2 py-1.5 rounded-lg border border-gray-200 dark:border-slate-700 bg-white dark:bg-slate-950 text-sm text-gray-900 dark:text-slate-100 outline-none focus:ring-2 focus:ring-[var(--app-accent-500)]/30 focus:border-[var(--app-accent-500)]"
+                class: "w-20 rounded-lg border border-gray-200 dark:border-gray-700 bg-white dark:bg-gray-800 px-3 py-2 text-sm text-gray-900 dark:text-white focus:outline-none focus:ring-2 focus:ring-accent-500 dark:focus:ring-accent-400"
               }, null, 512), [
                 [
-                  k,
-                  l.value.lock_entries_older_than,
+                  _,
+                  n.lock_entries_older_than,
                   void 0,
                   { number: !0 }
                 ]
               ])
             ]),
-            e("div", Pt, [
-              e("div", jt, [
-                e("div", Rt, o(a(s)("Auto-stop timer after (hours)")), 1),
-                e("div", Ot, o(a(s)("0 = disabled.")), 1)
+            e("div", kt, [
+              e("div", pt, [
+                e("label", ht, r(s(t)("Auto-stop timer after (hours)")), 1),
+                e("p", mt, r(s(t)("0 = disabled.")), 1)
               ]),
-              g(e("input", {
-                "onUpdate:modelValue": r[5] || (r[5] = (t) => l.value.auto_stop_timer_after = t),
+              u(e("input", {
+                "onUpdate:modelValue": o[5] || (o[5] = (a) => n.auto_stop_timer_after = a),
                 type: "number",
                 min: "0",
-                class: "w-20 px-2 py-1.5 rounded-lg border border-gray-200 dark:border-slate-700 bg-white dark:bg-slate-950 text-sm text-gray-900 dark:text-slate-100 outline-none focus:ring-2 focus:ring-[var(--app-accent-500)]/30 focus:border-[var(--app-accent-500)]"
+                class: "w-20 rounded-lg border border-gray-200 dark:border-gray-700 bg-white dark:bg-gray-800 px-3 py-2 text-sm text-gray-900 dark:text-white focus:outline-none focus:ring-2 focus:ring-accent-500 dark:focus:ring-accent-400"
               }, null, 512), [
                 [
-                  k,
-                  l.value.auto_stop_timer_after,
+                  _,
+                  n.auto_stop_timer_after,
                   void 0,
                   { number: !0 }
                 ]
               ])
             ]),
-            e("div", Nt, [
-              e("div", Vt, o(a(s)("Work days")), 1),
-              e("div", Ft, [
-                (c(), u(h, null, R(be, (t) => e("label", {
-                  key: t.key,
+            e("div", null, [
+              e("label", vt, r(s(t)("Work days")), 1),
+              e("div", ft, [
+                (l(), d(w, null, D(m, (a) => e("label", {
+                  key: a.key,
                   class: "flex flex-col items-center gap-1 cursor-pointer"
                 }, [
                   e("input", {
                     type: "checkbox",
-                    checked: !!l.value[t.key],
-                    class: "w-4 h-4 rounded accent-[var(--app-accent-500)]",
-                    onChange: (f) => ye(t.key, f.target.checked)
-                  }, null, 40, Dt),
-                  e("span", Ut, o(a(s)(t.label)), 1)
+                    checked: !!n[a.key],
+                    class: "h-4 w-4 rounded accent-accent-600 dark:accent-accent-400",
+                    onChange: (y) => ge(a.key, y.target.checked)
+                  }, null, 40, wt),
+                  e("span", St, r(s(t)(a.label)), 1)
                 ])), 64))
               ])
             ])
+          ])
+        ]),
+        e("div", Tt, [
+          e("button", {
+            disabled: f.value,
+            class: "rounded-lg bg-accent-600 dark:bg-accent-400 px-4 py-2 text-sm font-medium text-white dark:text-gray-900 hover:bg-accent-700 dark:hover:bg-accent-300 transition-colors disabled:opacity-50",
+            onClick: J
+          }, r(f.value ? s(t)("Saving…") : s(t)("Save")), 9, Ct),
+          E.value ? (l(), d("span", Et, r(s(t)("Saved")), 1)) : g("", !0),
+          h.value ? (l(), d("span", Rt, r(h.value), 1)) : g("", !0)
+        ])
+      ])) : v.value === 2 ? (l(), d("div", Vt, [
+        e("div", Pt, [
+          e("div", Nt, [
+            e("div", null, [
+              e("h2", Dt, r(s(t)("ERPNext Bridge")), 1),
+              e("p", Ut, r(s(t)("One-way sync of billable entries to ERPNext Timesheets.")), 1)
+            ]),
+            e("label", Ot, [
+              e("input", {
+                type: "checkbox",
+                checked: !!n.enable_erpnext_bridge,
+                class: "h-4 w-4 rounded accent-accent-600 dark:accent-accent-400",
+                onChange: o[6] || (o[6] = (a) => N("enable_erpnext_bridge", a.target.checked))
+              }, null, 40, Ft),
+              e("span", It, r(s(t)("Enable")), 1)
+            ])
           ]),
-          e("div", Lt, [
-            e("div", $t, [
-              e("div", It, [
-                e("h2", Mt, o(a(s)("ERPNext Bridge")), 1),
-                e("p", Wt, o(a(s)("One-way sync of billable entries to ERPNext Timesheets.")), 1)
-              ]),
-              e("label", At, [
-                e("input", {
-                  type: "checkbox",
-                  checked: !!l.value.enable_erpnext_bridge,
-                  class: "w-4 h-4 rounded accent-[var(--app-accent-500)]",
-                  onChange: r[6] || (r[6] = (t) => E("enable_erpnext_bridge", t.target.checked))
-                }, null, 40, Gt),
-                e("span", Xt, o(a(s)("Enable")), 1)
+          n.enable_erpnext_bridge ? (l(), d("div", Mt, [
+            e("div", null, [
+              e("label", $t, r(s(t)("ERPNext site URL")), 1),
+              u(e("input", {
+                "onUpdate:modelValue": o[7] || (o[7] = (a) => n.erpnext_site_url = a),
+                type: "url",
+                placeholder: "https://erp.example.com",
+                class: "w-full max-w-xs rounded-lg border border-gray-200 dark:border-gray-700 bg-white dark:bg-gray-800 px-3 py-2 text-sm text-gray-900 dark:text-white focus:outline-none focus:ring-2 focus:ring-accent-500 dark:focus:ring-accent-400"
+              }, null, 512), [
+                [_, n.erpnext_site_url]
               ])
             ]),
-            l.value.enable_erpnext_bridge ? (c(), u(h, { key: 0 }, [
-              e("div", Yt, [
-                e("label", Bt, o(a(s)("ERPNext site URL")), 1),
-                g(e("input", {
-                  "onUpdate:modelValue": r[7] || (r[7] = (t) => l.value.erpnext_site_url = t),
-                  type: "url",
-                  placeholder: "https://erp.example.com",
-                  class: "w-56 px-2 py-1.5 rounded-lg border border-gray-200 dark:border-slate-700 bg-white dark:bg-slate-950 text-sm text-gray-900 dark:text-slate-100 outline-none focus:ring-2 focus:ring-[var(--app-accent-500)]/30 focus:border-[var(--app-accent-500)]"
-                }, null, 512), [
-                  [k, l.value.erpnext_site_url]
-                ])
-              ]),
-              e("div", Ht, [
-                e("label", Kt, o(a(s)("Sync mode")), 1),
-                g(e("select", {
-                  "onUpdate:modelValue": r[8] || (r[8] = (t) => l.value.sync_mode = t),
-                  class: "px-2 py-1.5 rounded-lg border border-gray-200 dark:border-slate-700 bg-white dark:bg-slate-950 text-sm text-gray-900 dark:text-slate-100 outline-none focus:ring-2 focus:ring-[var(--app-accent-500)]/30 focus:border-[var(--app-accent-500)]"
+            e("div", At, [
+              e("div", null, [
+                e("label", Wt, r(s(t)("Sync mode")), 1),
+                u(e("select", {
+                  "onUpdate:modelValue": o[8] || (o[8] = (a) => n.sync_mode = a),
+                  class: "w-full rounded-lg border border-gray-200 dark:border-gray-700 bg-white dark:bg-gray-800 px-3 py-2 text-sm text-gray-900 dark:text-white focus:outline-none focus:ring-2 focus:ring-accent-500 dark:focus:ring-accent-400"
                 }, [
-                  (c(), u(h, null, R(ge, (t) => e("option", {
-                    key: t.value,
-                    value: t.value
-                  }, o(a(s)(t.label)), 9, qt)), 64))
+                  (l(), d(w, null, D(C, (a) => e("option", {
+                    key: a.value,
+                    value: a.value
+                  }, r(s(t)(a.label)), 9, jt)), 64))
                 ], 512), [
-                  [Z, l.value.sync_mode]
+                  [H, n.sync_mode]
                 ])
               ]),
-              l.value.sync_mode === "scheduled" ? (c(), u("div", Jt, [
-                e("label", zt, o(a(s)("Sync interval")), 1),
-                g(e("select", {
-                  "onUpdate:modelValue": r[9] || (r[9] = (t) => l.value.sync_interval = t),
-                  class: "px-2 py-1.5 rounded-lg border border-gray-200 dark:border-slate-700 bg-white dark:bg-slate-950 text-sm text-gray-900 dark:text-slate-100 outline-none focus:ring-2 focus:ring-[var(--app-accent-500)]/30 focus:border-[var(--app-accent-500)]"
+              n.sync_mode === "scheduled" ? (l(), d("div", Lt, [
+                e("label", Gt, r(s(t)("Sync interval")), 1),
+                u(e("select", {
+                  "onUpdate:modelValue": o[9] || (o[9] = (a) => n.sync_interval = a),
+                  class: "w-full rounded-lg border border-gray-200 dark:border-gray-700 bg-white dark:bg-gray-800 px-3 py-2 text-sm text-gray-900 dark:text-white focus:outline-none focus:ring-2 focus:ring-accent-500 dark:focus:ring-accent-400"
                 }, [
-                  (c(), u(h, null, R(ve, (t) => e("option", {
-                    key: t.value,
-                    value: t.value
-                  }, o(a(s)(t.label)), 9, Zt)), 64))
+                  (l(), d(w, null, D(p, (a) => e("option", {
+                    key: a.value,
+                    value: a.value
+                  }, r(s(t)(a.label)), 9, Yt)), 64))
                 ], 512), [
-                  [Z, l.value.sync_interval]
+                  [H, n.sync_interval]
                 ])
-              ])) : y("", !0),
-              e("div", Qt, [
-                e("label", ea, o(a(s)("Default activity type")), 1),
-                g(e("input", {
-                  "onUpdate:modelValue": r[10] || (r[10] = (t) => l.value.default_activity_type = t),
-                  type: "text",
-                  class: "w-40 px-2 py-1.5 rounded-lg border border-gray-200 dark:border-slate-700 bg-white dark:bg-slate-950 text-sm text-gray-900 dark:text-slate-100 outline-none focus:ring-2 focus:ring-[var(--app-accent-500)]/30 focus:border-[var(--app-accent-500)]"
-                }, null, 512), [
-                  [k, l.value.default_activity_type]
-                ])
-              ]),
-              e("div", ta, [
-                e("label", aa, o(a(s)("Sync billable entries only")), 1),
-                e("input", {
-                  type: "checkbox",
-                  checked: !!l.value.sync_billable_only,
-                  class: "w-4 h-4 rounded accent-[var(--app-accent-500)]",
-                  onChange: r[11] || (r[11] = (t) => E("sync_billable_only", t.target.checked))
-                }, null, 40, sa)
-              ]),
-              e("div", oa, [
-                e("label", ra, o(a(s)("Map project tags to ERPNext projects")), 1),
-                e("input", {
-                  type: "checkbox",
-                  checked: !!l.value.map_project_tags,
-                  class: "w-4 h-4 rounded accent-[var(--app-accent-500)]",
-                  onChange: r[12] || (r[12] = (t) => E("map_project_tags", t.target.checked))
-                }, null, 40, la)
-              ])
-            ], 64)) : y("", !0)
-          ]),
-          e("div", na, [
-            e("div", da, [
-              e("h2", ia, o(a(s)("Integrations")), 1),
-              e("p", ca, o(a(s)("Connect Watch to Slack, Linear, and GitHub.")), 1)
+              ])) : g("", !0)
             ]),
-            e("div", ua, [
-              e("div", pa, o(a(s)("Slack")), 1),
-              e("div", xa, [
-                e("label", _a, o(a(s)("Webhook URL")), 1),
-                g(e("input", {
-                  "onUpdate:modelValue": r[13] || (r[13] = (t) => l.value.slack_webhook_url = t),
-                  type: "password",
-                  placeholder: "https://hooks.slack.com/...",
-                  class: "flex-1 px-2 py-1.5 rounded-lg border border-gray-200 dark:border-slate-700 bg-white dark:bg-slate-950 text-sm text-gray-900 dark:text-slate-100 outline-none focus:ring-2 focus:ring-[var(--app-accent-500)]/30 focus:border-[var(--app-accent-500)]"
-                }, null, 512), [
-                  [k, l.value.slack_webhook_url]
-                ]),
-                e("button", {
-                  type: "button",
-                  disabled: K.value || !l.value.slack_webhook_url,
-                  class: "px-3 py-1.5 rounded-lg border border-gray-200 dark:border-slate-700 text-xs font-medium text-gray-900 dark:text-slate-100 hover:bg-gray-50 dark:hover:bg-slate-800 transition-colors disabled:opacity-40",
-                  onClick: ue
-                }, o(K.value ? a(s)("Testing…") : a(s)("Test")), 9, ga)
-              ]),
-              e("div", va, [
-                e("label", ba, [
-                  e("input", {
-                    type: "checkbox",
-                    checked: !!l.value.slack_notify_on_stop,
-                    class: "w-4 h-4 rounded accent-[var(--app-accent-500)]",
-                    onChange: r[14] || (r[14] = (t) => E("slack_notify_on_stop", t.target.checked))
-                  }, null, 40, ya),
-                  e("span", ka, o(a(s)("Notify on timer stop")), 1)
-                ])
-              ]),
-              e("div", ha, [
-                e("label", fa, o(a(s)("Message template (optional)")), 1),
-                g(e("input", {
-                  "onUpdate:modelValue": r[15] || (r[15] = (t) => l.value.slack_message_template = t),
-                  type: "text",
-                  placeholder: "⏱ {description} — {duration} logged{tag_part}",
-                  class: "px-2 py-1.5 rounded-lg border border-gray-200 dark:border-slate-700 bg-white dark:bg-slate-950 text-sm text-gray-900 dark:text-slate-100 outline-none focus:ring-2 focus:ring-[var(--app-accent-500)]/30 focus:border-[var(--app-accent-500)]"
-                }, null, 512), [
-                  [k, l.value.slack_message_template]
-                ])
-              ]),
-              M.value ? (c(), u("p", {
+            e("div", null, [
+              e("label", Bt, r(s(t)("Default activity type")), 1),
+              u(e("input", {
+                "onUpdate:modelValue": o[10] || (o[10] = (a) => n.default_activity_type = a),
+                type: "text",
+                placeholder: "Development",
+                class: "w-full max-w-xs rounded-lg border border-gray-200 dark:border-gray-700 bg-white dark:bg-gray-800 px-3 py-2 text-sm text-gray-900 dark:text-white focus:outline-none focus:ring-2 focus:ring-accent-500 dark:focus:ring-accent-400"
+              }, null, 512), [
+                [_, n.default_activity_type]
+              ])
+            ]),
+            e("label", Ht, [
+              e("input", {
+                type: "checkbox",
+                checked: !!n.sync_billable_only,
+                class: "h-4 w-4 rounded accent-accent-600 dark:accent-accent-400",
+                onChange: o[11] || (o[11] = (a) => N("sync_billable_only", a.target.checked))
+              }, null, 40, Kt),
+              e("span", qt, r(s(t)("Sync billable entries only")), 1)
+            ]),
+            e("label", Xt, [
+              e("input", {
+                type: "checkbox",
+                checked: !!n.map_project_tags,
+                class: "h-4 w-4 rounded accent-accent-600 dark:accent-accent-400",
+                onChange: o[12] || (o[12] = (a) => N("map_project_tags", a.target.checked))
+              }, null, 40, Zt),
+              e("span", zt, r(s(t)("Map project tags to ERPNext")), 1)
+            ])
+          ])) : g("", !0)
+        ]),
+        e("div", Jt, [
+          e("button", {
+            disabled: f.value,
+            class: "rounded-lg bg-accent-600 dark:bg-accent-400 px-4 py-2 text-sm font-medium text-white dark:text-gray-900 hover:bg-accent-700 dark:hover:bg-accent-300 transition-colors disabled:opacity-50",
+            onClick: J
+          }, r(f.value ? s(t)("Saving…") : s(t)("Save")), 9, Qt),
+          E.value ? (l(), d("span", ea, r(s(t)("Saved")), 1)) : g("", !0),
+          h.value ? (l(), d("span", ta, r(h.value), 1)) : g("", !0)
+        ])
+      ])) : v.value === 3 ? (l(), d("div", aa, [
+        e("div", sa, [
+          e("h2", ra, r(s(t)("Slack")), 1),
+          e("div", oa, [
+            e("div", null, [
+              e("label", na, r(s(t)("Webhook URL")), 1),
+              u(e("input", {
+                "onUpdate:modelValue": o[13] || (o[13] = (a) => n.slack_webhook_url = a),
+                type: "url",
+                placeholder: "https://hooks.slack.com/services/...",
+                class: "w-full rounded-lg border border-gray-200 dark:border-gray-700 bg-white dark:bg-gray-800 px-3 py-2 text-sm text-gray-900 dark:text-white focus:outline-none focus:ring-2 focus:ring-accent-500 dark:focus:ring-accent-400"
+              }, null, 512), [
+                [_, n.slack_webhook_url]
+              ])
+            ]),
+            e("label", la, [
+              e("input", {
+                type: "checkbox",
+                checked: !!n.slack_notify_on_stop,
+                class: "h-4 w-4 rounded accent-accent-600 dark:accent-accent-400",
+                onChange: o[14] || (o[14] = (a) => N("slack_notify_on_stop", a.target.checked))
+              }, null, 40, da),
+              e("span", ca, r(s(t)("Notify when timer stops")), 1)
+            ]),
+            e("div", null, [
+              e("label", ia, r(s(t)("Message template")), 1),
+              u(e("textarea", {
+                "onUpdate:modelValue": o[15] || (o[15] = (a) => n.slack_message_template = a),
+                rows: "3",
+                class: "w-full rounded-lg border border-gray-200 dark:border-gray-700 bg-white dark:bg-gray-800 px-3 py-2 text-sm text-gray-900 dark:text-white focus:outline-none focus:ring-2 focus:ring-accent-500 dark:focus:ring-accent-400"
+              }, null, 512), [
+                [_, n.slack_message_template]
+              ])
+            ]),
+            e("div", ga, [
+              e("button", {
+                disabled: X.value || !n.slack_webhook_url,
+                class: "rounded-lg border border-gray-300 dark:border-gray-600 px-4 py-2 text-sm font-medium text-gray-700 dark:text-gray-300 hover:bg-gray-50 dark:hover:bg-gray-700 transition-colors disabled:opacity-50",
+                onClick: de
+              }, r(X.value ? s(t)("Testing…") : s(t)("Test Connection")), 9, ua),
+              L.value ? (l(), d("span", {
                 key: 0,
-                class: F(["text-xs", M.value.startsWith("Error") ? "text-red-500" : "text-green-600 dark:text-green-400"])
-              }, o(M.value), 3)) : y("", !0)
+                class: M(["text-xs", L.value.ok ? "text-green-600" : "text-red-500"])
+              }, r(L.value.msg), 3)) : g("", !0)
+            ])
+          ])
+        ]),
+        e("div", ya, [
+          e("h2", ba, r(s(t)("Linear")), 1),
+          e("div", xa, [
+            e("div", null, [
+              e("label", _a, r(s(t)("API Key")), 1),
+              u(e("input", {
+                "onUpdate:modelValue": o[16] || (o[16] = (a) => n.linear_api_key = a),
+                type: "password",
+                class: "w-full max-w-xs rounded-lg border border-gray-200 dark:border-gray-700 bg-white dark:bg-gray-800 px-3 py-2 text-sm text-gray-900 dark:text-white focus:outline-none focus:ring-2 focus:ring-accent-500 dark:focus:ring-accent-400"
+              }, null, 512), [
+                [_, n.linear_api_key]
+              ])
+            ]),
+            e("label", ka, [
+              e("input", {
+                type: "checkbox",
+                checked: !!n.linear_post_comment,
+                class: "h-4 w-4 rounded accent-accent-600 dark:accent-accent-400",
+                onChange: o[17] || (o[17] = (a) => N("linear_post_comment", a.target.checked))
+              }, null, 40, pa),
+              e("span", ha, r(s(t)("Post time entry as comment on issue")), 1)
             ]),
             e("div", ma, [
-              e("div", wa, o(a(s)("Linear")), 1),
-              e("div", Sa, [
-                e("label", Ta, o(a(s)("API Key")), 1),
-                g(e("input", {
-                  "onUpdate:modelValue": r[16] || (r[16] = (t) => l.value.linear_api_key = t),
-                  type: "password",
-                  placeholder: "lin_api_…",
-                  class: "flex-1 px-2 py-1.5 rounded-lg border border-gray-200 dark:border-slate-700 bg-white dark:bg-slate-950 text-sm text-gray-900 dark:text-slate-100 outline-none focus:ring-2 focus:ring-[var(--app-accent-500)]/30 focus:border-[var(--app-accent-500)]"
-                }, null, 512), [
-                  [k, l.value.linear_api_key]
-                ]),
-                e("button", {
-                  type: "button",
-                  disabled: q.value || !l.value.linear_api_key,
-                  class: "px-3 py-1.5 rounded-lg border border-gray-200 dark:border-slate-700 text-xs font-medium text-gray-900 dark:text-slate-100 hover:bg-gray-50 dark:hover:bg-slate-800 transition-colors disabled:opacity-40",
-                  onClick: pe
-                }, o(q.value ? a(s)("Testing…") : a(s)("Test")), 9, Ca)
-              ]),
-              e("div", Ea, [
-                e("label", Pa, [
-                  e("input", {
-                    type: "checkbox",
-                    checked: !!l.value.linear_post_comment,
-                    class: "w-4 h-4 rounded accent-[var(--app-accent-500)]",
-                    onChange: r[17] || (r[17] = (t) => E("linear_post_comment", t.target.checked))
-                  }, null, 40, ja),
-                  e("span", Ra, o(a(s)("Post comment on save")), 1)
-                ])
-              ]),
-              W.value ? (c(), u("p", {
-                key: 0,
-                class: F(["text-xs", W.value.startsWith("Error") ? "text-red-500" : "text-green-600 dark:text-green-400"])
-              }, o(W.value), 3)) : y("", !0)
-            ]),
-            e("div", Oa, [
-              e("div", Na, o(a(s)("GitHub")), 1),
-              e("div", Va, [
-                e("label", Fa, o(a(s)("Token")), 1),
-                g(e("input", {
-                  "onUpdate:modelValue": r[18] || (r[18] = (t) => l.value.github_token = t),
-                  type: "password",
-                  placeholder: "ghp_…",
-                  class: "flex-1 px-2 py-1.5 rounded-lg border border-gray-200 dark:border-slate-700 bg-white dark:bg-slate-950 text-sm text-gray-900 dark:text-slate-100 outline-none focus:ring-2 focus:ring-[var(--app-accent-500)]/30 focus:border-[var(--app-accent-500)]"
-                }, null, 512), [
-                  [k, l.value.github_token]
-                ]),
-                e("button", {
-                  type: "button",
-                  disabled: J.value || !l.value.github_token,
-                  class: "px-3 py-1.5 rounded-lg border border-gray-200 dark:border-slate-700 text-xs font-medium text-gray-900 dark:text-slate-100 hover:bg-gray-50 dark:hover:bg-slate-800 transition-colors disabled:opacity-40",
-                  onClick: xe
-                }, o(J.value ? a(s)("Testing…") : a(s)("Test")), 9, Da)
-              ]),
-              e("div", Ua, [
-                e("label", La, o(a(s)("Default repo")), 1),
-                g(e("input", {
-                  "onUpdate:modelValue": r[19] || (r[19] = (t) => l.value.github_default_repo = t),
-                  type: "text",
-                  placeholder: "owner/repo",
-                  class: "flex-1 px-2 py-1.5 rounded-lg border border-gray-200 dark:border-slate-700 bg-white dark:bg-slate-950 text-sm text-gray-900 dark:text-slate-100 outline-none focus:ring-2 focus:ring-[var(--app-accent-500)]/30 focus:border-[var(--app-accent-500)]"
-                }, null, 512), [
-                  [k, l.value.github_default_repo]
-                ])
-              ]),
-              e("div", $a, [
-                e("label", Ia, [
-                  e("input", {
-                    type: "checkbox",
-                    checked: !!l.value.github_post_comment,
-                    class: "w-4 h-4 rounded accent-[var(--app-accent-500)]",
-                    onChange: r[20] || (r[20] = (t) => E("github_post_comment", t.target.checked))
-                  }, null, 40, Ma),
-                  e("span", Wa, o(a(s)("Post comment on save")), 1)
-                ])
-              ]),
-              A.value ? (c(), u("p", {
-                key: 0,
-                class: F(["text-xs", A.value.startsWith("Error") ? "text-red-500" : "text-green-600 dark:text-green-400"])
-              }, o(A.value), 3)) : y("", !0)
-            ])
-          ]),
-          e("div", Aa, [
-            e("div", Ga, [
-              e("h2", Xa, o(a(s)("Export my data")), 1),
-              e("p", Ya, o(a(s)("Download all your time entries as CSV.")), 1)
-            ]),
-            e("div", Ba, [
-              e("div", Ha, [
-                e("button", {
-                  type: "button",
-                  class: "flex items-center gap-1 px-3 py-1.5 rounded-lg border border-gray-200 dark:border-slate-700 text-sm text-gray-900 dark:text-slate-100 hover:border-[var(--app-accent-500)]/50 transition-colors",
-                  onClick: r[21] || (r[21] = (t) => G.value = !G.value)
-                }, [
-                  se(o(a(s)(ke.value)) + " ", 1),
-                  oe(a(Ce), {
-                    class: "w-3.5 h-3.5",
-                    "aria-hidden": "true"
-                  })
-                ]),
-                G.value ? (c(), u("div", Ka, [
-                  (c(), u(h, null, R(ae, (t) => e("button", {
-                    key: t.value,
-                    type: "button",
-                    class: F([
-                      "w-full text-left px-3 py-1.5 text-sm transition-colors",
-                      P.value === t.value ? "text-[var(--app-accent-500)] font-medium" : "text-gray-900 dark:text-slate-100 hover:bg-gray-50 dark:hover:bg-slate-800"
-                    ]),
-                    onClick: (f) => {
-                      P.value = t.value, G.value = !1;
-                    }
-                  }, o(a(s)(t.label)), 11, qa)), 64))
-                ])) : y("", !0)
-              ]),
-              P.value === "custom" ? (c(), u(h, { key: 0 }, [
-                g(e("input", {
-                  "onUpdate:modelValue": r[22] || (r[22] = (t) => N.value = t),
-                  type: "date",
-                  max: V.value || void 0,
-                  class: "px-2 py-1.5 text-sm rounded-lg border border-gray-200 dark:border-slate-700 bg-white dark:bg-slate-950 text-gray-900 dark:text-slate-100 outline-none focus:ring-2 focus:ring-[var(--app-accent-500)]/30 focus:border-[var(--app-accent-500)]"
-                }, null, 8, Ja), [
-                  [k, N.value]
-                ]),
-                r[24] || (r[24] = e("span", { class: "text-gray-500 dark:text-slate-500 text-sm" }, "→", -1)),
-                g(e("input", {
-                  "onUpdate:modelValue": r[23] || (r[23] = (t) => V.value = t),
-                  type: "date",
-                  min: N.value || void 0,
-                  class: "px-2 py-1.5 text-sm rounded-lg border border-gray-200 dark:border-slate-700 bg-white dark:bg-slate-950 text-gray-900 dark:text-slate-100 outline-none focus:ring-2 focus:ring-[var(--app-accent-500)]/30 focus:border-[var(--app-accent-500)]"
-                }, null, 8, za), [
-                  [k, V.value]
-                ])
-              ], 64)) : y("", !0),
               e("button", {
-                type: "button",
-                disabled: P.value === "custom" && (!N.value || !V.value),
-                class: "flex items-center gap-1.5 px-3 py-1.5 rounded-lg border border-gray-200 dark:border-slate-700 text-sm text-gray-900 dark:text-slate-100 hover:bg-gray-50 dark:hover:bg-slate-800 transition-colors disabled:opacity-40",
-                onClick: he
-              }, [
-                oe(a(Ee), {
-                  class: "w-3.5 h-3.5",
-                  "aria-hidden": "true"
-                }),
-                se(" " + o(a(s)("Download CSV")), 1)
-              ], 8, Za)
+                disabled: Z.value || !n.linear_api_key,
+                class: "rounded-lg border border-gray-300 dark:border-gray-600 px-4 py-2 text-sm font-medium text-gray-700 dark:text-gray-300 hover:bg-gray-50 dark:hover:bg-gray-700 transition-colors disabled:opacity-50",
+                onClick: ce
+              }, r(Z.value ? s(t)("Testing…") : s(t)("Test Connection")), 9, va),
+              G.value ? (l(), d("span", {
+                key: 0,
+                class: M(["text-xs", G.value.ok ? "text-green-600" : "text-red-500"])
+              }, r(G.value.msg), 3)) : g("", !0)
             ])
-          ]),
-          x.value ? (c(), u("p", Qa, o(x.value), 1)) : y("", !0),
-          b.value ? (c(), u("p", es, o(a(s)("Settings saved.")), 1)) : y("", !0),
-          e("div", ts, [
-            e("button", {
-              type: "button",
-              disabled: v.value,
-              class: "px-5 py-2 rounded-lg bg-[var(--app-accent-500)] hover:bg-[var(--app-accent-700)] text-white text-sm font-medium transition-colors disabled:opacity-50",
-              onClick: ce
-            }, o(v.value ? a(s)("Saving…") : a(s)("Save settings")), 9, as)
           ])
-        ], 64))
-      ])
-    ]));
+        ]),
+        e("div", fa, [
+          e("h2", wa, r(s(t)("GitHub")), 1),
+          e("div", Sa, [
+            e("div", null, [
+              e("label", Ta, r(s(t)("Personal Access Token")), 1),
+              u(e("input", {
+                "onUpdate:modelValue": o[18] || (o[18] = (a) => n.github_token = a),
+                type: "password",
+                class: "w-full max-w-xs rounded-lg border border-gray-200 dark:border-gray-700 bg-white dark:bg-gray-800 px-3 py-2 text-sm text-gray-900 dark:text-white focus:outline-none focus:ring-2 focus:ring-accent-500 dark:focus:ring-accent-400"
+              }, null, 512), [
+                [_, n.github_token]
+              ])
+            ]),
+            e("div", null, [
+              e("label", Ca, r(s(t)("Default repository")), 1),
+              u(e("input", {
+                "onUpdate:modelValue": o[19] || (o[19] = (a) => n.github_default_repo = a),
+                type: "text",
+                placeholder: "owner/repo",
+                class: "w-full max-w-xs rounded-lg border border-gray-200 dark:border-gray-700 bg-white dark:bg-gray-800 px-3 py-2 text-sm text-gray-900 dark:text-white focus:outline-none focus:ring-2 focus:ring-accent-500 dark:focus:ring-accent-400"
+              }, null, 512), [
+                [_, n.github_default_repo]
+              ])
+            ]),
+            e("label", Ea, [
+              e("input", {
+                type: "checkbox",
+                checked: !!n.github_post_comment,
+                class: "h-4 w-4 rounded accent-accent-600 dark:accent-accent-400",
+                onChange: o[20] || (o[20] = (a) => N("github_post_comment", a.target.checked))
+              }, null, 40, Ra),
+              e("span", Va, r(s(t)("Post time entry as comment on issue")), 1)
+            ]),
+            e("div", Pa, [
+              e("button", {
+                disabled: z.value || !n.github_token,
+                class: "rounded-lg border border-gray-300 dark:border-gray-600 px-4 py-2 text-sm font-medium text-gray-700 dark:text-gray-300 hover:bg-gray-50 dark:hover:bg-gray-700 transition-colors disabled:opacity-50",
+                onClick: ie
+              }, r(z.value ? s(t)("Testing…") : s(t)("Test Connection")), 9, Na),
+              Y.value ? (l(), d("span", {
+                key: 0,
+                class: M(["text-xs", Y.value.ok ? "text-green-600" : "text-red-500"])
+              }, r(Y.value.msg), 3)) : g("", !0)
+            ])
+          ])
+        ]),
+        e("div", Da, [
+          e("button", {
+            disabled: f.value,
+            class: "rounded-lg bg-accent-600 dark:bg-accent-400 px-4 py-2 text-sm font-medium text-white dark:text-gray-900 hover:bg-accent-700 dark:hover:bg-accent-300 transition-colors disabled:opacity-50",
+            onClick: J
+          }, r(f.value ? s(t)("Saving…") : s(t)("Save")), 9, Ua),
+          E.value ? (l(), d("span", Oa, r(s(t)("Saved")), 1)) : g("", !0),
+          h.value ? (l(), d("span", Fa, r(h.value), 1)) : g("", !0)
+        ])
+      ])) : v.value === 4 ? (l(), d("div", Ia, [
+        e("div", Ma, [
+          e("h2", $a, r(s(t)("Export My Data")), 1),
+          e("p", Aa, r(s(t)("Download your time entries as a CSV file.")), 1),
+          e("div", Wa, [
+            e("div", null, [
+              e("label", ja, r(s(t)("Date range")), 1),
+              u(e("select", {
+                "onUpdate:modelValue": o[21] || (o[21] = (a) => S.value = a),
+                class: "rounded-lg border border-gray-200 dark:border-gray-700 bg-white dark:bg-gray-800 px-3 py-2 text-sm text-gray-900 dark:text-white focus:outline-none focus:ring-2 focus:ring-accent-500 dark:focus:ring-accent-400"
+              }, [
+                (l(), d(w, null, D(U, (a) => e("option", {
+                  key: a.value,
+                  value: a.value
+                }, r(s(t)(a.label)), 9, La)), 64))
+              ], 512), [
+                [H, S.value]
+              ])
+            ]),
+            S.value === "custom" ? (l(), d("div", Ga, [
+              u(e("input", {
+                "onUpdate:modelValue": o[22] || (o[22] = (a) => F.value = a),
+                type: "date",
+                max: I.value || void 0,
+                class: "rounded-lg border border-gray-200 dark:border-gray-700 bg-white dark:bg-gray-800 px-3 py-2 text-sm text-gray-900 dark:text-white focus:outline-none focus:ring-2 focus:ring-accent-500 dark:focus:ring-accent-400"
+              }, null, 8, Ya), [
+                [_, F.value]
+              ]),
+              o[25] || (o[25] = e("span", { class: "text-gray-400 text-sm" }, "→", -1)),
+              u(e("input", {
+                "onUpdate:modelValue": o[23] || (o[23] = (a) => I.value = a),
+                type: "date",
+                min: F.value || void 0,
+                class: "rounded-lg border border-gray-200 dark:border-gray-700 bg-white dark:bg-gray-800 px-3 py-2 text-sm text-gray-900 dark:text-white focus:outline-none focus:ring-2 focus:ring-accent-500 dark:focus:ring-accent-400"
+              }, null, 8, Ba), [
+                [_, I.value]
+              ])
+            ])) : g("", !0),
+            e("button", {
+              disabled: S.value === "custom" && (!F.value || !I.value),
+              class: "flex items-center gap-1.5 rounded-lg border border-gray-300 dark:border-gray-600 px-4 py-2 text-sm font-medium text-gray-700 dark:text-gray-300 hover:bg-gray-50 dark:hover:bg-gray-700 transition-colors disabled:opacity-50",
+              onClick: ue
+            }, [
+              xe(s(he), {
+                class: "w-4 h-4",
+                "aria-hidden": "true"
+              }),
+              re(" " + r(s(t)("Download CSV")), 1)
+            ], 8, Ha)
+          ])
+        ])
+      ])) : g("", !0)
+    ], 64));
   }
 });
 export {
-  os as WatchSettings
+  qa as WatchSettings
 };
