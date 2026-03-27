@@ -5,6 +5,7 @@ import frappe
 from frappe import _
 
 from watch.utils.contexts import get_context_display_value, get_timer_context_options
+from watch.utils.rounding import round_hours
 
 
 # ── Context helpers ──────────────────────────────────────────────────────────
@@ -313,14 +314,15 @@ def get_summary(
 		t["hours"] = round(t["hours"] + (e.duration_hours or 0), 4)
 
 		entry_dict = {
-			"name":           e.name,
-			"date":           str(e.date),
-			"description":    e.description or "",
-			"duration_hours": e.duration_hours or 0,
-			"entry_status":   e.entry_status,
-			"contact":        e.get("contact"),
-			"context_type":   e.get("context_type"),
-			"context_name":   e.get("context_name"),
+			"name":                   e.name,
+			"date":                   str(e.date),
+			"description":            e.description or "",
+			"duration_hours":         e.duration_hours or 0,
+			"rounded_duration_hours": round_hours(e.duration_hours or 0),
+			"entry_status":           e.entry_status,
+			"contact":                e.get("contact"),
+			"context_type":           e.get("context_type"),
+			"context_name":           e.get("context_name"),
 		}
 		# Attach event context as detail info if present
 		if event_ctx:
@@ -360,6 +362,9 @@ def get_summary(
 		"billable_hours":     round(sum(e.duration_hours or 0 for e in billable), 4),
 		"non_billable_hours": round(sum(e.duration_hours or 0 for e in non_bill), 4),
 		"internal_hours":     round(sum(e.duration_hours or 0 for e in internal), 4),
+		"rounded_billable_hours":     round(sum(round_hours(e.duration_hours or 0) for e in billable), 4),
+		"rounded_non_billable_hours": round(sum(round_hours(e.duration_hours or 0) for e in non_bill), 4),
+		"rounded_internal_hours":     round(sum(round_hours(e.duration_hours or 0) for e in internal), 4),
 	}
 
 	return {

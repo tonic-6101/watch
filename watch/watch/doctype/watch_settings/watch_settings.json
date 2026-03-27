@@ -8,6 +8,10 @@
   "col_break_general",
   "lock_entries_older_than",
   "auto_stop_timer_after",
+  "rounding_section",
+  "rounding_increment",
+  "col_break_rounding",
+  "rounding_direction",
   "work_days_section",
   "work_mon",
   "work_tue",
@@ -69,6 +73,31 @@
    "fieldtype": "Int",
    "label": "Auto-Stop Timer After (hours)",
    "description": "0 = disabled."
+  },
+  {
+   "fieldname": "rounding_section",
+   "fieldtype": "Section Break",
+   "label": "Duration Rounding",
+   "description": "Display-only rounding. Raw duration is never changed."
+  },
+  {
+   "default": "none",
+   "fieldname": "rounding_increment",
+   "fieldtype": "Select",
+   "label": "Rounding Increment",
+   "options": "none\n1m\n5m\n6m\n10m\n15m\n30m\n60m"
+  },
+  {
+   "fieldname": "col_break_rounding",
+   "fieldtype": "Column Break"
+  },
+  {
+   "default": "nearest",
+   "depends_on": "eval:doc.rounding_increment !== 'none'",
+   "fieldname": "rounding_direction",
+   "fieldtype": "Select",
+   "label": "Rounding Direction",
+   "options": "nearest\nup\ndown"
   },
   {
    "fieldname": "work_days_section",

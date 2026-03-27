@@ -226,6 +226,13 @@ def navigation_shortcuts(query: str) -> list:
 			"file-text",
 		),
 		(
+			["range", "report", "date", "custom"],
+			_("Range"),
+			_("Date range report"),
+			"/watch/range",
+			"calendar-search",
+		),
+		(
 			["settings"],
 			_("Settings"),
 			_("Watch Settings"),

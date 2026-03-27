@@ -16,6 +16,8 @@ interface WatchSettings {
   default_entry_type: string
   lock_entries_older_than: number
   auto_stop_timer_after: number
+  rounding_increment: string
+  rounding_direction: string
   work_mon: 0 | 1
   work_tue: 0 | 1
   work_wed: 0 | 1
@@ -77,6 +79,23 @@ const WORK_DAYS = [
   { key: 'work_sun', label: 'Sun' },
 ] as const
 
+const ROUNDING_INCREMENT_OPTIONS = [
+  { value: 'none', label: 'Off' },
+  { value: '1m', label: '1 minute' },
+  { value: '5m', label: '5 minutes' },
+  { value: '6m', label: '6 minutes' },
+  { value: '10m', label: '10 minutes' },
+  { value: '15m', label: '15 minutes' },
+  { value: '30m', label: '30 minutes' },
+  { value: '60m', label: '60 minutes' },
+]
+
+const ROUNDING_DIRECTION_OPTIONS = [
+  { value: 'nearest', label: 'Nearest' },
+  { value: 'up', label: 'Up' },
+  { value: 'down', label: 'Down' },
+]
+
 const EXPORT_PRESETS = [
   { value: 'all', label: 'All time' },
   { value: 'this_year', label: 'This year' },
@@ -111,6 +130,8 @@ const form = reactive<WatchSettings>({
   default_entry_type: 'billable',
   lock_entries_older_than: 0,
   auto_stop_timer_after: 0,
+  rounding_increment: 'none',
+  rounding_direction: 'nearest',
   work_mon: 1, work_tue: 1, work_wed: 1, work_thu: 1, work_fri: 1, work_sat: 0, work_sun: 0,
   enable_erpnext_bridge: 0,
   erpnext_site_url: '',
@@ -157,9 +178,32 @@ const exportToDate = ref('')
 const exportPresetOpen = ref(false)
 
 // ── Frappe API helpers ─────────────────────────────────────────
+// Direct fetch to /api/method/ — works in both Desk (window.frappe)
+// and Dock SPA (no full Frappe client, only csrf_token on window).
+
+function getCsrf(): string {
+  return (
+    (window as any).frappe?.csrf_token ??
+    (window as any).csrf_token ??
+    (window as any).dockBoot?.session?.csrf_token ??
+    ''
+  )
+}
 
 async function callApi(method: string, args: Record<string, unknown> = {}) {
-  return (window as any).frappe.call({ method, args, type: 'POST' })
+  const res = await fetch('/api/method/' + method, {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json',
+      'X-Frappe-CSRF-Token': getCsrf(),
+    },
+    body: JSON.stringify(args),
+  })
+  const json = await res.json()
+  if (!res.ok) {
+    throw new Error(json?.exc_type ?? 'Request failed')
+  }
+  return { message: json.message }
 }
 
 // ── Load ───────────────────────────────────────────────────────
@@ -543,6 +587,39 @@ async function downloadMyData() {
                 <span class="text-xs text-gray-400 dark:text-gray-500 select-none">{{ __(day.label) }}</span>
               </label>
             </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Duration Rounding -->
+      <div class="rounded-lg border border-gray-200 dark:border-gray-700 bg-white dark:bg-gray-800 p-5">
+        <h2 class="mb-4 text-xs font-semibold uppercase tracking-wide text-gray-500 dark:text-gray-400">
+          {{ __('Duration Rounding') }}
+        </h2>
+        <p class="mb-4 text-xs text-gray-400 dark:text-gray-500">{{ __('Display-only. Raw duration is never changed.') }}</p>
+        <div class="space-y-5">
+          <div class="flex items-center gap-4">
+            <label class="text-sm font-medium text-gray-700 dark:text-gray-300 flex-1">{{ __('Rounding increment') }}</label>
+            <select
+              v-model="form.rounding_increment"
+              class="rounded-lg border border-gray-200 dark:border-gray-700 bg-white dark:bg-gray-800
+                     px-3 py-2 text-sm text-gray-900 dark:text-white
+                     focus:outline-none focus:ring-2 focus:ring-accent-500 dark:focus:ring-accent-400"
+            >
+              <option v-for="opt in ROUNDING_INCREMENT_OPTIONS" :key="opt.value" :value="opt.value">{{ __(opt.label) }}</option>
+            </select>
+          </div>
+
+          <div v-if="form.rounding_increment !== 'none'" class="flex items-center gap-4">
+            <label class="text-sm font-medium text-gray-700 dark:text-gray-300 flex-1">{{ __('Rounding direction') }}</label>
+            <select
+              v-model="form.rounding_direction"
+              class="rounded-lg border border-gray-200 dark:border-gray-700 bg-white dark:bg-gray-800
+                     px-3 py-2 text-sm text-gray-900 dark:text-white
+                     focus:outline-none focus:ring-2 focus:ring-accent-500 dark:focus:ring-accent-400"
+            >
+              <option v-for="opt in ROUNDING_DIRECTION_OPTIONS" :key="opt.value" :value="opt.value">{{ __(opt.label) }}</option>
+            </select>
           </div>
         </div>
       </div>

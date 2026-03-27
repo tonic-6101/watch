@@ -19,6 +19,8 @@ _EDITABLE_FIELDS = [
 	"default_entry_type",
 	"lock_entries_older_than",
 	"auto_stop_timer_after",
+	"rounding_increment",
+	"rounding_direction",
 	"work_mon", "work_tue", "work_wed", "work_thu", "work_fri", "work_sat", "work_sun",
 	"idle_threshold_minutes",
 	"daily_nudge_after",

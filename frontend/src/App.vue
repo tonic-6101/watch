@@ -7,7 +7,7 @@ import { ref, watch } from 'vue'
 import { RouterView, useRouter, useRoute } from 'vue-router'
 // @ts-ignore — served by Dock's built assets
 import { DockLayout, DockSidebarShell } from '/assets/dock/js/dock-navbar.esm.js'
-import { CalendarDays, CalendarRange, FileText, Tag } from 'lucide-vue-next'
+import { CalendarDays, CalendarRange, CalendarSearch, FileText, Tag } from 'lucide-vue-next'
 import PreferencesPanel from './components/PreferencesPanel.vue'
 import ShortcutsOverlay from './components/ShortcutsOverlay.vue'
 import ToastContainer from './components/ToastContainer.vue'
@@ -18,10 +18,11 @@ import { __ } from '@/composables/useTranslate'
 declare const __APP_VERSION__: string
 
 const watchNavItems = [
-  { key: 'today',   label: __('Today'),   icon: CalendarDays,  path: '/watch',         exact: true },
-  { key: 'week',    label: __('Week'),     icon: CalendarRange, path: '/watch/week' },
-  { key: 'prepare', label: __('Prepare'),  icon: FileText,      path: '/watch/prepare' },
-  { key: 'tags',    label: __('Tags'),     icon: Tag,           path: '/watch/tags' },
+  { key: 'today',   label: __('Today'),   icon: CalendarDays,   path: '/watch',          exact: true },
+  { key: 'week',    label: __('Week'),     icon: CalendarRange,  path: '/watch/week' },
+  { key: 'range',   label: __('Range'),    icon: CalendarSearch, path: '/watch/range' },
+  { key: 'prepare', label: __('Prepare'),  icon: FileText,       path: '/watch/prepare' },
+  { key: 'tags',    label: __('Tags'),     icon: Tag,            path: '/watch/tags' },
 ]
 
 const watchFooter = {

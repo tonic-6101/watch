@@ -6,6 +6,8 @@ from datetime import date, timedelta
 import frappe
 from frappe import _
 
+from watch.utils.rounding import round_hours, round_hours_in_entry
+
 
 def _check_soft_lock(entry_date: str):
 	"""Throw if the date is older than Watch Settings.lock_entries_older_than days (0 = disabled)."""
@@ -271,10 +273,17 @@ def get_daily_summary(date: str) -> dict:
 			e["contact_name"] = frappe.db.get_value("Contact", e["contact"], "full_name") or e["contact"]
 		if e.get("context_type") and e.get("context_name"):
 			e["context_display"] = get_context_display_value(e["context_type"], e["context_name"]) or e["context_name"]
+		round_hours_in_entry(e)
 
 	total_hours = sum(e.get("duration_hours") or 0 for e in entries)
 	billable_hours = sum(
 		(e.get("duration_hours") or 0)
+		for e in entries
+		if e.get("entry_type") == "billable"
+	)
+	rounded_total = sum(e.get("rounded_duration_hours") or 0 for e in entries)
+	rounded_billable = sum(
+		(e.get("rounded_duration_hours") or 0)
 		for e in entries
 		if e.get("entry_type") == "billable"
 	)
@@ -284,6 +293,8 @@ def get_daily_summary(date: str) -> dict:
 		"entries": entries,
 		"total_hours": round(total_hours, 4),
 		"billable_hours": round(billable_hours, 4),
+		"rounded_total_hours": round(rounded_total, 4),
+		"rounded_billable_hours": round(rounded_billable, 4),
 	}
 
 
@@ -348,11 +359,19 @@ def get_weekly_summary(week_start: str) -> dict:
 			for e in day_entries
 			if e.get("entry_type") == "billable"
 		)
+		day_rounded_total = sum(round_hours(e.get("duration_hours") or 0) for e in day_entries)
+		day_rounded_billable = sum(
+			round_hours(e.get("duration_hours") or 0)
+			for e in day_entries
+			if e.get("entry_type") == "billable"
+		)
 		top, overflow = _top_tags(day_entries)
 		days.append({
 			"date": day_str,
 			"total_hours": round(day_total, 4),
 			"billable_hours": round(day_billable, 4),
+			"rounded_total_hours": round(day_rounded_total, 4),
+			"rounded_billable_hours": round(day_rounded_billable, 4),
 			"entry_count": len(day_entries),
 			"top_tags": top,
 			"overflow_count": overflow,
@@ -380,12 +399,17 @@ def get_weekly_summary(week_start: str) -> dict:
 	from watch.api.settings import get_work_days
 	work_days = get_work_days()
 
+	rounded_total = sum(d["rounded_total_hours"] for d in days)
+	rounded_billable = sum(d["rounded_billable_hours"] for d in days)
+
 	return {
 		"week_start": str(monday),
 		"week_end": str(sunday),
 		"days": days,
 		"total_hours": round(total_hours, 4),
 		"billable_hours": round(billable_hours, 4),
+		"rounded_total_hours": round(rounded_total, 4),
+		"rounded_billable_hours": round(rounded_billable, 4),
 		"prev_week_total_hours": prev_week_total,
 		"work_days": work_days,
 	}
@@ -576,10 +600,15 @@ def get_weekly_chart_data(week_start: str) -> dict:
 			sum(e.get("duration_hours") or 0 for e in entries if str(e["date"]) == day_str),
 			4,
 		)
+		day_rounded = round(
+			sum(round_hours(e.get("duration_hours") or 0) for e in entries if str(e["date"]) == day_str),
+			4,
+		)
 		daily.append({
 			"day": day_str,
 			"label": day_labels[i],
 			"hours": day_hours,
+			"rounded_hours": day_rounded,
 			"is_work_day": i in work_days,
 		})
 
@@ -698,6 +727,133 @@ def export_csv(
 	frappe.response["doctype"] = filename
 	frappe.response["result"] = csv_bytes
 	frappe.response["content_type"] = "text/csv; charset=utf-8"
+
+
+# ── Custom date range report (Feature #29) ────────────────────────────────
+
+
+@frappe.whitelist()
+def get_range_summary(from_date: str, to_date: str) -> dict:
+	"""Return entries grouped by day for an arbitrary date range.
+
+	Similar to get_weekly_summary but not limited to a single week.
+	Includes rounded values and per-day/tag breakdowns.
+	"""
+	from datetime import date as date_type
+
+	user = frappe.session.user
+	start = date_type.fromisoformat(from_date)
+	end = date_type.fromisoformat(to_date)
+
+	entries = frappe.get_all(
+		"Watch Entry",
+		filters={
+			"user": user,
+			"date": ["between", [from_date, to_date]],
+			"is_running": 0,
+		},
+		fields=[
+			"name", "date", "start_time", "end_time", "duration_hours",
+			"description", "entry_type", "entry_status", "is_running",
+		],
+		order_by="date asc, start_time asc",
+	)
+	entries = _attach_tags(entries)
+
+	# Group by day
+	days_map: dict[str, list] = {}
+	current = start
+	while current <= end:
+		days_map[str(current)] = []
+		current += timedelta(days=1)
+	for e in entries:
+		days_map.setdefault(str(e.date), []).append(e)
+
+	from watch.api.settings import get_work_days
+	work_days_set = set(get_work_days())
+
+	days = []
+	for day_str in sorted(days_map):
+		day_entries = days_map[day_str]
+		day_total = sum(e.get("duration_hours") or 0 for e in day_entries)
+		day_billable = sum(
+			(e.get("duration_hours") or 0)
+			for e in day_entries
+			if e.get("entry_type") == "billable"
+		)
+		day_rounded_total = sum(round_hours(e.get("duration_hours") or 0) for e in day_entries)
+		day_rounded_billable = sum(
+			round_hours(e.get("duration_hours") or 0)
+			for e in day_entries
+			if e.get("entry_type") == "billable"
+		)
+		d = date_type.fromisoformat(day_str)
+		top, overflow = _top_tags(day_entries)
+		days.append({
+			"date": day_str,
+			"total_hours": round(day_total, 4),
+			"billable_hours": round(day_billable, 4),
+			"rounded_total_hours": round(day_rounded_total, 4),
+			"rounded_billable_hours": round(day_rounded_billable, 4),
+			"entry_count": len(day_entries),
+			"top_tags": top,
+			"overflow_count": overflow,
+			"is_work_day": d.weekday() in work_days_set,
+		})
+
+	total_hours = sum(d["total_hours"] for d in days)
+	billable_hours = sum(d["billable_hours"] for d in days)
+	rounded_total = sum(d["rounded_total_hours"] for d in days)
+	rounded_billable = sum(d["rounded_billable_hours"] for d in days)
+
+	# Per-tag breakdown (primary tag)
+	_PRIORITY = {"Client": 0, "Project": 1}
+	tag_hours: dict = {}
+	untagged_hours = 0.0
+
+	for e in entries:
+		hours = e.get("duration_hours") or 0
+		meta_list = e.get("tag_meta") or []
+		if not meta_list:
+			untagged_hours += hours
+		else:
+			primary = sorted(
+				meta_list,
+				key=lambda m: (_PRIORITY.get(m.get("category") or "", 2), m.get("tag_name", "")),
+			)[0]
+			tag_name = primary.get("tag_name") or primary.get("name", "")
+			color = primary.get("color")
+			if tag_name not in tag_hours:
+				tag_hours[tag_name] = {"color": color, "hours": 0.0}
+			tag_hours[tag_name]["hours"] = round(tag_hours[tag_name]["hours"] + hours, 4)
+
+	tags = [
+		{
+			"tag_name": name,
+			"color": meta["color"],
+			"hours": round(meta["hours"], 4),
+			"pct": round(meta["hours"] / total_hours * 100, 1) if total_hours else 0.0,
+		}
+		for name, meta in sorted(tag_hours.items(), key=lambda x: -x[1]["hours"])
+	]
+	if untagged_hours > 0:
+		tags.append({
+			"tag_name": None,
+			"color": "#9ca3af",
+			"hours": round(untagged_hours, 4),
+			"pct": round(untagged_hours / total_hours * 100, 1) if total_hours else 0.0,
+		})
+
+	return {
+		"from_date": from_date,
+		"to_date": to_date,
+		"days": days,
+		"tags": tags,
+		"total_hours": round(total_hours, 4),
+		"billable_hours": round(billable_hours, 4),
+		"rounded_total_hours": round(rounded_total, 4),
+		"rounded_billable_hours": round(rounded_billable, 4),
+	}
 
 
 # ── Bulk operations (Feature #21) ─────────────────────────────────────────

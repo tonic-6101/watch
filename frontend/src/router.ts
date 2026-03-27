@@ -8,6 +8,7 @@ import DailyView from './pages/DailyView.vue'
 import WeeklyView from './pages/WeeklyView.vue'
 import PrepareSummary from './pages/PrepareSummary.vue'
 import Tags from './pages/Tags.vue'
+import RangeView from './pages/RangeView.vue'
 
 const routes: RouteRecordRaw[] = [
   // Daily view — default landing and specific date
@@ -17,6 +18,9 @@ const routes: RouteRecordRaw[] = [
   // Weekly view
   { path: '/watch/week', component: WeeklyView, props: true },
   { path: '/watch/week/:week', component: WeeklyView, props: true },
+
+  // Custom date range report
+  { path: '/watch/range', component: RangeView },
 
   // Prepare summary (keyboard shortcut B)
   { path: '/watch/prepare', component: PrepareSummary },
