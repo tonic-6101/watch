@@ -497,6 +497,12 @@ def end_focus_session() -> dict:
 	if completed:
 		_reset_focus_timer(timer)
 		_publish(user, {"state": "stopped", "focus_mode": False, "focus_completed": True})
+
+		# Bell notification for focus run completion
+		total_minutes = int(timer.focus_work_minutes or 25) * total
+		from watch.integrations.dock_notification import on_focus_completed
+		on_focus_completed(user, total, total_minutes)
+
 		return {"completed": True}
 
 	# Move to break

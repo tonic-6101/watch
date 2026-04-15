@@ -497,15 +497,28 @@ def forward_to_app(
 		],
 	}
 
+	# Resolve action label for notifications
+	action_label = action_endpoint
+	for a in (all_actions or []):
+		if isinstance(a, dict) and a.get("endpoint") == action_endpoint:
+			action_label = a.get("label", action_endpoint)
+			break
+
 	# Call the registered endpoint (invoicing app is on the same instance)
 	try:
 		endpoint_fn = frappe.get_attr(action_endpoint)
 		result = endpoint_fn(**payload) or {}
 	except Exception:
 		frappe.log_error(frappe.get_traceback(), "watch.api.billing.forward_to_app")
+		from watch.integrations.dock_notification import on_forwarding_failed
+		on_forwarding_failed(user, action_label, frappe.get_traceback(with_context=False)[:200])
 		frappe.throw(_("Forward failed — see error log for details"))
 
 	_mark_entries_sent([e.name for e in entries])
+
+	# Bell notification for successful forwarding
+	from watch.integrations.dock_notification import on_entries_forwarded
+	on_entries_forwarded(user, action_label, len(entries), total_hours)
 
 	return {
 		"forwarded_hours": total_hours,

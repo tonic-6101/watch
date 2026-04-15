@@ -28,7 +28,7 @@ const watchNavItems = [
 const watchFooter = {
   edition: __('Community Edition'),
   version: __APP_VERSION__,
-  sourceUrl: 'https://github.com/Tonic-HQ/watch',
+  sourceUrl: 'https://github.com/tonic-6101/watch',
 }
 
 // ── Timer (singleton state — safe to call here) ──────────────────────────

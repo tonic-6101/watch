@@ -108,10 +108,15 @@ dock_activity_sources = [
 	},
 ]
 
-# Notification types for Dock's notification system (budget alerts)
+# Notification types for Dock's notification system
 dock_notification_types = [
 	{"type": "budget_warning", "label": "Budget Warning", "icon": "alert-triangle"},
 	{"type": "budget_exceeded", "label": "Budget Exceeded", "icon": "alert-circle"},
+	{"type": "timer_auto_stopped", "label": "Timer Auto-Stopped", "icon": "timer-off"},
+	{"type": "focus_completed", "label": "Focus Run Completed", "icon": "target"},
+	{"type": "entries_forwarded", "label": "Entries Forwarded", "icon": "send"},
+	{"type": "forwarding_failed", "label": "Forwarding Failed", "icon": "alert-triangle"},
+	{"type": "erpnext_sync_failed", "label": "ERPNext Sync Failed", "icon": "alert-circle"},
 ]
 
 # --------------------------------------------------
@@ -158,6 +163,55 @@ scheduler_events = {
 	],
 	"hourly": [
 		"watch.tasks.sync_to_erpnext_scheduled",
+	],
+}
+
+# --------------------------------------------------
+# Jana integration (AI assistant permissions)
+# --------------------------------------------------
+
+jana_briefing_source = "watch.api.jana_briefing.get_briefing"
+
+jana_permissions = {
+	"doctypes": {
+		"read": ["Watch Entry", "Watch Timer", "Watch Tag"],
+		"create": [],
+		"update": [],
+		"never": [],
+	},
+	"endpoints": [
+		{
+			"label": "Watch — Time Tracking",
+			"description": "Time summaries, timer state, and budget alerts",
+			"methods": [
+				"watch.api.timer.get_timer_state",
+				"watch.api.time_entry.get_daily_summary",
+				"watch.api.time_entry.get_weekly_summary",
+				"watch.api.time_entry.get_range_summary",
+				"watch.api.time_entry.check_yesterday_empty",
+				"watch.api.tags.get_all_budgets",
+				"watch.api.tags.get_budget_usage",
+				"watch.api.tags.get_tags",
+				"watch.api.settings.get_work_days",
+			],
+			"scoping": "user",
+		},
+		{
+			"label": "Watch — Billing",
+			"description": "Billable hours summaries",
+			"methods": [
+				"watch.api.billing.get_summary",
+			],
+			"scoping": "user",
+		},
+		{
+			"label": "Watch — Daily Briefing",
+			"description": "Aggregated briefing data for Jana Daily Briefing agent",
+			"methods": [
+				"watch.api.jana_briefing.get_briefing",
+			],
+			"scoping": "user",
+		},
 	],
 }
 

@@ -227,6 +227,8 @@ def bulk_sync() -> dict:
 	frappe.db.set_single_value("Watch Settings", "last_bulk_sync", frappe.utils.now_datetime())
 	if errors:
 		frappe.db.set_single_value("Watch Settings", "last_sync_error", "; ".join(errors[:5]))
+		from watch.integrations.dock_notification import on_erpnext_sync_failed
+		on_erpnext_sync_failed("; ".join(errors[:3]))
 	else:
 		frappe.db.set_single_value("Watch Settings", "last_sync_error", "")
 

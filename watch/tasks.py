@@ -38,6 +38,10 @@ def auto_stop_forgotten_timers():
 				entry.description = ((entry.description or "") + "\n" + flag).strip()
 				entry.save(ignore_permissions=True)
 
+				# Bell notification
+				from watch.integrations.dock_notification import on_timer_auto_stopped
+				on_timer_auto_stopped(entry_name, timer_rec.user, threshold_hours)
+
 			frappe.logger().info(f"Auto-stopped timer for {timer_rec.user}")
 		except Exception:
 			frappe.log_error(frappe.get_traceback(), f"Auto-stop failed for {timer_rec.user}")
